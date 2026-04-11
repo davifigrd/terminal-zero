@@ -1,0 +1,442 @@
+{
+	"projectFormatVersion": 1,
+	"savedWithRelease": 47603,
+	"name": "Terminal Zero",
+	"runtime": "c3",
+	"useWorker": "auto",
+	"bundleAddons": false,
+	"usedAddons": [
+		{
+			"type": "plugin",
+			"id": "Keyboard",
+			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Mouse",
+			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Sprite",
+			"name": "Sprite",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Text",
+			"name": "Text",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "EightDir",
+			"name": "8 Direction",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "solid",
+			"name": "Solid",
+			"author": "Scirra",
+			"bundled": false
+		}
+	],
+	"uniqueId": "infcrcpul51",
+	"objectTypes": {
+		"items": [],
+		"subfolders": [
+			{
+				"items": [
+					"limit",
+					"pc",
+					"bed",
+					"door",
+					"spawn_bed",
+					"spawn_door",
+					"sleep",
+					"spawn_pc",
+					"spawn_player"
+				],
+				"subfolders": [],
+				"name": "Hit box"
+			},
+			{
+				"items": [
+					"bedroom",
+					"player"
+				],
+				"subfolders": [],
+				"name": "Bedroom"
+			},
+			{
+				"items": [
+					"PC_screen",
+					"post_it"
+				],
+				"subfolders": [
+					{
+						"items": [
+							"monitor_ui"
+						],
+						"subfolders": [
+							{
+								"items": [
+									"ExercíciosNícollas",
+									"Lixeira",
+									"BlocoDeNotas",
+									"Teams_",
+									"DevCPP_",
+									"VSCode_",
+									"DeepWeb_"
+								],
+								"subfolders": [],
+								"name": "icon_text"
+							},
+							{
+								"items": [
+									"bin",
+									"paste",
+									"notes",
+									"teams",
+									"devcpp",
+									"vscode",
+									"deepweb"
+								],
+								"subfolders": [
+									{
+										"items": [
+											"bin_hitbox",
+											"paste_hitbox",
+											"vscode_hitbox",
+											"teams_hitbox",
+											"devcpp_hitbox",
+											"notes_hitbox",
+											"deepweb_hitbox"
+										],
+										"subfolders": [],
+										"name": "icon_hitbox"
+									}
+								],
+								"name": "icon"
+							},
+							{
+								"items": [
+									"error",
+									"notepad",
+									"textInput",
+									"monitor_limit"
+								],
+								"subfolders": [],
+								"name": "window"
+							}
+						],
+						"name": "UI"
+					}
+				],
+				"name": "PC_desk"
+			},
+			{
+				"items": [
+					"nao",
+					"loading",
+					"fade",
+					"sim",
+					"choosing_save",
+					"choosing_menu"
+				],
+				"subfolders": [],
+				"name": "Choosing"
+			},
+			{
+				"items": [
+					"menu_background",
+					"jogar",
+					"controles",
+					"creditos",
+					"sair"
+				],
+				"subfolders": [],
+				"name": "Menu"
+			},
+			{
+				"items": [
+					"cursor",
+					"Mouse",
+					"Keyboard"
+				],
+				"subfolders": [],
+				"name": "Input"
+			}
+		]
+	},
+	"functionsName": "Funções",
+	"autosaveData": null,
+	"containers": [
+		{
+			"members": [
+				"controles",
+				"creditos",
+				"jogar",
+				"menu_background",
+				"sair"
+			]
+		},
+		{
+			"members": [
+				"devcpp",
+				"DevCPP_"
+			]
+		},
+		{
+			"members": [
+				"teams",
+				"Teams_"
+			]
+		},
+		{
+			"members": [
+				"BlocoDeNotas",
+				"notes"
+			]
+		},
+		{
+			"members": [
+				"ExercíciosNícollas",
+				"paste"
+			]
+		},
+		{
+			"members": [
+				"bin",
+				"Lixeira"
+			]
+		},
+		{
+			"members": [
+				"vscode",
+				"VSCode_"
+			]
+		},
+		{
+			"members": [
+				"deepweb",
+				"DeepWeb_"
+			]
+		},
+		{
+			"members": [
+				"notepad",
+				"textInput"
+			]
+		}
+	],
+	"families": {
+		"items": [],
+		"subfolders": []
+	},
+	"layouts": {
+		"items": [
+			"Bedroom",
+			"Menu",
+			"PC"
+		],
+		"subfolders": []
+	},
+	"eventSheets": {
+		"items": [
+			"e_Bedroom",
+			"e_PC",
+			"e_Menu",
+			"e_Global"
+		],
+		"subfolders": []
+	},
+	"rootFileFolders": {
+		"script": {
+			"items": [],
+			"subfolders": []
+		},
+		"sound": {
+			"items": [],
+			"subfolders": []
+		},
+		"music": {
+			"items": [],
+			"subfolders": []
+		},
+		"video": {
+			"items": [],
+			"subfolders": []
+		},
+		"font": {
+			"items": [],
+			"subfolders": []
+		},
+		"icon": {
+			"items": [
+				{
+					"name": "icon-16.png",
+					"type": "image/png",
+					"sid": 422939428016063,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-32.png",
+					"type": "image/png",
+					"sid": 898507032847403,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-64.png",
+					"type": "image/png",
+					"sid": 558734258051045,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-128.png",
+					"type": "image/png",
+					"sid": 879348787427939,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-256.png",
+					"type": "image/png",
+					"sid": 701456109076296,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "icon-512.png",
+					"type": "image/png",
+					"sid": 313990675689759,
+					"icon-info": {
+						"purpose": "app-icon"
+					}
+				},
+				{
+					"name": "loading-logo.png",
+					"type": "image/png",
+					"sid": 259685286694536,
+					"icon-info": {
+						"purpose": "loading-logo"
+					}
+				}
+			],
+			"subfolders": []
+		},
+		"general": {
+			"items": [],
+			"subfolders": []
+		}
+	},
+	"timelines": {
+		"items": [
+			"Linha do tempo 1"
+		],
+		"subfolders": [
+			{
+				"items": [],
+				"subfolders": []
+			}
+		]
+	},
+	"flowcharts": {
+		"items": [
+			"Fluxograma 1"
+		],
+		"subfolders": []
+	},
+	"models3d": {
+		"items": [],
+		"subfolders": []
+	},
+	"properties": {
+		"description": "",
+		"version": "1.0.0.0",
+		"autoIncrementVersion": false,
+		"author": "",
+		"authorEmail": "",
+		"authorWebsite": "",
+		"appId": "",
+		"pixelRounding": false,
+		"zAxisScale": "regular",
+		"fov": 0.7853981633974483,
+		"useLoaderLayout": false,
+		"fullscreenMode": "letterbox-scale",
+		"fullscreenQuality": "high",
+		"viewportFit": "auto",
+		"backgroundColor": [
+			0,
+			0,
+			0,
+			0
+		],
+		"splashColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"useThemeColor": false,
+		"themeColor": [
+			1,
+			1,
+			1,
+			0
+		],
+		"orientations": "landscape",
+		"webgpu": "auto",
+		"multitexturing": "auto",
+		"gpuPreference": "high-performance",
+		"framerateMode": "vsync",
+		"fixedFramerate": 30,
+		"sampling": "nearest",
+		"downscaling": "medium",
+		"renderingMode": "auto",
+		"anisotropicFiltering": "auto",
+		"zNear": 1,
+		"zFar": 10000,
+		"maxSpriteSheetSize": 2048,
+		"loaderStyle": "splash",
+		"preloadSounds": true,
+		"uidAllocationMode": "increment",
+		"cordovaiOSScheme": "app",
+		"cordovaAndroidScheme": "https",
+		"exportFileStructure": "folders",
+		"scriptsType": "module"
+	},
+	"viewportWidth": 1376,
+	"viewportHeight": 770,
+	"firstLayout": "Bedroom"
+}

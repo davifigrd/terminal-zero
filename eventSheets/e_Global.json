@@ -1,0 +1,66 @@
+{
+	"name": "e_Global",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "next_spawn",
+			"type": "string",
+			"initialValue": "player",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 246553800202294
+		},
+		{
+			"eventType": "comment",
+			"text": "\"player\" → spawn padrão do layout (spawn_player)\n\n\"pc\" → spawn na frente do computador (spawn_pc)\n\n\"bed\" → spawn na frente da cama (spawn_bed)\n\n\"door\" → spawn na frente da porta (spawn_door)"
+		},
+		{
+			"eventType": "variable",
+			"name": "state",
+			"type": "string",
+			"initialValue": "play",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 186669399497043
+		},
+		{
+			"eventType": "comment",
+			"text": "\"play\" → base do jogo\n\n\"loading\" → início do loading\n\n\"menu\" → se realmente usa menu\n\n\"notepad\" → cursor some enquanto está digitando"
+		},
+		{
+			"eventType": "comment",
+			"text": ""
+		},
+		{
+			"eventType": "variable",
+			"name": "ui",
+			"type": "string",
+			"initialValue": "none",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 386064140445853
+		},
+		{
+			"eventType": "comment",
+			"text": "\"none\" → nenhuma interface aberta\n\n\"bed\" → menu de escolha da cama (sim / não)\n\n\"door\" → menu de escolha da porta (sim / não)\n\n\"pc\" → interface do computador (cursor ativo na tela)"
+		},
+		{
+			"eventType": "comment",
+			"text": ""
+		},
+		{
+			"eventType": "variable",
+			"name": "typing",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 993619029241525
+		}
+	],
+	"sid": 629785159147306
+}

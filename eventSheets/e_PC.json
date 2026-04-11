@@ -1,0 +1,885 @@
+{
+	"name": "e_PC",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LAYOUT_PC",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 403290985757268,
+							"parameters": {
+								"key": 27
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 838931955026561,
+							"parameters": {
+								"variable": "ui",
+								"value": "\"none\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 227196720393114,
+							"parameters": {
+								"variable": "state",
+								"value": "\"play\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 590196942820428,
+							"parameters": {
+								"variable": "next_spawn",
+								"value": "\"pc\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 665046104564450,
+							"parameters": {
+								"layout": "Bedroom"
+							}
+						}
+					],
+					"sid": 863464235752037
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 772813737097228
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "error",
+							"sid": 132131151383886,
+							"parameters": {
+								"x": "monitor_ui.X - monitor_ui.Height / 2\r\n",
+								"y": "monitor_ui.Y - monitor_ui.Height / 2"
+							}
+						}
+					],
+					"sid": 752598267597823
+				}
+			],
+			"sid": 836311122198057
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "MOUSE_UI",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "script",
+					"language": "javascript",
+					"script": [
+						"document.body.style.cursor = 'none';"
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 331374519691016
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "cursor",
+							"sid": 324228360580399,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 660602604433284,
+							"parameters": {
+								"x": "clamp(Mouse.X, monitor_ui.X - monitor_ui.Width/2, monitor_ui.X + monitor_ui.Width/2)",
+								"y": "clamp(Mouse.Y, monitor_ui.Y - monitor_ui.Width/2, monitor_ui.Y + monitor_ui.Height/2)"
+							}
+						}
+					],
+					"sid": 578218751742037
+				}
+			],
+			"sid": 718158074042355
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "ICON",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ICON_HITBOX",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 495110398033414,
+									"parameters": {
+										"object": "bin_hitbox"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "bin_hitbox",
+									"sid": 783235245274732,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 684976785391517
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 260640092201581
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "bin_hitbox",
+									"sid": 969892530262573,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 978580683068435
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 507111229229492,
+									"parameters": {
+										"object": "paste_hitbox"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "paste_hitbox",
+									"sid": 536506094662592,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 324140698626098
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 935549574560814
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "paste_hitbox",
+									"sid": 791983032895304,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 988297590922204
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 901100556203826,
+									"parameters": {
+										"object": "vscode_hitbox"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "vscode_hitbox",
+									"sid": 565629211139704,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 632083434897545
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 177293912378984
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "vscode_hitbox",
+									"sid": 124037876146518,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 699665643157902
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 470035397557018,
+									"parameters": {
+										"object": "teams_hitbox"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "teams_hitbox",
+									"sid": 203072087015645,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 423282576080702
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 867655639521361
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "teams_hitbox",
+									"sid": 567836237495534,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 880364820566446
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 482099708457436,
+									"parameters": {
+										"object": "devcpp_hitbox"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "devcpp_hitbox",
+									"sid": 889895966585630,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 152345487820679
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 712097442964606
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "devcpp_hitbox",
+									"sid": 181538294439982,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 292185581394714
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 685291377967622,
+									"parameters": {
+										"object": "notes_hitbox"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "notes_hitbox",
+									"sid": 586028555386831,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 648644103181510
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 381608676768121
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "notes_hitbox",
+									"sid": 387899062828869,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 777733911975423
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 333657931861107,
+									"parameters": {
+										"object": "deepweb_hitbox"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "deepweb_hitbox",
+									"sid": 450083887894104,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 337023349780957
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 488442997798536
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "deepweb_hitbox",
+									"sid": 668844293759645,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 956364984429766
+						}
+					],
+					"sid": 796488146324123
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ICON_DOUBLE_CLICK",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 101802313952348,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "double-clicked"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 562442231326846,
+									"parameters": {
+										"object": "bin_hitbox"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "error",
+									"sid": 222629445615856,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 744867423331602
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 469527759713127,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "double-clicked"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 756534546241728,
+									"parameters": {
+										"object": "paste_hitbox"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 707385326755485
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 810004886650055,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "double-clicked"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 122318115049861,
+									"parameters": {
+										"object": "vscode_hitbox"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 980157313781877
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 159449333169673,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "double-clicked"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 968797544496413,
+									"parameters": {
+										"object": "teams_hitbox"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 962141572508515
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 246280945744219,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "double-clicked"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 204008601120125,
+									"parameters": {
+										"object": "devcpp_hitbox"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 190528010223710
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 339037279537669,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "double-clicked"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 361370895215487,
+									"parameters": {
+										"object": "notes_hitbox"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 405414212065123
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 239371981399607,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "double-clicked"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 962833779371812,
+									"parameters": {
+										"object": "deepweb_hitbox"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 792765233605896
+						}
+					],
+					"sid": 956343029591917
+				}
+			],
+			"sid": 777237517511304
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "TEXT_INPUT",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 141136962273409,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "double-clicked"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "cursor",
+							"sid": 966297185341540,
+							"parameters": {
+								"object": "notes_hitbox"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 643416069409735,
+							"parameters": {
+								"variable": "state",
+								"value": "\"notepad\""
+							}
+						}
+					],
+					"sid": 733259606288252,
+					"children": [
+						{
+							"eventType": "script",
+							"language": "javascript",
+							"script": [
+								"document.body.style.cursor = 'default';"
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-clicked",
+							"objectClass": "textInput",
+							"sid": 257623401638049
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 120578074511498,
+							"parameters": {
+								"variable": "typing",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 355379052017431,
+					"children": [
+						{
+							"eventType": "script",
+							"language": "javascript",
+							"script": [
+								"document.body.style.cursor = 'text';"
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 814808582928432,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 919936507920104,
+							"parameters": {
+								"variable": "typing",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "is-focused",
+							"objectClass": "textInput",
+							"sid": 580157094567519,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 745738464413293,
+							"parameters": {
+								"variable": "typing",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 817478185512667,
+					"children": [
+						{
+							"eventType": "script",
+							"language": "javascript",
+							"script": [
+								"document.body.style.cursor = 'default';"
+							]
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 523533211247160,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"notepad\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 232610218256824,
+							"parameters": {
+								"variable": "typing",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "cursor",
+							"sid": 901384539581656,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 273948657465996,
+							"parameters": {
+								"x": "clamp(Mouse.X, monitor_ui.X - monitor_ui.Width/2, monitor_ui.X + monitor_ui.Width/2)",
+								"y": "clamp(Mouse.Y, monitor_ui.Y - monitor_ui.Width/2, monitor_ui.Y + monitor_ui.Height/2)"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "notepad",
+							"sid": 659882150442489,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "textInput",
+							"sid": 601784219273681,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "textInput",
+							"sid": 713944409450445,
+							"parameters": {
+								"property-name": "\"background\"",
+								"value": "\"transparent\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "textInput",
+							"sid": 302483674296852,
+							"parameters": {
+								"property-name": "\"border\"",
+								"value": "\"none\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "textInput",
+							"sid": 356174597776430,
+							"parameters": {
+								"property-name": "\"outline\"",
+								"value": "\"none\""
+							}
+						}
+					],
+					"sid": 196498579501633
+				}
+			],
+			"sid": 258119051985718
+		}
+	],
+	"sid": 473027040696098
+}
