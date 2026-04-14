@@ -463,6 +463,51 @@
 								}
 							],
 							"sid": 956364984429766
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 336809690070582,
+									"parameters": {
+										"object": "terminalzero_hitbox"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "terminalzero_hitbox",
+									"sid": 546862737048817,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 428416068837821
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 322081572012542
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "terminalzero_hitbox",
+									"sid": 318159408098807,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 837542542196445
 						}
 					],
 					"sid": 796488146324123

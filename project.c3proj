@@ -9,7 +9,7 @@
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Keyboard",
+			"name": "Teclado",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -30,35 +30,35 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Text",
+			"name": "Texto",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TextBox",
-			"name": "Text input",
+			"name": "Entrada de texto",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "DragnDrop",
-			"name": "Drag & Drop",
+			"name": "Arrastar & Soltar",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direction",
+			"name": "8 Direções",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Solid",
+			"name": "Sólido",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -109,7 +109,8 @@
 									"Teams_",
 									"DevCPP_",
 									"VSCode_",
-									"DeepWeb_"
+									"DeepWeb_",
+									"TerminalZero_"
 								],
 								"subfolders": [],
 								"name": "icon_text"
@@ -122,7 +123,8 @@
 									"teams",
 									"devcpp",
 									"vscode",
-									"deepweb"
+									"deepweb",
+									"terminalzero"
 								],
 								"subfolders": [
 									{
@@ -133,7 +135,8 @@
 											"teams_hitbox",
 											"devcpp_hitbox",
 											"notes_hitbox",
-											"deepweb_hitbox"
+											"deepweb_hitbox",
+											"terminalzero_hitbox"
 										],
 										"subfolders": [],
 										"name": "icon_hitbox"
@@ -249,6 +252,12 @@
 			"members": [
 				"notepad",
 				"textInput"
+			]
+		},
+		{
+			"members": [
+				"terminalzero",
+				"TerminalZero_"
 			]
 		}
 	],
