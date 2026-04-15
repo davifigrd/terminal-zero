@@ -9,7 +9,7 @@
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Teclado",
+			"name": "Keyboard",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -30,35 +30,35 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Texto",
+			"name": "Text",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TextBox",
-			"name": "Entrada de texto",
+			"name": "Text input",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "DragnDrop",
-			"name": "Arrastar & Soltar",
+			"name": "Drag & Drop",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direções",
+			"name": "8 Direction",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Sólido",
+			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -124,7 +124,6 @@
 									"devcpp",
 									"vscode",
 									"deepweb",
-									"Sprite",
 									"terminalzero"
 								],
 								"subfolders": [
@@ -154,37 +153,6 @@
 								],
 								"subfolders": [],
 								"name": "window"
-							},
-							{
-								"items": [],
-								"subfolders": [
-									{
-										"items": [
-											"fase1_bg"
-										],
-										"subfolders": [
-											{
-												"items": [
-													"btn_1energia",
-													"btn_2rede",
-													"btn_3terminal",
-													"btn_4seguranca"
-												],
-												"subfolders": [],
-												"name": "Fase1_hitbox"
-											},
-											{
-												"items": [
-													"erro"
-												],
-												"subfolders": [],
-												"name": "icon"
-											}
-										],
-										"name": "Fase1"
-									}
-								],
-								"name": "Fases"
 							}
 						],
 						"name": "UI"
@@ -223,6 +191,37 @@
 				],
 				"subfolders": [],
 				"name": "Input"
+			},
+			{
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"lvl1_layout"
+						],
+						"subfolders": [
+							{
+								"items": [
+									"energia",
+									"rede",
+									"terminal",
+									"segurança"
+								],
+								"subfolders": [],
+								"name": "lvl1_hitbox"
+							},
+							{
+								"items": [
+									"erro"
+								],
+								"subfolders": [],
+								"name": "icon"
+							}
+						],
+						"name": "Level 1"
+					}
+				],
+				"name": "Levels"
 			}
 		]
 	},
@@ -301,7 +300,8 @@
 		"items": [
 			"Bedroom",
 			"Menu",
-			"PC"
+			"PC",
+			"Level"
 		],
 		"subfolders": []
 	},
@@ -310,7 +310,8 @@
 			"e_Bedroom",
 			"e_PC",
 			"e_Menu",
-			"e_Global"
+			"e_Global",
+			"e_Level"
 		],
 		"subfolders": []
 	},

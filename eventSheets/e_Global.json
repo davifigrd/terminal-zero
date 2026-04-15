@@ -2,6 +2,10 @@
 	"name": "e_Global",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "SPAWN"
+		},
+		{
 			"eventType": "variable",
 			"name": "next_spawn",
 			"type": "string",
@@ -14,6 +18,10 @@
 		{
 			"eventType": "comment",
 			"text": "\"player\" → spawn padrão do layout (spawn_player)\n\n\"pc\" → spawn na frente do computador (spawn_pc)\n\n\"bed\" → spawn na frente da cama (spawn_bed)\n\n\"door\" → spawn na frente da porta (spawn_door)"
+		},
+		{
+			"eventType": "comment",
+			"text": "ESTADO DO JOGO"
 		},
 		{
 			"eventType": "variable",
@@ -31,7 +39,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": ""
+			"text": "INTERFACE"
 		},
 		{
 			"eventType": "variable",
@@ -49,17 +57,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": ""
-		},
-		{
-			"eventType": "variable",
-			"name": "typing",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 993619029241525
+			"text": "FASES"
 		},
 		{
 			"eventType": "variable",
@@ -70,6 +68,30 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 984477013683130
+		},
+		{
+			"eventType": "variable",
+			"name": "fase1",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 555127847270691
+		},
+		{
+			"eventType": "comment",
+			"text": ""
+		},
+		{
+			"eventType": "variable",
+			"name": "typing",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 328960319409534
 		}
 	],
 	"sid": 629785159147306

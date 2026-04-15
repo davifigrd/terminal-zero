@@ -1,0 +1,332 @@
+{
+	"name": "e_Level",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LAYOUT_LEVEL_1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 298406674471768,
+							"parameters": {
+								"key": 27
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 959501684258877,
+							"parameters": {
+								"variable": "ui",
+								"value": "\"pc\""
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 367051352004056,
+							"parameters": {
+								"layout": "PC"
+							}
+						}
+					],
+					"sid": 659358131251559
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 608046782902104
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "error",
+							"sid": 684841593399048,
+							"parameters": {
+								"x": "monitor_ui.X - monitor_ui.Height / 2\r\n",
+								"y": "monitor_ui.Y - monitor_ui.Height / 2"
+							}
+						}
+					],
+					"sid": 340140074120633
+				}
+			],
+			"sid": 684291975884339
+		},
+		{
+			"eventType": "group",
+			"disabled": true,
+			"title": "LEVEL 1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 972577792676887,
+							"parameters": {
+								"variable": "ui",
+								"comparison": 0,
+								"value": "\"terminal\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 595293056621955,
+							"parameters": {
+								"variable": "fase",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl1_layout",
+							"sid": 783289550692099,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "energia",
+							"sid": 265612327067553,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "rede",
+							"sid": 439960124411362,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "terminal",
+							"sid": 649704143887082,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "segurança",
+							"sid": 532467301434835,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 723426202008825,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 883349823542370,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "terminal"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 300565494744060,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 284684182209685
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "erro",
+							"sid": 752188018051733,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 484234847523959,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						}
+					],
+					"sid": 729868062601257,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 510989413524782,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "energia"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 257951745175927,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 244767867206841
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "erro",
+									"sid": 625999456975909,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 381052192678089,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 332195373845474,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 637468023710960,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "rede"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 116629234633943,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 591628025500439
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "erro",
+									"sid": 489226740335207,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 191498724412361,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 556929526456420,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 411835242266467,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "segurança"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "erro",
+							"sid": 877794393867597,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 423396033957149,
+					"disabled": true
+				}
+			],
+			"sid": 974040319329397
+		}
+	],
+	"sid": 856370518782902
+}
