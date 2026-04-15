@@ -1113,7 +1113,39 @@
 									}
 								}
 							],
-							"sid": 415632337682683
+							"sid": 415632337682683,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 831943703214418
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "erro",
+											"sid": 273858610281689,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 679281874916660,
+											"parameters": {
+												"seconds": "0.5",
+												"use-timescale": true
+											}
+										}
+									],
+									"sid": 926417975178291
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -1150,7 +1182,39 @@
 									}
 								}
 							],
-							"sid": 627554865480265
+							"sid": 627554865480265,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 201267549466027
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "erro",
+											"sid": 610466039730360,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 312195920761102,
+											"parameters": {
+												"seconds": "0.5",
+												"use-timescale": true
+											}
+										}
+									],
+									"sid": 708728192926054
+								}
+							]
 						},
 						{
 							"eventType": "block",
@@ -1187,7 +1251,39 @@
 									}
 								}
 							],
-							"sid": 552929695978978
+							"sid": 552929695978978,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 869579511112988
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "erro",
+											"sid": 434273940338414,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 798119978670181,
+											"parameters": {
+												"seconds": "0.5",
+												"use-timescale": true
+											}
+										}
+									],
+									"sid": 409083974454711
+								}
+							]
 						},
 						{
 							"eventType": "block",
