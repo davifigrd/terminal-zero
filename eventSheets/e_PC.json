@@ -2,6 +2,16 @@
 	"name": "e_PC",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "passo",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Variavel para criar a primeira fase",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 156051114553008
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "e_Global"
 		},
@@ -928,7 +938,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "Fase1",
+			"title": "FASE1",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -936,23 +946,38 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 770992335912135
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 257672383667112,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "btn_1energia"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "btn_1energia",
+							"sid": 143763269078856,
+							"parameters": {
+								"instance-variable": "ordem",
+								"comparison": 0,
+								"value": "passo + 1"
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-group-active",
+							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 730540244458111,
+							"sid": 757542908886128,
 							"parameters": {
-								"group-name": "\"Fase1\"",
-								"state": "deactivated"
+								"variable": "passo",
+								"value": "passo + 1"
 							}
 						}
 					],
-					"sid": 254907867181376
+					"sid": 142087332319148
 				},
 				{
 					"eventType": "block",
@@ -960,19 +985,292 @@
 						{
 							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 653994179944367,
+							"sid": 435836248691430,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
-								"object-clicked": "terminalzero_hitbox"
+								"object-clicked": "btn_2rede"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "btn_2rede",
+							"sid": 235986674801265,
+							"parameters": {
+								"instance-variable": "ordem",
+								"comparison": 0,
+								"value": "passo + 1"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 243117451897695
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 263281448931642,
+							"parameters": {
+								"variable": "passo",
+								"value": "passo + 1"
+							}
+						}
+					],
+					"sid": 143477840890438
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 354060508993525,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "btn_3terminal"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "btn_3terminal",
+							"sid": 893912798581162,
+							"parameters": {
+								"instance-variable": "ordem",
+								"comparison": 0,
+								"value": "passo + 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 505419586977160,
+							"parameters": {
+								"variable": "passo",
+								"value": "passo + 1"
+							}
+						}
+					],
+					"sid": 204299632199997
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 642832682929154,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "btn_4seguranca"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "btn_4seguranca",
+							"sid": 513439017566094,
+							"parameters": {
+								"instance-variable": "ordem",
+								"comparison": 0,
+								"value": "passo + 1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 692607462222714,
+							"parameters": {
+								"variable": "passo",
+								"value": "passo + 1"
+							}
+						}
+					],
+					"sid": 562817787810414
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 674474911453867,
+							"parameters": {
+								"variable": "passo",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 161077651394889
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "fase1_bg",
+							"sid": 924141074480812,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "btn_1energia",
+							"sid": 191481252158543,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "btn_2rede",
+							"sid": 718258380109488,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "btn_3terminal",
+							"sid": 707916538593325,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "btn_4seguranca",
+							"sid": 957709419850998,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 706496340072162,
+							"parameters": {
+								"group-name": "\"FASE1\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 163225608418085,
+							"parameters": {
+								"variable": "passo",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 653644664346121
 				}
 			],
-			"sid": 183824544645301
+			"sid": 554683438570355
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 979667411395255
+				}
+			],
+			"actions": [
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 987627834821908,
+					"parameters": {
+						"group-name": "\"FASE1\"",
+						"state": "deactivated"
+					}
+				}
+			],
+			"sid": 749323677698993
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 528132817833449,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "double-clicked",
+						"object-clicked": "terminalzero_hitbox"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "fase1_bg",
+					"sid": 101946159807643,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btn_1energia",
+					"sid": 961509020085236,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btn_2rede",
+					"sid": 448658079113891,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btn_3terminal",
+					"sid": 140663485658818,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btn_4seguranca",
+					"sid": 488397754781751,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 794522964778186,
+					"parameters": {
+						"variable": "passo",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-group-active",
+					"objectClass": "System",
+					"sid": 145050571010934,
+					"parameters": {
+						"group-name": "\"FASE1\"",
+						"state": "activated"
+					}
+				}
+			],
+			"sid": 491813930398573
 		}
 	],
 	"sid": 473027040696098
