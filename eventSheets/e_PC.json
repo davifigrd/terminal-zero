@@ -924,6 +924,55 @@
 				}
 			],
 			"sid": 258119051985718
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Fase1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 770992335912135
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 730540244458111,
+							"parameters": {
+								"group-name": "\"Fase1\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 254907867181376
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 653994179944367,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "terminalzero_hitbox"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 243117451897695
+				}
+			],
+			"sid": 183824544645301
 		}
 	],
 	"sid": 473027040696098
