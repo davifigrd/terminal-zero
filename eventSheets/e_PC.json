@@ -3,13 +3,13 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "passo",
+			"name": "fase1_step",
 			"type": "number",
 			"initialValue": "0",
-			"comment": "Variavel para criar a primeira fase",
+			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 156051114553008
+			"sid": 482184714043780
 		},
 		{
 			"eventType": "include",
@@ -727,7 +727,44 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 585468869497480,
+									"parameters": {
+										"layer": "10",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 305717477249311,
+									"parameters": {
+										"variable": "fase",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 524870409566643,
+									"parameters": {
+										"variable": "ui",
+										"value": "\"terminal\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 667834733150931,
+									"parameters": {
+										"variable": "state",
+										"value": "\"play\""
+									}
+								}
+							],
 							"sid": 894676295569627
 						}
 					],
@@ -958,6 +995,231 @@
 				}
 			],
 			"sid": 258119051985718
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "FASES",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "FASE1",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 720171656575599,
+									"parameters": {
+										"variable": "ui",
+										"comparison": 0,
+										"value": "\"terminal\""
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 214333573409297,
+									"parameters": {
+										"variable": "fase",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "fase1_bg",
+									"sid": 868051517203567,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "btn_1energia",
+									"sid": 488486585012433,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "btn_2rede",
+									"sid": 999663580951951,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "btn_3terminal",
+									"sid": 816339222565311,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "btn_4seguranca",
+									"sid": 561501120972625,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 967994042527993
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 753736782736625,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "btn_3terminal"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 464161913143550,
+									"parameters": {
+										"variable": "fase1_step",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 467788101989186,
+									"parameters": {
+										"variable": "fase1_step",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 415632337682683
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 331044559429334,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "btn_1energia"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 607559235712911,
+									"parameters": {
+										"variable": "fase1_step",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 715509209371241,
+									"parameters": {
+										"variable": "fase1_step",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 627554865480265
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 226564007012958,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "btn_2rede"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 650558037698610,
+									"parameters": {
+										"variable": "fase1_step",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 390904013397315,
+									"parameters": {
+										"variable": "fase1_step",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 552929695978978
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 965935983568681,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "btn_4seguranca"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "erro",
+									"sid": 918722184522426,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 891963828646688
+						}
+					],
+					"sid": 517999628014471
+				}
+			],
+			"sid": 459324218175075
 		}
 	],
 	"sid": 473027040696098
