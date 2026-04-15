@@ -705,6 +705,30 @@
 							],
 							"actions": [],
 							"sid": 792765233605896
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 137971116088839,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "double-clicked"
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "cursor",
+									"sid": 862020352187563,
+									"parameters": {
+										"object": "terminalzero_hitbox"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 894676295569627
 						}
 					],
 					"sid": 956343029591917
@@ -1192,6 +1216,46 @@
 						"group-name": "\"FASE1\"",
 						"state": "deactivated"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "fase1_bg",
+					"sid": 312047051791563,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btn_1energia",
+					"sid": 547674189550462,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btn_2rede",
+					"sid": 495133705531403,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btn_3terminal",
+					"sid": 869350534555415,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "btn_4seguranca",
+					"sid": 253452515972532,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 749323677698993
@@ -1202,10 +1266,10 @@
 				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 528132817833449,
+					"sid": 815828533179236,
 					"parameters": {
 						"mouse-button": "left",
-						"click-type": "double-clicked",
+						"click-type": "clicked",
 						"object-clicked": "terminalzero_hitbox"
 					}
 				}
