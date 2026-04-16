@@ -57,6 +57,20 @@
 		},
 		{
 			"eventType": "comment",
+			"text": ""
+		},
+		{
+			"eventType": "variable",
+			"name": "typing",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 127805383003516
+		},
+		{
+			"eventType": "comment",
 			"text": "FASES"
 		},
 		{
@@ -80,18 +94,82 @@
 			"sid": 555127847270691
 		},
 		{
-			"eventType": "comment",
-			"text": ""
-		},
-		{
-			"eventType": "variable",
-			"name": "typing",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 328960319409534
+			"eventType": "group",
+			"disabled": false,
+			"title": "MOUSE",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "script",
+					"language": "javascript",
+					"script": [
+						"document.body.style.cursor = 'none';"
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 555408918001048,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "cursor",
+							"sid": 776045935150014,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 293572050356205
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 719775029473458,
+							"parameters": {
+								"variable": "state",
+								"comparison": 1,
+								"value": "\"play\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "cursor",
+							"sid": 949674151851476,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 564677134699116,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 962547311097994
+				}
+			],
+			"sid": 188836488104335
 		}
 	],
 	"sid": 629785159147306

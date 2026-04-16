@@ -13,95 +13,6 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "MOUSE",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "script",
-							"language": "javascript",
-							"script": [
-								"document.body.style.cursor = 'none';"
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 389872198488367,
-									"parameters": {
-										"variable": "state",
-										"comparison": 0,
-										"value": "\"play\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "cursor",
-									"sid": 776045935150014,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 293572050356205
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 133350337282164,
-									"parameters": {
-										"variable": "ui",
-										"comparison": 0,
-										"value": "\"bed\""
-									}
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 149796025281982,
-									"parameters": {
-										"variable": "ui",
-										"comparison": 0,
-										"value": "\"door\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "cursor",
-									"sid": 978450673381673,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "cursor",
-									"sid": 440064612247835,
-									"parameters": {
-										"x": "Mouse.X",
-										"y": "Mouse.Y"
-									}
-								}
-							],
-							"sid": 152909878061762,
-							"isOrBlock": true
-						}
-					],
-					"sid": 188836488104335
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -170,6 +81,15 @@
 							"parameters": {
 								"variable": "next_spawn",
 								"value": "\"player\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 179610392580966,
+							"parameters": {
+								"variable": "state",
+								"value": "\"play\""
 							}
 						}
 					],

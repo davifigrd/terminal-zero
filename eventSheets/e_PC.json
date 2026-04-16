@@ -81,59 +81,30 @@
 								"x": "monitor_ui.X - monitor_ui.Height / 2\r\n",
 								"y": "monitor_ui.Y - monitor_ui.Height / 2"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 239008608762994,
+							"parameters": {
+								"variable": "ui",
+								"value": "\"pc\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 677355315249924,
+							"parameters": {
+								"variable": "state",
+								"value": "\"pc\""
+							}
 						}
 					],
 					"sid": 752598267597823
 				}
 			],
 			"sid": 836311122198057
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "MOUSE_UI",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "script",
-					"language": "javascript",
-					"script": [
-						"document.body.style.cursor = 'none';"
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 331374519691016
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "cursor",
-							"sid": 324228360580399,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 660602604433284,
-							"parameters": {
-								"x": "clamp(Mouse.X, monitor_ui.X - monitor_ui.Width/2, monitor_ui.X + monitor_ui.Width/2)",
-								"y": "clamp(Mouse.Y, monitor_ui.Y - monitor_ui.Width/2, monitor_ui.Y + monitor_ui.Height/2)"
-							}
-						}
-					],
-					"sid": 578218751742037
-				}
-			],
-			"sid": 718158074042355
 		},
 		{
 			"eventType": "group",

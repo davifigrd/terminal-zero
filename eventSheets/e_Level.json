@@ -26,15 +26,6 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 959501684258877,
-							"parameters": {
-								"variable": "ui",
-								"value": "\"pc\""
-							}
-						},
-						{
 							"id": "go-to-layout",
 							"objectClass": "System",
 							"sid": 367051352004056,
@@ -46,33 +37,48 @@
 					"sid": 659358131251559
 				},
 				{
+					"eventType": "script",
+					"language": "javascript",
+					"script": [
+						"document.body.style.cursor = 'none';"
+					]
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-start-of-layout",
+							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 608046782902104
+							"sid": 733823493868092
 						}
 					],
 					"actions": [
 						{
-							"id": "set-position",
-							"objectClass": "error",
-							"sid": 684841593399048,
+							"id": "set-visible",
+							"objectClass": "cursor",
+							"sid": 223379597216323,
 							"parameters": {
-								"x": "monitor_ui.X - monitor_ui.Height / 2\r\n",
-								"y": "monitor_ui.Y - monitor_ui.Height / 2"
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 226494554365322,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.X"
 							}
 						}
 					],
-					"sid": 340140074120633
+					"sid": 560400503736207
 				}
 			],
 			"sid": 684291975884339
 		},
 		{
 			"eventType": "group",
-			"disabled": true,
+			"disabled": false,
 			"title": "LEVEL 1",
 			"description": "",
 			"isActiveOnStart": true,
@@ -80,16 +86,6 @@
 				{
 					"eventType": "block",
 					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 972577792676887,
-							"parameters": {
-								"variable": "ui",
-								"comparison": 0,
-								"value": "\"terminal\""
-							}
-						},
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
@@ -102,14 +98,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "lvl1_layout",
-							"sid": 783289550692099,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
 						{
 							"id": "set-visible",
 							"objectClass": "energia",
@@ -143,8 +131,7 @@
 							}
 						}
 					],
-					"sid": 723426202008825,
-					"disabled": true
+					"sid": 723426202008825
 				},
 				{
 					"eventType": "block",
@@ -160,24 +147,11 @@
 							}
 						}
 					],
-					"actions": [],
-					"sid": 300565494744060,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 284684182209685
-						}
-					],
 					"actions": [
 						{
 							"id": "set-visible",
 							"objectClass": "erro",
-							"sid": 752188018051733,
+							"sid": 875818275661954,
 							"parameters": {
 								"visibility": "visible"
 							}
@@ -185,15 +159,14 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 484234847523959,
+							"sid": 231957896597894,
 							"parameters": {
 								"seconds": "0.5",
 								"use-timescale": true
 							}
 						}
 					],
-					"sid": 729868062601257,
-					"disabled": true
+					"sid": 300565494744060
 				},
 				{
 					"eventType": "block",
@@ -210,41 +183,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 257951745175927,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 244767867206841
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "erro",
-									"sid": 625999456975909,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 381052192678089,
-									"parameters": {
-										"seconds": "0.5",
-										"use-timescale": true
-									}
-								}
-							],
-							"sid": 332195373845474,
-							"disabled": true
-						}
-					]
+					"sid": 257951745175927
 				},
 				{
 					"eventType": "block",
@@ -261,41 +200,7 @@
 						}
 					],
 					"actions": [],
-					"sid": 116629234633943,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 591628025500439
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "erro",
-									"sid": 489226740335207,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 191498724412361,
-									"parameters": {
-										"seconds": "0.5",
-										"use-timescale": true
-									}
-								}
-							],
-							"sid": 556929526456420,
-							"disabled": true
-						}
-					]
+					"sid": 116629234633943
 				},
 				{
 					"eventType": "block",
@@ -311,18 +216,8 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "erro",
-							"sid": 877794393867597,
-							"parameters": {
-								"visibility": "visible"
-							}
-						}
-					],
-					"sid": 423396033957149,
-					"disabled": true
+					"actions": [],
+					"sid": 423396033957149
 				}
 			],
 			"sid": 974040319329397
