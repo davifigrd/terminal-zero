@@ -769,17 +769,7 @@
 							"sid": 257623401638049
 						}
 					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 120578074511498,
-							"parameters": {
-								"variable": "typing",
-								"value": "1"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 355379052017431,
 					"children": [
 						{
@@ -804,33 +794,13 @@
 							}
 						},
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 919936507920104,
-							"parameters": {
-								"variable": "typing",
-								"comparison": 0,
-								"value": "1"
-							}
-						},
-						{
 							"id": "is-focused",
 							"objectClass": "textInput",
 							"sid": 580157094567519,
 							"isInverted": true
 						}
 					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 745738464413293,
-							"parameters": {
-								"variable": "typing",
-								"value": "0"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 817478185512667,
 					"children": [
 						{
@@ -853,16 +823,6 @@
 								"variable": "state",
 								"comparison": 0,
 								"value": "\"notepad\""
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 232610218256824,
-							"parameters": {
-								"variable": "typing",
-								"comparison": 0,
-								"value": "0"
 							}
 						}
 					],
