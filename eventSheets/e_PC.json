@@ -16,6 +16,37 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 984088868639301
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 692381397335658,
+							"parameters": {
+								"variable": "ui",
+								"value": "\"pc\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 772804127167466,
+							"parameters": {
+								"variable": "state",
+								"value": "\"none\""
+							}
+						}
+					],
+					"sid": 182041584091490
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
 							"sid": 403290985757268,
@@ -44,15 +75,6 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 590196942820428,
-							"parameters": {
-								"variable": "next_spawn",
-								"value": "\"pc\""
-							}
-						},
-						{
 							"id": "go-to-layout",
 							"objectClass": "System",
 							"sid": 665046104564450,
@@ -69,39 +91,21 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 772813737097228
+							"sid": 533400450836450
 						}
 					],
 					"actions": [
 						{
 							"id": "set-position",
-							"objectClass": "error",
-							"sid": 132131151383886,
+							"objectClass": "cursor",
+							"sid": 253163065312864,
 							"parameters": {
-								"x": "monitor_ui.X - monitor_ui.Height / 2\r\n",
-								"y": "monitor_ui.Y - monitor_ui.Height / 2"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 239008608762994,
-							"parameters": {
-								"variable": "ui",
-								"value": "\"pc\""
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 677355315249924,
-							"parameters": {
-								"variable": "state",
-								"value": "\"pc\""
+								"x": "clamp(Mouse.X, monitor_ui.BBoxLeft, monitor_ui.BBoxRight)",
+								"y": " clamp(Mouse.Y, monitor_ui.BBoxTop, monitor_ui.BBoxBottom)"
 							}
 						}
 					],
-					"sid": 752598267597823
+					"sid": 199899476505173
 				}
 			],
 			"sid": 836311122198057

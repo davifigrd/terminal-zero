@@ -36,15 +36,6 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 184529792393443,
-							"parameters": {
-								"variable": "ui",
-								"value": "\"pc\""
-							}
-						},
-						{
 							"id": "go-to-layout",
 							"objectClass": "System",
 							"sid": 488868701391182,
@@ -65,24 +56,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 893570838461918,
-							"parameters": {
-								"x": "next_spawn = \"pc\" ? spawn_pc.X:\nnext_spawn = \"bed\" ? spawn_bed.X:\r\nnext_spawn = \"door\" ? spawn_door.X:\r\nspawn_player.X\n",
-								"y": "next_spawn = \"pc\" ? spawn_pc.Y:\r\nnext_spawn = \"bed\" ? spawn_bed.Y:\r\nnext_spawn = \"door\" ? spawn_door.Y:\r\nspawn_player.Y"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 562958622221927,
-							"parameters": {
-								"variable": "next_spawn",
-								"value": "\"player\""
-							}
-						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
@@ -381,16 +354,6 @@
 									"parameters": {
 										"object": "bed"
 									}
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 443980677680715,
-									"parameters": {
-										"variable": "ui",
-										"comparison": 0,
-										"value": "\"none\""
-									}
 								}
 							],
 							"actions": [
@@ -474,9 +437,9 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 319847662625828,
+											"sid": 340552357485161,
 											"parameters": {
-												"variable": "ui",
+												"variable": "state",
 												"value": "\"none\""
 											}
 										},

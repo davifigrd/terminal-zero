@@ -6,20 +6,6 @@
 			"text": "SPAWN"
 		},
 		{
-			"eventType": "variable",
-			"name": "next_spawn",
-			"type": "string",
-			"initialValue": "player",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 246553800202294
-		},
-		{
-			"eventType": "comment",
-			"text": "\"player\" → spawn padrão do layout (spawn_player)\n\n\"pc\" → spawn na frente do computador (spawn_pc)\n\n\"bed\" → spawn na frente da cama (spawn_bed)\n\n\"door\" → spawn na frente da porta (spawn_door)"
-		},
-		{
 			"eventType": "comment",
 			"text": "ESTADO DO JOGO"
 		},
@@ -35,7 +21,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "\"play\" → base do jogo\n\n\"loading\" → início do loading\n\n\"menu\" → se realmente usa menu\n\n\"notepad\" → cursor some enquanto está digitando"
+			"text": "\"none\" → nenhum estado\n\n\"play\" → player consegue se movimentar\n\n\"loading\" → início do loading\n\n\"menu\" → se realmente usa menu\n\n\"notepad\" → cursor some enquanto está digitando"
 		},
 		{
 			"eventType": "comment",
