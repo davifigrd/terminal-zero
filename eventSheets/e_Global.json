@@ -2,14 +2,28 @@
 	"name": "e_Global",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "isPlayerMoving",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 643737789098758
+		},
+		{
 			"eventType": "comment",
-			"text": "ESTADO DO JOGO"
+			"text": "0 = desativada\n1 = ativada"
+		},
+		{
+			"eventType": "comment",
+			"text": ""
 		},
 		{
 			"eventType": "variable",
 			"name": "state",
 			"type": "string",
-			"initialValue": "play",
+			"initialValue": "none",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -17,29 +31,11 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "\"none\" → nenhum estado\n\n\"play\" → player consegue se movimentar\n\n\"loading\" → início do loading\n\n\"menu\" → se realmente usa menu\n\n\"notepad\" → cursor some enquanto está digitando"
+			"text": "\"none\" → nenhum estado\n\n\"pc\" → interface do computador\n\n\"bed\" → interação com a cama\n\n\"door\" → interação com a porta\n\n///\n\n\"loading\" → início do loading\n\n\"menu\" → se realmente usa menu\n\n\"notepad\" → cursor some enquanto está digitando"
 		},
 		{
 			"eventType": "comment",
 			"text": "INTERFACE"
-		},
-		{
-			"eventType": "variable",
-			"name": "ui",
-			"type": "string",
-			"initialValue": "none",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 386064140445853
-		},
-		{
-			"eventType": "comment",
-			"text": "\"none\" → nenhuma interface aberta\n\n\"bed\" → menu de escolha da cama (sim / não)\n\n\"door\" → menu de escolha da porta (sim / não)\n\n\"pc\" → interface do computador (cursor ativo na tela)"
-		},
-		{
-			"eventType": "comment",
-			"text": ""
 		},
 		{
 			"eventType": "group",
@@ -61,11 +57,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 555408918001048,
+							"sid": 326260200026048,
 							"parameters": {
-								"variable": "state",
+								"variable": "isPlayerMoving",
 								"comparison": 0,
-								"value": "\"play\""
+								"value": "1"
 							}
 						}
 					],
@@ -87,11 +83,31 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 719775029473458,
+							"sid": 922222683613518,
 							"parameters": {
 								"variable": "state",
-								"comparison": 1,
-								"value": "\"play\""
+								"comparison": 0,
+								"value": "\"bed\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 145510173710667,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"pc\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 258431234905175,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"door\""
 							}
 						}
 					],
@@ -114,7 +130,8 @@
 							}
 						}
 					],
-					"sid": 962547311097994
+					"sid": 962547311097994,
+					"isOrBlock": true
 				}
 			],
 			"sid": 188836488104335

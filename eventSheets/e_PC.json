@@ -25,23 +25,37 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 692381397335658,
-							"parameters": {
-								"variable": "ui",
-								"value": "\"pc\""
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 772804127167466,
+							"sid": 122408678980695,
 							"parameters": {
 								"variable": "state",
-								"value": "\"none\""
+								"value": "\"pc\""
 							}
 						}
 					],
 					"sid": 182041584091490
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 814912048787332
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 130313834462114,
+							"breakpoint": true,
+							"parameters": {
+								"x": "clamp(Mouse.X, screen.BBoxLeft, screen.BBoxRight)",
+								"y": " clamp(Mouse.Y, screen.BBoxTop, screen.BBoxBottom)"
+							}
+						}
+					],
+					"sid": 444748997900130
 				},
 				{
 					"eventType": "block",
@@ -56,15 +70,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 838931955026561,
-							"parameters": {
-								"variable": "ui",
-								"value": "\"none\""
-							}
-						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
@@ -84,28 +89,6 @@
 						}
 					],
 					"sid": 863464235752037
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 533400450836450
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 253163065312864,
-							"parameters": {
-								"x": "clamp(Mouse.X, monitor_ui.BBoxLeft, monitor_ui.BBoxRight)",
-								"y": " clamp(Mouse.Y, monitor_ui.BBoxTop, monitor_ui.BBoxBottom)"
-							}
-						}
-					],
-					"sid": 199899476505173
 				}
 			],
 			"sid": 836311122198057
@@ -515,16 +498,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "error",
-									"sid": 222629445615856,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 744867423331602
 						},
 						{
@@ -709,189 +683,6 @@
 				}
 			],
 			"sid": 777237517511304
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "TEXT_INPUT",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-click",
-							"objectClass": "Mouse",
-							"sid": 141136962273409,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "double-clicked"
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "cursor",
-							"sid": 966297185341540,
-							"parameters": {
-								"object": "notes_hitbox"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 643416069409735,
-							"parameters": {
-								"variable": "state",
-								"value": "\"notepad\""
-							}
-						}
-					],
-					"sid": 733259606288252,
-					"children": [
-						{
-							"eventType": "script",
-							"language": "javascript",
-							"script": [
-								"document.body.style.cursor = 'default';"
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-clicked",
-							"objectClass": "textInput",
-							"sid": 257623401638049
-						}
-					],
-					"actions": [],
-					"sid": 355379052017431,
-					"children": [
-						{
-							"eventType": "script",
-							"language": "javascript",
-							"script": [
-								"document.body.style.cursor = 'text';"
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-click",
-							"objectClass": "Mouse",
-							"sid": 814808582928432,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						},
-						{
-							"id": "is-focused",
-							"objectClass": "textInput",
-							"sid": 580157094567519,
-							"isInverted": true
-						}
-					],
-					"actions": [],
-					"sid": 817478185512667,
-					"children": [
-						{
-							"eventType": "script",
-							"language": "javascript",
-							"script": [
-								"document.body.style.cursor = 'default';"
-							]
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 523533211247160,
-							"parameters": {
-								"variable": "state",
-								"comparison": 0,
-								"value": "\"notepad\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "cursor",
-							"sid": 901384539581656,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 273948657465996,
-							"parameters": {
-								"x": "clamp(Mouse.X, monitor_ui.X - monitor_ui.Width/2, monitor_ui.X + monitor_ui.Width/2)",
-								"y": "clamp(Mouse.Y, monitor_ui.Y - monitor_ui.Width/2, monitor_ui.Y + monitor_ui.Height/2)"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "notepad",
-							"sid": 659882150442489,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "textInput",
-							"sid": 601784219273681,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-css-style",
-							"objectClass": "textInput",
-							"sid": 713944409450445,
-							"parameters": {
-								"property-name": "\"background\"",
-								"value": "\"transparent\""
-							}
-						},
-						{
-							"id": "set-css-style",
-							"objectClass": "textInput",
-							"sid": 302483674296852,
-							"parameters": {
-								"property-name": "\"border\"",
-								"value": "\"none\""
-							}
-						},
-						{
-							"id": "set-css-style",
-							"objectClass": "textInput",
-							"sid": 356174597776430,
-							"parameters": {
-								"property-name": "\"outline\"",
-								"value": "\"none\""
-							}
-						}
-					],
-					"sid": 196498579501633
-				}
-			],
-			"sid": 258119051985718
 		}
 	],
 	"sid": 473027040696098
