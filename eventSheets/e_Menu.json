@@ -19,6 +19,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 943045441613162,
+					"parameters": {
+						"variable": "state",
+						"value": "\"none\""
+					}
+				},
+				{
 					"id": "go-to-layout",
 					"objectClass": "System",
 					"sid": 663180880488996,
@@ -30,51 +39,26 @@
 			"sid": 741681002814680
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "MOUSE_2",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
+			"eventType": "block",
+			"conditions": [
 				{
-					"eventType": "script",
-					"language": "javascript",
-					"script": [
-						"document.body.style.cursor = 'none';"
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 715473170202701
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 968994483538900,
-							"parameters": {
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "cursor",
-							"sid": 682998898570557,
-							"parameters": {
-								"visibility": "visible"
-							}
-						}
-					],
-					"sid": 691771734454396
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 459738303648363
 				}
 			],
-			"sid": 985735730464380
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 516205647290104,
+					"parameters": {
+						"variable": "state",
+						"value": "\"cursor\""
+					}
+				}
+			],
+			"sid": 196960960886034
 		}
 	],
 	"sid": 156077853550034

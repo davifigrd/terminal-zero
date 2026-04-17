@@ -6,9 +6,13 @@
 			"includeSheet": "e_Global"
 		},
 		{
+			"eventType": "comment",
+			"text": "instruction_box\nWASD + setinhas para andar"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "LAYOUT_PC",
+			"title": "PC + BEDROOM",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -16,46 +20,28 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-start-of-layout",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 984088868639301
+							"sid": 231958032784329,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"none\""
+							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 122408678980695,
+							"sid": 272106452410049,
 							"parameters": {
 								"variable": "state",
 								"value": "\"pc\""
 							}
 						}
 					],
-					"sid": 182041584091490
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 814912048787332
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 130313834462114,
-							"breakpoint": true,
-							"parameters": {
-								"x": "clamp(Mouse.X, screen.BBoxLeft, screen.BBoxRight)",
-								"y": " clamp(Mouse.Y, screen.BBoxTop, screen.BBoxBottom)"
-							}
-						}
-					],
-					"sid": 444748997900130
+					"sid": 741880394947535
 				},
 				{
 					"eventType": "block",
@@ -63,7 +49,7 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 403290985757268,
+							"sid": 283640894833859,
 							"parameters": {
 								"key": 27
 							}
@@ -71,24 +57,15 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 227196720393114,
-							"parameters": {
-								"variable": "state",
-								"value": "\"play\""
-							}
-						},
-						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 665046104564450,
+							"sid": 206949780201233,
 							"parameters": {
 								"layout": "Bedroom"
 							}
 						}
 					],
-					"sid": 863464235752037
+					"sid": 897537008656469
 				}
 			],
 			"sid": 836311122198057

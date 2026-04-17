@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "isPlayerMoving",
 			"type": "number",
-			"initialValue": "0",
+			"initialValue": "1",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -13,11 +13,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "0 = desativada\n1 = ativada"
-		},
-		{
-			"eventType": "comment",
-			"text": ""
+			"text": "0 = movimentação desativada\n1 = movimentação ativada"
 		},
 		{
 			"eventType": "variable",
@@ -31,11 +27,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "\"none\" → nenhum estado\n\n\"pc\" → interface do computador\n\n\"bed\" → interação com a cama\n\n\"door\" → interação com a porta\n\n///\n\n\"loading\" → início do loading\n\n\"menu\" → se realmente usa menu\n\n\"notepad\" → cursor some enquanto está digitando"
-		},
-		{
-			"eventType": "comment",
-			"text": "INTERFACE"
+			"text": "\"none\" → nenhum estado\n\n\"cursor\" → interface do computador\n\n\"loading\" → tela de carregamento\n\n\"pc\" → interação com o pc"
 		},
 		{
 			"eventType": "group",
@@ -57,21 +49,22 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 326260200026048,
+							"sid": 411164612901218,
 							"parameters": {
-								"variable": "isPlayerMoving",
+								"variable": "state",
 								"comparison": 0,
-								"value": "1"
+								"value": "\"cursor\""
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
+							"id": "set-position",
 							"objectClass": "cursor",
-							"sid": 776045935150014,
+							"sid": 502664879088651,
 							"parameters": {
-								"visibility": "invisible"
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
 							}
 						}
 					],
@@ -83,58 +76,186 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 922222683613518,
-							"parameters": {
-								"variable": "state",
-								"comparison": 0,
-								"value": "\"bed\""
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 145510173710667,
+							"sid": 154599901659618,
 							"parameters": {
 								"variable": "state",
 								"comparison": 0,
 								"value": "\"pc\""
 							}
-						},
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 611679261355746,
+							"parameters": {
+								"x": "clamp(Mouse.X, screen.BBoxLeft, screen.BBoxRight)",
+								"y": " clamp(Mouse.Y, screen.BBoxTop, screen.BBoxBottom)"
+							}
+						}
+					],
+					"sid": 636558288791622
+				},
+				{
+					"eventType": "block",
+					"conditions": [
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 258431234905175,
+							"sid": 567148526117353,
 							"parameters": {
 								"variable": "state",
 								"comparison": 0,
-								"value": "\"door\""
+								"value": "\"none\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 277370155596814,
+							"parameters": {
+								"x": "clamp(Mouse.X, cursor_block.BBoxLeft + cursor.Width, cursor_block.BBoxRight - cursor.Width)",
+								"y": "clamp(Mouse.Y, cursor_block.BBoxTop + cursor.Height, cursor_block.BBoxBottom - cursor.Height)\r\n"
+							}
+						}
+					],
+					"sid": 939283556860912
+				}
+			],
+			"sid": 188836488104335
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LOADING_SCREEN",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 845148135946104,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"loading\""
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-visible",
-							"objectClass": "cursor",
-							"sid": 949674151851476,
+							"objectClass": "fade",
+							"sid": 818399870936642,
 							"parameters": {
 								"visibility": "visible"
 							}
 						},
 						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 564677134699116,
+							"id": "start-fade",
+							"objectClass": "fade",
+							"sid": 338573162375289,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 216029971403470
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fade-in-finished",
+							"objectClass": "fade",
+							"sid": 394485842540313,
+							"behaviorType": "Fade"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "loading",
+							"sid": 977964278958912,
 							"parameters": {
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 962547311097994,
-					"isOrBlock": true
+					"sid": 111536980821458
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-wait-finished",
+							"objectClass": "fade",
+							"sid": 646048237003994,
+							"behaviorType": "Fade"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "loading",
+							"sid": 163226036545783,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 616623536463119,
+							"parameters": {
+								"variable": "isPlayerMoving",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 251089652381120,
+							"parameters": {
+								"variable": "state",
+								"value": "\"none\""
+							}
+						}
+					],
+					"sid": 606160979204414
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fade-out-finished",
+							"objectClass": "fade",
+							"sid": 896290283777961,
+							"behaviorType": "Fade"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "fade",
+							"sid": 421461059485996,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 676037598111565
 				}
 			],
-			"sid": 188836488104335
+			"sid": 871001986837841
+		},
+		{
+			"eventType": "comment",
+			"text": "ARRUMAR\n\n1. mouse parar de funcionar quando nao esta sendo usado\n2. loading começando sozinho (ou quando passa o mouse no sim"
 		}
 	],
 	"sid": 629785159147306

@@ -43,6 +43,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Fade",
+			"name": "Fade",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -51,25 +58,8 @@
 	],
 	"uniqueId": "infcrcpul51",
 	"objectTypes": {
-		"items": [
-			"esc"
-		],
+		"items": [],
 		"subfolders": [
-			{
-				"items": [
-					"limit",
-					"pc",
-					"bed",
-					"door",
-					"spawn_bed",
-					"spawn_door",
-					"sleep",
-					"spawn_pc",
-					"spawn_player"
-				],
-				"subfolders": [],
-				"name": "Hit box"
-			},
 			{
 				"items": [
 					"bedroom",
@@ -79,14 +69,26 @@
 					{
 						"items": [
 							"nao",
-							"loading",
-							"fade",
 							"sim",
 							"choosing_save",
 							"choosing_menu"
 						],
 						"subfolders": [],
 						"name": "Choosing"
+					},
+					{
+						"items": [
+							"limit",
+							"pc",
+							"bed",
+							"door",
+							"spawn_bed",
+							"spawn_door",
+							"spawn_pc",
+							"spawn_player"
+						],
+						"subfolders": [],
+						"name": "Hit Box"
 					}
 				],
 				"name": "Bedroom"
@@ -94,7 +96,8 @@
 			{
 				"items": [
 					"PC_screen",
-					"post_it"
+					"post_it",
+					"esc"
 				],
 				"subfolders": [
 					{
@@ -167,7 +170,8 @@
 				"items": [
 					"cursor",
 					"Mouse",
-					"Keyboard"
+					"Keyboard",
+					"cursor_block"
 				],
 				"subfolders": [],
 				"name": "Input"
@@ -194,7 +198,7 @@
 									"energia",
 									"rede",
 									"terminal",
-									"Sprite"
+									"segurança"
 								],
 								"subfolders": [],
 								"name": "lvl1_button"
@@ -204,6 +208,14 @@
 					}
 				],
 				"name": "Levels"
+			},
+			{
+				"items": [
+					"fade",
+					"loading"
+				],
+				"subfolders": [],
+				"name": "Loading Screen"
 			}
 		]
 	},
@@ -222,49 +234,57 @@
 		{
 			"members": [
 				"devcpp",
-				"DevCPP_"
+				"DevCPP_",
+				"devcpp_hitbox"
 			]
 		},
 		{
 			"members": [
 				"teams",
-				"Teams_"
+				"Teams_",
+				"teams_hitbox"
 			]
 		},
 		{
 			"members": [
 				"BlocoDeNotas",
-				"notes"
+				"notes",
+				"notes_hitbox"
 			]
 		},
 		{
 			"members": [
 				"ExercíciosNícollas",
-				"paste"
+				"paste",
+				"paste_hitbox"
 			]
 		},
 		{
 			"members": [
 				"bin",
+				"bin_hitbox",
 				"Lixeira"
 			]
 		},
 		{
 			"members": [
 				"vscode",
-				"VSCode_"
+				"VSCode_",
+				"vscode_hitbox"
 			]
 		},
 		{
 			"members": [
 				"deepweb",
-				"DeepWeb_"
+				"DeepWeb_",
+				"deepweb_hitbox"
 			]
 		},
 		{
 			"members": [
 				"terminalzero",
-				"TerminalZero_"
+				"TerminalZero_",
+				"terminalzero_hitbox"
 			]
 		}
 	],
@@ -411,7 +431,7 @@
 		"zAxisScale": "regular",
 		"fov": 0.7853981633974483,
 		"useLoaderLayout": false,
-		"fullscreenMode": "letterbox-scale",
+		"fullscreenMode": "scale-inner",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
 		"backgroundColor": [
