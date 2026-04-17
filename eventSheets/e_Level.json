@@ -89,32 +89,8 @@
 					"actions": [
 						{
 							"id": "set-visible",
-							"objectClass": "energia",
+							"objectClass": "energia_hitbox",
 							"sid": 265612327067553,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "rede",
-							"sid": 439960124411362,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "terminal",
-							"sid": 649704143887082,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "segurança",
-							"sid": 532467301434835,
 							"parameters": {
 								"visibility": "visible"
 							}
@@ -124,18 +100,7 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 883349823542370,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "terminal"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"id": "set-visible",
@@ -167,46 +132,12 @@
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
-								"object-clicked": "energia"
+								"object-clicked": "energia_hitbox"
 							}
 						}
 					],
 					"actions": [],
 					"sid": 257951745175927
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 637468023710960,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "rede"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 116629234633943
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 411835242266467,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "segurança"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 423396033957149
 				}
 			],
 			"sid": 974040319329397
