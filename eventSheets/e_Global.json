@@ -103,7 +103,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 567148526117353,
+							"sid": 443089310632702,
 							"parameters": {
 								"variable": "state",
 								"comparison": 0,
@@ -113,16 +113,15 @@
 					],
 					"actions": [
 						{
-							"id": "set-position",
+							"id": "set-visible",
 							"objectClass": "cursor",
-							"sid": 277370155596814,
+							"sid": 948026321078632,
 							"parameters": {
-								"x": "clamp(Mouse.X, cursor_block.BBoxLeft + cursor.Width, cursor_block.BBoxRight - cursor.Width)",
-								"y": "clamp(Mouse.Y, cursor_block.BBoxTop + cursor.Height, cursor_block.BBoxBottom - cursor.Height)\r\n"
+								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 939283556860912
+					"sid": 651773216246603
 				}
 			],
 			"sid": 188836488104335

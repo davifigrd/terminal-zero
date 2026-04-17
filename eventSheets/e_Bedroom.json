@@ -473,19 +473,29 @@
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "nao",
-							"sid": 818939684788046,
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 141974030937415,
 							"parameters": {
-								"visibility": "visible"
+								"object-to-create": "sim",
+								"layer": "3",
+								"x": "642.541561",
+								"y": "417.434585",
+								"create-hierarchy": false,
+								"template-name": "\"sim\""
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "sim",
-							"sid": 965152843135780,
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 890292213631495,
 							"parameters": {
-								"visibility": "visible"
+								"object-to-create": "sim",
+								"layer": "3",
+								"x": "642.541561",
+								"y": "417.434585",
+								"create-hierarchy": false,
+								"template-name": "\"sim\""
 							}
 						},
 						{
@@ -540,20 +550,14 @@
 									}
 								},
 								{
-									"id": "set-visible",
+									"id": "destroy",
 									"objectClass": "sim",
-									"sid": 119132733570524,
-									"parameters": {
-										"visibility": "invisible"
-									}
+									"sid": 410907985060716
 								},
 								{
-									"id": "set-visible",
+									"id": "destroy",
 									"objectClass": "nao",
-									"sid": 409347625843547,
-									"parameters": {
-										"visibility": "invisible"
-									}
+									"sid": 326072654587147
 								}
 							],
 							"sid": 988052589616671
