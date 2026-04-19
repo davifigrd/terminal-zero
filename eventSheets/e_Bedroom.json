@@ -328,107 +328,6 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "CHOOSING_BED_CURSOR_OVER",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 321958438171842,
-							"parameters": {
-								"object": "sim"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "sim",
-							"sid": 214901558778483,
-							"parameters": {
-								"frame-number": "0"
-							}
-						}
-					],
-					"sid": 960610961779738
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 149011021110388
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "sim",
-							"sid": 567485713491639,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 761236655720660
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 702522922033961,
-							"parameters": {
-								"object": "nao"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "nao",
-							"sid": 105718938170867,
-							"parameters": {
-								"frame-number": "0"
-							}
-						}
-					],
-					"sid": 266151409145068,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 765624324430621
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "nao",
-							"sid": 379975503540306,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 106938481553529
-				}
-			],
-			"sid": 236634220741844
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
 			"title": "CHOOSING_BED",
 			"description": "",
 			"isActiveOnStart": true,
@@ -488,14 +387,14 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 891031780303914,
+							"sid": 539843766719759,
 							"parameters": {
 								"object-to-create": "nao",
 								"layer": "3",
 								"x": "816.464009",
 								"y": " 417.148603",
 								"create-hierarchy": false,
-								"template-name": "\"sim\""
+								"template-name": "\"nao\""
 							}
 						},
 						{
@@ -634,6 +533,107 @@
 						}
 					],
 					"sid": 160309006389624
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "CHOOSING_BED_CURSOR_OVER",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 182563874123043,
+									"parameters": {
+										"object": "sim"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "sim",
+									"sid": 276246351404825,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 641032757104589
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 346347122393429
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "sim",
+									"sid": 804726997850800,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 123703965889098
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 154865062333950,
+									"parameters": {
+										"object": "nao"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "nao",
+									"sid": 492981875577802,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 983810357520766,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 425574668888818
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "nao",
+									"sid": 549985615619498,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 861673322221058
+						}
+					],
+					"sid": 388388415409700
 				}
 			],
 			"sid": 791127864616959
