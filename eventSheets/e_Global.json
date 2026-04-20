@@ -94,6 +94,14 @@
 					],
 					"actions": [
 						{
+							"id": "set-visible",
+							"objectClass": "cursor",
+							"sid": 460753842443548,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "set-position",
 							"objectClass": "cursor",
 							"sid": 611679261355746,
@@ -157,112 +165,92 @@
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "fade",
-							"sid": 818399870936642,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
 							"id": "start-fade",
 							"objectClass": "fade",
-							"sid": 338573162375289,
+							"sid": 129192239668836,
 							"behaviorType": "Fade"
-						}
-					],
-					"sid": 216029971403470
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-fade-in-finished",
-							"objectClass": "fade",
-							"sid": 394485842540313,
-							"behaviorType": "Fade"
-						}
-					],
-					"actions": [
+						},
 						{
 							"id": "set-visible",
-							"objectClass": "loading",
-							"sid": 977964278958912,
+							"objectClass": "fade",
+							"sid": 664340221860954,
 							"parameters": {
 								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 111536980821458
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+					"sid": 216029971403470,
+					"children": [
 						{
-							"id": "on-wait-finished",
-							"objectClass": "fade",
-							"sid": 646048237003994,
-							"behaviorType": "Fade"
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "loading",
-							"sid": 163226036545783,
-							"parameters": {
-								"visibility": "invisible"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-fade-in-finished",
+									"objectClass": "fade",
+									"sid": 757548686936201,
+									"behaviorType": "Fade"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "loading",
+									"sid": 455935048529938,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 653984326645375
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 616623536463119,
-							"parameters": {
-								"variable": "isPlayerMoving",
-								"value": "1"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-wait-finished",
+									"objectClass": "fade",
+									"sid": 466358976159302,
+									"behaviorType": "Fade"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "loading",
+									"sid": 285567635906515,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 777541187316702
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 251089652381120,
-							"parameters": {
-								"variable": "state",
-								"value": "\"none\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-fade-out-finished",
+									"objectClass": "fade",
+									"sid": 807173659330370,
+									"behaviorType": "Fade"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "fade",
+									"sid": 755110123001882,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 339501108892375
 						}
-					],
-					"sid": 606160979204414
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-fade-out-finished",
-							"objectClass": "fade",
-							"sid": 896290283777961,
-							"behaviorType": "Fade"
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "fade",
-							"sid": 421461059485996,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 676037598111565
+					]
 				}
 			],
 			"sid": 871001986837841
-		},
-		{
-			"eventType": "comment",
-			"text": "ARRUMAR\n\n1. mouse parar de funcionar quando nao esta sendo usado\n2. loading começando sozinho (ou quando passa o mouse no sim\n3. TELEPORTAR O SIM E NÃO DE FORA DA TELA PRA DENTRO DA TELA"
 		}
 	],
 	"sid": 629785159147306
