@@ -8,8 +8,22 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "LocalStorage",
+			"name": "Local storage",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -50,6 +64,20 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Flash",
+			"name": "Flash",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
+			"id": "Tween",
+			"name": "Tween",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -62,7 +90,7 @@
 		"subfolders": [
 			{
 				"items": [
-					"bedroom",
+					"bedroom_backgroound",
 					"player"
 				],
 				"subfolders": [
@@ -89,6 +117,16 @@
 						],
 						"subfolders": [],
 						"name": "Hit Box"
+					},
+					{
+						"items": [
+							"WASD",
+							"mouse_sign",
+							"save_sign",
+							"menu_sign"
+						],
+						"subfolders": [],
+						"name": "Sign"
 					}
 				],
 				"name": "Bedroom"
@@ -178,7 +216,8 @@
 					"cursor",
 					"Mouse",
 					"Keyboard",
-					"cursor_pointer"
+					"cursor_pointer",
+					"LocalStorage"
 				],
 				"subfolders": [],
 				"name": "Input"
@@ -189,13 +228,16 @@
 					{
 						"items": [
 							"lvl1_layout",
-							"erro"
+							"erro",
+							"geniusArray"
 						],
 						"subfolders": [
 							{
 								"items": [
 									"energia_hitbox",
-									"energia_hitbox2"
+									"rede_hitbox",
+									"terminal_hitbox",
+									"segurança_hitbox"
 								],
 								"subfolders": [],
 								"name": "lvl1_hitbox"
@@ -474,5 +516,5 @@
 	},
 	"viewportWidth": 1376,
 	"viewportHeight": 770,
-	"firstLayout": "Bedroom"
+	"firstLayout": "Menu"
 }

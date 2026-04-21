@@ -8,7 +8,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "LAYOUT_LEVEL_1",
+			"title": "LAYOUT_LEVEL1",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -16,9 +16,49 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 914026903214216
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 751710765549440,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"default\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 365534301767307,
+							"parameters": {
+								"variable": "isPlayerMoving",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 107415694688385,
+							"parameters": {
+								"variable": "state",
+								"value": "\"default\""
+							}
+						}
+					],
+					"sid": 115924634441152
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 298406674471768,
+							"sid": 765790684827463,
 							"parameters": {
 								"key": 27
 							}
@@ -28,16 +68,16 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 367051352004056,
+							"sid": 450558482008854,
 							"parameters": {
 								"layout": "PC"
 							}
 						}
 					],
-					"sid": 659358131251559
+					"sid": 735588293634645
 				}
 			],
-			"sid": 684291975884339,
+			"sid": 326488705644963,
 			"text-color": [
 				0,
 				0,
@@ -52,6 +92,66 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "O sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n1. ENERGIA\n2. REDE\n3. TERMINAL\n4. SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \nEnergia (0) → Rede (1) → Segurança (3) → Terminal (2) → Rede (1) → Segurança (3)"
+		},
+		{
+			"eventType": "variable",
+			"name": "input_block",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 167618323159742
+		},
+		{
+			"eventType": "comment",
+			"text": "true = bloqueia clicks\nfalse = jogador pode clickar"
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl1_i",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 733321612460562
+		},
+		{
+			"eventType": "comment",
+			"text": "Guardar posição atual do array"
+		},
+		{
+			"eventType": "variable",
+			"name": "step_show",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 580062622317798
+		},
+		{
+			"eventType": "comment",
+			"text": "Exibição da sequência:\n0 → Energia (0)\n1 → Rede (1)\n2 → Segurança (3)\n3 → Terminal (2)\n4 → Rede (1) \n5 → Segurança (3)\n6 → Final da sequência"
+		},
+		{
+			"eventType": "variable",
+			"name": "step_player",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 223307519639342
+		},
+		{
+			"eventType": "comment",
+			"text": "Progresso do jogador:\n0 → Energia (0)\n1 → Rede (1)\n2 → Segurança (3)\n3 → Terminal (2)\n4 → Rede (1) \n5 → Segurança (3)\n6 → Final da sequência"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "LEVEL 1",
@@ -60,62 +160,288 @@
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [],
-					"actions": [
+					"conditions": [
 						{
-							"id": "set-visible",
-							"objectClass": "energia_hitbox",
-							"sid": 265612327067553,
-							"parameters": {
-								"visibility": "visible"
-							}
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 671888990044126
 						}
 					],
-					"sid": 723426202008825
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "erro",
-							"sid": 875818275661954,
+							"id": "set-at-xyz",
+							"objectClass": "geniusArray",
+							"sid": 788232837889105,
 							"parameters": {
-								"visibility": "visible"
+								"x": "0",
+								"y": "0",
+								"z": "0",
+								"value": "0"
 							}
 						},
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 231957896597894,
+							"id": "set-at-xyz",
+							"objectClass": "geniusArray",
+							"sid": 494933220634090,
 							"parameters": {
-								"seconds": "0.5",
-								"use-timescale": true
+								"x": "1",
+								"y": "0",
+								"z": "0",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "geniusArray",
+							"sid": 681715175541196,
+							"parameters": {
+								"x": "2",
+								"y": "0",
+								"z": "0",
+								"value": "3"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "geniusArray",
+							"sid": 328067931567203,
+							"parameters": {
+								"x": "3",
+								"y": "0",
+								"z": "0",
+								"value": "2"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "geniusArray",
+							"sid": 509493375678362,
+							"parameters": {
+								"x": "4",
+								"y": "0",
+								"z": "0",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-at-xyz",
+							"objectClass": "geniusArray",
+							"sid": 554240462797229,
+							"parameters": {
+								"x": "5",
+								"y": "0",
+								"z": "0",
+								"value": "3"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 883797976520385,
+							"parameters": {
+								"variable": "step_show",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 188962526206040,
+							"parameters": {
+								"variable": "input_block",
+								"value": "true"
 							}
 						}
 					],
-					"sid": 300565494744060
+					"sid": 230320226956714
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 510989413524782,
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 489095175730622,
 							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "energia_hitbox"
+								"variable": "input_block"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 703180678078789,
+							"parameters": {
+								"variable": "step_show",
+								"comparison": 2,
+								"value": "6"
+							}
+						},
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 990900269298855,
+							"parameters": {
+								"interval-seconds": "0.6"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 257951745175927
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 627215844937351,
+							"parameters": {
+								"variable": "lvl1_i",
+								"value": "step_show"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 590191953546947,
+							"parameters": {
+								"variable": "step_show",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 578902113286292,
+							"parameters": {
+								"variable": "step_show",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 413455946765529
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 405642768462527,
+							"parameters": {
+								"count": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 943548058391029,
+							"parameters": {
+								"variable": "lvl1_i",
+								"value": "loopindex"
+							}
+						}
+					],
+					"sid": 221556698879033,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 248059175544126,
+							"parameters": {
+								"first-value": "geniusArray.At(lvl1_i, 0, 0)",
+								"comparison": 0,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "energia_hitbox",
+							"sid": 905576148493200,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "rede_hitbox",
+							"sid": 282809906468093,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "terminal_hitbox",
+							"sid": 532501982789670,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "segurança_hitbox",
+							"sid": 347127289224040,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 336781113428210,
+							"parameters": {
+								"variable": "step_show",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 997306339365579
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 517374957392362,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 819764573241453,
+							"parameters": {
+								"variable": "input_block",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 825142780727940
 				}
 			],
-			"sid": 974040319329397,
+			"sid": 784277736121495,
 			"text-color": [
 				0,
 				0,
@@ -128,6 +454,22 @@
 				0,
 				1
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "erro",
+					"sid": 635540689330853,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 952555020491807,
+			"disabled": true
 		}
 	],
 	"sid": 856370518782902

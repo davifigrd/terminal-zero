@@ -4,20 +4,12 @@
 	"sid": 928407905484939,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
-	"instanceVariables": [
-		{
-			"name": "id",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 398066577033771
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [
 		{
-			"behaviorId": "solid",
-			"name": "Solid",
-			"sid": 528310674185380
+			"behaviorId": "Flash",
+			"name": "Flash",
+			"sid": 407306077763821
 		}
 	],
 	"effectTypes": [],
@@ -50,15 +42,41 @@
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
+					},
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 6798878,
+						"collisionPoly": {
+							"points": [
+								1,
+								1,
+								0,
+								1,
+								0,
+								0,
+								1,
+								0
+							]
+						},
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
 					}
 				],
 				"sid": 787095244714602,
 				"name": "Animation 1",
-				"isLooping": false,
+				"isLooping": true,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 2
 			}
 		],
 		"subfolders": []

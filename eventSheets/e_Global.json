@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "1. correções dormir (tela de loading)\n2. porta funcional (ir para o menu)\n3. botões selecionados menu\n4. cursor pointer ao selecionar botão\n5. botões clickáveis menu\n6. variável cursor\n7. efeito double click abrir icon (pc)"
+			"text": "REALIZADO\n1. correções dormir (tela de loading)\n2. porta funcional (ir para o menu)\n3. botões selecionados menu\n4. cursor pointer ao selecionar botão\n5. botões clickáveis menu\n6. variável cursor\n7. efeito double click abrir icon (pc)\n8. tween\n9. local storage\n10. sinalizadores de identificação\n11. level skip Num Lock\n12. criando fase 1 (genius)"
 		},
 		{
 			"eventType": "variable",
@@ -410,6 +410,254 @@
 			"background-color": [
 				0,
 				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL_SKIP",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "FASE 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 355593773395718,
+							"parameters": {
+								"key": 97
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 721076375863866,
+							"parameters": {
+								"layout": "Level1"
+							}
+						}
+					],
+					"sid": 335484241787027
+				},
+				{
+					"eventType": "comment",
+					"text": "FASE 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 492309338113335,
+							"parameters": {
+								"key": 98
+							}
+						}
+					],
+					"actions": [],
+					"sid": 646644022491167
+				},
+				{
+					"eventType": "comment",
+					"text": "FASE 3"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 640112240422695,
+							"parameters": {
+								"key": 99
+							}
+						}
+					],
+					"actions": [],
+					"sid": 262563570858200
+				},
+				{
+					"eventType": "comment",
+					"text": "FASE 4"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 416800914132523,
+							"parameters": {
+								"key": 100
+							}
+						}
+					],
+					"actions": [],
+					"sid": 835460875629318
+				},
+				{
+					"eventType": "comment",
+					"text": "FASE 5"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 938567952514316,
+							"parameters": {
+								"key": 101
+							}
+						}
+					],
+					"actions": [],
+					"sid": 750989065300571
+				},
+				{
+					"eventType": "comment",
+					"text": "FASE 6"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 994022054950718,
+							"parameters": {
+								"key": 102
+							}
+						}
+					],
+					"actions": [],
+					"sid": 202401631994773
+				},
+				{
+					"eventType": "comment",
+					"text": "FASE 7"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 212830861839403,
+							"parameters": {
+								"key": 103
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 900210635704124,
+							"parameters": {
+								"layout": "Menu"
+							}
+						}
+					],
+					"sid": 440338967474107
+				},
+				{
+					"eventType": "comment",
+					"text": "FASE 8"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 966265971875523,
+							"parameters": {
+								"key": 104
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 690246691194618,
+							"parameters": {
+								"layout": "Bedroom"
+							}
+						}
+					],
+					"sid": 306232225464972
+				},
+				{
+					"eventType": "comment",
+					"text": "FASE 9"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 717379920806146,
+							"parameters": {
+								"key": 105
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 772491376431483,
+							"parameters": {
+								"layout": "PC"
+							}
+						}
+					],
+					"sid": 641166877730152
+				},
+				{
+					"eventType": "comment",
+					"text": "FASE 10"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 578814456816666,
+							"parameters": {
+								"key": 107
+							}
+						}
+					],
+					"actions": [],
+					"sid": 631854536699507
+				}
+			],
+			"sid": 639576217351447,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.4823529411764706,
 				0,
 				1
 			]

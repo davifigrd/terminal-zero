@@ -2,12 +2,12 @@
 	"name": "Bedroom",
 	"layers": [
 		{
-			"name": "bedroom",
+			"name": "bedroom_background",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "bedroom",
+					"type": "bedroom_backgroound",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1232,10 +1232,165 @@
 			"global": false
 		},
 		{
-			"name": "instruction_box",
+			"name": "interface",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [],
+			"instances": [
+				{
+					"type": "WASD",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": false,
+						"live-preview": false
+					},
+					"uid": 73,
+					"sid": 437242146709239,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"Tween": {
+							"properties": {
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 437242146709239,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1550,
+						"y": 675,
+						"width": 279,
+						"height": 151,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							0.7
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "mouse_sign",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 76,
+					"sid": 513253664661811,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 513253664661811,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 319,
+						"y": 465,
+						"width": 70,
+						"height": 70,
+						"originX": 0.5,
+						"originY": 0.4983277591973244,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "save_sign",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 77,
+					"sid": 577155911902743,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 577155911902743,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 907,
+						"y": 232,
+						"width": 70,
+						"height": 70,
+						"originX": 0.5,
+						"originY": 0.49833890746934223,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "menu_sign",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 78,
+					"sid": 373796963685242,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 373796963685242,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1299,
+						"y": 282,
+						"width": 70,
+						"height": 70,
+						"originX": 0.5,
+						"originY": 0.4966722221600803,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				}
+			],
 			"sid": 648000715493954,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -1393,7 +1548,20 @@
 		"subfolders": []
 	},
 	"sid": 124969316791264,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "geniusArray",
+			"properties": {
+				"width": 6,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 82,
+			"sid": 187065202076481,
+			"tags": "",
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 1376,
 	"height": 770,
