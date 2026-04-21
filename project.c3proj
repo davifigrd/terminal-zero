@@ -157,20 +157,28 @@
 			},
 			{
 				"items": [
-					"menu_background",
-					"jogar",
-					"controles",
-					"creditos",
-					"sair"
+					"menu_background"
 				],
-				"subfolders": [],
+				"subfolders": [
+					{
+						"items": [
+							"jogar_button",
+							"controles_button",
+							"creditos_button",
+							"sair_button"
+						],
+						"subfolders": [],
+						"name": "button_hitbox"
+					}
+				],
 				"name": "Menu"
 			},
 			{
 				"items": [
 					"cursor",
 					"Mouse",
-					"Keyboard"
+					"Keyboard",
+					"cursor_pointer"
 				],
 				"subfolders": [],
 				"name": "Input"
@@ -221,15 +229,6 @@
 	"functionsName": "Funções",
 	"autosaveData": null,
 	"containers": [
-		{
-			"members": [
-				"controles",
-				"creditos",
-				"jogar",
-				"menu_background",
-				"sair"
-			]
-		},
 		{
 			"members": [
 				"devcpp",
@@ -296,7 +295,7 @@
 			"Bedroom",
 			"Menu",
 			"PC",
-			"Level"
+			"Level1"
 		],
 		"subfolders": []
 	},
@@ -306,7 +305,7 @@
 			"e_PC",
 			"e_Menu",
 			"e_Global",
-			"e_Level"
+			"e_Level1"
 		],
 		"subfolders": []
 	},

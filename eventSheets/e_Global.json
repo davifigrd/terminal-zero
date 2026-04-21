@@ -2,10 +2,28 @@
 	"name": "e_Global",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "1. correções dormir (tela de loading)\n2. porta funcional (ir para o menu)\n3. botões selecionados menu\n4. cursor pointer ao selecionar botão\n5. botões clickáveis menu\n6. variável cursor\n7. efeito double click abrir icon (pc)"
+		},
+		{
+			"eventType": "variable",
+			"name": "cursor",
+			"type": "string",
+			"initialValue": "none",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 475234509137949
+		},
+		{
+			"eventType": "comment",
+			"text": "\"none\" → nenhum estado\n\"default\" = cursor padrão\n\"pointer\" = cursor pointer"
+		},
+		{
 			"eventType": "variable",
 			"name": "isPlayerMoving",
 			"type": "number",
-			"initialValue": "1",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -27,7 +45,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "\"none\" → nenhum estado\n\n\"cursor\" → interface do computador\n\n\"loading\" → tela de carregamento\n\n\"pc\" → interação com o pc"
+			"text": "\"none\" → nenhum estado\n\n\"loading\" → tela de carregamento\n\n\"pc\" → interação com o pc\n\n\"bed\" → interação com a cama\n\n\"door\" → interação com a porta"
 		},
 		{
 			"eventType": "group",
@@ -44,103 +62,241 @@
 					]
 				},
 				{
-					"eventType": "block",
-					"conditions": [
+					"eventType": "group",
+					"disabled": false,
+					"title": "MOUSE_CURSOR_DEFAULT",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 411164612901218,
-							"parameters": {
-								"variable": "state",
-								"comparison": 0,
-								"value": "\"cursor\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "cursor",
-							"sid": 593128578959501,
-							"parameters": {
-								"visibility": "visible"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 739263053232149,
+									"parameters": {
+										"variable": "cursor",
+										"comparison": 0,
+										"value": "\"default\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "cursor",
+									"sid": 731064302517661,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 420446674759919,
+									"parameters": {
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 753893765070803,
+							"isOrBlock": true
 						},
 						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 502664879088651,
-							"parameters": {
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
-							}
-						}
-					],
-					"sid": 293572050356205
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 154599901659618,
-							"parameters": {
-								"variable": "state",
-								"comparison": 0,
-								"value": "\"pc\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "cursor",
-							"sid": 460753842443548,
-							"parameters": {
-								"visibility": "visible"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 715311638461410,
+									"parameters": {
+										"variable": "state",
+										"comparison": 0,
+										"value": "\"pc\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "cursor",
+									"sid": 978313598347261,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 215725825341483,
+									"parameters": {
+										"x": "clamp(Mouse.X, screen.BBoxLeft, screen.BBoxRight)",
+										"y": " clamp(Mouse.Y, screen.BBoxTop, screen.BBoxBottom)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 148347553627412,
+									"parameters": {
+										"variable": "isPlayerMoving",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 403265789572143
 						},
 						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 611679261355746,
-							"parameters": {
-								"x": "clamp(Mouse.X, screen.BBoxLeft, screen.BBoxRight)",
-								"y": " clamp(Mouse.Y, screen.BBoxTop, screen.BBoxBottom)"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 342089942040575,
+									"parameters": {
+										"variable": "cursor",
+										"comparison": 0,
+										"value": "\"none\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "cursor",
+									"sid": 736616164609408,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 403878535672730
 						}
 					],
-					"sid": 636558288791622
+					"sid": 635073606266766,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.26666666666666666,
+						1,
+						0,
+						1
+					]
 				},
 				{
-					"eventType": "block",
-					"conditions": [
+					"eventType": "group",
+					"disabled": false,
+					"title": "MOUSE_CURSOR_POINTER",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 443089310632702,
-							"parameters": {
-								"variable": "state",
-								"comparison": 0,
-								"value": "\"none\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 604337830793482,
+									"parameters": {
+										"variable": "cursor",
+										"comparison": 0,
+										"value": "\"pointer\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 456366792454102,
+									"parameters": {
+										"x": "-300",
+										"y": "100"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "cursor_pointer",
+									"sid": 315512608122519,
+									"parameters": {
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 586418767680967
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 335834357321085,
+									"parameters": {
+										"variable": "cursor",
+										"comparison": 0,
+										"value": "\"default\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "cursor_pointer",
+									"sid": 500440384321158,
+									"parameters": {
+										"x": "-300",
+										"y": "100"
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 164412640869026,
+									"parameters": {
+										"x": "Mouse.X",
+										"y": "Mouse.Y"
+									}
+								}
+							],
+							"sid": 493883481779688
 						}
 					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "cursor",
-							"sid": 948026321078632,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
+					"sid": 632540672378682,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
 					],
-					"sid": 651773216246603
+					"background-color": [
+						0.26666666666666666,
+						1,
+						0,
+						1
+					]
 				}
 			],
-			"sid": 188836488104335
+			"sid": 188836488104335,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.26666666666666666,
+				1,
+				0,
+				1
+			]
 		},
 		{
 			"eventType": "group",
@@ -250,7 +406,13 @@
 					]
 				}
 			],
-			"sid": 871001986837841
+			"sid": 871001986837841,
+			"background-color": [
+				0,
+				0,
+				0,
+				1
+			]
 		}
 	],
 	"sid": 629785159147306

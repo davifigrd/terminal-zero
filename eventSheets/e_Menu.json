@@ -6,59 +6,475 @@
 			"includeSheet": "e_Global"
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "MENU_LAYOUT",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 191512073289267,
-					"parameters": {
-						"key": 27
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 173688785022011
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 912997151250834,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"default\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 609715290639329,
+							"parameters": {
+								"variable": "isPlayerMoving",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 688905163496385,
+							"parameters": {
+								"variable": "state",
+								"value": "\"menu\""
+							}
+						}
+					],
+					"sid": 994649201546090
 				}
 			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 943045441613162,
-					"parameters": {
-						"variable": "state",
-						"value": "\"none\""
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 663180880488996,
-					"parameters": {
-						"layout": "Bedroom"
-					}
-				}
+			"sid": 188182124183528,
+			"text-color": [
+				0,
+				0,
+				0,
+				1
 			],
-			"sid": 741681002814680
+			"background-color": [
+				0,
+				0.06666666666666667,
+				1,
+				1
+			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "BUTTON",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 459738303648363
+					"eventType": "group",
+					"disabled": false,
+					"title": "BUTTON_HITBOX",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 193232553539008,
+									"parameters": {
+										"object": "jogar_button"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "jogar_button",
+									"sid": 540845185681648,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 698890365923063,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"pointer\""
+									}
+								}
+							],
+							"sid": 644818223975657
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 327657432410559,
+									"parameters": {
+										"object": "controles_button"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "controles_button",
+									"sid": 458251068497508,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 410514442756828,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"pointer\""
+									}
+								}
+							],
+							"sid": 968277633804584
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 216053257582421,
+									"parameters": {
+										"object": "creditos_button"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "creditos_button",
+									"sid": 639285831689595,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 837038189359351,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"pointer\""
+									}
+								}
+							],
+							"sid": 848845312660723
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 609889213622417,
+									"parameters": {
+										"object": "sair_button"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "sair_button",
+									"sid": 868444574904775,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 685617131953915,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"pointer\""
+									}
+								}
+							],
+							"sid": 487614590055209
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 286432800238802,
+									"parameters": {
+										"object": "jogar_button"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 746912682491366,
+									"parameters": {
+										"object": "controles_button"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 249061732129195,
+									"parameters": {
+										"object": "creditos_button"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 656302924608350,
+									"parameters": {
+										"object": "sair_button"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "jogar_button",
+									"sid": 779843688828108,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "controles_button",
+									"sid": 641427508635398,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "creditos_button",
+									"sid": 324046201384895,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "sair_button",
+									"sid": 375067440808877,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 888911372486899,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"default\""
+									}
+								}
+							],
+							"sid": 138452079558789
+						}
+					],
+					"sid": 127229060303687,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.26666666666666666,
+						1,
+						0,
+						1
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor pointer hover"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 704308397390948,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 644357355512206,
+							"parameters": {
+								"object": "jogar_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "jogar_button",
+							"sid": 155435942277746,
+							"parameters": {
+								"x": "-300",
+								"y": "100"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 422757773139459,
+							"parameters": {
+								"layout": "Bedroom"
+							}
+						}
+					],
+					"sid": 292958970000620
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 142128836528539,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 912201826330666,
+							"parameters": {
+								"object": "controles_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "controles_button",
+							"sid": 530001331371849,
+							"parameters": {
+								"x": "-300",
+								"y": "100"
+							}
+						}
+					],
+					"sid": 235486726258676
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 335050739071984,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 366414568089072,
+							"parameters": {
+								"object": "creditos_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "creditos_button",
+							"sid": 325891381434343,
+							"parameters": {
+								"x": "-300",
+								"y": "100"
+							}
+						}
+					],
+					"sid": 950691347197643
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 100774068149831,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 318791502453565,
+							"parameters": {
+								"object": "sair_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sair_button",
+							"sid": 931058863037146,
+							"parameters": {
+								"x": "-300",
+								"y": "100"
+							}
+						}
+					],
+					"sid": 668983782789309
 				}
 			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 516205647290104,
-					"parameters": {
-						"variable": "state",
-						"value": "\"cursor\""
-					}
-				}
+			"sid": 765357355527044,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
 			],
-			"sid": 196960960886034
+			"background-color": [
+				0.26666666666666666,
+				1,
+				0,
+				1
+			]
 		}
 	],
 	"sid": 156077853550034
