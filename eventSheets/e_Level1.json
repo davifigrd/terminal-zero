@@ -6,92 +6,6 @@
 			"includeSheet": "e_Global"
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "LAYOUT_LEVEL1",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 914026903214216
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 751710765549440,
-							"parameters": {
-								"variable": "cursor",
-								"value": "\"default\""
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 365534301767307,
-							"parameters": {
-								"variable": "isPlayerMoving",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 107415694688385,
-							"parameters": {
-								"variable": "state",
-								"value": "\"default\""
-							}
-						}
-					],
-					"sid": 115924634441152
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 765790684827463,
-							"parameters": {
-								"key": 27
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 450558482008854,
-							"parameters": {
-								"layout": "PC"
-							}
-						}
-					],
-					"sid": 735588293634645
-				}
-			],
-			"sid": 326488705644963,
-			"text-color": [
-				0,
-				0,
-				0,
-				0
-			],
-			"background-color": [
-				1,
-				0.3686274509803922,
-				0,
-				1
-			]
-		},
-		{
 			"eventType": "comment",
 			"text": "O sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n1. ENERGIA\n2. REDE\n3. TERMINAL\n4. SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \nEnergia (0) → Rede (1) → Segurança (3) → Terminal (2) → Rede (1) → Segurança (3)"
 		},
@@ -111,7 +25,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "lvl1_i",
+			"name": "i",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -121,7 +35,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Guardar posição atual do array"
+			"text": "Iteração para guardar posição atual do array"
 		},
 		{
 			"eventType": "variable",
@@ -150,6 +64,92 @@
 		{
 			"eventType": "comment",
 			"text": "Progresso do jogador:\n0 → Energia (0)\n1 → Rede (1)\n2 → Segurança (3)\n3 → Terminal (2)\n4 → Rede (1) \n5 → Segurança (3)\n6 → Final da sequência"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LAYOUT_LEVEL1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 299800429212500
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 273176518413574,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"default\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 953366947412624,
+							"parameters": {
+								"variable": "isPlayerMoving",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 839404247834159,
+							"parameters": {
+								"variable": "state",
+								"value": "\"lvl2\""
+							}
+						}
+					],
+					"sid": 526423278216114
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 947839380849605,
+							"parameters": {
+								"key": 27
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 841741202720203,
+							"parameters": {
+								"layout": "PC"
+							}
+						}
+					],
+					"sid": 858110850025684
+				}
+			],
+			"sid": 733224759804904,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.3686274509803922,
+				0,
+				1
+			]
 		},
 		{
 			"eventType": "group",
@@ -291,7 +291,7 @@
 							"objectClass": "System",
 							"sid": 627215844937351,
 							"parameters": {
-								"variable": "lvl1_i",
+								"variable": "i",
 								"value": "step_show"
 							}
 						},
@@ -334,7 +334,7 @@
 							"objectClass": "System",
 							"sid": 943548058391029,
 							"parameters": {
-								"variable": "lvl1_i",
+								"variable": "i",
 								"value": "loopindex"
 							}
 						}
@@ -350,7 +350,7 @@
 							"objectClass": "System",
 							"sid": 248059175544126,
 							"parameters": {
-								"first-value": "geniusArray.At(lvl1_i, 0, 0)",
+								"first-value": "geniusArray.At(i, 0, 0)",
 								"comparison": 0,
 								"second-value": "0"
 							}
@@ -456,6 +456,10 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "SEQUÊNCIA ERRADA"
+		},
+		{
 			"eventType": "block",
 			"conditions": [],
 			"actions": [
@@ -468,8 +472,7 @@
 					}
 				}
 			],
-			"sid": 952555020491807,
-			"disabled": true
+			"sid": 952555020491807
 		}
 	],
 	"sid": 856370518782902

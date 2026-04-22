@@ -202,6 +202,164 @@
 						}
 					],
 					"sid": 677054397532905
+				},
+				{
+					"eventType": "comment",
+					"text": "Level"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 858206255600069,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"lvl1\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 220200898018187,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"lvl2\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 260332645996496,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"lvl3\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 145325166035746,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"lvl4\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 520946454762262,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"lvl5\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 589456915775593,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"lvl6\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 478673488121048,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"lvl7\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 910073387389089,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"lvl8\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 297138835183981,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"lvl9\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 249329304605261,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"lvl10\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "player",
+							"sid": 230329374262326,
+							"parameters": {
+								"x": "spawn_bed.X",
+								"y": "spawn_bed.Y"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 924636763604629,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"none\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 419776089159480,
+							"parameters": {
+								"variable": "isPlayerMoving",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 767932406067168,
+							"parameters": {
+								"variable": "state",
+								"value": "\"none\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 757994511514102,
+							"parameters": {
+								"variable": "state",
+								"value": "\"loading\""
+							}
+						}
+					],
+					"sid": 243969963403193,
+					"isOrBlock": true
 				}
 			],
 			"sid": 413555915179035,

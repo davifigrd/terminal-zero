@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "REALIZADO\n1. correções dormir (tela de loading)\n2. porta funcional (ir para o menu)\n3. botões selecionados menu\n4. cursor pointer ao selecionar botão\n5. botões clickáveis menu\n6. variável cursor\n7. efeito double click abrir icon (pc)\n8. tween\n9. local storage\n10. sinalizadores de identificação\n11. level skip Num Lock\n12. criando fase 1 (genius)"
+			"text": "LAST UPDATE\n1. tela de loading (behavior fade)\n2. porta ir para o menu funcional\n3. set position botões sim não\n4. seleção botão menu (hitbox)\n5. cursor pointer botão menu\n6. botões clickáveis menu \n7. adicionada variável cursor\n8. efeito single click (opacity) + double click abrir icon PC\n9. WASD instruções tween + local storage (aparecer uma vez \"'\" para voltar) \n10. placas de identificação bedroom\n11. level skip Num Lock\n12. variáveis level 1\n13. criando fase 1 estilo genius, Array\n\nPERGUNTAS NÍCOLLAS\n1. player teleportando ao encostar na cama\n2. deep web necessário (pular fases)\n3. variáveis globais só em uma event sheet. apenas grupo? vale só pro grupo ou vale pra event sheet toda que o grupo está?\n3. como usar array (matriz?)"
 		},
 		{
 			"eventType": "variable",
@@ -45,7 +45,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "\"none\" → nenhum estado\n\n\"loading\" → tela de carregamento\n\n\"pc\" → interação com o pc\n\n\"bed\" → interação com a cama\n\n\"door\" → interação com a porta"
+			"text": "\"none\" → nenhum estado\n\n\"loading\" → tela de carregamento\n\n\"pc\" → interação com o pc\n\n\"bed\" → interação com a cama\n\n\"door\" → interação com a porta\n\n\"lvl1\" / \"lvl2\" ... → Fase 1, Fase 2..."
 		},
 		{
 			"eventType": "group",
