@@ -185,7 +185,75 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Fim da Fase"
+					"text": "Level"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-wait-finished",
+							"objectClass": "fade",
+							"sid": 341061606762190,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 144043849916199,
+							"parameters": {
+								"variable": "level",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 793960259764922,
+							"parameters": {
+								"variable": "state",
+								"comparison": 0,
+								"value": "\"loading\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "loading",
+							"sid": 790055969449445,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "fade",
+							"sid": 114212295338719,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "fade",
+							"sid": 832436749204632,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "player",
+							"sid": 368443892032707,
+							"parameters": {
+								"x": "spawn_bed.X",
+								"y": "spawn_bed.Y"
+							}
+						}
+					],
+					"sid": 234334117591491,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -193,16 +261,70 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 802213841036239,
+							"sid": 764792471361821,
 							"parameters": {
-								"variable": "level",
+								"variable": "state",
 								"comparison": 0,
-								"value": "\"1\""
+								"value": "\"loading\""
 							}
 						}
 					],
-					"actions": [],
-					"sid": 444991706440659
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "fade",
+							"sid": 469332315741677,
+							"parameters": {
+								"opacity": "lerp(fade.Opacity, 0, 0.1)"
+							}
+						}
+					],
+					"sid": 430224885561998,
+					"disabled": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-opacity",
+							"objectClass": "fade",
+							"sid": 912259734590780,
+							"parameters": {
+								"comparison": 3,
+								"opacity": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "fade",
+							"sid": 460487364066459,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 856949946115852,
+							"parameters": {
+								"variable": "state",
+								"value": "\"none\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 878937821588993,
+							"parameters": {
+								"variable": "level",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 998934300562937,
+					"disabled": true
 				}
 			],
 			"sid": 413555915179035,

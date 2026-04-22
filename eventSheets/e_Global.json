@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "LAST UPDATE\n1. tela de loading (behavior fade)\n2. porta ir para o menu funcional\n3. set position botões sim não\n4. seleção botão menu (hitbox)\n5. cursor pointer botão menu\n6. botões clickáveis menu \n7. adicionada variável cursor\n8. efeito single click (opacity) + double click abrir icon PC\n9. WASD instruções tween + local storage (aparecer uma vez \"'\" para voltar) \n10. placas de identificação bedroom\n11. level skip Num Lock\n12. variável level (fim da fase)\n13. criando fase 1 estilo genius, Array\n\nPERGUNTAS NÍCOLLAS\n1. player teleportando ao encostar na cama\n2. deep web necessário (pular fases)\n3. variáveis globais só em uma event sheet. apenas grupo? vale só pro grupo ou vale pra event sheet toda que o grupo está?\n4. local storage para fase 2, fase 3? (quando ja tiver feito uma, nao entrar na primeira de novo)\n5. como usar array (matriz?)"
+			"text": "LAST UPDATE\n1. tela de loading (behavior fade)\n2. porta ir para o menu funcional\n3. set position botões sim não\n4. seleção botão menu (hitbox)\n5. cursor pointer botão menu\n6. botões clickáveis menu \n7. adicionada variável cursor\n8. efeito single click (opacity) + double click abrir icon PC\n9. WASD instruções tween + local storage (aparecer uma vez \"'\" para voltar) \n10. placas de identificação bedroom\n11. level skip Num Lock\n12. variável level (fim da fase)\n13. criando fase 1 estilo genius, Array\n14. transição fade entre fase e quarto\n\nPERGUNTAS NÍCOLLAS\n1. player teleportando ao encostar na porta\n2. deep web necessário (pular fases)\n3. variáveis globais só em uma event sheet. apenas grupo? vale só pro grupo ou vale pra event sheet toda que o grupo está?\n4. local storage para fase 2, fase 3? (quando ja tiver feito uma, nao entrar na primeira de novo)\n5. como usar array (matriz?)"
 		},
 		{
 			"eventType": "variable",
@@ -374,12 +374,60 @@
 							"sid": 653984326645375
 						},
 						{
+							"eventType": "comment",
+							"text": "Troca de layout"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "on-wait-finished",
 									"objectClass": "fade",
-									"sid": 466358976159302,
+									"sid": 620126267888393,
+									"behaviorType": "Fade"
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 449235623673415,
+									"parameters": {
+										"variable": "level",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "loading",
+									"sid": 749900927482999,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 718725809702135,
+									"parameters": {
+										"layout": "Bedroom"
+									}
+								}
+							],
+							"sid": 463722232881719
+						},
+						{
+							"eventType": "comment",
+							"text": ""
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-wait-finished",
+									"objectClass": "fade",
+									"sid": 497983906746312,
 									"behaviorType": "Fade"
 								}
 							],
@@ -387,13 +435,13 @@
 								{
 									"id": "set-visible",
 									"objectClass": "loading",
-									"sid": 285567635906515,
+									"sid": 402742515150691,
 									"parameters": {
 										"visibility": "invisible"
 									}
 								}
 							],
-							"sid": 777541187316702
+							"sid": 379534298497540
 						},
 						{
 							"eventType": "block",
@@ -416,6 +464,10 @@
 								}
 							],
 							"sid": 339501108892375
+						},
+						{
+							"eventType": "comment",
+							"text": "//////////////////////////////////////////////////////////////////////"
 						}
 					]
 				}
