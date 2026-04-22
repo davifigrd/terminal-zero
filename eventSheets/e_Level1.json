@@ -384,18 +384,78 @@
 		},
 		{
 			"eventType": "block",
-			"conditions": [],
-			"actions": [
+			"conditions": [
 				{
-					"id": "set-visible",
-					"objectClass": "erro",
-					"sid": 635540689330853,
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 387445743890545,
 					"parameters": {
-						"visibility": "visible"
+						"key": 69
 					}
 				}
 			],
-			"sid": 952555020491807
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "error",
+					"sid": 618078517329556,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 372967972374684,
+					"parameters": {
+						"seconds": "3",
+						"use-timescale": false
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "error",
+					"sid": 489509630410652,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 952555020491807,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 870070418748582,
+					"parameters": {
+						"key": 69
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "flash",
+					"objectClass": "error",
+					"sid": 450941374929661,
+					"behaviorType": "Flash",
+					"parameters": {
+						"on-time": "0.1",
+						"off-time": "0.1",
+						"duration": "3"
+					}
+				},
+				{
+					"id": "stop-flashing",
+					"objectClass": "error",
+					"sid": 783251501349991,
+					"behaviorType": "Flash"
+				}
+			],
+			"sid": 998058132725807
 		}
 	],
 	"sid": 856370518782902
