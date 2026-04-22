@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "LAST UPDATE\n1. tela de loading (behavior fade)\n2. porta ir para o menu funcional\n3. set position botões sim não\n4. seleção botão menu (hitbox)\n5. cursor pointer botão menu\n6. botões clickáveis menu \n7. adicionada variável cursor\n8. efeito single click (opacity) + double click abrir icon PC\n9. WASD instruções tween + local storage (aparecer uma vez \"'\" para voltar) \n10. placas de identificação bedroom\n11. level skip Num Lock\n12. variáveis level 1\n13. criando fase 1 estilo genius, Array\n\nPERGUNTAS NÍCOLLAS\n1. player teleportando ao encostar na cama\n2. deep web necessário (pular fases)\n3. variáveis globais só em uma event sheet. apenas grupo? vale só pro grupo ou vale pra event sheet toda que o grupo está?\n3. como usar array (matriz?)"
+			"text": "LAST UPDATE\n1. tela de loading (behavior fade)\n2. porta ir para o menu funcional\n3. set position botões sim não\n4. seleção botão menu (hitbox)\n5. cursor pointer botão menu\n6. botões clickáveis menu \n7. adicionada variável cursor\n8. efeito single click (opacity) + double click abrir icon PC\n9. WASD instruções tween + local storage (aparecer uma vez \"'\" para voltar) \n10. placas de identificação bedroom\n11. level skip Num Lock\n12. variável level (fim da fase)\n13. criando fase 1 estilo genius, Array\n\nPERGUNTAS NÍCOLLAS\n1. player teleportando ao encostar na cama\n2. deep web necessário (pular fases)\n3. variáveis globais só em uma event sheet. apenas grupo? vale só pro grupo ou vale pra event sheet toda que o grupo está?\n4. local storage para fase 2, fase 3? (quando ja tiver feito uma, nao entrar na primeira de novo)\n5. como usar array (matriz?)"
 		},
 		{
 			"eventType": "variable",
@@ -45,7 +45,21 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "\"none\" → nenhum estado\n\n\"loading\" → tela de carregamento\n\n\"pc\" → interação com o pc\n\n\"bed\" → interação com a cama\n\n\"door\" → interação com a porta\n\n\"lvl1\" / \"lvl2\" ... → Fase 1, Fase 2..."
+			"text": "\"none\" → nenhum estado\n\n\"loading\" → tela de carregamento\n\n\"pc\" → interação com o pc\n\n\"bed\" → interação com a cama\n\n\"door\" → interação com a porta"
+		},
+		{
+			"eventType": "variable",
+			"name": "level",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 309341646269875
+		},
+		{
+			"eventType": "comment",
+			"text": "0 → nenhuma fase \n1 → fase 1\n2 → fase 2\n..."
 		},
 		{
 			"eventType": "group",
@@ -638,9 +652,9 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 578814456816666,
+							"sid": 503899840406907,
 							"parameters": {
-								"key": 107
+								"key": 96
 							}
 						}
 					],

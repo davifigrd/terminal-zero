@@ -10,60 +10,70 @@
 			"text": "O sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n1. ENERGIA\n2. REDE\n3. TERMINAL\n4. SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \nEnergia (0) → Rede (1) → Segurança (3) → Terminal (2) → Rede (1) → Segurança (3)"
 		},
 		{
-			"eventType": "variable",
-			"name": "input_block",
-			"type": "boolean",
-			"initialValue": "true",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 167618323159742
-		},
-		{
-			"eventType": "comment",
-			"text": "true = bloqueia clicks\nfalse = jogador pode clickar"
-		},
-		{
-			"eventType": "variable",
-			"name": "i",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 733321612460562
-		},
-		{
-			"eventType": "comment",
-			"text": "Iteração para guardar posição atual do array"
-		},
-		{
-			"eventType": "variable",
-			"name": "step_show",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 580062622317798
-		},
-		{
-			"eventType": "comment",
-			"text": "Exibição da sequência:\n0 → Energia (0)\n1 → Rede (1)\n2 → Segurança (3)\n3 → Terminal (2)\n4 → Rede (1) \n5 → Segurança (3)\n6 → Final da sequência"
-		},
-		{
-			"eventType": "variable",
-			"name": "step_player",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 223307519639342
-		},
-		{
-			"eventType": "comment",
-			"text": "Progresso do jogador:\n0 → Energia (0)\n1 → Rede (1)\n2 → Segurança (3)\n3 → Terminal (2)\n4 → Rede (1) \n5 → Segurança (3)\n6 → Final da sequência"
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL1_VARIABLES",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "input_block",
+					"type": "boolean",
+					"initialValue": "true",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 863901910757714
+				},
+				{
+					"eventType": "comment",
+					"text": "true = bloqueia clicks\nfalse = jogador pode clickar"
+				},
+				{
+					"eventType": "variable",
+					"name": "i",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 632983377227862
+				},
+				{
+					"eventType": "comment",
+					"text": "Iteração para guardar posição atual do array"
+				},
+				{
+					"eventType": "variable",
+					"name": "step_show",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 961223637667173
+				},
+				{
+					"eventType": "comment",
+					"text": "Exibição da sequência:\n0 → Energia (0)\n1 → Rede (1)\n2 → Segurança (3)\n3 → Terminal (2)\n4 → Rede (1) \n5 → Segurança (3)\n6 → Final da sequência"
+				},
+				{
+					"eventType": "variable",
+					"name": "step_player",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 390826498720680
+				},
+				{
+					"eventType": "comment",
+					"text": "Progresso do jogador:\n0 → Energia (0)\n1 → Rede (1)\n2 → Segurança (3)\n3 → Terminal (2)\n4 → Rede (1) \n5 → Segurança (3)\n6 → Final da sequência"
+				}
+			],
+			"sid": 702247166641226
 		},
 		{
 			"eventType": "group",
@@ -103,14 +113,18 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 839404247834159,
+							"sid": 210309136926129,
 							"parameters": {
-								"variable": "state",
-								"value": "\"lvl2\""
+								"variable": "level",
+								"value": "\"1\""
 							}
 						}
 					],
 					"sid": 526423278216114
+				},
+				{
+					"eventType": "comment",
+					"text": "FIM DA FASE"
 				},
 				{
 					"eventType": "block",
@@ -118,23 +132,24 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 947839380849605,
+							"sid": 145405365055041,
 							"parameters": {
-								"key": 27
+								"key": 79
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "go-to-layout",
+							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 841741202720203,
+							"sid": 781173608036683,
 							"parameters": {
-								"layout": "PC"
+								"variable": "state",
+								"value": "\"loading\""
 							}
 						}
 					],
-					"sid": 858110850025684
+					"sid": 355657908107402
 				}
 			],
 			"sid": 733224759804904,
@@ -233,24 +248,6 @@
 								"z": "0",
 								"value": "3"
 							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 883797976520385,
-							"parameters": {
-								"variable": "step_show",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 188962526206040,
-							"parameters": {
-								"variable": "input_block",
-								"value": "true"
-							}
 						}
 					],
 					"sid": 230320226956714
@@ -258,24 +255,6 @@
 				{
 					"eventType": "block",
 					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 489095175730622,
-							"parameters": {
-								"variable": "input_block"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 703180678078789,
-							"parameters": {
-								"variable": "step_show",
-								"comparison": 2,
-								"value": "6"
-							}
-						},
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
@@ -285,35 +264,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 627215844937351,
-							"parameters": {
-								"variable": "i",
-								"value": "step_show"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 590191953546947,
-							"parameters": {
-								"variable": "step_show",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 578902113286292,
-							"parameters": {
-								"variable": "step_show",
-								"value": "0"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 413455946765529
 				},
 				{
@@ -328,34 +279,13 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 943548058391029,
-							"parameters": {
-								"variable": "i",
-								"value": "loopindex"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 221556698879033,
 					"disabled": true
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 248059175544126,
-							"parameters": {
-								"first-value": "geniusArray.At(i, 0, 0)",
-								"comparison": 0,
-								"second-value": "0"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"id": "flash",
@@ -400,15 +330,6 @@
 								"off-time": "0.1",
 								"duration": "1.0"
 							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 336781113428210,
-							"parameters": {
-								"variable": "step_show",
-								"value": "1"
-							}
 						}
 					],
 					"sid": 997306339365579
@@ -427,17 +348,7 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 819764573241453,
-							"parameters": {
-								"variable": "input_block",
-								"value": "true"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 825142780727940
 				}
 			],
