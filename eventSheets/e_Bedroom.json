@@ -1032,71 +1032,86 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 660599621464591,
+							"children": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 487612316312586,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"default\""
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 566011132830868,
-									"parameters": {
-										"variable": "isPlayerMoving",
-										"value": "0"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 165414534439473,
-									"parameters": {
-										"variable": "state",
-										"value": "\"door\""
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "choosing_menu",
-									"sid": 939449900314045,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "sim",
-									"sid": 775693732169914,
-									"parameters": {
-										"x": "642",
-										"y": "417"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "nao",
-									"sid": 666545738826087,
-									"parameters": {
-										"x": "816",
-										"y": "417"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "player",
-									"sid": 501347487518276,
-									"parameters": {
-										"x": "spawn_door.X",
-										"y": "spawn_door.Y"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 308477388165136
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 220771715437493,
+											"parameters": {
+												"variable": "cursor",
+												"value": "\"default\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 709877812879261,
+											"parameters": {
+												"variable": "isPlayerMoving",
+												"value": "0"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 680367132385510,
+											"parameters": {
+												"variable": "state",
+												"value": "\"door\""
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "choosing_menu",
+											"sid": 995754571230891,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "sim",
+											"sid": 289743033942235,
+											"parameters": {
+												"x": "642",
+												"y": "417"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "nao",
+											"sid": 534560302889675,
+											"parameters": {
+												"x": "816",
+												"y": "417"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 643264056973437,
+											"disabled": true,
+											"parameters": {
+												"x": "spawn_door.X",
+												"y": "spawn_door.Y"
+											}
+										}
+									],
+									"sid": 347259749094875
 								}
-							],
-							"sid": 660599621464591
+							]
 						},
 						{
 							"eventType": "group",
