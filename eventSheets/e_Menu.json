@@ -6,6 +6,46 @@
 			"includeSheet": "e_Global"
 		},
 		{
+			"eventType": "comment",
+			"text": "3 saves"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "MENU_VARIABLES",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "button",
+					"type": "string",
+					"initialValue": "none",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 150130183485868
+				},
+				{
+					"eventType": "comment",
+					"text": "\"none\" → nenhum estado\n\n\"controles\" → tela de controles\n\n\"créditos\" → tela de créditos\n\n\"sair\" → fecha o jogo"
+				}
+			],
+			"sid": 343334522413385,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.20392156862745098,
+				0.7294117647058823,
+				0.3607843137254902,
+				1
+			]
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "MENU_LAYOUT",

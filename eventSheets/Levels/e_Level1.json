@@ -1,0 +1,534 @@
+{
+	"name": "e_Level1",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
+			"eventType": "comment",
+			"text": "LAST UPDATE\n1. sine tela função (tremor)\n2. som genius\n3. correção mouse saindo da tela pc\n4. variável local menu\n\n---\nfade layout função\n3 saves novo jogo"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL1_VARIABLES",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "input_block",
+					"type": "boolean",
+					"initialValue": "true",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 897401878542368
+				},
+				{
+					"eventType": "comment",
+					"text": "true = bloqueia clicks\nfalse = jogador pode clickar"
+				},
+				{
+					"eventType": "variable",
+					"name": "i",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 333142738205028
+				},
+				{
+					"eventType": "comment",
+					"text": "Iteração para guardar posição atual do array"
+				},
+				{
+					"eventType": "variable",
+					"name": "step_show",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 986058137805040
+				},
+				{
+					"eventType": "comment",
+					"text": "Exibição da sequência:\n0 → Energia (0)\n1 → Rede (1)\n2 → Segurança (3)\n3 → Terminal (2)\n4 → Rede (1) \n5 → Segurança (3)\n6 → Final da sequência"
+				},
+				{
+					"eventType": "variable",
+					"name": "step_player",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 601385779302381
+				},
+				{
+					"eventType": "comment",
+					"text": "Progresso do jogador:\n0 → Energia (0)\n1 → Rede (1)\n2 → Segurança (3)\n3 → Terminal (2)\n4 → Rede (1) \n5 → Segurança (3)\n6 → Final da sequência"
+				},
+				{
+					"eventType": "comment",
+					"text": ""
+				},
+				{
+					"eventType": "comment",
+					"text": "EXPLICAÇÃO DA FASE\n\nO sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n1. ENERGIA\n2. REDE\n3. TERMINAL\n4. SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \nFase 1:\nEnergia (0) → Segurança (3) → Rede (1) → Terminal (2)\n\nFase 2:\nRede (1) → Energia (0) → Terminal (2) → Segurança (3) → Rede (1) → Energia (0)\n\nFase 3:\nSegurança (3) → Rede (1) → Terminal (2) → Energia (0) → Segurança (3) → Terminal (2) → Rede (1) → Energia (0)"
+				}
+			],
+			"sid": 516254465505535,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.20392156862745098,
+				0.7294117647058823,
+				0.3607843137254902,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL1_FUNCTION",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Sequencia errada\ntremor de tela → símbolo de erro → reinicia fase"
+				},
+				{
+					"functionName": "lvl1_error",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-active",
+							"objectClass": "lvl1_layout",
+							"sid": 246776505341513,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "active"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 106757329602002,
+							"parameters": {
+								"seconds": "0.2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-active",
+							"objectClass": "lvl1_layout",
+							"sid": 914131231800569,
+							"behaviorType": "Sine",
+							"parameters": {
+								"state": "inactive"
+							}
+						},
+						{
+							"id": "set-angle",
+							"objectClass": "lvl1_layout",
+							"sid": 741528935591909,
+							"parameters": {
+								"angle": "0"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "error",
+							"sid": 119121130111078,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "error",
+							"sid": 944200588888956,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 939967417407612,
+							"parameters": {
+								"seconds": "1.0",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "stop-flashing",
+							"objectClass": "error",
+							"sid": 823944210651674,
+							"behaviorType": "Flash"
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "error",
+							"sid": 375759701553373,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 645522476737514
+						}
+					],
+					"sid": 856086388782150
+				}
+			],
+			"sid": 738170044615025,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.12941176470588237,
+				0.47058823529411764,
+				0.23137254901960785,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LAYOUT_LEVEL1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 306459540678580
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 382042640620079,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"default\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 918060770695525,
+							"parameters": {
+								"variable": "isPlayerMoving",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 397691329653560,
+							"parameters": {
+								"variable": "level",
+								"value": "\"1\""
+							}
+						}
+					],
+					"sid": 986940082532792
+				},
+				{
+					"eventType": "comment",
+					"text": "FIM DA FASE"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 194598824182723,
+							"parameters": {
+								"key": 79
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 191020339900449,
+							"parameters": {
+								"variable": "state",
+								"value": "\"loading\""
+							}
+						}
+					],
+					"sid": 607843232384660
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "flash",
+							"objectClass": "energia_hitbox",
+							"sid": 465394812142231,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "rede_hitbox",
+							"sid": 154627655301790,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "terminal_hitbox",
+							"sid": 170387250350930,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "segurança_hitbox",
+							"sid": 725766383453781,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						}
+					],
+					"sid": 601024864650556
+				}
+			],
+			"sid": 378663831491017,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.3686274509803922,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "SONS BOTÕES",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "SONS BOTÕES\nEnergia (amarelo) → 1\nRede (azul) → 2\nTerminal (verde) → 3\nSegurança (vermleho) → 4"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 838163188437738,
+							"parameters": {
+								"key": 49
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 871613104514084,
+							"parameters": {
+								"audio-file": {
+									"path": "Levels/Level 1/lvl1_yellow"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"lvl1_blue\""
+							}
+						}
+					],
+					"sid": 541207727784018
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 162155149032000,
+							"parameters": {
+								"key": 50
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 636996545398062,
+							"parameters": {
+								"audio-file": {
+									"path": "Levels/Level 1/lvl1_blue"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"lvl1_blue\""
+							}
+						}
+					],
+					"sid": 234712162543099
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 956378918682769,
+							"parameters": {
+								"key": 51
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 800308324255976,
+							"parameters": {
+								"audio-file": {
+									"path": "Levels/Level 1/lvl1_green"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"lvl1_blue\""
+							}
+						}
+					],
+					"sid": 994278147364992
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 944483971224738,
+							"parameters": {
+								"key": 52
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 345201298204824,
+							"parameters": {
+								"audio-file": {
+									"path": "Levels/Level 1/lvl1_red"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"lvl1_blue\""
+							}
+						}
+					],
+					"sid": 787819902386151
+				}
+			],
+			"sid": 340817843109453,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.3686274509803922,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "SEQUÊNCIA ERRADA"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 991101068602328,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "lvl1_error",
+					"sid": 362269877348343
+				}
+			],
+			"sid": 193621084806444
+		}
+	],
+	"sid": 856370518782902
+}

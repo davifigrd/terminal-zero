@@ -15,8 +15,8 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Arr",
-			"name": "Array",
+			"id": "Audio",
+			"name": "Audio",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -85,6 +85,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Sin",
+			"name": "Sine",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Tween",
 			"name": "Tween",
 			"author": "Scirra",
@@ -101,8 +108,7 @@
 	"uniqueId": "infcrcpul51",
 	"objectTypes": {
 		"items": [
-			"AJAX",
-			"Dictionary"
+			"lvl1_variable"
 		],
 		"subfolders": [
 			{
@@ -234,7 +240,10 @@
 					"Mouse",
 					"Keyboard",
 					"cursor_pointer",
-					"LocalStorage"
+					"LocalStorage",
+					"AJAX",
+					"Dictionary",
+					"Audio"
 				],
 				"subfolders": [],
 				"name": "Input"
@@ -246,7 +255,7 @@
 						"items": [
 							"lvl1_layout",
 							"error",
-							"geniusArray"
+							"lvl1_layout2"
 						],
 						"subfolders": [
 							{
@@ -340,7 +349,7 @@
 					"loading"
 				],
 				"subfolders": [],
-				"name": "Loading Screen"
+				"name": "Transition"
 			}
 		]
 	},
@@ -414,7 +423,8 @@
 			"Menu",
 			"PC",
 			"Level1",
-			"Level3"
+			"Level3",
+			"Transition"
 		],
 		"subfolders": []
 	},
@@ -424,10 +434,18 @@
 			"e_PC",
 			"e_Menu",
 			"e_Global",
-			"e_Level1",
-			"e_Level3"
+			"e_Transition"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"e_Level1",
+					"e_Level3"
+				],
+				"subfolders": [],
+				"name": "Levels"
+			}
+		]
 	},
 	"rootFileFolders": {
 		"script": {
@@ -436,7 +454,52 @@
 		},
 		"sound": {
 			"items": [],
-			"subfolders": []
+			"subfolders": [
+				{
+					"items": [],
+					"subfolders": [
+						{
+							"items": [
+								{
+									"name": "lvl1_blue.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 103892495101889,
+									"file-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "lvl1_green.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 995764940599807,
+									"file-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "lvl1_red.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 291227786208821,
+									"file-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "lvl1_yellow.webm",
+									"type": "audio/webm; codecs=opus",
+									"sid": 108903720291191,
+									"file-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "Level 1"
+						}
+					],
+					"name": "Levels"
+				}
+			]
 		},
 		"music": {
 			"items": [],
@@ -512,25 +575,37 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [
+			"items": [],
+			"subfolders": [
 				{
-					"name": "genius.json",
-					"type": "application/json",
-					"sid": 547631302575818,
-					"file-info": {
-						"purpose": "none"
-					}
-				},
-				{
-					"name": "New Dictionary.json",
-					"type": "application/json",
-					"sid": 994793903713052,
-					"file-info": {
-						"purpose": "none"
-					}
+					"items": [],
+					"subfolders": [
+						{
+							"items": [
+								{
+									"name": "lvl1_array.json",
+									"type": "application/json",
+									"sid": 547631302575818,
+									"file-info": {
+										"purpose": "none"
+									}
+								},
+								{
+									"name": "lvl1_dictionary.json",
+									"type": "application/json",
+									"sid": 994793903713052,
+									"file-info": {
+										"purpose": "none"
+									}
+								}
+							],
+							"subfolders": [],
+							"name": "Level 1"
+						}
+					],
+					"name": "Levels"
 				}
-			],
-			"subfolders": []
+			]
 		}
 	},
 	"timelines": {

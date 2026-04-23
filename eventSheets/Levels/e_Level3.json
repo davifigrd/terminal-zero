@@ -1,0 +1,96 @@
+{
+	"name": "e_Level3",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LAYOUT_LEVEL3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 696018116854312
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 531854456573533,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"default\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 899193433066396,
+							"parameters": {
+								"variable": "isPlayerMoving",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 136945729943544,
+							"parameters": {
+								"variable": "state",
+								"value": "\"default\""
+							}
+						}
+					],
+					"sid": 645132153775641
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 829770655946019,
+							"parameters": {
+								"key": 27
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 452165345829575,
+							"parameters": {
+								"layout": "PC"
+							}
+						}
+					],
+					"sid": 289481830768598
+				}
+			],
+			"sid": 954627435845579,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.3686274509803922,
+				0,
+				1
+			]
+		}
+	],
+	"sid": 571789214471806
+}

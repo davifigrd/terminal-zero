@@ -175,6 +175,15 @@
 								"variable": "state",
 								"value": "\"none\""
 							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "player",
+							"sid": 249253560543413,
+							"parameters": {
+								"x": "spawn_door.X",
+								"y": "spawn_door.Y"
+							}
 						}
 					],
 					"sid": 677054397532905
@@ -625,71 +634,86 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 697848963272162,
+							"children": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 716623852820686,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"default\""
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 309815230625627,
-									"parameters": {
-										"variable": "isPlayerMoving",
-										"value": "0"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 457278832297034,
-									"parameters": {
-										"variable": "state",
-										"value": "\"bed\""
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "choosing_save",
-									"sid": 762119486732122,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "sim",
-									"sid": 729730947168612,
-									"parameters": {
-										"x": "642",
-										"y": "417"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "nao",
-									"sid": 771095669389922,
-									"parameters": {
-										"x": "816",
-										"y": "417"
-									}
-								},
-								{
-									"id": "set-position",
-									"objectClass": "player",
-									"sid": 940728285889704,
-									"parameters": {
-										"x": "spawn_bed.X",
-										"y": "spawn_bed.Y"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 834985500873190
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 988286304323261,
+											"parameters": {
+												"variable": "cursor",
+												"value": "\"default\""
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 210872940475244,
+											"parameters": {
+												"variable": "isPlayerMoving",
+												"value": "0"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 140962249909818,
+											"parameters": {
+												"variable": "state",
+												"value": "\"bed\""
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "choosing_save",
+											"sid": 582057302417088,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "sim",
+											"sid": 123920814187180,
+											"parameters": {
+												"x": "642",
+												"y": "417"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "nao",
+											"sid": 680941097991460,
+											"parameters": {
+												"x": "816",
+												"y": "417"
+											}
+										},
+										{
+											"id": "set-position",
+											"objectClass": "player",
+											"sid": 871181643116817,
+											"disabled": true,
+											"parameters": {
+												"x": "spawn_bed.X",
+												"y": "spawn_bed.Y"
+											}
+										}
+									],
+									"sid": 300452505547342
 								}
-							],
-							"sid": 697848963272162
+							]
 						},
 						{
 							"eventType": "group",
@@ -1096,16 +1120,6 @@
 											"parameters": {
 												"x": "816",
 												"y": "417"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "player",
-											"sid": 643264056973437,
-											"disabled": true,
-											"parameters": {
-												"x": "spawn_door.X",
-												"y": "spawn_door.Y"
 											}
 										}
 									],
