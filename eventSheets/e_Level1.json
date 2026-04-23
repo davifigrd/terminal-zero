@@ -323,8 +323,8 @@
 						},
 						{
 							"id": "flash",
-							"objectClass": "terminal_hitbox",
-							"sid": 532501982789670,
+							"objectClass": "segurança_hitbox",
+							"sid": 347127289224040,
 							"behaviorType": "Flash",
 							"parameters": {
 								"on-time": "0.1",
@@ -334,8 +334,8 @@
 						},
 						{
 							"id": "flash",
-							"objectClass": "segurança_hitbox",
-							"sid": 347127289224040,
+							"objectClass": "terminal_hitbox",
+							"sid": 931837049096861,
 							"behaviorType": "Flash",
 							"parameters": {
 								"on-time": "0.1",
@@ -438,21 +438,56 @@
 			],
 			"actions": [
 				{
+					"id": "set-visible",
+					"objectClass": "error",
+					"sid": 121313200959930,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
 					"id": "flash",
 					"objectClass": "error",
-					"sid": 450941374929661,
+					"sid": 326662775329979,
 					"behaviorType": "Flash",
 					"parameters": {
 						"on-time": "0.1",
 						"off-time": "0.1",
-						"duration": "3"
+						"duration": "1"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 507884819996327,
+					"disabled": true,
+					"parameters": {
+						"seconds": "3",
+						"use-timescale": false
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 366822472941765,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
 					}
 				},
 				{
 					"id": "stop-flashing",
 					"objectClass": "error",
-					"sid": 783251501349991,
+					"sid": 623062310808488,
 					"behaviorType": "Flash"
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "error",
+					"sid": 759431500724992,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 998058132725807
