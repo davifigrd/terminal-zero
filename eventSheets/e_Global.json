@@ -3,11 +3,7 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "level skip explicação"
-		},
-		{
-			"eventType": "comment",
-			"text": "LAST UPDATE\n1. tela de loading (behavior fade)\n2. porta ir para o menu funcional\n3. set position botões sim não\n4. seleção botão menu (hitbox)\n5. cursor pointer botão menu\n6. botões clickáveis menu \n7. adicionada variável cursor\n8. efeito single click (opacity) + double click abrir icon PC\n9. WASD instruções tween + local storage (aparecer uma vez \"'\" para voltar) \n10. placas de identificação bedroom\n11. level skip Num Lock\n12. variável level (fim da fase)\n|13. criando fase 1 estilo genius, Array\n|14. transição fade entre fase e quarto\n|15. error piscar (jeito melhor?) flash??\n\nPERGUNTAS NÍCOLLAS\n1. player teleportando ao encostar na porta\n2. deep web necessário (pular fases)\n3. variáveis globais só em uma event sheet. apenas grupo? vale só pro grupo ou vale pra event sheet toda que o grupo está?\n4. local storage resetado antes de apresentar o jogo?  ' ' ' ' ' ' ' \n5. local storage para fase 2, fase 3? (quando ja tiver feito uma, nao entrar na primeira de novo)\n6. interromper no fade wait em level e clarear no bedroom \n7. como usar array (matriz?)"
+			"text": "PERGUNTAS NÍCOLLAS\n1. player teleportando ao encostar na porta\n2. local storage resetado antes de apresentar o jogo?  ' ' ' ' ' ' ' \n3. local storage para fase 2, fase 3? (quando ja tiver feito uma, nao entrar na primeira de novo)\n4. interromper no fade wait em level e clarear no bedroom \n5. git hub nuvem interferem arquivos \n5. como aplicar o array"
 		},
 		{
 			"eventType": "variable",
@@ -491,6 +487,10 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "NumLock 1 = fase 1\nNumLock 2 = fase 2\n...\nNumLock 0 = fase 10"
+				},
 				{
 					"eventType": "comment",
 					"text": "FASE 1"
