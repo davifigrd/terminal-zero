@@ -13,49 +13,45 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "\"none\" → nenhum cursor\n\"default\" → cursor padrão\n\"pc\" → cursor padrão no pc\n\"pointer\" → cursor pointer"
+			"text": "\"none\" → nenhum cursor\n\"default\" → cursor padrão\n\"pointer\" → cursor pointer"
 		},
 		{
 			"eventType": "variable",
-			"name": "isPlayerMoving",
-			"type": "number",
-			"initialValue": "0",
+			"name": "PlayerMoving",
+			"type": "boolean",
+			"initialValue": "true",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 643737789098758
+			"sid": 471247041730130
 		},
 		{
 			"eventType": "comment",
-			"text": "0 → movimentação desativada\n1 → movimentação ativada"
+			"text": "\"false\" → movimentação desativada\n\"true\" → movimentação ativada"
 		},
 		{
 			"eventType": "variable",
-			"name": "state",
+			"name": "layout",
 			"type": "string",
 			"initialValue": "none",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 186669399497043
+			"sid": 345529679003487
 		},
 		{
 			"eventType": "comment",
-			"text": "\"none\" → nenhum estado\n\n\"loading\" → tela de carregamento\n\n\"pc\" → interação com o pc\n\n\"bed\" → interação com a cama\n\n\"door\" → interação com a porta"
+			"text": "\"none\" → nenhum layout\n\"bedroom\"\n\"menu\"\n\"pc\""
 		},
 		{
 			"eventType": "variable",
-			"name": "level",
-			"type": "number",
-			"initialValue": "0",
+			"name": "spawn_point",
+			"type": "string",
+			"initialValue": "none",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 309341646269875
-		},
-		{
-			"eventType": "comment",
-			"text": "0 → nenhuma fase \n1 → fase 1\n2 → fase 2\n..."
+			"sid": 257254531048027
 		},
 		{
 			"eventType": "group",
@@ -69,11 +65,83 @@
 					"text": "Cursor original desativado"
 				},
 				{
-					"eventType": "script",
-					"language": "javascript",
-					"script": [
-						"document.body.style.cursor = 'none';"
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 261026205112449
+						}
+					],
+					"actions": [],
+					"sid": 919980449629810,
+					"children": [
+						{
+							"eventType": "script",
+							"language": "javascript",
+							"script": [
+								"document.body.style.cursor = 'none';"
+							]
+						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor segue o mouse sempre que existir"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 539608302206889,
+							"parameters": {
+								"first-value": "cursor_defult.Count",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor_defult",
+							"sid": 627391244925474,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 920970715045774
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 533246886807297,
+							"parameters": {
+								"first-value": "cursor_pointer.Count",
+								"comparison": 4,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor_pointer",
+							"sid": 581625688698271,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 883649655059315
 				},
 				{
 					"eventType": "comment",
@@ -91,33 +159,38 @@
 								"comparison": 0,
 								"value": "\"default\""
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 624690316864509
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "cursor",
-							"sid": 850854194994572,
-							"parameters": {
-								"visibility": "visible"
-							}
+							"id": "destroy",
+							"objectClass": "cursor_pointer",
+							"sid": 777699542600534
 						},
 						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 128031366034855,
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 261566662876223,
 							"parameters": {
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"object-to-create": "cursor_defult",
+								"layer": "\"cursor\"",
+								"x": "0",
+								"y": "0",
+								"create-hierarchy": false,
+								"template-name": "\"cursor_default\""
 							}
 						}
 					],
-					"sid": 703893034743648,
-					"isOrBlock": true
+					"sid": 703893034743648
 				},
 				{
 					"eventType": "comment",
-					"text": "Cursor default dentro do pc"
+					"text": "Cursor dentro do pc"
 				},
 				{
 					"eventType": "block",
@@ -125,64 +198,36 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 988418375516034,
+							"sid": 154411155411797,
 							"parameters": {
-								"variable": "cursor",
+								"variable": "layout",
 								"comparison": 0,
 								"value": "\"pc\""
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 996199501777916,
+							"parameters": {
+								"first-value": "cursor_defult.Count",
+								"comparison": 4,
+								"second-value": "0"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "cursor",
-							"sid": 124236871673097,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
 							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 788163877436552,
+							"objectClass": "cursor_defult",
+							"sid": 943030308352204,
 							"parameters": {
 								"x": "clamp(Mouse.X, screen.BBoxLeft, screen.BBoxRight)",
 								"y": "clamp(Mouse.Y, screen.BBoxTop, screen.BBoxBottom)"
 							}
 						}
 					],
-					"sid": 474180498170633
-				},
-				{
-					"eventType": "comment",
-					"text": "Cursor default desativado"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 628820041092546,
-							"parameters": {
-								"variable": "cursor",
-								"comparison": 0,
-								"value": "\"none\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "cursor",
-							"sid": 427809171194773,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 641962132809169
+					"sid": 697396113005494
 				},
 				{
 					"eventType": "comment",
@@ -194,39 +239,44 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 550353304043491,
+							"sid": 410070117334788,
 							"parameters": {
 								"variable": "cursor",
 								"comparison": 0,
 								"value": "\"pointer\""
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 228694485468949
 						}
 					],
 					"actions": [
 						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 962045164907403,
-							"parameters": {
-								"x": "-300",
-								"y": "100"
-							}
+							"id": "destroy",
+							"objectClass": "cursor_defult",
+							"sid": 270284066940143
 						},
 						{
-							"id": "set-position",
-							"objectClass": "cursor_pointer",
-							"sid": 731343173691297,
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 540082561759523,
 							"parameters": {
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
+								"object-to-create": "cursor_pointer",
+								"layer": "\"cursor\"",
+								"x": "0",
+								"y": "0",
+								"create-hierarchy": false,
+								"template-name": "\"cursor_default\""
 							}
 						}
 					],
-					"sid": 692202116988975
+					"sid": 364754274533102
 				},
 				{
 					"eventType": "comment",
-					"text": "Cursor default ativado"
+					"text": "Cursor desativado"
 				},
 				{
 					"eventType": "block",
@@ -234,35 +284,32 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 486489293814880,
+							"sid": 369504339969681,
 							"parameters": {
 								"variable": "cursor",
 								"comparison": 0,
-								"value": "\"default\""
+								"value": "\"none\""
 							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 247369986402471
 						}
 					],
 					"actions": [
 						{
-							"id": "set-position",
-							"objectClass": "cursor_pointer",
-							"sid": 764170643298200,
-							"parameters": {
-								"x": "-300",
-								"y": "100"
-							}
+							"id": "destroy",
+							"objectClass": "cursor_defult",
+							"sid": 936978030068434
 						},
 						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 625184084163302,
-							"parameters": {
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
-							}
+							"id": "destroy",
+							"objectClass": "cursor_pointer",
+							"sid": 970716514983168
 						}
 					],
-					"sid": 252281847844556
+					"sid": 639377482894496
 				}
 			],
 			"sid": 188836488104335,
@@ -281,167 +328,173 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": true,
-			"title": "LOADING_SCREEN",
+			"disabled": false,
+			"title": "TRANSITION",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"functionName": "Transition",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "Target",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 251311726564448
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 464376329024954,
+							"parameters": {
+								"variable": "layout",
+								"value": "Target"
+							}
+						},
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 747079762042697,
+							"parameters": {
+								"object-to-create": "transition_screen",
+								"layer": "\"transition\"",
+								"x": "687",
+								"y": "386",
+								"create-hierarchy": false,
+								"template-name": "\"create_transition_screen\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "transition_screen",
+							"sid": 568184715069803,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "start-fade",
+							"objectClass": "transition_screen",
+							"sid": 151854104555181,
+							"behaviorType": "Fade"
+						}
+					],
+					"sid": 543050914272554
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 845148135946104,
-							"parameters": {
-								"variable": "state",
-								"comparison": 0,
-								"value": "\"loading\""
-							}
+							"id": "on-fade-in-finished",
+							"objectClass": "transition_screen",
+							"sid": 860981432683721,
+							"behaviorType": "Fade"
 						}
 					],
 					"actions": [
 						{
-							"id": "start-fade",
-							"objectClass": "fade",
-							"sid": 129192239668836,
-							"behaviorType": "Fade"
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 678642694535462,
+							"parameters": {
+								"object-to-create": "loading",
+								"layer": "\"transition\"",
+								"x": "1246",
+								"y": "700",
+								"create-hierarchy": false,
+								"template-name": "\"create_loading\""
+							}
 						},
 						{
 							"id": "set-visible",
-							"objectClass": "fade",
-							"sid": 664340221860954,
+							"objectClass": "loading",
+							"sid": 514386831646667,
 							"parameters": {
 								"visibility": "visible"
 							}
+						},
+						{
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 551183973291694,
+							"parameters": {
+								"layout": "Layout"
+							}
 						}
 					],
-					"sid": 216029971403470,
-					"disabled": true,
-					"children": [
+					"sid": 507177875420064
+				},
+				{
+					"eventType": "comment",
+					"text": "Wait"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-fade-in-finished",
-									"objectClass": "fade",
-									"sid": 757548686936201,
-									"behaviorType": "Fade"
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "loading",
-									"sid": 455935048529938,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 653984326645375,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Troca de layout"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-wait-finished",
-									"objectClass": "fade",
-									"sid": 620126267888393,
-									"behaviorType": "Fade"
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 449235623673415,
-									"parameters": {
-										"variable": "level",
-										"comparison": 0,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "loading",
-									"sid": 749900927482999,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 718725809702135,
-									"parameters": {
-										"layout": "Bedroom"
-									}
-								}
-							],
-							"sid": 463722232881719,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": ""
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-wait-finished",
-									"objectClass": "fade",
-									"sid": 497983906746312,
-									"behaviorType": "Fade"
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "loading",
-									"sid": 402742515150691,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 379534298497540,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-fade-out-finished",
-									"objectClass": "fade",
-									"sid": 807173659330370,
-									"behaviorType": "Fade"
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "fade",
-									"sid": 755110123001882,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 339501108892375,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "//////////////////////////////////////////////////////////////////////"
+							"id": "on-wait-finished",
+							"objectClass": "transition_screen",
+							"sid": 369120385618389,
+							"behaviorType": "Fade"
 						}
-					]
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "loading",
+							"sid": 324200775398127,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "loading",
+							"sid": 821477157184315
+						}
+					],
+					"sid": 369549757413213
+				},
+				{
+					"eventType": "comment",
+					"text": "Fade-out"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-fade-out-finished",
+							"objectClass": "transition_screen",
+							"sid": 547844376942637,
+							"behaviorType": "Fade"
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "transition_screen",
+							"sid": 154140000178344,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "transition_screen",
+							"sid": 234401602927081
+						}
+					],
+					"sid": 800949136773424
 				}
 			],
 			"sid": 871001986837841,
@@ -453,31 +506,6 @@
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 417840225009435,
-					"parameters": {
-						"key": 144
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-group-active",
-					"objectClass": "System",
-					"sid": 592924050151907,
-					"parameters": {
-						"group-name": "\"LEVEL_SKIP\"",
-						"state": "toggle-active"
-					}
-				}
-			],
-			"sid": 532308772008092
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "LEVEL_SKIP",
@@ -485,243 +513,290 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 541647170475710,
+							"parameters": {
+								"key": 144
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 346654386599592,
+							"parameters": {
+								"group-name": "\"LEVEL_SKIP_SHORTCUT\"",
+								"state": "toggle-active"
+							}
+						}
+					],
+					"sid": 873084214706889
+				},
+				{
 					"eventType": "comment",
 					"text": "\"NumLock 1\" → fase 1 \"NumLock 2\" → fase 2 \"NumLock 3\" → fase 3 \"NumLock 4\" → fase 4 \"NumLock 5\" → fase 5\n\"NumLock 6\" → fase 6 \"NumLock 7\" → fase 7 \"NumLock 8\" → fase 8 \"NumLock 9\" → fase 9 \"NumLock 0\" → fase 10"
 				},
 				{
-					"eventType": "comment",
-					"text": "FASE 1"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+					"eventType": "group",
+					"disabled": false,
+					"title": "LEVEL_SKIP_SHORTCUT",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 355593773395718,
-							"parameters": {
-								"key": 97
-							}
+							"eventType": "comment",
+							"text": "FASE 1"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 238750796479642,
+									"parameters": {
+										"key": 97
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 164642589017531,
+									"parameters": {
+										"layout": "Level1"
+									}
+								}
+							],
+							"sid": 763046263462228
+						},
+						{
+							"eventType": "comment",
+							"text": "FASE 2"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 167332968759071,
+									"parameters": {
+										"key": 98
+									}
+								}
+							],
+							"actions": [],
+							"sid": 288619310403278
+						},
+						{
+							"eventType": "comment",
+							"text": "FASE 3"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 339493056140934,
+									"parameters": {
+										"key": 99
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 260022910494405,
+									"parameters": {
+										"layout": "Level3"
+									}
+								}
+							],
+							"sid": 784938148659652
+						},
+						{
+							"eventType": "comment",
+							"text": "FASE 4"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 606614060746640,
+									"parameters": {
+										"key": 100
+									}
+								}
+							],
+							"actions": [],
+							"sid": 200200023447058
+						},
+						{
+							"eventType": "comment",
+							"text": "FASE 5"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 572705302111125,
+									"parameters": {
+										"key": 101
+									}
+								}
+							],
+							"actions": [],
+							"sid": 904271514858901
+						},
+						{
+							"eventType": "comment",
+							"text": "FASE 6"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 320779995906185,
+									"parameters": {
+										"key": 102
+									}
+								}
+							],
+							"actions": [],
+							"sid": 482175318277736
+						},
+						{
+							"eventType": "comment",
+							"text": "FASE 7"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 699479245449050,
+									"parameters": {
+										"key": 103
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 451006740917391,
+									"parameters": {
+										"layout": "Menu"
+									}
+								}
+							],
+							"sid": 447658972823595
+						},
+						{
+							"eventType": "comment",
+							"text": "FASE 8"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 692710033281627,
+									"parameters": {
+										"key": 104
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 522891629385052,
+									"parameters": {
+										"layout": "Bedroom"
+									}
+								}
+							],
+							"sid": 811608336446792
+						},
+						{
+							"eventType": "comment",
+							"text": "FASE 9"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 125631395601828,
+									"parameters": {
+										"key": 105
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 110898807782920,
+									"parameters": {
+										"layout": "PC"
+									}
+								}
+							],
+							"sid": 561372640659962
+						},
+						{
+							"eventType": "comment",
+							"text": "FASE 10"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 817763322187215,
+									"parameters": {
+										"key": 96
+									}
+								}
+							],
+							"actions": [],
+							"sid": 608432651818890
 						}
 					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 721076375863866,
-							"parameters": {
-								"layout": "Level1"
-							}
-						}
+					"sid": 535361876292215,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
 					],
-					"sid": 335484241787027
-				},
-				{
-					"eventType": "comment",
-					"text": "FASE 2"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 492309338113335,
-							"parameters": {
-								"key": 98
-							}
-						}
-					],
-					"actions": [],
-					"sid": 646644022491167
-				},
-				{
-					"eventType": "comment",
-					"text": "FASE 3"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 640112240422695,
-							"parameters": {
-								"key": 99
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 619226320926451,
-							"parameters": {
-								"layout": "Level3"
-							}
-						}
-					],
-					"sid": 262563570858200
-				},
-				{
-					"eventType": "comment",
-					"text": "FASE 4"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 416800914132523,
-							"parameters": {
-								"key": 100
-							}
-						}
-					],
-					"actions": [],
-					"sid": 835460875629318
-				},
-				{
-					"eventType": "comment",
-					"text": "FASE 5"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 938567952514316,
-							"parameters": {
-								"key": 101
-							}
-						}
-					],
-					"actions": [],
-					"sid": 750989065300571
-				},
-				{
-					"eventType": "comment",
-					"text": "FASE 6"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 994022054950718,
-							"parameters": {
-								"key": 102
-							}
-						}
-					],
-					"actions": [],
-					"sid": 202401631994773
-				},
-				{
-					"eventType": "comment",
-					"text": "FASE 7"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 212830861839403,
-							"parameters": {
-								"key": 103
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 900210635704124,
-							"parameters": {
-								"layout": "Menu"
-							}
-						}
-					],
-					"sid": 440338967474107
-				},
-				{
-					"eventType": "comment",
-					"text": "FASE 8"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 966265971875523,
-							"parameters": {
-								"key": 104
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 690246691194618,
-							"parameters": {
-								"layout": "Bedroom"
-							}
-						}
-					],
-					"sid": 306232225464972
-				},
-				{
-					"eventType": "comment",
-					"text": "FASE 9"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 717379920806146,
-							"parameters": {
-								"key": 105
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 772491376431483,
-							"parameters": {
-								"layout": "PC"
-							}
-						}
-					],
-					"sid": 641166877730152
-				},
-				{
-					"eventType": "comment",
-					"text": "FASE 10"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 503899840406907,
-							"parameters": {
-								"key": 96
-							}
-						}
-					],
-					"actions": [],
-					"sid": 631854536699507
+					"background-color": [
+						1,
+						0.4823529411764706,
+						0,
+						1
+					]
 				}
 			],
 			"sid": 639576217351447,
@@ -737,100 +812,6 @@
 				0,
 				1
 			]
-		},
-		{
-			"functionName": "Transition",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "start-fade",
-					"objectClass": "fade",
-					"sid": 268538086107347,
-					"behaviorType": "Fade"
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "fade",
-					"sid": 152849554740090,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 680386573511771
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-fade-in-finished",
-					"objectClass": "fade",
-					"sid": 325470358379491,
-					"behaviorType": "Fade"
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "loading",
-					"sid": 158920414067948,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 237916495972080
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-wait-finished",
-					"objectClass": "fade",
-					"sid": 740029824710297,
-					"behaviorType": "Fade"
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "loading",
-					"sid": 565861505596917,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 579923251486853
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-fade-out-finished",
-					"objectClass": "fade",
-					"sid": 308671153065174,
-					"behaviorType": "Fade"
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "fade",
-					"sid": 331840356197735,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 369891342179302
 		}
 	],
 	"sid": 629785159147306

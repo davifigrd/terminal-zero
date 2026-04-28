@@ -1164,7 +1164,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "cursor",
+					"type": "cursor_defult",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1188,8 +1188,8 @@
 						"y": 100,
 						"width": 14.784523343210692,
 						"height": 19.400082961972014,
-						"originX": 0.12121212121212122,
-						"originY": 0.14705882352941177,
+						"originX": 0.14349376114081996,
+						"originY": 0.16782006920415227,
 						"color": [
 							1,
 							1,
@@ -1422,96 +1422,10 @@
 			"global": false
 		},
 		{
-			"name": "fade",
+			"name": "transition",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [
-				{
-					"type": "fade",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "fade",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 14,
-					"sid": 167646594079514,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Fade": {
-							"properties": {
-								"fade-in-time": 4,
-								"wait-time": 5,
-								"fade-out-time": 4,
-								"destroy": false,
-								"enabled": true,
-								"live-preview": false
-							}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 167646594079514,
-						"expanded": true
-					},
-					"showing": false,
-					"locked": false,
-					"world": {
-						"x": 687,
-						"y": 386,
-						"width": 1376,
-						"height": 770,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "loading",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "loading",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 15,
-					"sid": 900192125323326,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 900192125323326,
-						"expanded": true
-					},
-					"showing": false,
-					"locked": false,
-					"world": {
-						"x": 1246,
-						"y": 700,
-						"width": 210,
-						"height": 101,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 635603930451401,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

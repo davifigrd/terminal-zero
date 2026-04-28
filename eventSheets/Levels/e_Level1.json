@@ -7,7 +7,11 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "LAST UPDATE\n1. sine tela função (tremor)\n2. som genius\n3. correção mouse saindo da tela pc\n4. variável local menu\n\n---\nfade layout função\n3 saves novo jogo"
+			"text": "LAST UPDATE\n1. sine tela função (tremor)\n2. som bip\n3. correção mouse saindo da tela pc\n4. array + ajax\n5. transition função\n6. reestruturação de variáveis:\n    - state e level removidas\n    - PLayerMoving boolean\n    - arrival_point\n\nPERGUNTAS\n\n---\nfade layout função\n3 saves novo jogo"
+		},
+		{
+			"eventType": "comment",
+			"text": "EXPLICAÇÃO DA FASE\n\nO sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n1. ENERGIA\n2. REDE\n3. TERMINAL\n4. SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \nFase 1:\nEnergia (0) → Segurança (3) → Rede (1) → Terminal (2)\n\nFase 2:\nRede (1) → Energia (0) → Terminal (2) → Segurança (3) → Rede (1) → Energia (0)\n\nFase 3:\nSegurança (3) → Rede (1) → Terminal (2) → Energia (0) → Segurança (3) → Terminal (2) → Rede (1) → Energia (0)"
 		},
 		{
 			"eventType": "group",
@@ -18,9 +22,23 @@
 			"children": [
 				{
 					"eventType": "variable",
+					"name": "i",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 110103638128452
+				},
+				{
+					"eventType": "comment",
+					"text": "Iteração para guardar posição atual do array"
+				},
+				{
+					"eventType": "variable",
 					"name": "input_block",
 					"type": "boolean",
-					"initialValue": "true",
+					"initialValue": "false",
 					"comment": "",
 					"isStatic": false,
 					"isConstant": false,
@@ -32,17 +50,31 @@
 				},
 				{
 					"eventType": "variable",
-					"name": "i",
+					"name": "limit_show",
 					"type": "number",
 					"initialValue": "0",
 					"comment": "",
 					"isStatic": false,
 					"isConstant": false,
-					"sid": 333142738205028
+					"sid": 626281341043034
 				},
 				{
 					"eventType": "comment",
-					"text": "Iteração para guardar posição atual do array"
+					"text": "Controla quantos sinais mostra por vez"
+				},
+				{
+					"eventType": "variable",
+					"name": "step_show_i",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 533293758382163
+				},
+				{
+					"eventType": "comment",
+					"text": "stepshow temporaria"
 				},
 				{
 					"eventType": "variable",
@@ -73,12 +105,629 @@
 					"text": "Progresso do jogador:\n0 → Energia (0)\n1 → Rede (1)\n2 → Segurança (3)\n3 → Terminal (2)\n4 → Rede (1) \n5 → Segurança (3)\n6 → Final da sequência"
 				},
 				{
-					"eventType": "comment",
-					"text": ""
-				},
-				{
-					"eventType": "comment",
-					"text": "EXPLICAÇÃO DA FASE\n\nO sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n1. ENERGIA\n2. REDE\n3. TERMINAL\n4. SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \nFase 1:\nEnergia (0) → Segurança (3) → Rede (1) → Terminal (2)\n\nFase 2:\nRede (1) → Energia (0) → Terminal (2) → Segurança (3) → Rede (1) → Energia (0)\n\nFase 3:\nSegurança (3) → Rede (1) → Terminal (2) → Energia (0) → Segurança (3) → Terminal (2) → Rede (1) → Energia (0)"
+					"eventType": "group",
+					"disabled": false,
+					"title": "LVL1_FUNCTION",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Iniciar genius"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-completed",
+									"objectClass": "AJAX",
+									"sid": 613930444084676,
+									"parameters": {
+										"tag": "\"lvl1_array\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "load",
+									"objectClass": "lvl1_array",
+									"sid": 771710761314302,
+									"parameters": {
+										"json": "AJAX.LastData"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 450359451189186,
+									"parameters": {
+										"variable": "input_block",
+										"value": "true"
+									}
+								},
+								{
+									"callFunction": "ShowSequence",
+									"sid": 167932827092174
+								}
+							],
+							"sid": 274355487484565
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 333583975060919,
+									"parameters": {
+										"key": 83
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 489635631480910,
+									"parameters": {
+										"variable": "step_show",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 124970032926338,
+									"parameters": {
+										"variable": "step_player",
+										"value": "0"
+									}
+								},
+								{
+									"callFunction": "ShowSequence",
+									"sid": 771328094596587
+								}
+							],
+							"sid": 587599447955582
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 342850909976506,
+									"parameters": {
+										"key": 49
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 499937920664433,
+									"parameters": {
+										"variable": "input_block"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "flash",
+									"objectClass": "energia_hitbox",
+									"sid": 207098621427388,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 276431515659062,
+									"parameters": {
+										"audio-file": {
+											"path": "Levels/Level 1/lvl1_yellow"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 744471428951436,
+									"parameters": {
+										"variable": "step_player",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 531284236436177,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 132162599685779,
+											"parameters": {
+												"variable": "step_player",
+												"comparison": 0,
+												"value": "step_show"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 845254631836923,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "go-to-layout",
+													"objectClass": "System",
+													"sid": 720098444623099,
+													"parameters": {
+														"layout": "Bedroom"
+													}
+												}
+											],
+											"sid": 620410748715709
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 236749380903509
+												}
+											],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 751286032615984,
+													"parameters": {
+														"variable": "step_show",
+														"value": "1"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 865111158298224,
+													"parameters": {
+														"seconds": "1.0",
+														"use-timescale": true
+													}
+												},
+												{
+													"callFunction": "ShowSequence",
+													"sid": 833715458657402
+												}
+											],
+											"sid": 458987432068515
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 691547315397230
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Lvl1Error",
+									"sid": 672266771100752
+								}
+							],
+							"sid": 574840928454272,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "Mostrar sequência"
+						},
+						{
+							"functionName": "ShowSequence",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [],
+							"sid": 493987136071739,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Primeira etapa (0-3)\nEnergia (0) → Segurança (3) → Rede (1) → Terminal (2)"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for",
+											"objectClass": "System",
+											"sid": 518435455676996,
+											"parameters": {
+												"name": "\"i\"",
+												"start-index": "0",
+												"end-index": "step_show - 1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 333232063492901,
+											"parameters": {
+												"variable": "i",
+												"value": "loopindex"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 739669543519657,
+											"parameters": {
+												"seconds": "i * 1.2",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 270461917818677,
+											"parameters": {
+												"variable": "input_block",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 885051417250377,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 109657079854273,
+													"parameters": {
+														"variable": "step_show_i",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "flash",
+													"objectClass": "energia_hitbox",
+													"sid": 695430766868356,
+													"behaviorType": "Flash",
+													"parameters": {
+														"on-time": "0.1",
+														"off-time": "0.1",
+														"duration": "1.0"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 931431030011972,
+													"parameters": {
+														"audio-file": {
+															"path": "Levels/Level 1/lvl1_yellow"
+														},
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 159494805600286
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 179580830032045,
+													"parameters": {
+														"variable": "step_show_i",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "flash",
+													"objectClass": "rede_hitbox",
+													"sid": 221771045280011,
+													"behaviorType": "Flash",
+													"parameters": {
+														"on-time": "0.1",
+														"off-time": "0.1",
+														"duration": "1.0"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 178079413232046,
+													"parameters": {
+														"audio-file": {
+															"path": "Levels/Level 1/lvl1_blue"
+														},
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 417295544922612
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 901511732168836,
+													"parameters": {
+														"variable": "step_show_i",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "flash",
+													"objectClass": "terminal_hitbox",
+													"sid": 844273467660851,
+													"behaviorType": "Flash",
+													"parameters": {
+														"on-time": "0.1",
+														"off-time": "0.1",
+														"duration": "1.0"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 745456277908000,
+													"parameters": {
+														"audio-file": {
+															"path": "Levels/Level 1/lvl1_green"
+														},
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 300143787200216
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-eventvar",
+													"objectClass": "System",
+													"sid": 870517182843420,
+													"parameters": {
+														"variable": "step_show_i",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "flash",
+													"objectClass": "segurança_hitbox",
+													"sid": 696330693076622,
+													"behaviorType": "Flash",
+													"parameters": {
+														"on-time": "0.1",
+														"off-time": "0.1",
+														"duration": "1.0"
+													}
+												},
+												{
+													"id": "play",
+													"objectClass": "Audio",
+													"sid": 428273169527769,
+													"parameters": {
+														"audio-file": {
+															"path": "Levels/Level 1/lvl1_red"
+														},
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 937200077120664
+										}
+									]
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 476182749432060,
+											"parameters": {
+												"seconds": "(step_show * 1.2)",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 234778417255565,
+											"parameters": {
+												"variable": "input_block",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 468985185589598,
+											"parameters": {
+												"variable": "step_player",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 755982836928022
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Sequência errada\n(tremor de tela → símbolo de erro → reinicia fase)"
+						},
+						{
+							"functionName": "Lvl1Error",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-active",
+									"objectClass": "lvl1_layout",
+									"sid": 528778913638884,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "active"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 820925801085739,
+									"parameters": {
+										"seconds": "0.2",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "lvl1_layout",
+									"sid": 884357400678860,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "lvl1_layout",
+									"sid": 577555847161235,
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "error",
+									"sid": 195682762798023,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "error",
+									"sid": 972137525247458,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 317955905341945,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "error",
+									"sid": 112087250244727,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "error",
+									"sid": 200011224647222,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 418741210074775
+								}
+							],
+							"sid": 598572786999845
+						}
+					],
+					"sid": 187849668504262,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.12941176470588237,
+						0.47058823529411764,
+						0.23137254901960785,
+						1
+					]
 				}
 			],
 			"sid": 516254465505535,
@@ -96,126 +745,43 @@
 			]
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "LVL1_FUNCTION",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
+			"eventType": "comment",
+			"text": "SEQUÊNCIA ERRADA"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
 				{
-					"eventType": "comment",
-					"text": "Sequencia errada\ntremor de tela → símbolo de erro → reinicia fase"
-				},
-				{
-					"functionName": "lvl1_error",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-active",
-							"objectClass": "lvl1_layout",
-							"sid": 246776505341513,
-							"behaviorType": "Sine",
-							"parameters": {
-								"state": "active"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 106757329602002,
-							"parameters": {
-								"seconds": "0.2",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "set-active",
-							"objectClass": "lvl1_layout",
-							"sid": 914131231800569,
-							"behaviorType": "Sine",
-							"parameters": {
-								"state": "inactive"
-							}
-						},
-						{
-							"id": "set-angle",
-							"objectClass": "lvl1_layout",
-							"sid": 741528935591909,
-							"parameters": {
-								"angle": "0"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "error",
-							"sid": 119121130111078,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "error",
-							"sid": 944200588888956,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 939967417407612,
-							"parameters": {
-								"seconds": "1.0",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "stop-flashing",
-							"objectClass": "error",
-							"sid": 823944210651674,
-							"behaviorType": "Flash"
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "error",
-							"sid": 375759701553373,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "restart-layout",
-							"objectClass": "System",
-							"sid": 645522476737514
-						}
-					],
-					"sid": 856086388782150
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 135484109201335,
+					"parameters": {
+						"key": 70
+					}
 				}
 			],
-			"sid": 738170044615025,
-			"text-color": [
-				0,
-				0,
-				0,
-				0
+			"actions": [
+				{
+					"callFunction": "Lvl1Error",
+					"sid": 542655616799178
+				}
 			],
-			"background-color": [
-				0.12941176470588237,
-				0.47058823529411764,
-				0.23137254901960785,
-				1
-			]
+			"sid": 668751053514468
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 863116095551660,
+					"parameters": {
+						"key": 79
+					}
+				}
+			],
+			"actions": [],
+			"sid": 760451358749021
 		},
 		{
 			"eventType": "group",
@@ -230,119 +796,54 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 306459540678580
+							"sid": 409293181246751
 						}
 					],
 					"actions": [
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 382042640620079,
+							"sid": 155180935196161,
 							"parameters": {
 								"variable": "cursor",
 								"value": "\"default\""
 							}
 						},
 						{
-							"id": "set-eventvar-value",
+							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 918060770695525,
+							"sid": 280472442164689,
 							"parameters": {
-								"variable": "isPlayerMoving",
-								"value": "0"
+								"variable": "PlayerMoving",
+								"value": "false"
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 397691329653560,
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 242231911162469,
 							"parameters": {
-								"variable": "level",
-								"value": "\"1\""
+								"tag": "\"lvl1_array\"",
+								"file": {
+									"path": "Levels/Level 1/lvl1_array.json"
+								}
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 200357427248109,
+							"parameters": {
+								"layer": "2",
+								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 986940082532792
+					"sid": 602734009751492
 				},
 				{
 					"eventType": "comment",
 					"text": "FIM DA FASE"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 194598824182723,
-							"parameters": {
-								"key": 79
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 191020339900449,
-							"parameters": {
-								"variable": "state",
-								"value": "\"loading\""
-							}
-						}
-					],
-					"sid": 607843232384660
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "flash",
-							"objectClass": "energia_hitbox",
-							"sid": 465394812142231,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "1.0"
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "rede_hitbox",
-							"sid": 154627655301790,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "1.0"
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "terminal_hitbox",
-							"sid": 170387250350930,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "1.0"
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "segurança_hitbox",
-							"sid": 725766383453781,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "1.0"
-							}
-						}
-					],
-					"sid": 601024864650556
 				}
 			],
 			"sid": 378663831491017,
@@ -506,28 +1007,27 @@
 			]
 		},
 		{
-			"eventType": "comment",
-			"text": "SEQUÊNCIA ERRADA"
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
-					"sid": 991101068602328,
+					"sid": 934832305643697,
 					"parameters": {
-						"key": 70
+						"key": 190
 					}
 				}
 			],
 			"actions": [
 				{
-					"callFunction": "lvl1_error",
-					"sid": 362269877348343
+					"callFunction": "Transition",
+					"sid": 329732565398479,
+					"parameters": [
+						"\"bedroom\""
+					]
 				}
 			],
-			"sid": 193621084806444
+			"sid": 418829855699436
 		}
 	],
 	"sid": 856370518782902

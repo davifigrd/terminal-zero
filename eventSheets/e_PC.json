@@ -17,6 +17,10 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "Entrar no pc"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -29,32 +33,36 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 568794818066980,
+							"sid": 175334568839302,
 							"parameters": {
 								"variable": "cursor",
-								"value": "\"pc\""
+								"value": "\"default\""
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 938665751439503,
+							"sid": 347118822665654,
 							"parameters": {
-								"variable": "isPlayerMoving",
-								"value": "0"
+								"variable": "layout",
+								"value": "\"pc\""
 							}
 						},
 						{
-							"id": "set-eventvar-value",
+							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 927670363537362,
+							"sid": 637725189170093,
 							"parameters": {
-								"variable": "state",
-								"value": "\"pc\""
+								"variable": "PlayerMoving",
+								"value": "false"
 							}
 						}
 					],
 					"sid": 741880394947535
+				},
+				{
+					"eventType": "comment",
+					"text": "Sair do pc"
 				},
 				{
 					"eventType": "block",
@@ -69,6 +77,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 830177135255333,
+							"parameters": {
+								"variable": "spawn_point",
+								"value": "\"pc\""
+							}
+						},
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
@@ -114,7 +131,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 495110398033414,
 									"parameters": {
 										"object": "bin_hitbox"
@@ -163,7 +180,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 507111229229492,
 									"parameters": {
 										"object": "paste_hitbox"
@@ -212,7 +229,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 901100556203826,
 									"parameters": {
 										"object": "vscode_hitbox"
@@ -261,7 +278,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 470035397557018,
 									"parameters": {
 										"object": "teams_hitbox"
@@ -310,7 +327,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 482099708457436,
 									"parameters": {
 										"object": "devcpp_hitbox"
@@ -359,7 +376,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 685291377967622,
 									"parameters": {
 										"object": "notes_hitbox"
@@ -408,7 +425,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 333657931861107,
 									"parameters": {
 										"object": "deepweb_hitbox"
@@ -457,7 +474,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 336809690070582,
 									"parameters": {
 										"object": "terminalzero_hitbox"
@@ -533,7 +550,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 675857753394249,
 									"parameters": {
 										"object": "bin_hitbox"
@@ -557,7 +574,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 784419976714760,
 									"parameters": {
 										"object": "bin_hitbox"
@@ -595,7 +612,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 801825745289636,
 									"parameters": {
 										"object": "paste_hitbox"
@@ -619,7 +636,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 654101997676083,
 									"parameters": {
 										"object": "paste_hitbox"
@@ -657,7 +674,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 121435877058091,
 									"parameters": {
 										"object": "vscode_hitbox"
@@ -681,7 +698,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 524002690060354,
 									"parameters": {
 										"object": "vscode_hitbox"
@@ -719,7 +736,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 743662799070537,
 									"parameters": {
 										"object": "teams_hitbox"
@@ -743,7 +760,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 283395581024378,
 									"parameters": {
 										"object": "teams_hitbox"
@@ -781,7 +798,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 694628349832530,
 									"parameters": {
 										"object": "devcpp_hitbox"
@@ -805,7 +822,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 311215813856901,
 									"parameters": {
 										"object": "devcpp_hitbox"
@@ -843,7 +860,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 358689340062083,
 									"parameters": {
 										"object": "notes_hitbox"
@@ -867,7 +884,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 563605885576588,
 									"parameters": {
 										"object": "notes_hitbox"
@@ -905,7 +922,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 661519870514051,
 									"parameters": {
 										"object": "deepweb_hitbox"
@@ -929,7 +946,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 909934260171132,
 									"parameters": {
 										"object": "deepweb_hitbox"
@@ -967,7 +984,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 515440974035507,
 									"parameters": {
 										"object": "terminalzero_hitbox"
@@ -991,7 +1008,7 @@
 							"conditions": [
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 136306035019176,
 									"parameters": {
 										"object": "terminalzero_hitbox"
@@ -1047,7 +1064,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 562442231326846,
 									"parameters": {
 										"object": "bin_hitbox"
@@ -1075,7 +1092,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 756534546241728,
 									"parameters": {
 										"object": "paste_hitbox"
@@ -1103,7 +1120,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 122318115049861,
 									"parameters": {
 										"object": "vscode_hitbox"
@@ -1131,7 +1148,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 968797544496413,
 									"parameters": {
 										"object": "teams_hitbox"
@@ -1159,7 +1176,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 204008601120125,
 									"parameters": {
 										"object": "devcpp_hitbox"
@@ -1187,7 +1204,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 361370895215487,
 									"parameters": {
 										"object": "notes_hitbox"
@@ -1215,7 +1232,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 962833779371812,
 									"parameters": {
 										"object": "deepweb_hitbox"
@@ -1243,7 +1260,7 @@
 								},
 								{
 									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
+									"objectClass": "cursor_defult",
 									"sid": 862020352187563,
 									"parameters": {
 										"object": "terminalzero_hitbox"

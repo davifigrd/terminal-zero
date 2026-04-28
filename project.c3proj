@@ -15,6 +15,13 @@
 		},
 		{
 			"type": "plugin",
+			"id": "Arr",
+			"name": "Array",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Audio",
 			"name": "Audio",
 			"author": "Scirra",
@@ -107,9 +114,7 @@
 	],
 	"uniqueId": "infcrcpul51",
 	"objectTypes": {
-		"items": [
-			"lvl1_variable"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -236,7 +241,7 @@
 			},
 			{
 				"items": [
-					"cursor",
+					"cursor_defult",
 					"Mouse",
 					"Keyboard",
 					"cursor_pointer",
@@ -255,7 +260,8 @@
 						"items": [
 							"lvl1_layout",
 							"error",
-							"lvl1_layout2"
+							"lvl1_layout2",
+							"lvl1_array"
 						],
 						"subfolders": [
 							{
@@ -345,7 +351,7 @@
 			},
 			{
 				"items": [
-					"fade",
+					"transition_screen",
 					"loading"
 				],
 				"subfolders": [],
@@ -421,20 +427,25 @@
 		"items": [
 			"Bedroom",
 			"Menu",
-			"PC",
-			"Level1",
-			"Level3",
-			"Transition"
+			"PC"
 		],
-		"subfolders": []
+		"subfolders": [
+			{
+				"items": [
+					"Level1",
+					"Level3"
+				],
+				"subfolders": [],
+				"name": "Levels"
+			}
+		]
 	},
 	"eventSheets": {
 		"items": [
 			"e_Bedroom",
 			"e_PC",
 			"e_Menu",
-			"e_Global",
-			"e_Transition"
+			"e_Global"
 		],
 		"subfolders": [
 			{
