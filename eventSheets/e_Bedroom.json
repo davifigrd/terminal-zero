@@ -63,7 +63,8 @@
 							}
 						}
 					],
-					"sid": 337506320601701
+					"sid": 337506320601701,
+					"disabled": true
 				},
 				{
 					"eventType": "comment",
@@ -73,15 +74,6 @@
 					"eventType": "block",
 					"conditions": [],
 					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 432160576805823,
-							"parameters": {
-								"x": "spawn_player.X",
-								"y": "spawn_player.Y"
-							}
-						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
@@ -161,6 +153,16 @@
 							"id": "on-start-of-layout",
 							"objectClass": "System",
 							"sid": 184076328638867
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 652659692804338,
+							"parameters": {
+								"variable": "spawnPoint",
+								"comparison": 0,
+								"value": "\"pc\""
+							}
 						}
 					],
 					"actions": [
@@ -174,12 +176,12 @@
 							}
 						},
 						{
-							"id": "set-boolean-eventvar",
+							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 893828676812376,
+							"sid": 875325009956493,
 							"parameters": {
-								"variable": "PlayerMoving",
-								"value": "true"
+								"variable": "player_moving",
+								"value": "1"
 							}
 						},
 						{
@@ -282,20 +284,21 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "Movimentação do player ativada"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-boolean-eventvar",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 685512455189288,
+							"sid": 932388660391911,
 							"parameters": {
-								"variable": "PlayerMoving"
+								"variable": "player_moving",
+								"comparison": 0,
+								"value": "1"
 							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 479016958223588
 						}
 					],
 					"actions": [
@@ -486,24 +489,27 @@
 					]
 				},
 				{
+					"eventType": "comment",
+					"text": "Movimentação do player desativada"
+				},
+				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 915628251437496,
-							"parameters": {
-								"variable": "PlayerMoving"
-							},
-							"isInverted": true
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"id": "stop",
 							"objectClass": "player",
 							"sid": 237053644937473,
 							"behaviorType": "8Direction"
+						},
+						{
+							"id": "set-enabled",
+							"objectClass": "player",
+							"sid": 195229325748249,
+							"behaviorType": "8Direction",
+							"parameters": {
+								"state": "disabled"
+							}
 						}
 					],
 					"sid": 622292490967323
@@ -576,12 +582,12 @@
 											}
 										},
 										{
-											"id": "set-boolean-eventvar",
+											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 897052277951028,
+											"sid": 866575461559349,
 											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "false"
+												"variable": "player_moving",
+												"value": "0"
 											}
 										},
 										{
@@ -744,12 +750,12 @@
 											}
 										},
 										{
-											"id": "set-boolean-eventvar",
+											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 108215812077104,
+											"sid": 507243718714534,
 											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "true"
+												"variable": "player_moving",
+												"value": "1"
 											}
 										},
 										{
@@ -804,12 +810,12 @@
 											}
 										},
 										{
-											"id": "set-boolean-eventvar",
+											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 754183192319906,
+											"sid": 874964909444550,
 											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "true"
+												"variable": "player_moving",
+												"value": "1"
 											}
 										},
 										{
@@ -917,12 +923,12 @@
 											}
 										},
 										{
-											"id": "set-boolean-eventvar",
+											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 181122866940629,
+											"sid": 659836159172188,
 											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "false"
+												"variable": "player_moving",
+												"value": "0"
 											}
 										},
 										{
@@ -988,12 +994,12 @@
 											}
 										},
 										{
-											"id": "set-boolean-eventvar",
+											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 680433729643940,
+											"sid": 936502126952773,
 											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "false"
+												"variable": "player_moving",
+												"value": "0"
 											}
 										},
 										{
@@ -1080,12 +1086,12 @@
 											}
 										},
 										{
-											"id": "set-boolean-eventvar",
+											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 369515434776477,
+											"sid": 407274023940847,
 											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "true"
+												"variable": "player_moving",
+												"value": "1"
 											}
 										},
 										{
@@ -1140,12 +1146,12 @@
 											}
 										},
 										{
-											"id": "set-boolean-eventvar",
+											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 806695323882492,
+											"sid": 706600482677826,
 											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "true"
+												"variable": "player_moving",
+												"value": "1"
 											}
 										},
 										{
@@ -1218,10 +1224,10 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 294202410340286,
+							"sid": 826223516328037,
 							"parameters": {
 								"layer": "\"sign\"",
-								"visibility": "invisible"
+								"visibility": "visible"
 							}
 						}
 					],
@@ -1241,19 +1247,10 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 398030632403701,
+							"sid": 860540811496935,
 							"parameters": {
 								"layer": "\"sign\"",
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 946065071812080,
-							"parameters": {
-								"layer": "5",
-								"visibility": "visible"
+								"visibility": "invisible"
 							}
 						}
 					],
@@ -1372,7 +1369,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "INTERFACE",
+			"title": "HUD",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -1553,6 +1550,7 @@
 							"sid": 593918306595869
 						},
 						{
+							"bookmark": true,
 							"eventType": "comment",
 							"text": "RESET WASD"
 						},

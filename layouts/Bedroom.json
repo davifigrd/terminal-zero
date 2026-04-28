@@ -776,43 +776,6 @@
 					}
 				},
 				{
-					"type": "spawn_player",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": false,
-						"live-preview": false
-					},
-					"uid": 34,
-					"sid": 968950057846716,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 968950057846716,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 680,
-						"y": 475,
-						"width": 47.872712,
-						"height": 40.988941,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
 					"type": "limit",
 					"properties": {
 						"initially-visible": true,
@@ -860,14 +823,14 @@
 			],
 			"sid": 148432864228112,
 			"effectTypes": [],
-			"isInitiallyVisible": true,
+			"isInitiallyVisible": false,
 			"isInitiallyInteractive": true,
 			"isHTMLElementsLayer": false,
 			"color": [
 				1,
 				1,
 				1,
-				0
+				1
 			],
 			"backgroundColor": [
 				0.3686274509803922,
@@ -963,8 +926,8 @@
 			],
 			"isTransparent": true,
 			"sampling": "auto",
-			"parallaxX": 1,
-			"parallaxY": 1,
+			"parallaxX": 0,
+			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
@@ -1232,7 +1195,7 @@
 			"global": false
 		},
 		{
-			"name": "interface",
+			"name": "sign",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [

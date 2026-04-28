@@ -2,6 +2,10 @@
 	"name": "e_Global",
 	"events": [
 		{
+			"eventType": "comment",
+			"text": "=== VARIABLE CASE ===\nPascalCase → boolean\nsnake_case → number\ncamelCase → string"
+		},
+		{
 			"eventType": "variable",
 			"name": "cursor",
 			"type": "string",
@@ -17,17 +21,17 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "PlayerMoving",
-			"type": "boolean",
-			"initialValue": "true",
+			"name": "player_moving",
+			"type": "number",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 471247041730130
+			"sid": 709573250905655
 		},
 		{
 			"eventType": "comment",
-			"text": "\"false\" → movimentação desativada\n\"true\" → movimentação ativada"
+			"text": "0 → movimentação desativada\n1 → movimentação ativada"
 		},
 		{
 			"eventType": "variable",
@@ -41,17 +45,21 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "\"none\" → nenhum layout\n\"bedroom\"\n\"menu\"\n\"pc\""
+			"text": "\"none\" → nenhum layout"
 		},
 		{
 			"eventType": "variable",
-			"name": "spawn_point",
+			"name": "spawnPoint",
 			"type": "string",
 			"initialValue": "none",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 257254531048027
+		},
+		{
+			"eventType": "comment",
+			"text": "\"none\" → nenhum ponto de spaawn setado\n\"pc\" → spawn.pc\n\"door\" → spawn.door"
 		},
 		{
 			"eventType": "group",

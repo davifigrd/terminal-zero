@@ -7,7 +7,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "LAST UPDATE\n1. sine tela função (tremor)\n2. som bip\n3. correção mouse saindo da tela pc\n4. array + ajax\n5. transition função\n6. reestruturação de variáveis:\n    - state e level removidas\n    - PLayerMoving boolean\n    - arrival_point\n\nPERGUNTAS\n\n---\nfade layout função\n3 saves novo jogo"
+			"text": "LAST UPDATE\n1. sine tela função (tremor)\n2. som bip\n3. correção mouse saindo da tela pc\n4. array + ajax\n5. transition função\n6. reestruturação de variáveis:\n    - state e level removidas\n    - spawnPoint\n    - layout\n7. spawn_player removido\n8. \n\nPERGUNTAS\n\n---\n3 saves novo jogo"
 		},
 		{
 			"eventType": "comment",
@@ -36,7 +36,7 @@
 				},
 				{
 					"eventType": "variable",
-					"name": "input_block",
+					"name": "InputBlock",
 					"type": "boolean",
 					"initialValue": "false",
 					"comment": "",
@@ -141,7 +141,7 @@
 									"objectClass": "System",
 									"sid": 450359451189186,
 									"parameters": {
-										"variable": "input_block",
+										"variable": "InputBlock",
 										"value": "true"
 									}
 								},
@@ -206,7 +206,7 @@
 									"objectClass": "System",
 									"sid": 499937920664433,
 									"parameters": {
-										"variable": "input_block"
+										"variable": "InputBlock"
 									},
 									"isInverted": true
 								}
@@ -397,7 +397,7 @@
 											"objectClass": "System",
 											"sid": 270461917818677,
 											"parameters": {
-												"variable": "input_block",
+												"variable": "InputBlock",
 												"value": "true"
 											}
 										}
@@ -596,7 +596,7 @@
 											"objectClass": "System",
 											"sid": 234778417255565,
 											"parameters": {
-												"variable": "input_block",
+												"variable": "InputBlock",
 												"value": "false"
 											}
 										},
@@ -810,12 +810,12 @@
 							}
 						},
 						{
-							"id": "set-boolean-eventvar",
+							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 280472442164689,
+							"sid": 781843560375535,
 							"parameters": {
-								"variable": "PlayerMoving",
-								"value": "false"
+								"variable": "player_moving",
+								"value": "0"
 							}
 						},
 						{
