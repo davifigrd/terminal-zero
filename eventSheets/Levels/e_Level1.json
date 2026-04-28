@@ -7,7 +7,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "LAST UPDATE\n1. sine tela função (tremor)\n2. som bip\n3. correção mouse saindo da tela pc\n4. array + ajax\n5. transition função\n6. reestruturação de variáveis:\n    - state e level removidas\n    - spawnPoint\n    - layout\n7. spawn_player removido\n8. \n\nPERGUNTAS\n\n---\n3 saves novo jogo"
+			"text": "LAST UPDATE\n1. sine tela função (tremor)\n2. som bip\n3. correção mouse saindo da tela pc\n4. array + ajax\n5. transition função + layer global\n6. reestruturação de variáveis:\n    - state e level removidas\n    - spawnPoint\n    - layout\n    - troca para boolean PlayerMoving\n7. spawn_player removido\n8. \n\nPERGUNTAS\n\n---\n3 saves novo jogo"
 		},
 		{
 			"eventType": "comment",
@@ -749,6 +749,7 @@
 			"text": "SEQUÊNCIA ERRADA"
 		},
 		{
+			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{
@@ -769,6 +770,7 @@
 			"sid": 668751053514468
 		},
 		{
+			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{
@@ -782,6 +784,30 @@
 			],
 			"actions": [],
 			"sid": 760451358749021
+		},
+		{
+			"bookmark": true,
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 882708333272537,
+					"parameters": {
+						"key": 190
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Transition",
+					"sid": 290074077286277,
+					"parameters": [
+						"\"Bedroom\""
+					]
+				}
+			],
+			"sid": 350136399514227
 		},
 		{
 			"eventType": "group",
@@ -810,12 +836,12 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
+							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 781843560375535,
+							"sid": 460703033185009,
 							"parameters": {
-								"variable": "player_moving",
-								"value": "0"
+								"variable": "PlayerMoving",
+								"value": "false"
 							}
 						},
 						{
@@ -1005,29 +1031,6 @@
 				0,
 				1
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 934832305643697,
-					"parameters": {
-						"key": 190
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "Transition",
-					"sid": 329732565398479,
-					"parameters": [
-						"\"bedroom\""
-					]
-				}
-			],
-			"sid": 418829855699436
 		}
 	],
 	"sid": 856370518782902

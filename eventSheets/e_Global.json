@@ -2,6 +2,7 @@
 	"name": "e_Global",
 	"events": [
 		{
+			"bookmark": true,
 			"eventType": "comment",
 			"text": "=== VARIABLE CASE ===\nPascalCase → boolean\nsnake_case → number\ncamelCase → string"
 		},
@@ -21,17 +22,17 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "player_moving",
-			"type": "number",
-			"initialValue": "0",
+			"name": "PlayerMoving",
+			"type": "boolean",
+			"initialValue": "false",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 709573250905655
+			"sid": 379928851874203
 		},
 		{
 			"eventType": "comment",
-			"text": "0 → movimentação desativada\n1 → movimentação ativada"
+			"text": "false → movimentação desativada\ntrue → movimentação ativada"
 		},
 		{
 			"eventType": "variable",
@@ -60,6 +61,20 @@
 		{
 			"eventType": "comment",
 			"text": "\"none\" → nenhum ponto de spaawn setado\n\"pc\" → spawn.pc\n\"door\" → spawn.door"
+		},
+		{
+			"eventType": "variable",
+			"name": "transitionTarget",
+			"type": "string",
+			"initialValue": "none",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 855333202554659
+		},
+		{
+			"eventType": "comment",
+			"text": "\"none\" → trajeto de transição\n\"Bedroom\" → trajeto de transição\n"
 		},
 		{
 			"eventType": "group",
@@ -350,7 +365,7 @@
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
-							"name": "Target",
+							"name": "nextLayout",
 							"type": "string",
 							"initialValue": "",
 							"comment": "",
@@ -363,10 +378,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 464376329024954,
+							"sid": 287230970987762,
 							"parameters": {
-								"variable": "layout",
-								"value": "Target"
+								"variable": "transitionTarget",
+								"value": "nextLayout"
 							}
 						},
 						{
@@ -380,14 +395,6 @@
 								"y": "386",
 								"create-hierarchy": false,
 								"template-name": "\"create_transition_screen\""
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "transition_screen",
-							"sid": 568184715069803,
-							"parameters": {
-								"visibility": "visible"
 							}
 						},
 						{
@@ -424,19 +431,11 @@
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "loading",
-							"sid": 514386831646667,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
 							"id": "go-to-layout-by-name",
 							"objectClass": "System",
-							"sid": 551183973291694,
+							"sid": 888479150043532,
 							"parameters": {
-								"layout": "Layout"
+								"layout": "transitionTarget"
 							}
 						}
 					],
@@ -457,14 +456,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "loading",
-							"sid": 324200775398127,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
 						{
 							"id": "destroy",
 							"objectClass": "loading",
@@ -488,14 +479,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "transition_screen",
-							"sid": 154140000178344,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
 						{
 							"id": "destroy",
 							"objectClass": "transition_screen",

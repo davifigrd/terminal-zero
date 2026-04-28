@@ -14,6 +14,32 @@
 			"children": [
 				{
 					"eventType": "comment",
+					"text": "Início"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 235505420294854
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 619455730353783,
+							"parameters": {
+								"variable": "PlayerMoving",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 965695399825463
+				},
+				{
+					"eventType": "comment",
 					"text": "Bedroom → PC"
 				},
 				{
@@ -41,110 +67,8 @@
 					"sid": 668001973898943
 				},
 				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 284341862975613,
-							"parameters": {
-								"x": "spawn_pc.X",
-								"y": "spawn_pc.Y"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 328819356397059,
-							"parameters": {
-								"variable": "cursor",
-								"value": "\"none\""
-							}
-						}
-					],
-					"sid": 337506320601701,
-					"disabled": true
-				},
-				{
 					"eventType": "comment",
-					"text": "Menu"
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 687385028356014,
-							"parameters": {
-								"variable": "cursor",
-								"value": "\"none\""
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 249253560543413,
-							"parameters": {
-								"x": "spawn_door.X",
-								"y": "spawn_door.Y"
-							}
-						}
-					],
-					"sid": 677054397532905,
-					"disabled": true
-				},
-				{
-					"eventType": "comment",
-					"text": "Level"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 594112750667152,
-							"parameters": {
-								"variable": "layout",
-								"comparison": 0,
-								"value": "\"bedroom\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 453348865015095,
-							"parameters": {
-								"x": "spawn_bed.X",
-								"y": "spawn_bed.Y"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 443947369077060,
-							"parameters": {
-								"variable": "cursor",
-								"value": "\"none\""
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 212469569061289,
-							"parameters": {
-								"variable": "layout",
-								"value": "\"none\""
-							}
-						}
-					],
-					"sid": 201529498499813,
-					"disabled": true
+					"text": "PC→ Bedroom"
 				},
 				{
 					"eventType": "block",
@@ -152,7 +76,7 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 184076328638867
+							"sid": 568119993147499
 						},
 						{
 							"id": "compare-eventvar",
@@ -167,29 +91,20 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 947815493420681,
+							"id": "set-position",
+							"objectClass": "player",
+							"sid": 789419234863229,
 							"parameters": {
-								"variable": "cursor",
-								"value": "\"none\""
+								"x": "spawn_pc.X",
+								"y": "spawn_pc.Y"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 875325009956493,
+							"sid": 252140929434841,
 							"parameters": {
-								"variable": "player_moving",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 582420750750981,
-							"parameters": {
-								"variable": "layout",
+								"variable": "spawnPoint",
 								"value": "\"none\""
 							}
 						}
@@ -197,54 +112,25 @@
 					"sid": 786961671698299
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 149006236991541,
-							"parameters": {
-								"variable": "layout",
-								"comparison": 0,
-								"value": "\"bedroom\""
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 805170653132439,
-							"parameters": {
-								"variable": "layout",
-								"comparison": 0,
-								"value": "\"none\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 817530488775118,
-							"parameters": {
-								"x": "spawn_bed.X",
-								"y": "spawn_bed.Y"
-							}
-						}
-					],
-					"sid": 562192112234657,
-					"isOrBlock": true
+					"eventType": "comment",
+					"text": "Porta → Bedroom"
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 701951043612565
+						},
+						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 399560201202333,
+							"sid": 447178857409440,
 							"parameters": {
-								"variable": "layout",
+								"variable": "spawnPoint",
 								"comparison": 0,
-								"value": "\"pc\""
+								"value": "\"door\""
 							}
 						}
 					],
@@ -252,14 +138,23 @@
 						{
 							"id": "set-position",
 							"objectClass": "player",
-							"sid": 707203915367779,
+							"sid": 766738877519940,
 							"parameters": {
-								"x": "spawn_pc.X",
-								"y": "spawn_pc.Y"
+								"x": "spawn_door.X",
+								"y": "spawn_door.Y"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 467824360040613,
+							"parameters": {
+								"variable": "spawnPoint",
+								"value": "\"none\""
 							}
 						}
 					],
-					"sid": 573508963620017
+					"sid": 280351065625612
 				}
 			],
 			"sid": 413555915179035,
@@ -291,13 +186,11 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
+							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 932388660391911,
+							"sid": 811472687337851,
 							"parameters": {
-								"variable": "player_moving",
-								"comparison": 0,
-								"value": "1"
+								"variable": "PlayerMoving"
 							}
 						}
 					],
@@ -494,7 +387,17 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 823943089661130,
+							"parameters": {
+								"variable": "PlayerMoving"
+							},
+							"isInverted": true
+						}
+					],
 					"actions": [
 						{
 							"id": "stop",
@@ -582,12 +485,12 @@
 											}
 										},
 										{
-											"id": "set-eventvar-value",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 866575461559349,
+											"sid": 452685079736058,
 											"parameters": {
-												"variable": "player_moving",
-												"value": "0"
+												"variable": "PlayerMoving",
+												"value": "false"
 											}
 										},
 										{
@@ -614,16 +517,6 @@
 											"parameters": {
 												"x": "816",
 												"y": "417"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "player",
-											"sid": 871181643116817,
-											"disabled": true,
-											"parameters": {
-												"x": "spawn_bed.X",
-												"y": "spawn_bed.Y"
 											}
 										}
 									],
@@ -750,12 +643,12 @@
 											}
 										},
 										{
-											"id": "set-eventvar-value",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 507243718714534,
+											"sid": 572945178189938,
 											"parameters": {
-												"variable": "player_moving",
-												"value": "1"
+												"variable": "PlayerMoving",
+												"value": "true"
 											}
 										},
 										{
@@ -810,12 +703,12 @@
 											}
 										},
 										{
-											"id": "set-eventvar-value",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 874964909444550,
+											"sid": 881168965333724,
 											"parameters": {
-												"variable": "player_moving",
-												"value": "1"
+												"variable": "PlayerMoving",
+												"value": "true"
 											}
 										},
 										{
@@ -923,12 +816,12 @@
 											}
 										},
 										{
-											"id": "set-eventvar-value",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 659836159172188,
+											"sid": 892386952308472,
 											"parameters": {
-												"variable": "player_moving",
-												"value": "0"
+												"variable": "PlayerMoving",
+												"value": "false"
 											}
 										},
 										{
@@ -994,12 +887,12 @@
 											}
 										},
 										{
-											"id": "set-eventvar-value",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 936502126952773,
+											"sid": 227094093009489,
 											"parameters": {
-												"variable": "player_moving",
-												"value": "0"
+												"variable": "PlayerMoving",
+												"value": "false"
 											}
 										},
 										{
@@ -1086,12 +979,12 @@
 											}
 										},
 										{
-											"id": "set-eventvar-value",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 407274023940847,
+											"sid": 275477869297173,
 											"parameters": {
-												"variable": "player_moving",
-												"value": "1"
+												"variable": "PlayerMoving",
+												"value": "true"
 											}
 										},
 										{
@@ -1146,12 +1039,12 @@
 											}
 										},
 										{
-											"id": "set-eventvar-value",
+											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 706600482677826,
+											"sid": 467601486249256,
 											"parameters": {
-												"variable": "player_moving",
-												"value": "1"
+												"variable": "PlayerMoving",
+												"value": "true"
 											}
 										},
 										{
@@ -1215,19 +1108,39 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Layer interface (5) desativa quando abre a tela de choosing"
+					"text": "Layer sign desativa quando abre a tela de choosing"
 				},
 				{
 					"eventType": "block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "is-visible",
+							"objectClass": "choosing_save",
+							"sid": 152252390715861
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "choosing_menu",
+							"sid": 934863644503049
+						}
+					],
 					"actions": [
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 826223516328037,
+							"sid": 270447206994170,
 							"parameters": {
 								"layer": "\"sign\"",
-								"visibility": "visible"
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 904317251887652,
+							"parameters": {
+								"layer": "\"sign\"",
+								"visibility": "invisible"
 							}
 						}
 					],
@@ -1238,23 +1151,30 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 278223517943621
+							"id": "is-visible",
+							"objectClass": "choosing_save",
+							"sid": 306161587732795,
+							"isInverted": true
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "choosing_menu",
+							"sid": 580615729236981,
+							"isInverted": true
 						}
 					],
 					"actions": [
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 860540811496935,
+							"sid": 503874341203875,
 							"parameters": {
 								"layer": "\"sign\"",
-								"visibility": "invisible"
+								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 491134989619100
+					"sid": 953689581849810
 				},
 				{
 					"eventType": "comment",
