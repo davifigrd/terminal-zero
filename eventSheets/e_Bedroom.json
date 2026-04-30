@@ -13,10 +13,6 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "comment",
-					"text": "Início"
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -33,6 +29,15 @@
 							"parameters": {
 								"variable": "PlayerMoving",
 								"value": "true"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 295405163138622,
+							"parameters": {
+								"variable": "layout",
+								"value": "\"Bedroom\""
 							}
 						}
 					],
@@ -55,6 +60,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 343065829771712,
+							"parameters": {
+								"variable": "spawnPoint",
+								"value": "\"pc\""
+							}
+						},
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
@@ -196,6 +210,32 @@
 						}
 					],
 					"sid": 473622131513026
+				},
+				{
+					"eventType": "comment",
+					"text": "Menu → Bedroom"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 319732347203940
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 201228093995441,
+							"parameters": {
+								"variable": "layout",
+								"comparison": 0,
+								"value": "\"menu\""
+							}
+						}
+					],
+					"actions": [],
+					"sid": 860984805112919
 				}
 			],
 			"sid": 413555915179035,
@@ -221,7 +261,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "Movimentação do player ativada"
+					"text": "Movimentação do jogador ativada"
 				},
 				{
 					"eventType": "block",
@@ -424,7 +464,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Movimentação do player desativada"
+					"text": "Movimentação do jogador desativada"
 				},
 				{
 					"eventType": "block",
@@ -535,29 +575,21 @@
 											}
 										},
 										{
-											"id": "set-visible",
-											"objectClass": "choosing_save",
-											"sid": 582057302417088,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 262676466441895,
 											"parameters": {
+												"layer": "\"save\"",
 												"visibility": "visible"
 											}
 										},
 										{
-											"id": "set-position",
-											"objectClass": "sim",
-											"sid": 123920814187180,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 389312600346710,
 											"parameters": {
-												"x": "642",
-												"y": "417"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "nao",
-											"sid": 680941097991460,
-											"parameters": {
-												"x": "816",
-												"y": "417"
+												"layer": "\"yes_no\"",
+												"visibility": "visible"
 											}
 										}
 									],
@@ -566,235 +598,224 @@
 							]
 						},
 						{
-							"eventType": "group",
-							"disabled": false,
-							"title": "CHOOSING_BED_YES",
-							"description": "",
-							"isActiveOnStart": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-object-clicked",
-											"objectClass": "Mouse",
-											"sid": 400821035354947,
-											"parameters": {
-												"mouse-button": "left",
-												"click-type": "clicked",
-												"object-clicked": "sim"
-											}
-										},
-										{
-											"id": "is-visible",
-											"objectClass": "choosing_save",
-											"sid": 910110534638139
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 141688580405751,
-											"parameters": {
-												"variable": "cursor",
-												"value": "\"none\""
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "choosing_save",
-											"sid": 970726913479141,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "sim",
-											"sid": 976640416415275,
-											"parameters": {
-												"x": "-100",
-												"y": "0"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "nao",
-											"sid": 366673071662866,
-											"parameters": {
-												"x": "-100",
-												"y": "50"
-											}
-										},
-										{
-											"callFunction": "Transition222",
-											"sid": 101871943208134,
-											"parameters": [
-												"\"\""
-											]
-										}
-									],
-									"sid": 109882573540091
-								}
-							],
-							"sid": 990763950812763,
-							"text-color": [
-								0,
-								0,
-								0,
-								0
-							],
-							"background-color": [
-								0.9882352941176471,
-								0.9882352941176471,
-								0.00784313725490196,
-								1
-							]
+							"eventType": "comment",
+							"text": "SIM"
 						},
 						{
-							"eventType": "group",
-							"disabled": false,
-							"title": "CHOOSING_BED_NO",
-							"description": "",
-							"isActiveOnStart": true,
-							"children": [
+							"bookmark": true,
+							"eventType": "block",
+							"conditions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-object-clicked",
-											"objectClass": "Mouse",
-											"sid": 329701719763708,
-											"parameters": {
-												"mouse-button": "left",
-												"click-type": "clicked",
-												"object-clicked": "nao"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 614109814595204,
-											"parameters": {
-												"variable": "cursor",
-												"value": "\"none\""
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 572945178189938,
-											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "choosing_save",
-											"sid": 415160005259232,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "sim",
-											"sid": 662137712686424,
-											"parameters": {
-												"x": "-100",
-												"y": "0"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "nao",
-											"sid": 840007999355579,
-											"parameters": {
-												"x": "-100",
-												"y": "50"
-											}
-										}
-									],
-									"sid": 966816252717928
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 260391353907546,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "sim"
+									}
 								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 892559466986752,
-											"parameters": {
-												"key": 27
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 190129632051889,
-											"parameters": {
-												"variable": "cursor",
-												"value": "\"none\""
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 881168965333724,
-											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "choosing_save",
-											"sid": 386343961368852,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "sim",
-											"sid": 492867868107994,
-											"parameters": {
-												"x": "-100",
-												"y": "0"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "nao",
-											"sid": 699287069944951,
-											"parameters": {
-												"x": "-100",
-												"y": "50"
-											}
-										}
-									],
-									"sid": 241695586254341
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 908668460701338,
+									"parameters": {
+										"layer": "\"save\""
+									}
 								}
 							],
-							"sid": 443744860248317,
-							"text-color": [
-								0,
-								0,
-								0,
-								0
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 618429490879090,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"none\""
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 657845839580623,
+									"parameters": {
+										"layer": "\"save\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 960975004745627,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 592052905355328,
+									"parameters": {
+										"object-to-create": "black",
+										"layer": "\"sign\"",
+										"x": "600",
+										"y": "300",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 614341018119301,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "black",
+									"sid": 314630559713231
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 540644042687291,
+									"parameters": {
+										"variable": "PlayerMoving",
+										"value": "true"
+									}
+								}
 							],
-							"background-color": [
-								0.9882352941176471,
-								0.9882352941176471,
-								0.00784313725490196,
-								1
-							]
+							"sid": 721700882598772
+						},
+						{
+							"eventType": "comment",
+							"text": "NÃO"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 698304419976069,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "nao"
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 281994085059538,
+									"parameters": {
+										"layer": "\"save\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 805491882054106,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"none\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 686976193173788,
+									"parameters": {
+										"variable": "PlayerMoving",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 831691756583084,
+									"parameters": {
+										"layer": "\"save\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 993977249427837,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 748548078749920
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 262964914872743,
+									"parameters": {
+										"key": 27
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 823712535267440,
+									"parameters": {
+										"layer": "\"save\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 299025556699147,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"none\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 125515797273716,
+									"parameters": {
+										"variable": "PlayerMoving",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 890579339866328,
+									"parameters": {
+										"layer": "\"save\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 691441413585925,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 871430218731750
 						}
 					],
 					"sid": 442508971418497,
@@ -850,7 +871,7 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 220771715437493,
+											"sid": 529540646628437,
 											"parameters": {
 												"variable": "cursor",
 												"value": "\"default\""
@@ -859,36 +880,28 @@
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 892386952308472,
+											"sid": 817114161473086,
 											"parameters": {
 												"variable": "PlayerMoving",
 												"value": "false"
 											}
 										},
 										{
-											"id": "set-visible",
-											"objectClass": "choosing_menu",
-											"sid": 995754571230891,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 535931752035611,
 											"parameters": {
+												"layer": "\"menu\"",
 												"visibility": "visible"
 											}
 										},
 										{
-											"id": "set-position",
-											"objectClass": "sim",
-											"sid": 289743033942235,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 752524254190930,
 											"parameters": {
-												"x": "642",
-												"y": "417"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "nao",
-											"sid": 534560302889675,
-											"parameters": {
-												"x": "816",
-												"y": "417"
+												"layer": "\"yes_no\"",
+												"visibility": "visible"
 											}
 										}
 									],
@@ -897,240 +910,186 @@
 							]
 						},
 						{
-							"eventType": "group",
-							"disabled": false,
-							"title": "CHOOSING_DOOR_YES",
-							"description": "",
-							"isActiveOnStart": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-object-clicked",
-											"objectClass": "Mouse",
-											"sid": 658718467825174,
-											"parameters": {
-												"mouse-button": "left",
-												"click-type": "clicked",
-												"object-clicked": "sim"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 498646677897882,
-											"parameters": {
-												"variable": "cursor",
-												"value": "\"default\""
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 227094093009489,
-											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "choosing_menu",
-											"sid": 636295811583954,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "sim",
-											"sid": 857877732782076,
-											"parameters": {
-												"x": "-100",
-												"y": "0"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "nao",
-											"sid": 105776873635095,
-											"parameters": {
-												"x": "-100",
-												"y": "50"
-											}
-										},
-										{
-											"id": "go-to-layout",
-											"objectClass": "System",
-											"sid": 842031656898977,
-											"parameters": {
-												"layout": "Menu"
-											}
-										}
-									],
-									"sid": 979001778644001
-								}
-							],
-							"sid": 511290861277078,
-							"text-color": [
-								0,
-								0,
-								0,
-								0
-							],
-							"background-color": [
-								0.9882352941176471,
-								0.9882352941176471,
-								0.00784313725490196,
-								1
-							]
+							"eventType": "comment",
+							"text": "SIM"
 						},
 						{
-							"eventType": "group",
-							"disabled": false,
-							"title": "CHOOSING_DOOR_NO",
-							"description": "",
-							"isActiveOnStart": true,
-							"children": [
+							"eventType": "block",
+							"conditions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-object-clicked",
-											"objectClass": "Mouse",
-											"sid": 335664867231317,
-											"parameters": {
-												"mouse-button": "left",
-												"click-type": "clicked",
-												"object-clicked": "nao"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 936974717294683,
-											"parameters": {
-												"variable": "cursor",
-												"value": "\"none\""
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 275477869297173,
-											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "choosing_menu",
-											"sid": 992724356049268,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "sim",
-											"sid": 625406162749656,
-											"parameters": {
-												"x": "-100",
-												"y": "0"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "nao",
-											"sid": 938176400756280,
-											"parameters": {
-												"x": "-100",
-												"y": "50"
-											}
-										}
-									],
-									"sid": 421011647516185
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 985091890245025,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "sim"
+									}
 								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "on-key-pressed",
-											"objectClass": "Keyboard",
-											"sid": 723068828120853,
-											"parameters": {
-												"key": 27
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 922654708587400,
-											"parameters": {
-												"variable": "cursor",
-												"value": "\"none\""
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 467601486249256,
-											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "choosing_menu",
-											"sid": 877328160260401,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "sim",
-											"sid": 968140816196673,
-											"parameters": {
-												"x": "-100",
-												"y": "0"
-											}
-										},
-										{
-											"id": "set-position",
-											"objectClass": "nao",
-											"sid": 598094880634142,
-											"parameters": {
-												"x": "-100",
-												"y": "50"
-											}
-										}
-									],
-									"sid": 244435382157127
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 700800859409515,
+									"parameters": {
+										"layer": "\"menu\""
+									}
 								}
 							],
-							"sid": 956766598927109,
-							"text-color": [
-								0,
-								0,
-								0,
-								0
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 866226377767848,
+									"parameters": {
+										"layer": "\"menu\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 161197091764973,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 691080689414500,
+									"parameters": {
+										"layout": "Menu"
+									}
+								}
 							],
-							"background-color": [
-								0.9882352941176471,
-								0.9882352941176471,
-								0.00784313725490196,
-								1
-							]
+							"sid": 538553496790223
+						},
+						{
+							"eventType": "comment",
+							"text": "NÃO"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 176752502412962,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "nao"
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 426236342877039,
+									"parameters": {
+										"layer": "\"menu\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 845650711848699,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"none\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 322605428410852,
+									"parameters": {
+										"variable": "PlayerMoving",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 177861570459704,
+									"parameters": {
+										"layer": "\"menu\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 792736170322645,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 974842487845033
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 916813527176704,
+									"parameters": {
+										"key": 27
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 842119892613342,
+									"parameters": {
+										"layer": "\"menu\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 164554199804500,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"none\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 420445115428784,
+									"parameters": {
+										"variable": "PlayerMoving",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 300331191210917,
+									"parameters": {
+										"layer": "\"menu\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 708323038211387,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 820100709019181
 						}
 					],
 					"sid": 857311464197527,
@@ -1149,20 +1108,26 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Layer sign desativa quando abre a tela de choosing"
+					"text": "Camada sign desativa quando abre a tela de choosing"
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-visible",
-							"objectClass": "choosing_save",
-							"sid": 152252390715861
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 503851087150728,
+							"parameters": {
+								"layer": "\"save\""
+							}
 						},
 						{
-							"id": "is-visible",
-							"objectClass": "choosing_menu",
-							"sid": 934863644503049
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 125647557771098,
+							"parameters": {
+								"layer": "\"menu\""
+							}
 						}
 					],
 					"actions": [
@@ -1170,15 +1135,6 @@
 							"id": "set-layer-visible",
 							"objectClass": "System",
 							"sid": 270447206994170,
-							"parameters": {
-								"layer": "\"sign\"",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 904317251887652,
 							"parameters": {
 								"layer": "\"sign\"",
 								"visibility": "invisible"
@@ -1192,34 +1148,27 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-visible",
-							"objectClass": "choosing_save",
-							"sid": 306161587732795,
-							"isInverted": true
-						},
-						{
-							"id": "is-visible",
-							"objectClass": "choosing_menu",
-							"sid": 580615729236981,
-							"isInverted": true
+							"id": "else",
+							"objectClass": "System",
+							"sid": 960650390083497
 						}
 					],
 					"actions": [
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 503874341203875,
+							"sid": 560526362064550,
 							"parameters": {
 								"layer": "\"sign\"",
 								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 953689581849810
+					"sid": 968402710345287
 				},
 				{
 					"eventType": "comment",
-					"text": "Cursor hover"
+					"text": "Animação over sim"
 				},
 				{
 					"eventType": "block",
@@ -1265,6 +1214,10 @@
 						}
 					],
 					"sid": 184673669565288
+				},
+				{
+					"eventType": "comment",
+					"text": "Animação over não"
 				},
 				{
 					"eventType": "block",
@@ -1342,6 +1295,10 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "comment",
+							"text": "Checa se é a primeira vez no quarto"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -1363,6 +1320,10 @@
 							"sid": 551079676258434
 						},
 						{
+							"eventType": "comment",
+							"text": "Sim"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -1382,6 +1343,10 @@
 								}
 							],
 							"sid": 931552102107134
+						},
+						{
+							"eventType": "comment",
+							"text": "Nâo"
 						},
 						{
 							"eventType": "block",
@@ -1456,32 +1421,6 @@
 								{
 									"id": "on-tweens-finished",
 									"objectClass": "WASD",
-									"sid": 361868340381029,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"WASD_entrada\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-item",
-									"objectClass": "LocalStorage",
-									"sid": 942419621822629,
-									"parameters": {
-										"key": "\"WASD_entrada\"",
-										"value": "\"WASD_entrada\""
-									}
-								}
-							],
-							"sid": 976654727916949
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-tweens-finished",
-									"objectClass": "WASD",
 									"sid": 939210950152767,
 									"behaviorType": "Tween",
 									"parameters": {
@@ -1511,33 +1450,34 @@
 							"sid": 593918306595869
 						},
 						{
-							"bookmark": true,
 							"eventType": "comment",
-							"text": "RESET WASD"
+							"text": "Salva alteração"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 722718355561870,
+									"id": "on-tweens-finished",
+									"objectClass": "WASD",
+									"sid": 978340289020626,
+									"behaviorType": "Tween",
 									"parameters": {
-										"key": 192
+										"tags": "\"WASD_entrada\""
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "remove-item",
+									"id": "set-item",
 									"objectClass": "LocalStorage",
-									"sid": 327211799414719,
+									"sid": 443049474201003,
 									"parameters": {
-										"key": "\"WASD_entrada\""
+										"key": "\"WASD_entrada\"",
+										"value": "\"WASD_entrada\""
 									}
 								}
 							],
-							"sid": 142563383738813
+							"sid": 829102650132100
 						}
 					],
 					"sid": 902234406484525,
@@ -1561,6 +1501,10 @@
 					"description": "",
 					"isActiveOnStart": true,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "Mouse: valor da opacidade relativo a distância"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -1614,6 +1558,10 @@
 							"sid": 135649736422185
 						},
 						{
+							"eventType": "comment",
+							"text": "Disket: valor da opacidade relativo a distância"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -1664,6 +1612,10 @@
 								}
 							],
 							"sid": 408322054781386
+						},
+						{
+							"eventType": "comment",
+							"text": "Menu: valor da opacidade relativo a distância"
 						},
 						{
 							"eventType": "block",

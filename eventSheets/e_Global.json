@@ -347,10 +347,10 @@
 			],
 			"sid": 188836488104335,
 			"text-color": [
-				0,
-				0,
-				0,
-				0
+				1,
+				1,
+				1,
+				1
 			],
 			"background-color": [
 				0.26666666666666666,
@@ -1272,6 +1272,57 @@
 				1,
 				0.4823529411764706,
 				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "RESET",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"bookmark": true,
+					"eventType": "comment",
+					"text": "Reseta tutorial WASD (Bedroom)"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 857542628663833,
+							"parameters": {
+								"key": 192
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "remove-item",
+							"objectClass": "LocalStorage",
+							"sid": 832918860706119,
+							"parameters": {
+								"key": "\"WASD_entrada\""
+							}
+						}
+					],
+					"sid": 672323790507587
+				}
+			],
+			"sid": 124037823196975,
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.9725490196078431,
+				0.33725490196078434,
+				0.3215686274509804,
 				1
 			]
 		}
