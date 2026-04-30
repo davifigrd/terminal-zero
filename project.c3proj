@@ -247,7 +247,8 @@
 					"LocalStorage",
 					"AJAX",
 					"Dictionary",
-					"Audio"
+					"Audio",
+					"TypingEffect"
 				],
 				"subfolders": [],
 				"name": "Input"
@@ -350,11 +351,13 @@
 			},
 			{
 				"items": [
-					"transition_screen",
-					"loading"
+					"black",
+					"loading",
+					"title",
+					"developed_by"
 				],
 				"subfolders": [],
-				"name": "Transition"
+				"name": "Loader"
 			}
 		]
 	},
@@ -426,7 +429,8 @@
 		"items": [
 			"Bedroom",
 			"Menu",
-			"PC"
+			"PC",
+			"Loader"
 		],
 		"subfolders": [
 			{
@@ -444,7 +448,8 @@
 			"e_Bedroom",
 			"e_PC",
 			"e_Menu",
-			"e_Global"
+			"e_Global",
+			"e_Loader"
 		],
 		"subfolders": [
 			{
@@ -650,7 +655,7 @@
 		"pixelRounding": false,
 		"zAxisScale": "regular",
 		"fov": 0.7853981633974483,
-		"useLoaderLayout": false,
+		"useLoaderLayout": true,
 		"fullscreenMode": "scale-inner",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
@@ -696,5 +701,5 @@
 	},
 	"viewportWidth": 1376,
 	"viewportHeight": 770,
-	"firstLayout": "Menu"
+	"firstLayout": "Loader"
 }

@@ -74,7 +74,17 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "\"none\" → trajeto de transição\n\"Bedroom\" → trajeto de transição\n"
+			"text": "\"none\" → trajeto de transição\n\"Bedroom\" → trajeto de transição"
+		},
+		{
+			"eventType": "variable",
+			"name": "fade_state",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 752731751684601
 		},
 		{
 			"eventType": "group",
@@ -351,13 +361,13 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": false,
+			"disabled": true,
 			"title": "TRANSITION",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"functionName": "Transition",
+					"functionName": "Transition222",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -369,7 +379,7 @@
 							"type": "string",
 							"initialValue": "",
 							"comment": "",
-							"sid": 251311726564448
+							"sid": 975169181942847
 						}
 					],
 					"eventType": "function-block",
@@ -378,114 +388,173 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 287230970987762,
+							"sid": 754738899448161,
 							"parameters": {
 								"variable": "transitionTarget",
 								"value": "nextLayout"
 							}
 						},
 						{
-							"id": "create-object",
+							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 747079762042697,
+							"sid": 673187963367999,
 							"parameters": {
-								"object-to-create": "transition_screen",
-								"layer": "\"transition\"",
-								"x": "687",
-								"y": "386",
-								"create-hierarchy": false,
-								"template-name": "\"create_transition_screen\""
+								"variable": "fade_state",
+								"value": "1"
 							}
 						},
 						{
-							"id": "start-fade",
-							"objectClass": "transition_screen",
-							"sid": 151854104555181,
-							"behaviorType": "Fade"
-						}
-					],
-					"sid": 543050914272554
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-fade-in-finished",
-							"objectClass": "transition_screen",
-							"sid": 860981432683721,
-							"behaviorType": "Fade"
-						}
-					],
-					"actions": [
-						{
-							"id": "create-object",
+							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 678642694535462,
+							"sid": 675705067918577,
 							"parameters": {
-								"object-to-create": "loading",
 								"layer": "\"transition\"",
-								"x": "1246",
-								"y": "700",
-								"create-hierarchy": false,
-								"template-name": "\"create_loading\""
-							}
-						},
-						{
-							"id": "go-to-layout-by-name",
-							"objectClass": "System",
-							"sid": 888479150043532,
-							"parameters": {
-								"layout": "transitionTarget"
+								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 507177875420064
-				},
-				{
-					"eventType": "comment",
-					"text": "Wait"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+					"sid": 342471206400896,
+					"disabled": true,
+					"children": [
 						{
-							"id": "on-wait-finished",
-							"objectClass": "transition_screen",
-							"sid": 369120385618389,
-							"behaviorType": "Fade"
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 434059220040666
+								}
+							],
+							"actions": [],
+							"sid": 999042350009544,
+							"disabled": true,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Fade-in"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 548855233150827,
+											"parameters": {
+												"variable": "fade_state",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 106492659868233,
+									"disabled": true,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Wait"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 641431786740815,
+													"parameters": {
+														"variable": "fade_state",
+														"value": "0"
+													}
+												},
+												{
+													"id": "go-to-layout-by-name",
+													"objectClass": "System",
+													"sid": 240377587784953,
+													"parameters": {
+														"layout": "transitionTarget"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 352793111130854,
+													"parameters": {
+														"seconds": "1.0",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 318814930485624,
+													"parameters": {
+														"variable": "fade_state",
+														"value": "2"
+													}
+												}
+											],
+											"sid": 985853690647461,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "Fade-out"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-eventvar",
+															"objectClass": "System",
+															"sid": 360973558113770,
+															"parameters": {
+																"variable": "fade_state",
+																"comparison": 0,
+																"value": "2"
+															}
+														}
+													],
+													"actions": [],
+													"sid": 423761215798043,
+													"disabled": true,
+													"children": [
+														{
+															"eventType": "block",
+															"conditions": [],
+															"actions": [
+																{
+																	"id": "set-eventvar-value",
+																	"objectClass": "System",
+																	"sid": 788345653725100,
+																	"parameters": {
+																		"variable": "fade_state",
+																		"value": "0"
+																	}
+																},
+																{
+																	"id": "set-layer-visible",
+																	"objectClass": "System",
+																	"sid": 164004101261897,
+																	"parameters": {
+																		"layer": "\"transition\"",
+																		"visibility": "invisible"
+																	}
+																}
+															],
+															"sid": 498533149117577,
+															"disabled": true
+														}
+													]
+												}
+											]
+										}
+									]
+								}
+							]
 						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "loading",
-							"sid": 821477157184315
-						}
-					],
-					"sid": 369549757413213
-				},
-				{
-					"eventType": "comment",
-					"text": "Fade-out"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-fade-out-finished",
-							"objectClass": "transition_screen",
-							"sid": 547844376942637,
-							"behaviorType": "Fade"
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "transition_screen",
-							"sid": 234401602927081
-						}
-					],
-					"sid": 800949136773424
+					]
 				}
 			],
 			"sid": 871001986837841,
@@ -493,6 +562,408 @@
 				0,
 				0,
 				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "TRANSITION2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "Transition",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 127464027955309
+				}
+			],
+			"sid": 120216893311872,
+			"background-color": [
+				0,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "TYPING EFFECT",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "char_count = 0 → contador de caracteres da frase\n\nanyText = \"\" → guarda a frase que a função enviou\n\nmode = 3\n0 → escreve\n1 → espera\n2 → apaga\n3 → desativado\n\nShowCursor = true\ntrue → mostra underline\nfalse → apaga underline\n\nunderLine = \"_\" → caractere visual do cursor"
+				},
+				{
+					"eventType": "comment",
+					"text": "Digitar"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 586934324609700,
+							"parameters": {
+								"interval-seconds": "0.04"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TypingEffect",
+							"sid": 229992334860819,
+							"parameters": {
+								"instance-variable": "mode",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "TypingEffect",
+							"sid": 344468087131002,
+							"parameters": {
+								"instance-variable": "char_count",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 674986159911193
+				},
+				{
+					"eventType": "comment",
+					"text": "Apagar"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 429912308646084,
+							"parameters": {
+								"interval-seconds": "0.04"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TypingEffect",
+							"sid": 337739640004080,
+							"parameters": {
+								"instance-variable": "mode",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "TypingEffect",
+							"sid": 308270043803420,
+							"parameters": {
+								"instance-variable": "char_count",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 768709522704257
+				},
+				{
+					"eventType": "comment",
+					"text": "Gerenciador de estados"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TypingEffect",
+							"sid": 796234620450929,
+							"parameters": {
+								"instance-variable": "char_count",
+								"comparison": 5,
+								"value": "len(Self.anyText)"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TypingEffect",
+							"sid": 876442068152505,
+							"parameters": {
+								"instance-variable": "mode",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "TypingEffect",
+							"sid": 213314773999462,
+							"parameters": {
+								"instance-variable": "mode",
+								"value": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 402495576376326,
+							"parameters": {
+								"seconds": "5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "TypingEffect",
+							"sid": 200912486968252,
+							"parameters": {
+								"instance-variable": "mode",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 806380339728500
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TypingEffect",
+							"sid": 727412233536795,
+							"parameters": {
+								"instance-variable": "char_count",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TypingEffect",
+							"sid": 247994484462591,
+							"parameters": {
+								"instance-variable": "mode",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "TypingEffect",
+							"sid": 464773732861482,
+							"parameters": {
+								"instance-variable": "mode",
+								"value": "3"
+							}
+						}
+					],
+					"sid": 493761195583694
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor piscando"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 552208393458202,
+							"parameters": {
+								"interval-seconds": "0.5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "toggle-boolean-instvar",
+							"objectClass": "TypingEffect",
+							"sid": 639010050825281,
+							"parameters": {
+								"instance-variable": "ShowCursor"
+							}
+						}
+					],
+					"sid": 577465906965836
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 919011304460197
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "TypingEffect",
+							"sid": 728159438161148,
+							"parameters": {
+								"instance-variable": "underLine",
+								"value": "\"_\""
+							}
+						}
+					],
+					"sid": 845965479134902
+				},
+				{
+					"eventType": "comment",
+					"text": "Função coringa"
+				},
+				{
+					"functionName": "TypingEffect",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [
+						{
+							"name": "TypingEffect_Parameter",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 213097145015921
+						}
+					],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "TypingEffect",
+							"sid": 710445315678831,
+							"parameters": {
+								"instance-variable": "anyText",
+								"value": "TypingEffect_Parameter"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "TypingEffect",
+							"sid": 760256990887535,
+							"parameters": {
+								"instance-variable": "char_count",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "TypingEffect",
+							"sid": 272132049306279,
+							"parameters": {
+								"instance-variable": "mode",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 350920985466550
+				},
+				{
+					"eventType": "comment",
+					"text": "Exibição visual"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 774393990237139
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "TypingEffect",
+							"sid": 111692425499279,
+							"parameters": {
+								"text": "left(TypingEffect.anyText, TypingEffect.char_count) & (TypingEffect.mode = 1 ? (TypingEffect.showCursor ? \"_\" : \"\") : \"\")"
+							}
+						}
+					],
+					"sid": 922007981010721
+				},
+				{
+					"eventType": "comment",
+					"text": "Manda um sinal para executar a próxima frase"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TypingEffect",
+							"sid": 997422062643748,
+							"parameters": {
+								"instance-variable": "mode",
+								"comparison": 0,
+								"value": "3"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "TypingEffect",
+							"sid": 404184397432404,
+							"parameters": {
+								"instance-variable": "char_count",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 766664292076707
+						}
+					],
+					"actions": [
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 463360799166871,
+							"parameters": {
+								"tag": "\"next\""
+							}
+						}
+					],
+					"sid": 211349235068383
+				}
+			],
+			"sid": 948685964284057,
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.16862745098039217,
+				0.5137254901960784,
+				0.2549019607843137,
 				1
 			]
 		},

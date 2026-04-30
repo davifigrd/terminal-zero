@@ -1,0 +1,152 @@
+{
+	"name": "e_Loader",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
+			"eventType": "comment",
+			"text": "Mostra desenvolvedores"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 687498730375169
+				}
+			],
+			"actions": [
+				{
+					"id": "start-fade",
+					"objectClass": "developed_by",
+					"sid": 566509872314198,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 824753455345583
+		},
+		{
+			"eventType": "comment",
+			"text": "Mostra título"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-fade-out-finished",
+					"objectClass": "developed_by",
+					"sid": 733737237122546,
+					"behaviorType": "Fade"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 970384021598588,
+					"parameters": {
+						"layer": "\"title\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "title",
+					"sid": 976753669683015,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 671301471499043
+		},
+		{
+			"eventType": "comment",
+			"text": "Carregando"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-fade-out-finished",
+					"objectClass": "title",
+					"sid": 997275977614651,
+					"behaviorType": "Fade"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 532210497970029,
+					"parameters": {
+						"layer": "\"loading\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 843134160091035,
+					"parameters": {
+						"seconds": "3",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 171378045393932,
+					"parameters": {
+						"layout": "Menu"
+					}
+				}
+			],
+			"sid": 600130652186611
+		},
+		{
+			"eventType": "comment",
+			"text": "Vai para o menu"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 444746518980890,
+					"parameters": {
+						"key": 73
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "TypingEffect",
+					"sid": 191652900662725,
+					"parameters": [
+						"\"Inicializando sistema...\""
+					]
+				},
+				{
+					"id": "wait-for-signal",
+					"objectClass": "System",
+					"sid": 865666184577105,
+					"parameters": {
+						"tag": "\"next\""
+					}
+				},
+				{
+					"callFunction": "TypingEffect",
+					"sid": 811803514190141,
+					"parameters": [
+						"\"Sistematizando a inicialização...\""
+					]
+				}
+			],
+			"sid": 385980115096286
+		}
+	],
+	"sid": 965542077792832
+}
