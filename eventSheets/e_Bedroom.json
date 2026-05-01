@@ -23,11 +23,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 460448583745161,
+							"sid": 786269982593595,
 							"parameters": {
-								"variable": "spawnPoint",
-								"comparison": 0,
-								"value": "\"none\""
+								"variable": "layout",
+								"comparison": 1,
+								"value": "\"PC\""
 							}
 						}
 					],
@@ -64,43 +64,6 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Bedroom → PC"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "player",
-							"sid": 854689588275133,
-							"parameters": {
-								"object": "pc"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 343065829771712,
-							"parameters": {
-								"variable": "spawnPoint",
-								"value": "\"pc\""
-							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 118694396217673,
-							"parameters": {
-								"layout": "PC"
-							}
-						}
-					],
-					"sid": 668001973898943
-				},
-				{
-					"eventType": "comment",
 					"text": "PC→ Bedroom"
 				},
 				{
@@ -114,11 +77,11 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 652659692804338,
+							"sid": 472657157446759,
 							"parameters": {
-								"variable": "spawnPoint",
+								"variable": "layout",
 								"comparison": 0,
-								"value": "\"pc\""
+								"value": "\"PC\""
 							}
 						}
 					],
@@ -135,14 +98,60 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 252140929434841,
+							"sid": 797434833787022,
 							"parameters": {
-								"variable": "spawnPoint",
+								"variable": "cursor",
 								"value": "\"none\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 787102092680563,
+							"parameters": {
+								"variable": "PlayerMoving",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 434151298448563,
+							"parameters": {
+								"variable": "layout",
+								"value": "\"Bedroom\""
 							}
 						}
 					],
 					"sid": 786961671698299
+				},
+				{
+					"eventType": "comment",
+					"text": "Bedroom → PC"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "player",
+							"sid": 992233488045972,
+							"parameters": {
+								"object": "pc"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 344144784941091,
+							"parameters": {
+								"layout": "PC"
+							}
+						}
+					],
+					"sid": 972209854040305
 				}
 			],
 			"sid": 413555915179035,
@@ -509,7 +518,6 @@
 							"text": "SIM"
 						},
 						{
-							"bookmark": true,
 							"eventType": "block",
 							"conditions": [
 								{
@@ -560,36 +568,24 @@
 									}
 								},
 								{
-									"id": "create-object",
-									"objectClass": "System",
-									"sid": 592052905355328,
-									"parameters": {
-										"object-to-create": "black",
-										"layer": "\"sign\"",
-										"x": "600",
-										"y": "300",
-										"create-hierarchy": false,
-										"template-name": "\"\""
-									}
+									"callFunction": "Transition",
+									"sid": 438633076867700,
+									"parameters": [
+										"\"Bedroom\""
+									]
 								},
 								{
-									"id": "wait",
+									"id": "wait-for-signal",
 									"objectClass": "System",
-									"sid": 614341018119301,
+									"sid": 469015614686143,
 									"parameters": {
-										"seconds": "1",
-										"use-timescale": true
+										"tag": "\"transition\""
 									}
-								},
-								{
-									"id": "destroy",
-									"objectClass": "black",
-									"sid": 314630559713231
 								},
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 540644042687291,
+									"sid": 641380103350554,
 									"parameters": {
 										"variable": "PlayerMoving",
 										"value": "true"
@@ -1015,7 +1011,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Camada sign desativa quando abre a tela de choosing"
+					"text": "Camada sign desativa quando abre a tela de choosing ou enquanto está em transition"
 				},
 				{
 					"eventType": "block",
@@ -1034,6 +1030,15 @@
 							"sid": 125647557771098,
 							"parameters": {
 								"layer": "\"menu\""
+							}
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "fade",
+							"sid": 168268982481621,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"transition\""
 							}
 						}
 					],

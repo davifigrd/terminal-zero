@@ -85,6 +85,188 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "BUTTON_SINGLE_CLICK",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Click no botão jogar"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 564204520098305,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 311984324868293,
+									"parameters": {
+										"object": "jogar_button"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "jogar_button",
+									"sid": 117188548147125,
+									"parameters": {
+										"x": "-300",
+										"y": "100"
+									}
+								},
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 203843219227967,
+									"parameters": {
+										"layout": "Bedroom"
+									}
+								}
+							],
+							"sid": 897046494315448
+						},
+						{
+							"eventType": "comment",
+							"text": "Click no botão controles"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 834893439591616,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 905489170112320,
+									"parameters": {
+										"object": "controles_button"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "controles_button",
+									"sid": 137357659065107,
+									"parameters": {
+										"x": "-300",
+										"y": "100"
+									}
+								}
+							],
+							"sid": 394995122484829
+						},
+						{
+							"eventType": "comment",
+							"text": "Click no botão créditos"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 179769485257328,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 414180968479331,
+									"parameters": {
+										"object": "creditos_button"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "creditos_button",
+									"sid": 619633841661678,
+									"parameters": {
+										"x": "-300",
+										"y": "100"
+									}
+								}
+							],
+							"sid": 385649414575400
+						},
+						{
+							"eventType": "comment",
+							"text": "Click no botão sair"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-click",
+									"objectClass": "Mouse",
+									"sid": 353140378342589,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked"
+									}
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 322012210880184,
+									"parameters": {
+										"object": "sair_button"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "sair_button",
+									"sid": 630804293869366,
+									"parameters": {
+										"x": "-300",
+										"y": "100"
+									}
+								}
+							],
+							"sid": 232252248140323
+						}
+					],
+					"sid": 680338609639920,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.26666666666666666,
+						1,
+						0,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "BUTTON_HITBOX",
 					"description": "",
 					"isActiveOnStart": true,
@@ -340,166 +522,6 @@
 						0,
 						1
 					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Click no botão jogar"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-click",
-							"objectClass": "Mouse",
-							"sid": 704308397390948,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						},
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 644357355512206,
-							"parameters": {
-								"object": "jogar_button"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "jogar_button",
-							"sid": 155435942277746,
-							"parameters": {
-								"x": "-300",
-								"y": "100"
-							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 422757773139459,
-							"parameters": {
-								"layout": "Bedroom"
-							}
-						}
-					],
-					"sid": 292958970000620
-				},
-				{
-					"eventType": "comment",
-					"text": "Click no botão controles"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-click",
-							"objectClass": "Mouse",
-							"sid": 142128836528539,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						},
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 912201826330666,
-							"parameters": {
-								"object": "controles_button"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "controles_button",
-							"sid": 530001331371849,
-							"parameters": {
-								"x": "-300",
-								"y": "100"
-							}
-						}
-					],
-					"sid": 235486726258676
-				},
-				{
-					"eventType": "comment",
-					"text": "Click no botão créditos"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-click",
-							"objectClass": "Mouse",
-							"sid": 335050739071984,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						},
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 366414568089072,
-							"parameters": {
-								"object": "creditos_button"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "creditos_button",
-							"sid": 325891381434343,
-							"parameters": {
-								"x": "-300",
-								"y": "100"
-							}
-						}
-					],
-					"sid": 950691347197643
-				},
-				{
-					"eventType": "comment",
-					"text": "Click no botão sair"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-click",
-							"objectClass": "Mouse",
-							"sid": 100774068149831,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						},
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 318791502453565,
-							"parameters": {
-								"object": "sair_button"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "sair_button",
-							"sid": 931058863037146,
-							"parameters": {
-								"x": "-300",
-								"y": "100"
-							}
-						}
-					],
-					"sid": 668983782789309
 				}
 			],
 			"sid": 765357355527044,

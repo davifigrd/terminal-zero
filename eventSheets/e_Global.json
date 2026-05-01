@@ -46,21 +46,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "\"none\" → nenhum layout"
-		},
-		{
-			"eventType": "variable",
-			"name": "spawnPoint",
-			"type": "string",
-			"initialValue": "none",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 257254531048027
-		},
-		{
-			"eventType": "comment",
-			"text": "\"none\" → nenhum ponto de spaawn setado\n\"pc\" → spawn.pc"
+			"text": "\"none\" → não está em nenhum layout\n\"Bedroom\" → está no layout Bedroom"
 		},
 		{
 			"eventType": "group",
@@ -354,10 +340,10 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "fade",
-							"sid": 155396295906228,
+							"sid": 962360649360673,
 							"behaviorType": "Tween",
 							"parameters": {
-								"tags": "\"\"",
+								"tags": "\"transition\"",
 								"property": "offsetOpacity",
 								"end-value": "100",
 								"time": "1",
@@ -398,7 +384,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Fade-iout"
+					"text": "Fade-out"
 				},
 				{
 					"eventType": "block",
@@ -430,10 +416,10 @@
 						{
 							"id": "tween-one-property",
 							"objectClass": "fade",
-							"sid": 538710912377147,
+							"sid": 187916293790811,
 							"behaviorType": "Tween",
 							"parameters": {
-								"tags": "\"\"",
+								"tags": "\"transition\"",
 								"property": "offsetOpacity",
 								"end-value": "0",
 								"time": "1",

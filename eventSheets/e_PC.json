@@ -6,10 +6,6 @@
 			"includeSheet": "e_Global"
 		},
 		{
-			"eventType": "comment",
-			"text": "instruction_box\nWASD + setinhas para andar"
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "PC_LAYOUT",
@@ -77,15 +73,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 830177135255333,
-							"parameters": {
-								"variable": "spawnPoint",
-								"value": "\"pc\""
-							}
-						},
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
