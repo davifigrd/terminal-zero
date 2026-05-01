@@ -63,33 +63,6 @@
 			"text": "\"none\" → nenhum ponto de spaawn setado\n\"pc\" → spawn.pc"
 		},
 		{
-			"bookmark": true,
-			"eventType": "variable",
-			"name": "transitionTarget",
-			"type": "string",
-			"initialValue": "none",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 855333202554659
-		},
-		{
-			"bookmark": true,
-			"eventType": "comment",
-			"text": "\"none\" → trajeto de transição\n\"Bedroom\" → trajeto de transição"
-		},
-		{
-			"bookmark": true,
-			"eventType": "variable",
-			"name": "fade_state",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 752731751684601
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "MOUSE",
@@ -350,217 +323,15 @@
 		},
 		{
 			"eventType": "group",
-			"disabled": true,
-			"title": "TRANSITIONNNNN",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"functionName": "Transitionnnnn",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [
-						{
-							"name": "nextLayoutttt",
-							"type": "string",
-							"initialValue": "",
-							"comment": "",
-							"sid": 975169181942847
-						}
-					],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 754738899448161,
-							"parameters": {
-								"variable": "transitionTarget",
-								"value": "nextLayoutttt"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 673187963367999,
-							"parameters": {
-								"variable": "fade_state",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 675705067918577,
-							"parameters": {
-								"layer": "\"transition\"",
-								"visibility": "visible"
-							}
-						}
-					],
-					"sid": 342471206400896,
-					"disabled": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 434059220040666
-								}
-							],
-							"actions": [],
-							"sid": 999042350009544,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "Fade-in"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 548855233150827,
-											"parameters": {
-												"variable": "fade_state",
-												"comparison": 0,
-												"value": "1"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 106492659868233,
-									"disabled": true,
-									"children": [
-										{
-											"eventType": "comment",
-											"text": "Wait"
-										},
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 641431786740815,
-													"parameters": {
-														"variable": "fade_state",
-														"value": "0"
-													}
-												},
-												{
-													"id": "go-to-layout-by-name",
-													"objectClass": "System",
-													"sid": 240377587784953,
-													"parameters": {
-														"layout": "transitionTarget"
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 352793111130854,
-													"parameters": {
-														"seconds": "1.0",
-														"use-timescale": true
-													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 318814930485624,
-													"parameters": {
-														"variable": "fade_state",
-														"value": "2"
-													}
-												}
-											],
-											"sid": 985853690647461,
-											"disabled": true,
-											"children": [
-												{
-													"eventType": "comment",
-													"text": "Fade-out"
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-eventvar",
-															"objectClass": "System",
-															"sid": 360973558113770,
-															"parameters": {
-																"variable": "fade_state",
-																"comparison": 0,
-																"value": "2"
-															}
-														}
-													],
-													"actions": [],
-													"sid": 423761215798043,
-													"disabled": true,
-													"children": [
-														{
-															"eventType": "block",
-															"conditions": [],
-															"actions": [
-																{
-																	"id": "set-eventvar-value",
-																	"objectClass": "System",
-																	"sid": 788345653725100,
-																	"parameters": {
-																		"variable": "fade_state",
-																		"value": "0"
-																	}
-																},
-																{
-																	"id": "set-layer-visible",
-																	"objectClass": "System",
-																	"sid": 164004101261897,
-																	"parameters": {
-																		"layer": "\"transition\"",
-																		"visibility": "invisible"
-																	}
-																}
-															],
-															"sid": 498533149117577,
-															"disabled": true
-														}
-													]
-												}
-											]
-										}
-									]
-								}
-							]
-						}
-					]
-				}
-			],
-			"sid": 871001986837841,
-			"background-color": [
-				0,
-				0,
-				0,
-				1
-			]
-		},
-		{
-			"eventType": "group",
 			"disabled": false,
 			"title": "TRANSITION",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "Fade-in"
+				},
 				{
 					"functionName": "Transition",
 					"functionDescription": "",
@@ -574,112 +345,107 @@
 							"type": "string",
 							"initialValue": "",
 							"comment": "",
-							"sid": 102792576726174
+							"sid": 410906958686990
 						}
 					],
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
 						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 428616400076852,
+							"id": "tween-one-property",
+							"objectClass": "fade",
+							"sid": 155396295906228,
+							"behaviorType": "Tween",
 							"parameters": {
-								"layer": "\"transition\"",
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "100",
+								"time": "1",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 515197722172016,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "loading_fade",
+							"sid": 806016993289307,
+							"parameters": {
 								"visibility": "visible"
 							}
 						},
 						{
-							"id": "set-eventvar-value",
+							"id": "go-to-layout-by-name",
 							"objectClass": "System",
-							"sid": 253088945051557,
+							"sid": 884340268592546,
 							"parameters": {
-								"variable": "transitionTarget",
-								"value": "\"nextLayout\""
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 954924529993074,
-							"parameters": {
-								"variable": "fade_state",
-								"value": "1"
+								"layout": "nextLayout"
 							}
 						}
 					],
-					"sid": 269107622117593,
-					"children": [
+					"sid": 730615010106979
+				},
+				{
+					"eventType": "comment",
+					"text": "Fade-iout"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
 						{
-							"eventType": "comment",
-							"text": "Fade-in"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 594713859701888
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 112615911168753,
-									"parameters": {
-										"variable": "fade_state",
-										"comparison": 0,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "black",
-									"sid": 253797757546533,
-									"parameters": {
-										"opacity": "Self.Opacity + (200 * dt)"
-									}
-								}
-							],
-							"sid": 461656707517843
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-opacity",
-									"objectClass": "black",
-									"sid": 526517374208639,
-									"parameters": {
-										"comparison": 5,
-										"opacity": "100"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout-by-name",
-									"objectClass": "System",
-									"sid": 818164377826528,
-									"parameters": {
-										"layout": "\"Transition\""
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 146601632638096,
-									"parameters": {
-										"variable": "fade_state",
-										"value": "2"
-									}
-								}
-							],
-							"sid": 865140240237830
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 282154988791817
 						}
-					]
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 743238968346452,
+							"parameters": {
+								"seconds": "5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "loading_fade",
+							"sid": 346334216380239,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "fade",
+							"sid": 538710912377147,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"\"",
+								"property": "offsetOpacity",
+								"end-value": "0",
+								"time": "1",
+								"ease": "noease",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 983285072506698
 				}
 			],
 			"sid": 504107302937531,
@@ -1420,10 +1186,6 @@
 				0.3215686274509804,
 				1
 			]
-		},
-		{
-			"eventType": "comment",
-			"text": "ddfh"
 		}
 	],
 	"sid": 629785159147306
