@@ -19,9 +19,28 @@
 							"id": "on-start-of-layout",
 							"objectClass": "System",
 							"sid": 235505420294854
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 460448583745161,
+							"parameters": {
+								"variable": "spawnPoint",
+								"comparison": 0,
+								"value": "\"none\""
+							}
 						}
 					],
 					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 702479112881832,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"none\""
+							}
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
@@ -124,118 +143,6 @@
 						}
 					],
 					"sid": 786961671698299
-				},
-				{
-					"eventType": "comment",
-					"text": "Porta → Bedroom"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 701951043612565
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 447178857409440,
-							"parameters": {
-								"variable": "spawnPoint",
-								"comparison": 0,
-								"value": "\"door\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 766738877519940,
-							"parameters": {
-								"x": "spawn_door.X",
-								"y": "spawn_door.Y"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 467824360040613,
-							"parameters": {
-								"variable": "spawnPoint",
-								"value": "\"none\""
-							}
-						}
-					],
-					"sid": 280351065625612
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 846731709956496
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 693302723260620,
-							"parameters": {
-								"variable": "spawnPoint",
-								"comparison": 0,
-								"value": "\"door\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 371011717221295,
-							"parameters": {
-								"x": "spawn_door.X",
-								"y": "spawn_door.Y"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 981959193787011,
-							"parameters": {
-								"variable": "spawnPoint",
-								"value": "\"none\""
-							}
-						}
-					],
-					"sid": 473622131513026
-				},
-				{
-					"eventType": "comment",
-					"text": "Menu → Bedroom"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 319732347203940
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 201228093995441,
-							"parameters": {
-								"variable": "layout",
-								"comparison": 0,
-								"value": "\"menu\""
-							}
-						}
-					],
-					"actions": [],
-					"sid": 860984805112919
 				}
 			],
 			"sid": 413555915179035,

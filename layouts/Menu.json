@@ -77,157 +77,301 @@
 		{
 			"name": "button_hitbox",
 			"overriden": 0,
-			"subLayers": [],
-			"instances": [
+			"subLayers": [
 				{
-					"type": "controles_button",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "button",
-						"initial-frame": 1,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 30,
-					"sid": 494567182038651,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 494567182038651,
-						"expanded": true
-					},
-					"showing": false,
-					"locked": false,
-					"world": {
-						"x": 689,
-						"y": 418,
-						"width": 479.1572863218835,
-						"height": 59.28050991545143,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.1
-						],
-						"z": 0,
-						"angle": 0
-					}
+					"name": "sair",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "sair_button",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "button",
+								"initial-frame": 1,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 64,
+							"sid": 161105383780293,
+							"tags": "",
+							"instanceVariables": {},
+							"behaviors": {},
+							"instanceFolderItem": {
+								"sid": 161105383780293,
+								"expanded": true
+							},
+							"showing": false,
+							"locked": false,
+							"world": {
+								"x": 690,
+								"y": 602,
+								"width": 479.1572863218835,
+								"height": 59.28050991545143,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.1
+								],
+								"z": 0,
+								"angle": 0
+							}
+						}
+					],
+					"sid": 521065408595309,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"sampling": "auto",
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
 				},
 				{
-					"type": "creditos_button",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "button",
-						"initial-frame": 1,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 62,
-					"sid": 776305420444169,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 776305420444169,
-						"expanded": true
-					},
-					"showing": false,
-					"locked": false,
-					"world": {
-						"x": 689,
-						"y": 509,
-						"width": 479.1572863218835,
-						"height": 59.28050991545143,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.1
-						],
-						"z": 0,
-						"angle": 0
-					}
+					"name": "créditos",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "creditos_button",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "button",
+								"initial-frame": 1,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 62,
+							"sid": 776305420444169,
+							"tags": "",
+							"instanceVariables": {},
+							"behaviors": {},
+							"instanceFolderItem": {
+								"sid": 776305420444169,
+								"expanded": true
+							},
+							"showing": false,
+							"locked": false,
+							"world": {
+								"x": 689,
+								"y": 509,
+								"width": 479.1572863218835,
+								"height": 59.28050991545143,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.1
+								],
+								"z": 0,
+								"angle": 0
+							}
+						}
+					],
+					"sid": 261597313658263,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"sampling": "auto",
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
 				},
 				{
-					"type": "sair_button",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "button",
-						"initial-frame": 1,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 64,
-					"sid": 161105383780293,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 161105383780293,
-						"expanded": true
-					},
-					"showing": false,
-					"locked": false,
-					"world": {
-						"x": 690,
-						"y": 602,
-						"width": 479.1572863218835,
-						"height": 59.28050991545143,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.1
-						],
-						"z": 0,
-						"angle": 0
-					}
+					"name": "controles",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "controles_button",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "button",
+								"initial-frame": 1,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 30,
+							"sid": 494567182038651,
+							"tags": "",
+							"instanceVariables": {},
+							"behaviors": {},
+							"instanceFolderItem": {
+								"sid": 494567182038651,
+								"expanded": true
+							},
+							"showing": false,
+							"locked": false,
+							"world": {
+								"x": 689,
+								"y": 418,
+								"width": 479.1572863218835,
+								"height": 59.28050991545143,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.1
+								],
+								"z": 0,
+								"angle": 0
+							}
+						}
+					],
+					"sid": 758424410042544,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"sampling": "auto",
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
 				},
 				{
-					"type": "jogar_button",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "button",
-						"initial-frame": 1,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 29,
-					"sid": 234851945960972,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 234851945960972,
-						"expanded": true
-					},
-					"showing": false,
-					"locked": false,
-					"world": {
-						"x": 689,
-						"y": 325,
-						"width": 479.1572863218835,
-						"height": 59.28050991545143,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.1
-						],
-						"z": 0,
-						"angle": 0
-					}
+					"name": "jogar",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "jogar_button",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "button",
+								"initial-frame": 1,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 29,
+							"sid": 234851945960972,
+							"tags": "",
+							"instanceVariables": {},
+							"behaviors": {},
+							"instanceFolderItem": {
+								"sid": 234851945960972,
+								"expanded": true
+							},
+							"showing": false,
+							"locked": false,
+							"world": {
+								"x": 689,
+								"y": 325,
+								"width": 479.1572863218835,
+								"height": 59.28050991545143,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.1
+								],
+								"z": 0,
+								"angle": 0
+							}
+						}
+					],
+					"sid": 292016328910377,
+					"effectTypes": [],
+					"isInitiallyVisible": true,
+					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"sampling": "auto",
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
 				}
 			],
+			"instances": [],
 			"sid": 846663431810978,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

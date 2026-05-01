@@ -10,40 +10,8 @@
 			"text": "3 saves"
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "MENU_VARIABLES",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "variable",
-					"name": "button",
-					"type": "string",
-					"initialValue": "none",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 150130183485868
-				},
-				{
-					"eventType": "comment",
-					"text": "\"none\" → nenhum estado\n\n\"controles\" → tela de controles\n\n\"créditos\" → tela de créditos\n\n\"sair\" → fecha o jogo"
-				}
-			],
-			"sid": 343334522413385,
-			"text-color": [
-				0,
-				0,
-				0,
-				0
-			],
-			"background-color": [
-				0.20392156862745098,
-				0.7294117647058823,
-				0.3607843137254902,
-				1
-			]
+			"eventType": "comment",
+			"text": "\"none\" → nenhum estado\n\n\"controles\" → tela de controles\n\n\"créditos\" → tela de créditos\n\n\"sair\" → fecha o jogo"
 		},
 		{
 			"eventType": "group",
@@ -62,6 +30,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 333560986532668,
+							"parameters": {
+								"variable": "layout",
+								"value": "\"Menu\""
+							}
+						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
@@ -113,6 +90,10 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "comment",
+							"text": "Cursor pointer no botão jogar"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -144,6 +125,10 @@
 								}
 							],
 							"sid": 644818223975657
+						},
+						{
+							"eventType": "comment",
+							"text": "Cursor pointer no botão controles"
 						},
 						{
 							"eventType": "block",
@@ -179,6 +164,10 @@
 							"sid": 968277633804584
 						},
 						{
+							"eventType": "comment",
+							"text": "Cursor pointer no botão créditos"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -212,6 +201,10 @@
 							"sid": 848845312660723
 						},
 						{
+							"eventType": "comment",
+							"text": "Cursor pointer no botão sair"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -243,6 +236,10 @@
 								}
 							],
 							"sid": 487614590055209
+						},
+						{
+							"eventType": "comment",
+							"text": "Cursor default quando não estiver sobre os botões"
 						},
 						{
 							"eventType": "block",
@@ -346,7 +343,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Cursor pointer hover"
+					"text": "Click no botão jogar"
 				},
 				{
 					"eventType": "block",
@@ -391,6 +388,10 @@
 					"sid": 292958970000620
 				},
 				{
+					"eventType": "comment",
+					"text": "Click no botão controles"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -425,6 +426,10 @@
 					"sid": 235486726258676
 				},
 				{
+					"eventType": "comment",
+					"text": "Click no botão créditos"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -457,6 +462,10 @@
 						}
 					],
 					"sid": 950691347197643
+				},
+				{
+					"eventType": "comment",
+					"text": "Click no botão sair"
 				},
 				{
 					"eventType": "block",

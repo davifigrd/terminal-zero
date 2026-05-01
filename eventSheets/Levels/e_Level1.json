@@ -8,7 +8,7 @@
 		{
 			"bookmark": true,
 			"eventType": "comment",
-			"text": "LAST UPDATE\n1. sine tela função (tremor)\n2. som bip\n3. correção mouse saindo da tela pc\n4. array + ajax\n5. transition função + layer global\n6. reestruturação de variáveis:\n    - state e level removidas\n    - spawnPoint\n    - layout\n    - troca para boolean PlayerMoving\n7. spawn_player removido\n8. layout loader 5s\n9. variável instancia typing effect\n10. layer vis/inv choosing\n\nPERGUNTAS\n\n---\n3 saves novo jogo"
+			"text": "LAST UPDATE\n1. sine tela função (tremor)\n2. som bip\n3. correção mouse saindo da tela pc\n4. array + ajax\n5. transition função + layer global\n6. reestruturação de variáveis:\n    - state e level removidas\n    - spawnPoint\n    - layout\n    - troca para boolean PlayerMoving\n7. spawn_player removido\n8. layout loader 5s\n9. variável instancia typing effect\n10. layer vis/inv choosing\n11. comentários on start of layout\n\nPERGUNTAS\n\n---\n3 saves novo jogo"
 		},
 		{
 			"eventType": "comment",
@@ -786,7 +786,10 @@
 			"actions": [
 				{
 					"callFunction": "Transition",
-					"sid": 663685782783608
+					"sid": 663685782783608,
+					"parameters": [
+						"\"\""
+					]
 				}
 			],
 			"sid": 350136399514227
@@ -824,6 +827,15 @@
 							"parameters": {
 								"variable": "PlayerMoving",
 								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 437475371516765,
+							"parameters": {
+								"variable": "layout",
+								"value": "\"Level1\""
 							}
 						},
 						{
@@ -871,7 +883,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "SONS BOTÕES",
+			"title": "BUTTON_SOUND",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -880,6 +892,7 @@
 					"text": "SONS BOTÕES\nEnergia (amarelo) → 1\nRede (azul) → 2\nTerminal (verde) → 3\nSegurança (vermleho) → 4"
 				},
 				{
+					"bookmark": true,
 					"eventType": "block",
 					"conditions": [
 						{
@@ -910,6 +923,7 @@
 					"sid": 541207727784018
 				},
 				{
+					"bookmark": true,
 					"eventType": "block",
 					"conditions": [
 						{
@@ -940,6 +954,7 @@
 					"sid": 234712162543099
 				},
 				{
+					"bookmark": true,
 					"eventType": "block",
 					"conditions": [
 						{
@@ -970,6 +985,7 @@
 					"sid": 994278147364992
 				},
 				{
+					"bookmark": true,
 					"eventType": "block",
 					"conditions": [
 						{

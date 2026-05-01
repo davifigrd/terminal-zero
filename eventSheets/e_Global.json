@@ -60,9 +60,10 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "\"none\" → nenhum ponto de spaawn setado\n\"pc\" → spawn.pc\n\"door\" → spawn.door"
+			"text": "\"none\" → nenhum ponto de spaawn setado\n\"pc\" → spawn.pc"
 		},
 		{
+			"bookmark": true,
 			"eventType": "variable",
 			"name": "transitionTarget",
 			"type": "string",
@@ -73,10 +74,12 @@
 			"sid": 855333202554659
 		},
 		{
+			"bookmark": true,
 			"eventType": "comment",
 			"text": "\"none\" → trajeto de transição\n\"Bedroom\" → trajeto de transição"
 		},
 		{
+			"bookmark": true,
 			"eventType": "variable",
 			"name": "fade_state",
 			"type": "number",
@@ -98,24 +101,10 @@
 					"text": "Cursor original desativado"
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 261026205112449
-						}
-					],
-					"actions": [],
-					"sid": 919980449629810,
-					"children": [
-						{
-							"eventType": "script",
-							"language": "javascript",
-							"script": [
-								"document.body.style.cursor = 'none';"
-							]
-						}
+					"eventType": "script",
+					"language": "javascript",
+					"script": [
+						"document.body.style.cursor = 'none';"
 					]
 				},
 				{
@@ -362,12 +351,12 @@
 		{
 			"eventType": "group",
 			"disabled": true,
-			"title": "TRANSITION",
+			"title": "TRANSITIONNNNN",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"functionName": "Transition222",
+					"functionName": "Transitionnnnn",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -375,7 +364,7 @@
 					"functionIsAsync": false,
 					"functionParameters": [
 						{
-							"name": "nextLayout",
+							"name": "nextLayoutttt",
 							"type": "string",
 							"initialValue": "",
 							"comment": "",
@@ -391,7 +380,7 @@
 							"sid": 754738899448161,
 							"parameters": {
 								"variable": "transitionTarget",
-								"value": "nextLayout"
+								"value": "nextLayoutttt"
 							}
 						},
 						{
@@ -568,7 +557,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "TRANSITION2",
+			"title": "TRANSITION",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -579,14 +568,121 @@
 					"functionReturnType": "none",
 					"functionCopyPicked": false,
 					"functionIsAsync": false,
-					"functionParameters": [],
+					"functionParameters": [
+						{
+							"name": "nextLayout",
+							"type": "string",
+							"initialValue": "",
+							"comment": "",
+							"sid": 102792576726174
+						}
+					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
-					"sid": 127464027955309
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 428616400076852,
+							"parameters": {
+								"layer": "\"transition\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 253088945051557,
+							"parameters": {
+								"variable": "transitionTarget",
+								"value": "\"nextLayout\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 954924529993074,
+							"parameters": {
+								"variable": "fade_state",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 269107622117593,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Fade-in"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 594713859701888
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 112615911168753,
+									"parameters": {
+										"variable": "fade_state",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "black",
+									"sid": 253797757546533,
+									"parameters": {
+										"opacity": "Self.Opacity + (200 * dt)"
+									}
+								}
+							],
+							"sid": 461656707517843
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-opacity",
+									"objectClass": "black",
+									"sid": 526517374208639,
+									"parameters": {
+										"comparison": 5,
+										"opacity": "100"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout-by-name",
+									"objectClass": "System",
+									"sid": 818164377826528,
+									"parameters": {
+										"layout": "\"Transition\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 146601632638096,
+									"parameters": {
+										"variable": "fade_state",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 865140240237830
+						}
+					]
 				}
 			],
-			"sid": 120216893311872,
+			"sid": 504107302937531,
 			"background-color": [
 				0,
 				0,
@@ -1283,7 +1379,6 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"bookmark": true,
 					"eventType": "comment",
 					"text": "Reseta tutorial WASD (Bedroom)"
 				},
