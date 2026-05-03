@@ -1,5 +1,5 @@
 {
-	"name": "e_Level3",
+	"name": "e_Level4",
 	"events": [
 		{
 			"eventType": "include",
@@ -8,7 +8,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "LAYOUT_LEVEL3",
+			"title": "LAYOUT_LEVEL4",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -18,14 +18,14 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 316361514877209
+							"sid": 841716292189454
 						}
 					],
 					"actions": [
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 360045481147927,
+							"sid": 825337471470670,
 							"parameters": {
 								"variable": "cursor",
 								"value": "\"default\""
@@ -34,7 +34,7 @@
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 641247165544271,
+							"sid": 150091552612062,
 							"parameters": {
 								"variable": "PlayerMoving",
 								"value": "false"
@@ -43,54 +43,18 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 706831137102107,
+							"sid": 141248360089053,
 							"parameters": {
 								"variable": "layout",
 								"value": "\"Level4\""
 							}
 						}
 					],
-					"sid": 310841943153303
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 829770655946019,
-							"parameters": {
-								"key": 27
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 452165345829575,
-							"parameters": {
-								"layout": "PC"
-							}
-						}
-					],
-					"sid": 289481830768598
+					"sid": 800703476232868
 				}
 			],
-			"sid": 954627435845579,
-			"text-color": [
-				0,
-				0,
-				0,
-				0
-			],
-			"background-color": [
-				1,
-				0.3686274509803922,
-				0,
-				1
-			]
+			"sid": 105721928691137
 		}
 	],
-	"sid": 571789214471806
+	"sid": 282853676340560
 }

@@ -16,35 +16,35 @@
 		{
 			"type": "plugin",
 			"id": "Arr",
-			"name": "Array",
+			"name": "Matriz",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Audio",
-			"name": "Audio",
+			"name": "Áudio",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Dictionary",
-			"name": "Dictionary",
+			"name": "Dicionário",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Keyboard",
+			"name": "Teclado",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "LocalStorage",
-			"name": "Local storage",
+			"name": "Armazenamento local",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -65,49 +65,49 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Text",
+			"name": "Texto",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direction",
+			"name": "8 Direções",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Fade",
-			"name": "Fade",
+			"name": "Esmaecer",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Flash",
-			"name": "Flash",
+			"name": "Piscar",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "Sine",
+			"name": "Senóide",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Tween",
-			"name": "Tween",
+			"name": "Interpolação",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Solid",
+			"name": "Sólido",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -312,7 +312,6 @@
 											"btn_8",
 											"btn_9",
 											"btn_delete",
-											"btn_limpar",
 											"btn_enviar"
 										],
 										"subfolders": [],
@@ -344,6 +343,39 @@
 							}
 						],
 						"name": "Level 3"
+					},
+					{
+						"items": [
+							"background",
+							"correcao"
+						],
+						"subfolders": [
+							{
+								"items": [
+									"vermelho",
+									"amarelo",
+									"azul",
+									"roxo",
+									"verde",
+									"laranja"
+								],
+								"subfolders": [],
+								"name": "colors_btn"
+							},
+							{
+								"items": [
+									"btn_vermelho",
+									"btn_laranja",
+									"btn_amarelo",
+									"btn_verde",
+									"btn_azul",
+									"btn_roxo"
+								],
+								"subfolders": [],
+								"name": "btn_hitbox"
+							}
+						],
+						"name": "Level 4"
 					}
 				],
 				"name": "Levels"
@@ -443,7 +475,8 @@
 			{
 				"items": [
 					"Level1",
-					"Level3"
+					"Level3",
+					"Level4"
 				],
 				"subfolders": [],
 				"name": "Levels"
@@ -462,7 +495,8 @@
 			{
 				"items": [
 					"e_Level1",
-					"e_Level3"
+					"e_Level3",
+					"e_Level4"
 				],
 				"subfolders": [],
 				"name": "Levels"
