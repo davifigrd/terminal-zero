@@ -90,7 +90,15 @@
 							"functionReturnType": "number",
 							"functionCopyPicked": false,
 							"functionIsAsync": false,
-							"functionParameters": [],
+							"functionParameters": [
+								{
+									"name": "p0",
+									"type": "number",
+									"initialValue": "0",
+									"comment": "",
+									"sid": 236314143795407
+								}
+							],
 							"eventType": "function-block",
 							"conditions": [
 								{
@@ -104,13 +112,11 @@
 									}
 								},
 								{
-									"id": "compare-two-values",
+									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 374898761339106,
+									"sid": 755027023148220,
 									"parameters": {
-										"first-value": "bloqueado",
-										"comparison": 0,
-										"second-value": "\"falso\""
+										"variable": "bloqueado"
 									}
 								},
 								{
@@ -129,12 +135,12 @@
 								{
 									"id": "set-at-xyz",
 									"objectClass": "lvl3_senhainput",
-									"sid": 437917814495416,
+									"sid": 442453522996860,
 									"parameters": {
 										"x": "pos",
 										"y": "0",
 										"z": "0",
-										"value": "0"
+										"value": "str(p0)"
 									}
 								},
 								{
@@ -219,28 +225,12 @@
 							"conditions": [],
 							"actions": [
 								{
-									"id": "instance-signal",
-									"objectClass": "lvl3_layout",
-									"sid": 704023974446790,
-									"parameters": {
-										"tag": "\"\""
-									}
-								},
-								{
 									"id": "wait",
 									"objectClass": "System",
 									"sid": 630852032132094,
 									"parameters": {
 										"seconds": "0.2",
 										"use-timescale": true
-									}
-								},
-								{
-									"id": "instance-signal",
-									"objectClass": "lvl3_layout",
-									"sid": 865357430391401,
-									"parameters": {
-										"tag": "\"\""
 									}
 								},
 								{
@@ -409,6 +399,392 @@
 						0,
 						1
 					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "CURSOR_HOVER",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 272002454210668,
+									"parameters": {
+										"object": "lvl3_btn"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-cursor-from-sprite",
+									"objectClass": "Mouse",
+									"sid": 277982763231158,
+									"parameters": {
+										"sprite": "cursor_pointer"
+									}
+								}
+							],
+							"sid": 654293212647107
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 267309961521171,
+									"parameters": {
+										"object": "btn_delete"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-cursor-from-sprite",
+									"objectClass": "Mouse",
+									"sid": 608392677843936,
+									"parameters": {
+										"sprite": "cursor_pointer"
+									}
+								}
+							],
+							"sid": 333243397869546
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 173056498380246,
+									"parameters": {
+										"object": "btn_enviar"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-cursor-from-sprite",
+									"objectClass": "Mouse",
+									"sid": 975022195867062,
+									"parameters": {
+										"sprite": "cursor_pointer"
+									}
+								}
+							],
+							"sid": 650683758678656
+						}
+					],
+					"sid": 877342249617720
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "BOTOES_FRAME",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 384703057105903,
+									"parameters": {
+										"object": "lvl3_btn"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl3_btn",
+									"sid": 542030547462446,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 764404179455212
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 678113436150689,
+									"parameters": {
+										"object": "btn_delete"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl3_btn",
+									"sid": 785808487035700,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 179179513179015
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 848295800225943,
+									"parameters": {
+										"object": "btn_enviar"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl3_btn",
+									"sid": 751085526832782,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 757029632850911
+						}
+					],
+					"sid": 451654518722056
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "TECLADO",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Botões numéricos"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 384246086012391,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "lvl3_btn"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "map-function-default",
+									"objectClass": "Funções",
+									"sid": 642615050317941,
+									"parameters": {
+										"name": "\"lvl3_botoes.valor\"",
+										"function": "AdicionarDigito"
+									}
+								}
+							],
+							"sid": 996364784280137
+						},
+						{
+							"eventType": "comment",
+							"text": "Deletar"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 654414312850382,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "btn_delete"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 996286473887649,
+									"parameters": {
+										"variable": "bloqueado"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 477140733608645,
+									"parameters": {
+										"variable": "pos",
+										"comparison": 4,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 238493848464679,
+									"parameters": {
+										"variable": "pos",
+										"value": "pos - 1"
+									}
+								},
+								{
+									"id": "set-at-xyz",
+									"objectClass": "lvl3_senhainput",
+									"sid": 148999497734001,
+									"parameters": {
+										"x": "pos",
+										"y": "0",
+										"z": "0",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "lvl3_campos",
+									"sid": 830698453795968,
+									"parameters": {
+										"instance-variable": "indice",
+										"value": "pos + 1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl3_campos",
+									"sid": 562205062443085,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 887173358579746
+						}
+					],
+					"sid": 851120812850313
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "VALIDACAO",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Enviar Senha"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 978977049941590,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "btn_enviar"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 451781817642354,
+									"parameters": {
+										"variable": "bloqueado"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 731604528737465,
+									"parameters": {
+										"variable": "pos",
+										"comparison": 0,
+										"value": "8"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 466076780267443,
+									"parameters": {
+										"variable": "input_completo",
+										"value": "\"lvl3_senhainput.At(0,0,0) & lvl3_senhainput.At(1,0,0) &\n    lvl3_senhainput.At(2,0,0) & lvl3_senhainput.At(3,0,0) &\n    lvl3_senhainput.At(4,0,0) & lvl3_senhainput.At(5,0,0) &\n    lvl3_senhainput.At(6,0,0) & lvl3_senhainput.At(7,0,0)\""
+									}
+								}
+							],
+							"sid": 751345263719756,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 640670681107975,
+											"parameters": {
+												"variable": "input_completo",
+												"comparison": 0,
+												"value": "\"senha\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 488846878623825,
+											"parameters": {
+												"variable": "bloqueado",
+												"value": "true"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 284143110892759,
+											"parameters": {
+												"seconds": "2.0",
+												"use-timescale": true
+											}
+										},
+										{
+											"callFunction": "Transition",
+											"sid": 731670797212861,
+											"parameters": [
+												"\"Bedroom\""
+											]
+										}
+									],
+									"sid": 879536202841514
+								}
+							]
+						}
+					],
+					"sid": 506649092513016
 				}
 			],
 			"sid": 684653603983551,
