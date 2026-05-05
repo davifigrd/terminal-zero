@@ -6,90 +6,471 @@
 			"includeSheet": "e_Global"
 		},
 		{
+			"eventType": "comment",
+			"text": "=== LAST UPDATE ===\n--- Level3 ---\n→ puzzle senha 8 dígitos\n→ array senha_input\n→ validação por combinação de pistas visuais"
+		},
+		{
+			"eventType": "comment",
+			"text": "EXPLICAÇÃO DA FASE\n\nO jogador está invadindo o servidor SRV-07.\nA tela exibe 4 painéis com dados do servidor.\nA senha de 8 dígitos está escondida nos painéis:\n→ ACCESS LOG   → Tentativas: 42\n→ PWR LEVEL    → Capacidade: 97%\n→ ERR CODE     → Erros menores: 17\n→ ERR CODE     → Erros críticos: 03\n\nRESPOSTA: 42971703"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "LAYOUT_LEVEL3",
+			"title": "LVL3_VARIABLES/LAYOUT",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 316361514877209
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 360045481147927,
-							"parameters": {
-								"variable": "cursor",
-								"value": "\"default\""
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 641247165544271,
-							"parameters": {
-								"variable": "PlayerMoving",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 706831137102107,
-							"parameters": {
-								"variable": "layout",
-								"value": "\"Level4\""
-							}
-						}
-					],
-					"sid": 310841943153303
+					"eventType": "variable",
+					"name": "pos",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 492012962359570
 				},
 				{
-					"eventType": "block",
-					"conditions": [
+					"eventType": "comment",
+					"text": "posição atual no array (0 a 7)"
+				},
+				{
+					"eventType": "variable",
+					"name": "bloqueado",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 607928346042406
+				},
+				{
+					"eventType": "comment",
+					"text": "true = bloqueia clicks \nfalse = jogador pode clickar"
+				},
+				{
+					"eventType": "variable",
+					"name": "input_completo",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 280402553233852
+				},
+				{
+					"eventType": "comment",
+					"text": "guarda a senha montada pelo jogador"
+				},
+				{
+					"eventType": "variable",
+					"name": "senha",
+					"type": "string",
+					"initialValue": "42971703",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 746653970408056
+				},
+				{
+					"eventType": "comment",
+					"text": "senha correta da fase"
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "LVL3_FUNCTIONS",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 829770655946019,
-							"parameters": {
-								"key": 27
-							}
+							"functionName": "AdicionarDigito",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "number",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 629049230402445,
+									"parameters": {
+										"variable": "pos",
+										"comparison": 2,
+										"value": "8"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 374898761339106,
+									"parameters": {
+										"first-value": "bloqueado",
+										"comparison": 0,
+										"second-value": "\"falso\""
+									}
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 699859534126982,
+									"parameters": {
+										"object": "lvl3_campos",
+										"expression": "lvl3_campos.indice",
+										"comparison": 0,
+										"value": "pos + 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-at-xyz",
+									"objectClass": "lvl3_senhainput",
+									"sid": 437917814495416,
+									"parameters": {
+										"x": "pos",
+										"y": "0",
+										"z": "0",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl3_campos",
+									"sid": 858130150835632,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 997151936514344,
+									"parameters": {
+										"variable": "pos",
+										"value": "pos + 1"
+									}
+								}
+							],
+							"sid": 353614635049298
+						},
+						{
+							"functionName": "LimparSenha",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 574486624880938,
+									"parameters": {
+										"variable": "pos",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "lvl3_senhainput",
+									"sid": 868025777864454,
+									"parameters": {
+										"width": "8",
+										"height": "1",
+										"depth": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl3_campos",
+									"sid": 233550518009483,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 121961690234632,
+									"parameters": {
+										"variable": "input_completo",
+										"value": "\"\""
+									}
+								}
+							],
+							"sid": 723082913528410
+						},
+						{
+							"functionName": "Lvl3_error",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "instance-signal",
+									"objectClass": "lvl3_layout",
+									"sid": 704023974446790,
+									"parameters": {
+										"tag": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 630852032132094,
+									"parameters": {
+										"seconds": "0.2",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "instance-signal",
+									"objectClass": "lvl3_layout",
+									"sid": 865357430391401,
+									"parameters": {
+										"tag": "\"\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "feedback_erro",
+									"sid": 947088104033791,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "feedback_erro",
+									"sid": 147492230346455,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 794217751921885,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "feedback_erro",
+									"sid": 833490855110092,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 358282808585653
+								}
+							],
+							"sid": 143325981198676
 						}
 					],
-					"actions": [
+					"sid": 874285963085463
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "LAYOUT_LEVEL3",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
 						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 452165345829575,
-							"parameters": {
-								"layout": "PC"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 465497769955416
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 494643589291247,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"default\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 758229656103625,
+									"parameters": {
+										"variable": "PlayerMoving",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 959421028557601,
+									"parameters": {
+										"variable": "layout",
+										"value": "\"Level3\""
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "lvl3_senhainput",
+									"sid": 197656006110099,
+									"parameters": {
+										"width": "8",
+										"height": "1",
+										"depth": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl3_campos",
+									"sid": 131707937534610,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 713388503369773,
+									"parameters": {
+										"variable": "bloqueado",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 489812940313134,
+									"parameters": {
+										"variable": "pos",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 466568158934344
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 850383756986024,
+									"parameters": {
+										"key": 27
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 228021493125689,
+									"parameters": {
+										"layout": "PC"
+									}
+								}
+							],
+							"sid": 859728408708697
 						}
 					],
-					"sid": 289481830768598
+					"sid": 101140862475154,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						1,
+						0.3686274509803922,
+						0,
+						1
+					]
 				}
 			],
-			"sid": 954627435845579,
-			"text-color": [
-				0,
-				0,
-				0,
-				0
-			],
+			"sid": 684653603983551,
 			"background-color": [
-				1,
-				0.3686274509803922,
+				0.4392156862745098,
 				0,
+				0.34509803921568627,
 				1
 			]
+		},
+		{
+			"eventType": "comment",
+			"text": "SEQUÊNCIA ERRADA"
+		},
+		{
+			"bookmark": true,
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 726943323490544,
+					"parameters": {
+						"key": 70
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Lvl3_error",
+					"sid": 751872256075657
+				}
+			],
+			"sid": 797243492600883
+		},
+		{
+			"eventType": "comment",
+			"text": "FIM DA FASE"
+		},
+		{
+			"bookmark": true,
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 952409633402523,
+					"parameters": {
+						"key": 190
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Transition",
+					"sid": 648552753865638,
+					"parameters": [
+						"\"Bedroom\""
+					]
+				}
+			],
+			"sid": 455474079141490
 		}
 	],
 	"sid": 571789214471806
