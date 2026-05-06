@@ -1,0 +1,137 @@
+{
+	"name": "e_Level5",
+	"events": [
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LAYOUT_LEVEL5",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 928594181142427
+						}
+					],
+					"actions": [],
+					"sid": 476434485050980
+				}
+			],
+			"sid": 557170337090750
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 860456748411698
+				}
+			],
+			"actions": [],
+			"sid": 571957987837019
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 616391665950208
+				}
+			],
+			"actions": [],
+			"sid": 975633568568067
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 750712704212387
+				}
+			],
+			"actions": [],
+			"sid": 373010957505073
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 897762127279059,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 470167289559551
+				}
+			],
+			"sid": 257848144702372
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 285343236997631,
+					"parameters": {
+						"seconds": "0.2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 172336420192984,
+					"parameters": {
+						"seconds": "0.2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 481651152985747,
+					"parameters": {
+						"seconds": "0.2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 243503972500949,
+					"parameters": {
+						"seconds": "0.2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 780800304795166,
+					"parameters": {
+						"seconds": "0.8",
+						"use-timescale": true
+					}
+				}
+			],
+			"sid": 941899008599216
+		}
+	],
+	"sid": 273824512046993
+}
