@@ -1,2 +1,23 @@
+# Construct 3 editor state/cache
 *.uistate.json
-ts-defs
+objecttypes.uistate.json
+project.uistate.json
+projectfiles.uistate.json
+models3d.uistate.json
+ts-defs/
+
+# Construct 3 packaged/exported builds
+# The folder project is the source of truth; .c3p files are binary exports/backups.
+*.c3p
+export/
+exports/
+build/
+dist/
+www/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
