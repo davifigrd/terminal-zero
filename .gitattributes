@@ -1,13 +1,11 @@
-# Auto detect text files and perform LF normalization.
+# Auto detect text files and normalize to LF
 * text=auto
-.gitattributes text eol=lf
-.gitignore text eol=lf
 
-# Construct project source files should stay readable and diffable.
+# Force important text files
 *.c3proj text eol=lf
 *.json text eol=lf
 
-# Binary assets/exports should never be auto-merged as text.
+# Binary files (no diff/merge)
 *.c3p binary
 *.png binary
 *.jpg binary

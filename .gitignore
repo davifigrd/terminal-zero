@@ -1,13 +1,7 @@
 # Construct 3 editor state/cache
 *.uistate.json
-objecttypes.uistate.json
-project.uistate.json
-projectfiles.uistate.json
-models3d.uistate.json
-ts-defs/
 
 # Construct 3 packaged/exported builds
-# The folder project is the source of truth; .c3p files are binary exports/backups.
 *.c3p
 export/
 exports/
@@ -21,3 +15,12 @@ Thumbs.db
 desktop.ini
 *.tmp
 *.temp
+
+# Logs e backups
+*.log
+*.bak
+*.old
+
+# IDE (opcional)
+.vscode/
+.idea/
