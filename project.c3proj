@@ -113,6 +113,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -361,6 +368,36 @@
 								],
 								"subfolders": [],
 								"name": "btn_hitbox"
+							},
+							{
+								"items": [
+									"amarelo2",
+									"amarelo_baixo2",
+									"azul2",
+									"azul_baixo2",
+									"ciano2",
+									"ciano_baixo2",
+									"Correto",
+									"Errado",
+									"rosa2",
+									"rosa_baixo2",
+									"Sprite8",
+									"Sprite9",
+									"verde2",
+									"verde_baixo2",
+									"vermelho2",
+									"vermelho_baixo2",
+									"amarelo_baixo",
+									"azul_baixo",
+									"ciano",
+									"ciano_baixo",
+									"rosa",
+									"rosa_baixo",
+									"verde_baixo",
+									"vermelho_baixo"
+								],
+								"subfolders": [],
+								"name": "lvl4_sprites"
 							}
 						],
 						"name": "Level 4"
@@ -470,15 +507,30 @@
 		}
 	],
 	"families": {
-		"items": [],
+		"items": [
+			"Erro"
+		],
 		"subfolders": [
 			{
-				"items": [
-					"lvl3_campos",
-					"lvl3_btn"
+				"items": [],
+				"subfolders": [
+					{
+						"items": [
+							"lvl3_btn",
+							"lvl3_campos"
+						],
+						"subfolders": [],
+						"name": "Level 3"
+					},
+					{
+						"items": [
+							"Certo"
+						],
+						"subfolders": [],
+						"name": "Level 4"
+					}
 				],
-				"subfolders": [],
-				"name": "lvl3_familias"
+				"name": "Levels"
 			}
 		]
 	},
@@ -495,7 +547,8 @@
 					"Level1",
 					"Level3",
 					"Level4",
-					"Level2"
+					"Level2",
+					"Layout Heitor"
 				],
 				"subfolders": [],
 				"name": "Levels"
@@ -516,7 +569,8 @@
 					"e_Level1",
 					"e_Level3",
 					"e_Level4",
-					"e_Level2"
+					"e_Level2",
+					"Folha Heitor"
 				],
 				"subfolders": [],
 				"name": "Levels"
