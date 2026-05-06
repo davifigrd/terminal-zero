@@ -6,6 +6,7 @@
 			"text": "EXPLICAÇÃO DA FASE\n\nO sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n1. ENERGIA\n2. REDE\n3. TERMINAL\n4. SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \nFase 1:\nEnergia (0) → Segurança (3) → Rede (1) → Terminal (2)\n\nFase 2:\nRede (1) → Energia (0) → Terminal (2) → Segurança (3) → Rede (1) → Energia (0)\n\nFase 3:\nSegurança (3) → Rede (1) → Terminal (2) → Energia (0) → Segurança (3) → Terminal (2) → Rede (1) → Energia (0)"
 		},
 		{
+			"bookmark": true,
 			"eventType": "include",
 			"includeSheet": "e_Global"
 		},
@@ -40,6 +41,7 @@
 			"sid": 916677309638805
 		},
 		{
+			"bookmark": true,
 			"eventType": "variable",
 			"name": "lvl1_step_player",
 			"type": "number",
