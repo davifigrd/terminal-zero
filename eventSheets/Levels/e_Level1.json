@@ -14,70 +14,40 @@
 			"name": "lvl1_current_step",
 			"type": "number",
 			"initialValue": "0",
-			"comment": "",
+			"comment": "0, 1 ou 2  →  Define a etapa atual",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 824908386915306
-		},
-		{
-			"eventType": "comment",
-			"text": "0, 1 ou 2  →  Define a etapa atual"
 		},
 		{
 			"eventType": "variable",
 			"name": "lvl1_InputBlock",
 			"type": "boolean",
 			"initialValue": "false",
-			"comment": "",
+			"comment": "Bloqueia clickes e inputs",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 885565979128245
-		},
-		{
-			"eventType": "comment",
-			"text": "true → bloqueia clicks\nfalse → jogador pode clickar"
-		},
-		{
-			"eventType": "variable",
-			"name": "lvl1_limit_show",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 363086905291446
-		},
-		{
-			"eventType": "comment",
-			"text": "Quantidade máxima de sinais da etapa"
 		},
 		{
 			"eventType": "variable",
 			"name": "lvl1_step_show",
 			"type": "number",
 			"initialValue": "0",
-			"comment": "",
+			"comment": "Quantidade atual de sinais exibidos",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 916677309638805
-		},
-		{
-			"eventType": "comment",
-			"text": "Quantidade atual de sinais exibidos"
 		},
 		{
 			"eventType": "variable",
 			"name": "lvl1_step_player",
 			"type": "number",
 			"initialValue": "0",
-			"comment": "",
+			"comment": "Indice de verificação de acertos do jogador",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 714827092050774
-		},
-		{
-			"eventType": "comment",
-			"text": "Indice de verificação de acertos do jogador"
 		},
 		{
 			"eventType": "group",
@@ -91,14 +61,10 @@
 					"name": "step_show_i",
 					"type": "number",
 					"initialValue": "0",
-					"comment": "",
+					"comment": "Armazena temporariamente o progresso da exibição",
 					"isStatic": false,
 					"isConstant": false,
 					"sid": 467739961534163
-				},
-				{
-					"eventType": "comment",
-					"text": "Armazena temporariamente o progresso da exibição"
 				},
 				{
 					"eventType": "group",
@@ -196,19 +162,6 @@
 										"variable": "lvl1_InputBlock",
 										"value": "true"
 									}
-								},
-								{
-									"callFunction": "ShowSequence",
-									"sid": 278487407131332
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 747361927794919,
-									"parameters": {
-										"variable": "lvl1_step_show",
-										"value": "1"
-									}
 								}
 							],
 							"sid": 206699605409419
@@ -256,7 +209,16 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 239640375022023,
+									"sid": 343036661684688,
+									"parameters": {
+										"variable": "lvl1_step_show",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 140464965438235,
 									"parameters": {
 										"variable": "lvl1_step_player",
 										"value": "0"
@@ -270,42 +232,12 @@
 							"sid": 984877452552543
 						},
 						{
-							"bookmark": true,
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 931094097637679,
-									"parameters": {
-										"key": 69
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "Lvl1Error",
-									"sid": 907760387176655
-								}
-							],
-							"sid": 505874287471209,
-							"disabled": true
-						},
-						{
 							"eventType": "comment",
 							"text": "Lógica de entrada"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 347958253509889,
-									"parameters": {
-										"key": 49
-									}
-								},
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
@@ -348,7 +280,7 @@
 										{
 											"id": "play",
 											"objectClass": "Audio",
-											"sid": 920391462540741,
+											"sid": 170646423498513,
 											"parameters": {
 												"audio-file": {
 													"path": "Levels/Level 1/lvl1_yellow"
@@ -382,6 +314,16 @@
 														"first-value": "lvl1_step_player",
 														"comparison": 0,
 														"second-value": "lvl1_step_show"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 118318588748104,
+													"parameters": {
+														"first-value": "lvl1_step_show",
+														"comparison": 2,
+														"second-value": "4"
 													}
 												}
 											],
@@ -476,14 +418,10 @@
 									"name": "current_val",
 									"type": "number",
 									"initialValue": "0",
-									"comment": "",
+									"comment": "Identifica qual objeto deve piscar",
 									"isStatic": false,
 									"isConstant": false,
 									"sid": 875847097268099
-								},
-								{
-									"eventType": "comment",
-									"text": "Identifica qual objeto deve piscar"
 								},
 								{
 									"eventType": "block",
@@ -857,6 +795,19 @@
 												"variable": "lvl1_step_show",
 												"value": "1"
 											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 684642975888076,
+											"parameters": {
+												"variable": "lvl1_step_player",
+												"value": "0"
+											}
+										},
+										{
+											"callFunction": "ShowSequence",
+											"sid": 463562359886619
 										}
 									],
 									"sid": 621147497120657
