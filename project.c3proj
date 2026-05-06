@@ -16,35 +16,35 @@
 		{
 			"type": "plugin",
 			"id": "Arr",
-			"name": "Array",
+			"name": "Matriz",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Audio",
-			"name": "Audio",
+			"name": "Áudio",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Dictionary",
-			"name": "Dictionary",
+			"name": "Dicionário",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Keyboard",
+			"name": "Teclado",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "LocalStorage",
-			"name": "Local storage",
+			"name": "Armazenamento local",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -52,6 +52,13 @@
 			"type": "plugin",
 			"id": "Mouse",
 			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Partículas",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -65,56 +72,65 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Text",
+			"name": "Texto",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direction",
+			"name": "8 Direções",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Fade",
-			"name": "Fade",
+			"name": "Esmaecer",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Flash",
-			"name": "Flash",
+			"name": "Piscar",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "Sine",
+			"name": "Senóide",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Tween",
-			"name": "Tween",
+			"name": "Interpolação",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Solid",
+			"name": "Sólido",
 			"author": "Scirra",
 			"bundled": false
 		}
 	],
 	"uniqueId": "infcrcpul51",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"Sprite",
+			"Sprite2",
+			"Sprite3",
+			"Sprite4",
+			"Sprite5",
+			"Sprite6",
+			"Sprite7",
+			"Partículas"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -376,6 +392,13 @@
 							}
 						],
 						"name": "Level 4"
+					},
+					{
+						"items": [
+							"lvl2_background"
+						],
+						"subfolders": [],
+						"name": "Level 2"
 					}
 				],
 				"name": "Levels"
@@ -476,7 +499,8 @@
 				"items": [
 					"Level1",
 					"Level3",
-					"Level4"
+					"Level4",
+					"Level2"
 				],
 				"subfolders": [],
 				"name": "Levels"
@@ -496,7 +520,8 @@
 				"items": [
 					"e_Level1",
 					"e_Level3",
-					"e_Level4"
+					"e_Level4",
+					"e_Level2"
 				],
 				"subfolders": [],
 				"name": "Levels"

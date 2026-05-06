@@ -5,16 +5,51 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "layer-is-empty",
-					"objectClass": "System",
-					"sid": 169039335951685,
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 917865432526010,
 					"parameters": {
-						"layer": "0"
+						"mouse-button": "left",
+						"click-type": "clicked"
 					}
 				}
 			],
-			"actions": [],
+			"actions": [
+				{
+					"id": "set-scale",
+					"objectClass": "Sprite3",
+					"sid": 216999505796855,
+					"parameters": {
+						"scale": "1.2"
+					}
+				}
+			],
 			"sid": 909547873666317
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 772097874945088,
+					"parameters": {
+						"mouse-button": "right",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 208266246708431,
+					"parameters": {
+						"scale": "1.0"
+					}
+				}
+			],
+			"sid": 800304135430790
 		}
 	],
 	"sid": 291038968168459
