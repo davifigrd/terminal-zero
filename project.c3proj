@@ -127,6 +127,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "scrollto",
+			"name": "Scroll To",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -135,21 +142,7 @@
 	],
 	"uniqueId": "infcrcpul51",
 	"objectTypes": {
-		"items": [
-			"Texto2",
-			"Sprite8",
-			"Sprite12",
-			"Sprite13",
-			"Sprite14",
-			"Sprite15",
-			"Sprite16",
-			"Sprite18",
-			"Sprite19",
-			"Sprite20",
-			"Sprite21",
-			"Sprite22",
-			"Sprite23"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [
@@ -402,10 +395,33 @@
 							"lvl2_Sprite29",
 							"lvl2_Sprite30",
 							"lvl2_Texto",
-							"lvl2_Texto2"
+							"lvl2_Texto2",
+							"lvl2_Texto3"
 						],
 						"subfolders": [],
 						"name": "Level 2"
+					},
+					{
+						"items": [
+							"lvl2_amarelo",
+							"lvl2_amarelo_baixo",
+							"lvl2_azul",
+							"lvl2_azul_baixo",
+							"lvl2_ciano",
+							"lvl2_ciano_baixo",
+							"lvl2_Correto",
+							"lvl2_Errado",
+							"lvl2_rosa",
+							"lvl2_rosa_baixo",
+							"lvl2_Spritel2Invisivel",
+							"lvl2_Sprite2Invisivel",
+							"lvl2_verde",
+							"lvl2_verde_baixo",
+							"lvl2_vermelho",
+							"lvl2_vermelho_baixo"
+						],
+						"subfolders": [],
+						"name": "Level 4"
 					}
 				],
 				"name": "Levels"
@@ -505,7 +521,10 @@
 		}
 	],
 	"families": {
-		"items": [],
+		"items": [
+			"Certo",
+			"Erro"
+		],
 		"subfolders": [
 			{
 				"items": [],
@@ -541,7 +560,8 @@
 					"Level1",
 					"Level3",
 					"Level5",
-					"Level2"
+					"Level2",
+					"Level4"
 				],
 				"subfolders": [],
 				"name": "Levels"
@@ -562,7 +582,8 @@
 					"e_Level1",
 					"e_Level3",
 					"e_Level5",
-					"e_Level2"
+					"e_Level2",
+					"e_Level4"
 				],
 				"subfolders": [],
 				"name": "Levels"
