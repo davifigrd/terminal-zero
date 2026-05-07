@@ -84,7 +84,7 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
-							"functionName": "AdicionarDigito",
+							"functionName": "lvl3_AdicionarDigito",
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "number",
@@ -164,7 +164,7 @@
 							"sid": 353614635049298
 						},
 						{
-							"functionName": "LimparSenha",
+							"functionName": "lvl3_LimparSenha",
 							"functionDescription": "",
 							"functionCategory": "",
 							"functionReturnType": "none",
@@ -235,7 +235,7 @@
 								},
 								{
 									"id": "set-visible",
-									"objectClass": "feedback_erro",
+									"objectClass": "lvl3_feedback_erro",
 									"sid": 947088104033791,
 									"parameters": {
 										"visibility": "visible"
@@ -243,7 +243,7 @@
 								},
 								{
 									"id": "flash",
-									"objectClass": "feedback_erro",
+									"objectClass": "lvl3_feedback_erro",
 									"sid": 147492230346455,
 									"behaviorType": "Flash",
 									"parameters": {
@@ -263,7 +263,7 @@
 								},
 								{
 									"id": "stop-flashing",
-									"objectClass": "feedback_erro",
+									"objectClass": "lvl3_feedback_erro",
 									"sid": 833490855110092,
 									"behaviorType": "Flash"
 								},
@@ -439,7 +439,7 @@
 									"objectClass": "Mouse",
 									"sid": 267309961521171,
 									"parameters": {
-										"object": "btn_delete"
+										"object": "lvl3_btn_delete"
 									}
 								}
 							],
@@ -463,7 +463,7 @@
 									"objectClass": "Mouse",
 									"sid": 173056498380246,
 									"parameters": {
-										"object": "btn_enviar"
+										"object": "lvl3_btn_enviar"
 									}
 								}
 							],
@@ -521,7 +521,7 @@
 									"objectClass": "Mouse",
 									"sid": 678113436150689,
 									"parameters": {
-										"object": "btn_delete"
+										"object": "lvl3_btn_delete"
 									}
 								}
 							],
@@ -545,7 +545,7 @@
 									"objectClass": "Mouse",
 									"sid": 848295800225943,
 									"parameters": {
-										"object": "btn_enviar"
+										"object": "lvl3_btn_enviar"
 									}
 								}
 							],
@@ -596,7 +596,7 @@
 									"sid": 642615050317941,
 									"parameters": {
 										"name": "\"lvl3_botoes.valor\"",
-										"function": "AdicionarDigito"
+										"function": "lvl3_AdicionarDigito"
 									}
 								}
 							],
@@ -616,7 +616,7 @@
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
-										"object-clicked": "btn_delete"
+										"object-clicked": "lvl3_btn_delete"
 									}
 								},
 								{
@@ -703,7 +703,7 @@
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
-										"object-clicked": "btn_enviar"
+										"object-clicked": "lvl3_btn_enviar"
 									}
 								},
 								{
