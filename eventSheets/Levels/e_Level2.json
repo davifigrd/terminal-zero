@@ -2,55 +2,12 @@
 	"name": "e_Level2",
 	"events": [
 		{
-			"eventType": "variable",
-			"name": "tempo2",
-			"type": "number",
-			"initialValue": "30",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 156560347495955
-		},
-		{
-			"eventType": "block",
-			"conditions": [],
-			"actions": [],
-			"sid": 349708769445233
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 638183951975949
-				}
-			],
-			"actions": [],
-			"sid": 666568141872764
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 934781022037025,
-					"parameters": {
-						"interval-seconds": "1.0"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 279907295082871
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
 					"id": "on-click",
 					"objectClass": "Mouse",
-					"sid": 790465633708753,
+					"sid": 917865432526010,
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked"
@@ -59,40 +16,15 @@
 			],
 			"actions": [
 				{
-					"id": "set-visible",
-					"objectClass": "lvl2_Texto",
-					"sid": 778498583037437,
+					"id": "set-scale",
+					"objectClass": "Sprite3",
+					"sid": 216999505796855,
 					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl2_Texto",
-					"sid": 762639846005253,
-					"parameters": {
-						"text": "\"SISTEMA ACESSADO!\""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 450999205428571,
-					"parameters": {
-						"seconds": "2.0",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 737444197434091,
-					"parameters": {
-						"layout": "Level2"
+						"scale": "1.2"
 					}
 				}
 			],
-			"sid": 460823161957203
+			"sid": 909547873666317
 		},
 		{
 			"eventType": "block",
@@ -100,16 +32,25 @@
 				{
 					"id": "on-click",
 					"objectClass": "Mouse",
-					"sid": 189620860769692,
+					"sid": 772097874945088,
 					"parameters": {
-						"mouse-button": "left",
+						"mouse-button": "right",
 						"click-type": "clicked"
 					}
 				}
 			],
-			"actions": [],
-			"sid": 435757278881163
+			"actions": [
+				{
+					"id": "set-layout-scale",
+					"objectClass": "System",
+					"sid": 208266246708431,
+					"parameters": {
+						"scale": "1.0"
+					}
+				}
+			],
+			"sid": 800304135430790
 		}
 	],
-	"sid": 728895456125350
+	"sid": 291038968168459
 }

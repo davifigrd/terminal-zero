@@ -77,20 +77,6 @@
 			"bundled": false
 		},
 		{
-			"type": "plugin",
-			"id": "TextBox",
-			"name": "Text input",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
-			"id": "TiledBg",
-			"name": "Tiled Background",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -127,13 +113,6 @@
 		},
 		{
 			"type": "behavior",
-			"id": "scrollto",
-			"name": "Scroll To",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "behavior",
 			"id": "solid",
 			"name": "Solid",
 			"author": "Scirra",
@@ -142,7 +121,16 @@
 	],
 	"uniqueId": "infcrcpul51",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"Sprite",
+			"Sprite2",
+			"Sprite3",
+			"Sprite4",
+			"Sprite5",
+			"Sprite6",
+			"Sprite7",
+			"Partículas"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -285,21 +273,31 @@
 				"subfolders": [
 					{
 						"items": [
-							"lvl1_background",
-							"lvl1_error",
-							"lvl1_background2",
+							"lvl1_layout",
+							"error",
+							"lvl1_layout2",
 							"lvl1_array"
 						],
 						"subfolders": [
 							{
 								"items": [
-									"lvl1_energia_hitbox",
-									"lvl1_rede_hitbox",
-									"lvl1_terminal_hitbox",
-									"lvl1_segurança_hitbox"
+									"energia_hitbox",
+									"rede_hitbox",
+									"terminal_hitbox",
+									"segurança_hitbox"
 								],
 								"subfolders": [],
-								"name": "hitbox"
+								"name": "lvl1_hitbox"
+							},
+							{
+								"items": [
+									"energia",
+									"rede",
+									"terminal",
+									"segurança"
+								],
+								"subfolders": [],
+								"name": "lvl1_button"
 							}
 						],
 						"name": "Level 1"
@@ -308,8 +306,7 @@
 						"items": [
 							"lvl3_layout",
 							"lvl3_senhainput",
-							"lvl3_feedback_erro",
-							"lvl3_feedback_ok"
+							"feedback_erro"
 						],
 						"subfolders": [
 							{
@@ -317,44 +314,85 @@
 								"subfolders": [
 									{
 										"items": [
-											"lvl3_btn_0",
-											"lvl3_btn_1",
-											"lvl3_btn_2",
-											"lvl3_btn_3",
-											"lvl3_btn_4",
-											"lvl3_btn_5",
-											"lvl3_btn_6",
-											"lvl3_btn_7",
-											"lvl3_btn_8",
-											"lvl3_btn_9",
-											"lvl3_btn_delete",
-											"lvl3_btn_enviar"
+											"btn_0",
+											"btn_1",
+											"btn_2",
+											"btn_3",
+											"btn_4",
+											"btn_5",
+											"btn_6",
+											"btn_7",
+											"btn_8",
+											"btn_9",
+											"btn_delete",
+											"btn_enviar"
 										],
 										"subfolders": [],
 										"name": "tecladonum_hitbox"
 									},
 									{
 										"items": [
-											"lvl3_campo1",
-											"lvl3_campo2",
-											"lvl3_campo3",
-											"lvl3_campo4",
-											"lvl3_campo5",
-											"lvl3_campo6",
-											"lvl3_campo7",
-											"lvl3_campo8"
+											"arquivo1",
+											"arquivo2",
+											"arquivo3",
+											"arquivo4",
+											"arquivo5"
 										],
 										"subfolders": [],
-										"name": "campos"
+										"name": "arquivos_hitbox"
+									},
+									{
+										"items": [
+											"campo1",
+											"campo2",
+											"campo3",
+											"campo4",
+											"campo5",
+											"campo6",
+											"campo7",
+											"campo8"
+										],
+										"subfolders": [],
+										"name": "lvl3_campos"
 									}
 								],
-								"name": "hitbox"
+								"name": "lvl3_hitbox"
 							}
 						],
 						"name": "Level 3"
 					},
 					{
 						"items": [
+							"background",
+							"correcao"
+						],
+						"subfolders": [
+							{
+								"items": [
+									"vermelho",
+									"amarelo",
+									"azul",
+									"roxo",
+									"verde",
+									"laranja"
+								],
+								"subfolders": [],
+								"name": "colors_btn"
+							},
+							{
+								"items": [
+									"btn_vermelho",
+									"btn_laranja",
+									"btn_amarelo",
+									"btn_verde",
+									"btn_azul",
+									"btn_roxo"
+								],
+								"subfolders": [],
+								"name": "btn_hitbox"
+							}
+						],
+						"name": "Level 4"
 							"lvl5_TiledBackground2",
 							"lvl5_Texto1",
 							"lvl5_TextInput",
@@ -403,25 +441,10 @@
 					},
 					{
 						"items": [
-							"lvl2_amarelo",
-							"lvl2_amarelo_baixo",
-							"lvl2_azul",
-							"lvl2_azul_baixo",
-							"lvl2_ciano",
-							"lvl2_ciano_baixo",
-							"lvl2_Correto",
-							"lvl2_Errado",
-							"lvl2_rosa",
-							"lvl2_rosa_baixo",
-							"lvl2_Spritel2Invisivel",
-							"lvl2_Sprite2Invisivel",
-							"lvl2_verde",
-							"lvl2_verde_baixo",
-							"lvl2_vermelho",
-							"lvl2_vermelho_baixo"
+							"lvl2_background"
 						],
 						"subfolders": [],
-						"name": "Level 4"
+						"name": "Level 2"
 					}
 				],
 				"name": "Levels"
@@ -521,10 +544,7 @@
 		}
 	],
 	"families": {
-		"items": [
-			"Certo",
-			"Erro"
-		],
+		"items": [],
 		"subfolders": [
 			{
 				"items": [],
@@ -538,7 +558,10 @@
 						"name": "Level 3"
 					},
 					{
-						"items": [],
+						"items": [
+							"Certo",
+							"Erro"
+						],
 						"subfolders": [],
 						"name": "Level 4"
 					}
@@ -558,10 +581,9 @@
 			{
 				"items": [
 					"Level1",
-					"Level2",
 					"Level3",
 					"Level4",
-					"Level5"
+					"Level2"
 				],
 				"subfolders": [],
 				"name": "Levels"
@@ -581,9 +603,8 @@
 				"items": [
 					"e_Level1",
 					"e_Level3",
-					"e_Level5",
-					"e_Level2",
-					"e_Level4"
+					"e_Level4",
+					"e_Level2"
 				],
 				"subfolders": [],
 				"name": "Levels"
@@ -606,7 +627,7 @@
 								{
 									"name": "lvl1_blue.webm",
 									"type": "audio/webm; codecs=opus",
-									"sid": 636507148366522,
+									"sid": 103892495101889,
 									"file-info": {
 										"purpose": "none"
 									}
@@ -614,7 +635,7 @@
 								{
 									"name": "lvl1_green.webm",
 									"type": "audio/webm; codecs=opus",
-									"sid": 961583311973784,
+									"sid": 995764940599807,
 									"file-info": {
 										"purpose": "none"
 									}
@@ -622,7 +643,7 @@
 								{
 									"name": "lvl1_red.webm",
 									"type": "audio/webm; codecs=opus",
-									"sid": 479394822468730,
+									"sid": 291227786208821,
 									"file-info": {
 										"purpose": "none"
 									}
@@ -630,7 +651,7 @@
 								{
 									"name": "lvl1_yellow.webm",
 									"type": "audio/webm; codecs=opus",
-									"sid": 299609098083025,
+									"sid": 108903720291191,
 									"file-info": {
 										"purpose": "none"
 									}
@@ -638,28 +659,6 @@
 							],
 							"subfolders": [],
 							"name": "Level 1"
-						},
-						{
-							"items": [
-								{
-									"name": "lvl5_Error.webm",
-									"type": "audio/webm; codecs=opus",
-									"sid": 713653058657455,
-									"file-info": {
-										"purpose": "none"
-									}
-								},
-								{
-									"name": "lvl5_SoundTrack.webm",
-									"type": "audio/webm; codecs=opus",
-									"sid": 242475054671437,
-									"file-info": {
-										"purpose": "none"
-									}
-								}
-							],
-							"subfolders": [],
-							"name": "Level 5"
 						}
 					],
 					"name": "Levels"

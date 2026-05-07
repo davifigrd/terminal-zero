@@ -87,7 +87,7 @@
 							"functionName": "AdicionarDigito",
 							"functionDescription": "",
 							"functionCategory": "",
-							"functionReturnType": "string",
+							"functionReturnType": "number",
 							"functionCopyPicked": false,
 							"functionIsAsync": false,
 							"functionParameters": [
@@ -117,8 +117,7 @@
 									"sid": 755027023148220,
 									"parameters": {
 										"variable": "bloqueado"
-									},
-									"isInverted": true
+									}
 								},
 								{
 									"id": "pick-by-comparison",
@@ -236,7 +235,7 @@
 								},
 								{
 									"id": "set-visible",
-									"objectClass": "lvl3_feedback_erro",
+									"objectClass": "feedback_erro",
 									"sid": 947088104033791,
 									"parameters": {
 										"visibility": "visible"
@@ -244,7 +243,7 @@
 								},
 								{
 									"id": "flash",
-									"objectClass": "lvl3_feedback_erro",
+									"objectClass": "feedback_erro",
 									"sid": 147492230346455,
 									"behaviorType": "Flash",
 									"parameters": {
@@ -264,7 +263,7 @@
 								},
 								{
 									"id": "stop-flashing",
-									"objectClass": "lvl3_feedback_erro",
+									"objectClass": "feedback_erro",
 									"sid": 833490855110092,
 									"behaviorType": "Flash"
 								},
@@ -277,13 +276,293 @@
 							"sid": 143325981198676
 						}
 					],
-					"sid": 874285963085463,
+					"sid": 874285963085463
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "LAYOUT_LEVEL3",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 465497769955416
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 494643589291247,
+									"parameters": {
+										"variable": "cursor",
+										"value": "\"default\""
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 758229656103625,
+									"parameters": {
+										"variable": "PlayerMoving",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 959421028557601,
+									"parameters": {
+										"variable": "layout",
+										"value": "\"Level3\""
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "lvl3_senhainput",
+									"sid": 197656006110099,
+									"parameters": {
+										"width": "8",
+										"height": "1",
+										"depth": "1"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl3_campos",
+									"sid": 131707937534610,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 713388503369773,
+									"parameters": {
+										"variable": "bloqueado",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 489812940313134,
+									"parameters": {
+										"variable": "pos",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 466568158934344
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 850383756986024,
+									"parameters": {
+										"key": 27
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 228021493125689,
+									"parameters": {
+										"layout": "PC"
+									}
+								}
+							],
+							"sid": 859728408708697
+						}
+					],
+					"sid": 101140862475154,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
 					"background-color": [
 						1,
-						0.5803921568627451,
-						0.5803921568627451,
+						0.3686274509803922,
+						0,
 						1
 					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "CURSOR_HOVER",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 272002454210668,
+									"parameters": {
+										"object": "lvl3_btn"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-cursor-from-sprite",
+									"objectClass": "Mouse",
+									"sid": 277982763231158,
+									"parameters": {
+										"sprite": "cursor_pointer"
+									}
+								}
+							],
+							"sid": 654293212647107
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 267309961521171,
+									"parameters": {
+										"object": "btn_delete"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-cursor-from-sprite",
+									"objectClass": "Mouse",
+									"sid": 608392677843936,
+									"parameters": {
+										"sprite": "cursor_pointer"
+									}
+								}
+							],
+							"sid": 333243397869546
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 173056498380246,
+									"parameters": {
+										"object": "btn_enviar"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-cursor-from-sprite",
+									"objectClass": "Mouse",
+									"sid": 975022195867062,
+									"parameters": {
+										"sprite": "cursor_pointer"
+									}
+								}
+							],
+							"sid": 650683758678656
+						}
+					],
+					"sid": 877342249617720
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "BOTOES_FRAME",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 384703057105903,
+									"parameters": {
+										"object": "lvl3_btn"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl3_btn",
+									"sid": 542030547462446,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 764404179455212
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 678113436150689,
+									"parameters": {
+										"object": "btn_delete"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl3_btn",
+									"sid": 785808487035700,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 179179513179015
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 848295800225943,
+									"parameters": {
+										"object": "btn_enviar"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl3_btn",
+									"sid": 751085526832782,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 757029632850911
+						}
+					],
+					"sid": 451654518722056
 				},
 				{
 					"eventType": "group",
@@ -302,35 +581,26 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 291912149310599,
+									"sid": 384246086012391,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
 										"object-clicked": "lvl3_btn"
 									}
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 804184813238343,
-									"parameters": {
-										"variable": "pos",
-										"comparison": 2,
-										"value": "8"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 412520743883542,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
 								}
 							],
-							"actions": [],
-							"sid": 923120217199484
+							"actions": [
+								{
+									"id": "map-function-default",
+									"objectClass": "Funções",
+									"sid": 642615050317941,
+									"parameters": {
+										"name": "\"lvl3_botoes.valor\"",
+										"function": "AdicionarDigito"
+									}
+								}
+							],
+							"sid": 996364784280137
 						},
 						{
 							"eventType": "comment",
@@ -342,276 +612,75 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 951079667394116,
+									"sid": 654414312850382,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_delete"
-									}
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 796227598794687,
-									"parameters": {
-										"variable": "pos",
-										"comparison": 4,
-										"value": "0"
+										"object-clicked": "btn_delete"
 									}
 								},
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 225790082933602,
+									"sid": 996286473887649,
 									"parameters": {
 										"variable": "bloqueado"
-									},
-									"isInverted": true
+									}
 								},
 								{
-									"id": "pick-by-comparison",
+									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 518273293381412,
+									"sid": 477140733608645,
 									"parameters": {
-										"object": "lvl3_campos",
-										"expression": "lvl3_campos.indice",
-										"comparison": 0,
-										"value": "pos + 1"
+										"variable": "pos",
+										"comparison": 4,
+										"value": "0"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-animation-frame",
-									"objectClass": "lvl3_campos",
-									"sid": 369281009099693,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "subtract-from-eventvar",
+									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 348358195363255,
+									"sid": 238493848464679,
 									"parameters": {
 										"variable": "pos",
-										"value": "1"
+										"value": "pos - 1"
 									}
 								},
 								{
-									"id": "set-at-xy",
+									"id": "set-at-xyz",
 									"objectClass": "lvl3_senhainput",
-									"sid": 449304062283701,
+									"sid": 148999497734001,
 									"parameters": {
 										"x": "pos",
 										"y": "0",
-										"value": "\"\""
+										"z": "0",
+										"value": "0"
 									}
-								}
-							],
-							"sid": 634353341510535
-						}
-					],
-					"sid": 772134072808806,
-					"background-color": [
-						1,
-						0.5803921568627451,
-						0.5803921568627451,
-						1
-					]
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "BOTOES_FRAME",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
+								},
 								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 440059172491412,
+									"id": "set-instvar-value",
+									"objectClass": "lvl3_campos",
+									"sid": 830698453795968,
 									"parameters": {
-										"object": "lvl3_btn"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
+										"instance-variable": "indice",
+										"value": "pos + 1"
+									}
+								},
 								{
 									"id": "set-animation-frame",
-									"objectClass": "lvl3_btn",
-									"sid": 926731604963817,
+									"objectClass": "lvl3_campos",
+									"sid": 562205062443085,
 									"parameters": {
-										"frame-number": "1"
+										"frame-number": "0"
 									}
 								}
 							],
-							"sid": 676365863689113
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 639130398697939,
-									"parameters": {
-										"object": "lvl3_btn_delete"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "lvl3_btn_delete",
-									"sid": 889564300762776,
-									"parameters": {
-										"frame-number": "1"
-									}
-								}
-							],
-							"sid": 243882315759487
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 264569280214388,
-									"parameters": {
-										"object": "lvl3_btn_enviar"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "lvl3_btn_enviar",
-									"sid": 732738860192929,
-									"parameters": {
-										"frame-number": "1"
-									}
-								}
-							],
-							"sid": 258591805423876
+							"sid": 887173358579746
 						}
 					],
-					"sid": 950643205821199,
-					"background-color": [
-						0.0392156862745098,
-						0.5607843137254902,
-						0,
-						1
-					]
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "CURSOR_HOVER",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 943460884878149,
-									"parameters": {
-										"object": "lvl3_btn"
-									}
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 663624602494872,
-									"parameters": {
-										"object": "lvl3_btn_delete"
-									}
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 800269730169990,
-									"parameters": {
-										"object": "lvl3_btn_enviar"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 353508323350643,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"pointer\""
-									}
-								}
-							],
-							"sid": 205643289426730,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 546876596140780,
-									"parameters": {
-										"object": "lvl3_btn"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 199730992869725,
-									"parameters": {
-										"object": "lvl3_btn_delete"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 683142998050803,
-									"parameters": {
-										"object": "lvl3_btn_enviar"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 743020228210699,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"default\""
-									}
-								}
-							],
-							"sid": 654293212647107
-						}
-					],
-					"sid": 877342249617720,
-					"background-color": [
-						0.23921568627450981,
-						0,
-						0,
-						1
-					]
+					"sid": 851120812850313
 				},
 				{
 					"eventType": "group",
@@ -634,7 +703,15 @@
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_enviar"
+										"object-clicked": "btn_enviar"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 451781817642354,
+									"parameters": {
+										"variable": "bloqueado"
 									}
 								},
 								{
@@ -646,34 +723,16 @@
 										"comparison": 0,
 										"value": "8"
 									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 906135518524357,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
 								}
 							],
 							"actions": [
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 746095509022170,
+									"sid": 466076780267443,
 									"parameters": {
 										"variable": "input_completo",
-										"value": "\"\""
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 311909446844969,
-									"parameters": {
-										"variable": "input_completo",
-										"value": "lvl3_senhainput.At(0,0,0) & lvl3_senhainput.At(1,0,0) &\n    lvl3_senhainput.At(2,0,0) & lvl3_senhainput.At(3,0,0) &\n    lvl3_senhainput.At(4,0,0) & lvl3_senhainput.At(5,0,0) &\n    lvl3_senhainput.At(6,0,0) & lvl3_senhainput.At(7,0,0)"
+										"value": "\"lvl3_senhainput.At(0,0,0) & lvl3_senhainput.At(1,0,0) &\n    lvl3_senhainput.At(2,0,0) & lvl3_senhainput.At(3,0,0) &\n    lvl3_senhainput.At(4,0,0) & lvl3_senhainput.At(5,0,0) &\n    lvl3_senhainput.At(6,0,0) & lvl3_senhainput.At(7,0,0)\""
 									}
 								}
 							],
@@ -685,11 +744,11 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 807772071076268,
+											"sid": 640670681107975,
 											"parameters": {
 												"variable": "input_completo",
 												"comparison": 0,
-												"value": "senha"
+												"value": "\"senha\""
 											}
 										}
 									],
@@ -701,25 +760,6 @@
 											"parameters": {
 												"variable": "bloqueado",
 												"value": "true"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "lvl3_feedback_ok",
-											"sid": 664791836882167,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "flash",
-											"objectClass": "lvl3_feedback_ok",
-											"sid": 107852398656528,
-											"behaviorType": "Flash",
-											"parameters": {
-												"on-time": "0.1",
-												"off-time": "0.1",
-												"duration": "1.5"
 											}
 										},
 										{
@@ -740,156 +780,11 @@
 										}
 									],
 									"sid": 879536202841514
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 740391954741330
-										}
-									],
-									"actions": [
-										{
-											"callFunction": "Lvl3_error",
-											"sid": 293176939295042
-										}
-									],
-									"sid": 384076410942256
 								}
 							]
 						}
 					],
-					"sid": 506649092513016,
-					"background-color": [
-						1,
-						0.7843137254901961,
-						0,
-						1
-					]
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LAYOUT_LEVEL3",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-start-of-layout",
-									"objectClass": "System",
-									"sid": 770152893185321
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 689662105198393,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"default\""
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 474898810618762,
-									"parameters": {
-										"variable": "PlayerMoving",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 924811690413669,
-									"parameters": {
-										"variable": "layout",
-										"value": "\"Level3\""
-									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "lvl3_senhainput",
-									"sid": 804511941917017,
-									"parameters": {
-										"width": "8",
-										"height": "1",
-										"depth": "1"
-									}
-								},
-								{
-									"id": "set-animation-frame",
-									"objectClass": "lvl3_campos",
-									"sid": 276351172270309,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 250231582849006,
-									"parameters": {
-										"variable": "bloqueado",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 712273745496350,
-									"parameters": {
-										"variable": "pos",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 533280400226992
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 114559054899860,
-									"parameters": {
-										"key": 27
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 512017468465403,
-									"parameters": {
-										"layout": "PC"
-									}
-								}
-							],
-							"sid": 143807681749633
-						}
-					],
-					"sid": 660907681579321,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						1,
-						0.3686274509803922,
-						0,
-						1
-					]
+					"sid": 506649092513016
 				}
 			],
 			"sid": 684653603983551,
