@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "EXPLICAÇÃO DA FASE\n\nO sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n1. ENERGIA\n2. REDE\n3. TERMINAL\n4. SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \nFase 1:\nEnergia (0) → Segurança (3) → Rede (1) → Terminal (2)\n\nFase 2:\nRede (1) → Energia (0) → Terminal (2) → Segurança (3) → Rede (1) → Energia (0)\n\nFase 3:\nSegurança (3) → Rede (1) → Terminal (2) → Energia (0) → Segurança (3) → Terminal (2) → Rede (1) → Energia (0)"
+			"text": "EXPLICAÇÃO DA FASE\n\nO sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n\n1. ENERGIA\n\n2. REDE\n\n3. TERMINAL\n\n4. SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \n\nFase 1:\n\nEnergia (0) -> Segurança (3) -> Rede (1) -> Terminal (2)\n\nFase 2:\n\nRede (1) -> Energia (0) -> Terminal (2) -> Segurança (3) -> Rede (1) -> Energia (0)\n\nFase 3:\n\nSegurança (3) -> Rede (1) -> Terminal (2) -> Energia (0) -> Segurança (3) -> Terminal (2) -> Rede (1) -> Energia (0)"
 		},
 		{
 			"eventType": "include",
@@ -17,11 +17,17 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 824908386915306
+			"sid": 910000000000107
 		},
 		{
-			"eventType": "comment",
-			"text": "0, 1 ou 2  →  Define a etapa atual"
+			"eventType": "variable",
+			"name": "lvl1_idle_timer",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 910000000000108
 		},
 		{
 			"eventType": "variable",
@@ -31,25 +37,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 885565979128245
-		},
-		{
-			"eventType": "comment",
-			"text": "true → bloqueia clicks\nfalse → jogador pode clickar"
-		},
-		{
-			"eventType": "variable",
-			"name": "lvl1_limit_show",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 363086905291446
-		},
-		{
-			"eventType": "comment",
-			"text": "Quantidade máxima de sinais da etapa"
+			"sid": 910000000000109
 		},
 		{
 			"eventType": "variable",
@@ -59,11 +47,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 916677309638805
-		},
-		{
-			"eventType": "comment",
-			"text": "Quantidade atual de sinais exibidos"
+			"sid": 910000000000110
 		},
 		{
 			"eventType": "variable",
@@ -73,182 +57,81 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 714827092050774
-		},
-		{
-			"eventType": "comment",
-			"text": "Indice de verificação de acertos do jogador"
+			"sid": 910000000000111
 		},
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "LVL1_VARIABLES",
+			"title": "LVL1_FUNCTION",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "variable",
-					"name": "step_show_i",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 467739961534163
-				},
-				{
-					"eventType": "comment",
-					"text": "Armazena temporariamente o progresso da exibição"
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LEVEL1_LAYOUT",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
+					"functionName": "Lvl1ShowSequence",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-start-of-layout",
-									"objectClass": "System",
-									"sid": 267782528922756
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 892390575721119,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"default\""
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 123277267583725,
-									"parameters": {
-										"variable": "PlayerMoving",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 408938817045440,
-									"parameters": {
-										"variable": "layout",
-										"value": "\"Level1\""
-									}
-								},
-								{
-									"id": "request-project-file",
-									"objectClass": "AJAX",
-									"sid": 874283839447580,
-									"parameters": {
-										"tag": "\"lvl1_array\"",
-										"file": {
-											"path": "Level 1/lvl1_array.json"
-										}
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 889853748862949,
-									"parameters": {
-										"layer": "\"button_hitbox\"",
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 572510933859037
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 910000000000000,
+							"parameters": {
+								"variable": "lvl1_InputBlock",
+								"value": "true"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-completed",
-									"objectClass": "AJAX",
-									"sid": 563056881555609,
-									"parameters": {
-										"tag": "\"lvl1_array\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "load",
-									"objectClass": "lvl1_array",
-									"sid": 783656562280852,
-									"parameters": {
-										"json": "AJAX.LastData"
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 391582958902658,
-									"parameters": {
-										"variable": "lvl1_InputBlock",
-										"value": "true"
-									}
-								},
-								{
-									"callFunction": "ShowSequence",
-									"sid": 278487407131332
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 747361927794919,
-									"parameters": {
-										"variable": "lvl1_step_show",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 206699605409419
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000001,
+							"parameters": {
+								"variable": "lvl1_step_player",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000002,
+							"parameters": {
+								"variable": "lvl1_idle_timer",
+								"value": "0"
+							}
 						}
 					],
-					"sid": 481092167723477,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						1,
-						0.3686274509803922,
-						0,
-						1
-					]
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LEVEL1_GAMEPLAY",
-					"description": "",
-					"isActiveOnStart": true,
+					"sid": 910000000000043,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "Início"
+							"eventType": "variable",
+							"name": "current_val",
+							"type": "number",
+							"initialValue": "0",
+							"comment": "",
+							"isStatic": false,
+							"isConstant": false,
+							"sid": 910000000000003
 						},
 						{
-							"bookmark": true,
+							"eventType": "comment",
+							"text": "Mostrar sequ?ncia"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 643286433392031,
+									"id": "for",
+									"objectClass": "System",
+									"sid": 910000000000004,
 									"parameters": {
-										"key": 83
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "lvl1_step_show - 1"
 									}
 								}
 							],
@@ -256,99 +139,62 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 239640375022023,
+									"sid": 910000000000005,
 									"parameters": {
-										"variable": "lvl1_step_player",
-										"value": "0"
-									}
-								},
-								{
-									"callFunction": "ShowSequence",
-									"sid": 275676244517707
-								}
-							],
-							"sid": 984877452552543
-						},
-						{
-							"bookmark": true,
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 931094097637679,
-									"parameters": {
-										"key": 69
+										"variable": "current_val",
+										"value": "lvl1_array.At(loopindex, lvl1_current_step)"
 									}
 								}
 							],
-							"actions": [
-								{
-									"callFunction": "Lvl1Error",
-									"sid": 907760387176655
-								}
-							],
-							"sid": 505874287471209,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Lógica de entrada"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 347958253509889,
-									"parameters": {
-										"key": 49
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 883553006984639,
-									"parameters": {
-										"variable": "lvl1_InputBlock"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [],
-							"sid": 309212317596287,
+							"sid": 910000000000038,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-two-values",
+											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 198259422965114,
+											"sid": 910000000000006,
 											"parameters": {
-												"first-value": "lvl1_array.At(lvl1_step_player, lvl1_current_step)",
+												"variable": "current_val",
 												"comparison": 0,
-												"second-value": "0"
+												"value": "0"
 											}
 										}
 									],
 									"actions": [
 										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000007,
+											"parameters": {
+												"seconds": "loopindex * 1.2",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "lvl1_energia_hitbox",
+											"sid": 910000000000008,
+											"parameters": {
+												"opacity": "100"
+											}
+										},
+										{
 											"id": "flash",
 											"objectClass": "lvl1_energia_hitbox",
-											"sid": 282606984170065,
+											"sid": 910000000000009,
 											"behaviorType": "Flash",
 											"parameters": {
 												"on-time": "0.1",
 												"off-time": "0.1",
-												"duration": "1.0"
+												"duration": "0.7"
 											}
 										},
 										{
 											"id": "play",
 											"objectClass": "Audio",
-											"sid": 920391462540741,
+											"sid": 910000000000010,
 											"parameters": {
 												"audio-file": {
 													"path": "Level 1/lvl1_yellow"
@@ -360,526 +206,577 @@
 											}
 										},
 										{
-											"id": "add-to-eventvar",
+											"id": "wait",
 											"objectClass": "System",
-											"sid": 363318976259438,
+											"sid": 910000000000011,
 											"parameters": {
-												"variable": "lvl1_step_player",
-												"value": "1"
+												"seconds": "0.7",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "lvl1_energia_hitbox",
+											"sid": 910000000000012,
+											"parameters": {
+												"opacity": "0"
 											}
 										}
 									],
-									"sid": 386710501125468,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 685435021089628,
-													"parameters": {
-														"first-value": "lvl1_step_player",
-														"comparison": 0,
-														"second-value": "lvl1_step_show"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "add-to-eventvar",
-													"objectClass": "System",
-													"sid": 460524369660730,
-													"parameters": {
-														"variable": "lvl1_step_show",
-														"value": "1"
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 522074417615171,
-													"parameters": {
-														"seconds": "1",
-														"use-timescale": true
-													}
-												},
-												{
-													"callFunction": "ShowSequence",
-													"sid": 749343768901296
-												}
-											],
-											"sid": 320079132661894
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "else",
-													"objectClass": "System",
-													"sid": 802317845891649
-												}
-											],
-											"actions": [
-												{
-													"callFunction": "Lvl1Error",
-													"sid": 183864832608576
-												}
-											],
-											"sid": 499167457466494
-										}
-									]
-								}
-							]
-						}
-					],
-					"sid": 989825002306344,
-					"text-color": [
-						0,
-						0,
-						0,
-						1
-					],
-					"background-color": [
-						1,
-						0.3686274509803922,
-						0,
-						1
-					]
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LVL1_FUNCTION",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Mostrar sequência"
-						},
-						{
-							"functionName": "ShowSequence",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": false,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 616084949352697,
-							"children": [
-								{
-									"eventType": "variable",
-									"name": "current_val",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 875847097268099
-								},
-								{
-									"eventType": "comment",
-									"text": "Identifica qual objeto deve piscar"
+									"sid": 910000000000013
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "for",
+											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 637723103699201,
-											"parameters": {
-												"name": "\"\"",
-												"start-index": "0",
-												"end-index": "lvl1_step_show - 1"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 300079579125646,
-											"parameters": {
-												"seconds": "loopindex * 1",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 954122307445417,
-											"parameters": {
-												"variable": "lvl1_InputBlock",
-												"value": "true"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 515204770665284,
+											"sid": 910000000000014,
 											"parameters": {
 												"variable": "current_val",
-												"value": "lvl1_array.At(loopindex, lvl1_current_step)"
-											}
-										}
-									],
-									"sid": 238409669782753,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 292938223851574,
-													"parameters": {
-														"variable": "current_val",
-														"comparison": 0,
-														"value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "flash",
-													"objectClass": "lvl1_energia_hitbox",
-													"sid": 740351246614292,
-													"behaviorType": "Flash",
-													"parameters": {
-														"on-time": "0.1",
-														"off-time": "0.1",
-														"duration": "1.0"
-													}
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 274151376785080,
-													"parameters": {
-														"audio-file": {
-															"path": "Level 1/lvl1_yellow"
-														},
-														"loop": "not-looping",
-														"volume": "0",
-														"stereo-pan": "0",
-														"tag-optional": "\"\""
-													}
-												}
-											],
-											"sid": 500701386048336
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 983093020972084,
-													"parameters": {
-														"variable": "current_val",
-														"comparison": 0,
-														"value": "1"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "flash",
-													"objectClass": "lvl1_rede_hitbox",
-													"sid": 958418655709520,
-													"behaviorType": "Flash",
-													"parameters": {
-														"on-time": "0.1",
-														"off-time": "0.1",
-														"duration": "1.0"
-													}
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 656333664171155,
-													"parameters": {
-														"audio-file": {
-															"path": "Level 1/lvl1_blue"
-														},
-														"loop": "not-looping",
-														"volume": "0",
-														"stereo-pan": "0",
-														"tag-optional": "\"\""
-													}
-												}
-											],
-											"sid": 214130598429192
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 306293122983081,
-													"parameters": {
-														"variable": "current_val",
-														"comparison": 0,
-														"value": "2"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "flash",
-													"objectClass": "lvl1_terminal_hitbox",
-													"sid": 709284930439867,
-													"behaviorType": "Flash",
-													"parameters": {
-														"on-time": "0.1",
-														"off-time": "0.1",
-														"duration": "1.0"
-													}
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 569232235374305,
-													"parameters": {
-														"audio-file": {
-															"path": "Level 1/lvl1_green"
-														},
-														"loop": "not-looping",
-														"volume": "0",
-														"stereo-pan": "0",
-														"tag-optional": "\"\""
-													}
-												}
-											],
-											"sid": 876188023558935
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 828168919908871,
-													"parameters": {
-														"variable": "current_val",
-														"comparison": 0,
-														"value": "3"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "flash",
-													"objectClass": "lvl1_segurança_hitbox",
-													"sid": 579356590279491,
-													"behaviorType": "Flash",
-													"parameters": {
-														"on-time": "0.1",
-														"off-time": "0.1",
-														"duration": "1.0"
-													}
-												},
-												{
-													"id": "play",
-													"objectClass": "Audio",
-													"sid": 904510521609319,
-													"parameters": {
-														"audio-file": {
-															"path": "Level 1/lvl1_red"
-														},
-														"loop": "not-looping",
-														"volume": "0",
-														"stereo-pan": "0",
-														"tag-optional": "\"\""
-													}
-												}
-											],
-											"sid": 362241857025291
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 387685900384154,
-													"parameters": {
-														"first-value": "loopindex",
-														"comparison": 0,
-														"second-value": "lvl1_step_show - 1"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 361693533391248,
-													"parameters": {
-														"seconds": "1.1",
-														"use-timescale": true
-													}
-												},
-												{
-													"id": "set-boolean-eventvar",
-													"objectClass": "System",
-													"sid": 678493916894685,
-													"parameters": {
-														"variable": "lvl1_InputBlock",
-														"value": "false"
-													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 800210917609375,
-													"parameters": {
-														"variable": "lvl1_step_player",
-														"value": "0"
-													}
-												}
-											],
-											"sid": 655530713357711
-										}
-									]
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Errou a sequência\n(tremor de tela → símbolo de erro → reinicia fase)"
-						},
-						{
-							"functionName": "Lvl1Error",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": false,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [],
-							"sid": 318496295752892,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "set-active",
-											"objectClass": "lvl1_background",
-											"sid": 320760032028160,
-											"behaviorType": "Sine",
-											"parameters": {
-												"state": "active"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 891098437562331,
-											"parameters": {
-												"seconds": "0.2",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-active",
-											"objectClass": "lvl1_background",
-											"sid": 317366430486110,
-											"behaviorType": "Sine",
-											"parameters": {
-												"state": "inactive"
-											}
-										},
-										{
-											"id": "set-angle",
-											"objectClass": "lvl1_background",
-											"sid": 360507896041580,
-											"parameters": {
-												"angle": "0"
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "lvl1_error",
-											"sid": 183962552397880,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "flash",
-											"objectClass": "lvl1_error",
-											"sid": 229914971750360,
-											"behaviorType": "Flash",
-											"parameters": {
-												"on-time": "0.1",
-												"off-time": "0.1",
-												"duration": "1"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 785671351390494,
-											"parameters": {
-												"seconds": "1.0",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "stop-flashing",
-											"objectClass": "lvl1_error",
-											"sid": 546678766476759,
-											"behaviorType": "Flash"
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "lvl1_error",
-											"sid": 681654236679576,
-											"parameters": {
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 754698395446647,
-											"parameters": {
-												"variable": "lvl1_step_show",
+												"comparison": 0,
 												"value": "1"
 											}
 										}
 									],
-									"sid": 621147497120657
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000015,
+											"parameters": {
+												"seconds": "loopindex * 1.2",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "lvl1_rede_hitbox",
+											"sid": 910000000000016,
+											"parameters": {
+												"opacity": "100"
+											}
+										},
+										{
+											"id": "flash",
+											"objectClass": "lvl1_rede_hitbox",
+											"sid": 910000000000017,
+											"behaviorType": "Flash",
+											"parameters": {
+												"on-time": "0.1",
+												"off-time": "0.1",
+												"duration": "0.7"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 910000000000018,
+											"parameters": {
+												"audio-file": {
+													"path": "Level 1/lvl1_blue"
+												},
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000019,
+											"parameters": {
+												"seconds": "0.7",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "lvl1_rede_hitbox",
+											"sid": 910000000000020,
+											"parameters": {
+												"opacity": "0"
+											}
+										}
+									],
+									"sid": 910000000000021
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 910000000000022,
+											"parameters": {
+												"variable": "current_val",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000023,
+											"parameters": {
+												"seconds": "loopindex * 1.2",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "lvl1_terminal_hitbox",
+											"sid": 910000000000024,
+											"parameters": {
+												"opacity": "100"
+											}
+										},
+										{
+											"id": "flash",
+											"objectClass": "lvl1_terminal_hitbox",
+											"sid": 910000000000025,
+											"behaviorType": "Flash",
+											"parameters": {
+												"on-time": "0.1",
+												"off-time": "0.1",
+												"duration": "0.7"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 910000000000026,
+											"parameters": {
+												"audio-file": {
+													"path": "Level 1/lvl1_green"
+												},
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000027,
+											"parameters": {
+												"seconds": "0.7",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "lvl1_terminal_hitbox",
+											"sid": 910000000000028,
+											"parameters": {
+												"opacity": "0"
+											}
+										}
+									],
+									"sid": 910000000000029
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 910000000000030,
+											"parameters": {
+												"variable": "current_val",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000031,
+											"parameters": {
+												"seconds": "loopindex * 1.2",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "lvl1_segurança_hitbox",
+											"sid": 910000000000032,
+											"parameters": {
+												"opacity": "100"
+											}
+										},
+										{
+											"id": "flash",
+											"objectClass": "lvl1_segurança_hitbox",
+											"sid": 910000000000033,
+											"behaviorType": "Flash",
+											"parameters": {
+												"on-time": "0.1",
+												"off-time": "0.1",
+												"duration": "0.7"
+											}
+										},
+										{
+											"id": "play",
+											"objectClass": "Audio",
+											"sid": 910000000000034,
+											"parameters": {
+												"audio-file": {
+													"path": "Level 1/lvl1_red"
+												},
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000035,
+											"parameters": {
+												"seconds": "0.7",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-opacity",
+											"objectClass": "lvl1_segurança_hitbox",
+											"sid": 910000000000036,
+											"parameters": {
+												"opacity": "0"
+											}
+										}
+									],
+									"sid": 910000000000037
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 910000000000039,
+									"parameters": {
+										"seconds": "(lvl1_step_show * 1.2) + 0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 910000000000040,
+									"parameters": {
+										"variable": "lvl1_InputBlock",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 910000000000041,
+									"parameters": {
+										"variable": "lvl1_step_player",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 910000000000042
 						}
-					],
-					"sid": 187849668504262,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						0.12941176470588237,
-						0.47058823529411764,
-						0.23137254901960785,
-						1
+					]
+				},
+				{
+					"functionName": "Lvl1Error",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 910000000000058,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 910000000000044,
+									"parameters": {
+										"variable": "lvl1_InputBlock",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "lvl1_background",
+									"sid": 910000000000045,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "active"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 910000000000046,
+									"parameters": {
+										"seconds": "0.2",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "lvl1_background",
+									"sid": 910000000000047,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "lvl1_background",
+									"sid": 910000000000048,
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl1_error",
+									"sid": 910000000000049,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "lvl1_error",
+									"sid": 910000000000050,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 910000000000051,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "lvl1_error",
+									"sid": 910000000000052,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl1_error",
+									"sid": 910000000000053,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 910000000000054,
+									"parameters": {
+										"variable": "lvl1_step_show",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 910000000000055,
+									"parameters": {
+										"variable": "lvl1_step_player",
+										"value": "0"
+									}
+								},
+								{
+									"callFunction": "Lvl1ShowSequence",
+									"sid": 910000000000056
+								}
+							],
+							"sid": 910000000000057
+						}
+					]
+				},
+				{
+					"functionName": "Lvl1CheckProgress",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 910000000000076,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Decisao de progresso"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 910000000000059,
+									"parameters": {
+										"first-value": "lvl1_step_show",
+										"comparison": 2,
+										"second-value": "4 + (lvl1_current_step * 2)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 910000000000060,
+									"parameters": {
+										"variable": "lvl1_step_show",
+										"value": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 910000000000061,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "Lvl1ShowSequence",
+									"sid": 910000000000062
+								}
+							],
+							"sid": 910000000000063
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 910000000000064
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 910000000000065,
+									"parameters": {
+										"first-value": "lvl1_current_step",
+										"comparison": 2,
+										"second-value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 910000000000066,
+									"parameters": {
+										"variable": "lvl1_current_step",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 910000000000067,
+									"parameters": {
+										"variable": "lvl1_step_show",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 910000000000068,
+									"parameters": {
+										"variable": "lvl1_step_player",
+										"value": "0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 910000000000069,
+									"parameters": {
+										"seconds": "1.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "Lvl1ShowSequence",
+									"sid": 910000000000070
+								}
+							],
+							"sid": 910000000000071
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 910000000000072
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 910000000000073,
+									"parameters": {
+										"variable": "lvl1_InputBlock",
+										"value": "true"
+									}
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 910000000000074,
+									"parameters": [
+										"\"Bedroom\""
+									]
+								}
+							],
+							"sid": 910000000000075
+						}
 					]
 				}
 			],
-			"sid": 516254465505535,
+			"sid": 910000000000112,
 			"text-color": [
 				0,
 				0,
@@ -887,9 +784,905 @@
 				0
 			],
 			"background-color": [
-				0.20392156862745098,
-				0.7294117647058823,
-				0.3607843137254902,
+				0.12941176470588237,
+				0.47058823529411764,
+				0.23137254901960785,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL1_LAYOUT",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 910000000000077
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000078,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"default\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 910000000000079,
+							"parameters": {
+								"variable": "PlayerMoving",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000080,
+							"parameters": {
+								"variable": "layout",
+								"value": "\"Level1\""
+							}
+						},
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 910000000000081,
+							"parameters": {
+								"tag": "\"lvl1_array\"",
+								"file": {
+									"path": "Level 1/lvl1_array.json"
+								}
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 910000000000082,
+							"parameters": {
+								"layer": "\"button_hitbox\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_energia_hitbox",
+							"sid": 910000000000083,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_rede_hitbox",
+							"sid": 910000000000084,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_terminal_hitbox",
+							"sid": 910000000000085,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_segurança_hitbox",
+							"sid": 910000000000086,
+							"parameters": {
+								"opacity": "0"
+							}
+						}
+					],
+					"sid": 910000000000087
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 910000000000088,
+							"parameters": {
+								"tag": "\"lvl1_array\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "lvl1_array",
+							"sid": 910000000000089,
+							"parameters": {
+								"json": "AJAX.LastData"
+							}
+						}
+					],
+					"sid": 910000000000090
+				}
+			],
+			"sid": 910000000000113,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.3686274509803922,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL1_GAMEPLAY",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Inicio"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 910000000000091,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 910000000000092,
+							"parameters": {
+								"variable": "lvl1_InputBlock",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000093,
+							"parameters": {
+								"variable": "lvl1_current_step",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000094,
+							"parameters": {
+								"variable": "lvl1_step_show",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000095,
+							"parameters": {
+								"variable": "lvl1_step_player",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000096,
+							"parameters": {
+								"variable": "lvl1_idle_timer",
+								"value": "0"
+							}
+						},
+						{
+							"callFunction": "Lvl1ShowSequence",
+							"sid": 910000000000097
+						}
+					],
+					"sid": 910000000000098
+				},
+				{
+					"eventType": "comment",
+					"text": "Energia"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 910000000000114,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl1_energia_hitbox"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 910000000000115,
+							"parameters": {
+								"variable": "lvl1_InputBlock"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_energia_hitbox",
+							"sid": 910000000000116,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 910000000000117,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 1/lvl1_yellow"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 910000000000118,
+							"parameters": {
+								"seconds": "0.2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_energia_hitbox",
+							"sid": 910000000000119,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000120,
+							"parameters": {
+								"variable": "lvl1_idle_timer",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 910000000000130,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 910000000000121,
+									"parameters": {
+										"first-value": "lvl1_array.At(lvl1_step_player, lvl1_current_step)",
+										"comparison": 0,
+										"second-value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 910000000000122,
+									"parameters": {
+										"variable": "lvl1_step_player",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 910000000000126,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 910000000000123,
+											"parameters": {
+												"first-value": "lvl1_step_player",
+												"comparison": 0,
+												"second-value": "lvl1_step_show"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Lvl1CheckProgress",
+											"sid": 910000000000124
+										}
+									],
+									"sid": 910000000000125
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 910000000000127
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Lvl1Error",
+									"sid": 910000000000128
+								}
+							],
+							"sid": 910000000000129
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Rede"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 910000000000131,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl1_rede_hitbox"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 910000000000132,
+							"parameters": {
+								"variable": "lvl1_InputBlock"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_rede_hitbox",
+							"sid": 910000000000133,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 910000000000134,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 1/lvl1_blue"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 910000000000135,
+							"parameters": {
+								"seconds": "0.2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_rede_hitbox",
+							"sid": 910000000000136,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000137,
+							"parameters": {
+								"variable": "lvl1_idle_timer",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 910000000000147,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 910000000000138,
+									"parameters": {
+										"first-value": "lvl1_array.At(lvl1_step_player, lvl1_current_step)",
+										"comparison": 0,
+										"second-value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 910000000000139,
+									"parameters": {
+										"variable": "lvl1_step_player",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 910000000000143,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 910000000000140,
+											"parameters": {
+												"first-value": "lvl1_step_player",
+												"comparison": 0,
+												"second-value": "lvl1_step_show"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Lvl1CheckProgress",
+											"sid": 910000000000141
+										}
+									],
+									"sid": 910000000000142
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 910000000000144
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Lvl1Error",
+									"sid": 910000000000145
+								}
+							],
+							"sid": 910000000000146
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Terminal"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 910000000000148,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl1_terminal_hitbox"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 910000000000149,
+							"parameters": {
+								"variable": "lvl1_InputBlock"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_terminal_hitbox",
+							"sid": 910000000000150,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 910000000000151,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 1/lvl1_green"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 910000000000152,
+							"parameters": {
+								"seconds": "0.2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_terminal_hitbox",
+							"sid": 910000000000153,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000154,
+							"parameters": {
+								"variable": "lvl1_idle_timer",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 910000000000164,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 910000000000155,
+									"parameters": {
+										"first-value": "lvl1_array.At(lvl1_step_player, lvl1_current_step)",
+										"comparison": 0,
+										"second-value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 910000000000156,
+									"parameters": {
+										"variable": "lvl1_step_player",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 910000000000160,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 910000000000157,
+											"parameters": {
+												"first-value": "lvl1_step_player",
+												"comparison": 0,
+												"second-value": "lvl1_step_show"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Lvl1CheckProgress",
+											"sid": 910000000000158
+										}
+									],
+									"sid": 910000000000159
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 910000000000161
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Lvl1Error",
+									"sid": 910000000000162
+								}
+							],
+							"sid": 910000000000163
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Segurança"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 910000000000165,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl1_segurança_hitbox"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 910000000000166,
+							"parameters": {
+								"variable": "lvl1_InputBlock"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_segurança_hitbox",
+							"sid": 910000000000167,
+							"parameters": {
+								"opacity": "100"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 910000000000168,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 1/lvl1_red"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 910000000000169,
+							"parameters": {
+								"seconds": "0.2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "lvl1_segurança_hitbox",
+							"sid": 910000000000170,
+							"parameters": {
+								"opacity": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 910000000000171,
+							"parameters": {
+								"variable": "lvl1_idle_timer",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 910000000000181,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 910000000000172,
+									"parameters": {
+										"first-value": "lvl1_array.At(lvl1_step_player, lvl1_current_step)",
+										"comparison": 0,
+										"second-value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 910000000000173,
+									"parameters": {
+										"variable": "lvl1_step_player",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 910000000000177,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 910000000000174,
+											"parameters": {
+												"first-value": "lvl1_step_player",
+												"comparison": 0,
+												"second-value": "lvl1_step_show"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "Lvl1CheckProgress",
+											"sid": 910000000000175
+										}
+									],
+									"sid": 910000000000176
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 910000000000178
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Lvl1Error",
+									"sid": 910000000000179
+								}
+							],
+							"sid": 910000000000180
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Mostra sequencia devido inatividade"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 910000000000099,
+							"parameters": {
+								"interval-seconds": "1.0"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 910000000000100,
+							"parameters": {
+								"variable": "lvl1_InputBlock"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 910000000000101,
+							"parameters": {
+								"variable": "lvl1_idle_timer",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 910000000000106,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 910000000000102,
+									"parameters": {
+										"variable": "lvl1_idle_timer",
+										"comparison": 5,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 910000000000103,
+									"parameters": {
+										"variable": "lvl1_idle_timer",
+										"value": "0"
+									}
+								},
+								{
+									"callFunction": "Lvl1ShowSequence",
+									"sid": 910000000000104
+								}
+							],
+							"sid": 910000000000105
+						}
+					]
+				}
+			],
+			"sid": 910000000000182,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.3686274509803922,
+				0,
 				1
 			]
 		}
