@@ -2,6 +2,10 @@
 	"name": "e_Level5",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "LAYOUT_LEVEL5",
@@ -14,14 +18,42 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 928594181142427
+							"sid": 826064456769477
 						}
 					],
-					"actions": [],
-					"sid": 476434485050980
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 698295826855227,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"default\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 895308758851469,
+							"parameters": {
+								"variable": "PlayerMoving",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 827522512942836,
+							"parameters": {
+								"variable": "layout",
+								"value": "\"Level5\""
+							}
+						}
+					],
+					"sid": 764652775945300
 				}
 			],
-			"sid": 557170337090750
+			"sid": 876046047275173
 		},
 		{
 			"eventType": "block",
@@ -29,11 +61,11 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 860456748411698
+					"sid": 235158595331431
 				}
 			],
 			"actions": [],
-			"sid": 571957987837019
+			"sid": 674355290727613
 		},
 		{
 			"eventType": "block",
@@ -41,97 +73,482 @@
 				{
 					"id": "every-tick",
 					"objectClass": "System",
-					"sid": 616391665950208
+					"sid": 833246092118287
 				}
 			],
-			"actions": [],
-			"sid": 975633568568067
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 750712704212387
-				}
-			],
-			"actions": [],
-			"sid": 373010957505073
-		},
-		{
-			"eventType": "block",
-			"conditions": [],
 			"actions": [
+				{
+					"id": "set-focused",
+					"objectClass": "lvl5_TextInput",
+					"sid": 258532774728380
+				}
+			],
+			"sid": 821137911361087
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 924456946685229
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "lvl5_Texto1",
+					"sid": 115830061553450,
+					"parameters": {
+						"text": "mid(lvl5_TextInput.Text, 0, 1)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "lvl5_Texto2",
+					"sid": 435927722756452,
+					"parameters": {
+						"text": "mid(lvl5_TextInput.Text, 1, 1)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "lvl5_Texto3",
+					"sid": 189547358168817,
+					"parameters": {
+						"text": "mid(lvl5_TextInput.Text, 2, 1)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "lvl5_Texto4",
+					"sid": 369321564317424,
+					"parameters": {
+						"text": "mid(lvl5_TextInput.Text, 3, 1)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "lvl5_Texto5",
+					"sid": 497816453510962,
+					"parameters": {
+						"text": "mid(lvl5_TextInput.Text, 4, 1)"
+					}
+				}
+			],
+			"sid": 809421808114531
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-text-changed",
+					"objectClass": "lvl5_TextInput",
+					"sid": 310134524847303
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 130488963141043,
+					"parameters": {
+						"first-value": "len(lvl5_TextInput.Text)",
+						"comparison": 4,
+						"second-value": "5"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "lvl5_TextInput",
+					"sid": 776768338678035,
+					"parameters": {
+						"text": "left(lvl5_TextInput.Text, 5)"
+					}
+				}
+			],
+			"sid": 641453116050829
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-text-changed",
+					"objectClass": "lvl5_TextInput",
+					"sid": 705751265585834
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 859243256998568,
+					"parameters": {
+						"first-value": "lowercase(lvl5_TextInput.Text)",
+						"comparison": 0,
+						"second-value": "\"ercm1\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "lvl5_TextInput",
+					"sid": 403201222308963,
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 897762127279059,
+					"sid": 768655887329595,
 					"parameters": {
 						"seconds": "1.0",
 						"use-timescale": true
 					}
 				},
 				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 619747842392313,
+					"parameters": {
+						"layout": "Bedroom"
+					}
+				},
+				{
 					"id": "stop-all",
 					"objectClass": "Audio",
-					"sid": 470167289559551
+					"sid": 370837028933629
 				}
 			],
-			"sid": 257848144702372
+			"sid": 214727084571697
 		},
 		{
 			"eventType": "block",
-			"conditions": [],
+			"conditions": [
+				{
+					"id": "on-text-changed",
+					"objectClass": "lvl5_TextInput",
+					"sid": 929567251127918
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 324506352875620,
+					"parameters": {
+						"first-value": "len(lvl5_TextInput.Text)",
+						"comparison": 0,
+						"second-value": "5"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 507272958550279,
+					"parameters": {
+						"first-value": "lowercase(lvl5_TextInput.Text)",
+						"comparison": 0,
+						"second-value": "\"ercm1\""
+					},
+					"isInverted": true
+				}
+			],
 			"actions": [
 				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto1",
+					"sid": 379205115404129,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto2",
+					"sid": 983752483737791,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto3",
+					"sid": 657053603257168,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto4",
+					"sid": 940906418530306,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto5",
+					"sid": 572913747848850,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 285343236997631,
+					"sid": 389019601460906,
 					"parameters": {
 						"seconds": "0.2",
 						"use-timescale": true
 					}
 				},
 				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto1",
+					"sid": 525965148466772,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto2",
+					"sid": 810504426725769,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto3",
+					"sid": 967547884287354,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto4",
+					"sid": 371267589840304,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto5",
+					"sid": 756495789278129,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 172336420192984,
+					"sid": 466351058475915,
 					"parameters": {
 						"seconds": "0.2",
 						"use-timescale": true
 					}
 				},
 				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto1",
+					"sid": 461778917231101,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto2",
+					"sid": 402432876804590,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto3",
+					"sid": 571898454550054,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto4",
+					"sid": 569792531856293,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto5",
+					"sid": 305428735165169,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 481651152985747,
+					"sid": 905163444774842,
 					"parameters": {
 						"seconds": "0.2",
 						"use-timescale": true
 					}
 				},
 				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto1",
+					"sid": 352487046108946,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto2",
+					"sid": 252420148463901,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto3",
+					"sid": 697998745055036,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto4",
+					"sid": 617507793757228,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto5",
+					"sid": 625066089350821,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 243503972500949,
+					"sid": 166682629924428,
 					"parameters": {
 						"seconds": "0.2",
 						"use-timescale": true
 					}
 				},
 				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto1",
+					"sid": 874351793717374,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto2",
+					"sid": 730619394637508,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto3",
+					"sid": 553940622203237,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto4",
+					"sid": 928840034516619,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto5",
+					"sid": 192280445514520,
+					"parameters": {
+						"color": "rgb(255, 0, 0)"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 780800304795166,
+					"sid": 308986446773707,
 					"parameters": {
 						"seconds": "0.8",
 						"use-timescale": true
 					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto1",
+					"sid": 773588983248844,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto2",
+					"sid": 335878580549059,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto3",
+					"sid": 401792562446205,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto4",
+					"sid": 944692214731284,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-font-color",
+					"objectClass": "lvl5_Texto5",
+					"sid": 858794913425974,
+					"parameters": {
+						"color": "rgb(0, 255, 0)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "lvl5_TextInput",
+					"sid": 449114123888665,
+					"parameters": {
+						"text": "\"\""
+					}
 				}
 			],
-			"sid": 941899008599216
+			"sid": 245434169283669
 		}
 	],
-	"sid": 273824512046993
+	"sid": 265217495291583
 }
