@@ -416,20 +416,16 @@
 									"sid": 272002454210668,
 									"parameters": {
 										"object": "lvl3_btn"
-									},
-									"isInverted": true
+									}
 								}
 							],
 							"actions": [
 								{
-									"id": "flash",
-									"objectClass": "lvl3_feedback_ok",
-									"sid": 648233278048464,
-									"behaviorType": "Flash",
+									"id": "set-cursor-from-sprite",
+									"objectClass": "Mouse",
+									"sid": 277982763231158,
 									"parameters": {
-										"on-time": "0.1",
-										"off-time": "0.1",
-										"duration": "1.5"
+										"sprite": "cursor_pointer"
 									}
 								}
 							],
@@ -444,11 +440,19 @@
 									"sid": 267309961521171,
 									"parameters": {
 										"object": "lvl3_btn_delete"
-									},
-									"isInverted": true
+									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-cursor-from-sprite",
+									"objectClass": "Mouse",
+									"sid": 608392677843936,
+									"parameters": {
+										"sprite": "cursor_pointer"
+									}
+								}
+							],
 							"sid": 333243397869546
 						},
 						{
@@ -460,11 +464,19 @@
 									"sid": 173056498380246,
 									"parameters": {
 										"object": "lvl3_btn_enviar"
-									},
-									"isInverted": true
+									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-cursor-from-sprite",
+									"objectClass": "Mouse",
+									"sid": 975022195867062,
+									"parameters": {
+										"sprite": "cursor_pointer"
+									}
+								}
+							],
 							"sid": 650683758678656
 						}
 					],

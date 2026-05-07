@@ -16,35 +16,35 @@
 		{
 			"type": "plugin",
 			"id": "Arr",
-			"name": "Matriz",
+			"name": "Array",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Audio",
-			"name": "Áudio",
+			"name": "Audio",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Dictionary",
-			"name": "Dicionário",
+			"name": "Dictionary",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Teclado",
+			"name": "Keyboard",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "LocalStorage",
-			"name": "Armazenamento local",
+			"name": "Local storage",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -58,7 +58,7 @@
 		{
 			"type": "plugin",
 			"id": "Particles",
-			"name": "Partículas",
+			"name": "Particles",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -72,70 +72,70 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Texto",
+			"name": "Text",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TextBox",
-			"name": "Entrada de texto",
+			"name": "Text input",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TiledBg",
-			"name": "Plano de Fundo em Blocos",
+			"name": "Tiled Background",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direções",
+			"name": "8 Direction",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Fade",
-			"name": "Esmaecer",
+			"name": "Fade",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Flash",
-			"name": "Piscar",
+			"name": "Flash",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "Senóide",
+			"name": "Sine",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Tween",
-			"name": "Interpolação",
+			"name": "Tween",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "scrollto",
-			"name": "Centrar em",
+			"name": "Scroll To",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Sólido",
+			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -285,31 +285,21 @@
 				"subfolders": [
 					{
 						"items": [
-							"lvl1_layout",
-							"error",
-							"lvl1_layout2",
+							"lvl1_background",
+							"lvl1_error",
+							"lvl1_background2",
 							"lvl1_array"
 						],
 						"subfolders": [
 							{
 								"items": [
-									"energia_hitbox",
-									"rede_hitbox",
-									"terminal_hitbox",
-									"segurança_hitbox"
+									"lvl1_energia_hitbox",
+									"lvl1_rede_hitbox",
+									"lvl1_terminal_hitbox",
+									"lvl1_segurança_hitbox"
 								],
 								"subfolders": [],
-								"name": "lvl1_hitbox"
-							},
-							{
-								"items": [
-									"energia",
-									"rede",
-									"terminal",
-									"segurança"
-								],
-								"subfolders": [],
-								"name": "lvl1_button"
+								"name": "hitbox"
 							}
 						],
 						"name": "Level 1"
@@ -318,8 +308,7 @@
 						"items": [
 							"lvl3_layout",
 							"lvl3_senhainput",
-							"lvl3_feedback_erro",
-							"lvl3_feedback_ok"
+							"lvl3_feedback_erro"
 						],
 						"subfolders": [
 							{
@@ -342,6 +331,17 @@
 										],
 										"subfolders": [],
 										"name": "tecladonum_hitbox"
+									},
+									{
+										"items": [
+											"lvl3_arquivo1",
+											"lvl3_arquivo2",
+											"lvl3_arquivo3",
+											"lvl3_arquivo4",
+											"lvl3_arquivo5"
+										],
+										"subfolders": [],
+										"name": "arquivos_hitbox"
 									},
 									{
 										"items": [
@@ -392,7 +392,7 @@
 							"lvl2_Sprite9",
 							"lvl2_Texto1",
 							"lvl2_Texto2",
-							"lvl_Sprite99",
+							"lvl2_Sprite99",
 							"lvl2_background"
 						],
 						"subfolders": [],
@@ -748,34 +748,6 @@
 					],
 					"subfolders": [],
 					"name": "Level 1"
-				},
-				{
-					"items": [],
-					"subfolders": [
-						{
-							"items": [
-								{
-									"name": "lvl1_array.json",
-									"type": "application/json",
-									"sid": 773577320383813,
-									"file-info": {
-										"purpose": "none"
-									}
-								},
-								{
-									"name": "lvl1_dictionary.json",
-									"type": "application/json",
-									"sid": 778576330829071,
-									"file-info": {
-										"purpose": "none"
-									}
-								}
-							],
-							"subfolders": [],
-							"name": "Level 1"
-						}
-					],
-					"name": "Levels"
 				}
 			]
 		}

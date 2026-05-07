@@ -336,7 +336,7 @@
 									"actions": [
 										{
 											"id": "flash",
-											"objectClass": "energia_hitbox",
+											"objectClass": "lvl1_energia_hitbox",
 											"sid": 282606984170065,
 											"behaviorType": "Flash",
 											"parameters": {
@@ -547,7 +547,7 @@
 											"actions": [
 												{
 													"id": "flash",
-													"objectClass": "energia_hitbox",
+													"objectClass": "lvl1_energia_hitbox",
 													"sid": 740351246614292,
 													"behaviorType": "Flash",
 													"parameters": {
@@ -590,7 +590,7 @@
 											"actions": [
 												{
 													"id": "flash",
-													"objectClass": "rede_hitbox",
+													"objectClass": "lvl1_rede_hitbox",
 													"sid": 958418655709520,
 													"behaviorType": "Flash",
 													"parameters": {
@@ -633,7 +633,7 @@
 											"actions": [
 												{
 													"id": "flash",
-													"objectClass": "terminal_hitbox",
+													"objectClass": "lvl1_terminal_hitbox",
 													"sid": 709284930439867,
 													"behaviorType": "Flash",
 													"parameters": {
@@ -676,7 +676,7 @@
 											"actions": [
 												{
 													"id": "flash",
-													"objectClass": "segurança_hitbox",
+													"objectClass": "lvl1_segurança_hitbox",
 													"sid": 579356590279491,
 													"behaviorType": "Flash",
 													"parameters": {
@@ -774,7 +774,7 @@
 									"actions": [
 										{
 											"id": "set-active",
-											"objectClass": "lvl1_layout",
+											"objectClass": "lvl1_background",
 											"sid": 320760032028160,
 											"behaviorType": "Sine",
 											"parameters": {
@@ -792,7 +792,7 @@
 										},
 										{
 											"id": "set-active",
-											"objectClass": "lvl1_layout",
+											"objectClass": "lvl1_background",
 											"sid": 317366430486110,
 											"behaviorType": "Sine",
 											"parameters": {
@@ -801,7 +801,7 @@
 										},
 										{
 											"id": "set-angle",
-											"objectClass": "lvl1_layout",
+											"objectClass": "lvl1_background",
 											"sid": 360507896041580,
 											"parameters": {
 												"angle": "0"
@@ -809,7 +809,7 @@
 										},
 										{
 											"id": "set-visible",
-											"objectClass": "error",
+											"objectClass": "lvl1_error",
 											"sid": 183962552397880,
 											"parameters": {
 												"visibility": "visible"
@@ -817,7 +817,7 @@
 										},
 										{
 											"id": "flash",
-											"objectClass": "error",
+											"objectClass": "lvl1_error",
 											"sid": 229914971750360,
 											"behaviorType": "Flash",
 											"parameters": {
@@ -837,13 +837,13 @@
 										},
 										{
 											"id": "stop-flashing",
-											"objectClass": "error",
+											"objectClass": "lvl1_error",
 											"sid": 546678766476759,
 											"behaviorType": "Flash"
 										},
 										{
 											"id": "set-visible",
-											"objectClass": "error",
+											"objectClass": "lvl1_error",
 											"sid": 681654236679576,
 											"parameters": {
 												"visibility": "invisible"

@@ -7,7 +7,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "lvl1_layout2",
+					"type": "lvl1_background2",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -59,7 +59,7 @@
 					}
 				},
 				{
-					"type": "lvl1_layout",
+					"type": "lvl1_background",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -145,156 +145,7 @@
 			"name": "button",
 			"overriden": 0,
 			"subLayers": [],
-			"instances": [
-				{
-					"type": "energia",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 33,
-					"sid": 378131372325266,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 378131372325266,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 785.4488188976378,
-						"y": 300.49693251533745,
-						"width": 293.60023948212825,
-						"height": 180.65423785152188,
-						"originX": 2.283464566929134,
-						"originY": 0.25153374233128833,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "rede",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 53,
-					"sid": 403208097236128,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 403208097236128,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 545.3862890160482,
-						"y": 345.36120167454175,
-						"width": 293.600239,
-						"height": 180.654238,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "terminal",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 54,
-					"sid": 763702361941424,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 763702361941424,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 829.6710746015146,
-						"y": 344.7059139444822,
-						"width": 293.600239,
-						"height": 180.654238,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "segurança",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 72,
-					"sid": 371556690117185,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"instanceFolderItem": {
-						"sid": 371556690117185,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 1114.4334700287586,
-						"y": 344.91793167769004,
-						"width": 293.600239,
-						"height": 180.654238,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				}
-			],
+			"instances": [],
 			"sid": 910761626665420,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
@@ -331,7 +182,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "energia_hitbox",
+					"type": "lvl1_energia_hitbox",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -372,7 +223,7 @@
 					}
 				},
 				{
-					"type": "rede_hitbox",
+					"type": "lvl1_rede_hitbox",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -413,7 +264,7 @@
 					}
 				},
 				{
-					"type": "terminal_hitbox",
+					"type": "lvl1_terminal_hitbox",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -454,7 +305,7 @@
 					}
 				},
 				{
-					"type": "segurança_hitbox",
+					"type": "lvl1_segurança_hitbox",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -495,7 +346,7 @@
 					}
 				},
 				{
-					"type": "error",
+					"type": "lvl1_error",
 					"properties": {
 						"initially-visible": false,
 						"initial-animation": "error",
