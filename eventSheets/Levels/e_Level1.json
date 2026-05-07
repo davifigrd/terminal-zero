@@ -551,6 +551,13 @@
 									],
 									"actions": [
 										{
+											"callFunction": "TypingEffect",
+											"sid": 781772855548361,
+											"parameters": [
+												"\"Segunda etapa...\""
+											]
+										},
+										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
 											"sid": 910000000000068,
@@ -682,6 +689,13 @@
 												}
 											],
 											"actions": [
+												{
+													"callFunction": "TypingEffect",
+													"sid": 836967456569374,
+													"parameters": [
+														"\"Etapa final...\""
+													]
+												},
 												{
 													"id": "set-eventvar-value",
 													"objectClass": "System",
@@ -821,6 +835,38 @@
 															"parameters": {
 																"variable": "lvl1_InputBlock",
 																"value": "true"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 273216660859151,
+															"parameters": {
+																"seconds": "1",
+																"use-timescale": true
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 407352572310355,
+															"parameters": {
+																"audio-file": {
+																	"path": "Level 1/lvl1_victory"
+																},
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"\""
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 682540193818228,
+															"parameters": {
+																"seconds": "8",
+																"use-timescale": true
 															}
 														},
 														{
@@ -1131,6 +1177,22 @@
 						}
 					],
 					"actions": [
+						{
+							"callFunction": "TypingEffect",
+							"sid": 729541629496843,
+							"parameters": [
+								"\"Primeira etapa...\""
+							]
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 825826807799407,
+							"parameters": {
+								"seconds": "1.5",
+								"use-timescale": true
+							}
+						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
@@ -1949,130 +2011,6 @@
 				}
 			],
 			"sid": 885764541685980,
-			"text-color": [
-				0,
-				0,
-				0,
-				0
-			],
-			"background-color": [
-				1,
-				0.3686274509803922,
-				0,
-				1
-			]
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "LEVEL1_TEXT_STEP",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "Texto primeira etapa"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 945564974379513,
-							"parameters": {
-								"variable": "lvl1_array_line",
-								"comparison": 0,
-								"value": "0"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 243875634275754
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "TypingEffect",
-							"sid": 320642867576426,
-							"parameters": [
-								"\"Primeira etapa...\""
-							]
-						}
-					],
-					"sid": 848205675486474
-				},
-				{
-					"eventType": "comment",
-					"text": "Texto segunda etapa"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 672128200895153,
-							"parameters": {
-								"variable": "lvl1_array_line",
-								"comparison": 0,
-								"value": "1"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 145698265175746
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "TypingEffect",
-							"sid": 922718695244708,
-							"parameters": [
-								"\"Segunda etapa...\""
-							]
-						}
-					],
-					"sid": 408741109421768
-				},
-				{
-					"eventType": "comment",
-					"text": "Texto etapa final "
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 737705458404995,
-							"parameters": {
-								"variable": "lvl1_array_line",
-								"comparison": 0,
-								"value": "2"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 245278440057762
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "TypingEffect",
-							"sid": 646197709394556,
-							"parameters": [
-								"\"Etapa final...\""
-							]
-						}
-					],
-					"sid": 571817722434488
-				}
-			],
-			"sid": 463578187102135,
 			"text-color": [
 				0,
 				0,
