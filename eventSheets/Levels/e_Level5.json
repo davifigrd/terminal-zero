@@ -18,14 +18,14 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 826064456769477
+							"sid": 296148894803720
 						}
 					],
 					"actions": [
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 698295826855227,
+							"sid": 825213315378075,
 							"parameters": {
 								"variable": "cursor",
 								"value": "\"default\""
@@ -34,7 +34,7 @@
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 895308758851469,
+							"sid": 903752885728013,
 							"parameters": {
 								"variable": "PlayerMoving",
 								"value": "false"
@@ -43,17 +43,17 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 827522512942836,
+							"sid": 234770234678944,
 							"parameters": {
 								"variable": "layout",
 								"value": "\"Level5\""
 							}
 						}
 					],
-					"sid": 764652775945300
+					"sid": 437509624366066
 				}
 			],
-			"sid": 876046047275173
+			"sid": 963994453666379
 		},
 		{
 			"eventType": "block",
@@ -61,11 +61,26 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 235158595331431
+					"sid": 380360130343625
 				}
 			],
-			"actions": [],
-			"sid": 674355290727613
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 180861492628365,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 5/lvl5_soundTrack"
+						},
+						"loop": "looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 423644063394136
 		},
 		{
 			"eventType": "block",
@@ -73,17 +88,17 @@
 				{
 					"id": "every-tick",
 					"objectClass": "System",
-					"sid": 833246092118287
+					"sid": 103190163537081
 				}
 			],
 			"actions": [
 				{
 					"id": "set-focused",
 					"objectClass": "lvl5_TextInput",
-					"sid": 258532774728380
+					"sid": 219255065637763
 				}
 			],
-			"sid": 821137911361087
+			"sid": 877011965958448
 		},
 		{
 			"eventType": "block",
@@ -91,14 +106,14 @@
 				{
 					"id": "every-tick",
 					"objectClass": "System",
-					"sid": 924456946685229
+					"sid": 504895388089739
 				}
 			],
 			"actions": [
 				{
 					"id": "set-text",
 					"objectClass": "lvl5_Texto1",
-					"sid": 115830061553450,
+					"sid": 252067925548080,
 					"parameters": {
 						"text": "mid(lvl5_TextInput.Text, 0, 1)"
 					}
@@ -106,7 +121,7 @@
 				{
 					"id": "set-text",
 					"objectClass": "lvl5_Texto2",
-					"sid": 435927722756452,
+					"sid": 216240800130686,
 					"parameters": {
 						"text": "mid(lvl5_TextInput.Text, 1, 1)"
 					}
@@ -114,7 +129,7 @@
 				{
 					"id": "set-text",
 					"objectClass": "lvl5_Texto3",
-					"sid": 189547358168817,
+					"sid": 514690365054330,
 					"parameters": {
 						"text": "mid(lvl5_TextInput.Text, 2, 1)"
 					}
@@ -122,7 +137,7 @@
 				{
 					"id": "set-text",
 					"objectClass": "lvl5_Texto4",
-					"sid": 369321564317424,
+					"sid": 983278702022251,
 					"parameters": {
 						"text": "mid(lvl5_TextInput.Text, 3, 1)"
 					}
@@ -130,13 +145,13 @@
 				{
 					"id": "set-text",
 					"objectClass": "lvl5_Texto5",
-					"sid": 497816453510962,
+					"sid": 167956073869289,
 					"parameters": {
 						"text": "mid(lvl5_TextInput.Text, 4, 1)"
 					}
 				}
 			],
-			"sid": 809421808114531
+			"sid": 407029154071523
 		},
 		{
 			"eventType": "block",
@@ -144,12 +159,12 @@
 				{
 					"id": "on-text-changed",
 					"objectClass": "lvl5_TextInput",
-					"sid": 310134524847303
+					"sid": 303680535753438
 				},
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 130488963141043,
+					"sid": 936039031802956,
 					"parameters": {
 						"first-value": "len(lvl5_TextInput.Text)",
 						"comparison": 4,
@@ -161,13 +176,13 @@
 				{
 					"id": "set-text",
 					"objectClass": "lvl5_TextInput",
-					"sid": 776768338678035,
+					"sid": 354777443382245,
 					"parameters": {
 						"text": "left(lvl5_TextInput.Text, 5)"
 					}
 				}
 			],
-			"sid": 641453116050829
+			"sid": 311238698699081
 		},
 		{
 			"eventType": "block",
@@ -175,12 +190,12 @@
 				{
 					"id": "on-text-changed",
 					"objectClass": "lvl5_TextInput",
-					"sid": 705751265585834
+					"sid": 702362449920255
 				},
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 859243256998568,
+					"sid": 606961891896337,
 					"parameters": {
 						"first-value": "lowercase(lvl5_TextInput.Text)",
 						"comparison": 0,
@@ -192,7 +207,7 @@
 				{
 					"id": "set-enabled",
 					"objectClass": "lvl5_TextInput",
-					"sid": 403201222308963,
+					"sid": 671095067194678,
 					"parameters": {
 						"mode": "disabled"
 					}
@@ -200,7 +215,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 768655887329595,
+					"sid": 975211777602505,
 					"parameters": {
 						"seconds": "1.0",
 						"use-timescale": true
@@ -209,7 +224,7 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 619747842392313,
+					"sid": 163661892355165,
 					"parameters": {
 						"layout": "Bedroom"
 					}
@@ -217,10 +232,10 @@
 				{
 					"id": "stop-all",
 					"objectClass": "Audio",
-					"sid": 370837028933629
+					"sid": 494597199858799
 				}
 			],
-			"sid": 214727084571697
+			"sid": 247895600030033
 		},
 		{
 			"eventType": "block",
@@ -228,12 +243,12 @@
 				{
 					"id": "on-text-changed",
 					"objectClass": "lvl5_TextInput",
-					"sid": 929567251127918
+					"sid": 981974004477931
 				},
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 324506352875620,
+					"sid": 589667851985847,
 					"parameters": {
 						"first-value": "len(lvl5_TextInput.Text)",
 						"comparison": 0,
@@ -243,7 +258,7 @@
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 507272958550279,
+					"sid": 156183868010661,
 					"parameters": {
 						"first-value": "lowercase(lvl5_TextInput.Text)",
 						"comparison": 0,
@@ -254,9 +269,23 @@
 			],
 			"actions": [
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 539118633287732,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 5/lvl5_error"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto1",
-					"sid": 379205115404129,
+					"sid": 638467707616242,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -264,7 +293,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto2",
-					"sid": 983752483737791,
+					"sid": 454515467287053,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -272,7 +301,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto3",
-					"sid": 657053603257168,
+					"sid": 806385696733258,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -280,7 +309,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto4",
-					"sid": 940906418530306,
+					"sid": 101238270414926,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -288,7 +317,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto5",
-					"sid": 572913747848850,
+					"sid": 219587214455005,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -296,7 +325,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 389019601460906,
+					"sid": 210381238036699,
 					"parameters": {
 						"seconds": "0.2",
 						"use-timescale": true
@@ -305,7 +334,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto1",
-					"sid": 525965148466772,
+					"sid": 822644195019475,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -313,7 +342,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto2",
-					"sid": 810504426725769,
+					"sid": 367378452244300,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -321,7 +350,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto3",
-					"sid": 967547884287354,
+					"sid": 689719766613604,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -329,7 +358,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto4",
-					"sid": 371267589840304,
+					"sid": 145808267591290,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -337,7 +366,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto5",
-					"sid": 756495789278129,
+					"sid": 229698390042655,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -345,7 +374,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 466351058475915,
+					"sid": 705148091465247,
 					"parameters": {
 						"seconds": "0.2",
 						"use-timescale": true
@@ -354,7 +383,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto1",
-					"sid": 461778917231101,
+					"sid": 864776552474584,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -362,7 +391,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto2",
-					"sid": 402432876804590,
+					"sid": 523703918353914,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -370,7 +399,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto3",
-					"sid": 571898454550054,
+					"sid": 468215839766800,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -378,7 +407,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto4",
-					"sid": 569792531856293,
+					"sid": 961793954532181,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -386,7 +415,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto5",
-					"sid": 305428735165169,
+					"sid": 491427974093504,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -394,7 +423,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 905163444774842,
+					"sid": 353870388920947,
 					"parameters": {
 						"seconds": "0.2",
 						"use-timescale": true
@@ -403,7 +432,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto1",
-					"sid": 352487046108946,
+					"sid": 661371978859785,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -411,7 +440,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto2",
-					"sid": 252420148463901,
+					"sid": 287086491044695,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -419,7 +448,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto3",
-					"sid": 697998745055036,
+					"sid": 536078396315709,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -427,7 +456,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto4",
-					"sid": 617507793757228,
+					"sid": 865249891519626,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -435,7 +464,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto5",
-					"sid": 625066089350821,
+					"sid": 606561830485986,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -443,7 +472,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 166682629924428,
+					"sid": 805043372863182,
 					"parameters": {
 						"seconds": "0.2",
 						"use-timescale": true
@@ -452,7 +481,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto1",
-					"sid": 874351793717374,
+					"sid": 844881302492565,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -460,7 +489,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto2",
-					"sid": 730619394637508,
+					"sid": 882536725289985,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -468,7 +497,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto3",
-					"sid": 553940622203237,
+					"sid": 739117111271906,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -476,7 +505,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto4",
-					"sid": 928840034516619,
+					"sid": 584741243529687,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -484,7 +513,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto5",
-					"sid": 192280445514520,
+					"sid": 909739537593238,
 					"parameters": {
 						"color": "rgb(255, 0, 0)"
 					}
@@ -492,7 +521,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 308986446773707,
+					"sid": 880093638329887,
 					"parameters": {
 						"seconds": "0.8",
 						"use-timescale": true
@@ -501,7 +530,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto1",
-					"sid": 773588983248844,
+					"sid": 386152374352483,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -509,7 +538,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto2",
-					"sid": 335878580549059,
+					"sid": 805781368071577,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -517,7 +546,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto3",
-					"sid": 401792562446205,
+					"sid": 804193252168479,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -525,7 +554,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto4",
-					"sid": 944692214731284,
+					"sid": 221312958969085,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -533,7 +562,7 @@
 				{
 					"id": "set-font-color",
 					"objectClass": "lvl5_Texto5",
-					"sid": 858794913425974,
+					"sid": 133192565856125,
 					"parameters": {
 						"color": "rgb(0, 255, 0)"
 					}
@@ -541,14 +570,14 @@
 				{
 					"id": "set-text",
 					"objectClass": "lvl5_TextInput",
-					"sid": 449114123888665,
+					"sid": 462679573012011,
 					"parameters": {
 						"text": "\"\""
 					}
 				}
 			],
-			"sid": 245434169283669
+			"sid": 730604500224679
 		}
 	],
-	"sid": 265217495291583
+	"sid": 605313556234667
 }

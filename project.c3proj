@@ -77,6 +77,20 @@
 			"bundled": false
 		},
 		{
+			"type": "plugin",
+			"id": "TextBox",
+			"name": "Text input",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "TiledBg",
+			"name": "Tiled Background",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
 			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
@@ -415,6 +429,20 @@
 						],
 						"subfolders": [],
 						"name": "Level 4"
+					},
+					{
+						"items": [
+							"lvl5_TiledBackground2",
+							"lvl5_Texto1",
+							"lvl5_TextInput",
+							"lvl5_Texto2",
+							"lvl5_Texto3",
+							"lvl5_Texto4",
+							"lvl5_Texto5",
+							"lvl5_TiledBackground"
+						],
+						"subfolders": [],
+						"name": "Level 5"
 					}
 				],
 				"name": "Levels"
@@ -533,7 +561,8 @@
 					"Level1",
 					"Level2",
 					"Level3",
-					"Level4"
+					"Level4",
+					"Level5"
 				],
 				"subfolders": [],
 				"name": "Levels"
@@ -554,7 +583,8 @@
 					"e_Level1",
 					"e_Level3",
 					"e_Level2",
-					"e_Level4"
+					"e_Level4",
+					"e_Level5"
 				],
 				"subfolders": [],
 				"name": "Levels"
@@ -570,48 +600,64 @@
 			"items": [],
 			"subfolders": [
 				{
-					"items": [],
-					"subfolders": [
+					"items": [
 						{
-							"items": [
-								{
-									"name": "lvl1_blue.webm",
-									"type": "audio/webm; codecs=opus",
-									"sid": 103892495101889,
-									"file-info": {
-										"purpose": "none"
-									}
-								},
-								{
-									"name": "lvl1_green.webm",
-									"type": "audio/webm; codecs=opus",
-									"sid": 995764940599807,
-									"file-info": {
-										"purpose": "none"
-									}
-								},
-								{
-									"name": "lvl1_red.webm",
-									"type": "audio/webm; codecs=opus",
-									"sid": 291227786208821,
-									"file-info": {
-										"purpose": "none"
-									}
-								},
-								{
-									"name": "lvl1_yellow.webm",
-									"type": "audio/webm; codecs=opus",
-									"sid": 108903720291191,
-									"file-info": {
-										"purpose": "none"
-									}
-								}
-							],
-							"subfolders": [],
-							"name": "Level 1"
+							"name": "lvl1_blue.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 103892495101889,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "lvl1_green.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 995764940599807,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "lvl1_red.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 291227786208821,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "lvl1_yellow.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 108903720291191,
+							"file-info": {
+								"purpose": "none"
+							}
 						}
 					],
-					"name": "Levels"
+					"subfolders": [],
+					"name": "Level 1"
+				},
+				{
+					"items": [
+						{
+							"name": "lvl5_error.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 851425155446683,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "lvl5_soundTrack.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 365003822054475,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Level 5"
 				}
 			]
 		},
