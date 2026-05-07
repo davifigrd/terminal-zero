@@ -1094,100 +1094,6 @@
 						}
 					],
 					"sid": 910000000000090
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LEVEL1_CURSOR_POINTER",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 541290459754141,
-									"parameters": {
-										"object": "lvl1_energia_hitbox"
-									}
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 675596924296772,
-									"parameters": {
-										"object": "lvl1_rede_hitbox"
-									}
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 760522850649560,
-									"parameters": {
-										"object": "lvl1_terminal_hitbox"
-									}
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 450153600769160,
-									"parameters": {
-										"object": "lvl1_segurança_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 118522871945296,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"pointer\""
-									}
-								}
-							],
-							"sid": 637916444228509,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 543097121255329
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 704060624072574,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"default\""
-									}
-								}
-							],
-							"sid": 839367184683739
-						}
-					],
-					"sid": 864534353652296,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						1,
-						0.3686274509803922,
-						0,
-						1
-					]
 				}
 			],
 			"sid": 910000000000113,
@@ -1205,10 +1111,6 @@
 			]
 		},
 		{
-			"eventType": "comment",
-			"text": "Inicio"
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "LEVEL1_GAMEPLAY",
@@ -1216,15 +1118,16 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "Inicio"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 532672867800921,
-							"parameters": {
-								"key": 83
-							}
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 100432420131442
 						}
 					],
 					"actions": [
@@ -1948,6 +1851,228 @@
 				}
 			],
 			"sid": 910000000000182,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.3686274509803922,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL1_CURSOR_POINTER",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Cursor pointer sobre botões"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 211104577486333,
+							"parameters": {
+								"object": "lvl1_energia_hitbox"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 316046609227960,
+							"parameters": {
+								"object": "lvl1_rede_hitbox"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 566082306223446,
+							"parameters": {
+								"object": "lvl1_terminal_hitbox"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 584128348133116,
+							"parameters": {
+								"object": "lvl1_segurança_hitbox"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 319645347165157,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"pointer\""
+							}
+						}
+					],
+					"sid": 986259594896740,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 275263377206730
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 885268527749680,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"default\""
+							}
+						}
+					],
+					"sid": 200054773028127
+				}
+			],
+			"sid": 885764541685980,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.3686274509803922,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL1_TEXT_STEP",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Texto primeira etapa"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 945564974379513,
+							"parameters": {
+								"variable": "lvl1_array_line",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 243875634275754
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "TypingEffect",
+							"sid": 320642867576426,
+							"parameters": [
+								"\"Primeira etapa...\""
+							]
+						}
+					],
+					"sid": 848205675486474
+				},
+				{
+					"eventType": "comment",
+					"text": "Texto segunda etapa"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 672128200895153,
+							"parameters": {
+								"variable": "lvl1_array_line",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 145698265175746
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "TypingEffect",
+							"sid": 922718695244708,
+							"parameters": [
+								"\"Segunda etapa...\""
+							]
+						}
+					],
+					"sid": 408741109421768
+				},
+				{
+					"eventType": "comment",
+					"text": "Texto etapa final "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 737705458404995,
+							"parameters": {
+								"variable": "lvl1_array_line",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 245278440057762
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "TypingEffect",
+							"sid": 646197709394556,
+							"parameters": [
+								"\"Etapa final...\""
+							]
+						}
+					],
+					"sid": 571817722434488
+				}
+			],
+			"sid": 463578187102135,
 			"text-color": [
 				0,
 				0,
