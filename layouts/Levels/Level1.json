@@ -142,209 +142,10 @@
 			"global": false
 		},
 		{
-			"name": "button",
-			"overriden": 0,
-			"subLayers": [],
-			"instances": [],
-			"sid": 910761626665420,
-			"effectTypes": [],
-			"isInitiallyVisible": true,
-			"isInitiallyInteractive": true,
-			"isHTMLElementsLayer": false,
-			"color": [
-				1,
-				1,
-				1,
-				1
-			],
-			"backgroundColor": [
-				0.3686274509803922,
-				0.3686274509803922,
-				0.3686274509803922,
-				1
-			],
-			"isTransparent": true,
-			"sampling": "auto",
-			"parallaxX": 1,
-			"parallaxY": 1,
-			"scaleRate": 1,
-			"forceOwnTexture": false,
-			"renderingMode": "3d",
-			"drawOrder": "z-order",
-			"useRenderCells": false,
-			"blendMode": "normal",
-			"zElevation": 0,
-			"global": false
-		},
-		{
-			"name": "button_hitbox",
+			"name": "error_button",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
-				{
-					"type": "lvl1_energia_hitbox",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 49,
-					"sid": 613279590479768,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 613279590479768,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 264.30397705084874,
-						"y": 346.12572697649983,
-						"width": 251.69381029431932,
-						"height": 143.99343508688662,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.2
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "lvl1_rede_hitbox",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 79,
-					"sid": 783468456968815,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 783468456968815,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 543,
-						"y": 346.5,
-						"width": 245.69380999999998,
-						"height": 142.993435,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.2
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "lvl1_terminal_hitbox",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 80,
-					"sid": 615021995519244,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 615021995519244,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 830,
-						"y": 345,
-						"width": 247.69380999999998,
-						"height": 144.993435,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.2
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "lvl1_segurança_hitbox",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 81,
-					"sid": 802757702055345,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Flash": {
-							"properties": {}
-						}
-					},
-					"instanceFolderItem": {
-						"sid": 802757702055345,
-						"expanded": true
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 1114.5,
-						"y": 347,
-						"width": 254.69380999999996,
-						"height": 144.993435,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.2
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
 				{
 					"type": "lvl1_error",
 					"properties": {
@@ -387,6 +188,350 @@
 					}
 				}
 			],
+			"sid": 910761626665420,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "button_hitbox",
+			"overriden": 0,
+			"subLayers": [
+				{
+					"name": "segurança",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "lvl1_segurança_hitbox",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 81,
+							"sid": 802757702055345,
+							"tags": "",
+							"instanceVariables": {},
+							"behaviors": {
+								"Flash": {
+									"properties": {}
+								}
+							},
+							"instanceFolderItem": {
+								"sid": 802757702055345,
+								"expanded": true
+							},
+							"showing": true,
+							"locked": false,
+							"world": {
+								"x": 1114.5,
+								"y": 347,
+								"width": 254.69380999999996,
+								"height": 144.993435,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.2
+								],
+								"z": 0,
+								"angle": 0
+							}
+						}
+					],
+					"sid": 192341435885810,
+					"effectTypes": [],
+					"isInitiallyVisible": false,
+					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"sampling": "auto",
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				},
+				{
+					"name": "terminal",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "lvl1_terminal_hitbox",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 80,
+							"sid": 615021995519244,
+							"tags": "",
+							"instanceVariables": {},
+							"behaviors": {
+								"Flash": {
+									"properties": {}
+								}
+							},
+							"instanceFolderItem": {
+								"sid": 615021995519244,
+								"expanded": true
+							},
+							"showing": true,
+							"locked": false,
+							"world": {
+								"x": 830,
+								"y": 345,
+								"width": 247.69380999999998,
+								"height": 144.993435,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.2
+								],
+								"z": 0,
+								"angle": 0
+							}
+						}
+					],
+					"sid": 555118645389246,
+					"effectTypes": [],
+					"isInitiallyVisible": false,
+					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"sampling": "auto",
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				},
+				{
+					"name": "rede",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "lvl1_rede_hitbox",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 79,
+							"sid": 783468456968815,
+							"tags": "",
+							"instanceVariables": {},
+							"behaviors": {
+								"Flash": {
+									"properties": {}
+								}
+							},
+							"instanceFolderItem": {
+								"sid": 783468456968815,
+								"expanded": true
+							},
+							"showing": true,
+							"locked": false,
+							"world": {
+								"x": 543,
+								"y": 346.5,
+								"width": 245.69380999999998,
+								"height": 142.993435,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.2
+								],
+								"z": 0,
+								"angle": 0
+							}
+						}
+					],
+					"sid": 974889775678692,
+					"effectTypes": [],
+					"isInitiallyVisible": false,
+					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"sampling": "auto",
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				},
+				{
+					"name": "energia",
+					"overriden": 0,
+					"subLayers": [],
+					"instances": [
+						{
+							"type": "lvl1_energia_hitbox",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 49,
+							"sid": 613279590479768,
+							"tags": "",
+							"instanceVariables": {},
+							"behaviors": {
+								"Flash": {
+									"properties": {}
+								}
+							},
+							"instanceFolderItem": {
+								"sid": 613279590479768,
+								"expanded": true
+							},
+							"showing": true,
+							"locked": false,
+							"world": {
+								"x": 264.30397705084874,
+								"y": 346.12572697649983,
+								"width": 251.69381029431932,
+								"height": 143.99343508688662,
+								"originX": 0.5,
+								"originY": 0.5,
+								"color": [
+									1,
+									1,
+									1,
+									0.2
+								],
+								"z": 0,
+								"angle": 0
+							}
+						}
+					],
+					"sid": 514489003420510,
+					"effectTypes": [],
+					"isInitiallyVisible": false,
+					"isInitiallyInteractive": true,
+					"isHTMLElementsLayer": false,
+					"color": [
+						1,
+						1,
+						1,
+						1
+					],
+					"backgroundColor": [
+						0.3686274509803922,
+						0.3686274509803922,
+						0.3686274509803922,
+						1
+					],
+					"isTransparent": true,
+					"sampling": "auto",
+					"parallaxX": 1,
+					"parallaxY": 1,
+					"scaleRate": 1,
+					"forceOwnTexture": false,
+					"renderingMode": "3d",
+					"drawOrder": "z-order",
+					"useRenderCells": false,
+					"blendMode": "normal",
+					"zElevation": 0,
+					"global": false
+				}
+			],
+			"instances": [],
 			"sid": 455781491210825,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

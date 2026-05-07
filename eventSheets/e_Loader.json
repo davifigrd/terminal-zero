@@ -93,14 +93,6 @@
 						"seconds": "3",
 						"use-timescale": true
 					}
-				},
-				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 171378045393932,
-					"parameters": {
-						"layout": "Menu"
-					}
 				}
 			],
 			"sid": 600130652186611
@@ -110,6 +102,44 @@
 			"text": "Vai para o menu"
 		},
 		{
+			"eventType": "comment",
+			"text": ""
+		},
+		{
+			"eventType": "comment",
+			"text": "Pula loader"
+		},
+		{
+			"bookmark": true,
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 778329696921040,
+					"parameters": {
+						"key": 32
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 380569020018599,
+					"parameters": {
+						"layout": "Menu"
+					}
+				}
+			],
+			"sid": 426589588062843
+		},
+		{
+			"eventType": "comment",
+			"text": ""
+		},
+		{
+			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{

@@ -62,7 +62,7 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "LVL1_FUNCTION",
+			"title": "LVL1_FUNCTIONS",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
@@ -173,11 +173,12 @@
 											}
 										},
 										{
-											"id": "set-opacity",
-											"objectClass": "lvl1_energia_hitbox",
-											"sid": 910000000000008,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 394074592673236,
 											"parameters": {
-												"opacity": "100"
+												"layer": "\"energia\"",
+												"visibility": "visible"
 											}
 										},
 										{
@@ -220,6 +221,15 @@
 											"sid": 910000000000012,
 											"parameters": {
 												"opacity": "0"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 653302891336187,
+											"parameters": {
+												"layer": "\"energia\"",
+												"visibility": "invisible"
 											}
 										}
 									],
@@ -639,139 +649,319 @@
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Decisao de progresso"
+							"text": "Gerencia o progresso das fases"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
+									"id": "compare-eventvar",
 									"objectClass": "System",
 									"sid": 910000000000059,
 									"parameters": {
-										"first-value": "lvl1_step_show",
-										"comparison": 2,
-										"second-value": "4 + (lvl1_current_step * 2)"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 910000000000060,
-									"parameters": {
-										"variable": "lvl1_step_show",
-										"value": "1"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 910000000000061,
-									"parameters": {
-										"seconds": "1",
-										"use-timescale": true
-									}
-								},
-								{
-									"callFunction": "Lvl1ShowSequence",
-									"sid": 910000000000062
-								}
-							],
-							"sid": 910000000000063
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 910000000000064
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 910000000000065,
-									"parameters": {
-										"first-value": "lvl1_current_step",
-										"comparison": 2,
-										"second-value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 910000000000066,
-									"parameters": {
 										"variable": "lvl1_current_step",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 910000000000067,
-									"parameters": {
-										"variable": "lvl1_step_show",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 910000000000068,
-									"parameters": {
-										"variable": "lvl1_step_player",
+										"comparison": 0,
 										"value": "0"
 									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 910000000000069,
-									"parameters": {
-										"seconds": "1.5",
-										"use-timescale": true
-									}
-								},
-								{
-									"callFunction": "Lvl1ShowSequence",
-									"sid": 910000000000070
 								}
 							],
-							"sid": 910000000000071
+							"actions": [],
+							"sid": 910000000000063,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 910000000000060,
+											"parameters": {
+												"first-value": "lvl1_step_show",
+												"comparison": 2,
+												"second-value": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 910000000000061,
+											"parameters": {
+												"variable": "lvl1_step_show",
+												"value": "1"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000062,
+											"parameters": {
+												"seconds": "1",
+												"use-timescale": true
+											}
+										},
+										{
+											"callFunction": "Lvl1ShowSequence",
+											"sid": 910000000000064
+										}
+									],
+									"sid": 910000000000065
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 910000000000066
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 910000000000067,
+											"parameters": {
+												"variable": "lvl1_current_step",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 910000000000068,
+											"parameters": {
+												"variable": "lvl1_step_show",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 910000000000069,
+											"parameters": {
+												"variable": "lvl1_step_player",
+												"value": "0"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000070,
+											"parameters": {
+												"seconds": "1.5",
+												"use-timescale": true
+											}
+										},
+										{
+											"callFunction": "Lvl1ShowSequence",
+											"sid": 910000000000071
+										}
+									],
+									"sid": 910000000000072
+								}
+							]
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 910000000000072
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-eventvar",
+									"id": "compare-eventvar",
 									"objectClass": "System",
 									"sid": 910000000000073,
 									"parameters": {
-										"variable": "lvl1_InputBlock",
-										"value": "true"
+										"variable": "lvl1_current_step",
+										"comparison": 0,
+										"value": "1"
 									}
-								},
-								{
-									"callFunction": "Transition",
-									"sid": 910000000000074,
-									"parameters": [
-										"\"Bedroom\""
-									]
 								}
 							],
-							"sid": 910000000000075
+							"actions": [],
+							"sid": 910000000000074,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 910000000000075,
+											"parameters": {
+												"first-value": "lvl1_step_show",
+												"comparison": 2,
+												"second-value": "6"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 910000000000204,
+											"parameters": {
+												"variable": "lvl1_step_show",
+												"value": "1"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000183,
+											"parameters": {
+												"seconds": "1",
+												"use-timescale": true
+											}
+										},
+										{
+											"callFunction": "Lvl1ShowSequence",
+											"sid": 910000000000184
+										}
+									],
+									"sid": 910000000000185
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 910000000000186
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 910000000000187,
+											"parameters": {
+												"variable": "lvl1_current_step",
+												"value": "2"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 910000000000188,
+											"parameters": {
+												"variable": "lvl1_step_show",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 910000000000189,
+											"parameters": {
+												"variable": "lvl1_step_player",
+												"value": "0"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000190,
+											"parameters": {
+												"seconds": "1.5",
+												"use-timescale": true
+											}
+										},
+										{
+											"callFunction": "Lvl1ShowSequence",
+											"sid": 910000000000191
+										}
+									],
+									"sid": 910000000000192
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 910000000000193,
+									"parameters": {
+										"variable": "lvl1_current_step",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 910000000000194,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 910000000000195,
+											"parameters": {
+												"first-value": "lvl1_step_show",
+												"comparison": 2,
+												"second-value": "8"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 910000000000196,
+											"parameters": {
+												"variable": "lvl1_step_show",
+												"value": "1"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 910000000000197,
+											"parameters": {
+												"seconds": "1",
+												"use-timescale": true
+											}
+										},
+										{
+											"callFunction": "Lvl1ShowSequence",
+											"sid": 910000000000198
+										}
+									],
+									"sid": 910000000000199
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 910000000000200
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 910000000000201,
+											"parameters": {
+												"variable": "lvl1_InputBlock",
+												"value": "true"
+											}
+										},
+										{
+											"callFunction": "Transition",
+											"sid": 910000000000202,
+											"parameters": [
+												"\"Bedroom\""
+											]
+										}
+									],
+									"sid": 910000000000203
+								}
+							]
 						}
 					]
 				}
@@ -851,7 +1041,7 @@
 							"sid": 910000000000082,
 							"parameters": {
 								"layer": "\"button_hitbox\"",
-								"visibility": "visible"
+								"visibility": "invisible"
 							}
 						},
 						{
@@ -952,15 +1142,6 @@
 						}
 					],
 					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 910000000000092,
-							"parameters": {
-								"variable": "lvl1_InputBlock",
-								"value": "true"
-							}
-						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
