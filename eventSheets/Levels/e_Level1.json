@@ -481,7 +481,7 @@
 							"actions": [
 								{
 									"id": "set-active",
-									"objectClass": "lvl1_background",
+									"objectClass": "lvl1_layout",
 									"sid": 515481475124468,
 									"behaviorType": "Sine",
 									"parameters": {
@@ -499,7 +499,7 @@
 								},
 								{
 									"id": "set-active",
-									"objectClass": "lvl1_background",
+									"objectClass": "lvl1_layout",
 									"sid": 101669985785955,
 									"behaviorType": "Sine",
 									"parameters": {
@@ -508,7 +508,7 @@
 								},
 								{
 									"id": "set-angle",
-									"objectClass": "lvl1_background",
+									"objectClass": "lvl1_layout",
 									"sid": 453616878305583,
 									"parameters": {
 										"angle": "0"
@@ -516,7 +516,7 @@
 								},
 								{
 									"id": "set-visible",
-									"objectClass": "lvl1_error",
+									"objectClass": "error",
 									"sid": 335813388904432,
 									"parameters": {
 										"visibility": "visible"
@@ -524,7 +524,7 @@
 								},
 								{
 									"id": "flash",
-									"objectClass": "lvl1_error",
+									"objectClass": "error",
 									"sid": 345124111855529,
 									"behaviorType": "Flash",
 									"parameters": {
@@ -544,13 +544,13 @@
 								},
 								{
 									"id": "stop-flashing",
-									"objectClass": "lvl1_error",
+									"objectClass": "error",
 									"sid": 208956829035876,
 									"behaviorType": "Flash"
 								},
 								{
 									"id": "set-visible",
-									"objectClass": "lvl1_error",
+									"objectClass": "error",
 									"sid": 986938984604045,
 									"parameters": {
 										"visibility": "invisible"
@@ -878,7 +878,7 @@
 							"objectClass": "Mouse",
 							"sid": 569451359727187,
 							"parameters": {
-								"object": "lvl1_energia_hitbox"
+								"object": "energia_hitbox"
 							}
 						},
 						{

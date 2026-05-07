@@ -1,2 +1,26 @@
+# Construct 3 editor state/cache
 *.uistate.json
-ts-defs
+
+# Construct 3 packaged/exported builds
+*.c3p
+export/
+exports/
+build/
+dist/
+www/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp
+*.temp
+
+# Logs e backups
+*.log
+*.bak
+*.old
+
+# IDE (opcional)
+.vscode/
+.idea/
