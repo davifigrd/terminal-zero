@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "comment",
-			"text": "EXPLICAÇÃO DA FASE\n\nO sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n\n1. ENERGIA\n\n2. REDE\n\n3. TERMINAL\n\n4. SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \n\nFase 1:\n\nEnergia (0) -> Segurança (3) -> Rede (1) -> Terminal (2)\n\nFase 2:\n\nRede (1) -> Energia (0) -> Terminal (2) -> Segurança (3) -> Rede (1) -> Energia (0)\n\nFase 3:\n\nSegurança (3) -> Rede (1) -> Terminal (2) -> Energia (0) -> Segurança (3) -> Terminal (2) -> Rede (1) -> Energia (0)"
+			"text": "EXPLICAÇÃO DA FASE\n\nO sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n\n1. ENERGIA\n\n2. REDE\n\n3. TERMINAL\n\n4. SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \n\nFase 1:\n\nEnergia (0) → Segurança (3) → Rede (1) → Terminal (2)\n\nFase 2:\n\nRede (1) → Energia (0) → Terminal (2) → Segurança (3) → Rede (1) → Energia (0)\n\nFase 3:\n\nSegurança (3) → Rede (1) → Terminal (2) → Energia (0) → Segurança (3) → Terminal (2) → Rede (1) → Energia (0)"
 		},
 		{
 			"eventType": "include",
@@ -14,7 +14,7 @@
 			"name": "lvl1_current_step",
 			"type": "number",
 			"initialValue": "0",
-			"comment": "",
+			"comment": "0, 1 ou 2 → Etapa atual ",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 910000000000107
@@ -24,7 +24,7 @@
 			"name": "lvl1_idle_timer",
 			"type": "number",
 			"initialValue": "0",
-			"comment": "",
+			"comment": "Cronometro de inatividade",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 910000000000108
@@ -34,7 +34,7 @@
 			"name": "lvl1_InputBlock",
 			"type": "boolean",
 			"initialValue": "false",
-			"comment": "",
+			"comment": "Trava de clique",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 910000000000109
@@ -44,7 +44,7 @@
 			"name": "lvl1_step_show",
 			"type": "number",
 			"initialValue": "0",
-			"comment": "",
+			"comment": "Quantidade de sinais atual",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 910000000000110
@@ -54,7 +54,7 @@
 			"name": "lvl1_step_player",
 			"type": "number",
 			"initialValue": "0",
-			"comment": "",
+			"comment": "Progresso do jogador",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 910000000000111
@@ -67,7 +67,11 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"functionName": "Lvl1ShowSequence",
+					"eventType": "comment",
+					"text": "Exibir sequencia"
+				},
+				{
+					"functionName": "lvl1_showSequence",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -112,14 +116,10 @@
 							"name": "current_val",
 							"type": "number",
 							"initialValue": "0",
-							"comment": "",
+							"comment": "Valor atual do botão",
 							"isStatic": false,
 							"isConstant": false,
 							"sid": 910000000000003
-						},
-						{
-							"eventType": "comment",
-							"text": "Mostrar sequ?ncia"
 						},
 						{
 							"eventType": "block",
@@ -175,21 +175,10 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 394074592673236,
+											"sid": 376342563982561,
 											"parameters": {
 												"layer": "\"energia\"",
 												"visibility": "visible"
-											}
-										},
-										{
-											"id": "flash",
-											"objectClass": "lvl1_energia_hitbox",
-											"sid": 910000000000009,
-											"behaviorType": "Flash",
-											"parameters": {
-												"on-time": "0.1",
-												"off-time": "0.1",
-												"duration": "0.7"
 											}
 										},
 										{
@@ -213,14 +202,6 @@
 											"parameters": {
 												"seconds": "0.7",
 												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-opacity",
-											"objectClass": "lvl1_energia_hitbox",
-											"sid": 910000000000012,
-											"parameters": {
-												"opacity": "0"
 											}
 										},
 										{
@@ -260,22 +241,12 @@
 											}
 										},
 										{
-											"id": "set-opacity",
-											"objectClass": "lvl1_rede_hitbox",
-											"sid": 910000000000016,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 153307185381340,
 											"parameters": {
-												"opacity": "100"
-											}
-										},
-										{
-											"id": "flash",
-											"objectClass": "lvl1_rede_hitbox",
-											"sid": 910000000000017,
-											"behaviorType": "Flash",
-											"parameters": {
-												"on-time": "0.1",
-												"off-time": "0.1",
-												"duration": "0.7"
+												"layer": "\"rede\"",
+												"visibility": "visible"
 											}
 										},
 										{
@@ -302,11 +273,12 @@
 											}
 										},
 										{
-											"id": "set-opacity",
-											"objectClass": "lvl1_rede_hitbox",
-											"sid": 910000000000020,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 414274898004192,
 											"parameters": {
-												"opacity": "0"
+												"layer": "\"rede\"",
+												"visibility": "invisible"
 											}
 										}
 									],
@@ -337,22 +309,12 @@
 											}
 										},
 										{
-											"id": "set-opacity",
-											"objectClass": "lvl1_terminal_hitbox",
-											"sid": 910000000000024,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 949725777671257,
 											"parameters": {
-												"opacity": "100"
-											}
-										},
-										{
-											"id": "flash",
-											"objectClass": "lvl1_terminal_hitbox",
-											"sid": 910000000000025,
-											"behaviorType": "Flash",
-											"parameters": {
-												"on-time": "0.1",
-												"off-time": "0.1",
-												"duration": "0.7"
+												"layer": "\"terminal\"",
+												"visibility": "visible"
 											}
 										},
 										{
@@ -379,11 +341,12 @@
 											}
 										},
 										{
-											"id": "set-opacity",
-											"objectClass": "lvl1_terminal_hitbox",
-											"sid": 910000000000028,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 407083147504850,
 											"parameters": {
-												"opacity": "0"
+												"layer": "\"terminal\"",
+												"visibility": "invisible"
 											}
 										}
 									],
@@ -414,22 +377,12 @@
 											}
 										},
 										{
-											"id": "set-opacity",
-											"objectClass": "lvl1_segurança_hitbox",
-											"sid": 910000000000032,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 964588567898836,
 											"parameters": {
-												"opacity": "100"
-											}
-										},
-										{
-											"id": "flash",
-											"objectClass": "lvl1_segurança_hitbox",
-											"sid": 910000000000033,
-											"behaviorType": "Flash",
-											"parameters": {
-												"on-time": "0.1",
-												"off-time": "0.1",
-												"duration": "0.7"
+												"layer": "\"segurança\"",
+												"visibility": "visible"
 											}
 										},
 										{
@@ -456,11 +409,12 @@
 											}
 										},
 										{
-											"id": "set-opacity",
-											"objectClass": "lvl1_segurança_hitbox",
-											"sid": 910000000000036,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 325292135320111,
 											"parameters": {
-												"opacity": "0"
+												"layer": "\"segurança\"",
+												"visibility": "invisible"
 											}
 										}
 									],
@@ -505,137 +459,11 @@
 					]
 				},
 				{
-					"functionName": "Lvl1Error",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 910000000000058,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 910000000000044,
-									"parameters": {
-										"variable": "lvl1_InputBlock",
-										"value": "true"
-									}
-								},
-								{
-									"id": "set-active",
-									"objectClass": "lvl1_background",
-									"sid": 910000000000045,
-									"behaviorType": "Sine",
-									"parameters": {
-										"state": "active"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 910000000000046,
-									"parameters": {
-										"seconds": "0.2",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "set-active",
-									"objectClass": "lvl1_background",
-									"sid": 910000000000047,
-									"behaviorType": "Sine",
-									"parameters": {
-										"state": "inactive"
-									}
-								},
-								{
-									"id": "set-angle",
-									"objectClass": "lvl1_background",
-									"sid": 910000000000048,
-									"parameters": {
-										"angle": "0"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "lvl1_error",
-									"sid": 910000000000049,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "flash",
-									"objectClass": "lvl1_error",
-									"sid": 910000000000050,
-									"behaviorType": "Flash",
-									"parameters": {
-										"on-time": "0.1",
-										"off-time": "0.1",
-										"duration": "1"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 910000000000051,
-									"parameters": {
-										"seconds": "1.0",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "stop-flashing",
-									"objectClass": "lvl1_error",
-									"sid": 910000000000052,
-									"behaviorType": "Flash"
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "lvl1_error",
-									"sid": 910000000000053,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 910000000000054,
-									"parameters": {
-										"variable": "lvl1_step_show",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 910000000000055,
-									"parameters": {
-										"variable": "lvl1_step_player",
-										"value": "0"
-									}
-								},
-								{
-									"callFunction": "Lvl1ShowSequence",
-									"sid": 910000000000056
-								}
-							],
-							"sid": 910000000000057
-						}
-					]
+					"eventType": "comment",
+					"text": "Gerencia o progresso das fases"
 				},
 				{
-					"functionName": "Lvl1CheckProgress",
+					"functionName": "lvl1_checkProgress",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -647,10 +475,6 @@
 					"actions": [],
 					"sid": 910000000000076,
 					"children": [
-						{
-							"eventType": "comment",
-							"text": "Gerencia o progresso das fases"
-						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -702,7 +526,7 @@
 											}
 										},
 										{
-											"callFunction": "Lvl1ShowSequence",
+											"callFunction": "lvl1_showSequence",
 											"sid": 910000000000064
 										}
 									],
@@ -755,7 +579,7 @@
 											}
 										},
 										{
-											"callFunction": "Lvl1ShowSequence",
+											"callFunction": "lvl1_showSequence",
 											"sid": 910000000000071
 										}
 									],
@@ -814,7 +638,7 @@
 											}
 										},
 										{
-											"callFunction": "Lvl1ShowSequence",
+											"callFunction": "lvl1_showSequence",
 											"sid": 910000000000184
 										}
 									],
@@ -867,7 +691,7 @@
 											}
 										},
 										{
-											"callFunction": "Lvl1ShowSequence",
+											"callFunction": "lvl1_showSequence",
 											"sid": 910000000000191
 										}
 									],
@@ -926,7 +750,7 @@
 											}
 										},
 										{
-											"callFunction": "Lvl1ShowSequence",
+											"callFunction": "lvl1_showSequence",
 											"sid": 910000000000198
 										}
 									],
@@ -962,6 +786,149 @@
 									"sid": 910000000000203
 								}
 							]
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Sequencia errada"
+				},
+				{
+					"functionName": "lvl1_error",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 714274177848199,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 766683173412024,
+									"parameters": {
+										"variable": "lvl1_InputBlock",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "lvl1_background",
+									"sid": 604939752070924,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "active"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 907591226736992,
+									"parameters": {
+										"seconds": "0.2",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-active",
+									"objectClass": "lvl1_background",
+									"sid": 376698939102775,
+									"behaviorType": "Sine",
+									"parameters": {
+										"state": "inactive"
+									}
+								},
+								{
+									"id": "set-angle",
+									"objectClass": "lvl1_background",
+									"sid": 330679785999128,
+									"parameters": {
+										"angle": "0"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl1_error",
+									"sid": 934623390769066,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "lvl1_error",
+									"sid": 438137333759948,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 349490460167593,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "lvl1_error",
+									"sid": 512522925411863,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl1_error",
+									"sid": 135633671562264,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 881736872108562,
+									"parameters": {
+										"variable": "lvl1_step_show",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 382565534790802,
+									"parameters": {
+										"variable": "lvl1_step_player",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 224307318419244,
+									"parameters": {
+										"variable": "lvl1_idle_timer",
+										"value": "0"
+									}
+								},
+								{
+									"callFunction": "lvl1_showSequence",
+									"sid": 588723198504923
+								}
+							],
+							"sid": 156006461998224
 						}
 					]
 				}
@@ -1033,47 +1000,6 @@
 								"file": {
 									"path": "Level 1/lvl1_array.json"
 								}
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 910000000000082,
-							"parameters": {
-								"layer": "\"button_hitbox\"",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_energia_hitbox",
-							"sid": 910000000000083,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_rede_hitbox",
-							"sid": 910000000000084,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_terminal_hitbox",
-							"sid": 910000000000085,
-							"parameters": {
-								"opacity": "0"
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_segurança_hitbox",
-							"sid": 910000000000086,
-							"parameters": {
-								"opacity": "0"
 							}
 						}
 					],
@@ -1179,7 +1105,7 @@
 							}
 						},
 						{
-							"callFunction": "Lvl1ShowSequence",
+							"callFunction": "lvl1_showSequence",
 							"sid": 910000000000097
 						}
 					],
@@ -1214,11 +1140,12 @@
 					],
 					"actions": [
 						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_energia_hitbox",
-							"sid": 910000000000116,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 413464481983456,
 							"parameters": {
-								"opacity": "100"
+								"layer": "\"energia\"",
+								"visibility": "visible"
 							}
 						},
 						{
@@ -1245,11 +1172,12 @@
 							}
 						},
 						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_energia_hitbox",
-							"sid": 910000000000119,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 652445588163136,
 							"parameters": {
-								"opacity": "0"
+								"layer": "\"energia\"",
+								"visibility": "invisible"
 							}
 						},
 						{
@@ -1307,7 +1235,7 @@
 									],
 									"actions": [
 										{
-											"callFunction": "Lvl1CheckProgress",
+											"callFunction": "lvl1_checkProgress",
 											"sid": 910000000000124
 										}
 									],
@@ -1326,7 +1254,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "Lvl1Error",
+									"callFunction": "lvl1_error",
 									"sid": 910000000000128
 								}
 							],
@@ -1363,11 +1291,12 @@
 					],
 					"actions": [
 						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_rede_hitbox",
-							"sid": 910000000000133,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 824664237068845,
 							"parameters": {
-								"opacity": "100"
+								"layer": "\"rede\"",
+								"visibility": "visible"
 							}
 						},
 						{
@@ -1394,11 +1323,12 @@
 							}
 						},
 						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_rede_hitbox",
-							"sid": 910000000000136,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 463236404930845,
 							"parameters": {
-								"opacity": "0"
+								"layer": "\"rede\"",
+								"visibility": "invisible"
 							}
 						},
 						{
@@ -1456,7 +1386,7 @@
 									],
 									"actions": [
 										{
-											"callFunction": "Lvl1CheckProgress",
+											"callFunction": "lvl1_checkProgress",
 											"sid": 910000000000141
 										}
 									],
@@ -1475,7 +1405,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "Lvl1Error",
+									"callFunction": "lvl1_error",
 									"sid": 910000000000145
 								}
 							],
@@ -1512,11 +1442,12 @@
 					],
 					"actions": [
 						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_terminal_hitbox",
-							"sid": 910000000000150,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 671077123912421,
 							"parameters": {
-								"opacity": "100"
+								"layer": "\"terminal\"",
+								"visibility": "visible"
 							}
 						},
 						{
@@ -1543,11 +1474,12 @@
 							}
 						},
 						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_terminal_hitbox",
-							"sid": 910000000000153,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 593124827767918,
 							"parameters": {
-								"opacity": "0"
+								"layer": "\"terminal\"",
+								"visibility": "invisible"
 							}
 						},
 						{
@@ -1605,7 +1537,7 @@
 									],
 									"actions": [
 										{
-											"callFunction": "Lvl1CheckProgress",
+											"callFunction": "lvl1_checkProgress",
 											"sid": 910000000000158
 										}
 									],
@@ -1624,7 +1556,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "Lvl1Error",
+									"callFunction": "lvl1_error",
 									"sid": 910000000000162
 								}
 							],
@@ -1661,11 +1593,12 @@
 					],
 					"actions": [
 						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_segurança_hitbox",
-							"sid": 910000000000167,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 685629759535789,
 							"parameters": {
-								"opacity": "100"
+								"layer": "\"segurança\"",
+								"visibility": "visible"
 							}
 						},
 						{
@@ -1692,11 +1625,12 @@
 							}
 						},
 						{
-							"id": "set-opacity",
-							"objectClass": "lvl1_segurança_hitbox",
-							"sid": 910000000000170,
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 817304902190749,
 							"parameters": {
-								"opacity": "0"
+								"layer": "\"segurança\"",
+								"visibility": "invisible"
 							}
 						},
 						{
@@ -1754,7 +1688,7 @@
 									],
 									"actions": [
 										{
-											"callFunction": "Lvl1CheckProgress",
+											"callFunction": "lvl1_checkProgress",
 											"sid": 910000000000175
 										}
 									],
@@ -1773,7 +1707,7 @@
 							],
 							"actions": [
 								{
-									"callFunction": "Lvl1Error",
+									"callFunction": "lvl1_error",
 									"sid": 910000000000179
 								}
 							],
@@ -1783,7 +1717,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Mostra sequencia devido inatividade"
+					"text": "Mostrar sequencia devido inatividade"
 				},
 				{
 					"eventType": "block",
@@ -1844,7 +1778,7 @@
 									}
 								},
 								{
-									"callFunction": "Lvl1ShowSequence",
+									"callFunction": "lvl1_showSequence",
 									"sid": 910000000000104
 								}
 							],
