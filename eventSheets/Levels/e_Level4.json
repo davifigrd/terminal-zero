@@ -2,34 +2,28 @@
 	"name": "e_Level4",
 	"events": [
 		{
-			"eventType": "variable",
-			"name": "PodeClicar",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 682466026120220
+			"eventType": "include",
+			"includeSheet": "e_Global"
 		},
 		{
-			"eventType": "variable",
-			"name": "Ordem",
-			"type": "string",
-			"initialValue": "",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 447375179474438
-		},
-		{
-			"eventType": "variable",
-			"name": "Clique",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 440388146899263
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL4_variáveis",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "OrdemClique",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 687520499117626
+				}
+			],
+			"sid": 760255771028129
 		},
 		{
 			"eventType": "block",
@@ -43,43 +37,15 @@
 						"click-type": "clicked",
 						"object-clicked": "lvl4_azul_baixo"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 128295392170766,
-					"parameters": {
-						"variable": "PodeClicar",
-						"comparison": 0,
-						"value": "1"
-					}
 				}
 			],
 			"actions": [
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 548227766027577,
-					"parameters": {
-						"variable": "Ordem",
-						"value": "1"
-					}
-				},
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_azul_baixo",
 					"sid": 682480883045049,
 					"parameters": {
 						"opacity": "50"
-					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 441481939557696,
-					"parameters": {
-						"variable": "Clique",
-						"value": "1"
 					}
 				}
 			],
@@ -97,43 +63,15 @@
 						"click-type": "clicked",
 						"object-clicked": "lvl4_vermelho_baixo"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 239280241964846,
-					"parameters": {
-						"variable": "PodeClicar",
-						"comparison": 0,
-						"value": "1"
-					}
 				}
 			],
 			"actions": [
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 598640263527635,
-					"parameters": {
-						"variable": "Ordem",
-						"value": "2"
-					}
-				},
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_vermelho_baixo",
 					"sid": 993092404049473,
 					"parameters": {
 						"opacity": "50"
-					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 846532808475501,
-					"parameters": {
-						"variable": "Clique",
-						"value": "1"
 					}
 				}
 			],
@@ -151,43 +89,15 @@
 						"click-type": "clicked",
 						"object-clicked": "lvl4_amarelo_baixo"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 577122325646018,
-					"parameters": {
-						"variable": "PodeClicar",
-						"comparison": 0,
-						"value": "1"
-					}
 				}
 			],
 			"actions": [
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 822014988941712,
-					"parameters": {
-						"variable": "Ordem",
-						"value": "3"
-					}
-				},
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_amarelo_baixo",
 					"sid": 250697219927430,
 					"parameters": {
 						"opacity": "50"
-					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 941793225289836,
-					"parameters": {
-						"variable": "Clique",
-						"value": "1"
 					}
 				}
 			],
@@ -205,43 +115,15 @@
 						"click-type": "clicked",
 						"object-clicked": "lvl4_verde_baixo"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 595599794797336,
-					"parameters": {
-						"variable": "PodeClicar",
-						"comparison": 0,
-						"value": "1"
-					}
 				}
 			],
 			"actions": [
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 722070556797689,
-					"parameters": {
-						"variable": "Ordem",
-						"value": "4"
-					}
-				},
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_verde_baixo",
 					"sid": 989840185048561,
 					"parameters": {
 						"opacity": "50"
-					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 311799488553352,
-					"parameters": {
-						"variable": "Clique",
-						"value": "1"
 					}
 				}
 			],
@@ -259,43 +141,15 @@
 						"click-type": "clicked",
 						"object-clicked": "lvl4_rosa_baixo"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 470367326890237,
-					"parameters": {
-						"variable": "PodeClicar",
-						"comparison": 0,
-						"value": "1"
-					}
 				}
 			],
 			"actions": [
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 746988695694630,
-					"parameters": {
-						"variable": "Ordem",
-						"value": "5"
-					}
-				},
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_rosa_baixo",
 					"sid": 549715313786952,
 					"parameters": {
 						"opacity": "50"
-					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 876859383564406,
-					"parameters": {
-						"variable": "Clique",
-						"value": "1"
 					}
 				}
 			],
@@ -313,28 +167,9 @@
 						"click-type": "clicked",
 						"object-clicked": "lvl4_ciano_baixo"
 					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 915229505942795,
-					"parameters": {
-						"variable": "PodeClicar",
-						"comparison": 0,
-						"value": "1"
-					}
 				}
 			],
 			"actions": [
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 823515046280096,
-					"parameters": {
-						"variable": "Ordem",
-						"value": "6"
-					}
-				},
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_ciano_baixo",
@@ -342,33 +177,13 @@
 					"parameters": {
 						"opacity": "50"
 					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 923993703833691,
-					"parameters": {
-						"variable": "Clique",
-						"value": "1"
-					}
 				}
 			],
 			"sid": 310175182511095
 		},
 		{
 			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 911764104988642,
-					"parameters": {
-						"variable": "Ordem",
-						"comparison": 0,
-						"value": "\"123456\""
-					}
-				}
-			],
+			"conditions": [],
 			"actions": [
 				{
 					"id": "set-visible",
@@ -388,16 +203,6 @@
 					"id": "else",
 					"objectClass": "System",
 					"sid": 583512020916678
-				},
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 115112597916490,
-					"parameters": {
-						"first-value": "Clique",
-						"comparison": 0,
-						"second-value": "6"
-					}
 				}
 			],
 			"actions": [
@@ -415,23 +220,7 @@
 		},
 		{
 			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 492793414431299
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 354939409808168,
-					"parameters": {
-						"variable": "Clique",
-						"comparison": 0,
-						"value": "6"
-					}
-				}
-			],
+			"conditions": [],
 			"actions": [
 				{
 					"id": "set-visible",
@@ -439,24 +228,6 @@
 					"sid": 698537882045175,
 					"parameters": {
 						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 626550992900805,
-					"parameters": {
-						"variable": "Clique",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 335930975443276,
-					"parameters": {
-						"variable": "Ordem",
-						"value": "\"\""
 					}
 				}
 			],
@@ -476,9 +247,9 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 822692569341366,
+					"sid": 754613386318478,
 					"parameters": {
-						"seconds": "3.0",
+						"seconds": "2.0",
 						"use-timescale": true
 					}
 				},
@@ -496,15 +267,6 @@
 					"sid": 235520840917908,
 					"parameters": {
 						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 848582873071798,
-					"parameters": {
-						"variable": "PodeClicar",
-						"value": "1"
 					}
 				}
 			],
@@ -717,15 +479,6 @@
 					}
 				},
 				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 263248952238156,
-					"parameters": {
-						"variable": "PodeClicar",
-						"value": "0"
-					}
-				},
-				{
 					"id": "set-visible",
 					"objectClass": "lvl4_Certo",
 					"sid": 970697073068726,
@@ -772,26 +525,6 @@
 					"id": "is-visible",
 					"objectClass": "lvl4_Correto",
 					"sid": 591482587785080
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 279310394432676,
-					"parameters": {
-						"variable": "Clique",
-						"comparison": 0,
-						"value": "6"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 626772856106608,
-					"parameters": {
-						"variable": "Ordem",
-						"comparison": 0,
-						"value": "\"123456\""
-					}
 				}
 			],
 			"actions": [
