@@ -40,21 +40,21 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 912997151250834,
-							"parameters": {
-								"variable": "cursor",
-								"value": "\"default\""
-							}
-						},
-						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 860085837864868,
 							"parameters": {
 								"variable": "PlayerMoving",
 								"value": "false"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 687861074076710,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"default\""
 							}
 						}
 					],
@@ -78,453 +78,431 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "BUTTON",
+			"title": "BUTTON_CLICK",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "BUTTON_SINGLE_CLICK",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Click no botão jogar"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 564204520098305,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 311984324868293,
-									"parameters": {
-										"object": "jogar_button"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "jogar_button",
-									"sid": 117188548147125,
-									"parameters": {
-										"x": "-300",
-										"y": "100"
-									}
-								},
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 203843219227967,
-									"parameters": {
-										"layout": "Bedroom"
-									}
-								}
-							],
-							"sid": 897046494315448
-						},
-						{
-							"eventType": "comment",
-							"text": "Click no botão controles"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 834893439591616,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 905489170112320,
-									"parameters": {
-										"object": "controles_button"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "controles_button",
-									"sid": 137357659065107,
-									"parameters": {
-										"x": "-300",
-										"y": "100"
-									}
-								}
-							],
-							"sid": 394995122484829
-						},
-						{
-							"eventType": "comment",
-							"text": "Click no botão créditos"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 179769485257328,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 414180968479331,
-									"parameters": {
-										"object": "creditos_button"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "creditos_button",
-									"sid": 619633841661678,
-									"parameters": {
-										"x": "-300",
-										"y": "100"
-									}
-								}
-							],
-							"sid": 385649414575400
-						},
-						{
-							"eventType": "comment",
-							"text": "Click no botão sair"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 353140378342589,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 322012210880184,
-									"parameters": {
-										"object": "sair_button"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "sair_button",
-									"sid": 630804293869366,
-									"parameters": {
-										"x": "-300",
-										"y": "100"
-									}
-								}
-							],
-							"sid": 232252248140323
-						}
-					],
-					"sid": 680338609639920,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						0.26666666666666666,
-						1,
-						0,
-						1
-					]
+					"eventType": "comment",
+					"text": "Click no botão jogar"
 				},
 				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "BUTTON_HITBOX",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
+					"eventType": "block",
+					"conditions": [
 						{
-							"eventType": "comment",
-							"text": "Cursor pointer no botão jogar"
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 654141120324631,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 193232553539008,
-									"parameters": {
-										"object": "jogar_button"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "jogar_button",
-									"sid": 540845185681648,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 698890365923063,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"pointer\""
-									}
-								}
-							],
-							"sid": 644818223975657
-						},
-						{
-							"eventType": "comment",
-							"text": "Cursor pointer no botão controles"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 327657432410559,
-									"parameters": {
-										"object": "controles_button"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "controles_button",
-									"sid": 458251068497508,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 410514442756828,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"pointer\""
-									}
-								}
-							],
-							"sid": 968277633804584
-						},
-						{
-							"eventType": "comment",
-							"text": "Cursor pointer no botão créditos"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 216053257582421,
-									"parameters": {
-										"object": "creditos_button"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "creditos_button",
-									"sid": 639285831689595,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 837038189359351,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"pointer\""
-									}
-								}
-							],
-							"sid": 848845312660723
-						},
-						{
-							"eventType": "comment",
-							"text": "Cursor pointer no botão sair"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 609889213622417,
-									"parameters": {
-										"object": "sair_button"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "sair_button",
-									"sid": 868444574904775,
-									"parameters": {
-										"frame-number": "0"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 685617131953915,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"pointer\""
-									}
-								}
-							],
-							"sid": 487614590055209
-						},
-						{
-							"eventType": "comment",
-							"text": "Cursor default quando não estiver sobre os botões"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 286432800238802,
-									"parameters": {
-										"object": "jogar_button"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 746912682491366,
-									"parameters": {
-										"object": "controles_button"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 249061732129195,
-									"parameters": {
-										"object": "creditos_button"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 656302924608350,
-									"parameters": {
-										"object": "sair_button"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "jogar_button",
-									"sid": 779843688828108,
-									"parameters": {
-										"frame-number": "1"
-									}
-								},
-								{
-									"id": "set-animation-frame",
-									"objectClass": "controles_button",
-									"sid": 641427508635398,
-									"parameters": {
-										"frame-number": "1"
-									}
-								},
-								{
-									"id": "set-animation-frame",
-									"objectClass": "creditos_button",
-									"sid": 324046201384895,
-									"parameters": {
-										"frame-number": "1"
-									}
-								},
-								{
-									"id": "set-animation-frame",
-									"objectClass": "sair_button",
-									"sid": 375067440808877,
-									"parameters": {
-										"frame-number": "1"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 888911372486899,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"default\""
-									}
-								}
-							],
-							"sid": 138452079558789
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 566721779914633,
+							"parameters": {
+								"object": "jogar_button"
+							}
 						}
 					],
-					"sid": 127229060303687,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "jogar_button",
+							"sid": 999009178339503,
+							"parameters": {
+								"x": "-300",
+								"y": "100"
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 916235553472039,
+							"parameters": {
+								"layout": "Bedroom"
+							}
+						}
 					],
-					"background-color": [
-						0.26666666666666666,
-						1,
-						0,
-						1
-					]
+					"sid": 282106022281021
+				},
+				{
+					"eventType": "comment",
+					"text": "Click no botão controles"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 282385169989375,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 255868097680478,
+							"parameters": {
+								"object": "controles_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "controles_button",
+							"sid": 814217541431306,
+							"parameters": {
+								"x": "-300",
+								"y": "100"
+							}
+						}
+					],
+					"sid": 340405853299122
+				},
+				{
+					"eventType": "comment",
+					"text": "Click no botão créditos"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 348992045539050,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 422192379830113,
+							"parameters": {
+								"object": "creditos_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "creditos_button",
+							"sid": 329267707551664,
+							"parameters": {
+								"x": "-300",
+								"y": "100"
+							}
+						}
+					],
+					"sid": 181650778847873
+				},
+				{
+					"eventType": "comment",
+					"text": "Click no botão sair"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-click",
+							"objectClass": "Mouse",
+							"sid": 357587140203381,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 766550169156499,
+							"parameters": {
+								"object": "sair_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "sair_button",
+							"sid": 247830653418750,
+							"parameters": {
+								"x": "-300",
+								"y": "100"
+							}
+						}
+					],
+					"sid": 963477238674186
 				}
 			],
-			"sid": 765357355527044,
+			"sid": 750828073481552,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.26666666666666666,
+				1,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "BUTTON_HITBOX",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Cursor pointer no botão jogar"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 104001195717022,
+							"parameters": {
+								"object": "jogar_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "jogar_button",
+							"sid": 504866514435892,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 472814213943212,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"pointer\""
+							}
+						}
+					],
+					"sid": 196029983856194
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor pointer no botão controles"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 696530420220877,
+							"parameters": {
+								"object": "controles_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "controles_button",
+							"sid": 512611065737292,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 110023835108998,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"pointer\""
+							}
+						}
+					],
+					"sid": 445888829222559
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor pointer no botão créditos"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 627905360405832,
+							"parameters": {
+								"object": "creditos_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "creditos_button",
+							"sid": 769745892140622,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 761440258267782,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"pointer\""
+							}
+						}
+					],
+					"sid": 532116728087010
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor pointer no botão sair"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 187219110377401,
+							"parameters": {
+								"object": "sair_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "sair_button",
+							"sid": 868385269472837,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 951330163342416,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"pointer\""
+							}
+						}
+					],
+					"sid": 235601593344499
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor default quando não estiver sobre os botões"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 549367582898137,
+							"parameters": {
+								"object": "jogar_button"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 789658350438283,
+							"parameters": {
+								"object": "controles_button"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 352119233630467,
+							"parameters": {
+								"object": "creditos_button"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 294160723606577,
+							"parameters": {
+								"object": "sair_button"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "jogar_button",
+							"sid": 596537253307780,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "controles_button",
+							"sid": 520468564780283,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "creditos_button",
+							"sid": 998318248451033,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "sair_button",
+							"sid": 705306976121192,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 960935949108398,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"default\""
+							}
+						}
+					],
+					"sid": 787446922443407
+				}
+			],
+			"sid": 939887868245401,
 			"text-color": [
 				0,
 				0,
