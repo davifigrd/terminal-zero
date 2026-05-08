@@ -6,6 +6,18 @@
 			"includeSheet": "e_Global"
 		},
 		{
+			"eventType": "comment",
+			"text": "=== LAST UPDATE ===\n--- Level3 ---\n→ puzzle senha 8 dígitos\n→ teclado numérico clicável na tela\n→ validação por botão OK\n→ display via TextInput + mid()\n→ cursor personalizado via e_Global"
+		},
+		{
+			"eventType": "comment",
+			"text": "EXPLICAÇÃO DA FASE\n\nO jogador está invadindo o servidor SRV-07.\nA tela exibe 4 painéis com dados do servidor.\nA senha de 8 dígitos está escondida nos painéis:\n→ ACCESS LOG   → Tentativas: 42\n→ PWR LEVEL    → Capacidade: 97%\n→ ERR CODE     → Erros menores: 17\n→ ERR CODE     → Erros críticos: 03\n\nRESPOSTA: 42971703"
+		},
+		{
+			"eventType": "comment",
+			"text": "VARIÁVEIS GLOBAIS DA FASE E INICIALIZAÇÃO DO LAYOUT"
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "LVL3_GERAL",
@@ -31,6 +43,10 @@
 					"isStatic": false,
 					"isConstant": false,
 					"sid": 188236747918579
+				},
+				{
+					"eventType": "comment",
+					"text": "CONFIGURA ESTADO INICIAL AO ENTRAR NO LAYOUT"
 				},
 				{
 					"eventType": "group",
@@ -132,6 +148,10 @@
 					"sid": 134381989936548
 				},
 				{
+					"eventType": "comment",
+					"text": "FUNÇÕES REUTILIZÁVEIS DA FASE"
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "LVL3_FUNCTION",
@@ -202,6 +222,10 @@
 						}
 					],
 					"sid": 667802379224850
+				},
+				{
+					"eventType": "comment",
+					"text": "MUDA CURSOR AO PASSAR EM CIMA DOS BOTÕES"
 				},
 				{
 					"eventType": "group",
@@ -276,6 +300,10 @@
 						}
 					],
 					"sid": 682751389101907
+				},
+				{
+					"eventType": "comment",
+					"text": "DETECTA CLIQUE NOS BOTÕES E ATUALIZA O TEXTINPUT"
 				},
 				{
 					"eventType": "group",
@@ -783,6 +811,10 @@
 					"sid": 631575263514764
 				},
 				{
+					"eventType": "comment",
+					"text": "VERIFICA SE A SENHA DIGITADA ESTÁ CORRETA"
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "LVL3_VALIDAÇÃO",
@@ -919,6 +951,10 @@
 				}
 			],
 			"sid": 196608034872867
+		},
+		{
+			"eventType": "comment",
+			"text": "ATUALIZA OS 8 DÍGITOS DO DISPLAY A CADA FRAME"
 		},
 		{
 			"eventType": "block",
