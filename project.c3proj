@@ -16,35 +16,35 @@
 		{
 			"type": "plugin",
 			"id": "Arr",
-			"name": "Array",
+			"name": "Matriz",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Audio",
-			"name": "Audio",
+			"name": "Áudio",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Dictionary",
-			"name": "Dictionary",
+			"name": "Dicionário",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Keyboard",
+			"name": "Teclado",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "LocalStorage",
-			"name": "Local storage",
+			"name": "Armazenamento local",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -58,7 +58,7 @@
 		{
 			"type": "plugin",
 			"id": "Particles",
-			"name": "Particles",
+			"name": "Partículas",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -72,70 +72,70 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Text",
+			"name": "Texto",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TextBox",
-			"name": "Text input",
+			"name": "Entrada de texto",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TiledBg",
-			"name": "Tiled Background",
+			"name": "Plano de Fundo em Blocos",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direction",
+			"name": "8 Direções",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Fade",
-			"name": "Fade",
+			"name": "Esmaecer",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Flash",
-			"name": "Flash",
+			"name": "Piscar",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "Sine",
+			"name": "Senóide",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Tween",
-			"name": "Tween",
+			"name": "Interpolação",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "scrollto",
-			"name": "Scroll To",
+			"name": "Centrar em",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Solid",
+			"name": "Sólido",
 			"author": "Scirra",
 			"bundled": false
 		}
@@ -307,8 +307,7 @@
 					{
 						"items": [
 							"lvl3_layout",
-							"lvl3_senhainput",
-							"lvl3_feedback_erro"
+							"lvl3_senhainput"
 						],
 						"subfolders": [
 							{
@@ -330,21 +329,43 @@
 											"lvl3_btn_enviar"
 										],
 										"subfolders": [],
-										"name": "tecladonum_hitbox"
+										"name": "teclado"
 									},
 									{
 										"items": [
-											"lvl3_Digito1",
-											"lvl3_Digito2",
-											"lvl3_Digito3",
-											"lvl3_Digito4",
-											"lvl3_Digito5",
-											"lvl3_Digito6",
-											"lvl3_Digito7",
-											"lvl3_Digito8"
+											"lvl3_campo2",
+											"lvl3_campo1",
+											"lvl3_campo3",
+											"lvl3_campo4",
+											"lvl3_campo5",
+											"lvl3_campo6",
+											"lvl3_campo7",
+											"lvl3_campo8"
+										],
+										"subfolders": [],
+										"name": "campos"
+									},
+									{
+										"items": [
+											"lvl3_digito1",
+											"lvl3_digito2",
+											"lvl3_digito3",
+											"lvl3_digito4",
+											"lvl3_digito5",
+											"lvl3_digito6",
+											"lvl3_digito7",
+											"lvl3_digito8"
 										],
 										"subfolders": [],
 										"name": "digitos"
+									},
+									{
+										"items": [
+											"lvl3_feedback_erro",
+											"lvl3_feedback_ok"
+										],
+										"subfolders": [],
+										"name": "feedback"
 									}
 								],
 								"name": "hitbox"
@@ -511,7 +532,9 @@
 		"subfolders": [
 			{
 				"items": [
-					"lvl3_btn"
+					"lvl3_btn",
+					"lvl3_campos",
+					"lvl3_digitos"
 				],
 				"subfolders": [],
 				"name": "Level 3"
