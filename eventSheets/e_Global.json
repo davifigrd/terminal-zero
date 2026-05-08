@@ -572,9 +572,9 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 402495576376326,
+							"sid": 529004881767964,
 							"parameters": {
-								"seconds": "5",
+								"seconds": "2",
 								"use-timescale": true
 							}
 						},
@@ -795,6 +795,14 @@
 							"sid": 463360799166871,
 							"parameters": {
 								"tag": "\"next\""
+							}
+						},
+						{
+							"id": "signal",
+							"objectClass": "System",
+							"sid": 189527546161887,
+							"parameters": {
+								"tag": "\"end_TyppingEffect\""
 							}
 						}
 					],

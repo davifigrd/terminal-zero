@@ -256,7 +256,7 @@
 								"wait-time": 2,
 								"fade-out-time": 1,
 								"destroy": true,
-								"enabled": true,
+								"enabled": false,
 								"live-preview": false
 							}
 						}
@@ -268,10 +268,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 706.5,
-						"y": 385,
-						"width": 1125,
-						"height": 435,
+						"x": 688,
+						"y": 378,
+						"width": 856,
+						"height": 414,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -287,7 +287,7 @@
 			],
 			"sid": 411646502444615,
 			"effectTypes": [],
-			"isInitiallyVisible": true,
+			"isInitiallyVisible": false,
 			"isInitiallyInteractive": true,
 			"isHTMLElementsLayer": false,
 			"color": [
@@ -331,9 +331,9 @@
 						"bold": false,
 						"italic": true,
 						"color": [
-							0.16862745098039217,
-							0.5137254901960784,
-							0.2549019607843137,
+							0.35294117647058826,
+							0.9294117647058824,
+							0.33725490196078434,
 							1
 						],
 						"horizontal-alignment": "left",
@@ -401,6 +401,41 @@
 			"sampling": "auto",
 			"parallaxX": 1,
 			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "transition",
+			"overriden": 1,
+			"subLayers": [],
+			"instances": [],
+			"sid": 285128057200760,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 0,
+			"parallaxY": 0,
 			"scaleRate": 1,
 			"forceOwnTexture": false,
 			"renderingMode": "3d",
