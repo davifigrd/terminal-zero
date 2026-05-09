@@ -7,7 +7,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Textos e desenvolvedores"
+			"text": "Textos, desenvolvedores e som"
 		},
 		{
 			"eventType": "block",
@@ -62,7 +62,7 @@
 				{
 					"id": "wait-for-signal",
 					"objectClass": "System",
-					"sid": 673766393305477,
+					"sid": 456269233480509,
 					"parameters": {
 						"tag": "\"end_TyppingEffect\""
 					}
@@ -79,7 +79,49 @@
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 181870392877368,
+					"sid": 482021469383212,
+					"parameters": {
+						"layer": "\"sound_experience\"",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "start-fade",
+					"objectClass": "sound_experience",
+					"sid": 142284739127184,
+					"behaviorType": "Fade"
+				}
+			],
+			"sid": 824753455345583
+		},
+		{
+			"eventType": "comment",
+			"text": "Desenvolvedores"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-fade-out-finished",
+					"objectClass": "sound_experience",
+					"sid": 611559702525411,
+					"behaviorType": "Fade"
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 640421483839939,
+					"parameters": {
+						"seconds": "1",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 628028115331836,
 					"parameters": {
 						"layer": "\"developed_by\"",
 						"visibility": "visible"
@@ -88,11 +130,11 @@
 				{
 					"id": "start-fade",
 					"objectClass": "developed_by",
-					"sid": 149563466944972,
+					"sid": 723051915359257,
 					"behaviorType": "Fade"
 				}
 			],
-			"sid": 824753455345583
+			"sid": 107116608836915
 		},
 		{
 			"eventType": "comment",
@@ -178,6 +220,11 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "TypingEffect",
+					"sid": 967914275398889
+				},
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",

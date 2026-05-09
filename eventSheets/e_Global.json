@@ -2,11 +2,6 @@
 	"name": "e_Global",
 	"events": [
 		{
-			"bookmark": true,
-			"eventType": "comment",
-			"text": "=== VARIABLE CASE ===\nPascalCase → boolean\nsnake_case → number\ncamelCase → string"
-		},
-		{
 			"eventType": "variable",
 			"name": "cursor",
 			"type": "string",
@@ -380,7 +375,45 @@
 							}
 						}
 					],
-					"sid": 730615010106979
+					"sid": 730615010106979,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 355955681171232,
+									"parameters": {
+										"first-value": "nextLayout",
+										"comparison": 0,
+										"second-value": "\"Menu\""
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 798391503510225,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "\"Loader\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 415950381161744,
+									"parameters": {
+										"tag": "\"loader_menu\""
+									}
+								}
+							],
+							"sid": 481556559002271
+						}
+					]
 				},
 				{
 					"eventType": "comment",
@@ -451,7 +484,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "char_count = 0 → contador de caracteres da frase\n\nanyText = \"\" → guarda a frase que a função enviou\n\nmode = 3\n0 → escreve\n1 → espera\n2 → apaga\n3 → desativado\n\nShowCursor = true\ntrue → mostra underline\nfalse → apaga underline\n\nunderLine = \"_\" → caractere visual do cursor"
+					"text": "===   TyppingEffect instance variables   ===\n\nchar_count = 0 → contador de caracteres da frase\n\nunderLine = \"_\" → caractere visual do cursor\n\nmode = 3\n0 → escreve\n1 → espera\n2 → apaga\n3 → desativado\n\nanyText = \"\" → guarda a frase que a função enviou\n\nShowCursor = true\ntrue → mostra underline\nfalse → apaga underline"
 				},
 				{
 					"eventType": "comment",
@@ -792,14 +825,6 @@
 						{
 							"id": "signal",
 							"objectClass": "System",
-							"sid": 463360799166871,
-							"parameters": {
-								"tag": "\"next\""
-							}
-						},
-						{
-							"id": "signal",
-							"objectClass": "System",
 							"sid": 189527546161887,
 							"parameters": {
 								"tag": "\"end_TyppingEffect\""
@@ -830,6 +855,10 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "Ativa / desativa os atalhos para as fases no teclado numérico (NumLock)"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -910,7 +939,16 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 508176335831940,
+									"parameters": {
+										"layout": "Level2"
+									}
+								}
+							],
 							"sid": 288619310403278
 						},
 						{
@@ -957,7 +995,16 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 519772078026371,
+									"parameters": {
+										"layout": "Level4"
+									}
+								}
+							],
 							"sid": 200200023447058
 						},
 						{
@@ -976,7 +1023,16 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 561885675101706,
+									"parameters": {
+										"layout": "Level5"
+									}
+								}
+							],
 							"sid": 904271514858901
 						},
 						{
@@ -1014,16 +1070,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 451006740917391,
-									"parameters": {
-										"layout": "Menu"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 447658972823595
 						},
 						{
@@ -1046,9 +1093,9 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 522891629385052,
+									"sid": 410984988595605,
 									"parameters": {
-										"layout": "Bedroom"
+										"layout": "Menu"
 									}
 								}
 							],
@@ -1074,9 +1121,9 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 110898807782920,
+									"sid": 209438662116936,
 									"parameters": {
-										"layout": "PC"
+										"layout": "Bedroom"
 									}
 								}
 							],
@@ -1098,7 +1145,16 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 219917501075446,
+									"parameters": {
+										"layout": "PC"
+									}
+								}
+							],
 							"sid": 608432651818890
 						}
 					],

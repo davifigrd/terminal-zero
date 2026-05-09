@@ -107,6 +107,15 @@
 								"variable": "lvl1_idle_timer",
 								"value": "0"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 473826091027004,
+							"parameters": {
+								"variable": "cursor",
+								"value": "\"default\""
+							}
 						}
 					],
 					"sid": 910000000000043,
@@ -187,7 +196,7 @@
 											"sid": 910000000000010,
 											"parameters": {
 												"audio-file": {
-													"path": "Level 1/lvl1_yellow"
+													"path": "Level 1/lvl1_0"
 												},
 												"loop": "not-looping",
 												"volume": "0",
@@ -255,7 +264,7 @@
 											"sid": 910000000000018,
 											"parameters": {
 												"audio-file": {
-													"path": "Level 1/lvl1_blue"
+													"path": "Level 1/lvl1_1"
 												},
 												"loop": "not-looping",
 												"volume": "0",
@@ -323,7 +332,7 @@
 											"sid": 910000000000026,
 											"parameters": {
 												"audio-file": {
-													"path": "Level 1/lvl1_green"
+													"path": "Level 1/lvl1_2"
 												},
 												"loop": "not-looping",
 												"volume": "0",
@@ -391,7 +400,7 @@
 											"sid": 910000000000034,
 											"parameters": {
 												"audio-file": {
-													"path": "Level 1/lvl1_red"
+													"path": "Level 1/lvl1_3"
 												},
 												"loop": "not-looping",
 												"volume": "0",
@@ -1279,7 +1288,7 @@
 							"sid": 910000000000117,
 							"parameters": {
 								"audio-file": {
-									"path": "Level 1/lvl1_yellow"
+									"path": "Level 1/lvl1_0"
 								},
 								"loop": "not-looping",
 								"volume": "0",
@@ -1430,7 +1439,7 @@
 							"sid": 910000000000134,
 							"parameters": {
 								"audio-file": {
-									"path": "Level 1/lvl1_blue"
+									"path": "Level 1/lvl1_1"
 								},
 								"loop": "not-looping",
 								"volume": "0",
@@ -1581,7 +1590,7 @@
 							"sid": 910000000000151,
 							"parameters": {
 								"audio-file": {
-									"path": "Level 1/lvl1_green"
+									"path": "Level 1/lvl1_2"
 								},
 								"loop": "not-looping",
 								"volume": "0",
@@ -1732,7 +1741,7 @@
 							"sid": 910000000000168,
 							"parameters": {
 								"audio-file": {
-									"path": "Level 1/lvl1_red"
+									"path": "Level 1/lvl1_3"
 								},
 								"loop": "not-looping",
 								"volume": "0",
@@ -2022,6 +2031,150 @@
 				0.3686274509803922,
 				0,
 				1
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 704059200238236,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "lvl1_Modules"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 707603071886885,
+					"parameters": {
+						"variable": "lvl1_InputBlock"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "tween-value",
+					"objectClass": "lvl1_Modules",
+					"sid": 871829449469787,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"scale\"",
+						"start-value": "0",
+						"end-value": "1.2",
+						"time": "0.1",
+						"ease": "default",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "yes",
+						"repeat-count": "1"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 743962558463852,
+					"parameters": {
+						"layer": "lvl1_Modules.lvl1_LayerName",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 613817718045871,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 1/lvl1_0"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"energia\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 961965645906860,
+					"parameters": {
+						"seconds": "0.2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 355524727275401,
+					"parameters": {
+						"layer": "lvl1_Modules.lvl1_LayerName",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 419931443437314,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 845132792425591,
+							"parameters": {
+								"first-value": "lvl1_array.At(lvl1_step_player, lvl1_array_line)",
+								"comparison": 0,
+								"second-value": "lvl1_Modules.lvl1_ID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 893370155108350,
+							"parameters": {
+								"variable": "lvl1_step_player",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 660500500927801,
+							"parameters": {
+								"variable": "lvl1_step_player",
+								"value": "lvl1_step_show"
+							}
+						},
+						{
+							"callFunction": "lvl1_checkProgress",
+							"sid": 256274914276558
+						}
+					],
+					"sid": 606358429908309
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 978979504773424
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "lvl1_error",
+							"sid": 681831680503154
+						}
+					],
+					"sid": 543956192174568
+				}
 			]
 		}
 	],

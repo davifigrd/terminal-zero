@@ -230,7 +230,7 @@
 						{
 							"type": "lvl1_segurança_hitbox",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"initial-animation": "Animation 1",
 								"initial-frame": 0,
 								"enable-collisions": true,
@@ -239,17 +239,22 @@
 							"uid": 81,
 							"sid": 802757702055345,
 							"tags": "",
-							"instanceVariables": {},
+							"instanceVariables": {
+								"lvl1_ID": 3,
+								"lvl1_LayerName": "segurança"
+							},
 							"behaviors": {
-								"Flash": {
-									"properties": {}
+								"Tween": {
+									"properties": {
+										"enabled": true
+									}
 								}
 							},
 							"instanceFolderItem": {
 								"sid": 802757702055345,
 								"expanded": true
 							},
-							"showing": true,
+							"showing": false,
 							"locked": false,
 							"world": {
 								"x": 1113.5,
@@ -307,7 +312,7 @@
 						{
 							"type": "lvl1_terminal_hitbox",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"initial-animation": "Animation 1",
 								"initial-frame": 0,
 								"enable-collisions": true,
@@ -316,17 +321,22 @@
 							"uid": 80,
 							"sid": 615021995519244,
 							"tags": "",
-							"instanceVariables": {},
+							"instanceVariables": {
+								"lvl1_ID": 2,
+								"lvl1_LayerName": "terminal"
+							},
 							"behaviors": {
-								"Flash": {
-									"properties": {}
+								"Tween": {
+									"properties": {
+										"enabled": true
+									}
 								}
 							},
 							"instanceFolderItem": {
 								"sid": 615021995519244,
 								"expanded": true
 							},
-							"showing": true,
+							"showing": false,
 							"locked": false,
 							"world": {
 								"x": 830,
@@ -384,7 +394,7 @@
 						{
 							"type": "lvl1_rede_hitbox",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"initial-animation": "Animation 1",
 								"initial-frame": 0,
 								"enable-collisions": true,
@@ -393,17 +403,22 @@
 							"uid": 79,
 							"sid": 783468456968815,
 							"tags": "",
-							"instanceVariables": {},
+							"instanceVariables": {
+								"lvl1_ID": 1,
+								"lvl1_LayerName": "rede"
+							},
 							"behaviors": {
-								"Flash": {
-									"properties": {}
+								"Tween": {
+									"properties": {
+										"enabled": true
+									}
 								}
 							},
 							"instanceFolderItem": {
 								"sid": 783468456968815,
 								"expanded": true
 							},
-							"showing": true,
+							"showing": false,
 							"locked": false,
 							"world": {
 								"x": 543.5,
@@ -461,7 +476,7 @@
 						{
 							"type": "lvl1_energia_hitbox",
 							"properties": {
-								"initially-visible": true,
+								"initially-visible": false,
 								"initial-animation": "Animation 1",
 								"initial-frame": 0,
 								"enable-collisions": true,
@@ -470,17 +485,22 @@
 							"uid": 49,
 							"sid": 613279590479768,
 							"tags": "",
-							"instanceVariables": {},
+							"instanceVariables": {
+								"lvl1_ID": 0,
+								"lvl1_LayerName": "energia"
+							},
 							"behaviors": {
-								"Flash": {
-									"properties": {}
+								"Tween": {
+									"properties": {
+										"enabled": true
+									}
 								}
 							},
 							"instanceFolderItem": {
 								"sid": 613279590479768,
 								"expanded": true
 							},
-							"showing": true,
+							"showing": false,
 							"locked": false,
 							"world": {
 								"x": 267.30397705084874,
