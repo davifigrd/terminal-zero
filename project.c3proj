@@ -16,35 +16,35 @@
 		{
 			"type": "plugin",
 			"id": "Arr",
-			"name": "Array",
+			"name": "Matriz",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Audio",
-			"name": "Audio",
+			"name": "Áudio",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Dictionary",
-			"name": "Dictionary",
+			"name": "Dicionário",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Keyboard",
+			"name": "Teclado",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "LocalStorage",
-			"name": "Local storage",
+			"name": "Armazenamento local",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -58,7 +58,7 @@
 		{
 			"type": "plugin",
 			"id": "Particles",
-			"name": "Particles",
+			"name": "Partículas",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -72,77 +72,79 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Text",
+			"name": "Texto",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TextBox",
-			"name": "Text input",
+			"name": "Entrada de texto",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TiledBg",
-			"name": "Tiled Background",
+			"name": "Plano de Fundo em Blocos",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direction",
+			"name": "8 Direções",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Fade",
-			"name": "Fade",
+			"name": "Esmaecer",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Flash",
-			"name": "Flash",
+			"name": "Piscar",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "Sine",
+			"name": "Senóide",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Tween",
-			"name": "Tween",
+			"name": "Interpolação",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "scrollto",
-			"name": "Scroll To",
+			"name": "Centrar em",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Solid",
+			"name": "Sólido",
 			"author": "Scirra",
 			"bundled": false
 		}
 	],
 	"uniqueId": "infcrcpul51",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"Sprite"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -306,8 +308,8 @@
 					},
 					{
 						"items": [
-							"lvl3_layout",
-							"lvl3_TextInput"
+							"lvl3_TextInput",
+							"lvl3_layout"
 						],
 						"subfolders": [
 							{
@@ -330,25 +332,34 @@
 							},
 							{
 								"items": [
-									"lvl3_digito1",
-									"lvl3_digito2",
-									"lvl3_digito3",
-									"lvl3_digito4",
-									"lvl3_digito5",
-									"lvl3_digito6",
-									"lvl3_digito7",
-									"lvl3_digito8"
+									"lvl3_bgcorrecao",
+									"lvl3_feedback_ok",
+									"lvl3_feedback_erro"
 								],
 								"subfolders": [],
-								"name": "digitos"
+								"name": "sprites"
 							},
 							{
 								"items": [
-									"lvl3_feedback_erro",
-									"lvl3_feedback_ok"
+									"lvl3_dica1"
 								],
-								"subfolders": [],
-								"name": "feedback"
+								"subfolders": [
+									{
+										"items": [
+											"lvl3_digito1",
+											"lvl3_digito2",
+											"lvl3_digito3",
+											"lvl3_digito4",
+											"lvl3_digito5",
+											"lvl3_digito6",
+											"lvl3_digito7",
+											"lvl3_digito8"
+										],
+										"subfolders": [],
+										"name": "digitos"
+									}
+								],
+								"name": "Texto"
 							}
 						],
 						"name": "Level 3"
