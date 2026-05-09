@@ -136,7 +136,7 @@
 								{
 									"id": "for",
 									"objectClass": "System",
-									"sid": 910000000000004,
+									"sid": 522679410090369,
 									"parameters": {
 										"name": "\"\"",
 										"start-index": "0",
@@ -148,10 +148,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 910000000000005,
+									"sid": 927113290462116,
 									"parameters": {
 										"variable": "current_val",
-										"value": "lvl1_array.At(loopindex, lvl1_array_line)"
+										"value": "lvl1_array.At(loopindex,lvl1_array_line)"
 									}
 								}
 							],
@@ -161,273 +161,77 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-eventvar",
+											"id": "pick-by-comparison",
 											"objectClass": "System",
-											"sid": 910000000000006,
+											"sid": 875863660858265,
 											"parameters": {
-												"variable": "current_val",
+												"object": "lvl1_Modules",
+												"expression": "lvl1_Modules.lvl1_ID",
 												"comparison": 0,
-												"value": "0"
+												"value": "current_val"
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 566169510744391,
+									"children": [
 										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 910000000000007,
-											"parameters": {
-												"seconds": "loopindex * 1.2",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 376342563982561,
-											"parameters": {
-												"layer": "\"energia\"",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 910000000000010,
-											"parameters": {
-												"audio-file": {
-													"path": "Level 1/lvl1_0"
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 510259655154909,
+													"parameters": {
+														"seconds": "loopindex * 1.2",
+														"use-timescale": true
+													}
 												},
-												"loop": "not-looping",
-												"volume": "0",
-												"stereo-pan": "0",
-												"tag-optional": "\"\""
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 910000000000011,
-											"parameters": {
-												"seconds": "0.7",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 653302891336187,
-											"parameters": {
-												"layer": "\"energia\"",
-												"visibility": "invisible"
-											}
-										}
-									],
-									"sid": 910000000000013
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 910000000000014,
-											"parameters": {
-												"variable": "current_val",
-												"comparison": 0,
-												"value": "1"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 910000000000015,
-											"parameters": {
-												"seconds": "loopindex * 1.2",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 153307185381340,
-											"parameters": {
-												"layer": "\"rede\"",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 910000000000018,
-											"parameters": {
-												"audio-file": {
-													"path": "Level 1/lvl1_1"
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 885209368610292,
+													"parameters": {
+														"layer": "lvl1_Modules.lvl1_LayerName",
+														"visibility": "visible"
+													}
 												},
-												"loop": "not-looping",
-												"volume": "0",
-												"stereo-pan": "0",
-												"tag-optional": "\"\""
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 910000000000019,
-											"parameters": {
-												"seconds": "0.7",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 414274898004192,
-											"parameters": {
-												"layer": "\"rede\"",
-												"visibility": "invisible"
-											}
-										}
-									],
-									"sid": 910000000000021
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 910000000000022,
-											"parameters": {
-												"variable": "current_val",
-												"comparison": 0,
-												"value": "2"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 910000000000023,
-											"parameters": {
-												"seconds": "loopindex * 1.2",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 949725777671257,
-											"parameters": {
-												"layer": "\"terminal\"",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 910000000000026,
-											"parameters": {
-												"audio-file": {
-													"path": "Level 1/lvl1_2"
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 958132561852112,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"lvl1_\" & lvl1_Modules.lvl1_ID",
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "lvl1_Modules.lvl1_LayerName"
+													}
 												},
-												"loop": "not-looping",
-												"volume": "0",
-												"stereo-pan": "0",
-												"tag-optional": "\"\""
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 910000000000027,
-											"parameters": {
-												"seconds": "0.7",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 407083147504850,
-											"parameters": {
-												"layer": "\"terminal\"",
-												"visibility": "invisible"
-											}
-										}
-									],
-									"sid": 910000000000029
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 910000000000030,
-											"parameters": {
-												"variable": "current_val",
-												"comparison": 0,
-												"value": "3"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 910000000000031,
-											"parameters": {
-												"seconds": "loopindex * 1.2",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 964588567898836,
-											"parameters": {
-												"layer": "\"segurança\"",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "play",
-											"objectClass": "Audio",
-											"sid": 910000000000034,
-											"parameters": {
-												"audio-file": {
-													"path": "Level 1/lvl1_3"
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 722915202841439,
+													"parameters": {
+														"seconds": "0.7",
+														"use-timescale": true
+													}
 												},
-												"loop": "not-looping",
-												"volume": "0",
-												"stereo-pan": "0",
-												"tag-optional": "\"\""
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 910000000000035,
-											"parameters": {
-												"seconds": "0.7",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 325292135320111,
-											"parameters": {
-												"layer": "\"segurança\"",
-												"visibility": "invisible"
-											}
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 583726734711253,
+													"parameters": {
+														"layer": "lvl1_Modules.lvl1_LayerName",
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 880283232160912
 										}
-									],
-									"sid": 910000000000037
+									]
 								}
 							]
 						},
@@ -569,6 +373,15 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
+											"sid": 600294692485094,
+											"parameters": {
+												"variable": "lvl1_array_line",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
 											"sid": 910000000000068,
 											"parameters": {
 												"variable": "lvl1_step_show",
@@ -582,15 +395,6 @@
 											"parameters": {
 												"variable": "lvl1_step_player",
 												"value": "0"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 891911416871357,
-											"parameters": {
-												"variable": "lvl1_array_line",
-												"value": "1"
 											}
 										},
 										{
@@ -2034,6 +1838,10 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Módulo selecionado"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -2084,17 +1892,16 @@
 					}
 				},
 				{
-					"id": "play",
+					"id": "play-by-name",
 					"objectClass": "Audio",
-					"sid": 613817718045871,
+					"sid": 315050320686278,
 					"parameters": {
-						"audio-file": {
-							"path": "Level 1/lvl1_0"
-						},
+						"folder": "sounds",
+						"audio-file-name": "\"lvl1_\" & lvl1_Modules.lvl1_ID",
 						"loop": "not-looping",
 						"volume": "0",
 						"stereo-pan": "0",
-						"tag-optional": "\"energia\""
+						"tag-optional": "\"lvl1_Modules.lvl1_LayerName\""
 					}
 				},
 				{
@@ -2114,10 +1921,23 @@
 						"layer": "lvl1_Modules.lvl1_LayerName",
 						"visibility": "invisible"
 					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 456345877079692,
+					"parameters": {
+						"variable": "lvl1_idle_timer",
+						"value": "0"
+					}
 				}
 			],
 			"sid": 419931443437314,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "Comparação"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -2141,22 +1961,41 @@
 								"variable": "lvl1_step_player",
 								"value": "1"
 							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 660500500927801,
-							"parameters": {
-								"variable": "lvl1_step_player",
-								"value": "lvl1_step_show"
-							}
-						},
-						{
-							"callFunction": "lvl1_checkProgress",
-							"sid": 256274914276558
 						}
 					],
-					"sid": 606358429908309
+					"sid": 606358429908309,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Acertou a sequência"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 773848643894667,
+									"parameters": {
+										"first-value": "lvl1_step_player",
+										"comparison": 0,
+										"second-value": "lvl1_step_show"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "lvl1_checkProgress",
+									"sid": 257116695727313
+								}
+							],
+							"sid": 950442196422887
+						},
+						{
+							"eventType": "comment",
+							"text": "Errou a sequência"
+						}
+					]
 				},
 				{
 					"eventType": "block",
