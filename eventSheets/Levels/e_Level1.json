@@ -127,8 +127,39 @@
 						},
 						{
 							"eventType": "block",
+<<<<<<< Updated upstream
 							"conditions": [],
 							"actions": [],
+=======
+<<<<<<< HEAD
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 522679410090369,
+									"parameters": {
+										"name": "\"\"",
+										"start-index": "0",
+										"end-index": "lvl1_step_show - 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 927113290462116,
+									"parameters": {
+										"variable": "current_val",
+										"value": "lvl1_array.At(loopindex,lvl1_array_line)"
+									}
+								}
+							],
+=======
+							"conditions": [],
+							"actions": [],
+>>>>>>> 91f0683fe3243faa23272a0d3463fe0ba5fe7dd6
+>>>>>>> Stashed changes
 							"sid": 910000000000038,
 							"children": [
 								{
@@ -280,6 +311,39 @@
 											]
 										},
 										{
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 600294692485094,
+											"parameters": {
+												"variable": "lvl1_array_line",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 910000000000068,
+											"parameters": {
+												"variable": "lvl1_step_show",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 910000000000069,
+											"parameters": {
+												"variable": "lvl1_step_player",
+												"value": "0"
+											}
+										},
+										{
+=======
+>>>>>>> 91f0683fe3243faa23272a0d3463fe0ba5fe7dd6
+>>>>>>> Stashed changes
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 910000000000070,
@@ -1385,6 +1449,15 @@
 						"layer": "lvl1_Modules.lvl1_LayerName",
 						"visibility": "invisible"
 					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 456345877079692,
+					"parameters": {
+						"variable": "lvl1_idle_timer",
+						"value": "0"
+					}
 				}
 			],
 			"sid": 419931443437314,
@@ -1400,6 +1473,7 @@
 					"sid": 606358429908309,
 					"children": [
 						{
+<<<<<<< Updated upstream
 							"eventType": "comment",
 							"text": "Acertou a sequência"
 						},
@@ -1418,6 +1492,82 @@
 							"eventType": "comment",
 							"text": "Errou a sequência"
 						}
+=======
+<<<<<<< HEAD
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 845132792425591,
+							"parameters": {
+								"first-value": "lvl1_array.At(lvl1_step_player, lvl1_array_line)",
+								"comparison": 0,
+								"second-value": "lvl1_Modules.lvl1_ID"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 893370155108350,
+							"parameters": {
+								"variable": "lvl1_step_player",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 606358429908309,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Acertou a sequência"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 773848643894667,
+									"parameters": {
+										"first-value": "lvl1_step_player",
+										"comparison": 0,
+										"second-value": "lvl1_step_show"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "lvl1_checkProgress",
+									"sid": 257116695727313
+								}
+							],
+							"sid": 950442196422887
+						},
+						{
+							"eventType": "comment",
+							"text": "Errou a sequência"
+						}
+=======
+							"eventType": "comment",
+							"text": "Acertou a sequência"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "lvl1_checkProgress",
+									"sid": 257116695727313
+								}
+							],
+							"sid": 950442196422887
+						},
+						{
+							"eventType": "comment",
+							"text": "Errou a sequência"
+						}
+>>>>>>> 91f0683fe3243faa23272a0d3463fe0ba5fe7dd6
+>>>>>>> Stashed changes
 					]
 				},
 				{
