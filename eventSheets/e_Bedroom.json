@@ -33,15 +33,6 @@
 					],
 					"actions": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 702479112881832,
-							"parameters": {
-								"variable": "cursor",
-								"value": "\"none\""
-							}
-						},
-						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 619455730353783,
@@ -87,24 +78,6 @@
 					],
 					"actions": [
 						{
-							"id": "set-position",
-							"objectClass": "player",
-							"sid": 789419234863229,
-							"parameters": {
-								"x": "spawn_pc.X",
-								"y": "spawn_pc.Y"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 797434833787022,
-							"parameters": {
-								"variable": "cursor",
-								"value": "\"none\""
-							}
-						},
-						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 787102092680563,
@@ -120,6 +93,15 @@
 							"parameters": {
 								"variable": "layout",
 								"value": "\"Bedroom\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "player",
+							"sid": 425934289005123,
+							"parameters": {
+								"x": "spawn_pc.X",
+								"y": "spawn_pc.Y"
 							}
 						}
 					],
@@ -473,15 +455,6 @@
 									],
 									"actions": [
 										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 988286304323261,
-											"parameters": {
-												"variable": "cursor",
-												"value": "\"default\""
-											}
-										},
-										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
 											"sid": 452685079736058,
@@ -523,7 +496,7 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 260391353907546,
+									"sid": 457676331204461,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
@@ -540,15 +513,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 618429490879090,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"none\""
-									}
-								},
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
@@ -622,15 +586,6 @@
 							],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 805491882054106,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"none\""
-									}
-								},
-								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 686976193173788,
@@ -681,15 +636,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 299025556699147,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"none\""
-									}
-								},
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
@@ -771,15 +717,6 @@
 										}
 									],
 									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 529540646628437,
-											"parameters": {
-												"variable": "cursor",
-												"value": "\"default\""
-											}
-										},
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
@@ -896,15 +833,6 @@
 							],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 845650711848699,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"none\""
-									}
-								},
-								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 322605428410852,
@@ -955,15 +883,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 164554199804500,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"none\""
-									}
-								},
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
@@ -1033,13 +952,10 @@
 							}
 						},
 						{
-							"id": "is-playing",
+							"id": "is-any-playing",
 							"objectClass": "fade",
-							"sid": 168268982481621,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"transition\""
-							}
+							"sid": 483625449722367,
+							"behaviorType": "Tween"
 						}
 					],
 					"actions": [
@@ -1050,6 +966,15 @@
 							"parameters": {
 								"layer": "\"sign\"",
 								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 172457576784659,
+							"parameters": {
+								"variable": "Cursor",
+								"value": "true"
 							}
 						}
 					],
@@ -1074,6 +999,15 @@
 								"layer": "\"sign\"",
 								"visibility": "visible"
 							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 797885691084612,
+							"parameters": {
+								"variable": "Cursor",
+								"value": "false"
+							}
 						}
 					],
 					"sid": 968402710345287
@@ -1088,7 +1022,7 @@
 						{
 							"id": "cursor-is-over-object",
 							"objectClass": "Mouse",
-							"sid": 663344486055874,
+							"sid": 872663919610317,
 							"parameters": {
 								"object": "sim"
 							}
@@ -1104,12 +1038,11 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 958538209296874,
+							"id": "set-animation-frame",
+							"objectClass": "cursor",
+							"sid": 416522623730895,
 							"parameters": {
-								"variable": "cursor",
-								"value": "\"pointer\""
+								"frame-number": "1"
 							}
 						}
 					],
@@ -1134,12 +1067,11 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 834413821253445,
+							"id": "set-animation-frame",
+							"objectClass": "cursor",
+							"sid": 841761972346208,
 							"parameters": {
-								"variable": "cursor",
-								"value": "\"default\""
+								"frame-number": "0"
 							}
 						}
 					],
@@ -1171,12 +1103,11 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 422193670344021,
+							"id": "set-animation-frame",
+							"objectClass": "cursor",
+							"sid": 395509464568458,
 							"parameters": {
-								"variable": "cursor",
-								"value": "\"pointer\""
+								"frame-number": "1"
 							}
 						}
 					],
@@ -1202,12 +1133,11 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 946372996785441,
+							"id": "set-animation-frame",
+							"objectClass": "cursor",
+							"sid": 415691829613208,
 							"parameters": {
-								"variable": "cursor",
-								"value": "\"default\""
+								"frame-number": "0"
 							}
 						}
 					],

@@ -2,47 +2,34 @@
 	"name": "e_Global",
 	"events": [
 		{
-			"bookmark": true,
 			"eventType": "variable",
-			"name": "cursor",
-			"type": "string",
-			"initialValue": "none",
-			"comment": "",
+			"name": "Cursor",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "Estado de ativação",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 475234509137949
-		},
-		{
-			"eventType": "comment",
-			"text": "\"none\" → nenhum cursor\n\"default\" → cursor padrão\n\"pointer\" → cursor pointer"
+			"sid": 920746513699380
 		},
 		{
 			"eventType": "variable",
 			"name": "PlayerMoving",
 			"type": "boolean",
 			"initialValue": "false",
-			"comment": "",
+			"comment": "Estado de movimentação",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 379928851874203
-		},
-		{
-			"eventType": "comment",
-			"text": "false → movimentação desativada\ntrue → movimentação ativada"
 		},
 		{
 			"eventType": "variable",
 			"name": "layout",
 			"type": "string",
 			"initialValue": "none",
-			"comment": "",
+			"comment": "Layout atual",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 345529679003487
-		},
-		{
-			"eventType": "comment",
-			"text": "\"none\" → não está em nenhum layout\n\"Bedroom\" → está no layout Bedroom"
 		},
 		{
 			"eventType": "group",
@@ -63,107 +50,86 @@
 					]
 				},
 				{
-					"eventType": "comment",
-					"text": "Cursor segue o mouse sempre que existir"
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-two-values",
+							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 539608302206889,
+							"sid": 192314514598851,
 							"parameters": {
-								"first-value": "cursor_defult.Count",
-								"comparison": 4,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "cursor_defult",
-							"sid": 627391244925474,
-							"parameters": {
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
-							}
-						}
-					],
-					"sid": 920970715045774
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 533246886807297,
-							"parameters": {
-								"first-value": "cursor_pointer.Count",
-								"comparison": 4,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "cursor_pointer",
-							"sid": 581625688698271,
-							"parameters": {
-								"x": "Mouse.X",
-								"y": "Mouse.Y"
-							}
-						}
-					],
-					"sid": 883649655059315
-				},
-				{
-					"eventType": "comment",
-					"text": "Cursor default"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 917446422841292,
-							"parameters": {
-								"variable": "cursor",
-								"comparison": 0,
-								"value": "\"default\""
+								"variable": "Cursor"
 							}
 						},
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 624690316864509
+							"sid": 108434937387438
 						}
 					],
 					"actions": [
 						{
-							"id": "destroy",
-							"objectClass": "cursor_pointer",
-							"sid": 777699542600534
-						},
-						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 516012128834936,
+							"sid": 137090058964261,
 							"parameters": {
-								"object-to-create": "cursor_defult",
+								"object-to-create": "cursor",
 								"layer": "\"cursor\"",
-								"x": "0",
-								"y": "0",
+								"x": "Mouse.X",
+								"y": "Mouse.Y",
 								"create-hierarchy": false,
-								"template-name": "\"\""
+								"template-name": "\"cursor\""
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 825076915775631,
+							"parameters": {
+								"layer": "\"cursor\"",
+								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 703893034743648
+					"sid": 464291767879934
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 756434525666027,
+							"parameters": {
+								"variable": "Cursor"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 175545903325674
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 197659507385508,
+							"parameters": {
+								"layer": "\"cursor\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 716751373065896
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor segue o mouse sempre que existir"
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor default"
 				},
 				{
 					"eventType": "comment",
@@ -181,22 +147,12 @@
 								"comparison": 0,
 								"value": "\"PC\""
 							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 996199501777916,
-							"parameters": {
-								"first-value": "cursor_defult.Count",
-								"comparison": 4,
-								"second-value": "0"
-							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-position",
-							"objectClass": "cursor_defult",
+							"objectClass": "cursor",
 							"sid": 943030308352204,
 							"parameters": {
 								"x": "clamp(Mouse.X, screen.BBoxLeft, screen.BBoxRight)",
@@ -211,82 +167,8 @@
 					"text": "Cursor pointer"
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 410070117334788,
-							"parameters": {
-								"variable": "cursor",
-								"comparison": 0,
-								"value": "\"pointer\""
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 228694485468949
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "cursor_defult",
-							"sid": 270284066940143
-						},
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 746713136156139,
-							"parameters": {
-								"object-to-create": "cursor_pointer",
-								"layer": "\"cursor\"",
-								"x": "0",
-								"y": "0",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						}
-					],
-					"sid": 364754274533102
-				},
-				{
 					"eventType": "comment",
 					"text": "Cursor desativado"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 369504339969681,
-							"parameters": {
-								"variable": "cursor",
-								"comparison": 0,
-								"value": "\"none\""
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 247369986402471
-						}
-					],
-					"actions": [
-						{
-							"id": "destroy",
-							"objectClass": "cursor_defult",
-							"sid": 936978030068434
-						},
-						{
-							"id": "destroy",
-							"objectClass": "cursor_pointer",
-							"sid": 970716514983168
-						}
-					],
-					"sid": 639377482894496
 				}
 			],
 			"sid": 188836488104335,
