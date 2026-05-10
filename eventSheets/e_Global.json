@@ -2,6 +2,7 @@
 	"name": "e_Global",
 	"events": [
 		{
+			"bookmark": true,
 			"eventType": "variable",
 			"name": "cursor",
 			"type": "string",
@@ -375,45 +376,7 @@
 							}
 						}
 					],
-					"sid": 730615010106979,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 355955681171232,
-									"parameters": {
-										"first-value": "nextLayout",
-										"comparison": 0,
-										"second-value": "\"Menu\""
-									}
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 798391503510225,
-									"parameters": {
-										"variable": "layout",
-										"comparison": 0,
-										"value": "\"Loader\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "wait-for-signal",
-									"objectClass": "System",
-									"sid": 415950381161744,
-									"parameters": {
-										"tag": "\"loader_menu\""
-									}
-								}
-							],
-							"sid": 481556559002271
-						}
-					]
+					"sid": 730615010106979
 				},
 				{
 					"eventType": "comment",

@@ -6,64 +6,86 @@
 			"text": "EXPLICAÇÃO DA FASE\n\nO sistema apresenta uma sequência de sinais visuais distribuídos entre quatro módulos:\n\nENERGIA     REDE     TERMINAL     SEGURANÇA\n\nCada módulo é ativado em uma ordem específica, formando um padrão que deve ser observado.\n\nApós a exibição completa da sequência, o controle é liberado e o jogador deve reproduzir exatamente a mesma ordem utilizando os botões correspondentes.\n\nCada entrada correta avança para o próximo passo da sequência. Caso um comando incorreto seja inserido, o sistema emite um alerta e reinicia o processo desde o início.\n\nA fase é concluída quando toda a sequência é reproduzida corretamente, sem erros.\n\nRESPOSTA DO PUZZLE: \n\nEtapa 1:\nEnergia (0) → Segurança (3) → Rede (1) → Terminal (2)\n\nEtapa 2:\nRede (1) → Energia (0) → Terminal (2) → Segurança (3) → Rede (1) → Energia (0)\n\nEtapa 3:\nSegurança (3) → Rede (1) → Terminal (2) → Energia (0) → Segurança (3) → Terminal (2) → Rede (1) → Energia (0)"
 		},
 		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL1_GLOBAL_VARIABLES",
+			"description": "Variáveis globais do nível 1",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "variable",
+					"name": "lvl1_array_line",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Linha atual do array",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 373049328844589
+				},
+				{
+					"eventType": "variable",
+					"name": "lvl1_idle_timer",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Cronometro de inatividade",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 685522827550061
+				},
+				{
+					"eventType": "variable",
+					"name": "lvl1_InputBlock",
+					"type": "boolean",
+					"initialValue": "false",
+					"comment": "Trava de clique",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 151481121753352
+				},
+				{
+					"eventType": "variable",
+					"name": "lvl1_step_show",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Quantidade de sinais exibidos",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 990376257384222
+				},
+				{
+					"eventType": "variable",
+					"name": "lvl1_step_player",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "Progresso do jogador",
+					"isStatic": false,
+					"isConstant": false,
+					"sid": 426817889071475
+				}
+			],
+			"sid": 362264560930124,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.20392156862745098,
+				0.7294117647058823,
+				0.3607843137254902,
+				1
+			]
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "e_Global"
-		},
-		{
-			"eventType": "variable",
-			"name": "lvl1_array_line",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "Linha atual do array",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 910000000000107
-		},
-		{
-			"eventType": "variable",
-			"name": "lvl1_idle_timer",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "Cronometro de inatividade",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 910000000000108
-		},
-		{
-			"eventType": "variable",
-			"name": "lvl1_InputBlock",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "Trava de clique",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 910000000000109
-		},
-		{
-			"eventType": "variable",
-			"name": "lvl1_step_show",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "Quantidade de sinais exibidos",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 910000000000110
-		},
-		{
-			"eventType": "variable",
-			"name": "lvl1_step_player",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "Progresso do jogador",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 910000000000111
 		},
 		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "LVL1_FUNCTIONS",
-			"description": "",
+			"description": "Funções",
 			"isActiveOnStart": true,
 			"children": [
 				{
@@ -81,33 +103,6 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 910000000000000,
-							"parameters": {
-								"variable": "lvl1_InputBlock",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 910000000000001,
-							"parameters": {
-								"variable": "lvl1_step_player",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 910000000000002,
-							"parameters": {
-								"variable": "lvl1_idle_timer",
-								"value": "0"
-							}
-						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
@@ -132,29 +127,8 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for",
-									"objectClass": "System",
-									"sid": 522679410090369,
-									"parameters": {
-										"name": "\"\"",
-										"start-index": "0",
-										"end-index": "lvl1_step_show - 1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 927113290462116,
-									"parameters": {
-										"variable": "current_val",
-										"value": "lvl1_array.At(loopindex,lvl1_array_line)"
-									}
-								}
-							],
+							"conditions": [],
+							"actions": [],
 							"sid": 910000000000038,
 							"children": [
 								{
@@ -234,40 +208,6 @@
 									]
 								}
 							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 141698926001854,
-									"parameters": {
-										"seconds": "((lvl1_step_show - 1) * 1.2) + 0.7",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 910000000000040,
-									"parameters": {
-										"variable": "lvl1_InputBlock",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 910000000000041,
-									"parameters": {
-										"variable": "lvl1_step_player",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 910000000000042
 						}
 					]
 				},
@@ -294,45 +234,14 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 910000000000059,
-									"parameters": {
-										"variable": "lvl1_array_line",
-										"comparison": 0,
-										"value": "0"
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [],
 							"sid": 910000000000063,
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 616692351423400,
-											"parameters": {
-												"first-value": "lvl1_step_show",
-												"comparison": 2,
-												"second-value": "4"
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
-										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 910000000000061,
-											"parameters": {
-												"variable": "lvl1_step_show",
-												"value": "1"
-											}
-										},
 										{
 											"id": "wait",
 											"objectClass": "System",
@@ -371,33 +280,6 @@
 											]
 										},
 										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 600294692485094,
-											"parameters": {
-												"variable": "lvl1_array_line",
-												"value": "1"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 910000000000068,
-											"parameters": {
-												"variable": "lvl1_step_show",
-												"value": "1"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 910000000000069,
-											"parameters": {
-												"variable": "lvl1_step_player",
-												"value": "0"
-											}
-										},
-										{
 											"id": "wait",
 											"objectClass": "System",
 											"sid": 910000000000070,
@@ -433,45 +315,14 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 605943320476230,
-											"parameters": {
-												"variable": "lvl1_array_line",
-												"comparison": 0,
-												"value": "1"
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [],
 									"sid": 930624933113077,
 									"children": [
 										{
 											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 838607651225663,
-													"parameters": {
-														"first-value": "lvl1_step_show",
-														"comparison": 2,
-														"second-value": "6"
-													}
-												}
-											],
+											"conditions": [],
 											"actions": [
-												{
-													"id": "add-to-eventvar",
-													"objectClass": "System",
-													"sid": 237109227825052,
-													"parameters": {
-														"variable": "lvl1_step_show",
-														"value": "1"
-													}
-												},
 												{
 													"id": "wait",
 													"objectClass": "System",
@@ -510,33 +361,6 @@
 													]
 												},
 												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 655046589498449,
-													"parameters": {
-														"variable": "lvl1_step_show",
-														"value": "1"
-													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 207563201329820,
-													"parameters": {
-														"variable": "lvl1_step_player",
-														"value": "0"
-													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 615098506806397,
-													"parameters": {
-														"variable": "lvl1_array_line",
-														"value": "2"
-													}
-												},
-												{
 													"id": "wait",
 													"objectClass": "System",
 													"sid": 372229386302227,
@@ -572,45 +396,14 @@
 									"children": [
 										{
 											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 232995689454055,
-													"parameters": {
-														"variable": "lvl1_array_line",
-														"comparison": 0,
-														"value": "2"
-													}
-												}
-											],
+											"conditions": [],
 											"actions": [],
 											"sid": 164571444760959,
 											"children": [
 												{
 													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-two-values",
-															"objectClass": "System",
-															"sid": 472037817619153,
-															"parameters": {
-																"first-value": "lvl1_step_show",
-																"comparison": 2,
-																"second-value": "8"
-															}
-														}
-													],
+													"conditions": [],
 													"actions": [
-														{
-															"id": "add-to-eventvar",
-															"objectClass": "System",
-															"sid": 864303025256914,
-															"parameters": {
-																"variable": "lvl1_step_show",
-																"value": "1"
-															}
-														},
 														{
 															"id": "wait",
 															"objectClass": "System",
@@ -641,15 +434,6 @@
 														}
 													],
 													"actions": [
-														{
-															"id": "set-boolean-eventvar",
-															"objectClass": "System",
-															"sid": 535372505829061,
-															"parameters": {
-																"variable": "lvl1_InputBlock",
-																"value": "true"
-															}
-														},
 														{
 															"id": "wait",
 															"objectClass": "System",
@@ -736,15 +520,6 @@
 									}
 								},
 								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 766683173412024,
-									"parameters": {
-										"variable": "lvl1_InputBlock",
-										"value": "true"
-									}
-								},
-								{
 									"id": "set-active",
 									"objectClass": "lvl1_background",
 									"sid": 604939752070924,
@@ -822,33 +597,6 @@
 									}
 								},
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 881736872108562,
-									"parameters": {
-										"variable": "lvl1_step_show",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 382565534790802,
-									"parameters": {
-										"variable": "lvl1_step_player",
-										"value": "0"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 224307318419244,
-									"parameters": {
-										"variable": "lvl1_idle_timer",
-										"value": "0"
-									}
-								},
-								{
 									"callFunction": "lvl1_showSequence",
 									"sid": 588723198504923
 								}
@@ -876,7 +624,7 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "LEVEL1_LAYOUT",
-			"description": "",
+			"description": "Interações com o layout",
 			"isActiveOnStart": true,
 			"children": [
 				{
@@ -973,7 +721,7 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "LEVEL1_GAMEPLAY",
-			"description": "",
+			"description": "Fase em si",
 			"isActiveOnStart": true,
 			"children": [
 				{
@@ -1007,42 +755,6 @@
 							}
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 872363630047870,
-							"parameters": {
-								"variable": "lvl1_array_line",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 241073185543149,
-							"parameters": {
-								"variable": "lvl1_step_show",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 536618886983791,
-							"parameters": {
-								"variable": "lvl1_step_player",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 178310291767227,
-							"parameters": {
-								"variable": "lvl1_idle_timer",
-								"value": "0"
-							}
-						},
-						{
 							"callFunction": "lvl1_showSequence",
 							"sid": 857909170576978
 						}
@@ -1065,15 +777,6 @@
 								"click-type": "clicked",
 								"object-clicked": "lvl1_energia_hitbox"
 							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 910000000000115,
-							"parameters": {
-								"variable": "lvl1_InputBlock"
-							},
-							"isInverted": true
 						}
 					],
 					"actions": [
@@ -1117,60 +820,19 @@
 								"layer": "\"energia\"",
 								"visibility": "invisible"
 							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 910000000000120,
-							"parameters": {
-								"variable": "lvl1_idle_timer",
-								"value": "0"
-							}
 						}
 					],
 					"sid": 910000000000130,
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 910000000000121,
-									"parameters": {
-										"first-value": "lvl1_array.At(lvl1_step_player, lvl1_array_line)",
-										"comparison": 0,
-										"second-value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 910000000000122,
-									"parameters": {
-										"variable": "lvl1_step_player",
-										"value": "1"
-									}
-								}
-							],
+							"conditions": [],
+							"actions": [],
 							"sid": 910000000000126,
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 910000000000123,
-											"parameters": {
-												"first-value": "lvl1_step_player",
-												"comparison": 0,
-												"second-value": "lvl1_step_show"
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"callFunction": "lvl1_checkProgress",
@@ -1216,15 +878,6 @@
 								"click-type": "clicked",
 								"object-clicked": "lvl1_rede_hitbox"
 							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 910000000000132,
-							"parameters": {
-								"variable": "lvl1_InputBlock"
-							},
-							"isInverted": true
 						}
 					],
 					"actions": [
@@ -1268,60 +921,19 @@
 								"layer": "\"rede\"",
 								"visibility": "invisible"
 							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 910000000000137,
-							"parameters": {
-								"variable": "lvl1_idle_timer",
-								"value": "0"
-							}
 						}
 					],
 					"sid": 910000000000147,
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 910000000000138,
-									"parameters": {
-										"first-value": "lvl1_array.At(lvl1_step_player, lvl1_array_line)",
-										"comparison": 0,
-										"second-value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 910000000000139,
-									"parameters": {
-										"variable": "lvl1_step_player",
-										"value": "1"
-									}
-								}
-							],
+							"conditions": [],
+							"actions": [],
 							"sid": 910000000000143,
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 910000000000140,
-											"parameters": {
-												"first-value": "lvl1_step_player",
-												"comparison": 0,
-												"second-value": "lvl1_step_show"
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"callFunction": "lvl1_checkProgress",
@@ -1367,15 +979,6 @@
 								"click-type": "clicked",
 								"object-clicked": "lvl1_terminal_hitbox"
 							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 910000000000149,
-							"parameters": {
-								"variable": "lvl1_InputBlock"
-							},
-							"isInverted": true
 						}
 					],
 					"actions": [
@@ -1419,60 +1022,19 @@
 								"layer": "\"terminal\"",
 								"visibility": "invisible"
 							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 910000000000154,
-							"parameters": {
-								"variable": "lvl1_idle_timer",
-								"value": "0"
-							}
 						}
 					],
 					"sid": 910000000000164,
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 910000000000155,
-									"parameters": {
-										"first-value": "lvl1_array.At(lvl1_step_player, lvl1_array_line)",
-										"comparison": 0,
-										"second-value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 910000000000156,
-									"parameters": {
-										"variable": "lvl1_step_player",
-										"value": "1"
-									}
-								}
-							],
+							"conditions": [],
+							"actions": [],
 							"sid": 910000000000160,
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 910000000000157,
-											"parameters": {
-												"first-value": "lvl1_step_player",
-												"comparison": 0,
-												"second-value": "lvl1_step_show"
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"callFunction": "lvl1_checkProgress",
@@ -1518,15 +1080,6 @@
 								"click-type": "clicked",
 								"object-clicked": "lvl1_segurança_hitbox"
 							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 910000000000166,
-							"parameters": {
-								"variable": "lvl1_InputBlock"
-							},
-							"isInverted": true
 						}
 					],
 					"actions": [
@@ -1570,60 +1123,19 @@
 								"layer": "\"segurança\"",
 								"visibility": "invisible"
 							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 910000000000171,
-							"parameters": {
-								"variable": "lvl1_idle_timer",
-								"value": "0"
-							}
 						}
 					],
 					"sid": 910000000000181,
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 910000000000172,
-									"parameters": {
-										"first-value": "lvl1_array.At(lvl1_step_player, lvl1_array_line)",
-										"comparison": 0,
-										"second-value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 910000000000173,
-									"parameters": {
-										"variable": "lvl1_step_player",
-										"value": "1"
-									}
-								}
-							],
+							"conditions": [],
+							"actions": [],
 							"sid": 910000000000177,
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 910000000000174,
-											"parameters": {
-												"first-value": "lvl1_step_player",
-												"comparison": 0,
-												"second-value": "lvl1_step_show"
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"callFunction": "lvl1_checkProgress",
@@ -1667,54 +1179,15 @@
 							"parameters": {
 								"interval-seconds": "1.0"
 							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 910000000000100,
-							"parameters": {
-								"variable": "lvl1_InputBlock"
-							},
-							"isInverted": true
 						}
 					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 910000000000101,
-							"parameters": {
-								"variable": "lvl1_idle_timer",
-								"value": "1"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 910000000000106,
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 149880152601794,
-									"parameters": {
-										"variable": "lvl1_idle_timer",
-										"comparison": 0,
-										"value": "5"
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 910000000000103,
-									"parameters": {
-										"variable": "lvl1_idle_timer",
-										"value": "0"
-									}
-								},
 								{
 									"callFunction": "lvl1_showSequence",
 									"sid": 910000000000104
@@ -1743,7 +1216,7 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "LEVEL1_CURSOR_POINTER",
-			"description": "",
+			"description": "Comportamento do cursor",
 			"isActiveOnStart": true,
 			"children": [
 				{
@@ -1853,15 +1326,6 @@
 						"click-type": "clicked",
 						"object-clicked": "lvl1_Modules"
 					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 707603071886885,
-					"parameters": {
-						"variable": "lvl1_InputBlock"
-					},
-					"isInverted": true
 				}
 			],
 			"actions": [
@@ -1921,15 +1385,6 @@
 						"layer": "lvl1_Modules.lvl1_LayerName",
 						"visibility": "invisible"
 					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 456345877079692,
-					"parameters": {
-						"variable": "lvl1_idle_timer",
-						"value": "0"
-					}
 				}
 			],
 			"sid": 419931443437314,
@@ -1940,29 +1395,8 @@
 				},
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 845132792425591,
-							"parameters": {
-								"first-value": "lvl1_array.At(lvl1_step_player, lvl1_array_line)",
-								"comparison": 0,
-								"second-value": "lvl1_Modules.lvl1_ID"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 893370155108350,
-							"parameters": {
-								"variable": "lvl1_step_player",
-								"value": "1"
-							}
-						}
-					],
+					"conditions": [],
+					"actions": [],
 					"sid": 606358429908309,
 					"children": [
 						{
@@ -1971,18 +1405,7 @@
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 773848643894667,
-									"parameters": {
-										"first-value": "lvl1_step_player",
-										"comparison": 0,
-										"second-value": "lvl1_step_show"
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
 									"callFunction": "lvl1_checkProgress",
