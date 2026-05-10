@@ -1,140 +1,118 @@
-{
-	"name": "e_Level3",
-	"events": [
-		{
-			"eventType": "include",
-			"includeSheet": "e_Global"
-		},
-		{
-			"eventType": "comment",
-			"text": "=== LAST UPDATE ===\n--- Level3 ---\n→ puzzle senha 8 dígitos\n→ teclado numérico clicável na tela\n→ validação por botão OK\n→ display via TextInput + mid()\n→ cursor personalizado via e_Global"
-		},
-		{
-			"eventType": "comment",
-			"text": "EXPLICAÇÃO DA FASE\n\nO jogador está invadindo o servidor SRV-07.\nA tela exibe 4 painéis com dados do servidor.\nA senha de 8 dígitos está escondida nos painéis:\n→ ACCESS LOG   → Tentativas: 42\n→ PWR LEVEL    → Capacidade: 97%\n→ ERR CODE     → Erros menores: 17\n→ ERR CODE     → Erros críticos: 03\n\nRESPOSTA: 42971703"
-		},
-		{
-			"eventType": "comment",
-			"text": "VARIÁVEIS GLOBAIS DA FASE E INICIALIZAÇÃO DO LAYOUT"
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "LVL3_GERAL",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "variable",
-					"name": "bloqueado",
-					"type": "boolean",
-					"initialValue": "false",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 866765379392500
-				},
-				{
-					"eventType": "variable",
-					"name": "etapa",
-					"type": "number",
-					"initialValue": "1",
-					"comment": "ETAPA ATUAL DA FASE (1, 2 OU 3)",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 947704889613168
-				},
-				{
-					"eventType": "variable",
-					"name": "senha1",
-					"type": "string",
-					"initialValue": "42971703",
-					"comment": "senha da etapa 1",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 447300871090999
-				},
-				{
-					"eventType": "variable",
-					"name": "senha2",
-					"type": "string",
-					"initialValue": "14684676",
-					"comment": "senha da etapa 2",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 323296249735934
-				},
-				{
-					"eventType": "variable",
-					"name": "senha3",
-					"type": "string",
-					"initialValue": "90735139",
-					"comment": "senha da etapa 3",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 153172927231323
-				},
-				{
-					"eventType": "comment",
-					"text": "CONFIGURA ESTADO INICIAL AO ENTRAR NO LAYOUT"
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LVL3_LAYOUT",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
+@ -945,534 +945,643 @@
+										"comparison": 0,
+										"second-value": "8"
+									}
+								},
 								{
-									"id": "on-start-of-layout",
+									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 541872859421409
+									"sid": 169392398991095,
+									"parameters": {
+										"variable": "etapa",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 325009588915939,
+									"parameters": {
+										"first-value": "lvl3_TextInput.Text",
+										"comparison": 0,
+										"second-value": "senha1"
+									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 231460121370762,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"default\""
-									}
-								},
-								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 108963391682410,
-									"parameters": {
-										"variable": "PlayerMoving",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 942300160376320,
-									"parameters": {
-										"variable": "layout",
-										"value": "\"Level3\""
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 142440963564569,
+									"sid": 489526279089953,
 									"parameters": {
 										"variable": "bloqueado",
-										"value": "false"
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 388251097115431,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 627664881163004,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 952360747339974,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 748245281751327,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 716244942210419,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "lvl3_TextInput",
+									"sid": 934508749171831,
+									"parameters": {
+										"mode": "disabled"
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 337366614119919,
+									"parameters": [
+										"\"Primeira etapa concluída...\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 984917773837144,
+									"parameters": {
+										"seconds": "2.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 270847574351213,
+									"parameters": {
+										"variable": "etapa",
+										"value": "2"
 									}
 								},
 								{
 									"id": "set-text",
 									"objectClass": "lvl3_TextInput",
-									"sid": 335453779833389,
+									"sid": 885977733585301,
 									"parameters": {
 										"text": "\"\""
 									}
@@ -142,313 +120,29 @@
 								{
 									"id": "set-enabled",
 									"objectClass": "lvl3_TextInput",
-									"sid": 800131410360953,
+									"sid": 720233402693514,
 									"parameters": {
 										"mode": "enabled"
 									}
 								},
 								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 911382958979051,
+									"parameters": {
+										"variable": "bloqueado",
+										"value": "false"
+									}
+								},
+								{
 									"callFunction": "TypingEffect",
-									"sid": 679228095694637,
+									"sid": 857868968748019,
 									"parameters": [
-										"\"Primeira etapa...\""
+										"\"Segunda etapa...\""
 									]
 								}
 							],
-							"sid": 695856661992429
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 363510977989042,
-									"parameters": {
-										"key": 27
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 392254450480196,
-									"parameters": {
-										"layout": "PC"
-									}
-								}
-							],
-							"sid": 207944212696489
-						}
-					],
-					"sid": 134381989936548
-				},
-				{
-					"eventType": "comment",
-					"text": "FUNÇÕES REUTILIZÁVEIS DA FASE"
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LVL3_FUNCTION",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"functionName": "lvl3_feedback_ok",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": false,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "lvl3_feedback_ok",
-									"sid": 142759946475701,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "flash",
-									"objectClass": "lvl3_feedback_ok",
-									"sid": 938288282088897,
-									"behaviorType": "Flash",
-									"parameters": {
-										"on-time": "0.1",
-										"off-time": "0.1",
-										"duration": "1.0"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 304258824786551,
-									"parameters": {
-										"seconds": "1.0",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "stop-flashing",
-									"objectClass": "lvl3_feedback_ok",
-									"sid": 560145985065818,
-									"behaviorType": "Flash"
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "lvl3_feedback_ok",
-									"sid": 729095423556149,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 676674923569094
-						},
-						{
-							"functionName": "lvl3_error",
-							"functionDescription": "",
-							"functionCategory": "",
-							"functionReturnType": "none",
-							"functionCopyPicked": false,
-							"functionIsAsync": false,
-							"functionParameters": [],
-							"eventType": "function-block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 326958719582567,
-									"parameters": {
-										"seconds": "0.2",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "lvl3_feedback_erro",
-									"sid": 586358944176609,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "flash",
-									"objectClass": "lvl3_feedback_erro",
-									"sid": 215782143442155,
-									"behaviorType": "Flash",
-									"parameters": {
-										"on-time": "0.1",
-										"off-time": "0.1",
-										"duration": "1.0"
-									}
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 254496213338257,
-									"parameters": {
-										"seconds": "1.0",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "stop-flashing",
-									"objectClass": "lvl3_feedback_erro",
-									"sid": 716384680496770,
-									"behaviorType": "Flash"
-								},
-								{
-									"id": "restart-layout",
-									"objectClass": "System",
-									"sid": 412566590342717
-								}
-							],
-							"sid": 287836735604210
-						}
-					],
-					"sid": 667802379224850
-				},
-				{
-					"eventType": "comment",
-					"text": "MUDA CURSOR AO PASSAR EM CIMA DOS BOTÕES"
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LVL3_CURSOR_HOVER",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 576632355397156,
-									"parameters": {
-										"object": "lvl3_btn"
-									}
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 551869894867302,
-									"parameters": {
-										"object": "lvl3_btn_delete"
-									}
-								},
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 172500865066752,
-									"parameters": {
-										"object": "lvl3_btn_enviar"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 451623804707015,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"pointer\""
-									}
-								}
-							],
-							"sid": 426039389420871,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 924750603387517
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 809024823141745,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"default\""
-									}
-								}
-							],
-							"sid": 572259089266967
-						}
-					],
-					"sid": 682751389101907
-				},
-				{
-					"eventType": "comment",
-					"text": "DETECTA CLIQUE NOS BOTÕES E ATUALIZA O TEXTINPUT"
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LVL3_TECLADO",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 114621902068765,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_0"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 372957981866183,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 946688966515772,
-									"parameters": {
-										"first-value": "len(lvl3_TextInput.Text)",
-										"comparison": 2,
-										"second-value": "8"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_TextInput",
-									"sid": 303929053151425,
-									"parameters": {
-										"text": "lvl3_TextInput.Text & \"0\""
-									}
-								}
-							],
-							"sid": 287593334400011
+							"sid": 425640902723922
 						},
 						{
 							"eventType": "block",
@@ -456,471 +150,7 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 938027873766538,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_1"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 705568335140591,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 512531756484569,
-									"parameters": {
-										"first-value": "len(lvl3_TextInput.Text)",
-										"comparison": 2,
-										"second-value": "8"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_TextInput",
-									"sid": 914722731577978,
-									"parameters": {
-										"text": "lvl3_TextInput.Text & \"1\""
-									}
-								}
-							],
-							"sid": 365114358629589
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 476650268558974,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_2"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 306797676826772,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 261646173162867,
-									"parameters": {
-										"first-value": "len(lvl3_TextInput.Text)",
-										"comparison": 2,
-										"second-value": "8"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_TextInput",
-									"sid": 292462276955597,
-									"parameters": {
-										"text": "lvl3_TextInput.Text & \"2\""
-									}
-								}
-							],
-							"sid": 947165376268733
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 636360336368968,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_3"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 778579863260069,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 523599003267463,
-									"parameters": {
-										"first-value": "len(lvl3_TextInput.Text)",
-										"comparison": 2,
-										"second-value": "8"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_TextInput",
-									"sid": 297448597185030,
-									"parameters": {
-										"text": "lvl3_TextInput.Text & \"3\""
-									}
-								}
-							],
-							"sid": 408342463443592
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 311850865132506,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_4"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 340112865821806,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 956627763236591,
-									"parameters": {
-										"first-value": "len(lvl3_TextInput.Text)",
-										"comparison": 2,
-										"second-value": "8"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_TextInput",
-									"sid": 492552266172302,
-									"parameters": {
-										"text": "lvl3_TextInput.Text & \"4\""
-									}
-								}
-							],
-							"sid": 923617783544868
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 517398116234572,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_5"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 689901515730227,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 965845298827946,
-									"parameters": {
-										"first-value": "len(lvl3_TextInput.Text)",
-										"comparison": 2,
-										"second-value": "8"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_TextInput",
-									"sid": 193621009327535,
-									"parameters": {
-										"text": "lvl3_TextInput.Text & \"5\""
-									}
-								}
-							],
-							"sid": 763414066821272
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 832698535401359,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_6"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 547325745316537,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 732830994520143,
-									"parameters": {
-										"first-value": "len(lvl3_TextInput.Text)",
-										"comparison": 2,
-										"second-value": "8"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_TextInput",
-									"sid": 759069546702877,
-									"parameters": {
-										"text": "lvl3_TextInput.Text & \"6\""
-									}
-								}
-							],
-							"sid": 457107678520518
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 280379606206522,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_7"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 590294518059073,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 580604537359765,
-									"parameters": {
-										"first-value": "len(lvl3_TextInput.Text)",
-										"comparison": 2,
-										"second-value": "8"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_TextInput",
-									"sid": 855712246986391,
-									"parameters": {
-										"text": "lvl3_TextInput.Text & \"7\""
-									}
-								}
-							],
-							"sid": 477427863308674
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 904485459393140,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_8"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 853805320557101,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 761566177403326,
-									"parameters": {
-										"first-value": "len(lvl3_TextInput.Text)",
-										"comparison": 2,
-										"second-value": "8"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_TextInput",
-									"sid": 974901674215968,
-									"parameters": {
-										"text": "lvl3_TextInput.Text & \"8\""
-									}
-								}
-							],
-							"sid": 448326278614133
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 386713934489357,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_9"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 965849305876427,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 731545196995897,
-									"parameters": {
-										"first-value": "len(lvl3_TextInput.Text)",
-										"comparison": 2,
-										"second-value": "8"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_TextInput",
-									"sid": 798913581627952,
-									"parameters": {
-										"text": "lvl3_TextInput.Text & \"9\""
-									}
-								}
-							],
-							"sid": 172175144039416
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 281721067114208,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "lvl3_btn_delete"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 347974505716866,
-									"parameters": {
-										"variable": "bloqueado"
-									},
-									"isInverted": true
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 749326284928495,
-									"parameters": {
-										"first-value": "len(lvl3_TextInput.Text)",
-										"comparison": 4,
-										"second-value": "0"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_TextInput",
-									"sid": 984282462263316,
-									"parameters": {
-										"text": "left(lvl3_TextInput.Text, len(lvl3_TextInput.Text) - 1)"
-									}
-								}
-							],
-							"sid": 691662114101497
-						}
-					],
-					"sid": 631575263514764
-				},
-				{
-					"eventType": "comment",
-					"text": "VERIFICA SE A SENHA DIGITADA ESTÁ CORRETA"
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LVL3_VALIDAÇÃO",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 795778565235562,
+									"sid": 862760786606888,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
@@ -930,7 +160,7 @@
 								{
 									"id": "compare-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 816166072256886,
+									"sid": 286924877788456,
 									"parameters": {
 										"variable": "bloqueado"
 									},
@@ -939,11 +169,466 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 334100399461786,
+									"sid": 692619291030735,
 									"parameters": {
 										"first-value": "len(lvl3_TextInput.Text)",
 										"comparison": 0,
 										"second-value": "8"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 601310317923392,
+									"parameters": {
+										"variable": "etapa",
+										"comparison": 0,
+										"value": "2"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 387178434588492,
+									"parameters": {
+										"first-value": "lvl3_TextInput.Text",
+										"comparison": 0,
+										"second-value": "senha2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 644448085411815,
+									"parameters": {
+										"variable": "bloqueado",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 244417164826934,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 429314642545501,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 563879840669711,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 459797478921325,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 582798063184366,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "lvl3_TextInput",
+									"sid": 542991856405058,
+									"parameters": {
+										"mode": "disabled"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 874847297781476,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 323403973823387,
+									"parameters": [
+										"\"Segunda etapa concluída...\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 298155874511678,
+									"parameters": {
+										"seconds": "2.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 141176990844482,
+									"parameters": {
+										"variable": "etapa",
+										"value": "3"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lvl3_TextInput",
+									"sid": 755617832199326,
+									"parameters": {
+										"text": "\"\""
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "lvl3_TextInput",
+									"sid": 436552824089211,
+									"parameters": {
+										"mode": "enabled"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 645560244718906,
+									"parameters": {
+										"variable": "bloqueado",
+										"value": "false"
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 890927961885719,
+									"parameters": [
+										"\"Terceira etapa...\""
+									]
+								}
+							],
+							"sid": 540466674599110
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 128493968420775,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "lvl3_btn_enviar"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 134654945657630,
+									"parameters": {
+										"variable": "bloqueado"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 672575499770276,
+									"parameters": {
+										"first-value": "len(lvl3_TextInput.Text)",
+										"comparison": 0,
+										"second-value": "8"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 933935259295298,
+									"parameters": {
+										"variable": "etapa",
+										"comparison": 0,
+										"value": "3"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 832857255781613,
+									"parameters": {
+										"first-value": "lvl3_TextInput.Text",
+										"comparison": 0,
+										"second-value": "senha3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 914604512232705,
+									"parameters": {
+										"variable": "bloqueado",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 816654921412205,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 707479990281692,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 701400878478369,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 511093659579601,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 545382204945409,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 281462008566984,
+									"parameters": [
+										"\"Acesso ao servidor SRV-07 concedido...\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 865096782983585,
+									"parameters": {
+										"seconds": "3.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 125301633524355,
+									"parameters": [
+										"\"Bedroom\""
+									]
+								}
+							],
+							"sid": 959295428808502
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 488474530129230,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "lvl3_btn_enviar"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 424260514068893,
+									"parameters": {
+										"variable": "bloqueado"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 999630136432287,
+									"parameters": {
+										"first-value": "len(lvl3_TextInput.Text)",
+										"comparison": 0,
+										"second-value": "8"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 570478790564385,
+									"parameters": {
+										"variable": "etapa",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 371263670318715,
+									"parameters": {
+										"first-value": "lvl3_TextInput.Text",
+										"comparison": 1,
+										"second-value": "senha1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "lvl3_error",
+									"sid": 294713269438658
+								}
+							],
+							"sid": 205706028850090
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 887858933510954,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "lvl3_btn_enviar"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 943090434686468,
+									"parameters": {
+										"variable": "bloqueado"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 958840774172742,
+									"parameters": {
+										"first-value": "len(lvl3_TextInput.Text)",
+										"comparison": 0,
+										"second-value": "8"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 336883433679314,
+									"parameters": {
+										"variable": "etapa",
+										"comparison": 0,
+										"value": "2"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 372926015568239,
+									"parameters": {
+										"first-value": "lvl3_TextInput.Text",
+										"comparison": 1,
+										"second-value": "senha2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "lvl3_error",
+									"sid": 209413354599993
+								}
+							],
+							"sid": 505771240611164
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 839334736622851,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "lvl3_btn_enviar"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 671542011563680,
+									"parameters": {
+										"variable": "bloqueado"
+									},
+									"isInverted": true
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 486723228672778,
+									"parameters": {
+										"first-value": "len(lvl3_TextInput.Text)",
+										"comparison": 0,
+										"second-value": "8"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 714907755842264,
+									"parameters": {
+										"variable": "etapa",
+										"comparison": 0,
+										"value": "3"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 704888284525350,
+									"parameters": {
+										"first-value": "lvl3_TextInput.Text",
+										"comparison": 1,
+										"second-value": "senha3"
 									}
 								}
 							],
@@ -1471,339 +1156,14 @@
 										}
 									],
 									"sid": 604856425531490
+							"actions": [
+								{
+									"callFunction": "lvl3_error",
+									"sid": 214575055871735
 								}
 							]
+							],
+							"sid": 554681102179607
 						}
 					],
 					"sid": 415329837039726
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LVL3_INTERFERÊNCIA",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-x-seconds",
-									"objectClass": "System",
-									"sid": 511154613769329,
-									"parameters": {
-										"interval-seconds": "0.15"
-									}
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 359817769184710,
-									"parameters": {
-										"variable": "etapa",
-										"comparison": 0,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito1",
-									"sid": 607038361018038,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito2",
-									"sid": 157449347138046,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito3",
-									"sid": 173129462764582,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito4",
-									"sid": 162077022832170,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito5",
-									"sid": 136719851509152,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito6",
-									"sid": 835676844945780,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito7",
-									"sid": 957970500424256,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito8",
-									"sid": 351130802574177,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								}
-							],
-							"sid": 391631885205687
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-x-seconds",
-									"objectClass": "System",
-									"sid": 409196722653754,
-									"parameters": {
-										"interval-seconds": "0.05"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 107773523975582,
-									"parameters": {
-										"first-value": "etapa",
-										"comparison": 0,
-										"second-value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito1",
-									"sid": 255413664716533,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito2",
-									"sid": 660452327287836,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito3",
-									"sid": 266454877688436,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito4",
-									"sid": 645479462370061,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito5",
-									"sid": 406641094496321,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito6",
-									"sid": 753275963380698,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito7",
-									"sid": 531190470257796,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "lvl3_digito8",
-									"sid": 299400788776110,
-									"parameters": {
-										"text": "str(floor(random(10)))"
-									}
-								}
-							],
-							"sid": 473847561356318
-						}
-					],
-					"sid": 681213465668615
-				}
-			],
-			"sid": 196608034872867
-		},
-		{
-			"eventType": "comment",
-			"text": "ATUALIZA OS 8 DÍGITOS DO DISPLAY A CADA FRAME"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 117091779398379
-				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_digito1",
-					"sid": 392304215064756,
-					"parameters": {
-						"text": "mid(lvl3_TextInput.Text, 0, 1)"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_digito2",
-					"sid": 150479926486971,
-					"parameters": {
-						"text": "mid(lvl3_TextInput.Text, 1, 1)"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_digito3",
-					"sid": 918193350843221,
-					"parameters": {
-						"text": "mid(lvl3_TextInput.Text, 2, 1)"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_digito4",
-					"sid": 594346237440228,
-					"parameters": {
-						"text": "mid(lvl3_TextInput.Text, 3, 1)"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_digito5",
-					"sid": 549929372495004,
-					"parameters": {
-						"text": "mid(lvl3_TextInput.Text, 4, 1)"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_digito6",
-					"sid": 198503311891524,
-					"parameters": {
-						"text": "mid(lvl3_TextInput.Text, 5, 1)"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_digito7",
-					"sid": 337261920054399,
-					"parameters": {
-						"text": "mid(lvl3_TextInput.Text, 6, 1)"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_digito8",
-					"sid": 257609518298007,
-					"parameters": {
-						"text": "mid(lvl3_TextInput.Text, 7, 1)"
-					}
-				}
-			],
-			"sid": 425746580064862
-		},
-		{
-			"eventType": "comment",
-			"text": "SEQUÊNCIA ERRADA"
-		},
-		{
-			"bookmark": true,
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 837211054353140,
-					"parameters": {
-						"key": 70
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "lvl3_error",
-					"sid": 624622066672597
-				}
-			],
-			"sid": 155745083921846
-		},
-		{
-			"eventType": "comment",
-			"text": "FIM DA FASE"
-		},
-		{
-			"bookmark": true,
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 767580736712397,
-					"parameters": {
-						"key": 190
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "Transition",
-					"sid": 682057266974123,
-					"parameters": [
-						"\"Bedroom\""
-					]
-				}
-			],
-			"sid": 889144530678550
-		}
-	],
-	"sid": 192396727706831
-}
