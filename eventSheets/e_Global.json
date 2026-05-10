@@ -2,6 +2,7 @@
 	"name": "e_Global",
 	"events": [
 		{
+			"bookmark": true,
 			"eventType": "variable",
 			"name": "Cursor",
 			"type": "boolean",
@@ -61,9 +62,9 @@
 							}
 						},
 						{
-							"id": "trigger-once-while-true",
+							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 108434937387438
+							"sid": 387535424474200
 						}
 					],
 					"actions": [
@@ -105,9 +106,9 @@
 							"isInverted": true
 						},
 						{
-							"id": "trigger-once-while-true",
+							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 175545903325674
+							"sid": 290333959132716
 						}
 					],
 					"actions": [
@@ -161,6 +162,28 @@
 						}
 					],
 					"sid": 697396113005494
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 196333200007776
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 379681137265580,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						}
+					],
+					"sid": 172564992150078
 				},
 				{
 					"eventType": "comment",
