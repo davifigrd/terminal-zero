@@ -11,10 +11,6 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "O QUE FALTA FAZER:"
-		},
-		{
-			"eventType": "comment",
 			"text": "EXPLICAÇÃO DA FASE\n\nO jogador está invadindo o servidor SRV-07.\nA tela exibe 4 painéis com dados do servidor.\nA senha de 8 dígitos está escondida nos painéis:\n→ ACCESS LOG   → Tentativas: 42\n→ PWR LEVEL    → Capacidade: 97%\n→ ERR CODE     → Erros menores: 17\n→ ERR CODE     → Erros críticos: 03\n\nRESPOSTA: 42971703"
 		},
 		{
@@ -99,15 +95,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 231460121370762,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"default\""
-									}
-								},
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
@@ -359,17 +346,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 451623804707015,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"pointer\""
-									}
-								}
-							],
+							"actions": [],
 							"sid": 426039389420871,
 							"isOrBlock": true
 						},
@@ -382,17 +359,7 @@
 									"sid": 924750603387517
 								}
 							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 809024823141745,
-									"parameters": {
-										"variable": "cursor",
-										"value": "\"default\""
-									}
-								}
-							],
+							"actions": [],
 							"sid": 572259089266967
 						}
 					],
@@ -1784,6 +1751,7 @@
 			"sid": 196608034872867
 		},
 		{
+			"bookmark": true,
 			"eventType": "comment",
 			"text": "ATUALIZA OS 8 DÍGITOS DO DISPLAY A CADA FRAME"
 		},
@@ -1865,6 +1833,7 @@
 			"sid": 425746580064862
 		},
 		{
+			"bookmark": true,
 			"eventType": "comment",
 			"text": "SEQUÊNCIA ERRADA"
 		},
