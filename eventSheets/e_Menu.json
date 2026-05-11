@@ -19,9 +19,28 @@
 							"id": "on-start-of-layout",
 							"objectClass": "System",
 							"sid": 173688785022011
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 941842729693213,
+							"parameters": {
+								"variable": "layout",
+								"comparison": 1,
+								"value": "\"Loader\""
+							}
 						}
 					],
 					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 716667981727989,
+							"parameters": {
+								"variable": "Cursor",
+								"value": "true"
+							}
+						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
@@ -42,6 +61,69 @@
 						}
 					],
 					"sid": 994649201546090
+				},
+				{
+					"eventType": "comment",
+					"text": "Espera para aparecer o cursor se vier do layout Loader"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 753986617074837
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 110228080540471,
+							"parameters": {
+								"variable": "layout",
+								"comparison": 0,
+								"value": "\"Loader\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 704292680559946,
+							"parameters": {
+								"seconds": "5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 479461668425289,
+							"parameters": {
+								"variable": "Cursor",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 310410875086104,
+							"parameters": {
+								"variable": "layout",
+								"value": "\"Menu\""
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 670602914938036,
+							"parameters": {
+								"variable": "PlayerMoving",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 880180031627069
 				}
 			],
 			"sid": 188182124183528,

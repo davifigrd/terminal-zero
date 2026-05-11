@@ -35,6 +35,15 @@
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
+							"sid": 165544295152926,
+							"parameters": {
+								"variable": "Cursor",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
 							"sid": 619455730353783,
 							"parameters": {
 								"variable": "PlayerMoving",
@@ -77,6 +86,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 753966778150959,
+							"parameters": {
+								"variable": "Cursor",
+								"value": "true"
+							}
+						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
@@ -516,6 +534,24 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
+									"sid": 858563337802581,
+									"parameters": {
+										"layer": "\"cursor\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 162966536684000,
+									"parameters": {
+										"variable": "Cursor",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
 									"sid": 657845839580623,
 									"parameters": {
 										"layer": "\"save\"",
@@ -614,6 +650,10 @@
 								}
 							],
 							"sid": 748548078749920
+						},
+						{
+							"eventType": "comment",
+							"text": "OU"
 						},
 						{
 							"eventType": "block",
@@ -863,6 +903,10 @@
 							"sid": 974842487845033
 						},
 						{
+							"eventType": "comment",
+							"text": "OU"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -930,7 +974,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Camada sign desativa quando abre a tela de choosing ou enquanto está em transition"
+					"text": "Camada das placas desativa quando abre a tela de escolha"
 				},
 				{
 					"eventType": "block",
@@ -950,15 +994,18 @@
 							"parameters": {
 								"layer": "\"menu\""
 							}
-						},
-						{
-							"id": "is-any-playing",
-							"objectClass": "fade",
-							"sid": 483625449722367,
-							"behaviorType": "Tween"
 						}
 					],
 					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 317813554455560,
+							"parameters": {
+								"layer": "\"cursor\"",
+								"visibility": "visible"
+							}
+						},
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
@@ -971,7 +1018,7 @@
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 172457576784659,
+							"sid": 682557084874416,
 							"parameters": {
 								"variable": "Cursor",
 								"value": "true"
@@ -987,30 +1034,30 @@
 						{
 							"id": "else",
 							"objectClass": "System",
-							"sid": 960650390083497
+							"sid": 510839163284814
 						}
 					],
 					"actions": [
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 560526362064550,
+							"sid": 452866069403503,
 							"parameters": {
 								"layer": "\"sign\"",
 								"visibility": "visible"
 							}
 						},
 						{
-							"id": "set-boolean-eventvar",
+							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 797885691084612,
+							"sid": 866055064571210,
 							"parameters": {
-								"variable": "Cursor",
-								"value": "false"
+								"layer": "\"cursor\"",
+								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 968402710345287
+					"sid": 496535882105845
 				},
 				{
 					"eventType": "comment",
@@ -1036,14 +1083,6 @@
 							"parameters": {
 								"frame-number": "0"
 							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "cursor",
-							"sid": 416522623730895,
-							"parameters": {
-								"frame-number": "1"
-							}
 						}
 					],
 					"sid": 163798814374966
@@ -1064,14 +1103,6 @@
 							"sid": 663526280727300,
 							"parameters": {
 								"frame-number": "1"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "cursor",
-							"sid": 841761972346208,
-							"parameters": {
-								"frame-number": "0"
 							}
 						}
 					],
@@ -1101,14 +1132,6 @@
 							"parameters": {
 								"frame-number": "0"
 							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "cursor",
-							"sid": 395509464568458,
-							"parameters": {
-								"frame-number": "1"
-							}
 						}
 					],
 					"sid": 230211164948430,
@@ -1130,14 +1153,6 @@
 							"sid": 444157934639335,
 							"parameters": {
 								"frame-number": "1"
-							}
-						},
-						{
-							"id": "set-animation-frame",
-							"objectClass": "cursor",
-							"sid": 415691829613208,
-							"parameters": {
-								"frame-number": "0"
 							}
 						}
 					],
