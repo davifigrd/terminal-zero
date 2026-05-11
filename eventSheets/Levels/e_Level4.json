@@ -2,275 +2,43 @@
 	"name": "e_Level4",
 	"events": [
 		{
-			"eventType": "include",
-			"includeSheet": "e_Global"
+			"eventType": "variable",
+			"name": "Ordem",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 349975850536788
+		},
+		{
+			"eventType": "variable",
+			"name": "PodeClicar",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 594966253582066
+		},
+		{
+			"eventType": "variable",
+			"name": "Clique",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 237706680171772
 		},
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "LVL4_variáveis",
+			"title": "Local",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "variable",
-					"name": "OrdemClique",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "",
-					"isStatic": false,
-					"isConstant": false,
-					"sid": 687520499117626
-				}
-			],
-			"sid": 760255771028129
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 372114444699402,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "lvl4_azul_baixo"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-opacity",
-					"objectClass": "lvl4_azul_baixo",
-					"sid": 682480883045049,
-					"parameters": {
-						"opacity": "50"
-					}
-				}
-			],
-			"sid": 997825090245248
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 990097240196313,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "lvl4_vermelho_baixo"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-opacity",
-					"objectClass": "lvl4_vermelho_baixo",
-					"sid": 993092404049473,
-					"parameters": {
-						"opacity": "50"
-					}
-				}
-			],
-			"sid": 173324528466379
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 706338727004566,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "lvl4_amarelo_baixo"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-opacity",
-					"objectClass": "lvl4_amarelo_baixo",
-					"sid": 250697219927430,
-					"parameters": {
-						"opacity": "50"
-					}
-				}
-			],
-			"sid": 212081653294887
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 996920462702217,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "lvl4_verde_baixo"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-opacity",
-					"objectClass": "lvl4_verde_baixo",
-					"sid": 989840185048561,
-					"parameters": {
-						"opacity": "50"
-					}
-				}
-			],
-			"sid": 234751172075292
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 905173354085287,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "lvl4_rosa_baixo"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-opacity",
-					"objectClass": "lvl4_rosa_baixo",
-					"sid": 549715313786952,
-					"parameters": {
-						"opacity": "50"
-					}
-				}
-			],
-			"sid": 872677346627543
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 144828661529277,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "lvl4_ciano_baixo"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-opacity",
-					"objectClass": "lvl4_ciano_baixo",
-					"sid": 235277141527937,
-					"parameters": {
-						"opacity": "50"
-					}
-				}
-			],
-			"sid": 310175182511095
-		},
-		{
-			"eventType": "block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Correto",
-					"sid": 509982362947179,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 504840657576544
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 583512020916678
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Errado",
-					"sid": 445429068052573,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 252710290050997,
-			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Errado",
-					"sid": 698537882045175,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 626383337895399
-		},
-		{
-			"functionName": "Funcao1",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 754613386318478,
-					"parameters": {
-						"seconds": "2.0",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Certo",
-					"sid": 467680742932183,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Erro",
-					"sid": 235520840917908,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 762839907778239
+			"children": [],
+			"sid": 107354697726817
 		},
 		{
 			"eventType": "block",
@@ -278,15 +46,41 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 911775238942114
+					"sid": 657492331255607
 				}
 			],
 			"actions": [
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 937665652366122,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 770162954917528,
+					"parameters": {
+						"variable": "Ordem",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 254828619316404,
+					"parameters": {
+						"variable": "Clique",
+						"value": "0"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 154432021606201,
-					"disabled": true,
+					"sid": 569487680930083,
 					"parameters": {
 						"seconds": "3.0",
 						"use-timescale": true
@@ -295,8 +89,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_azul",
-					"sid": 301030600065272,
-					"disabled": true,
+					"sid": 826144838705053,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -304,8 +97,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_vermelho",
-					"sid": 307297318164236,
-					"disabled": true,
+					"sid": 393457588114544,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -313,8 +105,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_amarelo",
-					"sid": 105080680506577,
-					"disabled": true,
+					"sid": 448937977872957,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -322,8 +113,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_verde",
-					"sid": 945368954497737,
-					"disabled": true,
+					"sid": 887864799346747,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -331,8 +121,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_rosa",
-					"sid": 144161270974110,
-					"disabled": true,
+					"sid": 587194185380243,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -340,8 +129,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_ciano",
-					"sid": 933129312778571,
-					"disabled": true,
+					"sid": 355504664021726,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -349,8 +137,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_azul_baixo",
-					"sid": 650779509495781,
-					"disabled": true,
+					"sid": 501906033615225,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -358,8 +145,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_vermelho_baixo",
-					"sid": 466339131015914,
-					"disabled": true,
+					"sid": 688472535786484,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -367,8 +153,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_amarelo_baixo",
-					"sid": 615616715668122,
-					"disabled": true,
+					"sid": 219050336830803,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -376,8 +161,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_verde_baixo",
-					"sid": 516004727445289,
-					"disabled": true,
+					"sid": 837508091539790,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -385,8 +169,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_rosa_baixo",
-					"sid": 409192731989163,
-					"disabled": true,
+					"sid": 656767062114205,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -394,156 +177,549 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_ciano_baixo",
-					"sid": 804584153737866,
-					"disabled": true,
+					"sid": 655224721231917,
 					"parameters": {
 						"visibility": "visible"
 					}
 				},
 				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Certo",
-					"sid": 935034120437185,
-					"disabled": true,
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 167428728277851,
 					"parameters": {
-						"visibility": "invisible"
+						"variable": "PodeClicar",
+						"value": "1"
 					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Erro",
-					"sid": 957558182463364,
-					"disabled": true,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"callFunction": "Funcao1",
-					"sid": 102399404689761
 				}
 			],
-			"sid": 600105239225456
+			"sid": 541555206155291
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-visible",
-					"objectClass": "lvl4_Errado",
-					"sid": 780031737362254
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 414444057604128,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "lvl4_azul_baixo"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 135086903577227,
+					"parameters": {
+						"variable": "PodeClicar",
+						"comparison": 0,
+						"value": "1"
+					}
 				}
 			],
 			"actions": [
 				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_azul_baixo",
+					"sid": 342555313459591,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 106199208540790,
+					"parameters": {
+						"variable": "Ordem",
+						"value": "\"1\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 420175167002219,
+					"parameters": {
+						"variable": "Clique",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 448901927759758
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 275669908781868,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "lvl4_vermelho_baixo"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 272954176538315,
+					"parameters": {
+						"variable": "PodeClicar",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_vermelho_baixo",
+					"sid": 372893965621697,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 393098785583281,
+					"parameters": {
+						"variable": "Ordem",
+						"value": "\"2\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 822016863338983,
+					"parameters": {
+						"variable": "Clique",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 849999731525022
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 693104295097681,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "lvl4_amarelo_baixo"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 333721549349991,
+					"parameters": {
+						"variable": "PodeClicar",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_amarelo_baixo",
+					"sid": 661326493143873,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 156041431990466,
+					"parameters": {
+						"variable": "Ordem",
+						"value": "\"3\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 160556742354382,
+					"parameters": {
+						"variable": "Clique",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 149943843914840
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 487466685553983,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "lvl4_verde_baixo"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 542646478813881,
+					"parameters": {
+						"variable": "PodeClicar",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_verde_baixo",
+					"sid": 901560608862302,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 715029332714202,
+					"parameters": {
+						"variable": "Ordem",
+						"value": "\"4\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 998655184209801,
+					"parameters": {
+						"variable": "Clique",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 874653473646798
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 898203331168208,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "lvl4_rosa_baixo"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 874746000561909,
+					"parameters": {
+						"variable": "PodeClicar",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_rosa_baixo",
+					"sid": 846638669607358,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 978325904923046,
+					"parameters": {
+						"variable": "Ordem",
+						"value": "\"5\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 574540381198663,
+					"parameters": {
+						"variable": "Clique",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 861606451080990
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 808783020831260,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "lvl4_ciano_baixo"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 809160301162083,
+					"parameters": {
+						"variable": "PodeClicar",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_ciano_baixo",
+					"sid": 748645882426905,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 719926225493525,
+					"parameters": {
+						"variable": "Ordem",
+						"value": "\"6\""
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 936600323111551,
+					"parameters": {
+						"variable": "Clique",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 242381394669791
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 801533254647045,
+					"parameters": {
+						"variable": "Clique",
+						"comparison": 0,
+						"value": "6"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 248187402622799,
+					"parameters": {
+						"variable": "Ordem",
+						"comparison": 0,
+						"value": "\"123456\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Correto",
+					"sid": 769048761120016,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 832225623488843,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 585895357954406
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 780596304983728,
+					"parameters": {
+						"variable": "Clique",
+						"comparison": 0,
+						"value": "6"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 869952000568696,
+					"parameters": {
+						"variable": "Ordem",
+						"comparison": 1,
+						"value": "\"123456\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Errado",
+					"sid": 812081444250435,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 289774273238515,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "0"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 700180795075082,
+					"sid": 697082277010694,
 					"parameters": {
 						"seconds": "2.0",
 						"use-timescale": true
 					}
 				},
 				{
-					"callFunction": "Funcao2",
-					"sid": 739680462586996
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Errado",
-					"sid": 316107978301890,
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 230580699689583,
 					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 219323629459611
-		},
-		{
-			"functionName": "Funcao2",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Errado",
-					"sid": 732146092714181,
-					"parameters": {
-						"visibility": "invisible"
+						"variable": "Ordem",
+						"value": "\"\""
 					}
 				},
 				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Certo",
-					"sid": 970697073068726,
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 451425091339132,
 					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Erro",
-					"sid": 154876988417385,
-					"parameters": {
-						"visibility": "invisible"
+						"variable": "Clique",
+						"value": "0"
 					}
 				},
 				{
 					"id": "set-opacity",
-					"objectClass": "lvl4_Erro",
-					"sid": 289506351900711,
+					"objectClass": "lvl4_azul_baixo",
+					"sid": 819440911042629,
 					"parameters": {
 						"opacity": "100"
 					}
 				},
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 503968901473378,
+					"id": "set-opacity",
+					"objectClass": "lvl4_vermelho_baixo",
+					"sid": 356573773906390,
 					"parameters": {
-						"seconds": "1.0",
-						"use-timescale": true
+						"opacity": "100"
 					}
 				},
 				{
-					"callFunction": "Funcao1",
-					"sid": 982579590156610
+					"id": "set-opacity",
+					"objectClass": "lvl4_amarelo_baixo",
+					"sid": 474614180851314,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_verde_baixo",
+					"sid": 422939195380387,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_rosa_baixo",
+					"sid": 933021386557722,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_ciano_baixo",
+					"sid": 778613440177575,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Errado",
+					"sid": 172868780481153,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 753631387423971,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "1"
+					}
 				}
 			],
-			"sid": 887734034790550
+			"sid": 630048583833847
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "is-visible",
-					"objectClass": "lvl4_Correto",
-					"sid": 591482587785080
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 357367015148894
 				}
 			],
 			"actions": [
 				{
-					"id": "destroy",
-					"objectClass": "lvl4_Erro",
-					"sid": 784613829811269
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 279503082340751,
+					"id": "set-cursor-from-sprite",
+					"objectClass": "Mouse",
+					"sid": 345218242663077,
 					"parameters": {
-						"seconds": "2.0",
-						"use-timescale": true
+						"sprite": "cursor"
 					}
 				}
 			],
-			"sid": 363996294957656
+			"sid": 403106156287862
 		}
 	],
 	"sid": 986251233977125
