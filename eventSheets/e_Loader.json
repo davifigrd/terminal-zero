@@ -208,7 +208,6 @@
 			"text": "Pula loader"
 		},
 		{
-			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{
@@ -227,12 +226,11 @@
 					"sid": 967914275398889
 				},
 				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 380569020018599,
-					"parameters": {
-						"layout": "Menu"
-					}
+					"callFunction": "Transition",
+					"sid": 509063377173388,
+					"parameters": [
+						"\"Menu\""
+					]
 				}
 			],
 			"sid": 426589588062843
