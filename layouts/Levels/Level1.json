@@ -583,41 +583,6 @@
 			"global": false
 		},
 		{
-			"name": "cursor",
-			"overriden": 1,
-			"subLayers": [],
-			"instances": [],
-			"sid": 100013071486926,
-			"effectTypes": [],
-			"isInitiallyVisible": true,
-			"isInitiallyInteractive": true,
-			"isHTMLElementsLayer": false,
-			"color": [
-				1,
-				1,
-				1,
-				1
-			],
-			"backgroundColor": [
-				0.3686274509803922,
-				0.3686274509803922,
-				0.3686274509803922,
-				1
-			],
-			"isTransparent": true,
-			"sampling": "auto",
-			"parallaxX": 1,
-			"parallaxY": 1,
-			"scaleRate": 1,
-			"forceOwnTexture": false,
-			"renderingMode": "3d",
-			"drawOrder": "z-order",
-			"useRenderCells": false,
-			"blendMode": "normal",
-			"zElevation": 0,
-			"global": false
-		},
-		{
 			"name": "TypingEffect",
 			"overriden": 0,
 			"subLayers": [],
@@ -683,6 +648,41 @@
 				}
 			],
 			"sid": 607206286622636,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "cursor",
+			"overriden": 1,
+			"subLayers": [],
+			"instances": [],
+			"sid": 100013071486926,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -845,7 +845,13 @@
 			"uid": 97,
 			"sid": 490234586409523,
 			"tags": "",
-			"instanceVariables": {}
+			"instanceVariables": {
+				"array_line": 0,
+				"idle_timer": 0,
+				"InputBlock": false,
+				"step_show": 0,
+				"step_player": 0
+			}
 		}
 	],
 	"effectTypes": [],

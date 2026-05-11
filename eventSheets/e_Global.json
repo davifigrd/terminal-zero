@@ -3,16 +3,6 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "Cursor",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "Estado de ativação",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 920746513699380
-		},
-		{
-			"eventType": "variable",
 			"name": "PlayerMoving",
 			"type": "boolean",
 			"initialValue": "false",
@@ -35,7 +25,7 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "MOUSE",
-			"description": "",
+			"description": "Cursor personalizado",
 			"isActiveOnStart": true,
 			"children": [
 				{
@@ -51,7 +41,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Cursor ativado"
+					"text": "Cursor arrow"
 				},
 				{
 					"eventType": "block",
@@ -59,178 +49,102 @@
 						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 546958261442135
+							"sid": 849322163570679
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 346531335081668,
+							"parameters": {
+								"variable": "layout",
+								"comparison": 1,
+								"value": "\"PC\""
+							}
 						}
 					],
-					"actions": [],
-					"sid": 464291767879934,
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 390004775282395,
+							"parameters": {
+								"x": "Mouse.X",
+								"y": "Mouse.Y"
+							}
+						},
+						{
+							"id": "set-animation",
+							"objectClass": "cursor",
+							"sid": 787992898426424,
+							"parameters": {
+								"animation": "\"arrow\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 774289897978606,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "Cursor pointer"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 496374647271380,
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 733494152239419,
 									"parameters": {
-										"variable": "Cursor"
+										"object": "Clickable"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 383291061524234,
+									"id": "set-animation",
+									"objectClass": "cursor",
+									"sid": 945395762520330,
 									"parameters": {
-										"layer": "\"cursor\"",
-										"visibility": "visible"
+										"animation": "\"pointer\"",
+										"from": "current-frame"
 									}
 								}
 							],
-							"sid": 996639483635313,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "Cursor dentro do pc"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 435921327661793,
-											"parameters": {
-												"variable": "layout",
-												"comparison": 0,
-												"value": "\"PC\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position",
-											"objectClass": "cursor",
-											"sid": 479517160597980,
-											"parameters": {
-												"x": "clamp(Mouse.X, screen.BBoxLeft, screen.BBoxRight)",
-												"y": "clamp(Mouse.Y, screen.BBoxTop, screen.BBoxBottom)"
-											}
-										}
-									],
-									"sid": 415082207002570
-								},
-								{
-									"eventType": "comment",
-									"text": "Cursor segue o mouse"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 986394022987855
-										}
-									],
-									"actions": [
-										{
-											"id": "set-position",
-											"objectClass": "cursor",
-											"sid": 417353310257182,
-											"parameters": {
-												"x": "Mouse.X",
-												"y": "Mouse.Y"
-											}
-										}
-									],
-									"sid": 921484724541448
-								},
-								{
-									"eventType": "comment",
-									"text": "Cursor pointer"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 673167954017637,
-											"parameters": {
-												"object": "Clickable"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-animation",
-											"objectClass": "cursor",
-											"sid": 211537630391289,
-											"parameters": {
-												"animation": "\"pointer\"",
-												"from": "current-frame"
-											}
-										}
-									],
-									"sid": 601767216890153
-								},
-								{
-									"eventType": "comment",
-									"text": "Cursor arrow"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 998145009497171
-										}
-									],
-									"actions": [
-										{
-											"id": "set-animation",
-											"objectClass": "cursor",
-											"sid": 128044308977828,
-											"parameters": {
-												"animation": "\"arrow\"",
-												"from": "current-frame"
-											}
-										}
-									],
-									"sid": 551024925232305
-								}
-							]
+							"sid": 120902172144756
 						}
 					]
 				},
 				{
 					"eventType": "comment",
-					"text": "Cursor desativado"
+					"text": "Cursor no layout PC"
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "else",
+							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 130433712285690
+							"sid": 315010210436840,
+							"parameters": {
+								"variable": "layout",
+								"comparison": 0,
+								"value": "\"PC\""
+							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 982513048500033,
+							"id": "set-position",
+							"objectClass": "cursor",
+							"sid": 232802964866045,
 							"parameters": {
-								"layer": "\"cursor\"",
-								"visibility": "invisible"
+								"x": "clamp(Mouse.X, screen.BBoxLeft, screen.BBoxRight)",
+								"y": "clamp(Mouse.Y, screen.BBoxTop, screen.BBoxBottom)"
 							}
 						}
 					],
-					"sid": 937692244692298
+					"sid": 545744676501323
 				}
 			],
 			"sid": 188836488104335,
@@ -251,7 +165,7 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "TRANSITION",
-			"description": "",
+			"description": "Transição entre layouts",
 			"isActiveOnStart": true,
 			"children": [
 				{
@@ -394,12 +308,12 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "TYPING EFFECT",
-			"description": "",
+			"description": "Efeito de \"digitando...\"",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "===   TyppingEffect instance variables   ===\n\nchar_count = 0 → contador de caracteres da frase\n\nunderLine = \"_\" → caractere visual do cursor\n\nmode = 3\n0 → escreve\n1 → espera\n2 → apaga\n3 → desativado\n\nanyText = \"\" → guarda a frase que a função enviou\n\nShowCursor = true\ntrue → mostra underline\nfalse → apaga underline"
+					"text": "===   VARIÁVEIS DE INSTÂNCIA ===\n\nchar_count = 0 → contador de caracteres da frase\n\nunderLine = \"_\" → caractere visual do cursor\n\nmode = 3\n0 → escreve\n1 → espera\n2 → apaga\n3 → desativado\n\nanyText = \"\" → guarda a frase que a função enviou\n\nShowCursor = true\ntrue → mostra underline\nfalse → apaga underline"
 				},
 				{
 					"eventType": "comment",
@@ -767,7 +681,7 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "LEVEL_SKIP",
-			"description": "",
+			"description": "Tecla de atalho para pular níveis",
 			"isActiveOnStart": true,
 			"children": [
 				{
@@ -800,14 +714,10 @@
 					"sid": 873084214706889
 				},
 				{
-					"eventType": "comment",
-					"text": "\"NumLock 1\" → fase 1 \"NumLock 2\" → fase 2 \"NumLock 3\" → fase 3 \"NumLock 4\" → fase 4 \"NumLock 5\" → fase 5\n\"NumLock 6\" → fase 6 \"NumLock 7\" → fase 7 \"NumLock 8\" → fase 8 \"NumLock 9\" → fase 9 \"NumLock 0\" → fase 10"
-				},
-				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "LEVEL_SKIP_SHORTCUT",
-					"description": "",
+					"description": "'NumLock\" + (número da fase)",
 					"isActiveOnStart": true,
 					"children": [
 						{
@@ -1004,16 +914,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 410984988595605,
-									"parameters": {
-										"layout": "Menu"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 811608336446792
 						},
 						{
@@ -1032,16 +933,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 209438662116936,
-									"parameters": {
-										"layout": "Bedroom"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 561372640659962
 						},
 						{
@@ -1060,16 +952,7 @@
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 219917501075446,
-									"parameters": {
-										"layout": "PC"
-									}
-								}
-							],
+							"actions": [],
 							"sid": 608432651818890
 						}
 					],
@@ -1106,12 +989,12 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "RESET",
-			"description": "",
+			"description": "Restaura o arquivo local",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "Reseta tutorial WASD (Bedroom)"
+					"text": "Tutorial WASD no layout Bedroom"
 				},
 				{
 					"eventType": "block",
