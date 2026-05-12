@@ -10,62 +10,62 @@
 			"includeSheet": "e_Global"
 		},
 		{
+			"eventType": "variable",
+			"name": "lvl1_array_line",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Linha atual do array",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 447855353479868
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl1_idle_timer",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Cronometro de inatividade",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 584811965786773
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl1_InputBlock",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "Trava de click",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 646529926390184
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl1_step_show",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Quantidade de sinais exibidos",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 433898321150200
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl1_step_player",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "Progresso do jogador",
+			"isStatic": true,
+			"isConstant": false,
+			"sid": 715543655350988
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "LEVEL1_VARIABLES",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "variable",
-					"name": "array_line",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "Linha atual do array",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 357281441565548
-				},
-				{
-					"eventType": "variable",
-					"name": "idle_timer",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "Cronometro de inatividade",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 346011732556737
-				},
-				{
-					"eventType": "variable",
-					"name": "InputBlock",
-					"type": "boolean",
-					"initialValue": "true",
-					"comment": "Trava de click",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 783445803922716
-				},
-				{
-					"eventType": "variable",
-					"name": "step_show",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "Quantidade de sinais exibidos",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 110801970266907
-				},
-				{
-					"eventType": "variable",
-					"name": "step_player",
-					"type": "number",
-					"initialValue": "0",
-					"comment": "Progresso do jogador",
-					"isStatic": true,
-					"isConstant": false,
-					"sid": 325847370119190
-				},
 				{
 					"eventType": "group",
 					"disabled": false,
@@ -111,6 +111,32 @@
 									}
 								},
 								{
+									"id": "clear",
+									"objectClass": "lvl1_array",
+									"sid": 224995603675623,
+									"parameters": {
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "lvl1_array",
+									"sid": 557678878128532,
+									"parameters": {
+										"width": "8",
+										"height": "3",
+										"depth": "1"
+									}
+								},
+								{
+									"id": "load",
+									"objectClass": "lvl1_array",
+									"sid": 383173150660112,
+									"parameters": {
+										"json": "\"{\"\"c2array\"\":true,\"\"size\"\":[8,3,1],\"\"data\"\":[[[0],[3],[1]],[[3],[0],[1]],[[1],[2],[2]],[[2],[3],[0]],[[0],[1],[3]],[[0],[0],[2]],[[0],[0],[1]],[[0],[0],[0]]]}\""
+									}
+								},
+								{
 									"id": "request-project-file",
 									"objectClass": "AJAX",
 									"sid": 193507826721538,
@@ -142,14 +168,6 @@
 							],
 							"actions": [
 								{
-									"id": "load",
-									"objectClass": "lvl1_array",
-									"sid": 600169133946714,
-									"parameters": {
-										"json": "AJAX.LastData"
-									}
-								},
-								{
 									"callFunction": "TypingEffect",
 									"sid": 287950007929023,
 									"parameters": [
@@ -170,7 +188,7 @@
 									"objectClass": "System",
 									"sid": 136719763488028,
 									"parameters": {
-										"variable": "step_show",
+										"variable": "lvl1_step_show",
 										"value": "1"
 									}
 								},
@@ -225,7 +243,7 @@
 									"objectClass": "System",
 									"sid": 885157502738063,
 									"parameters": {
-										"variable": "InputBlock"
+										"variable": "lvl1_InputBlock"
 									},
 									"isInverted": true
 								}
@@ -253,21 +271,30 @@
 									"objectClass": "System",
 									"sid": 214290135126839,
 									"parameters": {
-										"layer": "lvl1_Modules.name",
+										"layer": "lvl1_Modules.layer",
 										"visibility": "visible"
 									}
 								},
 								{
 									"id": "play-by-name",
 									"objectClass": "Audio",
-									"sid": 748658298495902,
+									"sid": 559892596682037,
 									"parameters": {
 										"folder": "sounds",
 										"audio-file-name": "\"lvl1_\" & lvl1_Modules.ID",
 										"loop": "not-looping",
 										"volume": "0",
 										"stereo-pan": "0",
-										"tag-optional": "lvl1_Modules.name"
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 336382857042646,
+									"parameters": {
+										"seconds": "0.2",
+										"use-timescale": true
 									}
 								},
 								{
@@ -275,17 +302,17 @@
 									"objectClass": "System",
 									"sid": 109363017747874,
 									"parameters": {
-										"layer": "lvl1_Modules.name",
+										"layer": "lvl1_Modules.layer",
 										"visibility": "invisible"
 									}
 								},
 								{
-									"id": "wait",
+									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 132856328956019,
+									"sid": 669139057865503,
 									"parameters": {
-										"seconds": "0.2",
-										"use-timescale": true
+										"variable": "lvl1_idle_timer",
+										"value": "0"
 									}
 								}
 							],
@@ -303,7 +330,7 @@
 											"objectClass": "System",
 											"sid": 324552320390949,
 											"parameters": {
-												"first-value": "lvl1_array.At(step_player, array_line)",
+												"first-value": "lvl1_array.At(lvl1_step_player, lvl1_array_line)",
 												"comparison": 0,
 												"second-value": "lvl1_Modules.ID"
 											}
@@ -315,7 +342,7 @@
 											"objectClass": "System",
 											"sid": 299111251441490,
 											"parameters": {
-												"variable": "step_player",
+												"variable": "lvl1_step_player",
 												"value": "1"
 											}
 										}
@@ -334,9 +361,9 @@
 													"objectClass": "System",
 													"sid": 867872395229829,
 													"parameters": {
-														"variable": "step_player",
+														"variable": "lvl1_step_player",
 														"comparison": 0,
-														"value": "step_show"
+														"value": "lvl1_step_show"
 													}
 												}
 											],
@@ -387,31 +414,66 @@
 									"parameters": {
 										"interval-seconds": "1"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 770205063885026,
+									"parameters": {
+										"variable": "lvl1_InputBlock"
+									},
+									"isInverted": true
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 994427556746189,
+									"parameters": {
+										"variable": "lvl1_idle_timer",
+										"value": "1"
+									}
+								}
+							],
 							"sid": 170996636095694,
 							"children": [
 								{
 									"eventType": "comment",
-									"text": "Reinicia cronômetro (idle_timer)"
+									"text": "Reinicia cronômetro de inatividade (idle_timer) "
 								},
 								{
 									"eventType": "block",
-									"conditions": [],
-									"actions": [
+									"conditions": [
 										{
-											"callFunction": "lvl1_showSequence",
-											"sid": 117639892636774
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 103644808956408,
+											"parameters": {
+												"variable": "lvl1_idle_timer",
+												"comparison": 5,
+												"value": "5"
+											}
 										}
 									],
-									"sid": 452344662603309
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 283755400292761,
+											"parameters": {
+												"variable": "lvl1_idle_timer",
+												"value": "0"
+											}
+										},
+										{
+											"callFunction": "lvl1_showSequence",
+											"sid": 317806321273758
+										}
+									],
+									"sid": 394832182913376
 								}
 							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Cronômetro de inatividade (idle_timer)"
 						}
 					],
 					"sid": 740006749880338,
@@ -436,6 +498,26 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 629113468020616,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "lvl1_showSequence",
+									"sid": 347083482948052
+								}
+							],
+							"sid": 273785646215806
+						},
+						{
 							"eventType": "comment",
 							"text": "Exibir sequencia"
 						},
@@ -455,7 +537,7 @@
 									"objectClass": "System",
 									"sid": 638989817483517,
 									"parameters": {
-										"variable": "InputBlock",
+										"variable": "lvl1_InputBlock",
 										"value": "true"
 									}
 								},
@@ -464,23 +546,13 @@
 									"objectClass": "System",
 									"sid": 243689453841519,
 									"parameters": {
-										"variable": "step_player",
+										"variable": "lvl1_step_player",
 										"value": "0"
 									}
 								}
 							],
 							"sid": 742049697879496,
 							"children": [
-								{
-									"eventType": "variable",
-									"name": "current_val",
-									"type": "number",
-									"initialValue": "0",
-									"comment": "Valor atual do botão",
-									"isStatic": false,
-									"isConstant": false,
-									"sid": 729393265396618
-								},
 								{
 									"eventType": "block",
 									"conditions": [
@@ -491,24 +563,15 @@
 											"parameters": {
 												"name": "\"seq\"",
 												"start-index": "0",
-												"end-index": "step_show - 1"
+												"end-index": "lvl1_step_show - 1"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 869234641082133,
-											"parameters": {
-												"variable": "current_val",
-												"value": "lvl1_array.At(LoopIndex(\"seq\"), array_line)"
-											}
-										},
-										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 237904254393916,
+											"sid": 906839140693478,
 											"parameters": {
 												"seconds": "loopindex(\"seq\") * 1.2",
 												"use-timescale": true
@@ -519,66 +582,98 @@
 									"children": [
 										{
 											"eventType": "comment",
-											"text": "Identificar o módulo selecionado"
+											"text": "Correlaciona o \"current_ID\" com o valor do array"
+										},
+										{
+											"eventType": "variable",
+											"name": "current_ID",
+											"type": "number",
+											"initialValue": "0",
+											"comment": "Valor atual do módulo",
+											"isStatic": false,
+											"isConstant": false,
+											"sid": 398606247223208
 										},
 										{
 											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-comparison",
-													"objectClass": "System",
-													"sid": 734552933614101,
-													"parameters": {
-														"object": "lvl1_Modules",
-														"expression": "lvl1_Modules.ID",
-														"comparison": 0,
-														"value": "current_val"
-													}
-												}
-											],
+											"conditions": [],
 											"actions": [
 												{
-													"id": "set-layer-visible",
+													"id": "set-eventvar-value",
 													"objectClass": "System",
-													"sid": 721094385607989,
+													"sid": 200039441539310,
 													"parameters": {
-														"layer": "lvl1_Modules.name",
-														"visibility": "visible"
-													}
-												},
-												{
-													"id": "play-by-name",
-													"objectClass": "Audio",
-													"sid": 585497699563336,
-													"parameters": {
-														"folder": "sounds",
-														"audio-file-name": "\"lvl1_\" & lvl1_Modules.ID",
-														"loop": "not-looping",
-														"volume": "0",
-														"stereo-pan": "0",
-														"tag-optional": "lvl1_Modules.name"
-													}
-												},
-												{
-													"id": "wait",
-													"objectClass": "System",
-													"sid": 616385518684843,
-													"parameters": {
-														"seconds": "0.7",
-														"use-timescale": true
-													}
-												},
-												{
-													"id": "set-layer-visible",
-													"objectClass": "System",
-													"sid": 892697347772620,
-													"parameters": {
-														"layer": "lvl1_Modules.name",
-														"visibility": "invisible"
+														"variable": "current_ID",
+														"value": "lvl1_array.At(LoopIndex(\"seq\"), lvl1_array_line)"
 													}
 												}
 											],
-											"sid": 300035800350324
+											"sid": 157235534346799,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "Identificar o módulo selecionado"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "pick-by-comparison",
+															"objectClass": "System",
+															"sid": 488275061112273,
+															"parameters": {
+																"object": "lvl1_Modules",
+																"expression": "lvl1_Modules.ID",
+																"comparison": 0,
+																"value": "current_ID"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "set-layer-visible",
+															"objectClass": "System",
+															"sid": 881819175479818,
+															"parameters": {
+																"layer": "lvl1_Modules.layer",
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 775899176779397,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"lvl1_\" & lvl1_Modules.ID",
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "lvl1_Modules.layer"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 249182619342528,
+															"parameters": {
+																"seconds": "0.7",
+																"use-timescale": true
+															}
+														},
+														{
+															"id": "set-layer-visible",
+															"objectClass": "System",
+															"sid": 572376438456301,
+															"parameters": {
+																"layer": "lvl1_Modules.layer",
+																"visibility": "invisible"
+															}
+														}
+													],
+													"sid": 513985590668588
+												}
+											]
 										}
 									]
 								},
@@ -595,7 +690,7 @@
 											"objectClass": "System",
 											"sid": 393543110030595,
 											"parameters": {
-												"seconds": "step_show * 1.2",
+												"seconds": "lvl1_step_show * 1.2",
 												"use-timescale": true
 											}
 										},
@@ -604,7 +699,7 @@
 											"objectClass": "System",
 											"sid": 851762055546130,
 											"parameters": {
-												"variable": "InputBlock",
+												"variable": "lvl1_InputBlock",
 												"value": "false"
 											}
 										}
@@ -633,7 +728,7 @@
 									"objectClass": "System",
 									"sid": 205729913796400,
 									"parameters": {
-										"variable": "InputBlock",
+										"variable": "lvl1_InputBlock",
 										"value": "true"
 									}
 								}
@@ -652,7 +747,7 @@
 											"objectClass": "System",
 											"sid": 396878593170184,
 											"parameters": {
-												"variable": "array_line",
+												"variable": "lvl1_array_line",
 												"comparison": 0,
 												"value": "0"
 											}
@@ -669,7 +764,7 @@
 													"objectClass": "System",
 													"sid": 750419610847960,
 													"parameters": {
-														"variable": "step_show",
+														"variable": "lvl1_step_show",
 														"comparison": 2,
 														"value": "4"
 													}
@@ -681,7 +776,7 @@
 													"objectClass": "System",
 													"sid": 877582744191365,
 													"parameters": {
-														"variable": "step_show",
+														"variable": "lvl1_step_show",
 														"value": "1"
 													}
 												},
@@ -715,6 +810,33 @@
 												}
 											],
 											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 696137646269888,
+													"parameters": {
+														"variable": "lvl1_array_line",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 661962963394596,
+													"parameters": {
+														"variable": "lvl1_step_show",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 910500426415842,
+													"parameters": {
+														"variable": "lvl1_step_player",
+														"value": "1"
+													}
+												},
 												{
 													"callFunction": "TypingEffect",
 													"sid": 283065437336082,
@@ -928,7 +1050,7 @@
 									"objectClass": "System",
 									"sid": 593130254188991,
 									"parameters": {
-										"variable": "InputBlock",
+										"variable": "lvl1_InputBlock",
 										"value": "true"
 									}
 								},
@@ -937,7 +1059,7 @@
 									"objectClass": "System",
 									"sid": 781371532989064,
 									"parameters": {
-										"variable": "step_player",
+										"variable": "lvl1_step_player",
 										"value": "0"
 									}
 								}
