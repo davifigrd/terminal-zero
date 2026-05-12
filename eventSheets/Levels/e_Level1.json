@@ -215,7 +215,7 @@
 						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 233806116319113,
+							"sid": 552462455443737,
 							"parameters": {
 								"folder": "sounds",
 								"audio-file-name": "\"lvl1_\" & lvl1_Modules.lvl1_ID",
@@ -265,7 +265,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 566423818324709,
+									"sid": 935454307857228,
 									"parameters": {
 										"first-value": "lvl1_array.At(lvl1_array.step_player, lvl1_array.array_line)",
 										"comparison": 0,
@@ -536,9 +536,9 @@
 								{
 									"id": "for",
 									"objectClass": "System",
-									"sid": 273555319939457,
+									"sid": 831823126484646,
 									"parameters": {
-										"name": "\"\"",
+										"name": "\"seq\"",
 										"start-index": "0",
 										"end-index": "lvl1_array.step_show - 1"
 									}
@@ -548,10 +548,10 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 569372897793405,
+									"sid": 147378362886356,
 									"parameters": {
 										"variable": "current_val",
-										"value": "lvl1_array.At(loopindex, lvl1_array.array_line)"
+										"value": "lvl1_array.At(LoopIndex(\"seq\"), lvl1_array.array_line)"
 									}
 								}
 							],
@@ -572,58 +572,66 @@
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 406851035231659,
+									"children": [
 										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 831176844533747,
-											"parameters": {
-												"seconds": "loopindex * 1.2",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 685748554786856,
-											"parameters": {
-												"layer": "lvl1_Modules.lvl1_LayerName",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "play-by-name",
-											"objectClass": "Audio",
-											"sid": 263837528944971,
-											"parameters": {
-												"folder": "sounds",
-												"audio-file-name": "\"lvl1_\" & lvl1_Modules.lvl1_ID",
-												"loop": "not-looping",
-												"volume": "0",
-												"stereo-pan": "0",
-												"tag-optional": "lvl1_Modules.lvl1_LayerName"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 903692428418107,
-											"parameters": {
-												"seconds": "0.7",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 677853105419785,
-											"parameters": {
-												"layer": "lvl1_Modules.lvl1_LayerName",
-												"visibility": "invisible"
-											}
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 307093555909705,
+													"parameters": {
+														"seconds": "loopindex(\"seq\") * 1.2",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 626854550014117,
+													"parameters": {
+														"layer": "lvl1_Modules.lvl1_LayerName",
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 717010056879332,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"lvl1_\" & lvl1_Modules.lvl1_ID",
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "lvl1_Modules.lvl1_LayerName"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 780574478627765,
+													"parameters": {
+														"seconds": "0.7",
+														"use-timescale": true
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 633128626393192,
+													"parameters": {
+														"layer": "lvl1_Modules.lvl1_LayerName",
+														"visibility": "invisible"
+													}
+												}
+											],
+											"sid": 440370956846026
 										}
-									],
-									"sid": 406851035231659
+									]
 								}
 							]
 						},
