@@ -61,6 +61,10 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "retorno tátil botões"
+		},
+		{
+			"eventType": "comment",
 			"text": "Fim da sequência"
 		},
 		{
@@ -69,7 +73,593 @@
 			"title": "LEVEL1_LAYOUT",
 			"description": "Interações com o layout",
 			"isActiveOnStart": true,
-			"children": [],
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 424781420295711
+						}
+					],
+					"actions": [
+						{
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 601833605886878,
+							"parameters": {
+								"tag": "\"lvl1_array\"",
+								"file": {
+									"path": "Level 1/lvl1_array.json"
+								}
+							}
+						}
+					],
+					"sid": 458641601680692
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 988663127307709,
+							"parameters": {
+								"tag": "\"lvl1_array\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "lvl1_array",
+							"sid": 784898765836760,
+							"parameters": {
+								"json": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 883204555977326,
+							"parameters": {
+								"variable": "lvl1_step_show",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 906264758670298,
+							"parameters": {
+								"variable": "lvl1_step_player",
+								"value": "0"
+							}
+						},
+						{
+							"callFunction": "lvl1_ShowSequence",
+							"sid": 225425211436909
+						}
+					],
+					"sid": 326762703060148
+				},
+				{
+					"eventType": "comment",
+					"text": "Etapas"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 595794453115812,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl1_Modules"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 496041224611340,
+							"parameters": {
+								"variable": "lvl1_InputBlock"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [],
+					"sid": 662991669342986,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Acertou"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 694700689462282,
+									"parameters": {
+										"first-value": "lvl1_Modules.ID",
+										"comparison": 0,
+										"second-value": "lvl1_array.At(lvl1_step_player, lvl1_array_line)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl1_Modules",
+									"sid": 856857661738961,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 562348387707392,
+									"parameters": {
+										"seconds": "0.2",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl1_Modules",
+									"sid": 409168124909863,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 204744300234315,
+									"parameters": {
+										"variable": "lvl1_idle_timer",
+										"value": "0"
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 603543733071543,
+									"parameters": {
+										"variable": "lvl1_step_player",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 962034879865922,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Completou a etapa"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 250101026282483,
+											"parameters": {
+												"variable": "lvl1_step_player",
+												"comparison": 4,
+												"value": "lvl1_step_show"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 188434413003485,
+											"parameters": {
+												"variable": "lvl1_InputBlock",
+												"value": "true"
+											}
+										}
+									],
+									"sid": 548646575893122,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Fim da etapa 1"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 342572699078318,
+													"parameters": {
+														"first-value": "lvl1_step_show",
+														"comparison": 0,
+														"second-value": "3"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 826163362145159,
+													"parameters": {
+														"first-value": "lvl1_array_line",
+														"comparison": 0,
+														"second-value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 223981109382329,
+													"parameters": {
+														"variable": "lvl1_array_line",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 374023326767630,
+													"parameters": {
+														"variable": "lvl1_step_show",
+														"value": "-1"
+													}
+												}
+											],
+											"sid": 549983448847824
+										},
+										{
+											"eventType": "comment",
+											"text": "Fim da etapa 2"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 492210631772787,
+													"parameters": {
+														"first-value": "lvl1_step_show",
+														"comparison": 0,
+														"second-value": "5"
+													}
+												},
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 775471170662420,
+													"parameters": {
+														"first-value": "lvl1_array_line",
+														"comparison": 0,
+														"second-value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 902462185811349,
+													"parameters": {
+														"variable": "lvl1_array_line",
+														"value": "2"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 203869084725776,
+													"parameters": {
+														"variable": "lvl1_step_show",
+														"value": "-1"
+													}
+												}
+											],
+											"sid": 275413261005460,
+											"children": [
+												{
+													"eventType": "comment",
+													"text": "Fim da etapa 3"
+												},
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 119042716569138,
+															"parameters": {
+																"first-value": "lvl1_step_show",
+																"comparison": 0,
+																"second-value": "7"
+															}
+														},
+														{
+															"id": "compare-two-values",
+															"objectClass": "System",
+															"sid": 859150416994886,
+															"parameters": {
+																"first-value": "lvl1_array_line",
+																"comparison": 0,
+																"second-value": "2"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 380536863071600,
+															"parameters": {
+																"audio-file": {
+																	"path": "Level 1/lvl1_victory"
+																},
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"\""
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 927103588514897,
+															"parameters": {
+																"seconds": "7",
+																"use-timescale": true
+															}
+														},
+														{
+															"callFunction": "Transition",
+															"sid": 246594095343619,
+															"parameters": [
+																"\"Bedroom\""
+															]
+														}
+													],
+													"sid": 274730069207651
+												}
+											]
+										},
+										{
+											"eventType": "comment",
+											"text": "Fim da etapa 2"
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 357293460384569,
+													"parameters": {
+														"variable": "lvl1_step_show",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 674269720244002,
+													"parameters": {
+														"variable": "lvl1_step_player",
+														"value": "0"
+													}
+												},
+												{
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 404114476157145,
+													"parameters": {
+														"seconds": "1",
+														"use-timescale": true
+													}
+												},
+												{
+													"callFunction": "lvl1_ShowSequence",
+													"sid": 645184160858041
+												}
+											],
+											"sid": 509361530893042
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Errou"
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 580064997564584
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "lvl1_error",
+									"sid": 162262216558957
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 276818151439417,
+									"parameters": {
+										"variable": "lvl1_step_player",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 249796420091807,
+									"parameters": {
+										"variable": "lvl1_InputBlock",
+										"value": "true"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 984362336523482,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "lvl1_ShowSequence",
+									"sid": 299477207274585
+								}
+							],
+							"sid": 841238620850324
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 182336706639135,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl1_Modules"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 115440549591728,
+							"parameters": {
+								"variable": "lvl1_InputBlock"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl1_Modules",
+							"sid": 317787348449620,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 607954005445126,
+							"parameters": {
+								"seconds": "0.2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl1_Modules",
+							"sid": 213649382017205,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 640701319228028
+				},
+				{
+					"eventType": "comment",
+					"text": "Cronometro de inatividade"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 481987658715033,
+							"parameters": {
+								"interval-seconds": "1"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 876842023714743,
+							"parameters": {
+								"variable": "lvl1_InputBlock"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 727047748640814,
+							"parameters": {
+								"variable": "lvl1_idle_timer",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 477019109818337
+				},
+				{
+					"eventType": "comment",
+					"text": "Inativo por 5 segundos"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 512325711193588,
+							"parameters": {
+								"variable": "lvl1_idle_timer",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 524650030202439,
+							"parameters": {
+								"variable": "lvl1_idle_timer",
+								"value": "0"
+							}
+						},
+						{
+							"callFunction": "lvl1_ShowSequence",
+							"sid": 377439189413168
+						}
+					],
+					"sid": 895735525279719
+				}
+			],
 			"sid": 138279741669246,
 			"text-color": [
 				0,
@@ -92,6 +682,10 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "Exibir sequência da etapa atual"
+				},
+				{
 					"functionName": "lvl1_ShowSequence",
 					"functionDescription": "Exibir sequência",
 					"functionCategory": "",
@@ -101,7 +695,17 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 343400374757124,
+							"parameters": {
+								"variable": "lvl1_InputBlock",
+								"value": "true"
+							}
+						}
+					],
 					"sid": 195746444886142,
 					"children": [
 						{
@@ -110,36 +714,148 @@
 								{
 									"id": "for",
 									"objectClass": "System",
-									"sid": 991042621365171,
+									"sid": 217334076973754,
 									"parameters": {
 										"name": "\"i\"",
 										"start-index": "0",
-										"end-index": "lvl1_step_player"
+										"end-index": "lvl1_step_show"
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 134109455523603,
+									"parameters": {
+										"seconds": "loopindex(\"i\") * 0.8",
+										"use-timescale": true
+									}
+								}
+							],
 							"sid": 678354494894044,
 							"children": [
 								{
+									"eventType": "comment",
+									"text": "Escolhe um dos módulos para piscar"
+								},
+								{
 									"eventType": "block",
-									"conditions": [],
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 889557058575944,
+											"parameters": {
+												"object": "lvl1_Modules",
+												"expression": "lvl1_Modules.ID",
+												"comparison": 0,
+												"value": "lvl1_array.At(LoopIndex(\"i\"), lvl1_array_line)"
+											}
+										}
+									],
 									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "lvl1_Modules",
+											"sid": 183801062339646,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 490566040246631,
+											"sid": 739576457431342,
 											"parameters": {
-												"seconds": "loopindex(\"i\") * 0.8",
+												"seconds": "0.5",
 												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "lvl1_Modules",
+											"sid": 750962977166492,
+											"parameters": {
+												"visibility": "invisible"
 											}
 										}
 									],
 									"sid": 949111834006724
 								}
 							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Encerra exibição de sequência"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 906307534810625,
+									"parameters": {
+										"seconds": "((lvl1_step_show + 1) * 0.8) + 0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 339965635538202,
+									"parameters": {
+										"variable": "lvl1_InputBlock",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 950263533503939,
+									"parameters": {
+										"variable": "lvl1_idle_timer",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 656392202389755
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Animação ao errar a sequência"
+				},
+				{
+					"functionName": "lvl1_error",
+					"functionDescription": "Animação ao errar a sequência",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 549250283826581,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 1/lvl1_error"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 987736412671744
 				}
 			],
 			"sid": 269269383399552,
@@ -155,10 +871,6 @@
 				0.23137254901960785,
 				1
 			]
-		},
-		{
-			"eventType": "comment",
-			"text": "retorno tátil botões"
 		}
 	],
 	"sid": 856370518782902
