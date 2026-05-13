@@ -185,7 +185,7 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 811472687337851,
+							"sid": 697742059241598,
 							"parameters": {
 								"variable": "PlayerMoving"
 							}
@@ -195,22 +195,26 @@
 						{
 							"id": "set-enabled",
 							"objectClass": "player",
-							"sid": 526681734941731,
+							"sid": 513213888798391,
 							"behaviorType": "8Direction",
 							"parameters": {
 								"state": "enabled"
 							}
 						}
 					],
-					"sid": 402395970344467,
+					"sid": 915203195149367,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "Cima"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 999464102213560,
+									"sid": 507463504504958,
 									"parameters": {
 										"key": 38
 									}
@@ -218,7 +222,7 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 336514066063691,
+									"sid": 192775271650232,
 									"parameters": {
 										"key": 87
 									}
@@ -228,7 +232,7 @@
 								{
 									"id": "simulate-control",
 									"objectClass": "player",
-									"sid": 449620625245184,
+									"sid": 506097418963408,
 									"behaviorType": "8Direction",
 									"parameters": {
 										"control": "up"
@@ -237,15 +241,80 @@
 								{
 									"id": "set-animation",
 									"objectClass": "player",
-									"sid": 551238270772837,
+									"sid": 370760942438176,
 									"parameters": {
-										"animation": "\"back\"",
+										"animation": "\"walk_up\"",
 										"from": "current-frame"
 									}
 								}
 							],
-							"sid": 709390866359370,
+							"sid": 756285700113007,
 							"isOrBlock": true
+						},
+						{
+							"eventType": "comment",
+							"text": "Baixo"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 218208545267256
+								}
+							],
+							"actions": [],
+							"sid": 863606879553899,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 104263968257038,
+											"parameters": {
+												"key": 40
+											}
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 211905470775489,
+											"parameters": {
+												"key": 83
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 913684061519493,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "down"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 546338269801732,
+											"parameters": {
+												"animation": "\"walk_down\"",
+												"from": "current-frame"
+											}
+										}
+									],
+									"sid": 950196936035389,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Direita"
 						},
 						{
 							"eventType": "block",
@@ -253,93 +322,7 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 914510578742117,
-									"parameters": {
-										"key": 37
-									}
-								},
-								{
-									"id": "key-is-down",
-									"objectClass": "Keyboard",
-									"sid": 321610904884267,
-									"parameters": {
-										"key": 65
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "simulate-control",
-									"objectClass": "player",
-									"sid": 607824257090163,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"control": "left"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "player",
-									"sid": 905357576029519,
-									"parameters": {
-										"animation": "\"side_left\"",
-										"from": "current-frame"
-									}
-								}
-							],
-							"sid": 612126669659642,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "key-is-down",
-									"objectClass": "Keyboard",
-									"sid": 130710167635952,
-									"parameters": {
-										"key": 40
-									}
-								},
-								{
-									"id": "key-is-down",
-									"objectClass": "Keyboard",
-									"sid": 851558583177888,
-									"parameters": {
-										"key": 83
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "simulate-control",
-									"objectClass": "player",
-									"sid": 969146865245280,
-									"behaviorType": "8Direction",
-									"parameters": {
-										"control": "down"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "player",
-									"sid": 625506950717978,
-									"parameters": {
-										"animation": "\"face\"",
-										"from": "current-frame"
-									}
-								}
-							],
-							"sid": 930825493558947,
-							"isOrBlock": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "key-is-down",
-									"objectClass": "Keyboard",
-									"sid": 929015639436210,
+									"sid": 460785959597657,
 									"parameters": {
 										"key": 39
 									}
@@ -347,7 +330,7 @@
 								{
 									"id": "key-is-down",
 									"objectClass": "Keyboard",
-									"sid": 633809821344487,
+									"sid": 161344097161830,
 									"parameters": {
 										"key": 68
 									}
@@ -357,24 +340,282 @@
 								{
 									"id": "simulate-control",
 									"objectClass": "player",
-									"sid": 718955914247071,
+									"sid": 494377285316794,
 									"behaviorType": "8Direction",
 									"parameters": {
 										"control": "right"
 									}
-								},
+								}
+							],
+							"sid": 937089488367840,
+							"children": [
 								{
-									"id": "set-animation",
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 734815175734494,
+											"parameters": {
+												"key": 38
+											},
+											"isInverted": true
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 490950209322251,
+											"parameters": {
+												"key": 40
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 956074190875813,
+											"parameters": {
+												"animation": "\"walk_right\"",
+												"from": "current-frame"
+											}
+										}
+									],
+									"sid": 996997248218795
+								}
+							],
+							"isOrBlock": true
+						},
+						{
+							"eventType": "comment",
+							"text": "Esquerda"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 296536682394618
+								}
+							],
+							"actions": [],
+							"sid": 431547415140028,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 501398994632402,
+											"parameters": {
+												"key": 37
+											}
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 262104519281748,
+											"parameters": {
+												"key": 65
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 311214216613171,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "left"
+											}
+										}
+									],
+									"sid": 819390792272223,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 465778855438843,
+													"parameters": {
+														"key": 38
+													},
+													"isInverted": true
+												},
+												{
+													"id": "key-is-down",
+													"objectClass": "Keyboard",
+													"sid": 195282950699717,
+													"parameters": {
+														"key": 40
+													},
+													"isInverted": true
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation",
+													"objectClass": "player",
+													"sid": 857589477941879,
+													"parameters": {
+														"animation": "\"walk_left\"",
+														"from": "current-frame"
+													}
+												}
+											],
+											"sid": 524268842883864
+										}
+									],
+									"isOrBlock": true
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Animação do jogador quando está parado"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "player",
+							"sid": 969740064579179,
+							"behaviorType": "8Direction",
+							"isInverted": true
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 372467781005332
+						}
+					],
+					"actions": [],
+					"sid": 732167400634820,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Cima"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
 									"objectClass": "player",
-									"sid": 820062227766584,
+									"sid": 772292474211461,
 									"parameters": {
-										"animation": "\"side_right\"",
-										"from": "current-frame"
+										"animation": "\"walk_up\""
 									}
 								}
 							],
-							"sid": 663175899019939,
-							"isOrBlock": true
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 386748330625608,
+									"parameters": {
+										"animation": "\"idle_back\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 278397059107273
+						},
+						{
+							"eventType": "comment",
+							"text": "Baixo"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player",
+									"sid": 948671145417218,
+									"parameters": {
+										"animation": "\"walk_down\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 964773944282127,
+									"parameters": {
+										"animation": "\"idle_face\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 283594864869347
+						},
+						{
+							"eventType": "comment",
+							"text": "Direita"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player",
+									"sid": 896643670105686,
+									"parameters": {
+										"animation": "\"walk_right\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 570638747621474,
+									"parameters": {
+										"animation": "\"idle_right\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 156883672694939
+						},
+						{
+							"eventType": "comment",
+							"text": "Esquerda"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-animation-playing",
+									"objectClass": "player",
+									"sid": 220087150199659,
+									"parameters": {
+										"animation": "\"walk_left\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 710114750933111,
+									"parameters": {
+										"animation": "\"idle_left\"",
+										"from": "beginning"
+									}
+								}
+							],
+							"sid": 568782807607729
 						}
 					]
 				},
@@ -388,7 +629,7 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 823943089661130,
+							"sid": 477907663924854,
 							"parameters": {
 								"variable": "PlayerMoving"
 							},
@@ -397,25 +638,25 @@
 					],
 					"actions": [
 						{
-							"id": "stop",
-							"objectClass": "player",
-							"sid": 237053644937473,
-							"behaviorType": "8Direction"
-						},
-						{
 							"id": "set-enabled",
 							"objectClass": "player",
-							"sid": 195229325748249,
+							"sid": 763875678817297,
 							"behaviorType": "8Direction",
 							"parameters": {
 								"state": "disabled"
 							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "player",
+							"sid": 245311801948297,
+							"behaviorType": "8Direction"
 						}
 					],
-					"sid": 622292490967323
+					"sid": 257146286621836
 				}
 			],
-			"sid": 656243894612956,
+			"sid": 880947916283097,
 			"text-color": [
 				0,
 				0,
@@ -433,14 +674,14 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "CHOOSING",
-			"description": "",
+			"description": "Tela de escolha",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "CHOOSING_BED",
-					"description": "",
+					"description": "Tela de escolha da cama",
 					"isActiveOnStart": true,
 					"children": [
 						{
@@ -716,7 +957,7 @@
 					"eventType": "group",
 					"disabled": false,
 					"title": "CHOOSING_DOOR",
-					"description": "",
+					"description": "Tela de escolha da porta",
 					"isActiveOnStart": true,
 					"children": [
 						{
@@ -1165,7 +1406,7 @@
 					"eventType": "group",
 					"disabled": false,
 					"title": "WASD_TUTORIAL",
-					"description": "",
+					"description": "Animação de tutorial de como andar",
 					"isActiveOnStart": true,
 					"children": [
 						{
@@ -1372,7 +1613,7 @@
 					"eventType": "group",
 					"disabled": false,
 					"title": "SIGN",
-					"description": "",
+					"description": "Placas de interação (ao chegar perto)",
 					"isActiveOnStart": true,
 					"children": [
 						{
