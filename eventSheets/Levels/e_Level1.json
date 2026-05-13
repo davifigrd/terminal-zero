@@ -90,7 +90,58 @@
 			"title": "LEVEL1_FUNCTIONS",
 			"description": "Funções da fase 1",
 			"isActiveOnStart": true,
-			"children": [],
+			"children": [
+				{
+					"functionName": "lvl1_ShowSequence",
+					"functionDescription": "Exibir sequência",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 195746444886142,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for",
+									"objectClass": "System",
+									"sid": 991042621365171,
+									"parameters": {
+										"name": "\"i\"",
+										"start-index": "0",
+										"end-index": "lvl1_step_player"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 678354494894044,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 490566040246631,
+											"parameters": {
+												"seconds": "loopindex(\"i\") * 0.8",
+												"use-timescale": true
+											}
+										}
+									],
+									"sid": 949111834006724
+								}
+							]
+						}
+					]
+				}
+			],
 			"sid": 269269383399552,
 			"text-color": [
 				0,
