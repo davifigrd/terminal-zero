@@ -9,7 +9,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 349975850536788
+			"sid": 983356111841970
 		},
 		{
 			"eventType": "variable",
@@ -19,7 +19,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 594966253582066
+			"sid": 474559176298562
 		},
 		{
 			"eventType": "variable",
@@ -29,7 +29,17 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 237706680171772
+			"sid": 790136352527035
+		},
+		{
+			"eventType": "variable",
+			"name": "Fase",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 495569323736971
 		},
 		{
 			"eventType": "group",
@@ -38,7 +48,7 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [],
-			"sid": 107354697726817
+			"sid": 345945167348261
 		},
 		{
 			"eventType": "block",
@@ -46,14 +56,14 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 657492331255607
+					"sid": 150547871723679
 				}
 			],
 			"actions": [
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 937665652366122,
+					"sid": 217506306736985,
 					"parameters": {
 						"variable": "PodeClicar",
 						"value": "0"
@@ -62,7 +72,7 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 770162954917528,
+					"sid": 772189557137942,
 					"parameters": {
 						"variable": "Ordem",
 						"value": "\"\""
@@ -71,16 +81,95 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 254828619316404,
+					"sid": 803714356126286,
 					"parameters": {
 						"variable": "Clique",
 						"value": "0"
 					}
 				},
 				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 694527669674753,
+					"parameters": {
+						"variable": "Fase",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_azul",
+					"sid": 237813812376566,
+					"parameters": {
+						"x": "176",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_vermelho",
+					"sid": 456815682568264,
+					"parameters": {
+						"x": "390",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_amarelo",
+					"sid": 957536652636609,
+					"parameters": {
+						"x": "597",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_verde",
+					"sid": 997234933837486,
+					"parameters": {
+						"x": "805",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_rosa",
+					"sid": 799465045958221,
+					"parameters": {
+						"x": "1014",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_ciano",
+					"sid": 758541653180557,
+					"parameters": {
+						"x": "1218",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_certo2",
+					"sid": 226989686989288,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_erro2",
+					"sid": 447745100799644,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 569487680930083,
+					"sid": 379154772988063,
 					"parameters": {
 						"seconds": "3.0",
 						"use-timescale": true
@@ -89,7 +178,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_azul",
-					"sid": 826144838705053,
+					"sid": 945341241025730,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -97,7 +186,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_vermelho",
-					"sid": 393457588114544,
+					"sid": 205907460347978,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -105,7 +194,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_amarelo",
-					"sid": 448937977872957,
+					"sid": 599117071479402,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -113,7 +202,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_verde",
-					"sid": 887864799346747,
+					"sid": 225007605675049,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -121,7 +210,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_rosa",
-					"sid": 587194185380243,
+					"sid": 673934656793122,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -129,7 +218,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_ciano",
-					"sid": 355504664021726,
+					"sid": 620310587132834,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -137,7 +226,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_azul_baixo",
-					"sid": 501906033615225,
+					"sid": 812162589240257,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -145,7 +234,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_vermelho_baixo",
-					"sid": 688472535786484,
+					"sid": 771223896347223,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -153,7 +242,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_amarelo_baixo",
-					"sid": 219050336830803,
+					"sid": 191317934438830,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -161,7 +250,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_verde_baixo",
-					"sid": 837508091539790,
+					"sid": 119186201842228,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -169,7 +258,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_rosa_baixo",
-					"sid": 656767062114205,
+					"sid": 260795792291504,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -177,7 +266,7 @@
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_ciano_baixo",
-					"sid": 655224721231917,
+					"sid": 280199649478409,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -185,14 +274,14 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 167428728277851,
+					"sid": 833736931544403,
 					"parameters": {
 						"variable": "PodeClicar",
 						"value": "1"
 					}
 				}
 			],
-			"sid": 541555206155291
+			"sid": 465379271809209
 		},
 		{
 			"eventType": "block",
@@ -200,7 +289,7 @@
 				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 414444057604128,
+					"sid": 657139558755005,
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
@@ -210,7 +299,7 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 135086903577227,
+					"sid": 280925122804664,
 					"parameters": {
 						"variable": "PodeClicar",
 						"comparison": 0,
@@ -222,7 +311,7 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_azul_baixo",
-					"sid": 342555313459591,
+					"sid": 475245722165765,
 					"parameters": {
 						"opacity": "50"
 					}
@@ -230,7 +319,7 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 106199208540790,
+					"sid": 837488403839244,
 					"parameters": {
 						"variable": "Ordem",
 						"value": "\"1\""
@@ -239,14 +328,14 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 420175167002219,
+					"sid": 837387769449118,
 					"parameters": {
 						"variable": "Clique",
 						"value": "1"
 					}
 				}
 			],
-			"sid": 448901927759758
+			"sid": 181668813122275
 		},
 		{
 			"eventType": "block",
@@ -254,7 +343,7 @@
 				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 275669908781868,
+					"sid": 976436185121891,
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
@@ -264,7 +353,7 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 272954176538315,
+					"sid": 516441029851802,
 					"parameters": {
 						"variable": "PodeClicar",
 						"comparison": 0,
@@ -276,7 +365,7 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_vermelho_baixo",
-					"sid": 372893965621697,
+					"sid": 387506919312359,
 					"parameters": {
 						"opacity": "50"
 					}
@@ -284,7 +373,7 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 393098785583281,
+					"sid": 314949585306469,
 					"parameters": {
 						"variable": "Ordem",
 						"value": "\"2\""
@@ -293,14 +382,14 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 822016863338983,
+					"sid": 191337613221737,
 					"parameters": {
 						"variable": "Clique",
 						"value": "1"
 					}
 				}
 			],
-			"sid": 849999731525022
+			"sid": 962456108204546
 		},
 		{
 			"eventType": "block",
@@ -308,7 +397,7 @@
 				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 693104295097681,
+					"sid": 978814379380247,
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
@@ -318,7 +407,7 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 333721549349991,
+					"sid": 461878076119973,
 					"parameters": {
 						"variable": "PodeClicar",
 						"comparison": 0,
@@ -330,7 +419,7 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_amarelo_baixo",
-					"sid": 661326493143873,
+					"sid": 881598172917926,
 					"parameters": {
 						"opacity": "50"
 					}
@@ -338,7 +427,7 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 156041431990466,
+					"sid": 744756697677527,
 					"parameters": {
 						"variable": "Ordem",
 						"value": "\"3\""
@@ -347,14 +436,14 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 160556742354382,
+					"sid": 801939273012324,
 					"parameters": {
 						"variable": "Clique",
 						"value": "1"
 					}
 				}
 			],
-			"sid": 149943843914840
+			"sid": 327099233344171
 		},
 		{
 			"eventType": "block",
@@ -362,7 +451,7 @@
 				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 487466685553983,
+					"sid": 348546307765249,
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
@@ -372,7 +461,7 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 542646478813881,
+					"sid": 714357323284086,
 					"parameters": {
 						"variable": "PodeClicar",
 						"comparison": 0,
@@ -384,7 +473,7 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_verde_baixo",
-					"sid": 901560608862302,
+					"sid": 750288791381796,
 					"parameters": {
 						"opacity": "50"
 					}
@@ -392,7 +481,7 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 715029332714202,
+					"sid": 355307363131709,
 					"parameters": {
 						"variable": "Ordem",
 						"value": "\"4\""
@@ -401,14 +490,14 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 998655184209801,
+					"sid": 469853504434441,
 					"parameters": {
 						"variable": "Clique",
 						"value": "1"
 					}
 				}
 			],
-			"sid": 874653473646798
+			"sid": 379228507758594
 		},
 		{
 			"eventType": "block",
@@ -416,7 +505,7 @@
 				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 898203331168208,
+					"sid": 966210100375313,
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
@@ -426,7 +515,7 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 874746000561909,
+					"sid": 376049188385962,
 					"parameters": {
 						"variable": "PodeClicar",
 						"comparison": 0,
@@ -438,7 +527,7 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_rosa_baixo",
-					"sid": 846638669607358,
+					"sid": 125587333852664,
 					"parameters": {
 						"opacity": "50"
 					}
@@ -446,7 +535,7 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 978325904923046,
+					"sid": 372194926556442,
 					"parameters": {
 						"variable": "Ordem",
 						"value": "\"5\""
@@ -455,14 +544,14 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 574540381198663,
+					"sid": 783642383117933,
 					"parameters": {
 						"variable": "Clique",
 						"value": "1"
 					}
 				}
 			],
-			"sid": 861606451080990
+			"sid": 405837909560902
 		},
 		{
 			"eventType": "block",
@@ -470,7 +559,7 @@
 				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 808783020831260,
+					"sid": 554672422535878,
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
@@ -480,7 +569,7 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 809160301162083,
+					"sid": 881563414745745,
 					"parameters": {
 						"variable": "PodeClicar",
 						"comparison": 0,
@@ -492,7 +581,7 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_ciano_baixo",
-					"sid": 748645882426905,
+					"sid": 286041816990681,
 					"parameters": {
 						"opacity": "50"
 					}
@@ -500,7 +589,7 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 719926225493525,
+					"sid": 174023852337587,
 					"parameters": {
 						"variable": "Ordem",
 						"value": "\"6\""
@@ -509,14 +598,14 @@
 				{
 					"id": "add-to-eventvar",
 					"objectClass": "System",
-					"sid": 936600323111551,
+					"sid": 565092062153456,
 					"parameters": {
 						"variable": "Clique",
 						"value": "1"
 					}
 				}
 			],
-			"sid": 242381394669791
+			"sid": 678785273461723
 		},
 		{
 			"eventType": "block",
@@ -524,7 +613,7 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 801533254647045,
+					"sid": 998063524908588,
 					"parameters": {
 						"variable": "Clique",
 						"comparison": 0,
@@ -534,7 +623,17 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 248187402622799,
+					"sid": 873514116705702,
+					"parameters": {
+						"variable": "Fase",
+						"comparison": 0,
+						"value": "1"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 194378429069137,
 					"parameters": {
 						"variable": "Ordem",
 						"comparison": 0,
@@ -545,8 +644,8 @@
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "lvl4_Correto",
-					"sid": 769048761120016,
+					"objectClass": "lvl4_certo2",
+					"sid": 833423373594833,
 					"parameters": {
 						"visibility": "visible"
 					}
@@ -554,52 +653,7 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 832225623488843,
-					"parameters": {
-						"variable": "PodeClicar",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 585895357954406
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 780596304983728,
-					"parameters": {
-						"variable": "Clique",
-						"comparison": 0,
-						"value": "6"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 869952000568696,
-					"parameters": {
-						"variable": "Ordem",
-						"comparison": 1,
-						"value": "\"123456\""
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl4_Errado",
-					"sid": 812081444250435,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 289774273238515,
+					"sid": 533637109077459,
 					"parameters": {
 						"variable": "PodeClicar",
 						"value": "0"
@@ -608,16 +662,33 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 697082277010694,
+					"sid": 261957321955682,
 					"parameters": {
 						"seconds": "2.0",
 						"use-timescale": true
 					}
 				},
 				{
+					"id": "set-visible",
+					"objectClass": "lvl4_certo2",
+					"sid": 902156499088747,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 230580699689583,
+					"sid": 651899412934724,
+					"parameters": {
+						"variable": "Fase",
+						"value": "2"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 721623929575140,
 					"parameters": {
 						"variable": "Ordem",
 						"value": "\"\""
@@ -626,7 +697,7 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 451425091339132,
+					"sid": 133766571423637,
 					"parameters": {
 						"variable": "Clique",
 						"value": "0"
@@ -635,7 +706,7 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_azul_baixo",
-					"sid": 819440911042629,
+					"sid": 433189071697007,
 					"parameters": {
 						"opacity": "100"
 					}
@@ -643,7 +714,7 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_vermelho_baixo",
-					"sid": 356573773906390,
+					"sid": 874083970812390,
 					"parameters": {
 						"opacity": "100"
 					}
@@ -651,7 +722,7 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_amarelo_baixo",
-					"sid": 474614180851314,
+					"sid": 663515541784681,
 					"parameters": {
 						"opacity": "100"
 					}
@@ -659,7 +730,7 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_verde_baixo",
-					"sid": 422939195380387,
+					"sid": 329692000971857,
 					"parameters": {
 						"opacity": "100"
 					}
@@ -667,7 +738,7 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_rosa_baixo",
-					"sid": 933021386557722,
+					"sid": 586256554818129,
 					"parameters": {
 						"opacity": "100"
 					}
@@ -675,15 +746,343 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "lvl4_ciano_baixo",
-					"sid": 778613440177575,
+					"sid": 933397318734570,
 					"parameters": {
 						"opacity": "100"
 					}
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "lvl4_Errado",
-					"sid": 172868780481153,
+					"objectClass": "lvl4_azul_baixo",
+					"sid": 584835143923300,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_vermelho_baixo",
+					"sid": 617391152394826,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_amarelo_baixo",
+					"sid": 145012419153316,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_verde_baixo",
+					"sid": 136889443847129,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_rosa_baixo",
+					"sid": 164595814173352,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_ciano_baixo",
+					"sid": 498479740922181,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_vermelho",
+					"sid": 785039044464681,
+					"parameters": {
+						"x": "176",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_azul",
+					"sid": 396650401682611,
+					"parameters": {
+						"x": "390",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_verde",
+					"sid": 899121412861555,
+					"parameters": {
+						"x": "597",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_amarelo",
+					"sid": 980217753529791,
+					"parameters": {
+						"x": "805",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_ciano",
+					"sid": 590959770712022,
+					"parameters": {
+						"x": "1014",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_rosa",
+					"sid": 269230971276772,
+					"parameters": {
+						"x": "1218",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_azul",
+					"sid": 411372793743032,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_vermelho",
+					"sid": 966942367991834,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_amarelo",
+					"sid": 723856020022446,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_verde",
+					"sid": 894432202669908,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_rosa",
+					"sid": 287506669808777,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_ciano",
+					"sid": 807785354233160,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 670511069952658,
+					"parameters": {
+						"seconds": "3.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_azul",
+					"sid": 368636332049488,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_vermelho",
+					"sid": 398148606338809,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_amarelo",
+					"sid": 462292371587791,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_verde",
+					"sid": 227405926750523,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_rosa",
+					"sid": 571713542922814,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_ciano",
+					"sid": 254211201110347,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_azul_baixo",
+					"sid": 170565078014530,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_vermelho_baixo",
+					"sid": 856532515943823,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_amarelo_baixo",
+					"sid": 908493841989997,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_verde_baixo",
+					"sid": 976862331064045,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_rosa_baixo",
+					"sid": 346599871455446,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_ciano_baixo",
+					"sid": 981769926122001,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 827685014376348,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 668250014140658
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 604625153572954,
+					"parameters": {
+						"variable": "Clique",
+						"comparison": 0,
+						"value": "6"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 592360805062496,
+					"parameters": {
+						"variable": "Fase",
+						"comparison": 0,
+						"value": "2"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 126413337795811,
+					"parameters": {
+						"variable": "Ordem",
+						"comparison": 0,
+						"value": "\"214365\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_certo2",
+					"sid": 451053941500988,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 569111781249040,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 788194703084954,
+					"parameters": {
+						"seconds": "2.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_certo2",
+					"sid": 667825636544333,
 					"parameters": {
 						"visibility": "invisible"
 					}
@@ -691,14 +1090,864 @@
 				{
 					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 753631387423971,
+					"sid": 483833951056113,
+					"parameters": {
+						"variable": "Fase",
+						"value": "3"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 614781876500674,
+					"parameters": {
+						"variable": "Ordem",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 711701998622054,
+					"parameters": {
+						"variable": "Clique",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_azul_baixo",
+					"sid": 569358592895457,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_vermelho_baixo",
+					"sid": 196223293447786,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_amarelo_baixo",
+					"sid": 526631298801465,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_verde_baixo",
+					"sid": 512347023899064,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_rosa_baixo",
+					"sid": 107580585212263,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_ciano_baixo",
+					"sid": 561350292305687,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_azul_baixo",
+					"sid": 577055263192180,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_vermelho_baixo",
+					"sid": 937195467504035,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_amarelo_baixo",
+					"sid": 744736399406566,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_verde_baixo",
+					"sid": 682178408561884,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_rosa_baixo",
+					"sid": 648202512761700,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_ciano_baixo",
+					"sid": 658952682844880,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_amarelo",
+					"sid": 400225509650623,
+					"parameters": {
+						"x": "176",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_ciano",
+					"sid": 437617699368031,
+					"parameters": {
+						"x": "390",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_azul",
+					"sid": 386813974009834,
+					"parameters": {
+						"x": "597",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_rosa",
+					"sid": 728117517889586,
+					"parameters": {
+						"x": "805",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_vermelho",
+					"sid": 302890408244317,
+					"parameters": {
+						"x": "1014",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "lvl4_verde",
+					"sid": 838684769769289,
+					"parameters": {
+						"x": "1218",
+						"y": "355"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_azul",
+					"sid": 993199458908726,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_vermelho",
+					"sid": 410897435780288,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_amarelo",
+					"sid": 460640536170080,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_verde",
+					"sid": 967786140301466,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_rosa",
+					"sid": 100297136811100,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_ciano",
+					"sid": 592856100296344,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 459008195828649,
+					"parameters": {
+						"seconds": "3.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_azul",
+					"sid": 936803295462899,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_vermelho",
+					"sid": 728127332530065,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_amarelo",
+					"sid": 581124233527004,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_verde",
+					"sid": 444846493790708,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_rosa",
+					"sid": 239530369749148,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_ciano",
+					"sid": 174448948828253,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_azul_baixo",
+					"sid": 962147988992131,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_vermelho_baixo",
+					"sid": 488463568385491,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_amarelo_baixo",
+					"sid": 772753722461051,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_verde_baixo",
+					"sid": 157409186534920,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_rosa_baixo",
+					"sid": 658481335615160,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_ciano_baixo",
+					"sid": 227548048485486,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 740829929119932,
 					"parameters": {
 						"variable": "PodeClicar",
 						"value": "1"
 					}
 				}
 			],
-			"sid": 630048583833847
+			"sid": 804816403850830
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 820044283402603,
+					"parameters": {
+						"variable": "Clique",
+						"comparison": 0,
+						"value": "6"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 124730974089144,
+					"parameters": {
+						"variable": "Fase",
+						"comparison": 0,
+						"value": "3"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 640457249223220,
+					"parameters": {
+						"variable": "Ordem",
+						"comparison": 0,
+						"value": "\"364152\""
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_certo2",
+					"sid": 274085554068532,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 915615445527218,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 343330658609338
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 873153986803404,
+					"parameters": {
+						"variable": "Clique",
+						"comparison": 0,
+						"value": "6"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 349079648865250,
+					"parameters": {
+						"variable": "Ordem",
+						"comparison": 1,
+						"value": "\"123456\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 544498952144041,
+					"parameters": {
+						"variable": "Fase",
+						"comparison": 0,
+						"value": "1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_erro2",
+					"sid": 916180286763894,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 599482096234081,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 934982197129949,
+					"parameters": {
+						"seconds": "2.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_erro2",
+					"sid": 754473736575474,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 870190273878262,
+					"parameters": {
+						"variable": "Ordem",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 229099571861046,
+					"parameters": {
+						"variable": "Clique",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_azul_baixo",
+					"sid": 313552697046148,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_vermelho_baixo",
+					"sid": 488771839516680,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_amarelo_baixo",
+					"sid": 474816691951146,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_verde_baixo",
+					"sid": 238782160972863,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_rosa_baixo",
+					"sid": 680241297216656,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_ciano_baixo",
+					"sid": 519378789773785,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_erro2",
+					"sid": 279912677056356,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 112441165950481,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 248387730576528
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 407899188749939,
+					"parameters": {
+						"variable": "Clique",
+						"comparison": 0,
+						"value": "6"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 585921544261645,
+					"parameters": {
+						"variable": "Ordem",
+						"comparison": 1,
+						"value": "\"214365\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 875626284644408,
+					"parameters": {
+						"variable": "Fase",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_erro2",
+					"sid": 281246159341884,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 868337226783441,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 514937953366398,
+					"parameters": {
+						"seconds": "2.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_erro2",
+					"sid": 223225178957439,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 490637100769710,
+					"parameters": {
+						"variable": "Ordem",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 412643821124619,
+					"parameters": {
+						"variable": "Clique",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_azul_baixo",
+					"sid": 186706525891248,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_vermelho_baixo",
+					"sid": 908364602211235,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_amarelo_baixo",
+					"sid": 433298826153982,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_verde_baixo",
+					"sid": 203639716973513,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_rosa_baixo",
+					"sid": 380035100850479,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_ciano_baixo",
+					"sid": 296457430773410,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_erro2",
+					"sid": 104313006021201,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 723932154452240,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 687186956695665
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 702188736805175,
+					"parameters": {
+						"variable": "Clique",
+						"comparison": 0,
+						"value": "6"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 339127937278868,
+					"parameters": {
+						"variable": "Ordem",
+						"comparison": 1,
+						"value": "\"364152\""
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 316366906753425,
+					"parameters": {
+						"variable": "Fase",
+						"comparison": 0,
+						"value": "3"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_erro2",
+					"sid": 284920011769510,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 952764808644185,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "0"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 714156302775009,
+					"parameters": {
+						"seconds": "2.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_erro2",
+					"sid": 563158455011385,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 640516971587858,
+					"parameters": {
+						"variable": "Ordem",
+						"value": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 962354210136269,
+					"parameters": {
+						"variable": "Clique",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_azul_baixo",
+					"sid": 697791313498777,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_vermelho_baixo",
+					"sid": 960118153609975,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_amarelo_baixo",
+					"sid": 887190727569163,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_verde_baixo",
+					"sid": 614279448362717,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_rosa_baixo",
+					"sid": 455577875855997,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "lvl4_ciano_baixo",
+					"sid": 147120799500544,
+					"parameters": {
+						"opacity": "100"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_erro2",
+					"sid": 908085957070390,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 491081247446485,
+					"parameters": {
+						"variable": "PodeClicar",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 867197995206982
 		},
 		{
 			"eventType": "block",
@@ -706,20 +1955,20 @@
 				{
 					"id": "every-tick",
 					"objectClass": "System",
-					"sid": 357367015148894
+					"sid": 584326609296371
 				}
 			],
 			"actions": [
 				{
 					"id": "set-cursor-from-sprite",
 					"objectClass": "Mouse",
-					"sid": 345218242663077,
+					"sid": 298821288561721,
 					"parameters": {
 						"sprite": "cursor"
 					}
 				}
 			],
-			"sid": 403106156287862
+			"sid": 997627221882037
 		}
 	],
 	"sid": 986251233977125
