@@ -9,7 +9,7 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "MENU_LAYOUT",
-			"description": "",
+			"description": "Interações com o layout",
 			"isActiveOnStart": true,
 			"children": [
 				{
@@ -33,12 +33,12 @@
 					],
 					"actions": [
 						{
-							"id": "set-boolean-eventvar",
+							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 716667981727989,
+							"sid": 809569256087850,
 							"parameters": {
-								"variable": "Cursor",
-								"value": "true"
+								"layer": "\"cursor\"",
+								"visibility": "visible"
 							}
 						},
 						{
@@ -95,12 +95,12 @@
 							}
 						},
 						{
-							"id": "set-boolean-eventvar",
+							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 479461668425289,
+							"sid": 846823207399384,
 							"parameters": {
-								"variable": "Cursor",
-								"value": "true"
+								"layer": "\"cursor\"",
+								"visibility": "visible"
 							}
 						},
 						{
@@ -143,67 +143,53 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "BUTTON_CLICK",
-			"description": "",
+			"description": "Botão selecionado",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "Click no botão jogar"
+					"text": "Jogar"
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-click",
+							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 654141120324631,
+							"sid": 855192115518751,
 							"parameters": {
 								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						},
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 566721779914633,
-							"parameters": {
-								"object": "jogar_button"
+								"click-type": "clicked",
+								"object-clicked": "jogar_button"
 							}
 						}
 					],
 					"actions": [
 						{
 							"callFunction": "Transition",
-							"sid": 624546962812971,
+							"sid": 350111368837166,
 							"parameters": [
 								"\"Bedroom\""
 							]
 						}
 					],
-					"sid": 282106022281021
+					"sid": 394216051070901
 				},
 				{
 					"eventType": "comment",
-					"text": "Click no botão controles"
+					"text": "Controles"
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-click",
+							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 282385169989375,
+							"sid": 745620257939162,
 							"parameters": {
 								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						},
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 255868097680478,
-							"parameters": {
-								"object": "controles_button"
+								"click-type": "clicked",
+								"object-clicked": "controles_button"
 							}
 						}
 					],
@@ -211,34 +197,105 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 682725229774877,
+							"sid": 868042833220668,
 							"parameters": {
 								"layer": "\"menu\"",
 								"visibility": "invisible"
 							}
 						},
 						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 913518471176293,
+							"parameters": {
+								"layer": "\"menu\"",
+								"interactive": false
+							}
+						},
+						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 824369080054820,
+							"sid": 185259733379877,
 							"parameters": {
 								"layer": "\"controles\"",
 								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 340405853299122
+					"sid": 173069888293205
 				},
 				{
-					"bookmark": true,
+					"eventType": "comment",
+					"text": "Créditos"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 805089752240180,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "creditos_button"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 956935751527373,
+							"parameters": {
+								"layer": "\"menu\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 708597293729253,
+							"parameters": {
+								"layer": "\"menu\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 824459221146107,
+							"parameters": {
+								"layer": "\"creditos\"",
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 506931434653381
+				},
+				{
+					"eventType": "comment",
+					"text": "Voltar (esc)"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "key-is-down",
 							"objectClass": "Keyboard",
-							"sid": 158530742855864,
+							"sid": 944832539427903,
 							"parameters": {
 								"key": 27
+							}
+						},
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 878818948731612,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "esc"
 							}
 						}
 					],
@@ -246,116 +303,69 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 486688776379857,
+							"sid": 994697011244782,
+							"parameters": {
+								"layer": "\"controles\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 894712382594919,
+							"parameters": {
+								"layer": "\"creditos\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 728347155624829,
 							"parameters": {
 								"layer": "\"menu\"",
 								"visibility": "visible"
 							}
 						},
 						{
-							"id": "set-layer-visible",
+							"id": "set-layer-interactive",
 							"objectClass": "System",
-							"sid": 919948525442413,
+							"sid": 405149822053645,
 							"parameters": {
-								"layer": "\"controles\"",
-								"visibility": "invisible"
+								"layer": "\"menu\"",
+								"interactive": true
 							}
 						}
 					],
-					"sid": 173069888293205,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 940153654933548,
-									"parameters": {
-										"object": "esc"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 696918913180833
-						}
-					]
+					"sid": 989782679103157,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "comment",
-					"text": "Click no botão créditos"
+					"text": "Sair"
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-click",
+							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 348992045539050,
+							"sid": 588784477503211,
 							"parameters": {
 								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						},
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 422192379830113,
-							"parameters": {
-								"object": "creditos_button"
+								"click-type": "clicked",
+								"object-clicked": "sair_button"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 875026038035029,
-							"parameters": {
-								"layer": "\"menu\"",
-								"visibility": "invisible"
-							}
+							"id": "close",
+							"objectClass": "Browser",
+							"sid": 888799903194945
 						}
 					],
-					"sid": 181650778847873
-				},
-				{
-					"eventType": "comment",
-					"text": "Click no botão sair"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-click",
-							"objectClass": "Mouse",
-							"sid": 357587140203381,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						},
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 766550169156499,
-							"parameters": {
-								"object": "sair_button"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 115822206615615,
-							"parameters": {
-								"layer": "\"menu\"",
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 963477238674186
+					"sid": 703788602568894
 				}
 			],
 			"sid": 750828073481552,
@@ -376,12 +386,12 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "BUTTON_HITBOX",
-			"description": "",
+			"description": "Ao passar o cursor sobre os botões, muda a animação dos botões",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "Cursor pointer no botão jogar"
+					"text": "Cursor sob botão jogar"
 				},
 				{
 					"eventType": "block",

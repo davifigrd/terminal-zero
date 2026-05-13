@@ -9,7 +9,7 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "PC_LAYOUT",
-			"description": "",
+			"description": "Interações com o layout",
 			"isActiveOnStart": true,
 			"children": [
 				{
@@ -27,12 +27,12 @@
 					],
 					"actions": [
 						{
-							"id": "set-boolean-eventvar",
+							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 992087076359578,
+							"sid": 684324425297054,
 							"parameters": {
-								"variable": "Cursor",
-								"value": "true"
+								"layer": "\"cursor\"",
+								"visibility": "visible"
 							}
 						},
 						{
@@ -103,14 +103,14 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "ICON",
-			"description": "",
+			"description": "Interações com o ícone do pc",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "ICON_HITBOX",
-					"description": "",
+					"description": "Cursor sobre ícone",
 					"isActiveOnStart": true,
 					"children": [
 						{
@@ -524,7 +524,7 @@
 					"eventType": "group",
 					"disabled": false,
 					"title": "ICON_SINGLE_CLICK",
-					"description": "",
+					"description": "Ícone selecionado",
 					"isActiveOnStart": true,
 					"children": [
 						{
@@ -1042,7 +1042,7 @@
 					"eventType": "group",
 					"disabled": false,
 					"title": "ICON_DOUBLE_CLICK",
-					"description": "",
+					"description": "Abrir ícone",
 					"isActiveOnStart": true,
 					"children": [
 						{

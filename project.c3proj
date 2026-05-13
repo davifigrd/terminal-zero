@@ -1,6 +1,6 @@
 {
 	"projectFormatVersion": 1,
-	"savedWithRelease": 47603,
+	"savedWithRelease": 47604,
 	"name": "Terminal Zero",
 	"runtime": "c3",
 	"useWorker": "auto",
@@ -24,6 +24,13 @@
 			"type": "plugin",
 			"id": "Audio",
 			"name": "Áudio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Browser",
+			"name": "Browser",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -277,7 +284,8 @@
 					"AJAX",
 					"Dictionary",
 					"Audio",
-					"TypingEffect"
+					"TypingEffect",
+					"Browser"
 				],
 				"subfolders": [],
 				"name": "Input"
@@ -520,7 +528,8 @@
 	],
 	"families": {
 		"items": [
-			"Clickable"
+			"Clickable",
+			"lvl1_Modules"
 		],
 		"subfolders": [
 			{
@@ -537,13 +546,6 @@
 				],
 				"subfolders": [],
 				"name": "Level 3"
-			},
-			{
-				"items": [
-					"lvl1_Modules"
-				],
-				"subfolders": [],
-				"name": "Level 1"
 			}
 		]
 	},
@@ -772,15 +774,7 @@
 						{
 							"name": "lvl1_array.json",
 							"type": "application/json",
-							"sid": 547631302575818,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "lvl1_dictionary.json",
-							"type": "application/json",
-							"sid": 994793903713052,
+							"sid": 877850823424472,
 							"file-info": {
 								"purpose": "none"
 							}

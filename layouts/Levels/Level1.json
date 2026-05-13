@@ -223,7 +223,7 @@
 			"overriden": 0,
 			"subLayers": [
 				{
-					"name": "segurança",
+					"name": "seguranca",
 					"overriden": 0,
 					"subLayers": [],
 					"instances": [
@@ -240,27 +240,20 @@
 							"sid": 802757702055345,
 							"tags": "",
 							"instanceVariables": {
-								"lvl1_ID": 3,
-								"lvl1_LayerName": "segurança"
+								"ID": 3
 							},
-							"behaviors": {
-								"Tween": {
-									"properties": {
-										"enabled": true
-									}
-								}
-							},
+							"behaviors": {},
 							"instanceFolderItem": {
 								"sid": 802757702055345,
 								"expanded": true
 							},
-							"showing": false,
+							"showing": true,
 							"locked": false,
 							"world": {
-								"x": 1113.5,
-								"y": 344.5,
-								"width": 244.69380999999996,
-								"height": 131.993435,
+								"x": 1115,
+								"y": 345.5,
+								"width": 237.69380999999996,
+								"height": 127.99343500000002,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -322,21 +315,14 @@
 							"sid": 615021995519244,
 							"tags": "",
 							"instanceVariables": {
-								"lvl1_ID": 2,
-								"lvl1_LayerName": "terminal"
+								"ID": 2
 							},
-							"behaviors": {
-								"Tween": {
-									"properties": {
-										"enabled": true
-									}
-								}
-							},
+							"behaviors": {},
 							"instanceFolderItem": {
 								"sid": 615021995519244,
 								"expanded": true
 							},
-							"showing": false,
+							"showing": true,
 							"locked": false,
 							"world": {
 								"x": 830,
@@ -404,26 +390,19 @@
 							"sid": 783468456968815,
 							"tags": "",
 							"instanceVariables": {
-								"lvl1_ID": 1,
-								"lvl1_LayerName": "rede"
+								"ID": 1
 							},
-							"behaviors": {
-								"Tween": {
-									"properties": {
-										"enabled": true
-									}
-								}
-							},
+							"behaviors": {},
 							"instanceFolderItem": {
 								"sid": 783468456968815,
 								"expanded": true
 							},
-							"showing": false,
+							"showing": true,
 							"locked": false,
 							"world": {
-								"x": 543.5,
+								"x": 542.5,
 								"y": 344.5,
-								"width": 244.69380999999998,
+								"width": 242.69380999999998,
 								"height": 130.993435,
 								"originX": 0.5,
 								"originY": 0.5,
@@ -486,27 +465,20 @@
 							"sid": 613279590479768,
 							"tags": "",
 							"instanceVariables": {
-								"lvl1_ID": 0,
-								"lvl1_LayerName": "energia"
+								"ID": 0
 							},
-							"behaviors": {
-								"Tween": {
-									"properties": {
-										"enabled": true
-									}
-								}
-							},
+							"behaviors": {},
 							"instanceFolderItem": {
 								"sid": 613279590479768,
 								"expanded": true
 							},
-							"showing": false,
+							"showing": true,
 							"locked": false,
 							"world": {
 								"x": 267.30397705084874,
-								"y": 345.62572697649983,
+								"y": 346.12572697649983,
 								"width": 239.69381029431932,
-								"height": 128.99343508688662,
+								"height": 127.99343508688662,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -554,42 +526,7 @@
 			"instances": [],
 			"sid": 455781491210825,
 			"effectTypes": [],
-			"isInitiallyVisible": true,
-			"isInitiallyInteractive": true,
-			"isHTMLElementsLayer": false,
-			"color": [
-				1,
-				1,
-				1,
-				1
-			],
-			"backgroundColor": [
-				0.3686274509803922,
-				0.3686274509803922,
-				0.3686274509803922,
-				1
-			],
-			"isTransparent": true,
-			"sampling": "auto",
-			"parallaxX": 1,
-			"parallaxY": 1,
-			"scaleRate": 1,
-			"forceOwnTexture": false,
-			"renderingMode": "3d",
-			"drawOrder": "z-order",
-			"useRenderCells": false,
-			"blendMode": "normal",
-			"zElevation": 0,
-			"global": false
-		},
-		{
-			"name": "cursor",
-			"overriden": 1,
-			"subLayers": [],
-			"instances": [],
-			"sid": 100013071486926,
-			"effectTypes": [],
-			"isInitiallyVisible": true,
+			"isInitiallyVisible": false,
 			"isInitiallyInteractive": true,
 			"isHTMLElementsLayer": false,
 			"color": [
@@ -683,6 +620,41 @@
 				}
 			],
 			"sid": 607206286622636,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "cursor",
+			"overriden": 1,
+			"subLayers": [],
+			"instances": [],
+			"sid": 100013071486926,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -843,7 +815,7 @@
 				"depth": 1
 			},
 			"uid": 97,
-			"sid": 490234586409523,
+			"sid": 444548814562147,
 			"tags": "",
 			"instanceVariables": {}
 		}
