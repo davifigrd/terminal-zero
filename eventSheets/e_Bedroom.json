@@ -679,6 +679,150 @@
 			"children": [
 				{
 					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 889704504066312,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 161601013078300,
+									"parameters": {
+										"key": 87
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 737321218071198,
+									"parameters": {
+										"key": 38
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player",
+									"sid": 612146871845707,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "up"
+									}
+								}
+							],
+							"sid": 522308202735019,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 545846180280322,
+									"parameters": {
+										"key": 65
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 661501571996923,
+									"parameters": {
+										"key": 37
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player",
+									"sid": 150572757564188,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "left"
+									}
+								}
+							],
+							"sid": 332802626908332,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 153718172971485,
+									"parameters": {
+										"key": 83
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 332452859783476,
+									"parameters": {
+										"key": 40
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player",
+									"sid": 186367757020795,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "down"
+									}
+								}
+							],
+							"sid": 165630632282361,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 988590237917043,
+									"parameters": {
+										"key": 68
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 476493755109727,
+									"parameters": {
+										"key": 39
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "simulate-control",
+									"objectClass": "player",
+									"sid": 700487959525321,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"control": "right"
+									}
+								}
+							],
+							"sid": 992656160034564,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"eventType": "block",
 					"conditions": [
 						{
 							"id": "is-moving",
@@ -694,192 +838,137 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-speed",
-									"objectClass": "player",
-									"sid": 162508346160364,
-									"behaviorType": "8Direction",
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 897051814499532,
 									"parameters": {
-										"comparison": 4,
-										"speed": "0"
+										"key": 65
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 291637029340810,
+									"parameters": {
+										"key": 37
 									}
 								}
 							],
-							"actions": [],
-							"sid": 955462023484643,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 578778954908930,
-											"parameters": {
-												"key": 87
-											}
-										},
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 691106862713232,
-											"parameters": {
-												"key": 38
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 471421258941233,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "up"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 959701447234294,
-											"parameters": {
-												"animation": "\"walk_up\"",
-												"from": "current-frame"
-											}
-										}
-									],
-									"sid": 106397716075039,
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 980620183090555,
-											"parameters": {
-												"key": 65
-											}
-										},
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 325198784082331,
-											"parameters": {
-												"key": 37
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 151241057779814,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "left"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 591988211700433,
-											"parameters": {
-												"animation": "\"walk_left\"",
-												"from": "current-frame"
-											}
-										}
-									],
-									"sid": 853242224549957,
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 734846433767639,
-											"parameters": {
-												"key": 83
-											}
-										},
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 110449576767393,
-											"parameters": {
-												"key": 40
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 643581644164966,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "down"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 178447325034173,
-											"parameters": {
-												"animation": "\"walk_down\"",
-												"from": "current-frame"
-											}
-										}
-									],
-									"sid": 737277310895866,
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 784315291433445,
-											"parameters": {
-												"key": 68
-											}
-										},
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 465151186523397,
-											"parameters": {
-												"key": 39
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "simulate-control",
-											"objectClass": "player",
-											"sid": 770382692242399,
-											"behaviorType": "8Direction",
-											"parameters": {
-												"control": "right"
-											}
-										},
-										{
-											"id": "set-animation",
-											"objectClass": "player",
-											"sid": 942906180283520,
-											"parameters": {
-												"animation": "\"walk_right\"",
-												"from": "current-frame"
-											}
-										}
-									],
-									"sid": 892568615877664,
-									"isOrBlock": true
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 879936642484234,
+									"parameters": {
+										"animation": "\"walk_left\"",
+										"from": "current-frame"
+									}
 								}
-							]
+							],
+							"sid": 779474696399304,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 571433781043964,
+									"parameters": {
+										"key": 68
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 624444443374174,
+									"parameters": {
+										"key": 39
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 461681177968971,
+									"parameters": {
+										"animation": "\"walk_right\"",
+										"from": "current-frame"
+									}
+								}
+							],
+							"sid": 912743117018028,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 593308948092338,
+									"parameters": {
+										"key": 87
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 128533710072965,
+									"parameters": {
+										"key": 38
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 618514510508223,
+									"parameters": {
+										"animation": "\"walk_up\"",
+										"from": "current-frame"
+									}
+								}
+							],
+							"sid": 538992823308462,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 395663688882849,
+									"parameters": {
+										"key": 83
+									}
+								},
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 118265766410026,
+									"parameters": {
+										"key": 40
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation",
+									"objectClass": "player",
+									"sid": 327005461865965,
+									"parameters": {
+										"animation": "\"walk_down\"",
+										"from": "current-frame"
+									}
+								}
+							],
+							"sid": 409029067764704,
+							"isOrBlock": true
 						}
 					]
 				}
