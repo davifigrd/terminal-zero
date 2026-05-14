@@ -4,7 +4,15 @@
 	"sid": 928407905484939,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "ID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 157727366548792
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -36,7 +44,18 @@
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
-					},
+					}
+				],
+				"sid": 787095244714602,
+				"name": "on",
+				"isLooping": true,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 2
+			},
+			{
+				"frames": [
 					{
 						"width": 250,
 						"height": 250,
@@ -46,7 +65,7 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 6798878,
+						"imageSpriteId": 4538799,
 						"collisionPoly": {
 							"points": [
 								1,
@@ -64,8 +83,8 @@
 						"tag": ""
 					}
 				],
-				"sid": 787095244714602,
-				"name": "Animation 1",
+				"sid": 429454389770202,
+				"name": "off",
 				"isLooping": true,
 				"isPingPong": false,
 				"repeatCount": 1,

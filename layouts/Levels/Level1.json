@@ -230,16 +230,17 @@
 						{
 							"type": "lvl1_segurança_hitbox",
 							"properties": {
-								"initially-visible": false,
-								"initial-animation": "Animation 1",
+								"initially-visible": true,
+								"initial-animation": "on",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 81,
 							"sid": 802757702055345,
-							"tags": "",
+							"tags": "3",
 							"instanceVariables": {
+								"ButtonID": 0,
 								"ID": 3
 							},
 							"behaviors": {},
@@ -269,7 +270,7 @@
 					],
 					"sid": 192341435885810,
 					"effectTypes": [],
-					"isInitiallyVisible": false,
+					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
 					"isHTMLElementsLayer": false,
 					"color": [
@@ -305,16 +306,17 @@
 						{
 							"type": "lvl1_terminal_hitbox",
 							"properties": {
-								"initially-visible": false,
-								"initial-animation": "Animation 1",
+								"initially-visible": true,
+								"initial-animation": "on",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 80,
 							"sid": 615021995519244,
-							"tags": "",
+							"tags": "2",
 							"instanceVariables": {
+								"ButtonID": 0,
 								"ID": 2
 							},
 							"behaviors": {},
@@ -344,7 +346,7 @@
 					],
 					"sid": 555118645389246,
 					"effectTypes": [],
-					"isInitiallyVisible": false,
+					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
 					"isHTMLElementsLayer": false,
 					"color": [
@@ -380,16 +382,17 @@
 						{
 							"type": "lvl1_rede_hitbox",
 							"properties": {
-								"initially-visible": false,
-								"initial-animation": "Animation 1",
+								"initially-visible": true,
+								"initial-animation": "on",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 79,
 							"sid": 783468456968815,
-							"tags": "",
+							"tags": "1",
 							"instanceVariables": {
+								"ButtonID": 0,
 								"ID": 1
 							},
 							"behaviors": {},
@@ -419,7 +422,7 @@
 					],
 					"sid": 974889775678692,
 					"effectTypes": [],
-					"isInitiallyVisible": false,
+					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
 					"isHTMLElementsLayer": false,
 					"color": [
@@ -455,16 +458,17 @@
 						{
 							"type": "lvl1_energia_hitbox",
 							"properties": {
-								"initially-visible": false,
-								"initial-animation": "Animation 1",
+								"initially-visible": true,
+								"initial-animation": "on",
 								"initial-frame": 0,
 								"enable-collisions": true,
 								"live-preview": false
 							},
 							"uid": 49,
 							"sid": 613279590479768,
-							"tags": "",
+							"tags": "0",
 							"instanceVariables": {
+								"ButtonID": 0,
 								"ID": 0
 							},
 							"behaviors": {},
@@ -494,7 +498,7 @@
 					],
 					"sid": 514489003420510,
 					"effectTypes": [],
-					"isInitiallyVisible": false,
+					"isInitiallyVisible": true,
 					"isInitiallyInteractive": true,
 					"isHTMLElementsLayer": false,
 					"color": [
@@ -526,7 +530,7 @@
 			"instances": [],
 			"sid": 455781491210825,
 			"effectTypes": [],
-			"isInitiallyVisible": false,
+			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
 			"isHTMLElementsLayer": false,
 			"color": [
@@ -806,7 +810,20 @@
 		"subfolders": []
 	},
 	"sid": 524948595009601,
-	"nonworld-instances": [],
+	"nonworld-instances": [
+		{
+			"type": "lvl1_array",
+			"properties": {
+				"width": 10,
+				"height": 1,
+				"depth": 1
+			},
+			"uid": 97,
+			"sid": 434495651027392,
+			"tags": "",
+			"instanceVariables": {}
+		}
+	],
 	"effectTypes": [],
 	"width": 1376,
 	"height": 770,
