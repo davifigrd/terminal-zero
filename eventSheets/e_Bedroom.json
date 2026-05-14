@@ -172,12 +172,12 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "PLAYER_CONTROL",
-			"description": "",
+			"description": "Movimentação do jogador",
 			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "Movimentação do jogador ativada"
+					"text": "Movimentação ativada"
 				},
 				{
 					"eventType": "block",
@@ -480,7 +480,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Animação do jogador quando está parado"
+					"text": "Animação ao parar"
 				},
 				{
 					"eventType": "block",
@@ -621,7 +621,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Movimentação do jogador desativada"
+					"text": "Movimentação desativada"
 				},
 				{
 					"eventType": "block",
@@ -657,6 +657,234 @@
 				}
 			],
 			"sid": 880947916283097,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.9764705882352941,
+				0.3254901960784314,
+				0.3176470588235294,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "PLAYER_CONTROL2",
+			"description": "Movimentação do jogador",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "player",
+							"sid": 740881120739375,
+							"behaviorType": "8Direction"
+						}
+					],
+					"actions": [],
+					"sid": 497791133928332,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-speed",
+									"objectClass": "player",
+									"sid": 162508346160364,
+									"behaviorType": "8Direction",
+									"parameters": {
+										"comparison": 4,
+										"speed": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 955462023484643,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 578778954908930,
+											"parameters": {
+												"key": 87
+											}
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 691106862713232,
+											"parameters": {
+												"key": 38
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 471421258941233,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "up"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 959701447234294,
+											"parameters": {
+												"animation": "\"walk_up\"",
+												"from": "current-frame"
+											}
+										}
+									],
+									"sid": 106397716075039,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 980620183090555,
+											"parameters": {
+												"key": 65
+											}
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 325198784082331,
+											"parameters": {
+												"key": 37
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 151241057779814,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "left"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 591988211700433,
+											"parameters": {
+												"animation": "\"walk_left\"",
+												"from": "current-frame"
+											}
+										}
+									],
+									"sid": 853242224549957,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 734846433767639,
+											"parameters": {
+												"key": 83
+											}
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 110449576767393,
+											"parameters": {
+												"key": 40
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 643581644164966,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "down"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 178447325034173,
+											"parameters": {
+												"animation": "\"walk_down\"",
+												"from": "current-frame"
+											}
+										}
+									],
+									"sid": 737277310895866,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 784315291433445,
+											"parameters": {
+												"key": 68
+											}
+										},
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 465151186523397,
+											"parameters": {
+												"key": 39
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "simulate-control",
+											"objectClass": "player",
+											"sid": 770382692242399,
+											"behaviorType": "8Direction",
+											"parameters": {
+												"control": "right"
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "player",
+											"sid": 942906180283520,
+											"parameters": {
+												"animation": "\"walk_right\"",
+												"from": "current-frame"
+											}
+										}
+									],
+									"sid": 892568615877664,
+									"isOrBlock": true
+								}
+							]
+						}
+					]
+				}
+			],
+			"sid": 957437352357812,
 			"text-color": [
 				0,
 				0,
@@ -1399,7 +1627,7 @@
 			"eventType": "group",
 			"disabled": false,
 			"title": "HUD",
-			"description": "",
+			"description": "Interface",
 			"isActiveOnStart": true,
 			"children": [
 				{
