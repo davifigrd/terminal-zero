@@ -240,18 +240,139 @@
 								"variable": "sequence_index",
 								"value": "0"
 							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "lvl1_Modules",
-							"sid": 561111029916432,
-							"parameters": {
-								"animation": "\"off\"",
-								"from": "beginning"
-							}
 						}
 					],
-					"sid": 319600670217220
+					"sid": 319600670217220,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 907771883030636,
+									"parameters": {
+										"interval-seconds": "0.8"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 623570279298335,
+									"parameters": {
+										"first-value": "gameState",
+										"comparison": 0,
+										"second-value": "\"Showing\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 593273745089053,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "lvl1_Modules",
+											"sid": 429265501112348,
+											"parameters": {
+												"instance-variable": "ButtonID",
+												"comparison": 0,
+												"value": "lvl1_array.At(sequence_index)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation",
+											"objectClass": "lvl1_Modules",
+											"sid": 876976474511543,
+											"parameters": {
+												"animation": "\"on\"",
+												"from": "current-frame"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 321775064607305,
+											"parameters": {
+												"seconds": "0.4",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-animation",
+											"objectClass": "lvl1_Modules",
+											"sid": 974354817992379,
+											"parameters": {
+												"animation": "\"off\"",
+												"from": "current-frame"
+											}
+										},
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 732924285617667,
+											"parameters": {
+												"variable": "sequence_index",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 864791691096392,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 596148376539080,
+													"parameters": {
+														"first-value": "sequence_index",
+														"comparison": 5,
+														"second-value": "lvl1_array.Width"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 134169621590279,
+													"parameters": {
+														"variable": "gameState",
+														"value": "\"playerTurn\""
+													}
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 586024221503513,
+													"parameters": {
+														"variable": "lvl1_InputBlock",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 221478413400099,
+													"parameters": {
+														"variable": "sequence_index",
+														"value": "0"
+													}
+												}
+											],
+											"sid": 667145370799164
+										}
+									]
+								}
+							]
+						}
+					]
 				},
 				{
 					"eventType": "comment",
@@ -320,151 +441,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 283330797876112,
-					"parameters": {
-						"interval-seconds": "0.8"
-					}
-				},
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 570784592149265,
-					"parameters": {
-						"first-value": "gameState",
-						"comparison": 0,
-						"second-value": "\"Showing\""
-					}
-				}
-			],
-			"actions": [],
-			"sid": 946083044517612,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "lvl1_Modules",
-							"sid": 532154737776062,
-							"parameters": {
-								"instance-variable": "ID",
-								"comparison": 0,
-								"value": "lvl1_array.At(sequence_index)"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation",
-							"objectClass": "lvl1_Modules",
-							"sid": 178636201286188,
-							"parameters": {
-								"animation": "\"on\"",
-								"from": "current-frame"
-							}
-						},
-						{
-							"id": "play-by-name",
-							"objectClass": "Audio",
-							"sid": 283416752190396,
-							"parameters": {
-								"folder": "sounds",
-								"audio-file-name": "\"\" & lvl1_Modules.ID",
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 846150388177426,
-							"parameters": {
-								"seconds": "0.4",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "set-animation",
-							"objectClass": "lvl1_Modules",
-							"sid": 583030078464029,
-							"parameters": {
-								"animation": "\"off\"",
-								"from": "current-frame"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 124020344314929,
-							"parameters": {
-								"variable": "sequence_index",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 248839684738066,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 246446738293078,
-									"parameters": {
-										"first-value": "sequence_index",
-										"comparison": 5,
-										"second-value": "lvl1_array.Width"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 669583215736744,
-									"parameters": {
-										"variable": "gameState",
-										"value": "\"playerTurn\""
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 899824981376485,
-									"parameters": {
-										"variable": "lvl1_InputBlock",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 447317462772846,
-									"parameters": {
-										"variable": "sequence_index",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 945658657155031
-						}
-					]
-				}
-			]
-		},
-		{
-			"eventType": "comment",
-			"text": "click"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
 					"sid": 500651068698924,
@@ -494,17 +470,7 @@
 					"isInverted": true
 				}
 			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 715224575259519,
-					"parameters": {
-						"variable": "lvl1_idle_timer",
-						"value": "0"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 167134048153172,
 			"children": [
 				{
@@ -519,7 +485,7 @@
 							"objectClass": "System",
 							"sid": 388508141840251,
 							"parameters": {
-								"first-value": "lvl1_Modules.ID",
+								"first-value": "lvl1_Modules.ButtonID",
 								"comparison": 0,
 								"second-value": "lvl1_array.At(sequence_index)"
 							}
