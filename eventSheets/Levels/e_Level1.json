@@ -73,6 +73,14 @@
 					],
 					"actions": [
 						{
+							"id": "set-visible",
+							"objectClass": "Clickable",
+							"sid": 810493837204362,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
 							"id": "push",
 							"objectClass": "lvl1_array",
 							"sid": 976577236754501,
@@ -98,6 +106,77 @@
 					],
 					"sid": 957709650767448,
 					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor arrow quando exibir sequência "
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 987299138448059,
+							"parameters": {
+								"variable": "lvl1_InputBlock"
+							}
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 338851096001373,
+							"parameters": {
+								"object": "Clickable"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "cursor",
+							"sid": 692779515356998,
+							"parameters": {
+								"animation": "\"arrow\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 572408488121416
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 696260142372811,
+							"parameters": {
+								"variable": "lvl1_InputBlock"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 881280963605317,
+							"parameters": {
+								"object": "Clickable"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "cursor",
+							"sid": 183672133653420,
+							"parameters": {
+								"animation": "\"pointer\"",
+								"from": "beginning"
+							}
+						}
+					],
+					"sid": 274221570739193
 				}
 			],
 			"sid": 468662313598878,
@@ -140,6 +219,14 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Clickable",
+							"sid": 341912966372149,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
@@ -321,6 +408,19 @@
 									"parameters": {
 										"animation": "\"on\"",
 										"from": "current-frame"
+									}
+								},
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 632439922085219,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "\"Level 1/lvl1_\" & str(lvl1_Modules.ID)",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
 									}
 								},
 								{
@@ -506,10 +606,10 @@
 								{
 									"id": "play-by-name",
 									"objectClass": "Audio",
-									"sid": 642466500641757,
+									"sid": 217207862458811,
 									"parameters": {
 										"folder": "sounds",
-										"audio-file-name": "\"\" & lvl1_Modules.ID",
+										"audio-file-name": "\"Level 1/lvl1_\" & str(lvl1_Modules.ID)",
 										"loop": "not-looping",
 										"volume": "0",
 										"stereo-pan": "0",

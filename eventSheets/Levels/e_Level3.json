@@ -2,6 +2,11 @@
 	"name": "e_Level3",
 	"events": [
 		{
+			"bookmark": true,
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
 			"eventType": "variable",
 			"name": "bloqueado",
 			"type": "boolean",
@@ -50,11 +55,6 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 759503639170970
-		},
-		{
-			"bookmark": true,
-			"eventType": "include",
-			"includeSheet": "e_Global"
 		},
 		{
 			"eventType": "comment",
