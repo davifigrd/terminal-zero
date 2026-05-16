@@ -948,6 +948,15 @@
 									],
 									"actions": [
 										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 629396205770524,
+											"parameters": {
+												"variable": "gameState",
+												"value": "\"Showing_Hold\""
+											}
+										},
+										{
 											"id": "set-animation",
 											"objectClass": "lvl1_Modules",
 											"sid": 679670531840567,
@@ -994,6 +1003,15 @@
 											"parameters": {
 												"variable": "sequence_index",
 												"value": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 916461487422033,
+											"parameters": {
+												"variable": "gameState",
+												"value": "\"Showing\""
 											}
 										}
 									],
