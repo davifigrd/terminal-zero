@@ -2,6 +2,16 @@
 	"name": "e_PC",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "locker_level",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "Define qual cadeado desbloquear para a janela do aplicativo Terminal Zero",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 820837549612824
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "e_Global"
 		},
@@ -1363,29 +1373,9 @@
 						"comparison": 0,
 						"value": "\"PC\""
 					}
-				},
-				{
-					"id": "pick-by-comparison",
-					"objectClass": "System",
-					"sid": 335445729491295,
-					"parameters": {
-						"object": "Locker",
-						"expression": "Locker.IDLocker",
-						"comparison": 0,
-						"value": "3"
-					}
 				}
 			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "Locker",
-					"sid": 322191321610779,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 499450189584618,
 			"disabled": true
 		},
