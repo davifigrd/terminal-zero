@@ -7,7 +7,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "current_score",
+			"name": "lvl1_current_score",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "Pontuação",
@@ -17,7 +17,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "current_stage",
+			"name": "lvl1_current_stage",
 			"type": "number",
 			"initialValue": "1",
 			"comment": "Controla o nível atual",
@@ -27,7 +27,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "gameState",
+			"name": "lvl1_gameState",
 			"type": "string",
 			"initialValue": "\"Waiting\"",
 			"comment": "Turno entre sorteio e jogador",
@@ -57,7 +57,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "sequence_index",
+			"name": "lvl1_sequence_index",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "Ponteiro que percorre a sequência",
@@ -92,7 +92,7 @@
 							"objectClass": "System",
 							"sid": 951815107884550,
 							"parameters": {
-								"variable": "gameState",
+								"variable": "lvl1_gameState",
 								"comparison": 0,
 								"value": "\"playerTurn\""
 							}
@@ -170,11 +170,11 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "Adicionar nova cor e mostrar sequência"
+					"text": "+1 módulo e exibir sequência"
 				},
 				{
-					"functionName": "lvl1_AddAndShow",
-					"functionDescription": "Adicionar nova cor e mostrar sequência",
+					"functionName": "lvl1_NextStep",
+					"functionDescription": "Adiciona um próximo módulo e exibe a sequência",
 					"functionCategory": "",
 					"functionReturnType": "none",
 					"functionCopyPicked": false,
@@ -182,31 +182,23 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
-					"sid": 523264099405823,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "push",
-									"objectClass": "lvl1_array",
-									"sid": 688698362970833,
-									"parameters": {
-										"where": "back",
-										"value": "floor(random(4))",
-										"axis": "x"
-									}
-								},
-								{
-									"callFunction": "lvl1_ShowSequence",
-									"sid": 411509404130602
-								}
-							],
-							"sid": 453368984054340
+							"id": "push",
+							"objectClass": "lvl1_array",
+							"sid": 446475688970106,
+							"parameters": {
+								"where": "back",
+								"value": "floor(random(4)) + 1",
+								"axis": "x"
+							}
+						},
+						{
+							"callFunction": "lvl1_ShowSequence",
+							"sid": 348461000315082
 						}
-					]
+					],
+					"sid": 808913816357865
 				},
 				{
 					"eventType": "comment",
@@ -234,7 +226,7 @@
 									"objectClass": "System",
 									"sid": 343546072240986,
 									"parameters": {
-										"variable": "gameState",
+										"variable": "lvl1_gameState",
 										"value": "\"Waiting\""
 									}
 								},
@@ -270,17 +262,36 @@
 									}
 								},
 								{
+									"id": "set-size",
+									"objectClass": "lvl1_array",
+									"sid": 108224387900225,
+									"parameters": {
+										"width": "0",
+										"height": "1",
+										"depth": "1"
+									}
+								},
+								{
+									"id": "set-animation",
+									"objectClass": "lvl1_Modules",
+									"sid": 298660373352940,
+									"parameters": {
+										"animation": "\"off\"",
+										"from": "beginning"
+									}
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 858530833141448,
+									"sid": 375579010695270,
 									"parameters": {
-										"seconds": "1.5",
+										"seconds": "2.0",
 										"use-timescale": true
 									}
 								},
 								{
-									"callFunction": "lvl1_AddAndShow",
-									"sid": 924837990374258
+									"callFunction": "lvl1_NextStep",
+									"sid": 200075445643806
 								}
 							],
 							"sid": 920289923433331
@@ -307,7 +318,12 @@
 						{
 							"eventType": "block",
 							"conditions": [],
-							"actions": [],
+							"actions": [
+								{
+									"callFunction": "lvl1_NextStep",
+									"sid": 299506565989977
+								}
+							],
 							"sid": 442900764898451
 						}
 					]
@@ -338,7 +354,7 @@
 									"objectClass": "System",
 									"sid": 469028013341598,
 									"parameters": {
-										"variable": "sequence_index",
+										"variable": "lvl1_sequence_index",
 										"value": "0"
 									}
 								},
@@ -364,7 +380,7 @@
 									"objectClass": "System",
 									"sid": 746162751155807,
 									"parameters": {
-										"variable": "gameState",
+										"variable": "lvl1_gameState",
 										"value": "\"Showing\""
 									}
 								},
@@ -415,6 +431,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 972608246863629,
+							"parameters": {
+								"variable": "lvl1_InputBlock",
+								"value": "true"
+							}
+						},
+						{
 							"id": "set-visible",
 							"objectClass": "Clickable",
 							"sid": 810493837204362,
@@ -427,7 +452,7 @@
 							"objectClass": "System",
 							"sid": 743047885582130,
 							"parameters": {
-								"variable": "current_stage",
+								"variable": "lvl1_current_stage",
 								"value": "1"
 							}
 						},
@@ -441,8 +466,8 @@
 							}
 						},
 						{
-							"callFunction": "lvl1_AddAndShow",
-							"sid": 136104238046894
+							"callFunction": "lvl1_Intro",
+							"sid": 801896070048053
 						}
 					],
 					"sid": 957709650767448,
@@ -563,7 +588,7 @@
 							"objectClass": "System",
 							"sid": 115586806882363,
 							"parameters": {
-								"variable": "gameState",
+								"variable": "lvl1_gameState",
 								"comparison": 0,
 								"value": "\"playerTurn\""
 							}
@@ -605,7 +630,7 @@
 									"parameters": {
 										"first-value": "lvl1_Modules.ID",
 										"comparison": 0,
-										"second-value": "lvl1_array.At(sequence_index)"
+										"second-value": "lvl1_array.At(lvl1_sequence_index)"
 									}
 								}
 							],
@@ -655,7 +680,7 @@
 									"objectClass": "System",
 									"sid": 849323185885305,
 									"parameters": {
-										"variable": "sequence_index",
+										"variable": "lvl1_sequence_index",
 										"value": "1"
 									}
 								}
@@ -674,7 +699,7 @@
 											"objectClass": "System",
 											"sid": 911369446149381,
 											"parameters": {
-												"first-value": "sequence_index",
+												"first-value": "lvl1_sequence_index",
 												"comparison": 0,
 												"second-value": "lvl1_array.Width"
 											}
@@ -686,26 +711,13 @@
 											"objectClass": "System",
 											"sid": 830472461901223,
 											"parameters": {
-												"variable": "current_score",
+												"variable": "lvl1_current_score",
 												"value": "1"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 208737024132718,
-											"parameters": {
-												"seconds": "0.8",
-												"use-timescale": true
 											}
 										}
 									],
 									"sid": 744502430981397,
 									"children": [
-										{
-											"eventType": "comment",
-											"text": "+1 módulo"
-										},
 										{
 											"eventType": "block",
 											"conditions": [
@@ -716,21 +728,30 @@
 													"parameters": {
 														"first-value": "lvl1_array.Width",
 														"comparison": 2,
-														"second-value": "2 + current_stage * 2"
+														"second-value": "2 + lvl1_current_stage * 2"
 													}
 												}
 											],
 											"actions": [
 												{
-													"callFunction": "lvl1_AddAndShow",
-													"sid": 504429829539298
+													"id": "wait",
+													"objectClass": "System",
+													"sid": 877950817258137,
+													"parameters": {
+														"seconds": "0.8",
+														"use-timescale": true
+													}
+												},
+												{
+													"callFunction": "lvl1_NextStep",
+													"sid": 197684032997750
 												}
 											],
 											"sid": 720827524636770
 										},
 										{
 											"eventType": "comment",
-											"text": "Filtro próxima/ fim da fase"
+											"text": "Filtro próxima etapa/ fim da fase"
 										},
 										{
 											"eventType": "block",
@@ -741,17 +762,7 @@
 													"sid": 539448351706642
 												}
 											],
-											"actions": [
-												{
-													"id": "add-to-eventvar",
-													"objectClass": "System",
-													"sid": 566896217125359,
-													"parameters": {
-														"variable": "current_stage",
-														"value": "1"
-													}
-												}
-											],
+											"actions": [],
 											"sid": 824719495085732,
 											"children": [
 												{
@@ -762,21 +773,56 @@
 													"eventType": "block",
 													"conditions": [
 														{
-															"id": "compare-eventvar",
+															"id": "compare-two-values",
 															"objectClass": "System",
-															"sid": 436266260168034,
+															"sid": 967874021105286,
 															"parameters": {
-																"variable": "current_stage",
+																"first-value": "lvl1_current_stage + 1",
 																"comparison": 4,
-																"value": "3"
+																"second-value": "3"
 															}
 														}
 													],
 													"actions": [
 														{
+															"id": "set-boolean-eventvar",
+															"objectClass": "System",
+															"sid": 397867586759116,
+															"parameters": {
+																"variable": "lvl1_InputBlock",
+																"value": "true"
+															}
+														},
+														{
+															"id": "add-to-eventvar",
+															"objectClass": "System",
+															"sid": 209081375754406,
+															"parameters": {
+																"variable": "lvl1_current_stage",
+																"value": "1"
+															}
+														},
+														{
+															"id": "clear",
+															"objectClass": "lvl1_array",
+															"sid": 531739200496946,
+															"parameters": {
+																"value": "0"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 678241353786844,
+															"parameters": {
+																"seconds": "1",
+																"use-timescale": true
+															}
+														},
+														{
 															"id": "play",
 															"objectClass": "Audio",
-															"sid": 244182750557756,
+															"sid": 744380980171132,
 															"parameters": {
 																"audio-file": {
 																	"path": "Level 1/lvl1_victory"
@@ -788,14 +834,23 @@
 															}
 														},
 														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 639275621304106,
+															"parameters": {
+																"seconds": "7",
+																"use-timescale": true
+															}
+														},
+														{
 															"callFunction": "Transition",
-															"sid": 780319022641802,
+															"sid": 951247913889541,
 															"parameters": [
 																"\"Bedroom\""
 															]
 														}
 													],
-													"sid": 912223991556485
+													"sid": 319589700167020
 												},
 												{
 													"eventType": "comment",
@@ -812,11 +867,30 @@
 													],
 													"actions": [
 														{
+															"id": "add-to-eventvar",
+															"objectClass": "System",
+															"sid": 549350216828176,
+															"parameters": {
+																"variable": "lvl1_current_stage",
+																"value": "1"
+															}
+														},
+														{
 															"id": "clear",
 															"objectClass": "lvl1_array",
 															"sid": 426370356887354,
 															"parameters": {
 																"value": "0"
+															}
+														},
+														{
+															"id": "set-size",
+															"objectClass": "lvl1_array",
+															"sid": 845440160152057,
+															"parameters": {
+																"width": "0",
+																"height": "1",
+																"depth": "1"
 															}
 														},
 														{
@@ -829,8 +903,8 @@
 															}
 														},
 														{
-															"callFunction": "lvl1_AddAndShow",
-															"sid": 953097149639347
+															"callFunction": "lvl1_NextStep",
+															"sid": 343925543926474
 														}
 													],
 													"sid": 392774137270823
@@ -902,7 +976,7 @@
 							"objectClass": "System",
 							"sid": 862941124933716,
 							"parameters": {
-								"first-value": "gameState",
+								"first-value": "lvl1_gameState",
 								"comparison": 0,
 								"second-value": "\"Showing\""
 							}
@@ -923,7 +997,7 @@
 									"objectClass": "System",
 									"sid": 884477623482033,
 									"parameters": {
-										"first-value": "sequence_index",
+										"first-value": "lvl1_sequence_index",
 										"comparison": 2,
 										"second-value": "lvl1_array.Width"
 									}
@@ -942,24 +1016,15 @@
 											"parameters": {
 												"instance-variable": "ID",
 												"comparison": 0,
-												"value": "lvl1_array.At(sequence_index)"
+												"value": "lvl1_array.At(lvl1_sequence_index)"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 629396205770524,
-											"parameters": {
-												"variable": "gameState",
-												"value": "\"Showing_Hold\""
-											}
-										},
-										{
 											"id": "set-animation",
 											"objectClass": "lvl1_Modules",
-											"sid": 679670531840567,
+											"sid": 565330819539252,
 											"parameters": {
 												"animation": "\"on\"",
 												"from": "current-frame"
@@ -968,7 +1033,7 @@
 										{
 											"id": "play-by-name",
 											"objectClass": "Audio",
-											"sid": 748323594007067,
+											"sid": 288455805134026,
 											"parameters": {
 												"folder": "sounds",
 												"audio-file-name": "\"Level 1/lvl1_\" & str(lvl1_Modules.ID)",
@@ -981,7 +1046,7 @@
 										{
 											"id": "wait",
 											"objectClass": "System",
-											"sid": 328245076238686,
+											"sid": 378690850097568,
 											"parameters": {
 												"seconds": "0.4",
 												"use-timescale": true
@@ -990,7 +1055,7 @@
 										{
 											"id": "set-animation",
 											"objectClass": "lvl1_Modules",
-											"sid": 789554003410752,
+											"sid": 270347035284892,
 											"parameters": {
 												"animation": "\"off\"",
 												"from": "current-frame"
@@ -999,19 +1064,10 @@
 										{
 											"id": "add-to-eventvar",
 											"objectClass": "System",
-											"sid": 386207151842506,
+											"sid": 530727922360789,
 											"parameters": {
-												"variable": "sequence_index",
+												"variable": "lvl1_sequence_index",
 												"value": "1"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 916461487422033,
-											"parameters": {
-												"variable": "gameState",
-												"value": "\"Showing\""
 											}
 										}
 									],
@@ -1038,7 +1094,7 @@
 									"objectClass": "System",
 									"sid": 975845128251775,
 									"parameters": {
-										"variable": "gameState",
+										"variable": "lvl1_gameState",
 										"value": "\"playerTurn\""
 									}
 								},
@@ -1056,7 +1112,7 @@
 									"objectClass": "System",
 									"sid": 231224561253015,
 									"parameters": {
-										"variable": "sequence_index",
+										"variable": "lvl1_sequence_index",
 										"value": "0"
 									}
 								}
