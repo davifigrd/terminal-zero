@@ -157,8 +157,7 @@
 	"uniqueId": "infcrcpul51",
 	"objectTypes": {
 		"items": [
-			"Sprite",
-			"ad01dacb744704883e161dab232cf"
+			"Sprite"
 		],
 		"subfolders": [
 			{
@@ -260,10 +259,24 @@
 								"name": "icon"
 							},
 							{
-								"items": [
-									"window_terminal_zero"
+								"items": [],
+								"subfolders": [
+									{
+										"items": [
+											"window_terminal_zero"
+										],
+										"subfolders": [
+											{
+												"items": [
+													"locker2"
+												],
+												"subfolders": [],
+												"name": "lockers"
+											}
+										],
+										"name": "tz_window"
+									}
 								],
-								"subfolders": [],
 								"name": "window"
 							}
 						],
@@ -548,8 +561,7 @@
 	],
 	"families": {
 		"items": [
-			"Clickable",
-			"Window"
+			"Clickable"
 		],
 		"subfolders": [
 			{
@@ -573,6 +585,14 @@
 				],
 				"subfolders": [],
 				"name": "Level 1"
+			},
+			{
+				"items": [
+					"Window",
+					"Locker"
+				],
+				"subfolders": [],
+				"name": "PC"
 			}
 		]
 	},

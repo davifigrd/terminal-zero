@@ -1270,9 +1270,9 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 485682067385027,
+									"sid": 235690043195720,
 									"parameters": {
-										"layer": "\"window_terminal_zero\"",
+										"layer": "\"terminal_zero\"",
 										"visibility": "visible"
 									}
 								}
@@ -1310,46 +1310,32 @@
 			]
 		},
 		{
+			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-drag-start",
-					"objectClass": "Window",
-					"sid": 138012917839892,
-					"behaviorType": "DragDrop"
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 274659142709893,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "double-clicked",
+						"object-clicked": "Window"
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-enabled",
-					"objectClass": "Window",
-					"sid": 491679845360943,
-					"behaviorType": "DragDrop",
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 927200654984692,
 					"parameters": {
-						"state": "disabled"
-					}
-				},
-				{
-					"id": "set-position",
-					"objectClass": "Window",
-					"sid": 537031161233297,
-					"parameters": {
-						"x": "clamp(Mouse.X, screen_window.BBoxLeft, screen_window.BBoxRight - Self.Width)",
-						"y": "clamp(Mouse.Y, screen_window.BBoxTop, screen_window.BBoxBottom - Self.Height)"
-					}
-				},
-				{
-					"id": "set-enabled",
-					"objectClass": "Window",
-					"sid": 369337531641524,
-					"behaviorType": "DragDrop",
-					"parameters": {
-						"state": "enabled"
+						"layer": "\"terminal_zero\"",
+						"visibility": "invisible"
 					}
 				}
 			],
-			"sid": 493799735679602,
-			"disabled": true
+			"sid": 872382892424786
 		},
 		{
 			"eventType": "block",
@@ -1357,22 +1343,51 @@
 				{
 					"id": "is-dragging",
 					"objectClass": "Window",
-					"sid": 200649195490397,
+					"sid": 897940295759326,
 					"behaviorType": "DragDrop"
+				}
+			],
+			"actions": [],
+			"sid": 618543608642439,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 591551955428144,
+					"parameters": {
+						"variable": "layout",
+						"comparison": 0,
+						"value": "\"PC\""
+					}
+				},
+				{
+					"id": "pick-by-comparison",
+					"objectClass": "System",
+					"sid": 335445729491295,
+					"parameters": {
+						"object": "Locker",
+						"expression": "Locker.IDLocker",
+						"comparison": 0,
+						"value": "3"
+					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-position",
-					"objectClass": "Window",
-					"sid": 399505361698580,
+					"id": "set-visible",
+					"objectClass": "Locker",
+					"sid": 322191321610779,
 					"parameters": {
-						"x": "clamp(Window.X, screen_window.BBoxLeft + (Window.Width/2), screen_window.BBoxRight - (Window.Width/2))",
-						"y": "clamp(Window.Y, screen_window.BBoxTop + (Window.Height/2), screen_window.BBoxBottom - (Window.Height/2))"
+						"visibility": "invisible"
 					}
 				}
 			],
-			"sid": 813227563381055
+			"sid": 499450189584618,
+			"disabled": true
 		},
 		{
 			"eventType": "block",
@@ -1380,12 +1395,21 @@
 				{
 					"id": "every-tick",
 					"objectClass": "System",
-					"sid": 545185149978017
+					"sid": 225369984614989
 				}
 			],
-			"actions": [],
-			"sid": 300711316551737,
-			"disabled": true
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Window",
+					"sid": 227897540783428,
+					"parameters": {
+						"x": "clamp(Window.X, screen_window.BBoxLeft + (Window.Width / 2), screen_window.BBoxRight - (Window.Width / 2))",
+						"y": "clamp(Window.Y, screen_window.BBoxTop + (Window.Height / 2), screen_window.BBoxBottom - (Window.Height / 2))"
+					}
+				}
+			],
+			"sid": 672742596872755
 		}
 	],
 	"sid": 473027040696098
