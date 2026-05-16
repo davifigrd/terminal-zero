@@ -22,6 +22,37 @@
 			"sid": 345529679003487
 		},
 		{
+			"eventType": "comment",
+			"text": "Tela cheia"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-in-preview",
+					"objectClass": "System",
+					"sid": 664908839994281
+				},
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 996407279517731
+				}
+			],
+			"actions": [
+				{
+					"id": "request-fullscreen",
+					"objectClass": "Browser",
+					"sid": 692841547138656,
+					"parameters": {
+						"mode": "stretch-scale-inner",
+						"navigation-ui": "auto"
+					}
+				}
+			],
+			"sid": 851112825147190
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "MOUSE",
@@ -139,8 +170,8 @@
 							"objectClass": "cursor",
 							"sid": 232802964866045,
 							"parameters": {
-								"x": "clamp(Mouse.X, screen.BBoxLeft, screen.BBoxRight)",
-								"y": "clamp(Mouse.Y, screen.BBoxTop, screen.BBoxBottom)"
+								"x": "clamp(Mouse.X, screen_cursor.BBoxLeft, screen_cursor.BBoxRight)",
+								"y": "clamp(Mouse.Y, screen_cursor.BBoxTop, screen_cursor.BBoxBottom)"
 							}
 						}
 					],

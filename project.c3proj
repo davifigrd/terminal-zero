@@ -99,6 +99,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "DragnDrop",
+			"name": "Drag & Drop",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "EightDir",
 			"name": "8 Direction",
 			"author": "Scirra",
@@ -150,7 +157,8 @@
 	"uniqueId": "infcrcpul51",
 	"objectTypes": {
 		"items": [
-			"Sprite"
+			"Sprite",
+			"ad01dacb744704883e161dab232cf"
 		],
 		"subfolders": [
 			{
@@ -203,24 +211,11 @@
 				"subfolders": [
 					{
 						"items": [
-							"screen",
-							"monitor_limit"
+							"screen_cursor",
+							"monitor_limit",
+							"screen_window"
 						],
 						"subfolders": [
-							{
-								"items": [
-									"ExercíciosNícollas",
-									"Lixeira",
-									"BlocoDeNotas",
-									"Teams_",
-									"DevCPP_",
-									"VSCode_",
-									"DeepWeb_",
-									"TerminalZero_"
-								],
-								"subfolders": [],
-								"name": "icon_text"
-							},
 							{
 								"items": [
 									"bin",
@@ -246,9 +241,30 @@
 										],
 										"subfolders": [],
 										"name": "icon_hitbox"
+									},
+									{
+										"items": [
+											"ExercíciosNícollas",
+											"Lixeira",
+											"BlocoDeNotas",
+											"Teams_",
+											"DevCPP_",
+											"VSCode_",
+											"DeepWeb_",
+											"TerminalZero_"
+										],
+										"subfolders": [],
+										"name": "icon_text"
 									}
 								],
 								"name": "icon"
+							},
+							{
+								"items": [
+									"window_terminal_zero"
+								],
+								"subfolders": [],
+								"name": "window"
 							}
 						],
 						"name": "UI"
@@ -442,8 +458,7 @@
 							"lvl5_Texto2",
 							"lvl5_Texto3",
 							"lvl5_Texto4",
-							"lvl5_Texto5",
-							"lvl5_TiledBackground"
+							"lvl5_Texto5"
 						],
 						"subfolders": [],
 						"name": "Level 5"
@@ -533,7 +548,8 @@
 	],
 	"families": {
 		"items": [
-			"Clickable"
+			"Clickable",
+			"Window"
 		],
 		"subfolders": [
 			{

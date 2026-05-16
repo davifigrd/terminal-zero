@@ -1268,11 +1268,12 @@
 							],
 							"actions": [
 								{
-									"id": "go-to-layout",
+									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 616525536198341,
+									"sid": 485682067385027,
 									"parameters": {
-										"layout": "Level1"
+										"layer": "\"window_terminal_zero\"",
+										"visibility": "visible"
 									}
 								}
 							],
@@ -1307,6 +1308,84 @@
 				0,
 				1
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-drag-start",
+					"objectClass": "Window",
+					"sid": 138012917839892,
+					"behaviorType": "DragDrop"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "Window",
+					"sid": 491679845360943,
+					"behaviorType": "DragDrop",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-position",
+					"objectClass": "Window",
+					"sid": 537031161233297,
+					"parameters": {
+						"x": "clamp(Mouse.X, screen_window.BBoxLeft, screen_window.BBoxRight - Self.Width)",
+						"y": "clamp(Mouse.Y, screen_window.BBoxTop, screen_window.BBoxBottom - Self.Height)"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Window",
+					"sid": 369337531641524,
+					"behaviorType": "DragDrop",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 493799735679602,
+			"disabled": true
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-dragging",
+					"objectClass": "Window",
+					"sid": 200649195490397,
+					"behaviorType": "DragDrop"
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "Window",
+					"sid": 399505361698580,
+					"parameters": {
+						"x": "clamp(Window.X, screen_window.BBoxLeft + (Window.Width/2), screen_window.BBoxRight - (Window.Width/2))",
+						"y": "clamp(Window.Y, screen_window.BBoxTop + (Window.Height/2), screen_window.BBoxBottom - (Window.Height/2))"
+					}
+				}
+			],
+			"sid": 813227563381055
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 545185149978017
+				}
+			],
+			"actions": [],
+			"sid": 300711316551737,
+			"disabled": true
 		}
 	],
 	"sid": 473027040696098
