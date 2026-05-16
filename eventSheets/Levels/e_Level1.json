@@ -170,38 +170,6 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "+1 módulo e exibir sequência"
-				},
-				{
-					"functionName": "lvl1_NextStep",
-					"functionDescription": "Adiciona um próximo módulo e exibe a sequência",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "push",
-							"objectClass": "lvl1_array",
-							"sid": 446475688970106,
-							"parameters": {
-								"where": "back",
-								"value": "floor(random(4)) + 1",
-								"axis": "x"
-							}
-						},
-						{
-							"callFunction": "lvl1_ShowSequence",
-							"sid": 348461000315082
-						}
-					],
-					"sid": 808913816357865
-				},
-				{
-					"eventType": "comment",
 					"text": "Errou a sequência"
 				},
 				{
@@ -218,31 +186,17 @@
 					"sid": 261423213887243,
 					"children": [
 						{
+							"eventType": "comment",
+							"text": "Audiovisual"
+						},
+						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 343546072240986,
-									"parameters": {
-										"variable": "lvl1_gameState",
-										"value": "\"Waiting\""
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 303459834415093,
-									"parameters": {
-										"variable": "lvl1_InputBlock",
-										"value": "true"
-									}
-								},
-								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 129560846930632,
+									"sid": 152011029084630,
 									"parameters": {
 										"audio-file": {
 											"path": "Level 1/lvl1_error"
@@ -256,16 +210,35 @@
 								{
 									"id": "set-active",
 									"objectClass": "lvl1_background",
-									"sid": 265523196494063,
+									"sid": 341207312860199,
 									"behaviorType": "Sine",
 									"parameters": {
 										"state": "active"
 									}
 								},
 								{
+									"id": "set-animation",
+									"objectClass": "lvl1_Modules",
+									"sid": 669834063158998,
+									"parameters": {
+										"animation": "\"off\"",
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "lvl1_array",
+									"sid": 975743061322838,
+									"parameters": {
+										"width": "0",
+										"height": "1",
+										"depth": "1"
+									}
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 419703498446016,
+									"sid": 313904249180665,
 									"parameters": {
 										"seconds": "0.2",
 										"use-timescale": true
@@ -274,7 +247,7 @@
 								{
 									"id": "set-active",
 									"objectClass": "lvl1_background",
-									"sid": 586902014330338,
+									"sid": 287584608493965,
 									"behaviorType": "Sine",
 									"parameters": {
 										"state": "inactive"
@@ -283,7 +256,7 @@
 								{
 									"id": "set-cycle-position",
 									"objectClass": "lvl1_background",
-									"sid": 434689352959361,
+									"sid": 957126589027584,
 									"behaviorType": "Sine",
 									"parameters": {
 										"cycle-position": "0"
@@ -292,7 +265,7 @@
 								{
 									"id": "set-visible",
 									"objectClass": "lvl1_error",
-									"sid": 627377172389046,
+									"sid": 890817504901000,
 									"parameters": {
 										"visibility": "visible"
 									}
@@ -300,7 +273,7 @@
 								{
 									"id": "flash",
 									"objectClass": "lvl1_error",
-									"sid": 373665489991742,
+									"sid": 237342519577391,
 									"behaviorType": "Flash",
 									"parameters": {
 										"on-time": "0.1",
@@ -311,7 +284,7 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 992435938855232,
+									"sid": 694901879715871,
 									"parameters": {
 										"seconds": "1",
 										"use-timescale": true
@@ -320,40 +293,32 @@
 								{
 									"id": "stop-flashing",
 									"objectClass": "lvl1_error",
-									"sid": 871657092191707,
+									"sid": 921841265232573,
 									"behaviorType": "Flash"
 								},
 								{
 									"id": "set-visible",
 									"objectClass": "lvl1_error",
-									"sid": 428170695859985,
+									"sid": 763165572013174,
 									"parameters": {
 										"visibility": "invisible"
 									}
-								},
-								{
-									"id": "set-size",
-									"objectClass": "lvl1_array",
-									"sid": 108224387900225,
-									"parameters": {
-										"width": "0",
-										"height": "1",
-										"depth": "1"
-									}
-								},
-								{
-									"id": "set-animation",
-									"objectClass": "lvl1_Modules",
-									"sid": 298660373352940,
-									"parameters": {
-										"animation": "\"off\"",
-										"from": "beginning"
-									}
-								},
+								}
+							],
+							"sid": 890615369460192
+						},
+						{
+							"eventType": "comment",
+							"text": "Segmento"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 802996860191877,
+									"sid": 285111645810118,
 									"parameters": {
 										"seconds": "2",
 										"use-timescale": true
@@ -361,20 +326,20 @@
 								},
 								{
 									"callFunction": "lvl1_NextStep",
-									"sid": 200075445643806
+									"sid": 176651110919252
 								}
 							],
-							"sid": 920289923433331
+							"sid": 514587176035088
 						}
 					]
 				},
 				{
 					"eventType": "comment",
-					"text": "Introdução da fase"
+					"text": "+1 módulo e exibir sequência"
 				},
 				{
-					"functionName": "lvl1_Intro",
-					"functionDescription": "Ações da introdução da fase",
+					"functionName": "lvl1_NextStep",
+					"functionDescription": "Adiciona um próximo módulo e exibe a sequência",
 					"functionCategory": "",
 					"functionReturnType": "none",
 					"functionCopyPicked": false,
@@ -383,24 +348,43 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [],
-					"sid": 748927759832285,
+					"sid": 185541240855642,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [],
 							"actions": [
 								{
-									"callFunction": "lvl1_NextStep",
-									"sid": 299506565989977
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 365212224396006,
+									"parameters": {
+										"seconds": "1.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "push",
+									"objectClass": "lvl1_array",
+									"sid": 849471045358825,
+									"parameters": {
+										"where": "back",
+										"value": "floor(random(4)) + 1",
+										"axis": "x"
+									}
+								},
+								{
+									"callFunction": "lvl1_ShowSequence",
+									"sid": 135017687680550
 								}
 							],
-							"sid": 442900764898451
+							"sid": 462585301864217
 						}
 					]
 				},
 				{
 					"eventType": "comment",
-					"text": "Exibir a sequência"
+					"text": "Exibir sequência"
 				},
 				{
 					"functionName": "lvl1_ShowSequence",
@@ -467,6 +451,131 @@
 							"sid": 681870989198767
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Exibir texto da etapa atual "
+				},
+				{
+					"functionName": "lvl1_Text",
+					"functionDescription": "Exibe texto dependendo da etapa atual ",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 414760472152319,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 267724431054678,
+									"parameters": {
+										"variable": "lvl1_current_stage",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "TypingEffect",
+									"sid": 688151283402698,
+									"parameters": [
+										"\"Primeira etapa...\""
+									]
+								}
+							],
+							"sid": 867035416596449
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 698381382445805,
+									"parameters": {
+										"variable": "lvl1_current_stage",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "TypingEffect",
+									"sid": 215060672483843,
+									"parameters": [
+										"\"Segunda etapa...\""
+									]
+								}
+							],
+							"sid": 599550945382204
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 123949246583128,
+									"parameters": {
+										"variable": "lvl1_current_stage",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "TypingEffect",
+									"sid": 347070406660289,
+									"parameters": [
+										"\"Etapa final...\""
+									]
+								}
+							],
+							"sid": 421165318972983
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 789430003097681,
+									"parameters": {
+										"tag": "\"end_TyppingEffect\""
+									}
+								},
+								{
+									"callFunction": "lvl1_NextStep",
+									"sid": 215515701181005
+								}
+							],
+							"sid": 229068393225459
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 697660756452321
+								}
+							],
+							"actions": [],
+							"sid": 997691531625422
+						}
+					]
 				}
 			],
 			"sid": 867585995128801,
@@ -527,7 +636,7 @@
 							}
 						},
 						{
-							"callFunction": "lvl1_Intro",
+							"callFunction": "lvl1_Text",
 							"sid": 801896070048053
 						}
 					],
@@ -678,6 +787,12 @@
 					"sid": 663978536859453,
 					"children": [
 						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 495668064016967
+						},
+						{
 							"eventType": "comment",
 							"text": "Verificação de acerto"
 						},
@@ -768,6 +883,24 @@
 									],
 									"actions": [
 										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 650819138402823,
+											"parameters": {
+												"variable": "lvl1_InputBlock",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 734509326567778,
+											"parameters": {
+												"variable": "lvl1_gameState",
+												"value": "\"Waiting\""
+											}
+										},
+										{
 											"id": "add-to-eventvar",
 											"objectClass": "System",
 											"sid": 830472461901223,
@@ -823,7 +956,17 @@
 													"sid": 539448351706642
 												}
 											],
-											"actions": [],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 341782838777201,
+													"parameters": {
+														"variable": "lvl1_InputBlock",
+														"value": "true"
+													}
+												}
+											],
 											"sid": 824719495085732,
 											"children": [
 												{
@@ -950,8 +1093,8 @@
 															}
 														},
 														{
-															"callFunction": "lvl1_NextStep",
-															"sid": 343925543926474
+															"callFunction": "lvl1_Text",
+															"sid": 406896251310219
 														}
 													],
 													"sid": 392774137270823
@@ -977,8 +1120,26 @@
 							],
 							"actions": [
 								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 292123861828859,
+									"parameters": {
+										"variable": "lvl1_InputBlock",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 188425576138796,
+									"parameters": {
+										"variable": "lvl1_gameState",
+										"value": "\"Waiting\""
+									}
+								},
+								{
 									"callFunction": "lvl1_Error",
-									"sid": 907565100303918
+									"sid": 958860106000871
 								}
 							],
 							"sid": 426170376239316
