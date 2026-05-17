@@ -26,6 +26,7 @@
 			"text": "Tela cheia"
 		},
 		{
+			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{
@@ -128,7 +129,7 @@
 									"objectClass": "Mouse",
 									"sid": 733494152239419,
 									"parameters": {
-										"object": "Clickable"
+										"object": "Clickable_Familly"
 									}
 								}
 							],
@@ -1018,12 +1019,371 @@
 			]
 		},
 		{
+			"bookmark": true,
 			"eventType": "group",
 			"disabled": false,
 			"title": "RESET",
 			"description": "Restaura o arquivo local",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "Restaura as variáveis das fases"
+				},
+				{
+					"bookmark": true,
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 480500450527645
+						}
+					],
+					"actions": [],
+					"sid": 702361737033630,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Fase 1"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 441227187992145,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level1\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 388651046951164,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 174292959317188,
+											"parameters": {
+												"variable": "lvl1_current_score"
+											}
+										},
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 336968908603224,
+											"parameters": {
+												"variable": "lvl1_current_stage"
+											}
+										},
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 954975131375180,
+											"parameters": {
+												"variable": "lvl1_gameState"
+											}
+										},
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 315249267782326,
+											"parameters": {
+												"variable": "lvl1_idle_timer"
+											}
+										},
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 968698614482377,
+											"parameters": {
+												"variable": "lvl1_InputBlock"
+											}
+										},
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 442346389571582,
+											"parameters": {
+												"variable": "lvl1_sequence_index"
+											}
+										}
+									],
+									"sid": 975077781742379
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 2"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 758751959290734,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level2\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 524365536457307,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 940096840507424
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 3"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 534185367161374,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level3\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 369973146782693,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 579979509512681
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 4"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 727496926886191,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level4\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 850759261816783,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 841240457101728
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 5"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 897963272909526,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level5\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 768645733337158,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 858537076399097
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 6"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 598665437109720,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level6\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 373187931253615,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 301718342698141
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 7"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 174121343579601,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level7\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 708409816889393,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 293004833408057
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 8"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 940603289872043,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level8\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 830023457891695,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 683334936232709
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 9"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 799419235371186,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level9\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 752359309137655,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 654921640793796
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 10"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 360677435369185,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level10\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 574015273801543,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 336821913589437
+								}
+							]
+						}
+					]
+				},
 				{
 					"eventType": "comment",
 					"text": "Tutorial WASD no layout Bedroom"
@@ -1051,6 +1411,10 @@
 						}
 					],
 					"sid": 672323790507587
+				},
+				{
+					"eventType": "comment",
+					"text": "Tutorial WASD no layout Bedroom"
 				}
 			],
 			"sid": 124037823196975,

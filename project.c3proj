@@ -127,6 +127,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Pin",
+			"name": "Pin",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Sin",
 			"name": "Sine",
 			"author": "Scirra",
@@ -235,7 +242,8 @@
 											"devcpp_hitbox",
 											"notes_hitbox",
 											"deepweb_hitbox",
-											"terminalzero_hitbox"
+											"terminalzero_hitbox",
+											"icon_hover"
 										],
 										"subfolders": [],
 										"name": "icon_hitbox"
@@ -560,7 +568,8 @@
 	],
 	"families": {
 		"items": [
-			"Clickable"
+			"Clickable_Familly",
+			"Icon_Familly"
 		],
 		"subfolders": [
 			{
@@ -587,7 +596,7 @@
 			},
 			{
 				"items": [
-					"Window"
+					"Window_Familly"
 				],
 				"subfolders": [],
 				"name": "PC"

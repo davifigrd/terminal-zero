@@ -2,18 +2,39 @@
 	"name": "e_PC",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
 			"eventType": "variable",
-			"name": "locker_level",
+			"name": "level_done",
 			"type": "number",
 			"initialValue": "1",
-			"comment": "Define qual cadeado desbloquear para a janela do aplicativo Terminal Zero",
+			"comment": "Define qual cadeado desbloquear para a janela do Terminal Zero",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 820837549612824
 		},
 		{
-			"eventType": "include",
-			"includeSheet": "e_Global"
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 454400944990141
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "locker",
+					"sid": 924555707882944,
+					"parameters": {
+						"opacity": "(locker.level <= level_done) ? 0 : 50"
+					}
+				}
+			],
+			"sid": 199427237746078
 		},
 		{
 			"eventType": "group",
@@ -22,10 +43,6 @@
 			"description": "Interações com o layout",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "comment",
-					"text": "Entrar no pc"
-				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -64,7 +81,44 @@
 							}
 						}
 					],
-					"sid": 741880394947535
+					"sid": 741880394947535,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Fixa os cadeados na janela do Terminal Zero"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 298736355981672,
+									"parameters": {
+										"object": "locker"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "locker",
+									"sid": 923752265725374,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "window_terminal_zero",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								}
+							],
+							"sid": 375774995327695
+						}
+					]
 				},
 				{
 					"eventType": "comment",
@@ -93,6 +147,66 @@
 						}
 					],
 					"sid": 897537008656469
+				},
+				{
+					"eventType": "comment",
+					"text": "Prende a janela Terminal Zero na tela do monitor"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 780518345294457
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Window_Familly",
+							"sid": 887104405864620,
+							"parameters": {
+								"x": "clamp(Window_Familly.X, screen_window.BBoxLeft + (Window_Familly.Width / 2), screen_window.BBoxRight - (Window_Familly.Width / 2))",
+								"y": "clamp(Window_Familly.Y, screen_window.BBoxTop + (Window_Familly.Height / 2), screen_window.BBoxBottom - (Window_Familly.Height / 2))"
+							}
+						}
+					],
+					"sid": 754534397582603
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 509342739343891,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "locker"
+							}
+						},
+						{
+							"id": "compare-opacity",
+							"objectClass": "locker",
+							"sid": 851096068356589,
+							"parameters": {
+								"comparison": 0,
+								"opacity": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Transition",
+							"sid": 412637857692815,
+							"parameters": [
+								"\"\""
+							]
+						}
+					],
+					"sid": 958212724445912
 				}
 			],
 			"sid": 836311122198057,
@@ -118,7 +232,7 @@
 			"children": [
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "ICON_HITBOX",
 					"description": "Cursor sobre ícone",
 					"isActiveOnStart": true,
@@ -149,7 +263,8 @@
 									}
 								}
 							],
-							"sid": 684976785391517
+							"sid": 684976785391517,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -170,7 +285,8 @@
 									}
 								}
 							],
-							"sid": 978580683068435
+							"sid": 978580683068435,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -198,7 +314,8 @@
 									}
 								}
 							],
-							"sid": 324140698626098
+							"sid": 324140698626098,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -219,7 +336,8 @@
 									}
 								}
 							],
-							"sid": 988297590922204
+							"sid": 988297590922204,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -247,7 +365,8 @@
 									}
 								}
 							],
-							"sid": 632083434897545
+							"sid": 632083434897545,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -268,7 +387,8 @@
 									}
 								}
 							],
-							"sid": 699665643157902
+							"sid": 699665643157902,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -296,7 +416,8 @@
 									}
 								}
 							],
-							"sid": 423282576080702
+							"sid": 423282576080702,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -317,7 +438,8 @@
 									}
 								}
 							],
-							"sid": 880364820566446
+							"sid": 880364820566446,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -345,7 +467,8 @@
 									}
 								}
 							],
-							"sid": 152345487820679
+							"sid": 152345487820679,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -366,7 +489,8 @@
 									}
 								}
 							],
-							"sid": 292185581394714
+							"sid": 292185581394714,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -394,7 +518,8 @@
 									}
 								}
 							],
-							"sid": 648644103181510
+							"sid": 648644103181510,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -415,7 +540,8 @@
 									}
 								}
 							],
-							"sid": 777733911975423
+							"sid": 777733911975423,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -443,7 +569,8 @@
 									}
 								}
 							],
-							"sid": 337023349780957
+							"sid": 337023349780957,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -464,7 +591,8 @@
 									}
 								}
 							],
-							"sid": 956364984429766
+							"sid": 956364984429766,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -492,7 +620,8 @@
 									}
 								}
 							],
-							"sid": 428416068837821
+							"sid": 428416068837821,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -513,7 +642,8 @@
 									}
 								}
 							],
-							"sid": 837542542196445
+							"sid": 837542542196445,
+							"disabled": true
 						}
 					],
 					"sid": 796488146324123,
@@ -532,7 +662,7 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "ICON_SINGLE_CLICK",
 					"description": "Ícone selecionado",
 					"isActiveOnStart": true,
@@ -572,7 +702,8 @@
 									}
 								}
 							],
-							"sid": 185277805635735
+							"sid": 185277805635735,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -597,7 +728,8 @@
 									}
 								}
 							],
-							"sid": 807316346047988
+							"sid": 807316346047988,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -634,7 +766,8 @@
 									}
 								}
 							],
-							"sid": 552697449476275
+							"sid": 552697449476275,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -659,7 +792,8 @@
 									}
 								}
 							],
-							"sid": 873777784278808
+							"sid": 873777784278808,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -696,7 +830,8 @@
 									}
 								}
 							],
-							"sid": 854292272969344
+							"sid": 854292272969344,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -721,7 +856,8 @@
 									}
 								}
 							],
-							"sid": 297940865783134
+							"sid": 297940865783134,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -758,7 +894,8 @@
 									}
 								}
 							],
-							"sid": 695114391496996
+							"sid": 695114391496996,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -783,7 +920,8 @@
 									}
 								}
 							],
-							"sid": 451292855739796
+							"sid": 451292855739796,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -820,7 +958,8 @@
 									}
 								}
 							],
-							"sid": 894783153835740
+							"sid": 894783153835740,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -845,7 +984,8 @@
 									}
 								}
 							],
-							"sid": 453710174553719
+							"sid": 453710174553719,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -882,7 +1022,8 @@
 									}
 								}
 							],
-							"sid": 556622517734567
+							"sid": 556622517734567,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -907,7 +1048,8 @@
 									}
 								}
 							],
-							"sid": 515951597663133
+							"sid": 515951597663133,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -944,7 +1086,8 @@
 									}
 								}
 							],
-							"sid": 716457468113146
+							"sid": 716457468113146,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -969,7 +1112,8 @@
 									}
 								}
 							],
-							"sid": 380057974339675
+							"sid": 380057974339675,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -1006,7 +1150,8 @@
 									}
 								}
 							],
-							"sid": 161189633951519
+							"sid": 161189633951519,
+							"disabled": true
 						},
 						{
 							"eventType": "block",
@@ -1031,7 +1176,8 @@
 									}
 								}
 							],
-							"sid": 111451761327740
+							"sid": 111451761327740,
+							"disabled": true
 						}
 					],
 					"sid": 923548114597210,
@@ -1330,7 +1476,7 @@
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "double-clicked",
-						"object-clicked": "Window"
+						"object-clicked": "Window_Familly"
 					}
 				}
 			],
@@ -1346,60 +1492,6 @@
 				}
 			],
 			"sid": 872382892424786
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-dragging",
-					"objectClass": "Window",
-					"sid": 897940295759326,
-					"behaviorType": "DragDrop"
-				}
-			],
-			"actions": [],
-			"sid": 618543608642439,
-			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 591551955428144,
-					"parameters": {
-						"variable": "layout",
-						"comparison": 0,
-						"value": "\"PC\""
-					}
-				}
-			],
-			"actions": [],
-			"sid": 499450189584618,
-			"disabled": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 225369984614989
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position",
-					"objectClass": "Window",
-					"sid": 227897540783428,
-					"parameters": {
-						"x": "clamp(Window.X, screen_window.BBoxLeft + (Window.Width / 2), screen_window.BBoxRight - (Window.Width / 2))",
-						"y": "clamp(Window.Y, screen_window.BBoxTop + (Window.Height / 2), screen_window.BBoxBottom - (Window.Height / 2))"
-					}
-				}
-			],
-			"sid": 672742596872755
 		}
 	],
 	"sid": 473027040696098
