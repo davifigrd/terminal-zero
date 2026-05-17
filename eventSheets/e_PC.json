@@ -81,44 +81,7 @@
 							}
 						}
 					],
-					"sid": 741880394947535,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Fixa os cadeados na janela do Terminal Zero"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 298736355981672,
-									"parameters": {
-										"object": "locker"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "pin-to-object-properties",
-									"objectClass": "locker",
-									"sid": 923752265725374,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "window_terminal_zero",
-										"x": true,
-										"y": true,
-										"angle": true,
-										"width-type": "no",
-										"height-type": "no",
-										"z": false
-									}
-								}
-							],
-							"sid": 375774995327695
-						}
-					]
+					"sid": 741880394947535
 				},
 				{
 					"eventType": "comment",
@@ -147,66 +110,6 @@
 						}
 					],
 					"sid": 897537008656469
-				},
-				{
-					"eventType": "comment",
-					"text": "Prende a janela Terminal Zero na tela do monitor"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 780518345294457
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "Window_Familly",
-							"sid": 887104405864620,
-							"parameters": {
-								"x": "clamp(Window_Familly.X, screen_window.BBoxLeft + (Window_Familly.Width / 2), screen_window.BBoxRight - (Window_Familly.Width / 2))",
-								"y": "clamp(Window_Familly.Y, screen_window.BBoxTop + (Window_Familly.Height / 2), screen_window.BBoxBottom - (Window_Familly.Height / 2))"
-							}
-						}
-					],
-					"sid": 754534397582603
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 509342739343891,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "locker"
-							}
-						},
-						{
-							"id": "compare-opacity",
-							"objectClass": "locker",
-							"sid": 851096068356589,
-							"parameters": {
-								"comparison": 0,
-								"opacity": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "Transition",
-							"sid": 412637857692815,
-							"parameters": [
-								"\"\""
-							]
-						}
-					],
-					"sid": 958212724445912
 				}
 			],
 			"sid": 836311122198057,
@@ -224,6 +127,7 @@
 			]
 		},
 		{
+			"bookmark": true,
 			"eventType": "group",
 			"disabled": false,
 			"title": "ICON",
@@ -232,1211 +136,91 @@
 			"children": [
 				{
 					"eventType": "group",
-					"disabled": true,
-					"title": "ICON_HITBOX",
-					"description": "Cursor sobre ícone",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Lixeira"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 495110398033414,
-									"parameters": {
-										"object": "bin_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "bin_hitbox",
-									"sid": 783235245274732,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 684976785391517,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 260640092201581
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "bin_hitbox",
-									"sid": 969892530262573,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 978580683068435,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Pasta de exercícios "
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 507111229229492,
-									"parameters": {
-										"object": "paste_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "paste_hitbox",
-									"sid": 536506094662592,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 324140698626098,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 935549574560814
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "paste_hitbox",
-									"sid": 791983032895304,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 988297590922204,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "VS Code"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 901100556203826,
-									"parameters": {
-										"object": "vscode_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "vscode_hitbox",
-									"sid": 565629211139704,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 632083434897545,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 177293912378984
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "vscode_hitbox",
-									"sid": 124037876146518,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 699665643157902,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Teams"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 470035397557018,
-									"parameters": {
-										"object": "teams_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "teams_hitbox",
-									"sid": 203072087015645,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 423282576080702,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 867655639521361
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "teams_hitbox",
-									"sid": 567836237495534,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 880364820566446,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "DevC++"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 482099708457436,
-									"parameters": {
-										"object": "devcpp_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "devcpp_hitbox",
-									"sid": 889895966585630,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 152345487820679,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 712097442964606
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "devcpp_hitbox",
-									"sid": 181538294439982,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 292185581394714,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Bloco de notas"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 685291377967622,
-									"parameters": {
-										"object": "notes_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "notes_hitbox",
-									"sid": 586028555386831,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 648644103181510,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 381608676768121
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "notes_hitbox",
-									"sid": 387899062828869,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 777733911975423,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Deep Web"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 333657931861107,
-									"parameters": {
-										"object": "deepweb_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "deepweb_hitbox",
-									"sid": 450083887894104,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 337023349780957,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 488442997798536
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "deepweb_hitbox",
-									"sid": 668844293759645,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 956364984429766,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Terminal Zero"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 336809690070582,
-									"parameters": {
-										"object": "terminalzero_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "terminalzero_hitbox",
-									"sid": 546862737048817,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 428416068837821,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 322081572012542
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "terminalzero_hitbox",
-									"sid": 318159408098807,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 837542542196445,
-							"disabled": true
-						}
-					],
-					"sid": 796488146324123,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						0.26666666666666666,
-						1,
-						0,
-						1
-					]
-				},
-				{
-					"eventType": "group",
-					"disabled": true,
-					"title": "ICON_SINGLE_CLICK",
-					"description": "Ícone selecionado",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Lixeira"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 143036920412377,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 675857753394249,
-									"parameters": {
-										"object": "bin_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "bin_hitbox",
-									"sid": 916964711080089,
-									"parameters": {
-										"opacity": "30"
-									}
-								}
-							],
-							"sid": 185277805635735,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 784419976714760,
-									"parameters": {
-										"object": "bin_hitbox"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "bin_hitbox",
-									"sid": 436816828954270,
-									"parameters": {
-										"opacity": "10"
-									}
-								}
-							],
-							"sid": 807316346047988,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Pasta de exercícios "
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 278371446570187,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 801825745289636,
-									"parameters": {
-										"object": "paste_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "paste_hitbox",
-									"sid": 229759700647126,
-									"parameters": {
-										"opacity": "30"
-									}
-								}
-							],
-							"sid": 552697449476275,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 654101997676083,
-									"parameters": {
-										"object": "paste_hitbox"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "paste_hitbox",
-									"sid": 425606315007118,
-									"parameters": {
-										"opacity": "10"
-									}
-								}
-							],
-							"sid": 873777784278808,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "VS Code"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 792961666702147,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 121435877058091,
-									"parameters": {
-										"object": "vscode_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "vscode_hitbox",
-									"sid": 717795482950372,
-									"parameters": {
-										"opacity": "30"
-									}
-								}
-							],
-							"sid": 854292272969344,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 524002690060354,
-									"parameters": {
-										"object": "vscode_hitbox"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "vscode_hitbox",
-									"sid": 919748566587830,
-									"parameters": {
-										"opacity": "10"
-									}
-								}
-							],
-							"sid": 297940865783134,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Teams"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 902748393550464,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 743662799070537,
-									"parameters": {
-										"object": "teams_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "teams_hitbox",
-									"sid": 284431611216685,
-									"parameters": {
-										"opacity": "30"
-									}
-								}
-							],
-							"sid": 695114391496996,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 283395581024378,
-									"parameters": {
-										"object": "teams_hitbox"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "teams_hitbox",
-									"sid": 449557214584480,
-									"parameters": {
-										"opacity": "10"
-									}
-								}
-							],
-							"sid": 451292855739796,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "DevC++"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 770971637854415,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 694628349832530,
-									"parameters": {
-										"object": "devcpp_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "devcpp_hitbox",
-									"sid": 945115539978995,
-									"parameters": {
-										"opacity": "30"
-									}
-								}
-							],
-							"sid": 894783153835740,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 311215813856901,
-									"parameters": {
-										"object": "devcpp_hitbox"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "devcpp_hitbox",
-									"sid": 578493182363491,
-									"parameters": {
-										"opacity": "10"
-									}
-								}
-							],
-							"sid": 453710174553719,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Bloco de notas"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 515445460353281,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 358689340062083,
-									"parameters": {
-										"object": "notes_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "notes_hitbox",
-									"sid": 429677873414321,
-									"parameters": {
-										"opacity": "30"
-									}
-								}
-							],
-							"sid": 556622517734567,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 563605885576588,
-									"parameters": {
-										"object": "notes_hitbox"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "notes_hitbox",
-									"sid": 543131286709559,
-									"parameters": {
-										"opacity": "10"
-									}
-								}
-							],
-							"sid": 515951597663133,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Deep Web"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 805103571502808,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 661519870514051,
-									"parameters": {
-										"object": "deepweb_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "deepweb_hitbox",
-									"sid": 704657510895488,
-									"parameters": {
-										"opacity": "30"
-									}
-								}
-							],
-							"sid": 716457468113146,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 909934260171132,
-									"parameters": {
-										"object": "deepweb_hitbox"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "deepweb_hitbox",
-									"sid": 633305555584753,
-									"parameters": {
-										"opacity": "10"
-									}
-								}
-							],
-							"sid": 380057974339675,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Terminal Zero"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 976994886348926,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 515440974035507,
-									"parameters": {
-										"object": "terminalzero_hitbox"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "terminalzero_hitbox",
-									"sid": 826763191902713,
-									"parameters": {
-										"opacity": "30"
-									}
-								}
-							],
-							"sid": 161189633951519,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 136306035019176,
-									"parameters": {
-										"object": "terminalzero_hitbox"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "terminalzero_hitbox",
-									"sid": 159392066557674,
-									"parameters": {
-										"opacity": "10"
-									}
-								}
-							],
-							"sid": 111451761327740,
-							"disabled": true
-						}
-					],
-					"sid": 923548114597210,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						0.26666666666666666,
-						1,
-						0,
-						1
-					]
-				},
-				{
-					"eventType": "group",
 					"disabled": false,
-					"title": "ICON_DOUBLE_CLICK",
-					"description": "Abrir ícone",
+					"title": "ICON_TERMINAL_ZERO",
+					"description": "Interações com o ícone terminal zero",
 					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Lixeira"
+							"text": "Fixa os cadeados na janela do Terminal Zero"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 101802313952348,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "double-clicked"
-									}
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 783222260103657
 								},
 								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 562442231326846,
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 432671598354198,
 									"parameters": {
-										"object": "bin_hitbox"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 744867423331602
-						},
-						{
-							"eventType": "comment",
-							"text": "Pasta de exercícios "
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 469527759713127,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "double-clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 756534546241728,
-									"parameters": {
-										"object": "paste_hitbox"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 707385326755485
-						},
-						{
-							"eventType": "comment",
-							"text": "VS Code"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 810004886650055,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "double-clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 122318115049861,
-									"parameters": {
-										"object": "vscode_hitbox"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 980157313781877
-						},
-						{
-							"eventType": "comment",
-							"text": "Teams"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 159449333169673,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "double-clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 968797544496413,
-									"parameters": {
-										"object": "teams_hitbox"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 962141572508515
-						},
-						{
-							"eventType": "comment",
-							"text": "DevC++"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 246280945744219,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "double-clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 204008601120125,
-									"parameters": {
-										"object": "devcpp_hitbox"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 190528010223710
-						},
-						{
-							"eventType": "comment",
-							"text": "Bloco de notas"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 339037279537669,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "double-clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 361370895215487,
-									"parameters": {
-										"object": "notes_hitbox"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 405414212065123
-						},
-						{
-							"eventType": "comment",
-							"text": "Deep Web"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 239371981399607,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "double-clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 962833779371812,
-									"parameters": {
-										"object": "deepweb_hitbox"
-									}
-								}
-							],
-							"actions": [],
-							"sid": 792765233605896
-						},
-						{
-							"eventType": "comment",
-							"text": "Terminal Zero"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-click",
-									"objectClass": "Mouse",
-									"sid": 137971116088839,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "double-clicked"
-									}
-								},
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "cursor",
-									"sid": 862020352187563,
-									"parameters": {
-										"object": "terminalzero_hitbox"
+										"object": "locker"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 235690043195720,
+									"id": "pin-to-object-properties",
+									"objectClass": "locker",
+									"sid": 478776291160304,
+									"behaviorType": "Pin",
 									"parameters": {
-										"layer": "\"terminal_zero\"",
-										"visibility": "visible"
+										"pin-to": "window_terminal_zero",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
 									}
 								}
 							],
-							"sid": 894676295569627
+							"sid": 496342089377592
+						},
+						{
+							"eventType": "comment",
+							"text": "Vai para a fase se estiver desbloqueada"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 332033855121267,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "locker"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "locker",
+									"sid": 284726930821629,
+									"parameters": {
+										"comparison": 0,
+										"opacity": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Transition",
+									"sid": 508722198717522,
+									"parameters": [
+										"\"Level\" & locker.level"
+									]
+								}
+							],
+							"sid": 304288026141443
 						}
 					],
-					"sid": 956343029591917,
+					"sid": 548437481497439,
 					"text-color": [
 						0,
 						0,
@@ -1449,6 +233,123 @@
 						0,
 						1
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Prende as janelas na tela do monitor"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 667618211220963
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "Window_Familly",
+							"sid": 772498896427895,
+							"parameters": {
+								"x": "clamp(Window_Familly.X, screen_window.BBoxLeft + (Window_Familly.Width / 2), screen_window.BBoxRight - (Window_Familly.Width / 2))",
+								"y": "clamp(Window_Familly.Y, screen_window.BBoxTop + (Window_Familly.Height / 2), screen_window.BBoxBottom - (Window_Familly.Height / 2))"
+							}
+						}
+					],
+					"sid": 803552928022306
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor sobre ícone"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 986494039262898,
+							"parameters": {
+								"object": "Icon_Familly"
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "icon_hover",
+							"sid": 256659650410021,
+							"parameters": {
+								"instance-variable": "icon",
+								"comparison": 0,
+								"value": "Icon_Familly.icon"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "icon_hover",
+							"sid": 332657578961913,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 430718893846872
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 684397730184443
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "icon_hover",
+							"sid": 453878903796153,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 989558834189859
+				},
+				{
+					"eventType": "comment",
+					"text": "Fechar janela"
+				},
+				{
+					"bookmark": true,
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 588390839651530,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "double-clicked",
+								"object-clicked": "Window_Familly"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 100577824742402,
+							"parameters": {
+								"layer": "\"terminal_zero\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 744364073278558
 				}
 			],
 			"sid": 777237517511304,
@@ -1464,34 +365,6 @@
 				0,
 				1
 			]
-		},
-		{
-			"bookmark": true,
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 274659142709893,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "double-clicked",
-						"object-clicked": "Window_Familly"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 927200654984692,
-					"parameters": {
-						"layer": "\"terminal_zero\"",
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 872382892424786
 		}
 	],
 	"sid": 473027040696098
