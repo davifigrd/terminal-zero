@@ -312,11 +312,12 @@
 							}
 						},
 						{
-							"id": "compare-instance-variable",
-							"objectClass": "icon_hover",
+							"id": "pick-by-comparison",
+							"objectClass": "System",
 							"sid": 132261961225237,
 							"parameters": {
-								"instance-variable": "app",
+								"object": "icon_hover",
+								"expression": "icon_hover.app",
 								"comparison": 0,
 								"value": "Icon_Familly.app"
 							}
@@ -394,7 +395,6 @@
 						}
 					],
 					"sid": 674373515863483,
-					"disabled": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -413,38 +413,20 @@
 							],
 							"actions": [
 								{
+									"id": "set-visible",
+									"objectClass": "Window_Familly",
+									"sid": 883987081392675,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
 									"id": "move-to-top",
 									"objectClass": "Window_Familly",
 									"sid": 924117764468689
 								}
 							],
-							"sid": 621238209376726,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 498343244603350,
-									"parameters": {
-										"object": "close_window",
-										"expression": "close_window.app",
-										"comparison": 0,
-										"value": "Icon_Familly.app"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "move-to-top",
-									"objectClass": "close_window",
-									"sid": 549974650821488
-								}
-							],
-							"sid": 264278602234402,
-							"disabled": true
+							"sid": 621238209376726
 						}
 					]
 				},
@@ -464,36 +446,9 @@
 								"click-type": "clicked",
 								"object-clicked": "close_window"
 							}
-						},
-						{
-							"id": "pick-by-comparison",
-							"objectClass": "System",
-							"sid": 632235612131035,
-							"parameters": {
-								"object": "Window_Familly",
-								"expression": "Window_Familly.app",
-								"comparison": 0,
-								"value": "close_window.app"
-							}
 						}
 					],
 					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "Window_Familly",
-							"sid": 261471949918603,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "close_window",
-							"sid": 432675573151109,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
@@ -502,9 +457,47 @@
 								"layer": "close_window.app",
 								"visibility": "invisible"
 							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 723890420632917,
+							"parameters": {
+								"layer": "close_window.app",
+								"interactive": false
+							}
 						}
 					],
-					"sid": 744364073278558
+					"sid": 744364073278558,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 632235612131035,
+									"parameters": {
+										"object": "Window_Familly",
+										"expression": "Window_Familly.app",
+										"comparison": 0,
+										"value": "close_window.app"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Window_Familly",
+									"sid": 261471949918603,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 278345984601445
+						}
+					]
 				}
 			],
 			"sid": 777237517511304,
