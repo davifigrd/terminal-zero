@@ -32,11 +32,11 @@
 			"sid": 905814576036096
 		},
 		{
+			"bookmark": true,
 			"eventType": "comment",
 			"text": "Tela cheia"
 		},
 		{
-			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1012,75 +1012,6 @@
 						}
 					],
 					"sid": 869927536441235
-				},
-				{
-					"eventType": "comment",
-					"text": "Espera a transição acabar para iniciar a fase"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 259222548032982
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 373055947549238,
-							"parameters": {
-								"first-value": "left(LayoutName, 5)",
-								"comparison": 0,
-								"second-value": "\"Level\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 861134798593819,
-							"parameters": {
-								"time-scale": "0"
-							}
-						}
-					],
-					"sid": 397403671106695
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-signal",
-							"objectClass": "System",
-							"sid": 176746820843450,
-							"parameters": {
-								"tag": "\"end_transition\""
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 554522225619233,
-							"parameters": {
-								"first-value": "left(LayoutName, 5)",
-								"comparison": 0,
-								"second-value": "\"Level\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 219761043456647,
-							"parameters": {
-								"time-scale": "1"
-							}
-						}
-					],
-					"sid": 633118886564998
 				}
 			],
 			"sid": 639576217351447,
@@ -1119,7 +1050,17 @@
 							"sid": 480500450527645
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 433029605531023,
+							"parameters": {
+								"variable": "layout",
+								"value": "LayoutName"
+							}
+						}
+					],
 					"sid": 702361737033630,
 					"children": [
 						{

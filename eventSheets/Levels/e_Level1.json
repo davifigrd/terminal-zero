@@ -618,21 +618,21 @@
 							}
 						},
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 483981450014816,
+							"parameters": {
+								"seconds": "5",
+								"use-timescale": false
+							}
+						},
+						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
 							"sid": 743047885582130,
 							"parameters": {
 								"variable": "lvl1_current_stage",
 								"value": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 858285454010593,
-							"parameters": {
-								"seconds": "1",
-								"use-timescale": true
 							}
 						},
 						{
@@ -1021,6 +1021,20 @@
 															"parameters": {
 																"seconds": "1",
 																"use-timescale": true
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 734280995210821,
+															"parameters": {
+																"audio-file": {
+																	"path": "Level 1/lvl1_victory"
+																},
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"\""
 															}
 														},
 														{

@@ -16,27 +16,6 @@
 			"sid": 820837549612824
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 454400944990141
-				}
-			],
-			"actions": [
-				{
-					"id": "set-opacity",
-					"objectClass": "locker",
-					"sid": 924555707882944,
-					"parameters": {
-						"opacity": "(locker.level <= level_done) ? 0 : 50"
-					}
-				}
-			],
-			"sid": 199427237746078
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "PC_LAYOUT",
@@ -60,15 +39,6 @@
 							"parameters": {
 								"layer": "\"cursor\"",
 								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 752931106244965,
-							"parameters": {
-								"variable": "layout",
-								"value": "\"PC\""
 							}
 						},
 						{
@@ -127,7 +97,6 @@
 			]
 		},
 		{
-			"bookmark": true,
 			"eventType": "group",
 			"disabled": false,
 			"title": "ICON",
@@ -179,7 +148,31 @@
 									}
 								}
 							],
-							"sid": 496342089377592
+							"sid": 496342089377592,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "close_window",
+											"sid": 999242614457798,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "window_terminal_zero",
+												"x": true,
+												"y": true,
+												"angle": true,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										}
+									],
+									"sid": 378200283671561
+								}
+							]
 						},
 						{
 							"eventType": "comment",
@@ -211,10 +204,19 @@
 							"actions": [
 								{
 									"callFunction": "Transition",
-									"sid": 508722198717522,
+									"sid": 218420664008072,
 									"parameters": [
 										"\"Level\" & locker.level"
 									]
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 563898001428244,
+									"parameters": {
+										"variable": "layout",
+										"value": "LayoutName"
+									}
 								}
 							],
 							"sid": 304288026141443
@@ -330,11 +332,11 @@
 						{
 							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 588390839651530,
+							"sid": 653643985526920,
 							"parameters": {
 								"mouse-button": "left",
-								"click-type": "double-clicked",
-								"object-clicked": "Window_Familly"
+								"click-type": "clicked",
+								"object-clicked": "close_window"
 							}
 						}
 					],
@@ -342,9 +344,9 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 100577824742402,
+							"sid": 351354512285966,
 							"parameters": {
-								"layer": "\"terminal_zero\"",
+								"layer": "Window_Familly.AllChildCount",
 								"visibility": "invisible"
 							}
 						}
