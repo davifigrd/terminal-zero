@@ -111,45 +111,21 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "Fixa os cadeados na janela do Terminal Zero"
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "on-start-of-layout",
 									"objectClass": "System",
-									"sid": 783222260103657
-								},
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 432671598354198,
-									"parameters": {
-										"object": "locker"
-									}
+									"sid": 490546506875692
 								}
 							],
-							"actions": [
-								{
-									"id": "pin-to-object-properties",
-									"objectClass": "locker",
-									"sid": 478776291160304,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "window_terminal_zero",
-										"x": true,
-										"y": true,
-										"angle": true,
-										"width-type": "no",
-										"height-type": "no",
-										"z": false
-									}
-								}
-							],
-							"sid": 496342089377592,
+							"actions": [],
+							"sid": 196750062765204,
 							"children": [
+								{
+									"eventType": "comment",
+									"text": "Fixa o botão de sair da janela"
+								},
 								{
 									"eventType": "block",
 									"conditions": [],
@@ -157,7 +133,7 @@
 										{
 											"id": "pin-to-object-properties",
 											"objectClass": "close_window",
-											"sid": 999242614457798,
+											"sid": 228728149208019,
 											"behaviorType": "Pin",
 											"parameters": {
 												"pin-to": "window_terminal_zero",
@@ -170,7 +146,74 @@
 											}
 										}
 									],
-									"sid": 378200283671561
+									"sid": 290192503093150
+								},
+								{
+									"eventType": "comment",
+									"text": "Fixa os cadeados na janela"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 845094920894174,
+											"parameters": {
+												"object": "locker"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "locker",
+											"sid": 484661646150123,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "window_terminal_zero",
+												"x": true,
+												"y": true,
+												"angle": true,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										}
+									],
+									"sid": 589639499107695,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Libera os cadeados de acordo com as fases concluídas"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "locker",
+													"sid": 111150045506240,
+													"parameters": {
+														"instance-variable": "level",
+														"comparison": 3,
+														"value": "level_done"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-opacity",
+													"objectClass": "locker",
+													"sid": 244491068429872,
+													"parameters": {
+														"opacity": "0"
+													}
+												}
+											],
+											"sid": 324304429153013
+										}
+									]
 								}
 							]
 						},
@@ -184,7 +227,7 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 332033855121267,
+									"sid": 583107396149737,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
@@ -194,7 +237,7 @@
 								{
 									"id": "compare-opacity",
 									"objectClass": "locker",
-									"sid": 284726930821629,
+									"sid": 726392864208369,
 									"parameters": {
 										"comparison": 0,
 										"opacity": "0"
@@ -204,25 +247,16 @@
 							"actions": [
 								{
 									"callFunction": "Transition",
-									"sid": 218420664008072,
+									"sid": 537547559368177,
 									"parameters": [
 										"\"Level\" & locker.level"
 									]
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 563898001428244,
-									"parameters": {
-										"variable": "layout",
-										"value": "LayoutName"
-									}
 								}
 							],
-							"sid": 304288026141443
+							"sid": 196916164030330
 						}
 					],
-					"sid": 548437481497439,
+					"sid": 130522060030742,
 					"text-color": [
 						0,
 						0,
@@ -246,21 +280,21 @@
 						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 667618211220963
+							"sid": 178583180491712
 						}
 					],
 					"actions": [
 						{
 							"id": "set-position",
 							"objectClass": "Window_Familly",
-							"sid": 772498896427895,
+							"sid": 985911684884005,
 							"parameters": {
 								"x": "clamp(Window_Familly.X, screen_window.BBoxLeft + (Window_Familly.Width / 2), screen_window.BBoxRight - (Window_Familly.Width / 2))",
 								"y": "clamp(Window_Familly.Y, screen_window.BBoxTop + (Window_Familly.Height / 2), screen_window.BBoxBottom - (Window_Familly.Height / 2))"
 							}
 						}
 					],
-					"sid": 803552928022306
+					"sid": 270896538816349
 				},
 				{
 					"eventType": "comment",
@@ -280,11 +314,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "icon_hover",
-							"sid": 256659650410021,
+							"sid": 132261961225237,
 							"parameters": {
-								"instance-variable": "icon",
+								"instance-variable": "app",
 								"comparison": 0,
-								"value": "Icon_Familly.icon"
+								"value": "Icon_Familly.app"
 							}
 						}
 					],
@@ -323,10 +357,102 @@
 				},
 				{
 					"eventType": "comment",
+					"text": "Abrir janela"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 518616916441683,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "double-clicked",
+								"object-clicked": "Icon_Familly"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 608689538089938,
+							"parameters": {
+								"layer": "Icon_Familly.app",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 671840826522218,
+							"parameters": {
+								"layer": "Icon_Familly.app",
+								"interactive": true
+							}
+						}
+					],
+					"sid": 674373515863483,
+					"disabled": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 992932557118388,
+									"parameters": {
+										"object": "Window_Familly",
+										"expression": "Window_Familly.app",
+										"comparison": 0,
+										"value": "Icon_Familly.app"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-top",
+									"objectClass": "Window_Familly",
+									"sid": 924117764468689
+								}
+							],
+							"sid": 621238209376726,
+							"disabled": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 498343244603350,
+									"parameters": {
+										"object": "close_window",
+										"expression": "close_window.app",
+										"comparison": 0,
+										"value": "Icon_Familly.app"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-top",
+									"objectClass": "close_window",
+									"sid": 549974650821488
+								}
+							],
+							"sid": 264278602234402,
+							"disabled": true
+						}
+					]
+				},
+				{
+					"eventType": "comment",
 					"text": "Fechar janela"
 				},
 				{
-					"bookmark": true,
 					"eventType": "block",
 					"conditions": [
 						{
@@ -338,15 +464,42 @@
 								"click-type": "clicked",
 								"object-clicked": "close_window"
 							}
+						},
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 632235612131035,
+							"parameters": {
+								"object": "Window_Familly",
+								"expression": "Window_Familly.app",
+								"comparison": 0,
+								"value": "close_window.app"
+							}
 						}
 					],
 					"actions": [
 						{
+							"id": "set-visible",
+							"objectClass": "Window_Familly",
+							"sid": 261471949918603,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "close_window",
+							"sid": 432675573151109,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 351354512285966,
+							"sid": 502190172487646,
 							"parameters": {
-								"layer": "Window_Familly.AllChildCount",
+								"layer": "close_window.app",
 								"visibility": "invisible"
 							}
 						}

@@ -2,7 +2,15 @@
 	"name": "Window_Familly",
 	"plugin-id": "Sprite",
 	"sid": 678536894569396,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "app",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 168673074508574
+		}
+	],
 	"behaviorTypes": [
 		{
 			"behaviorId": "DragnDrop",
@@ -12,6 +20,8 @@
 	],
 	"effectTypes": [],
 	"members": [
-		"window_terminal_zero"
+		"window_terminal_zero",
+		"close_window",
+		"locker"
 	]
 }
