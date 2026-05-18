@@ -136,7 +136,7 @@
 											"sid": 228728149208019,
 											"behaviorType": "Pin",
 											"parameters": {
-												"pin-to": "window_terminal_zero",
+												"pin-to": "terminalzero_window",
 												"x": true,
 												"y": true,
 												"angle": true,
@@ -171,7 +171,7 @@
 											"sid": 484661646150123,
 											"behaviorType": "Pin",
 											"parameters": {
-												"pin-to": "window_terminal_zero",
+												"pin-to": "terminalzero_window",
 												"x": true,
 												"y": true,
 												"angle": true,
@@ -257,6 +257,68 @@
 						}
 					],
 					"sid": 130522060030742,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.26666666666666666,
+						1,
+						0,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ICON_ERROR",
+					"description": "Interações com o ícone terminal zero",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 541136258928766
+								}
+							],
+							"actions": [],
+							"sid": 444326909236074,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Fixa o botão de sair da janela"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "close_window",
+											"sid": 389662510932272,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "error_window",
+												"x": true,
+												"y": true,
+												"angle": true,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										}
+									],
+									"sid": 774872408987790
+								}
+							]
+						}
+					],
+					"sid": 644148086895795,
 					"text-color": [
 						0,
 						0,
@@ -358,6 +420,115 @@
 				},
 				{
 					"eventType": "comment",
+					"text": "Cursor sobre ícone"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 726757914304817,
+							"parameters": {
+								"object": "Icon_Familly"
+							}
+						},
+						{
+							"id": "pick-by-comparison",
+							"objectClass": "System",
+							"sid": 118693309190254,
+							"parameters": {
+								"object": "icon_hover",
+								"expression": "icon_hover.app",
+								"comparison": 0,
+								"value": "Icon_Familly.app"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "icon_hover",
+							"sid": 874867092908286,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 218154118441330
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 966030341752178
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "icon_hover",
+							"sid": 566616978240488,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 938245059979924
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor sobre X (fechar janela)"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 251293597222877,
+							"parameters": {
+								"object": "close_window"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "close_window",
+							"sid": 867533524032107,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 313781159188792
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 324960753718942
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "close_window",
+							"sid": 633458020368123,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 883762137490514
+				},
+				{
+					"eventType": "comment",
 					"text": "Abrir janela"
 				},
 				{
@@ -372,6 +543,15 @@
 								"click-type": "double-clicked",
 								"object-clicked": "Icon_Familly"
 							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 341742056956689,
+							"parameters": {
+								"layer": "Icon_Familly.app"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [
