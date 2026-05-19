@@ -36,6 +36,7 @@
 			"sid": 2147483800
 		},
 		{
+			"bookmark": true,
 			"eventType": "group",
 			"disabled": false,
 			"title": "PC_LAYOUT",
@@ -882,15 +883,6 @@
 															}
 														},
 														{
-															"id": "set-enabled",
-															"objectClass": "close_window",
-															"sid": 2147483501,
-															"behaviorType": "DragDrop",
-															"parameters": {
-																"state": "disabled"
-															}
-														},
-														{
 															"id": "set-instvar-value",
 															"objectClass": "close_window",
 															"sid": 2147483229,
@@ -1622,26 +1614,11 @@
 								{
 									"id": "is-dragging",
 									"objectClass": "error_window",
-									"sid": 207981429322206,
-									"behaviorType": "DragDrop"
-								},
-								{
-									"id": "is-dragging",
-									"objectClass": "terminalzero_window",
-									"sid": 872823060443202,
+									"sid": 156991147937032,
 									"behaviorType": "DragDrop"
 								}
 							],
 							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "terminalzero_window",
-									"sid": 283973487150274,
-									"parameters": {
-										"x": "clamp(terminalzero_window.X, screen_window.BBoxLeft + (terminalzero_window.Width / 2), screen_window.BBoxRight - (terminalzero_window.Width / 2))",
-										"y": "clamp(terminalzero_window.Y, screen_window.BBoxTop + (terminalzero_window.Height / 2), screen_window.BBoxBottom - (terminalzero_window.Height / 2))"
-									}
-								},
 								{
 									"id": "set-position",
 									"objectClass": "error_window",
@@ -1653,6 +1630,30 @@
 								}
 							],
 							"sid": 697611364960163,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-dragging",
+									"objectClass": "terminalzero_window",
+									"sid": 122661313955908,
+									"behaviorType": "DragDrop"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "terminalzero_window",
+									"sid": 736817094796813,
+									"parameters": {
+										"x": "clamp(terminalzero_window.X, screen_window.BBoxLeft + (terminalzero_window.Width / 2), screen_window.BBoxRight - (terminalzero_window.Width / 2))",
+										"y": "clamp(terminalzero_window.Y, screen_window.BBoxTop + (terminalzero_window.Height / 2), screen_window.BBoxBottom - (terminalzero_window.Height / 2))"
+									}
+								}
+							],
+							"sid": 458799772867588,
 							"isOrBlock": true
 						}
 					],
