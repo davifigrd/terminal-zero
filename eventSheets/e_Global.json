@@ -22,16 +22,6 @@
 			"sid": 345529679003487
 		},
 		{
-			"eventType": "variable",
-			"name": "start_level",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "Espera a transição acabar para iniciar a fase",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 905814576036096
-		},
-		{
 			"eventType": "comment",
 			"text": "Tela cheia"
 		},
@@ -1422,10 +1412,6 @@
 						}
 					],
 					"sid": 672323790507587
-				},
-				{
-					"eventType": "comment",
-					"text": "Tutorial WASD no layout Bedroom"
 				}
 			],
 			"sid": 124037823196975,
@@ -1441,23 +1427,6 @@
 				0.3215686274509804,
 				1
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-between-angles",
-					"objectClass": "System",
-					"sid": 816135187021123,
-					"parameters": {
-						"angle": "0",
-						"first-angle": "0",
-						"second-angle": "45"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 740031947790105
 		}
 	],
 	"sid": 629785159147306
