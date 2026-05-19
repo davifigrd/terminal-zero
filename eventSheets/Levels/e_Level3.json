@@ -2,6 +2,7 @@
 	"name": "e_Level3",
 	"events": [
 		{
+			"bookmark": true,
 			"eventType": "include",
 			"includeSheet": "e_Global"
 		},
@@ -46,7 +47,6 @@
 			"sid": 467316680938420
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "senha3",
 			"type": "string",
@@ -220,15 +220,6 @@
 									"parameters": {
 										"variable": "PlayerMoving",
 										"value": "false"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 942300160376320,
-									"parameters": {
-										"variable": "layout",
-										"value": "\"Level3\""
 									}
 								},
 								{

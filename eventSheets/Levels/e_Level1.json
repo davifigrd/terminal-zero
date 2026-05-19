@@ -414,7 +414,7 @@
 								},
 								{
 									"id": "set-visible",
-									"objectClass": "Clickable",
+									"objectClass": "Clickable_Familly",
 									"sid": 909266199634220,
 									"parameters": {
 										"visibility": "visible"
@@ -611,10 +611,19 @@
 					"actions": [
 						{
 							"id": "set-visible",
-							"objectClass": "Clickable",
+							"objectClass": "Clickable_Familly",
 							"sid": 810493837204362,
 							"parameters": {
 								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 483981450014816,
+							"parameters": {
+								"seconds": "5",
+								"use-timescale": false
 							}
 						},
 						{
@@ -624,15 +633,6 @@
 							"parameters": {
 								"variable": "lvl1_current_stage",
 								"value": "1"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 858285454010593,
-							"parameters": {
-								"seconds": "1",
-								"use-timescale": true
 							}
 						},
 						{
@@ -663,7 +663,7 @@
 							"objectClass": "Mouse",
 							"sid": 338851096001373,
 							"parameters": {
-								"object": "Clickable"
+								"object": "Clickable_Familly"
 							}
 						}
 					],
@@ -697,7 +697,7 @@
 							"objectClass": "Mouse",
 							"sid": 881280963605317,
 							"parameters": {
-								"object": "Clickable"
+								"object": "Clickable_Familly"
 							}
 						}
 					],
@@ -1021,6 +1021,20 @@
 															"parameters": {
 																"seconds": "1",
 																"use-timescale": true
+															}
+														},
+														{
+															"id": "play",
+															"objectClass": "Audio",
+															"sid": 734280995210821,
+															"parameters": {
+																"audio-file": {
+																	"path": "Level 1/lvl1_victory"
+																},
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"\""
 															}
 														},
 														{
