@@ -23,21 +23,10 @@
 			"sid": 345529679003487
 		},
 		{
-			"eventType": "variable",
-			"name": "start_level",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "Espera a transição acabar para iniciar a fase",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 905814576036096
-		},
-		{
 			"eventType": "comment",
 			"text": "Tela cheia"
 		},
 		{
-			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{
@@ -140,7 +129,7 @@
 									"objectClass": "Mouse",
 									"sid": 733494152239419,
 									"parameters": {
-										"object": "Clickable_Familly"
+										"object": "Clickable"
 									}
 								}
 							],
@@ -255,10 +244,10 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 145449646533268,
+							"sid": 515197722172016,
 							"parameters": {
 								"seconds": "1",
-								"use-timescale": false
+								"use-timescale": true
 							}
 						},
 						{
@@ -297,10 +286,10 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 149785310085839,
+							"sid": 355183290015394,
 							"parameters": {
 								"seconds": "3",
-								"use-timescale": false
+								"use-timescale": true
 							}
 						},
 						{
@@ -724,14 +713,43 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "LEVEL",
+			"title": "LEVEL_SKIP",
 			"description": "Tecla de atalho para pular níveis",
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "Ativa / desativa os atalhos para as fases no teclado numérico (NumLock)"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 541647170475710,
+							"parameters": {
+								"key": 144
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 346654386599592,
+							"parameters": {
+								"group-name": "\"LEVEL_SKIP_SHORTCUT\"",
+								"state": "toggle-active"
+							}
+						}
+					],
+					"sid": 873084214706889
+				},
+				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "LEVEL_SKIP",
+					"title": "LEVEL_SKIP_SHORTCUT",
 					"description": "'NumLock\" + (número da fase)",
 					"isActiveOnStart": true,
 					"children": [
@@ -745,7 +763,7 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 860249096546318,
+									"sid": 238750796479642,
 									"parameters": {
 										"key": 97
 									}
@@ -755,13 +773,13 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 409000873137463,
+									"sid": 164642589017531,
 									"parameters": {
 										"layout": "Level1"
 									}
 								}
 							],
-							"sid": 670422919000466
+							"sid": 763046263462228
 						},
 						{
 							"eventType": "comment",
@@ -773,14 +791,23 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 865410931924100,
+									"sid": 167332968759071,
 									"parameters": {
 										"key": 98
 									}
 								}
 							],
-							"actions": [],
-							"sid": 714672493839578
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 508176335831940,
+									"parameters": {
+										"layout": "Level2"
+									}
+								}
+							],
+							"sid": 288619310403278
 						},
 						{
 							"eventType": "comment",
@@ -792,7 +819,7 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 965285556771223,
+									"sid": 339493056140934,
 									"parameters": {
 										"key": 99
 									}
@@ -802,13 +829,13 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 141085524904012,
+									"sid": 260022910494405,
 									"parameters": {
 										"layout": "Level3"
 									}
 								}
 							],
-							"sid": 810269561152739
+							"sid": 784938148659652
 						},
 						{
 							"eventType": "comment",
@@ -820,7 +847,7 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 655406489597277,
+									"sid": 606614060746640,
 									"parameters": {
 										"key": 100
 									}
@@ -830,13 +857,13 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 337728091254382,
+									"sid": 519772078026371,
 									"parameters": {
 										"layout": "Level4"
 									}
 								}
 							],
-							"sid": 460356042441412
+							"sid": 200200023447058
 						},
 						{
 							"eventType": "comment",
@@ -848,7 +875,7 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 784081003549036,
+									"sid": 572705302111125,
 									"parameters": {
 										"key": 101
 									}
@@ -858,13 +885,13 @@
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 157597748969594,
+									"sid": 561885675101706,
 									"parameters": {
 										"layout": "Level5"
 									}
 								}
 							],
-							"sid": 752074615600643
+							"sid": 904271514858901
 						},
 						{
 							"eventType": "comment",
@@ -876,14 +903,14 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 765884439125129,
+									"sid": 320779995906185,
 									"parameters": {
 										"key": 102
 									}
 								}
 							],
 							"actions": [],
-							"sid": 824003604561253
+							"sid": 482175318277736
 						},
 						{
 							"eventType": "comment",
@@ -895,14 +922,14 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 920123418052254,
+									"sid": 699479245449050,
 									"parameters": {
 										"key": 103
 									}
 								}
 							],
 							"actions": [],
-							"sid": 286495975669845
+							"sid": 447658972823595
 						},
 						{
 							"eventType": "comment",
@@ -914,14 +941,14 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 723349057190872,
+									"sid": 692710033281627,
 									"parameters": {
 										"key": 104
 									}
 								}
 							],
 							"actions": [],
-							"sid": 181415097923944
+							"sid": 811608336446792
 						},
 						{
 							"eventType": "comment",
@@ -933,14 +960,14 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 942475864985292,
+									"sid": 125631395601828,
 									"parameters": {
 										"key": 105
 									}
 								}
 							],
 							"actions": [],
-							"sid": 293766431319658
+							"sid": 561372640659962
 						},
 						{
 							"eventType": "comment",
@@ -952,17 +979,17 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 192451423122100,
+									"sid": 817763322187215,
 									"parameters": {
 										"key": 96
 									}
 								}
 							],
 							"actions": [],
-							"sid": 392864074840054
+							"sid": 608432651818890
 						}
 					],
-					"sid": 178475059414971,
+					"sid": 535361876292215,
 					"text-color": [
 						0,
 						0,
@@ -975,35 +1002,6 @@
 						0,
 						1
 					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Ativa/ desativa os atalhos para as fases no teclado numérico (NumLock)"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 604654299932785,
-							"parameters": {
-								"key": 144
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 706749346089184,
-							"parameters": {
-								"group-name": "\"LEVEL_SKIP\"",
-								"state": "toggle-active"
-							}
-						}
-					],
-					"sid": 869927536441235
 				}
 			],
 			"sid": 639576217351447,
@@ -1021,381 +1019,12 @@
 			]
 		},
 		{
-			"bookmark": true,
 			"eventType": "group",
 			"disabled": false,
 			"title": "RESET",
 			"description": "Restaura o arquivo local",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "comment",
-					"text": "Restaura as variáveis das fases"
-				},
-				{
-					"bookmark": true,
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 480500450527645
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 433029605531023,
-							"parameters": {
-								"variable": "layout",
-								"value": "LayoutName"
-							}
-						}
-					],
-					"sid": 702361737033630,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Fase 1"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 441227187992145,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level1\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 388651046951164,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 174292959317188,
-											"parameters": {
-												"variable": "lvl1_current_score"
-											}
-										},
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 336968908603224,
-											"parameters": {
-												"variable": "lvl1_current_stage"
-											}
-										},
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 954975131375180,
-											"parameters": {
-												"variable": "lvl1_gameState"
-											}
-										},
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 315249267782326,
-											"parameters": {
-												"variable": "lvl1_idle_timer"
-											}
-										},
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 968698614482377,
-											"parameters": {
-												"variable": "lvl1_InputBlock"
-											}
-										},
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 442346389571582,
-											"parameters": {
-												"variable": "lvl1_sequence_index"
-											}
-										}
-									],
-									"sid": 975077781742379
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 2"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 758751959290734,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level2\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 524365536457307,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 940096840507424
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 3"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 534185367161374,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level3\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 369973146782693,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 579979509512681
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 4"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 727496926886191,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level4\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 850759261816783,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 841240457101728
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 5"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 897963272909526,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level5\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 768645733337158,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 858537076399097
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 6"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 598665437109720,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level6\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 373187931253615,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 301718342698141
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 7"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 174121343579601,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level7\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 708409816889393,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 293004833408057
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 8"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 940603289872043,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level8\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 830023457891695,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 683334936232709
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 9"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 799419235371186,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level9\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 752359309137655,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 654921640793796
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 10"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 360677435369185,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level10\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 574015273801543,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 336821913589437
-								}
-							]
-						}
-					]
-				},
 				{
 					"eventType": "comment",
 					"text": "Tutorial WASD no layout Bedroom"
@@ -1423,10 +1052,6 @@
 						}
 					],
 					"sid": 672323790507587
-				},
-				{
-					"eventType": "comment",
-					"text": "Tutorial WASD no layout Bedroom"
 				}
 			],
 			"sid": 124037823196975,
