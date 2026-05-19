@@ -252,14 +252,27 @@
 								"name": "icon"
 							},
 							{
-								"items": [
-									"locker",
-									"terminalzero_window",
-									"error_window",
-									"txt_error",
-									"close_window"
+								"items": [],
+								"subfolders": [
+									{
+										"items": [
+											"close_terminalzero",
+											"level_hover",
+											"locker",
+											"terminalzero_window"
+										],
+										"subfolders": [],
+										"name": "terminalzero"
+									},
+									{
+										"items": [
+											"error_window",
+											"txt_error"
+										],
+										"subfolders": [],
+										"name": "error"
+									}
 								],
-								"subfolders": [],
 								"name": "window"
 							}
 						],
