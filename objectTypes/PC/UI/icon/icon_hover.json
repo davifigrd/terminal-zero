@@ -1,11 +1,25 @@
 {
-	"name": "bin_hitbox",
+	"name": "icon_hover",
 	"plugin-id": "Sprite",
-	"sid": 212022809751467,
+	"sid": 796491092887301,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
-	"instanceVariables": [],
-	"behaviorTypes": [],
+	"instanceVariables": [
+		{
+			"name": "level",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 365117253967663
+		}
+	],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Pin",
+			"name": "Pin",
+			"sid": 325678566104218
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -20,13 +34,13 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 1631656,
+						"imageSpriteId": 4655384,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 899886219302070,
+				"sid": 363351147211339,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

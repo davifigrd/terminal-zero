@@ -49,15 +49,6 @@
 								"variable": "PlayerMoving",
 								"value": "true"
 							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 295405163138622,
-							"parameters": {
-								"variable": "layout",
-								"value": "\"Bedroom\""
-							}
 						}
 					],
 					"sid": 965695399825463
@@ -1311,26 +1302,34 @@
 									"parameters": [
 										"\"Bedroom\""
 									]
-								},
+								}
+							],
+							"sid": 721700882598772
+						},
+						{
+							"eventType": "block",
+							"conditions": [
 								{
-									"id": "wait-for-signal",
+									"id": "on-signal",
 									"objectClass": "System",
-									"sid": 615441729586762,
+									"sid": 393887709082906,
 									"parameters": {
 										"tag": "\"end_transition\""
 									}
-								},
+								}
+							],
+							"actions": [
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 641380103350554,
+									"sid": 211227772227136,
 									"parameters": {
 										"variable": "PlayerMoving",
 										"value": "true"
 									}
 								}
 							],
-							"sid": 721700882598772
+							"sid": 554577465321056
 						},
 						{
 							"eventType": "comment",

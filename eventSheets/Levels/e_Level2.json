@@ -2,10 +2,6 @@
 	"name": "e_Level2",
 	"events": [
 		{
-			"eventType": "include",
-			"includeSheet": "e_Global"
-		},
-		{
 			"eventType": "variable",
 			"name": "tempo",
 			"type": "number",
@@ -13,13 +9,13 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 654701302908172
+			"sid": 879925869822395
 		},
 		{
 			"eventType": "block",
 			"conditions": [],
 			"actions": [],
-			"sid": 400196371630958
+			"sid": 780713396514505
 		},
 		{
 			"eventType": "block",
@@ -27,20 +23,20 @@
 				{
 					"id": "every-tick",
 					"objectClass": "System",
-					"sid": 197297254461114
+					"sid": 238607947913997
 				}
 			],
 			"actions": [
 				{
 					"id": "set-text",
-					"objectClass": "lvl2_Texto1",
-					"sid": 610562037475395,
+					"objectClass": "lvl2_Texto",
+					"sid": 999230684589829,
 					"parameters": {
 						"text": "tempo"
 					}
 				}
 			],
-			"sid": 113404738195066
+			"sid": 319410025337921
 		},
 		{
 			"eventType": "block",
@@ -48,7 +44,7 @@
 				{
 					"id": "every-x-seconds",
 					"objectClass": "System",
-					"sid": 311890023945315,
+					"sid": 658974852705467,
 					"parameters": {
 						"interval-seconds": "1.0"
 					}
@@ -58,51 +54,57 @@
 				{
 					"id": "subtract-from-eventvar",
 					"objectClass": "System",
-					"sid": 357212670994059,
+					"sid": 101766549217331,
 					"parameters": {
 						"variable": "tempo",
 						"value": "1"
 					}
 				}
 			],
-			"sid": 551000174516986
+			"sid": 634663496942630
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-click",
+					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 907011765258122,
+					"sid": 764522392619368,
 					"parameters": {
 						"mouse-button": "left",
-						"click-type": "clicked"
+						"click-type": "clicked",
+						"object-clicked": "lvl2_Sprite18"
 					}
 				},
 				{
 					"id": "compare-instance-variable",
-					"objectClass": "lvl2_Sprite20",
-					"sid": 543652976713447,
+					"objectClass": "lvl2_Sprite18",
+					"sid": 169747443508439,
 					"parameters": {
 						"instance-variable": "id",
 						"comparison": 0,
-						"value": "1"
+						"value": "2"
 					}
 				}
 			],
 			"actions": [
 				{
+					"id": "destroy",
+					"objectClass": "lvl2_Sprite18",
+					"sid": 586949704979988
+				},
+				{
 					"id": "set-visible",
-					"objectClass": "lvl2_Texto1",
-					"sid": 495141647947684,
+					"objectClass": "lvl2_Texto4",
+					"sid": 749084399540342,
 					"parameters": {
 						"visibility": "visible"
 					}
 				},
 				{
 					"id": "set-text",
-					"objectClass": "lvl2_Texto1",
-					"sid": 814309460466498,
+					"objectClass": "lvl2_Texto4",
+					"sid": 527546996342455,
 					"parameters": {
 						"text": "\"SISTEMA ACESSADO!\""
 					}
@@ -110,7 +112,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 317677462133064,
+					"sid": 545964383883344,
 					"parameters": {
 						"seconds": "2.0",
 						"use-timescale": true
@@ -119,32 +121,33 @@
 				{
 					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 328093892893211,
+					"sid": 739101401520342,
 					"parameters": {
-						"layout": "Level2"
+						"layout": "Level3"
 					}
 				}
 			],
-			"sid": 232328315657475
+			"sid": 116509085530857
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-click",
+					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 266828734389133,
+					"sid": 170122854086261,
 					"parameters": {
 						"mouse-button": "left",
-						"click-type": "clicked"
+						"click-type": "clicked",
+						"object-clicked": "Familia1"
 					}
 				},
 				{
 					"id": "compare-instance-variable",
-					"objectClass": "lvl2_Sprite18",
-					"sid": 281721623812431,
+					"objectClass": "Familia1",
+					"sid": 523952379468220,
 					"parameters": {
-						"instance-variable": "id",
+						"instance-variable": "idFAMILIA",
 						"comparison": 0,
 						"value": "0"
 					}
@@ -152,13 +155,74 @@
 			],
 			"actions": [
 				{
-					"id": "destroy",
-					"objectClass": "lvl2_Sprite18",
-					"sid": 204439795834005
+					"id": "set-visible",
+					"objectClass": "lvl2_Texto4",
+					"sid": 670464910699682,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "lvl2_Texto4",
+					"sid": 843154079787379,
+					"parameters": {
+						"text": "\"SISTEMA NEGADO !\""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 238468011304589,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl2_Texto4",
+					"sid": 820164652900364,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl2_Texto5",
+					"sid": 182997154061785,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "lvl2_Texto5",
+					"sid": 843487579541244,
+					"parameters": {
+						"text": "\"DICA : O OPOSTO DA ESQUERDA \""
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 369666122070527,
+					"parameters": {
+						"seconds": "1.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl2_Texto5",
+					"sid": 842899835585963,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
-			"sid": 362721463844779
+			"sid": 739740788225184
 		}
 	],
-	"sid": 476094180309278
+	"sid": 479958128321061
 }
