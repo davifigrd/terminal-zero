@@ -82,12 +82,12 @@
 						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 849322163570679
+							"sid": 777439350169716
 						},
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 346531335081668,
+							"sid": 535064610650949,
 							"parameters": {
 								"variable": "layout",
 								"comparison": 1,
@@ -99,7 +99,7 @@
 						{
 							"id": "set-position",
 							"objectClass": "cursor",
-							"sid": 390004775282395,
+							"sid": 274261683182681,
 							"parameters": {
 								"x": "Mouse.X",
 								"y": "Mouse.Y"
@@ -108,14 +108,14 @@
 						{
 							"id": "set-animation",
 							"objectClass": "cursor",
-							"sid": 787992898426424,
+							"sid": 967073321682340,
 							"parameters": {
 								"animation": "\"arrow\"",
 								"from": "current-frame"
 							}
 						}
 					],
-					"sid": 774289897978606,
+					"sid": 849488452474251,
 					"children": [
 						{
 							"eventType": "comment",
@@ -127,7 +127,7 @@
 								{
 									"id": "cursor-is-over-object",
 									"objectClass": "Mouse",
-									"sid": 733494152239419,
+									"sid": 755029780882578,
 									"parameters": {
 										"object": "Clickable_Familly"
 									}
@@ -137,14 +137,14 @@
 								{
 									"id": "set-animation",
 									"objectClass": "cursor",
-									"sid": 945395762520330,
+									"sid": 858525284131808,
 									"parameters": {
 										"animation": "\"pointer\"",
 										"from": "current-frame"
 									}
 								}
 							],
-							"sid": 120902172144756
+							"sid": 753614161087112
 						}
 					]
 				},
@@ -158,7 +158,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 315010210436840,
+							"sid": 268441284337022,
 							"parameters": {
 								"variable": "layout",
 								"comparison": 0,
@@ -170,14 +170,14 @@
 						{
 							"id": "set-position",
 							"objectClass": "cursor",
-							"sid": 232802964866045,
+							"sid": 520256381249881,
 							"parameters": {
 								"x": "clamp(Mouse.X, screen_cursor.BBoxLeft, screen_cursor.BBoxRight)",
 								"y": "clamp(Mouse.Y, screen_cursor.BBoxTop, screen_cursor.BBoxBottom)"
 							}
 						}
 					],
-					"sid": 545744676501323
+					"sid": 132466605867725
 				},
 				{
 					"eventType": "comment",
@@ -189,7 +189,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 354642407104969,
+							"sid": 991909193253707,
 							"parameters": {
 								"variable": "layout",
 								"comparison": 0,
@@ -201,17 +201,17 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 735591398848887,
+							"sid": 782943201046531,
 							"parameters": {
 								"layer": "\"cursor\"",
 								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 751481598502171
+					"sid": 776386102123483
 				}
 			],
-			"sid": 188836488104335,
+			"sid": 340707827170385,
 			"text-color": [
 				1,
 				1,
@@ -242,7 +242,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 300137775403630,
+							"sid": 468188233319839,
 							"parameters": {
 								"variable": "audio",
 								"comparison": 0,
@@ -252,17 +252,17 @@
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 347356154674487
+							"sid": 320368881994148
 						}
 					],
 					"actions": [
 						{
 							"id": "stop-all",
 							"objectClass": "Audio",
-							"sid": 604626876409315
+							"sid": 352319156893168
 						}
 					],
-					"sid": 275392481482794
+					"sid": 829095616403268
 				},
 				{
 					"eventType": "comment",
@@ -274,7 +274,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 669189391294830,
+							"sid": 956049538514280,
 							"parameters": {
 								"variable": "audio",
 								"comparison": 0,
@@ -284,14 +284,14 @@
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 252421231212214
+							"sid": 549067116180724
 						}
 					],
 					"actions": [
 						{
 							"id": "set-volume",
 							"objectClass": "Audio",
-							"sid": 739353698690285,
+							"sid": 648556757419458,
 							"parameters": {
 								"tag": "\"musica tema\"",
 								"db": "0"
@@ -300,7 +300,7 @@
 						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 382075729916313,
+							"sid": 509158037124577,
 							"parameters": {
 								"folder": "music",
 								"audio-file-name": "\"musica tema\"",
@@ -311,7 +311,7 @@
 							}
 						}
 					],
-					"sid": 874337573633181
+					"sid": 780930508639173
 				},
 				{
 					"eventType": "comment",
@@ -323,7 +323,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 365124252882064,
+							"sid": 949592466671336,
 							"parameters": {
 								"variable": "audio",
 								"comparison": 0,
@@ -333,14 +333,14 @@
 						{
 							"id": "trigger-once-while-true",
 							"objectClass": "System",
-							"sid": 954449479426134
+							"sid": 885446266085828
 						}
 					],
 					"actions": [
 						{
 							"id": "set-volume",
 							"objectClass": "Audio",
-							"sid": 807273354860731,
+							"sid": 957294104433161,
 							"parameters": {
 								"tag": "\"bgm\"",
 								"db": "0"
@@ -349,7 +349,7 @@
 						{
 							"id": "play-by-name",
 							"objectClass": "Audio",
-							"sid": 667338184422543,
+							"sid": 358234712701680,
 							"parameters": {
 								"folder": "music",
 								"audio-file-name": "\"musica ambiente\"",
@@ -360,10 +360,10 @@
 							}
 						}
 					],
-					"sid": 369718096747245
+					"sid": 353792147033797
 				}
 			],
-			"sid": 533445927252419,
+			"sid": 757097468698018,
 			"text-color": [
 				1,
 				1,
