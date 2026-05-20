@@ -7,7 +7,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "Textos, desenvolvedores e som"
+			"text": "Texto + som 1"
 		},
 		{
 			"eventType": "block",
@@ -20,6 +20,20 @@
 			],
 			"actions": [
 				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 984962668946507,
+					"parameters": {
+						"audio-file": {
+							"path": "som bip tecla"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
 					"callFunction": "TypingEffect",
 					"sid": 292479519659140,
 					"parameters": [
@@ -27,9 +41,17 @@
 					]
 				},
 				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 932407077803858,
+					"parameters": {
+						"tag": "\"som bip tecla\""
+					}
+				},
+				{
 					"id": "wait-for-signal",
 					"objectClass": "System",
-					"sid": 273946372066267,
+					"sid": 873618132546832,
 					"parameters": {
 						"tag": "\"end_TyppingEffect\""
 					}
@@ -37,53 +59,169 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 724682541534536,
+					"sid": 699589985650005,
 					"parameters": {
 						"seconds": "1",
 						"use-timescale": true
 					}
-				},
-				{
-					"callFunction": "TypingEffect",
-					"sid": 414501853252335,
-					"parameters": [
-						"\"Carregando módulos essenciais...\""
-					]
-				},
-				{
-					"id": "wait-for-signal",
-					"objectClass": "System",
-					"sid": 456269233480509,
-					"parameters": {
-						"tag": "\"end_TyppingEffect\""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 210917370353000,
-					"parameters": {
-						"seconds": "1",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 482021469383212,
-					"parameters": {
-						"layer": "\"sound_experience\"",
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "start-fade",
-					"objectClass": "sound_experience",
-					"sid": 142284739127184,
-					"behaviorType": "Fade"
 				}
 			],
-			"sid": 824753455345583
+			"sid": 824753455345583,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Texto + som 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 467854726176604,
+							"parameters": {
+								"audio-file": {
+									"path": "som bip tecla"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"callFunction": "TypingEffect",
+							"sid": 520369181005458,
+							"parameters": [
+								"\"Carregando módulos essenciais...\""
+							]
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 770674327067870,
+							"parameters": {
+								"tag": "\"som bip tecla\""
+							}
+						},
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 122439308493477,
+							"parameters": {
+								"tag": "\"end_TyppingEffect\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 844115873006698,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						}
+					],
+					"sid": 580110738221069,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Texto + som 3"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 262433873944136,
+									"parameters": {
+										"audio-file": {
+											"path": "som bip tecla"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 976788617419729,
+									"parameters": [
+										"\"Adicionando ponto e vírgula...\""
+									]
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 810730536737325,
+									"parameters": {
+										"tag": "\"som bip tecla\""
+									}
+								},
+								{
+									"id": "wait-for-signal",
+									"objectClass": "System",
+									"sid": 427164581168459,
+									"parameters": {
+										"tag": "\"end_TyppingEffect\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 394339875043570,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 378647118183733,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Ative o som"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 840517727493917,
+											"parameters": {
+												"layer": "\"sound_experience\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "start-fade",
+											"objectClass": "sound_experience",
+											"sid": 385829736737854,
+											"behaviorType": "Fade"
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 830384290388781,
+											"parameters": {
+												"seconds": "1",
+												"use-timescale": true
+											}
+										}
+									],
+									"sid": 835563343429170
+								}
+							]
+						}
+					]
+				}
+			]
 		},
 		{
 			"eventType": "comment",
@@ -101,15 +239,6 @@
 			],
 			"actions": [
 				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 640421483839939,
-					"parameters": {
-						"seconds": "1",
-						"use-timescale": true
-					}
-				},
-				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
 					"sid": 628028115331836,
@@ -123,6 +252,15 @@
 					"objectClass": "developed_by",
 					"sid": 723051915359257,
 					"behaviorType": "Fade"
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 500816731097099,
+					"parameters": {
+						"seconds": "1",
+						"use-timescale": true
+					}
 				}
 			],
 			"sid": 107116608836915
@@ -142,15 +280,6 @@
 				}
 			],
 			"actions": [
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 757710339188489,
-					"parameters": {
-						"seconds": "1",
-						"use-timescale": true
-					}
-				},
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",

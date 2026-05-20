@@ -40,15 +40,6 @@
 								"layer": "\"cursor\"",
 								"visibility": "visible"
 							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 860085837864868,
-							"parameters": {
-								"variable": "PlayerMoving",
-								"value": "false"
-							}
 						}
 					],
 					"sid": 994649201546090
@@ -102,18 +93,40 @@
 								"variable": "layout",
 								"value": "\"Menu\""
 							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 670602914938036,
-							"parameters": {
-								"variable": "PlayerMoving",
-								"value": "false"
-							}
 						}
 					],
 					"sid": 880180031627069
+				},
+				{
+					"eventType": "comment",
+					"text": "Audio"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 281709454793804
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 653378319131026,
+							"parameters": {
+								"audio-file": {
+									"path": "musica tema"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 470772077364927
 				}
 			],
 			"sid": 188182124183528,
@@ -156,6 +169,25 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "fade-volume",
+							"objectClass": "Audio",
+							"sid": 186518346822371,
+							"parameters": {
+								"tag": "\"musica tema\"",
+								"db": "-100",
+								"duration": "3",
+								"ending": "stop"
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 302464657267021,
+							"parameters": {
+								"tag": "\"musica tema\""
+							}
+						},
 						{
 							"callFunction": "Transition",
 							"sid": 350111368837166,
@@ -392,14 +424,14 @@
 							"objectClass": "Mouse",
 							"sid": 104001195717022,
 							"parameters": {
-								"object": "jogar_button"
+								"object": "Bip_Familly"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-animation-frame",
-							"objectClass": "jogar_button",
+							"objectClass": "Bip_Familly",
 							"sid": 504866514435892,
 							"parameters": {
 								"frame-number": "0"
@@ -420,7 +452,7 @@
 					"actions": [
 						{
 							"id": "set-animation-frame",
-							"objectClass": "jogar_button",
+							"objectClass": "Bip_Familly",
 							"sid": 216600859882588,
 							"parameters": {
 								"frame-number": "1"
@@ -455,7 +487,8 @@
 							}
 						}
 					],
-					"sid": 445888829222559
+					"sid": 445888829222559,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -476,7 +509,8 @@
 							}
 						}
 					],
-					"sid": 422750356402549
+					"sid": 422750356402549,
+					"disabled": true
 				},
 				{
 					"eventType": "comment",
@@ -504,7 +538,8 @@
 							}
 						}
 					],
-					"sid": 532116728087010
+					"sid": 532116728087010,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -525,7 +560,8 @@
 							}
 						}
 					],
-					"sid": 629738287042338
+					"sid": 629738287042338,
+					"disabled": true
 				},
 				{
 					"eventType": "comment",
@@ -553,7 +589,8 @@
 							}
 						}
 					],
-					"sid": 235601593344499
+					"sid": 235601593344499,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -574,7 +611,8 @@
 							}
 						}
 					],
-					"sid": 792416273964694
+					"sid": 792416273964694,
+					"disabled": true
 				}
 			],
 			"sid": 939887868245401,

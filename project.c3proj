@@ -212,7 +212,8 @@
 				"items": [
 					"PC_screen",
 					"post_it",
-					"esc"
+					"esc",
+					"esc_pc"
 				],
 				"subfolders": [
 					{
@@ -293,7 +294,8 @@
 							"jogar_button",
 							"controles_button",
 							"creditos_button",
-							"sair_button"
+							"sair_button",
+							"esc_button"
 						],
 						"subfolders": [],
 						"name": "button_hitbox"
@@ -582,7 +584,8 @@
 			{
 				"items": [
 					"Window_Familly",
-					"Icon_Familly"
+					"Icon_Familly",
+					"Bip_Familly"
 				],
 				"subfolders": [],
 				"name": "PC"
@@ -639,7 +642,64 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "som tecla 5s.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 797866531947047,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "som passos.mp3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 882900797443237,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "som ambiente.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 559414418588360,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "som tecla 3s.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 701199984385962,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "som bip tecla.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 977888780600867,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bip 1.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 160569837168037,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bip 1.2.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 155875483951501,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": [
 				{
 					"items": [
@@ -734,7 +794,16 @@
 			]
 		},
 		"music": {
-			"items": [],
+			"items": [
+				{
+					"name": "musica tema.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 829323156507501,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"video": {

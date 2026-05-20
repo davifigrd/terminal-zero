@@ -3,16 +3,6 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "PlayerMoving",
-			"type": "boolean",
-			"initialValue": "false",
-			"comment": "Estado de movimentação",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 379928851874203
-		},
-		{
-			"eventType": "variable",
 			"name": "layout",
 			"type": "string",
 			"initialValue": "none",
@@ -1425,6 +1415,73 @@
 				0.3215686274509804,
 				1
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 568775934096703,
+					"parameters": {
+						"object": "Bip_Familly"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 343066238040098
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 327432815748871,
+					"parameters": {
+						"audio-file": {
+							"path": "bip 1"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 766361713834526
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-object-clicked",
+					"objectClass": "Mouse",
+					"sid": 400667620178121,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked",
+						"object-clicked": "Bip_Familly"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 229775255387695,
+					"parameters": {
+						"audio-file": {
+							"path": "bip 1.2"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 964870836798809
 		}
 	],
 	"sid": 629785159147306

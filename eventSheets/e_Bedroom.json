@@ -2,6 +2,16 @@
 	"name": "e_Bedroom",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "PlayerMoving",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "Estado de movimentação",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 492771657000959
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "e_Global"
 		},
@@ -115,6 +125,37 @@
 						}
 					],
 					"sid": 786961671698299
+				},
+				{
+					"eventType": "comment",
+					"text": "Audio"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 168772738122173
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 717934637152187,
+							"parameters": {
+								"audio-file": {
+									"path": "som ambiente"
+								},
+								"loop": "looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 953613735346945
 				},
 				{
 					"eventType": "comment",
