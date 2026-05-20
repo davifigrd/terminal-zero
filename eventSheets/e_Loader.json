@@ -20,9 +20,18 @@
 			],
 			"actions": [
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 751695652859325,
+					"parameters": {
+						"seconds": "0.1",
+						"use-timescale": true
+					}
+				},
+				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 984962668946507,
+					"sid": 629325243096573,
 					"parameters": {
 						"audio-file": {
 							"path": "som bip tecla"
@@ -35,31 +44,31 @@
 				},
 				{
 					"callFunction": "TypingEffect",
-					"sid": 292479519659140,
+					"sid": 645686079734475,
 					"parameters": [
 						"\"Inicializando sistema...\""
 					]
 				},
 				{
-					"id": "stop",
-					"objectClass": "Audio",
-					"sid": 932407077803858,
-					"parameters": {
-						"tag": "\"som bip tecla\""
-					}
-				},
-				{
 					"id": "wait-for-signal",
 					"objectClass": "System",
-					"sid": 873618132546832,
+					"sid": 154812578378369,
 					"parameters": {
 						"tag": "\"end_TyppingEffect\""
 					}
 				},
 				{
+					"id": "stop",
+					"objectClass": "Audio",
+					"sid": 154343752312309,
+					"parameters": {
+						"tag": "\"som bip tecla\""
+					}
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 699589985650005,
+					"sid": 730817737284334,
 					"parameters": {
 						"seconds": "1",
 						"use-timescale": true
@@ -79,7 +88,7 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 467854726176604,
+							"sid": 946374190300418,
 							"parameters": {
 								"audio-file": {
 									"path": "som bip tecla"
@@ -87,7 +96,7 @@
 								"loop": "not-looping",
 								"volume": "0",
 								"stereo-pan": "0",
-								"tag-optional": "\"\""
+								"tag-optional": "\"som bip tecla\""
 							}
 						},
 						{
@@ -98,19 +107,19 @@
 							]
 						},
 						{
-							"id": "stop",
-							"objectClass": "Audio",
-							"sid": 770674327067870,
-							"parameters": {
-								"tag": "\"som bip tecla\""
-							}
-						},
-						{
 							"id": "wait-for-signal",
 							"objectClass": "System",
 							"sid": 122439308493477,
 							"parameters": {
 								"tag": "\"end_TyppingEffect\""
+							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 286052322047871,
+							"parameters": {
+								"tag": "\"som bip tecla\""
 							}
 						},
 						{
@@ -136,7 +145,7 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 262433873944136,
+									"sid": 761387208149573,
 									"parameters": {
 										"audio-file": {
 											"path": "som bip tecla"
@@ -144,7 +153,7 @@
 										"loop": "not-looping",
 										"volume": "0",
 										"stereo-pan": "0",
-										"tag-optional": "\"\""
+										"tag-optional": "\"som bip tecla\""
 									}
 								},
 								{
@@ -155,19 +164,19 @@
 									]
 								},
 								{
-									"id": "stop",
-									"objectClass": "Audio",
-									"sid": 810730536737325,
-									"parameters": {
-										"tag": "\"som bip tecla\""
-									}
-								},
-								{
 									"id": "wait-for-signal",
 									"objectClass": "System",
 									"sid": 427164581168459,
 									"parameters": {
 										"tag": "\"end_TyppingEffect\""
+									}
+								},
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 773888026487288,
+									"parameters": {
+										"tag": "\"som bip tecla\""
 									}
 								},
 								{

@@ -81,47 +81,6 @@
 						}
 					],
 					"sid": 897537008656469
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-end-of-layout",
-							"objectClass": "System",
-							"sid": 735343963279149
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 822335927184118,
-							"parameters": {
-								"variable": "layout",
-								"comparison": 0,
-								"value": "\"Bedroom\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 726017764163087,
-							"parameters": {
-								"layer": "\"cursor\"",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 497827534725318,
-							"parameters": {
-								"variable": "PlayerMoving",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 412253496880236
 				}
 			],
 			"sid": 836311122198057,

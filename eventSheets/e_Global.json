@@ -178,6 +178,37 @@
 						}
 					],
 					"sid": 545744676501323
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor no layout Bedroom"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 354642407104969,
+							"parameters": {
+								"variable": "layout",
+								"comparison": 0,
+								"value": "\"Bedroom\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 735591398848887,
+							"parameters": {
+								"layer": "\"cursor\"",
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 751481598502171
 				}
 			],
 			"sid": 188836488104335,
@@ -226,15 +257,9 @@
 					],
 					"actions": [
 						{
-							"id": "fade-volume",
+							"id": "stop-all",
 							"objectClass": "Audio",
-							"sid": 869020751795731,
-							"parameters": {
-								"tag": "\"bgm\"",
-								"db": "-100",
-								"duration": "3",
-								"ending": "stop"
-							}
+							"sid": 604626876409315
 						}
 					],
 					"sid": 275392481482794
@@ -266,9 +291,9 @@
 						{
 							"id": "set-volume",
 							"objectClass": "Audio",
-							"sid": 392981957027813,
+							"sid": 739353698690285,
 							"parameters": {
-								"tag": "\"bgm\"",
+								"tag": "\"musica tema\"",
 								"db": "0"
 							}
 						},
@@ -336,36 +361,6 @@
 						}
 					],
 					"sid": 369718096747245
-				},
-				{
-					"eventType": "comment",
-					"text": "Música ambiente"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 710794987391896,
-							"parameters": {
-								"variable": "layout",
-								"comparison": 1,
-								"value": "\"Bedroom\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "stop",
-							"objectClass": "Audio",
-							"sid": 914470122772913,
-							"parameters": {
-								"tag": "\"som passos\""
-							}
-						}
-					],
-					"sid": 269285108128254
 				}
 			],
 			"sid": 533445927252419,
@@ -1215,6 +1210,16 @@
 							"id": "on-start-of-layout",
 							"objectClass": "System",
 							"sid": 480500450527645
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 772737216256732,
+							"parameters": {
+								"first-value": "find(LayoutName, \"Level\")",
+								"comparison": 5,
+								"second-value": "0"
+							}
 						}
 					],
 					"actions": [
@@ -1613,73 +1618,6 @@
 				0.3215686274509804,
 				1
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "cursor-is-over-object",
-					"objectClass": "Mouse",
-					"sid": 568775934096703,
-					"parameters": {
-						"object": "Bip_Familly"
-					}
-				},
-				{
-					"id": "trigger-once-while-true",
-					"objectClass": "System",
-					"sid": 343066238040098
-				}
-			],
-			"actions": [
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 327432815748871,
-					"parameters": {
-						"audio-file": {
-							"path": "bip 1"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				}
-			],
-			"sid": 766361713834526
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 400667620178121,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "Bip_Familly"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 229775255387695,
-					"parameters": {
-						"audio-file": {
-							"path": "bip 1.2"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				}
-			],
-			"sid": 964870836798809
 		}
 	],
 	"sid": 629785159147306

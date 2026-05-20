@@ -52,11 +52,20 @@
 					],
 					"actions": [
 						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 447909162058421,
+							"parameters": {
+								"layer": "\"cursor\"",
+								"visibility": "invisible"
+							}
+						},
+						{
 							"id": "stop",
 							"objectClass": "Audio",
-							"sid": 560818880908637,
+							"sid": 353786719489758,
 							"parameters": {
-								"tag": "\"bgm\""
+								"tag": "\"musica tema\""
 							}
 						},
 						{
@@ -70,15 +79,6 @@
 								"volume": "0",
 								"stereo-pan": "0",
 								"tag-optional": "\"musica ambiente\""
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 623937890810586,
-							"parameters": {
-								"layer": "\"cursor\"",
-								"visibility": "invisible"
 							}
 						},
 						{
@@ -103,7 +103,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 897947853775144,
+									"sid": 425573151448277,
 									"parameters": {
 										"variable": "layout",
 										"comparison": 0,
@@ -461,7 +461,7 @@
 								{
 									"id": "is-tag-playing",
 									"objectClass": "Audio",
-									"sid": 101484913102584,
+									"sid": 351917209102073,
 									"parameters": {
 										"tag": "\"som passos\""
 									},
@@ -472,7 +472,7 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 937921003351930,
+									"sid": 980333029832248,
 									"parameters": {
 										"audio-file": {
 											"path": "som passos.mp3"
@@ -484,7 +484,7 @@
 									}
 								}
 							],
-							"sid": 469600456473450
+							"sid": 299545361235491
 						},
 						{
 							"eventType": "comment",
@@ -1165,6 +1165,16 @@
 							"sid": 947258663045886,
 							"behaviorType": "8Direction",
 							"isInverted": true
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 258635310432118,
+							"parameters": {
+								"variable": "layout",
+								"comparison": 1,
+								"value": "\"Bedroom\""
+							}
 						}
 					],
 					"actions": [
@@ -1279,7 +1289,8 @@
 							],
 							"sid": 185497970709161
 						}
-					]
+					],
+					"isOrBlock": true
 				}
 			],
 			"sid": 957437352357812,
@@ -1916,6 +1927,15 @@
 							"sid": 236720857251281,
 							"parameters": {
 								"layer": "\"save\""
+							},
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 712986611095120,
+							"parameters": {
+								"layer": "\"menu\""
 							},
 							"isInverted": true
 						},

@@ -36,13 +36,6 @@
 		},
 		{
 			"type": "plugin",
-			"id": "Dictionary",
-			"name": "Dictionary",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -306,10 +299,7 @@
 				"subfolders": [
 					{
 						"items": [
-							"jogar_button",
-							"controles_button",
-							"creditos_button",
-							"sair_button",
+							"menu_button",
 							"esc_button"
 						],
 						"subfolders": [],
@@ -325,7 +315,6 @@
 					"Keyboard",
 					"LocalStorage",
 					"AJAX",
-					"Dictionary",
 					"Audio",
 					"TypingEffect",
 					"Browser"
@@ -599,11 +588,17 @@
 			{
 				"items": [
 					"Window_Familly",
-					"Icon_Familly",
-					"Bip_Familly"
+					"Icon_Familly"
 				],
 				"subfolders": [],
 				"name": "PC"
+			},
+			{
+				"items": [
+					"Menu_Familly"
+				],
+				"subfolders": [],
+				"name": "Menu"
 			}
 		]
 	},
@@ -815,7 +810,7 @@
 				{
 					"name": "musica ambiente.webm",
 					"type": "audio/webm; codecs=opus",
-					"sid": 914561739435949,
+					"sid": 697452099765035,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -894,13 +889,7 @@
 		},
 		"general": {
 			"items": [],
-			"subfolders": [
-				{
-					"items": [],
-					"subfolders": [],
-					"name": "Level 1"
-				}
-			]
+			"subfolders": []
 		}
 	},
 	"timelines": {
