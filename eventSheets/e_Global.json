@@ -87,7 +87,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 535064610650949,
+							"sid": 927464099634749,
 							"parameters": {
 								"variable": "layout",
 								"comparison": 1,
@@ -145,39 +145,39 @@
 								}
 							],
 							"sid": 753614161087112
+						},
+						{
+							"eventType": "comment",
+							"text": "Cursor no layout PC"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 460882646849918,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "\"PC\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "cursor",
+									"sid": 607985461617293,
+									"parameters": {
+										"x": "clamp(Mouse.X, screen_cursor.BBoxLeft, screen_cursor.BBoxRight)",
+										"y": "clamp(Mouse.Y, screen_cursor.BBoxTop, screen_cursor.BBoxBottom)"
+									}
+								}
+							],
+							"sid": 502506295425065
 						}
 					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Cursor no layout PC"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 268441284337022,
-							"parameters": {
-								"variable": "layout",
-								"comparison": 0,
-								"value": "\"PC\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "cursor",
-							"sid": 520256381249881,
-							"parameters": {
-								"x": "clamp(Mouse.X, screen_cursor.BBoxLeft, screen_cursor.BBoxRight)",
-								"y": "clamp(Mouse.Y, screen_cursor.BBoxTop, screen_cursor.BBoxBottom)"
-							}
-						}
-					],
-					"sid": 132466605867725
 				},
 				{
 					"eventType": "comment",
