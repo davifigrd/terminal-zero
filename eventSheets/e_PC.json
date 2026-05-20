@@ -40,15 +40,6 @@
 								"layer": "\"cursor\"",
 								"visibility": "visible"
 							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 227781956022249,
-							"parameters": {
-								"variable": "PlayerMoving",
-								"value": "false"
-							}
 						}
 					],
 					"sid": 741880394947535
@@ -58,6 +49,11 @@
 					"text": "Sair do pc"
 				},
 				{
+					"eventType": "comment",
+					"text": "xxxxxxxxxxxxx inverter is visible"
+				},
+				{
+					"bookmark": true,
 					"eventType": "block",
 					"conditions": [
 						{
@@ -67,6 +63,11 @@
 							"parameters": {
 								"key": 27
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "terminalzero_window",
+							"sid": 417467423400159
 						}
 					],
 					"actions": [
@@ -80,6 +81,47 @@
 						}
 					],
 					"sid": 897537008656469
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 735343963279149
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 822335927184118,
+							"parameters": {
+								"variable": "layout",
+								"comparison": 0,
+								"value": "\"Bedroom\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 726017764163087,
+							"parameters": {
+								"layer": "\"cursor\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 497827534725318,
+							"parameters": {
+								"variable": "PlayerMoving",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 412253496880236
 				}
 			],
 			"sid": 836311122198057,

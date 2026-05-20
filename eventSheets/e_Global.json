@@ -336,6 +336,36 @@
 						}
 					],
 					"sid": 369718096747245
+				},
+				{
+					"eventType": "comment",
+					"text": "Música ambiente"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 710794987391896,
+							"parameters": {
+								"variable": "layout",
+								"comparison": 1,
+								"value": "\"Bedroom\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 914470122772913,
+							"parameters": {
+								"tag": "\"som passos\""
+							}
+						}
+					],
+					"sid": 269285108128254
 				}
 			],
 			"sid": 533445927252419,
