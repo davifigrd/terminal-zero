@@ -521,9 +521,12 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-start-of-layout",
+									"id": "layer-is-visible",
 									"objectClass": "System",
-									"sid": 568504116088878
+									"sid": 485306261352986,
+									"parameters": {
+										"layer": "\"window\""
+									}
 								}
 							],
 							"actions": [
@@ -816,7 +819,7 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": true,
+					"disabled": false,
 					"title": "WINDOW_TERMINAL_ZERO",
 					"description": "Interações com a janela do terminal zero",
 					"isActiveOnStart": true,
@@ -825,48 +828,16 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "icon_hover",
-									"sid": 503170169424739,
-									"parameters": {
-										"instance-variable": "app",
-										"comparison": 0,
-										"value": "\"terminalzero\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "pin-to-object-properties",
-									"objectClass": "icon_hover",
-									"sid": 548868066775678,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "terminalzero_window",
-										"x": true,
-										"y": true,
-										"angle": true,
-										"width-type": "no",
-										"height-type": "no",
-										"z": false
-									}
-								}
-							],
-							"sid": 873732458398834,
-							"disabled": true
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-tick",
+									"id": "layer-is-visible",
 									"objectClass": "System",
-									"sid": 881621622123207
+									"sid": 198856390229097,
+									"parameters": {
+										"layer": "\"window\""
+									}
 								}
 							],
 							"actions": [],
 							"sid": 843910123768926,
-							"disabled": true,
 							"children": [
 								{
 									"eventType": "comment",
@@ -886,7 +857,6 @@
 									],
 									"actions": [],
 									"sid": 352254034700966,
-									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -894,10 +864,10 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "locker",
-													"sid": 281569953319661,
+													"sid": 272957966278525,
 													"parameters": {
 														"instance-variable": "level",
-														"comparison": 3,
+														"comparison": 5,
 														"value": "level_done"
 													}
 												}
@@ -913,21 +883,10 @@
 												}
 											],
 											"sid": 627976065024728,
-											"disabled": true,
 											"children": [
 												{
 													"eventType": "block",
 													"conditions": [
-														{
-															"id": "compare-instance-variable",
-															"objectClass": "locker",
-															"sid": 607011337820238,
-															"parameters": {
-																"instance-variable": "level",
-																"comparison": 5,
-																"value": "level_done"
-															}
-														},
 														{
 															"id": "compare-opacity",
 															"objectClass": "locker",
@@ -941,7 +900,7 @@
 													"actions": [
 														{
 															"id": "set-visible",
-															"objectClass": "icon_hover",
+															"objectClass": "level_hover",
 															"sid": 890067266738846,
 															"parameters": {
 																"visibility": "visible"
@@ -993,8 +952,7 @@
 									]
 								}
 							],
-							"sid": 413326031126936,
-							"disabled": true
+							"sid": 413326031126936
 						}
 					],
 					"sid": 268653908120253,
