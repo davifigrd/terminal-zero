@@ -279,36 +279,6 @@
 							"sid": 749595403002325
 						},
 						{
-							"eventType": "comment",
-							"text": "Terminal Zero"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Icon_Familly",
-									"sid": 587984251819975,
-									"disabled": true,
-									"parameters": {
-										"instance-variable": "app",
-										"comparison": 0,
-										"value": "\"terminalzero\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 802822324616069,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 292040422126412
-								}
-							]
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -757,12 +727,12 @@
 										{
 											"id": "pick-by-comparison",
 											"objectClass": "System",
-											"sid": 690933744827149,
+											"sid": 737041312006053,
 											"parameters": {
 												"object": "level_hover",
-												"expression": "level_hover.level",
+												"expression": " level_done",
 												"comparison": 0,
-												"value": "level_done"
+												"value": "level_hover.level"
 											}
 										}
 									],
@@ -779,18 +749,6 @@
 									"sid": 182983050632552
 								}
 							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 591496652139317
-								}
-							],
-							"actions": [],
-							"sid": 775862100370392
 						},
 						{
 							"eventType": "comment",
