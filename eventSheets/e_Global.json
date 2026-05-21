@@ -12,16 +12,6 @@
 			"sid": 345529679003487
 		},
 		{
-			"eventType": "variable",
-			"name": "audio",
-			"type": "string",
-			"initialValue": "none",
-			"comment": "Som de fundo atual",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 412036910919799
-		},
-		{
 			"eventType": "comment",
 			"text": "Tela cheia"
 		},
@@ -53,6 +43,31 @@
 			],
 			"sid": 851112825147190,
 			"disabled": true
+		},
+		{
+			"eventType": "comment",
+			"text": "Volume total"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 936257242237968
+				}
+			],
+			"actions": [
+				{
+					"id": "set-master-volume",
+					"objectClass": "Audio",
+					"sid": 619662989761263,
+					"parameters": {
+						"db": "-20"
+					}
+				}
+			],
+			"sid": 860207354722690
 		},
 		{
 			"eventType": "group",
@@ -212,158 +227,6 @@
 				0.26666666666666666,
 				1,
 				0,
-				1
-			]
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "AUDIO",
-			"description": "Controla o som do jogo",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "Sem som"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 468188233319839,
-							"parameters": {
-								"variable": "audio",
-								"comparison": 0,
-								"value": "\"none\""
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 320368881994148
-						}
-					],
-					"actions": [
-						{
-							"id": "stop-all",
-							"objectClass": "Audio",
-							"sid": 352319156893168
-						}
-					],
-					"sid": 829095616403268
-				},
-				{
-					"eventType": "comment",
-					"text": "Música tema"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 956049538514280,
-							"parameters": {
-								"variable": "audio",
-								"comparison": 0,
-								"value": "\"musica tema\""
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 549067116180724
-						}
-					],
-					"actions": [
-						{
-							"id": "set-volume",
-							"objectClass": "Audio",
-							"sid": 648556757419458,
-							"parameters": {
-								"tag": "\"musica tema\"",
-								"db": "0"
-							}
-						},
-						{
-							"id": "play-by-name",
-							"objectClass": "Audio",
-							"sid": 509158037124577,
-							"parameters": {
-								"folder": "music",
-								"audio-file-name": "\"musica tema\"",
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"bgm\""
-							}
-						}
-					],
-					"sid": 780930508639173
-				},
-				{
-					"eventType": "comment",
-					"text": "Música ambiente"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 949592466671336,
-							"parameters": {
-								"variable": "audio",
-								"comparison": 0,
-								"value": "\"musica ambiente\""
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 885446266085828
-						}
-					],
-					"actions": [
-						{
-							"id": "set-volume",
-							"objectClass": "Audio",
-							"sid": 957294104433161,
-							"parameters": {
-								"tag": "\"bgm\"",
-								"db": "0"
-							}
-						},
-						{
-							"id": "play-by-name",
-							"objectClass": "Audio",
-							"sid": 358234712701680,
-							"parameters": {
-								"folder": "music",
-								"audio-file-name": "\"musica ambiente\"",
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"bgm\""
-							}
-						}
-					],
-					"sid": 353792147033797
-				}
-			],
-			"sid": 757097468698018,
-			"text-color": [
-				1,
-				1,
-				1,
-				1
-			],
-			"background-color": [
-				0.047058823529411764,
-				0.6196078431372549,
-				0.7098039215686275,
 				1
 			]
 		},

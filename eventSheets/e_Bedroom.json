@@ -5,7 +5,7 @@
 			"eventType": "variable",
 			"name": "PlayerMoving",
 			"type": "boolean",
-			"initialValue": "false",
+			"initialValue": "true",
 			"comment": "Estado de movimentação",
 			"isStatic": false,
 			"isConstant": false,
@@ -28,65 +28,49 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 235505420294854
-						},
-						{
-							"id": "is-tag-playing",
-							"objectClass": "Audio",
-							"sid": 689978575693739,
-							"parameters": {
-								"tag": "\"musica ambiente\""
-							},
-							"isInverted": true
-						},
-						{
-							"id": "is-playing",
-							"objectClass": "fade",
-							"sid": 694119028062464,
-							"behaviorType": "Tween",
-							"parameters": {
-								"tags": "\"transition\""
-							},
-							"isInverted": true
+							"sid": 424048744607310
 						}
 					],
-					"actions": [
-						{
-							"id": "stop",
-							"objectClass": "Audio",
-							"sid": 353786719489758,
-							"parameters": {
-								"tag": "\"musica tema\""
-							}
-						},
-						{
-							"id": "play-by-name",
-							"objectClass": "Audio",
-							"sid": 116829822647075,
-							"parameters": {
-								"folder": "music",
-								"audio-file-name": "\"musica ambiente\"",
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"musica ambiente\""
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 269076746872954,
-							"parameters": {
-								"variable": "PlayerMoving",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 965695399825463,
+					"actions": [],
+					"sid": 746013238939214,
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "PC→ Bedroom"
+							"text": "Inicia música de fundo"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 912871929058757,
+									"parameters": {
+										"tag": "\"musica ambiente\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 554499045904504,
+									"parameters": {
+										"folder": "music",
+										"audio-file-name": "\"musica ambiente\"",
+										"loop": "looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"BGM\""
+									}
+								}
+							],
+							"sid": 486417230641217
+						},
+						{
+							"eventType": "comment",
+							"text": "PC → Bedroom"
 						},
 						{
 							"eventType": "block",
@@ -94,7 +78,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 425573151448277,
+									"sid": 424713489655261,
 									"parameters": {
 										"variable": "layout",
 										"comparison": 0,
@@ -106,7 +90,7 @@
 								{
 									"id": "set-position",
 									"objectClass": "player",
-									"sid": 187388989103600,
+									"sid": 825403422551009,
 									"parameters": {
 										"x": "spawn_pc.X",
 										"y": "spawn_pc.Y"
@@ -115,14 +99,14 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 661126656111222,
+									"sid": 515332825676137,
 									"parameters": {
 										"variable": "layout",
 										"value": "\"Bedroom\""
 									}
 								}
 							],
-							"sid": 533707136459627
+							"sid": 942215203823129
 						}
 					]
 				},
@@ -444,7 +428,7 @@
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Audio ao se mover"
+							"text": "Audio de movimentação"
 						},
 						{
 							"eventType": "block",
@@ -452,9 +436,9 @@
 								{
 									"id": "is-tag-playing",
 									"objectClass": "Audio",
-									"sid": 351917209102073,
+									"sid": 746943874533079,
 									"parameters": {
-										"tag": "\"som passos\""
+										"tag": "\"SFX\""
 									},
 									"isInverted": true
 								}
@@ -463,15 +447,15 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 980333029832248,
+									"sid": 817615695225093,
 									"parameters": {
 										"audio-file": {
-											"path": "som passos.mp3"
+											"path": "som passos"
 										},
-										"loop": "looping",
+										"loop": "not-looping",
 										"volume": "0",
 										"stereo-pan": "0",
-										"tag-optional": "\"som passos\""
+										"tag-optional": "\"SFX\""
 									}
 								}
 							],
@@ -1172,9 +1156,9 @@
 						{
 							"id": "stop",
 							"objectClass": "Audio",
-							"sid": 326746082515216,
+							"sid": 843823732582054,
 							"parameters": {
-								"tag": "\"som passos\""
+								"tag": "\"SFX\""
 							}
 						}
 					],
@@ -1322,24 +1306,14 @@
 								{
 									"id": "on-collision-with-another-object",
 									"objectClass": "player",
-									"sid": 421107783017869,
+									"sid": 521898366888229,
 									"parameters": {
 										"object": "bed"
 									}
 								}
 							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "player",
-									"sid": 311548752814196,
-									"parameters": {
-										"x": "902",
-										"y": "417"
-									}
-								}
-							],
-							"sid": 697848963272162,
+							"actions": [],
+							"sid": 275674593469972,
 							"children": [
 								{
 									"eventType": "block",
@@ -1347,14 +1321,14 @@
 										{
 											"id": "trigger-once-while-true",
 											"objectClass": "System",
-											"sid": 834985500873190
+											"sid": 608583393776181
 										}
 									],
 									"actions": [
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 452685079736058,
+											"sid": 964638412674986,
 											"parameters": {
 												"variable": "PlayerMoving",
 												"value": "false"
@@ -1363,23 +1337,41 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 262676466441895,
+											"sid": 205092765701005,
 											"parameters": {
 												"layer": "\"save\"",
 												"visibility": "visible"
 											}
 										},
 										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 319862813671177,
+											"parameters": {
+												"layer": "\"save\"",
+												"interactive": true
+											}
+										},
+										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 389312600346710,
+											"sid": 450725257189569,
 											"parameters": {
 												"layer": "\"yes_no\"",
 												"visibility": "visible"
 											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 114951128961628,
+											"parameters": {
+												"layer": "\"yes_no\"",
+												"interactive": true
+											}
 										}
 									],
-									"sid": 300452505547342
+									"sid": 953068966247240
 								}
 							]
 						},
@@ -1398,14 +1390,6 @@
 										"mouse-button": "left",
 										"click-type": "clicked",
 										"object-clicked": "sim"
-									}
-								},
-								{
-									"id": "layer-is-visible",
-									"objectClass": "System",
-									"sid": 908668460701338,
-									"parameters": {
-										"layer": "\"save\""
 									}
 								}
 							],
@@ -1429,12 +1413,30 @@
 									}
 								},
 								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 529672363217242,
+									"parameters": {
+										"layer": "\"save\"",
+										"interactive": false
+									}
+								},
+								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
 									"sid": 960975004745627,
 									"parameters": {
 										"layer": "\"yes_no\"",
 										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 283399255078010,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"interactive": false
 									}
 								},
 								{
@@ -1457,31 +1459,6 @@
 							"sid": 721700882598772
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-signal",
-									"objectClass": "System",
-									"sid": 393887709082906,
-									"parameters": {
-										"tag": "\"end_transition\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 211227772227136,
-									"parameters": {
-										"variable": "PlayerMoving",
-										"value": "true"
-									}
-								}
-							],
-							"sid": 554577465321056
-						},
-						{
 							"eventType": "comment",
 							"text": "NÃO"
 						},
@@ -1496,14 +1473,6 @@
 										"mouse-button": "left",
 										"click-type": "clicked",
 										"object-clicked": "nao"
-									}
-								},
-								{
-									"id": "layer-is-visible",
-									"objectClass": "System",
-									"sid": 281994085059538,
-									"parameters": {
-										"layer": "\"save\""
 									}
 								}
 							],
@@ -1551,14 +1520,6 @@
 									"sid": 262964914872743,
 									"parameters": {
 										"key": 27
-									}
-								},
-								{
-									"id": "layer-is-visible",
-									"objectClass": "System",
-									"sid": 823712535267440,
-									"parameters": {
-										"layer": "\"save\""
 									}
 								}
 							],
@@ -1610,7 +1571,7 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": false,
+					"disabled": true,
 					"title": "CHOOSING_DOOR",
 					"description": "Tela de escolha da porta",
 					"isActiveOnStart": true,
@@ -1633,6 +1594,7 @@
 							],
 							"actions": [],
 							"sid": 660599621464591,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "block",
@@ -1647,7 +1609,7 @@
 										{
 											"id": "set-boolean-eventvar",
 											"objectClass": "System",
-											"sid": 817114161473086,
+											"sid": 868681180492852,
 											"parameters": {
 												"variable": "PlayerMoving",
 												"value": "false"
@@ -1656,7 +1618,7 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 535931752035611,
+											"sid": 950335616858413,
 											"parameters": {
 												"layer": "\"menu\"",
 												"visibility": "visible"
@@ -1665,14 +1627,15 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 752524254190930,
+											"sid": 330803074494113,
 											"parameters": {
 												"layer": "\"yes_no\"",
 												"visibility": "visible"
 											}
 										}
 									],
-									"sid": 347259749094875
+									"sid": 347259749094875,
+									"disabled": true
 								}
 							]
 						},
@@ -1729,7 +1692,8 @@
 									]
 								}
 							],
-							"sid": 538553496790223
+							"sid": 538553496790223,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -1746,14 +1710,6 @@
 										"mouse-button": "left",
 										"click-type": "clicked",
 										"object-clicked": "nao"
-									}
-								},
-								{
-									"id": "layer-is-visible",
-									"objectClass": "System",
-									"sid": 426236342877039,
-									"parameters": {
-										"layer": "\"menu\""
 									}
 								}
 							],
@@ -1786,7 +1742,8 @@
 									}
 								}
 							],
-							"sid": 974842487845033
+							"sid": 974842487845033,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -1801,14 +1758,6 @@
 									"sid": 916813527176704,
 									"parameters": {
 										"key": 27
-									}
-								},
-								{
-									"id": "layer-is-visible",
-									"objectClass": "System",
-									"sid": 842119892613342,
-									"parameters": {
-										"layer": "\"menu\""
 									}
 								}
 							],
@@ -1841,7 +1790,8 @@
 									}
 								}
 							],
-							"sid": 820100709019181
+							"sid": 820100709019181,
+							"disabled": true
 						}
 					],
 					"sid": 857311464197527,

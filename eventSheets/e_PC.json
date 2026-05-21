@@ -732,61 +732,65 @@
 								{
 									"id": "compare-opacity",
 									"objectClass": "locker",
-									"sid": 850590776813585,
+									"sid": 556774886158226,
 									"parameters": {
 										"comparison": 0,
 										"opacity": "0"
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "level_hover",
+									"sid": 486021948477725,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
 							"sid": 283797250156731,
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [],
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 690933744827149,
+											"parameters": {
+												"object": "level_hover",
+												"expression": "level_hover.level",
+												"comparison": 0,
+												"value": "level_done"
+											}
+										}
+									],
 									"actions": [
 										{
 											"id": "set-visible",
 											"objectClass": "level_hover",
-											"sid": 892550392910107,
+											"sid": 528237334356370,
 											"parameters": {
-												"visibility": "invisible"
+												"visibility": "visible"
 											}
 										}
 									],
-									"sid": 129271958338527,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-comparison",
-													"objectClass": "System",
-													"sid": 131292045356099,
-													"parameters": {
-														"object": "level_hover",
-														"expression": "level_hover.level",
-														"comparison": 0,
-														"value": "locker.level"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-visible",
-													"objectClass": "level_hover",
-													"sid": 403866901883565,
-													"parameters": {
-														"visibility": "visible"
-													}
-												}
-											],
-											"sid": 666897262401616
-										}
-									]
+									"sid": 182983050632552
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 591496652139317
+								}
+							],
+							"actions": [],
+							"sid": 775862100370392
 						},
 						{
 							"eventType": "comment",
@@ -815,16 +819,16 @@
 									}
 								}
 							],
-							"actions": [],
-							"sid": 413326031126936,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 895239764184225
+									"callFunction": "Transition",
+									"sid": 651095769968159,
+									"parameters": [
+										"\"Level\" & locker.level"
+									]
 								}
-							]
+							],
+							"sid": 413326031126936
 						}
 					],
 					"sid": 268653908120253,
@@ -867,6 +871,14 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-collisions-enabled",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 373683143290100,
+									"parameters": {
+										"collisions": "enabled"
+									}
+								},
 								{
 									"id": "set-visible",
 									"objectClass": "Terminalzero_Familly",

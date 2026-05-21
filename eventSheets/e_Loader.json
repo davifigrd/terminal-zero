@@ -31,7 +31,7 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 629325243096573,
+					"sid": 698690304460656,
 					"parameters": {
 						"audio-file": {
 							"path": "som bip tecla"
@@ -39,7 +39,7 @@
 						"loop": "not-looping",
 						"volume": "0",
 						"stereo-pan": "0",
-						"tag-optional": "\"\""
+						"tag-optional": "\"SFX\""
 					}
 				},
 				{
@@ -88,7 +88,7 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 946374190300418,
+							"sid": 165944249297109,
 							"parameters": {
 								"audio-file": {
 									"path": "som bip tecla"
@@ -96,14 +96,14 @@
 								"loop": "not-looping",
 								"volume": "0",
 								"stereo-pan": "0",
-								"tag-optional": "\"som bip tecla\""
+								"tag-optional": "\"SFX\""
 							}
 						},
 						{
 							"callFunction": "TypingEffect",
-							"sid": 520369181005458,
+							"sid": 485854628763642,
 							"parameters": [
-								"\"Carregando módulos essenciais...\""
+								"\"Carregando slides do miguxo...\""
 							]
 						},
 						{
@@ -145,7 +145,7 @@
 								{
 									"id": "play",
 									"objectClass": "Audio",
-									"sid": 761387208149573,
+									"sid": 722590036501235,
 									"parameters": {
 										"audio-file": {
 											"path": "som bip tecla"
@@ -153,14 +153,14 @@
 										"loop": "not-looping",
 										"volume": "0",
 										"stereo-pan": "0",
-										"tag-optional": "\"som bip tecla\""
+										"tag-optional": "\"SFX\""
 									}
 								},
 								{
 									"callFunction": "TypingEffect",
-									"sid": 976788617419729,
+									"sid": 637059096850242,
 									"parameters": [
-										"\"Adicionando ponto e vírgula...\""
+										"\"Adicionando; ponto; e; vírgula;...\""
 									]
 								},
 								{
@@ -337,6 +337,7 @@
 			"text": "Pula loader"
 		},
 		{
+			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{

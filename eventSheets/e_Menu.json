@@ -19,23 +19,18 @@
 							"id": "on-start-of-layout",
 							"objectClass": "System",
 							"sid": 173688785022011
+						},
+						{
+							"id": "is-playing",
+							"objectClass": "fade",
+							"sid": 909813514669248,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"transition\""
+							}
 						}
 					],
 					"actions": [
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 934468342271691,
-							"parameters": {
-								"audio-file": {
-									"path": "musica tema"
-								},
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						},
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
@@ -53,9 +48,107 @@
 								"variable": "layout",
 								"value": "\"Menu\""
 							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 898872754292095,
+							"parameters": {
+								"layer": "\"menu\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 374805746301133,
+							"parameters": {
+								"seconds": "3.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 807902103863197,
+							"parameters": {
+								"layer": "\"menu\"",
+								"interactive": true
+							}
 						}
 					],
-					"sid": 994649201546090
+					"sid": 994649201546090,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Desativa BGM"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 935142866230602,
+									"parameters": {
+										"tag": "\"musica ambiente\""
+									}
+								},
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 197605445705815,
+									"parameters": {
+										"tag": "\"musica tema\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 407620409067404
+								}
+							],
+							"sid": 118857180303250,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "comment",
+							"text": "Ativa BGM"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 162593295413278,
+									"parameters": {
+										"folder": "music",
+										"audio-file-name": "\"musica tema\"",
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"BGM\""
+									}
+								}
+							],
+							"sid": 895348933956719
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [],
+							"sid": 545723576456420
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Desativa BGM"
 				},
 				{
 					"eventType": "block",
@@ -63,31 +156,17 @@
 						{
 							"id": "on-end-of-layout",
 							"objectClass": "System",
-							"sid": 406397824248832
+							"sid": 832093970522667
 						}
 					],
 					"actions": [
 						{
-							"id": "fade-volume",
+							"id": "stop-all",
 							"objectClass": "Audio",
-							"sid": 586498840428763,
-							"parameters": {
-								"tag": "\"musica tema\"",
-								"db": "-100",
-								"duration": "3",
-								"ending": "stop"
-							}
-						},
-						{
-							"id": "stop",
-							"objectClass": "Audio",
-							"sid": 632062723677944,
-							"parameters": {
-								"tag": "\"musica tema\""
-							}
+							"sid": 523635475497124
 						}
 					],
-					"sid": 394317957476787
+					"sid": 215323958238843
 				}
 			],
 			"sid": 188182124183528,
@@ -113,7 +192,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "Cursor sobre botão"
+					"text": "Animação do cursor sobre botão"
 				},
 				{
 					"eventType": "block",
@@ -121,14 +200,14 @@
 						{
 							"id": "for-each",
 							"objectClass": "System",
-							"sid": 127765414066325,
+							"sid": 754772787827502,
 							"parameters": {
 								"object": "menu_button"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 706108494200959,
+					"sid": 232799796427495,
 					"children": [
 						{
 							"eventType": "block",
@@ -136,7 +215,7 @@
 								{
 									"id": "cursor-is-over-object",
 									"objectClass": "Mouse",
-									"sid": 771009001614183,
+									"sid": 404370731067605,
 									"parameters": {
 										"object": "menu_button"
 									}
@@ -146,13 +225,13 @@
 								{
 									"id": "set-animation-frame",
 									"objectClass": "menu_button",
-									"sid": 180943873814551,
+									"sid": 368067371727570,
 									"parameters": {
 										"frame-number": "1"
 									}
 								}
 							],
-							"sid": 716288466075702,
+							"sid": 716162108363155,
 							"children": [
 								{
 									"eventType": "comment",
@@ -164,25 +243,47 @@
 										{
 											"id": "trigger-once-while-true",
 											"objectClass": "System",
-											"sid": 837336320113512
+											"sid": 706305837942482
 										}
 									],
 									"actions": [
 										{
-											"id": "play-by-name",
+											"id": "play",
 											"objectClass": "Audio",
-											"sid": 156468222337728,
+											"sid": 517602665951409,
 											"parameters": {
-												"folder": "sounds",
-												"audio-file-name": "\"bip 1\"",
+												"audio-file": {
+													"path": "bip 1"
+												},
 												"loop": "not-looping",
 												"volume": "0",
 												"stereo-pan": "0",
-												"tag-optional": "\"bip 1\""
+												"tag-optional": "\"SFX\""
 											}
 										}
 									],
-									"sid": 646624795808892
+									"sid": 541886005042800
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 735454096761922
+										}
+									],
+									"actions": [
+										{
+											"id": "stop",
+											"objectClass": "Audio",
+											"sid": 418053934617754,
+											"parameters": {
+												"tag": "\"bip 1\""
+											}
+										}
+									],
+									"sid": 155429067738020
 								}
 							]
 						},
@@ -192,20 +293,20 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 316770407105159
+									"sid": 229747375892203
 								}
 							],
 							"actions": [
 								{
 									"id": "set-animation-frame",
 									"objectClass": "menu_button",
-									"sid": 141607423118211,
+									"sid": 577069623543761,
 									"parameters": {
 										"frame-number": "0"
 									}
 								}
 							],
-							"sid": 868330250577328
+							"sid": 749288812186668
 						}
 					]
 				},
@@ -247,14 +348,14 @@
 								{
 									"id": "play-by-name",
 									"objectClass": "Audio",
-									"sid": 120954366918287,
+									"sid": 926696498959950,
 									"parameters": {
 										"folder": "sounds",
 										"audio-file-name": "\"bip 1.2\"",
 										"loop": "not-looping",
 										"volume": "0",
 										"stereo-pan": "0",
-										"tag-optional": "\"bip 1.2\""
+										"tag-optional": "\"SFX\""
 									}
 								}
 							],
@@ -280,17 +381,8 @@
 									],
 									"actions": [
 										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 668312330534754,
-											"parameters": {
-												"layer": "\"cursor\"",
-												"visibility": "invisible"
-											}
-										},
-										{
 											"callFunction": "Transition",
-											"sid": 950102426924236,
+											"sid": 755740282048775,
 											"parameters": [
 												"\"Bedroom\""
 											]
@@ -542,14 +634,14 @@
 								{
 									"id": "play-by-name",
 									"objectClass": "Audio",
-									"sid": 398776310149041,
+									"sid": 196062490785671,
 									"parameters": {
 										"folder": "sounds",
 										"audio-file-name": "\"bip 1\"",
 										"loop": "not-looping",
 										"volume": "0",
 										"stereo-pan": "0",
-										"tag-optional": "\"bip 1\""
+										"tag-optional": "\"SFX\""
 									}
 								}
 							],
