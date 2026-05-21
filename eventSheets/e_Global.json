@@ -83,23 +83,13 @@
 							"id": "every-tick",
 							"objectClass": "System",
 							"sid": 777439350169716
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 927464099634749,
-							"parameters": {
-								"variable": "layout",
-								"comparison": 1,
-								"value": "\"PC\""
-							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-position",
 							"objectClass": "cursor",
-							"sid": 274261683182681,
+							"sid": 878555772117836,
 							"parameters": {
 								"x": "Mouse.X",
 								"y": "Mouse.Y"
@@ -154,13 +144,13 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-eventvar",
+									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 460882646849918,
+									"sid": 438530989877322,
 									"parameters": {
-										"variable": "layout",
+										"first-value": "LayoutName",
 										"comparison": 0,
-										"value": "\"PC\""
+										"second-value": "\"PC\""
 									}
 								}
 							],
@@ -168,14 +158,14 @@
 								{
 									"id": "set-position",
 									"objectClass": "cursor",
-									"sid": 607985461617293,
+									"sid": 290885319310080,
 									"parameters": {
 										"x": "clamp(Mouse.X, screen_cursor.BBoxLeft, screen_cursor.BBoxRight)",
 										"y": "clamp(Mouse.Y, screen_cursor.BBoxTop, screen_cursor.BBoxBottom)"
 									}
 								}
 							],
-							"sid": 502506295425065
+							"sid": 292735126971850
 						}
 					]
 				},
@@ -187,13 +177,13 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-eventvar",
+							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 991909193253707,
+							"sid": 330494263581336,
 							"parameters": {
-								"variable": "layout",
+								"first-value": "LayoutName",
 								"comparison": 0,
-								"value": "\"Bedroom\""
+								"second-value": "\"Bedroom\""
 							}
 						}
 					],

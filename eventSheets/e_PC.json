@@ -244,28 +244,40 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 388131276267003,
-							"parameters": {
-								"layer": "\"window\"",
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 238327203484738,
-							"parameters": {
-								"layer": "\"window\"",
-								"interactive": true
-							}
-						}
-					],
+					"actions": [],
 					"sid": 870062324038675,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Icon_Familly",
+									"sid": 807906278116613,
+									"parameters": {
+										"instance-variable": "app",
+										"comparison": 0,
+										"value": "\"terminalzero\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 156803497544793,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 282793659901045
+								}
+							],
+							"sid": 749595403002325
+						},
 						{
 							"eventType": "comment",
 							"text": "Terminal Zero"
@@ -277,6 +289,7 @@
 									"id": "compare-instance-variable",
 									"objectClass": "Icon_Familly",
 									"sid": 587984251819975,
+									"disabled": true,
 									"parameters": {
 										"instance-variable": "app",
 										"comparison": 0,
@@ -289,61 +302,9 @@
 							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 251771495076987,
-											"parameters": {
-												"object": "Window_Familly",
-												"expression": "Window_Familly.app",
-												"comparison": 0,
-												"value": "\"terminalzero\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "Window_Familly",
-											"sid": 246310846378066,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "move-to-top",
-											"objectClass": "Window_Familly",
-											"sid": 473359985145564
-										}
-									],
-									"sid": 292040422126412
-								},
-								{
-									"eventType": "block",
 									"conditions": [],
-									"actions": [
-										{
-											"id": "move-to-top",
-											"objectClass": "icon_hover",
-											"sid": 457939864316675
-										}
-									],
-									"sid": 365418266067761,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "move-to-top",
-													"objectClass": "locker",
-													"sid": 137790045048288
-												}
-											],
-											"sid": 430661281577074
-										}
-									]
+									"actions": [],
+									"sid": 292040422126412
 								}
 							]
 						},
@@ -358,6 +319,7 @@
 							],
 							"actions": [],
 							"sid": 747697738339331,
+							"disabled": true,
 							"children": [
 								{
 									"eventType": "comment",
@@ -379,26 +341,15 @@
 									],
 									"actions": [],
 									"sid": 741952856210455,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-comparison",
-													"objectClass": "System",
-													"sid": 180566198644649,
-													"parameters": {
-														"object": "Window_Familly",
-														"expression": "Window_Familly.app",
-														"comparison": 0,
-														"value": "\"notes\""
-													}
-												}
-											],
+											"conditions": [],
 											"actions": [
 												{
 													"id": "set-visible",
-													"objectClass": "Window_Familly",
+													"objectClass": "Terminalzero_Familly",
 													"sid": 250029285841457,
 													"parameters": {
 														"visibility": "visible"
@@ -406,11 +357,12 @@
 												},
 												{
 													"id": "move-to-top",
-													"objectClass": "Window_Familly",
+													"objectClass": "Terminalzero_Familly",
 													"sid": 231648203305593
 												}
 											],
-											"sid": 564942822077440
+											"sid": 564942822077440,
+											"disabled": true
 										}
 									]
 								},
@@ -429,6 +381,7 @@
 									],
 									"actions": [],
 									"sid": 189862624479588,
+									"disabled": true,
 									"children": [
 										{
 											"eventType": "block",
@@ -445,13 +398,63 @@
 												}
 											],
 											"actions": [],
-											"sid": 133551975700394
+											"sid": 133551975700394,
+											"disabled": true
+										},
+										{
+											"eventType": "block",
+											"conditions": [],
+											"actions": [
+												{
+													"id": "move-to-top",
+													"objectClass": "error_window",
+													"sid": 348351470479488
+												}
+											],
+											"sid": 807878548792259,
+											"disabled": true,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "move-to-top",
+															"objectClass": "txt_error",
+															"sid": 521423113343248
+														}
+													],
+													"sid": 496929872062286,
+													"disabled": true
+												}
+											]
 										}
 									]
 								}
 							]
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Fechar aplicativo"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 699683768842231,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "close_error"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 618896286904299
 				}
 			],
 			"sid": 904864220009052,
@@ -490,6 +493,98 @@
 							"eventType": "block",
 							"conditions": [
 								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 441434254947635
+								}
+							],
+							"actions": [
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "close_terminalzero",
+									"sid": 573143321489452,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "terminalzero_window",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								}
+							],
+							"sid": 499749702080660,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 711881163470946,
+											"parameters": {
+												"object": "level_hover"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "level_hover",
+											"sid": 228761262538838,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "terminalzero_window",
+												"x": true,
+												"y": true,
+												"angle": true,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										}
+									],
+									"sid": 982005343123582
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 922619989520611,
+											"parameters": {
+												"object": "locker"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "pin-to-object-properties",
+											"objectClass": "locker",
+											"sid": 204623465498687,
+											"behaviorType": "Pin",
+											"parameters": {
+												"pin-to": "terminalzero_window",
+												"x": true,
+												"y": true,
+												"angle": true,
+												"width-type": "no",
+												"height-type": "no",
+												"z": false
+											}
+										}
+									],
+									"sid": 836372451543124
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
 									"id": "is-dragging",
 									"objectClass": "terminalzero_window",
 									"sid": 451689080252567,
@@ -508,98 +603,6 @@
 								}
 							],
 							"sid": 882224189897449
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-start-of-layout",
-									"objectClass": "System",
-									"sid": 823837017008542
-								}
-							],
-							"actions": [
-								{
-									"id": "pin-to-object-properties",
-									"objectClass": "close_terminalzero",
-									"sid": 798271102247616,
-									"behaviorType": "Pin",
-									"parameters": {
-										"pin-to": "terminalzero_window",
-										"x": true,
-										"y": true,
-										"angle": true,
-										"width-type": "no",
-										"height-type": "no",
-										"z": false
-									}
-								}
-							],
-							"sid": 868906975739136,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "for-each",
-											"objectClass": "System",
-											"sid": 817080297327162,
-											"parameters": {
-												"object": "level_hover"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "pin-to-object-properties",
-											"objectClass": "level_hover",
-											"sid": 502538206941160,
-											"behaviorType": "Pin",
-											"parameters": {
-												"pin-to": "terminalzero_window",
-												"x": true,
-												"y": true,
-												"angle": true,
-												"width-type": "no",
-												"height-type": "no",
-												"z": false
-											}
-										}
-									],
-									"sid": 250513569730244
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "for-each",
-											"objectClass": "System",
-											"sid": 422059460068418,
-											"parameters": {
-												"object": "locker"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "pin-to-object-properties",
-											"objectClass": "locker",
-											"sid": 894103418475451,
-											"behaviorType": "Pin",
-											"parameters": {
-												"pin-to": "terminalzero_window",
-												"x": true,
-												"y": true,
-												"angle": true,
-												"width-type": "no",
-												"height-type": "no",
-												"z": false
-											}
-										}
-									],
-									"sid": 584638046738474
-								}
-							]
 						},
 						{
 							"eventType": "comment",
@@ -645,169 +648,6 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": true,
-					"title": "WINDOW_CONTROL",
-					"description": "Controles das janela",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Fechar janela"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 865354485402317,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "3RR0R"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 492815592572897,
-									"disabled": true
-								},
-								{
-									"eventType": "comment",
-									"text": "Terminal Zero ou Bloco de notas"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 707846359539769
-										}
-									],
-									"actions": [],
-									"sid": 373717133970866,
-									"disabled": true
-								},
-								{
-									"eventType": "comment",
-									"text": "Bloco de notas salva o texto"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 352963952765051,
-											"parameters": {
-												"object": "Icon_Familly",
-												"expression": "Icon_Familly.app",
-												"comparison": 0,
-												"value": "\"notes\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 595548326872384,
-									"disabled": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 233201678203796,
-											"parameters": {
-												"object": "Icon_Familly",
-												"expression": "Icon_Familly.app",
-												"comparison": 0,
-												"value": "\"notes\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 923837797552904,
-									"disabled": true
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Botão de fechar janela"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 382571530012258
-								}
-							],
-							"actions": [],
-							"sid": 910830198367283,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "Salvamento automático de texto"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "layer-is-visible",
-									"objectClass": "System",
-									"sid": 721554908241280,
-									"parameters": {
-										"layer": "\"notes\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 885862454864230,
-							"disabled": true,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 462982011529069,
-											"parameters": {
-												"object": "Icon_Familly",
-												"expression": "Icon_Familly.app",
-												"comparison": 0,
-												"value": "\"notes\""
-											}
-										}
-									],
-									"actions": [],
-									"sid": 184197310991031,
-									"disabled": true
-								}
-							]
-						}
-					],
-					"sid": 696865540001063,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						0.13333333333333333,
-						0.6627450980392157,
-						0.9333333333333333,
-						1
-					]
-				},
-				{
-					"eventType": "group",
 					"disabled": false,
 					"title": "WINDOW_TERMINAL_ZERO",
 					"description": "Interações com a janela do terminal zero",
@@ -817,12 +657,9 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "layer-is-visible",
+									"id": "on-start-of-layout",
 									"objectClass": "System",
-									"sid": 198856390229097,
-									"parameters": {
-										"layer": "\"window\""
-									}
+									"sid": 209351257269541
 								}
 							],
 							"actions": [],
@@ -853,7 +690,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "locker",
-													"sid": 148698684018836,
+													"sid": 114556662542475,
 													"parameters": {
 														"instance-variable": "level",
 														"comparison": 3,
@@ -874,64 +711,80 @@
 											"sid": 627976065024728
 										}
 									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Cursor sobre ícone das fases em Terminal Zero"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 588934127415595,
+									"parameters": {
+										"object": "locker"
+									}
 								},
 								{
-									"eventType": "comment",
-									"text": "Cursor sobre ícone das fases em Terminal Zero"
-								},
+									"id": "compare-opacity",
+									"objectClass": "locker",
+									"sid": 850590776813585,
+									"parameters": {
+										"comparison": 0,
+										"opacity": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 283797250156731,
+							"children": [
 								{
 									"eventType": "block",
-									"conditions": [
-										{
-											"id": "cursor-is-over-object",
-											"objectClass": "Mouse",
-											"sid": 476340715212053,
-											"parameters": {
-												"object": "locker"
-											}
-										},
-										{
-											"id": "compare-opacity",
-											"objectClass": "locker",
-											"sid": 610397033480218,
-											"parameters": {
-												"comparison": 0,
-												"opacity": "0"
-											}
-										}
-									],
+									"conditions": [],
 									"actions": [
 										{
 											"id": "set-visible",
 											"objectClass": "level_hover",
-											"sid": 785522128363447,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 901055952873450
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 966422815891635
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "level_hover",
-											"sid": 638382562405944,
+											"sid": 892550392910107,
 											"parameters": {
 												"visibility": "invisible"
 											}
 										}
 									],
-									"sid": 297741262629682
+									"sid": 129271958338527,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-comparison",
+													"objectClass": "System",
+													"sid": 131292045356099,
+													"parameters": {
+														"object": "level_hover",
+														"expression": "level_hover.level",
+														"comparison": 0,
+														"value": "locker.level"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-visible",
+													"objectClass": "level_hover",
+													"sid": 403866901883565,
+													"parameters": {
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 666897262401616
+										}
+									]
 								}
 							]
 						},
@@ -962,45 +815,19 @@
 									}
 								}
 							],
-							"actions": [
+							"actions": [],
+							"sid": 413326031126936,
+							"children": [
 								{
-									"callFunction": "Transition",
-									"sid": 424190486989819,
-									"parameters": [
-										"\"Level\" & locker.level"
-									]
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 895239764184225
 								}
-							],
-							"sid": 413326031126936
+							]
 						}
 					],
 					"sid": 268653908120253,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						0.13333333333333333,
-						0.6627450980392157,
-						0.9333333333333333,
-						1
-					]
-				},
-				{
-					"eventType": "group",
-					"disabled": true,
-					"title": "WINDOW_ERROR",
-					"description": "Interações com a janela de erro",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Fixa os elementos de Terminal Zero"
-						}
-					],
-					"sid": 358685964367577,
 					"text-color": [
 						0,
 						0,
@@ -1023,6 +850,41 @@
 					"children": [
 						{
 							"eventType": "comment",
+							"text": "Foco no TerminalZero"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 276655358421563,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "terminalzero_window"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 935027080384354,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 476535780006398
+								}
+							],
+							"sid": 208023600436357
+						},
+						{
+							"eventType": "comment",
 							"text": "Foco ao clicar na janela de erro"
 						},
 						{
@@ -1039,27 +901,20 @@
 									}
 								}
 							],
-							"actions": [],
-							"sid": 428706985359895,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "move-to-top",
-											"objectClass": "error_window",
-											"sid": 561674419895350
-										},
-										{
-											"id": "move-to-top",
-											"objectClass": "txt_error",
-											"sid": 971387281396720
-										}
-									],
-									"sid": 161146380005380
+									"id": "move-to-top",
+									"objectClass": "error_window",
+									"sid": 105102177647496
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "txt_error",
+									"sid": 555438641292362
 								}
-							]
+							],
+							"sid": 428706985359895,
+							"disabled": true
 						},
 						{
 							"eventType": "comment",
@@ -1079,82 +934,20 @@
 									}
 								}
 							],
-							"actions": [],
-							"sid": 868728545993024,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "move-to-top",
-											"objectClass": "error_window",
-											"sid": 423913408479986
-										},
-										{
-											"id": "move-to-top",
-											"objectClass": "txt_error",
-											"sid": 421936121521922
-										}
-									],
-									"sid": 132460137520894
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Foco no TerminalZero"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 463747417299455,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "terminalzero_window"
-									}
-								}
-							],
 							"actions": [
 								{
 									"id": "move-to-top",
-									"objectClass": "terminalzero_window",
-									"sid": 508569084680782
+									"objectClass": "error_window",
+									"sid": 575902046284504
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "txt_error",
+									"sid": 678564692020170
 								}
 							],
-							"sid": 859347789958329,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "move-to-top",
-											"objectClass": "icon_hover",
-											"sid": 398029046916653
-										}
-									],
-									"sid": 557422085390226,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [],
-											"actions": [
-												{
-													"id": "move-to-top",
-													"objectClass": "locker",
-													"sid": 934319994843993
-												}
-											],
-											"sid": 942630162083905
-										}
-									]
-								}
-							]
+							"sid": 868728545993024,
+							"disabled": true
 						}
 					],
 					"sid": 609920040038943,
