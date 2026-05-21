@@ -928,6 +928,306 @@
 				{
 					"eventType": "group",
 					"disabled": false,
+					"title": "WINDOW_ERRO",
+					"description": "Interações com a janela de erro",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Libera os cadeados das fases concluídas"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-visible",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 470166137871517
+								},
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 369116431921264,
+									"parameters": {
+										"object": "locker"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 402384340447617,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "locker",
+											"sid": 829713366358506,
+											"parameters": {
+												"instance-variable": "level",
+												"comparison": 3,
+												"value": "level_done"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "locker",
+											"sid": 667337036504107,
+											"parameters": {
+												"opacity": "0"
+											}
+										}
+									],
+									"sid": 704176945199404
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 724378415708381
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "locker",
+											"sid": 542909644874320,
+											"parameters": {
+												"opacity": "50"
+											}
+										}
+									],
+									"sid": 820049438392621
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Cursor sobre ícone das fases"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 582875640096953,
+									"parameters": {
+										"object": "locker"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "locker",
+									"sid": 645715810302410,
+									"parameters": {
+										"comparison": 0,
+										"opacity": "0"
+									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 674023360972164
+								}
+							],
+							"actions": [],
+							"sid": 408575105906935,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "pick-by-comparison",
+											"objectClass": "System",
+											"sid": 347018360976205,
+											"parameters": {
+												"object": "level_hover",
+												"expression": "level_hover.level",
+												"comparison": 0,
+												"value": "locker.level"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "level_hover",
+											"sid": 164280294694636,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 156322014099420
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 425602720872185
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "level_hover",
+									"sid": 836875915504751,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 459241628501084
+						},
+						{
+							"eventType": "comment",
+							"text": "Cursor sobre X (fechar janela)"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 429310601112008,
+									"parameters": {
+										"object": "close_terminalzero"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "close_terminalzero",
+									"sid": 214858906429909,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 606920831568248
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 574297117356485
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "close_terminalzero",
+									"sid": 267401002653896,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 731472193193865
+						},
+						{
+							"eventType": "comment",
+							"text": "Fechar janela (X)"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 388134700897439,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "close_terminalzero"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 324901030144958,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 165887608429026
+						},
+						{
+							"eventType": "comment",
+							"text": "Selecionar fase desbloqueada"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 971603241632748,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "locker"
+									}
+								},
+								{
+									"id": "compare-opacity",
+									"objectClass": "locker",
+									"sid": 215147493089820,
+									"parameters": {
+										"comparison": 0,
+										"opacity": "0"
+									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "terminalzero_window",
+									"sid": 627691640628532
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "Transition",
+									"sid": 714060682650939,
+									"parameters": [
+										"\"Level\" & locker.level"
+									]
+								}
+							],
+							"sid": 608265691632212
+						}
+					],
+					"sid": 657952349228726,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.13333333333333333,
+						0.6627450980392157,
+						0.9333333333333333,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
 					"title": "WINDOW_Z_ORDER",
 					"description": "Gerenciamento de profundidade da janela",
 					"isActiveOnStart": true,
