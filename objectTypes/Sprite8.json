@@ -1,11 +1,17 @@
 {
-	"name": "Sprite",
+	"name": "Sprite8",
 	"plugin-id": "Sprite",
-	"sid": 384366719347197,
+	"sid": 422039751502272,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
 	"instanceVariables": [],
-	"behaviorTypes": [],
+	"behaviorTypes": [
+		{
+			"behaviorId": "Bullet",
+			"name": "Projétil",
+			"sid": 905133339697178
+		}
+	],
 	"effectTypes": [],
 	"animations": {
 		"items": [
@@ -20,13 +26,13 @@
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 9544181,
+						"imageSpriteId": 63397,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 953658963936595,
+				"sid": 208840342920972,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

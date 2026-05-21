@@ -2,124 +2,38 @@
 	"name": "e_Level2",
 	"events": [
 		{
-			"eventType": "variable",
-			"name": "tempo",
-			"type": "number",
-			"initialValue": "30",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 879925869822395
-		},
-		{
-			"eventType": "block",
-			"conditions": [],
-			"actions": [],
-			"sid": 780713396514505
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 238607947913997
-				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "lvl2_Texto",
-					"sid": 999230684589829,
+					"id": "on-collision-with-another-object",
+					"objectClass": "lvl2_virusEtapa1",
+					"sid": 671381791733673,
 					"parameters": {
-						"text": "tempo"
-					}
-				}
-			],
-			"sid": 319410025337921
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 658974852705467,
-					"parameters": {
-						"interval-seconds": "1.0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 101766549217331,
-					"parameters": {
-						"variable": "tempo",
-						"value": "1"
-					}
-				}
-			],
-			"sid": 634663496942630
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 764522392619368,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "lvl2_Sprite18"
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "lvl2_Sprite18",
-					"sid": 169747443508439,
-					"parameters": {
-						"instance-variable": "id",
-						"comparison": 0,
-						"value": "2"
+						"object": "lvl2_pasta"
 					}
 				}
 			],
 			"actions": [
 				{
 					"id": "destroy",
-					"objectClass": "lvl2_Sprite18",
-					"sid": 586949704979988
+					"objectClass": "lvl2_virusEtapa1",
+					"sid": 504594169854187
 				},
 				{
-					"id": "set-visible",
-					"objectClass": "lvl2_Texto4",
-					"sid": 749084399540342,
-					"parameters": {
-						"visibility": "visible"
-					}
+					"id": "destroy",
+					"objectClass": "lvl2_pasta",
+					"sid": 779329894522706
 				},
 				{
-					"id": "set-text",
-					"objectClass": "lvl2_Texto4",
-					"sid": 527546996342455,
-					"parameters": {
-						"text": "\"SISTEMA ACESSADO!\""
-					}
-				},
-				{
-					"id": "wait",
+					"id": "go-to-layout",
 					"objectClass": "System",
-					"sid": 545964383883344,
+					"sid": 412479158697218,
 					"parameters": {
-						"seconds": "2.0",
-						"use-timescale": true
+						"layout": "PC"
 					}
 				}
 			],
-			"sid": 116509085530857
+			"sid": 743766145091704
 		},
 		{
 			"eventType": "block",
@@ -127,93 +41,22 @@
 				{
 					"id": "on-object-clicked",
 					"objectClass": "Mouse",
-					"sid": 170122854086261,
+					"sid": 922298318849376,
 					"parameters": {
 						"mouse-button": "left",
 						"click-type": "clicked",
-						"object-clicked": "Familia1"
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "Familia1",
-					"sid": 523952379468220,
-					"parameters": {
-						"instance-variable": "idFAMILIA",
-						"comparison": 0,
-						"value": "0"
+						"object-clicked": "lvl2_virusEtapa1"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-visible",
-					"objectClass": "lvl2_Texto4",
-					"sid": 670464910699682,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl2_Texto4",
-					"sid": 843154079787379,
-					"parameters": {
-						"text": "\"SISTEMA NEGADO !\""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 238468011304589,
-					"parameters": {
-						"seconds": "1.0",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "lvl2_Texto4",
-					"sid": 820164652900364,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "lvl2_Texto5",
-					"sid": 182997154061785,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl2_Texto5",
-					"sid": 843487579541244,
-					"parameters": {
-						"text": "\"DICA : O OPOSTO DA ESQUERDA \""
-					}
-				},
-				{
-					"id": "wait",
-					"objectClass": "System",
-					"sid": 369666122070527,
-					"parameters": {
-						"seconds": "1.0",
-						"use-timescale": true
-					}
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "lvl2_Texto5",
-					"sid": 842899835585963,
-					"parameters": {
-						"visibility": "invisible"
-					}
+					"id": "destroy",
+					"objectClass": "lvl2_virusEtapa1",
+					"sid": 682321293976428
 				}
 			],
-			"sid": 739740788225184
+			"sid": 477669019330137
 		}
 	],
 	"sid": 479958128321061
