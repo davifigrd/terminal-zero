@@ -423,7 +423,16 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Terminalzero_Familly",
+							"sid": 994310813652478,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
 					"sid": 618896286904299
 				}
 			],
@@ -624,69 +633,81 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "comment",
+							"text": "Libera os cadeados das fases concluídas"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-start-of-layout",
+									"id": "is-visible",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 689314328486264
+								},
+								{
+									"id": "for-each",
 									"objectClass": "System",
-									"sid": 209351257269541
+									"sid": 479292715230224,
+									"parameters": {
+										"object": "locker"
+									}
 								}
 							],
 							"actions": [],
 							"sid": 843910123768926,
 							"children": [
 								{
-									"eventType": "comment",
-									"text": "Libera os cadeados das fases concluídas"
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "locker",
+											"sid": 541834370396328,
+											"parameters": {
+												"instance-variable": "level",
+												"comparison": 3,
+												"value": "level_done"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "locker",
+											"sid": 731729577477252,
+											"parameters": {
+												"opacity": "0"
+											}
+										}
+									],
+									"sid": 863227312937463
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "for-each",
+											"id": "else",
 											"objectClass": "System",
-											"sid": 344568281309074,
+											"sid": 320563954111189
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "locker",
+											"sid": 196541151811226,
 											"parameters": {
-												"object": "locker"
+												"opacity": "50"
 											}
 										}
 									],
-									"actions": [],
-									"sid": 352254034700966,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "locker",
-													"sid": 114556662542475,
-													"parameters": {
-														"instance-variable": "level",
-														"comparison": 3,
-														"value": "level_done"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-opacity",
-													"objectClass": "locker",
-													"sid": 544180996689538,
-													"parameters": {
-														"opacity": "0"
-													}
-												}
-											],
-											"sid": 627976065024728
-										}
-									]
+									"sid": 739394402960148
 								}
 							]
 						},
 						{
 							"eventType": "comment",
-							"text": "Cursor sobre ícone das fases em Terminal Zero"
+							"text": "Cursor sobre ícone das fases"
 						},
 						{
 							"eventType": "block",
@@ -707,18 +728,14 @@
 										"comparison": 0,
 										"opacity": "0"
 									}
-								}
-							],
-							"actions": [
+								},
 								{
-									"id": "set-visible",
-									"objectClass": "level_hover",
-									"sid": 486021948477725,
-									"parameters": {
-										"visibility": "invisible"
-									}
+									"id": "is-visible",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 437852605086570
 								}
 							],
+							"actions": [],
 							"sid": 283797250156731,
 							"children": [
 								{
@@ -727,12 +744,12 @@
 										{
 											"id": "pick-by-comparison",
 											"objectClass": "System",
-											"sid": 737041312006053,
+											"sid": 858108956830414,
 											"parameters": {
 												"object": "level_hover",
-												"expression": " level_done",
+												"expression": "level_hover.level",
 												"comparison": 0,
-												"value": "level_hover.level"
+												"value": "locker.level"
 											}
 										}
 									],
@@ -740,15 +757,115 @@
 										{
 											"id": "set-visible",
 											"objectClass": "level_hover",
-											"sid": 528237334356370,
+											"sid": 781535042065546,
 											"parameters": {
 												"visibility": "visible"
 											}
 										}
 									],
-									"sid": 182983050632552
+									"sid": 249553779502478
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 973760123465653
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "level_hover",
+									"sid": 741127379197010,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 382778649545427
+						},
+						{
+							"eventType": "comment",
+							"text": "Cursor sobre X (fechar janela)"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 148836041614920,
+									"parameters": {
+										"object": "close_terminalzero"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "close_terminalzero",
+									"sid": 536911955354730,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 967232776667881
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 348977929328516
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "close_terminalzero",
+									"sid": 674331861155251,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 991358961611378
+						},
+						{
+							"eventType": "comment",
+							"text": "Fechar janela (X)"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 389395756930827,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "close_terminalzero"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 489326873868999,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 545601852012764
 						},
 						{
 							"eventType": "comment",
@@ -775,6 +892,11 @@
 										"comparison": 0,
 										"opacity": "0"
 									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "terminalzero_window",
+									"sid": 965402381926894
 								}
 							],
 							"actions": [
@@ -829,22 +951,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-collisions-enabled",
-									"objectClass": "Terminalzero_Familly",
-									"sid": 373683143290100,
-									"parameters": {
-										"collisions": "enabled"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "Terminalzero_Familly",
-									"sid": 935027080384354,
-									"parameters": {
-										"visibility": "visible"
-									}
-								},
 								{
 									"id": "move-to-top",
 									"objectClass": "Terminalzero_Familly",
