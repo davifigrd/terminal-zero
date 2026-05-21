@@ -1,0 +1,1425 @@
+{
+	"name": "e_Level7",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LAYOUT_LEVEL7",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 886138607786964
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 279519672418919,
+							"parameters": {
+								"variable": "PlayerMoving",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 833561877078980
+				}
+			],
+			"sid": 551296958494377
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "lvl7_Audios",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 608619738468988
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 906743689519147,
+							"parameters": {
+								"audio-file": {
+									"path": "level 7/lvl7_sound1"
+								},
+								"loop": "looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 742802639487169,
+							"parameters": {
+								"audio-file": {
+									"path": "level 7/lvl7_sound2"
+								},
+								"loop": "looping",
+								"volume": "-50",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 404340408095525,
+							"parameters": {
+								"audio-file": {
+									"path": "level 7/lvl7_sound3"
+								},
+								"loop": "looping",
+								"volume": "-20",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 461333248557463,
+							"parameters": {
+								"audio-file": {
+									"path": "level 7/lvl7_soundScary"
+								},
+								"loop": "not-looping",
+								"volume": "-25",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 999653975953030
+				}
+			],
+			"sid": 764586396613043
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "lvl7_Text",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 249685520804754
+						}
+					],
+					"actions": [
+						{
+							"id": "set-focused",
+							"objectClass": "lvl7_Textinput",
+							"sid": 808619747609623
+						}
+					],
+					"sid": 106099758148447
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 721131066860768
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto1",
+							"sid": 172226288209375,
+							"parameters": {
+								"text": "mid(lvl7_TextInput.Text, 0, 1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto2",
+							"sid": 671346799204278,
+							"parameters": {
+								"text": "mid(lvl7_TextInput.Text, 1, 1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto3",
+							"sid": 953007765511784,
+							"parameters": {
+								"text": "mid(lvl7_TextInput.Text, 2, 1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto4",
+							"sid": 325188524784470,
+							"parameters": {
+								"text": "mid(lvl7_TextInput.Text, 3, 1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto5",
+							"sid": 463167315354153,
+							"parameters": {
+								"text": "mid(lvl7_TextInput.Text, 4, 1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto6",
+							"sid": 448261513282107,
+							"parameters": {
+								"text": "mid(lvl7_TextInput.Text, 5, 1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto7",
+							"sid": 624579872660740,
+							"parameters": {
+								"text": "mid(lvl7_TextInput.Text, 6, 1)"
+							}
+						}
+					],
+					"sid": 181545987721808
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-text-changed",
+							"objectClass": "lvl7_Textinput",
+							"sid": 892738150776523
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 273346709573495,
+							"parameters": {
+								"first-value": "len(lvl7_TextInput.Text)",
+								"comparison": 4,
+								"second-value": "7"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Textinput",
+							"sid": 741386629816160,
+							"parameters": {
+								"text": "left(lvl7_TextInput.Text, 7)"
+							}
+						}
+					],
+					"sid": 645044269229910
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-text-changed",
+							"objectClass": "lvl7_Textinput",
+							"sid": 370419248928728
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 675308351705342,
+							"parameters": {
+								"first-value": "lowercase(lvl7_TextInput.Text)",
+								"comparison": 0,
+								"second-value": "\"cfiaanj\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-enabled",
+							"objectClass": "lvl7_Textinput",
+							"sid": 985781310705371,
+							"parameters": {
+								"mode": "disabled"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 823707811809037,
+							"parameters": {
+								"seconds": "1.0",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 885005083021149,
+							"parameters": {
+								"layout": "Bedroom"
+							}
+						},
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 445144013942291
+						}
+					],
+					"sid": 806659588530738
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-text-changed",
+							"objectClass": "lvl7_Textinput",
+							"sid": 405672412218701
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 315893285772112,
+							"parameters": {
+								"first-value": "len(lvl7_TextInput.Text)",
+								"comparison": 0,
+								"second-value": "7"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 726196643395101,
+							"parameters": {
+								"first-value": "lowercase(lvl7_TextInput.Text)",
+								"comparison": 0,
+								"second-value": "\"cfiaanj\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 530970806093147,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 7/lvl7_soundError"
+								},
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto1",
+							"sid": 215483040609820,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto2",
+							"sid": 303919674399723,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto3",
+							"sid": 277209543542147,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto4",
+							"sid": 864886566048158,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto5",
+							"sid": 249243538465371,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto6",
+							"sid": 999906073614523,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto7",
+							"sid": 915601962120236,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 158990875482912,
+							"parameters": {
+								"seconds": "0.2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto1",
+							"sid": 924495944151326,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto2",
+							"sid": 726722108026661,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto3",
+							"sid": 773067215038090,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto4",
+							"sid": 651676898414784,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto5",
+							"sid": 214208005388074,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto6",
+							"sid": 181652265736452,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto7",
+							"sid": 978418488157802,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 362157437929172,
+							"parameters": {
+								"seconds": "0.2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto1",
+							"sid": 923266111811173,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto2",
+							"sid": 732960780166837,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto3",
+							"sid": 714570229112655,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto4",
+							"sid": 318930790854978,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto5",
+							"sid": 937482269693281,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto6",
+							"sid": 158712665598821,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto7",
+							"sid": 275183601590798,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 101444413401174,
+							"parameters": {
+								"seconds": "0.2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto1",
+							"sid": 828136315322397,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto2",
+							"sid": 763717877241046,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto3",
+							"sid": 245657469229165,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto4",
+							"sid": 849345670118914,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto5",
+							"sid": 128133575721127,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto6",
+							"sid": 219597761431106,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto7",
+							"sid": 652070296118390,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 857177711613216,
+							"parameters": {
+								"seconds": "0.2",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto1",
+							"sid": 765550384910265,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto2",
+							"sid": 847659551729746,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto3",
+							"sid": 538119492954814,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto4",
+							"sid": 487766773938840,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto5",
+							"sid": 512156729439028,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto6",
+							"sid": 107255054692546,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto7",
+							"sid": 975496531031651,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 666533815060078,
+							"parameters": {
+								"seconds": "0.8",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto1",
+							"sid": 321820566261671,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto2",
+							"sid": 948120922055861,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto3",
+							"sid": 705327122062569,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto4",
+							"sid": 175145844513179,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto5",
+							"sid": 370697575986011,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto6",
+							"sid": 456748046278479,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl7_Texto7",
+							"sid": 635099890386533,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Textinput",
+							"sid": 774496820875278,
+							"parameters": {
+								"text": "\"\""
+							}
+						}
+					],
+					"sid": 139430436294783
+				}
+			],
+			"sid": 615319523960823
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "lvl7_HIT BOX",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 748643448933297,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Russia"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 612888750193127,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 936955404665822,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 909391018022492,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: RUSSIA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 438222931333760,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 489409189596231
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 559927574178934,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Austrália"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 187067882578591,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 713719793767992,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 612931086067076,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: AUSTRALIA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 231026712367346,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 255154742502416
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 479895401332831,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Brasil"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 990323920702140,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 439739420289839,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 886922289778573,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: BRASIL DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 489313725881683,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 452500073858259
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 163834672850831,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Canadá"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 449415376679111,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 623989268968392,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 695131193673497,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: CANADÁ DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 335475781680356,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 175342895059176
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 746632883677121,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_EstadosUnidos"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 174339829227887,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 724938607451442,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 724404265297537,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: ESTADOS UNIDOS DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 182597331519497,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 911626234714768
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 338882014590277,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_México"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 990054502531815,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 218926589897462,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 132284945409582,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: MÉXICO DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 316526274157779,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 790569107044306
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 961993882127185,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Groenlãndia"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 866289904158484,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 353218113728668,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 273344944969842,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: GROENLÂNDIA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 727650202795899,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 709585866863794
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 762879554753142,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Argentina"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 343780127768368,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 424920542088073,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 299542614649869,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: ARGENTINA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 519080262105349,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 827356094334519
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 481636713958758,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Argélia"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 146035054422264,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 617570298624848,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 284032079891018,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: ARGÉLIA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 595658162026271,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 699313946197820
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 176106019980731,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_China"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 249379882396542,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 905182521425315,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 933984970127094,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: CHINA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 558668110361270,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 265860344817117
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 210555523038093,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Japão"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 215125575468691,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 518938187818591,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 501815898187861,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: JAPÃO DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 841896368356936,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 936567337655763
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 314594056692000,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_India"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 500109779584791,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 150696520772113,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 439516572396835,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: ÍNDIA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 563095477836510,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 371296331859274
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 548931800084242,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Angola"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 263754168326181,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 291059858691395,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 683812568925339,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: ANGOLA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 860632167552762,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 954193531153884
+				}
+			],
+			"sid": 882777918833006
+		}
+	],
+	"sid": 189693790743865
+}
