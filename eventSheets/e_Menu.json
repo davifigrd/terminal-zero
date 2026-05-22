@@ -191,6 +191,294 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "BUTTON_SAIR",
+					"description": "Interações com o botão sair",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 497232646341041,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "menu_button"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "menu_button",
+									"sid": 375742900580603,
+									"parameters": {
+										"instance-variable": "button",
+										"comparison": 0,
+										"value": "\"sair\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 395407602526829,
+									"parameters": {
+										"layer": "\"choosing\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 109363328235140,
+									"parameters": {
+										"layer": "\"choosing\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 757248056381805,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 959043512601064,
+									"parameters": {
+										"layer": "\"menu\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 864453577234567,
+									"parameters": {
+										"layer": "\"menu\"",
+										"interactive": false
+									}
+								}
+							],
+							"sid": 545686590420257
+						},
+						{
+							"eventType": "comment",
+							"text": "SIM"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 262189226755207,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "sim"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "close",
+									"objectClass": "Browser",
+									"sid": 634690060195538
+								}
+							],
+							"sid": 472786081043536
+						},
+						{
+							"eventType": "comment",
+							"text": "NÃO"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 915084188642373,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "nao"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 717837998531668,
+									"parameters": {
+										"layer": "\"choosing\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 246294571759376,
+									"parameters": {
+										"layer": "\"choosing\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 891666043064268,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 716112959018025,
+									"parameters": {
+										"layer": "\"menu\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 318552303045849,
+									"parameters": {
+										"layer": "\"menu\"",
+										"interactive": true
+									}
+								}
+							],
+							"sid": 201734109880578
+						},
+						{
+							"eventType": "comment",
+							"text": "Animação over sim"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 995394935684846,
+									"parameters": {
+										"object": "sim"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "sim",
+									"sid": 819726510901094,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 830857242361953
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 653774507156011
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "sim",
+									"sid": 278238547604101,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 198663583714767
+						},
+						{
+							"eventType": "comment",
+							"text": "Animação over não"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 369352150005623,
+									"parameters": {
+										"object": "nao"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "nao",
+									"sid": 696587224864273,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 431591661685933,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 409589527784372
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "nao",
+									"sid": 232979140988658,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 135865340904656
+						}
+					],
+					"sid": 925693601164304,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.26666666666666666,
+						1,
+						0,
+						1
+					]
+				},
+				{
 					"eventType": "comment",
 					"text": "Animação do cursor sobre botão"
 				},
@@ -505,33 +793,6 @@
 										}
 									],
 									"sid": 803041041933720
-								},
-								{
-									"eventType": "comment",
-									"text": "Sair"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "menu_button",
-											"sid": 272355796260906,
-											"parameters": {
-												"instance-variable": "button",
-												"comparison": 0,
-												"value": "\"sair\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "close",
-											"objectClass": "Browser",
-											"sid": 989050904416743
-										}
-									],
-									"sid": 537945068214950
 								}
 							]
 						}
