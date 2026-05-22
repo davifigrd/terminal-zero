@@ -44,32 +44,6 @@
 			"disabled": true
 		},
 		{
-			"bookmark": true,
-			"eventType": "comment",
-			"text": "Volume total"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 936257242237968
-				}
-			],
-			"actions": [
-				{
-					"id": "set-master-volume",
-					"objectClass": "Audio",
-					"sid": 619662989761263,
-					"parameters": {
-						"db": "-20"
-					}
-				}
-			],
-			"sid": 860207354722690
-		},
-		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "MOUSE",
@@ -97,14 +71,14 @@
 						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 777439350169716
+							"sid": 535706480560085
 						}
 					],
 					"actions": [
 						{
 							"id": "set-position",
 							"objectClass": "cursor",
-							"sid": 878555772117836,
+							"sid": 833506364432892,
 							"parameters": {
 								"x": "Mouse.X",
 								"y": "Mouse.Y"
@@ -113,14 +87,14 @@
 						{
 							"id": "set-animation",
 							"objectClass": "cursor",
-							"sid": 967073321682340,
+							"sid": 538310274880511,
 							"parameters": {
 								"animation": "\"arrow\"",
 								"from": "current-frame"
 							}
 						}
 					],
-					"sid": 849488452474251,
+					"sid": 874130220458251,
 					"children": [
 						{
 							"eventType": "comment",
@@ -132,7 +106,7 @@
 								{
 									"id": "cursor-is-over-object",
 									"objectClass": "Mouse",
-									"sid": 755029780882578,
+									"sid": 844138120158726,
 									"parameters": {
 										"object": "Clickable_Familly"
 									}
@@ -142,14 +116,14 @@
 								{
 									"id": "set-animation",
 									"objectClass": "cursor",
-									"sid": 858525284131808,
+									"sid": 347249717659527,
 									"parameters": {
 										"animation": "\"pointer\"",
 										"from": "current-frame"
 									}
 								}
 							],
-							"sid": 753614161087112
+							"sid": 595311913414281
 						},
 						{
 							"eventType": "comment",
@@ -161,7 +135,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 438530989877322,
+									"sid": 295682085116229,
 									"parameters": {
 										"first-value": "LayoutName",
 										"comparison": 0,
@@ -173,14 +147,14 @@
 								{
 									"id": "set-position",
 									"objectClass": "cursor",
-									"sid": 290885319310080,
+									"sid": 274694422333089,
 									"parameters": {
 										"x": "clamp(Mouse.X, screen_cursor.BBoxLeft, screen_cursor.BBoxRight)",
 										"y": "clamp(Mouse.Y, screen_cursor.BBoxTop, screen_cursor.BBoxBottom)"
 									}
 								}
 							],
-							"sid": 292735126971850
+							"sid": 858926861359942
 						}
 					]
 				},
@@ -194,7 +168,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 330494263581336,
+							"sid": 542547097823799,
 							"parameters": {
 								"first-value": "LayoutName",
 								"comparison": 0,
@@ -206,17 +180,17 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 782943201046531,
+							"sid": 143279825323947,
 							"parameters": {
 								"layer": "\"cursor\"",
 								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 776386102123483
+					"sid": 111259884053089
 				}
 			],
-			"sid": 340707827170385,
+			"sid": 143760530796771,
 			"text-color": [
 				1,
 				1,

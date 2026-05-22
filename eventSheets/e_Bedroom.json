@@ -16,6 +16,27 @@
 			"includeSheet": "e_Global"
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 629669548412981
+				}
+			],
+			"actions": [
+				{
+					"id": "set-master-volume",
+					"objectClass": "Audio",
+					"sid": 601208672663115,
+					"parameters": {
+						"db": "-20"
+					}
+				}
+			],
+			"sid": 568534895867842
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "BEDROOM_LAYOUT",

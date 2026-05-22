@@ -8,38 +8,6 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "LAYOUT_LEVEL7",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 886138607786964
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 279519672418919,
-							"parameters": {
-								"variable": "PlayerMoving",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 833561877078980
-				}
-			],
-			"sid": 551296958494377
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
 			"title": "lvl7_Audios",
 			"description": "",
 			"isActiveOnStart": true,

@@ -6,38 +6,6 @@
 			"includeSheet": "e_Global"
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "LAYOUT_LEVEL5",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 296148894803720
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 903752885728013,
-							"parameters": {
-								"variable": "PlayerMoving",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 437509624366066
-				}
-			],
-			"sid": 963994453666379
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
