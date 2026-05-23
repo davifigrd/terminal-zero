@@ -2,19 +2,6 @@
 	"name": "e_Level2",
 	"events": [
 		{
-<<<<<<< Updated upstream
-			"eventType": "variable",
-			"name": "lvl2_virusMortos",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 542761714860693
-		},
-		{
-=======
->>>>>>> Stashed changes
 			"eventType": "block",
 			"conditions": [
 				{
@@ -22,29 +9,7 @@
 					"objectClass": "lvl2_virusEtapa1",
 					"sid": 671381791733673,
 					"parameters": {
-<<<<<<< Updated upstream
-						"x": "lvl2_notebook1.x",
-						"y": "lvl2_notebook1.y"
-					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 811455645811218,
-					"parameters": {
-						"variable": "lvl2_virusMortos",
-						"value": "1"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl5_Texto2",
-					"sid": 351269314747287,
-					"parameters": {
-						"text": "\"HUD\""
-=======
 						"object": "lvl2_pasta"
->>>>>>> Stashed changes
 					}
 				}
 			],
@@ -91,81 +56,7 @@
 					"sid": 682321293976428
 				}
 			],
-<<<<<<< Updated upstream
-			"sid": 570671430317812
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 617189662833006
-				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "lvl5_Texto2",
-					"sid": 606462997308398,
-					"parameters": {
-						"text": "\"Virus mortos: \" & lvl2_virusMortos"
-					}
-				}
-			],
-			"sid": 412423175524798
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-at-offset",
-					"objectClass": "lvl2_virusEtapa1",
-					"sid": 772970783214214,
-					"parameters": {
-						"object": "lvl2_notebook1",
-						"offset-x": "0",
-						"offset-y": "0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "restart-layout",
-					"objectClass": "System",
-					"sid": 475719946715772
-				}
-			],
-			"sid": 906569248412333
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 751575225920018,
-					"parameters": {
-						"variable": "lvl2_virusMortos",
-						"comparison": 5,
-						"value": "10"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "go-to-layout-by-name",
-					"objectClass": "System",
-					"sid": 210130528213707,
-					"parameters": {
-						"layout": "\"etapa2\""
-					}
-				}
-			],
-			"sid": 279235964031343
-=======
 			"sid": 477669019330137
->>>>>>> Stashed changes
 		}
 	],
 	"sid": 479958128321061
