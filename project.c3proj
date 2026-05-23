@@ -16,35 +16,35 @@
 		{
 			"type": "plugin",
 			"id": "Arr",
-			"name": "Matriz",
+			"name": "Array",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Audio",
-			"name": "Áudio",
+			"name": "Audio",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Browser",
-			"name": "Navegador",
+			"name": "Browser",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Teclado",
+			"name": "Keyboard",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "LocalStorage",
-			"name": "Armazenamento local",
+			"name": "Local storage",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -52,6 +52,13 @@
 			"type": "plugin",
 			"id": "Mouse",
 			"name": "Mouse",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
+			"id": "Particles",
+			"name": "Particles",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -65,100 +72,112 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Texto",
+			"name": "Text",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TextBox",
-			"name": "Entrada de texto",
+			"name": "Text input",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TiledBg",
-			"name": "Plano de Fundo em Blocos",
+			"name": "Tiled Background",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Bullet",
-			"name": "Projétil",
+			"name": "Bullet",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "DragnDrop",
-			"name": "Arrastar & Soltar",
+			"name": "Drag & Drop",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direções",
+			"name": "8 Direction",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Fade",
-			"name": "Esmaecer",
+			"name": "Fade",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Flash",
-			"name": "Piscar",
+			"name": "Flash",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Pin",
-			"name": "Fixar",
+			"name": "Pin",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "Senóide",
+			"name": "Sine",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Tween",
-			"name": "Interpolação",
+			"name": "Tween",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "scrollto",
-			"name": "Centrar em",
+			"name": "Scroll To",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Sólido",
+			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
 		}
 	],
 	"uniqueId": "infcrcpul51",
 	"objectTypes": {
+<<<<<<< Updated upstream
+<<<<<<< HEAD
 		"items": [
 			"Sprite"
 		],
+=======
+		"items": [],
+=======
+		"items": [],
+=======
+		"items": [
+			"Sprite"
+		],
+>>>>>>> parent of a94df42 (fase2)
+>>>>>>> Stashed changes
 		"subfolders": [
 			{
 				"items": [
@@ -182,8 +201,9 @@
 							"pc",
 							"bed",
 							"door",
-							"spawn_bed",
-							"spawn_pc"
+							"spawn_pc",
+							"closet",
+							"trash"
 						],
 						"subfolders": [],
 						"name": "Hit Box"
@@ -193,7 +213,9 @@
 							"WASD",
 							"mouse_sign",
 							"save_sign",
-							"menu_sign"
+							"menu_sign",
+							"trash_sign",
+							"closet_sign"
 						],
 						"subfolders": [],
 						"name": "Sign"
@@ -280,12 +302,14 @@
 				"items": [
 					"menu_background",
 					"menu_controles",
-					"choosing_leave"
+					"choosing_leave",
+					"E_control"
 				],
 				"subfolders": [
 					{
 						"items": [
-							"menu_button"
+							"menu_button",
+							"control_key"
 						],
 						"subfolders": [],
 						"name": "button_hitbox"
@@ -432,6 +456,62 @@
 					},
 					{
 						"items": [
+<<<<<<< Updated upstream
+<<<<<<< HEAD
+=======
+							"lvl2_background",
+							"lvl2_Partículas",
+							"lvl2_Partículas2",
+							"lvl2_Partículas3",
+							"lvl2_Sprite",
+							"lvl2_Sprite10",
+							"lvl2_Sprite11",
+							"lvl2_Sprite12",
+							"lvl2_Sprite13",
+							"lvl2_Sprite14",
+							"lvl2_Sprite15",
+							"lvl2_Sprite16",
+							"lvl2_Sprite17",
+							"lvl2_Sprite18",
+							"lvl2_Sprite19",
+							"lvl2_Sprite2",
+							"lvl2_Sprite20",
+							"lvl2_Sprite21",
+							"lvl2_Sprite22",
+							"lvl2_Sprite23",
+							"lvl2_Sprite3",
+							"lvl2_Sprite4",
+							"lvl2_Sprite5",
+							"lvl2_Sprite6",
+							"lvl2_Sprite7",
+							"lvl2_Sprite8",
+							"lvl2_Sprite9",
+							"lvl2_Texto",
+							"lvl2_Texto2",
+							"lvl2_Texto3",
+							"lvl2_Texto4",
+							"lvl2_Texto5",
+							"lvl2_Sprite24",
+							"lvl2_Sprite25",
+							"lvl2_Sprite26",
+							"lvl2_Sprite127",
+							"lvl2_Sprite28",
+							"lvl2_Sprite27",
+							"lvl2_Sprite29",
+							"lvl2_Sprite30",
+							"lvl2_Sprite31",
+							"lvl2_Sprite32",
+							"lvl2_Sprite33",
+							"lvl2_Sprite34",
+							"lvl2_Sprite35",
+							"lvl2_Sprite36",
+							"lvl2_37",
+							"lvl2_pasta",
+							"lvl2_virusEtapa1",
+							"lvl2_virusEtapa11",
+							"lvl2_virusEtapa111"
+=======
+>>>>>>> parent of a94df42 (fase2)
 							"lvl2_fundo",
 							"lvl2_notebook1",
 							"lvl2_virusEtapa1",
@@ -439,6 +519,62 @@
 							"lvl2_virusEtapa111",
 							"lvl2_notewbook3",
 							"lvl2_notebook2"
+<<<<<<< HEAD
+=======
+							"lvl2_background",
+							"lvl2_Partículas",
+							"lvl2_Partículas2",
+							"lvl2_Partículas3",
+							"lvl2_Sprite",
+							"lvl2_Sprite10",
+							"lvl2_Sprite11",
+							"lvl2_Sprite12",
+							"lvl2_Sprite13",
+							"lvl2_Sprite14",
+							"lvl2_Sprite15",
+							"lvl2_Sprite16",
+							"lvl2_Sprite17",
+							"lvl2_Sprite18",
+							"lvl2_Sprite19",
+							"lvl2_Sprite2",
+							"lvl2_Sprite20",
+							"lvl2_Sprite21",
+							"lvl2_Sprite22",
+							"lvl2_Sprite23",
+							"lvl2_Sprite3",
+							"lvl2_Sprite4",
+							"lvl2_Sprite5",
+							"lvl2_Sprite6",
+							"lvl2_Sprite7",
+							"lvl2_Sprite8",
+							"lvl2_Sprite9",
+							"lvl2_Texto",
+							"lvl2_Texto2",
+							"lvl2_Texto3",
+							"lvl2_Texto4",
+							"lvl2_Texto5",
+							"lvl2_Sprite24",
+							"lvl2_Sprite25",
+							"lvl2_Sprite26",
+							"lvl2_Sprite127",
+							"lvl2_Sprite28",
+							"lvl2_Sprite27",
+							"lvl2_Sprite29",
+							"lvl2_Sprite30",
+							"lvl2_Sprite31",
+							"lvl2_Sprite32",
+							"lvl2_Sprite33",
+							"lvl2_Sprite34",
+							"lvl2_Sprite35",
+							"lvl2_Sprite36",
+							"lvl2_37",
+							"lvl2_pasta",
+							"lvl2_virusEtapa1",
+							"lvl2_virusEtapa11",
+							"lvl2_virusEtapa111"
+=======
+>>>>>>> parent of a94df42 (fase2)
+>>>>>>> Stashed changes
 						],
 						"subfolders": [],
 						"name": "Level 2"
@@ -568,7 +704,12 @@
 	],
 	"families": {
 		"items": [
+<<<<<<< Updated upstream
+			"Clickable_Familly",
+			"Sign_Familly"
+=======
 			"Clickable_Familly"
+>>>>>>> Stashed changes
 		],
 		"subfolders": [
 			{
@@ -601,11 +742,6 @@
 				],
 				"subfolders": [],
 				"name": "PC"
-			},
-			{
-				"items": [],
-				"subfolders": [],
-				"name": "Menu"
 			}
 		]
 	},
