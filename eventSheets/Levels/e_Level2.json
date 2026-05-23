@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "virusMortos",
+			"name": "lvl2_virusMortos",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -64,7 +64,7 @@
 					"objectClass": "System",
 					"sid": 811455645811218,
 					"parameters": {
-						"variable": "virusMortos",
+						"variable": "lvl2_virusMortos",
 						"value": "1"
 					}
 				},
@@ -117,7 +117,7 @@
 					"objectClass": "lvl5_Texto2",
 					"sid": 606462997308398,
 					"parameters": {
-						"text": "\"Virus mortos: \" & virusMortos"
+						"text": "\"Virus mortos: \" & lvl2_virusMortos"
 					}
 				}
 			],
@@ -154,7 +154,7 @@
 					"objectClass": "System",
 					"sid": 751575225920018,
 					"parameters": {
-						"variable": "virusMortos",
+						"variable": "lvl2_virusMortos",
 						"comparison": 5,
 						"value": "10"
 					}
@@ -171,177 +171,6 @@
 				}
 			],
 			"sid": 279235964031343
-		},
-		{
-			"eventType": "variable",
-			"name": "virusMortos2",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 502221057420228
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 308809689454077,
-					"parameters": {
-						"interval-seconds": "2.0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "create-object",
-					"objectClass": "System",
-					"sid": 459059876687830,
-					"parameters": {
-						"object-to-create": "lvl2_virusEtapa1",
-						"layer": "0",
-						"x": "random(0, 1920)",
-						"y": "random(0, 1080)",
-						"create-hierarchy": false,
-						"template-name": "\"\""
-					}
-				}
-			],
-			"sid": 442055621794491
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 646104498817831
-				}
-			],
-			"actions": [
-				{
-					"id": "set-angle-toward-position",
-					"objectClass": "lvl2_virusEtapa1",
-					"sid": 960402885809524,
-					"parameters": {
-						"x": "lvl2_notebook1.x",
-						"y": "lvl2_notebook1.y"
-					}
-				},
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 363209734797220,
-					"parameters": {
-						"variable": "virusMortos",
-						"value": "1"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl5_Texto2",
-					"sid": 417778772733664,
-					"parameters": {
-						"text": "\"HUD\""
-					}
-				}
-			],
-			"sid": 465971903152612
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 546426643314004,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "lvl2_virusEtapa1"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "lvl2_virusEtapa1",
-					"sid": 628615830097658
-				}
-			],
-			"sid": 947355888957867
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 269807605935851
-				}
-			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "lvl5_Texto2",
-					"sid": 532867198977107,
-					"parameters": {
-						"text": "\"Virus mortos: \" & virusMortos"
-					}
-				}
-			],
-			"sid": 683678229549185
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-at-offset",
-					"objectClass": "lvl2_virusEtapa1",
-					"sid": 974161085800990,
-					"parameters": {
-						"object": "lvl2_notebook1",
-						"offset-x": "0",
-						"offset-y": "0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "restart-layout",
-					"objectClass": "System",
-					"sid": 129369052627325
-				}
-			],
-			"sid": 612825722473018
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 852990413246912,
-					"parameters": {
-						"variable": "virusMortos",
-						"comparison": 5,
-						"value": "10"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "go-to-layout-by-name",
-					"objectClass": "System",
-					"sid": 304315131766580,
-					"parameters": {
-						"layout": "\"etapa2\""
-					}
-				}
-			],
-			"sid": 871314925808839
 		}
 	],
 	"sid": 479958128321061
