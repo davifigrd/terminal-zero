@@ -2,6 +2,10 @@
 	"name": "e_Bedroom",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
 			"eventType": "variable",
 			"name": "PlayerMoving",
 			"type": "boolean",
@@ -10,31 +14,6 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 492771657000959
-		},
-		{
-			"eventType": "include",
-			"includeSheet": "e_Global"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 629669548412981
-				}
-			],
-			"actions": [
-				{
-					"id": "set-master-volume",
-					"objectClass": "Audio",
-					"sid": 601208672663115,
-					"parameters": {
-						"db": "-20"
-					}
-				}
-			],
-			"sid": 568534895867842
 		},
 		{
 			"eventType": "group",
@@ -52,7 +31,16 @@
 							"sid": 424048744607310
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-master-volume",
+							"objectClass": "Audio",
+							"sid": 689558541417598,
+							"parameters": {
+								"db": "-20"
+							}
+						}
+					],
 					"sid": 746013238939214,
 					"children": [
 						{
@@ -133,40 +121,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Bedroom → PC"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-collision-with-another-object",
-							"objectClass": "player",
-							"sid": 216655898829477,
-							"parameters": {
-								"object": "pc"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 276436229065150,
-							"parameters": {
-								"variable": "layout",
-								"value": "\"PC\""
-							}
-						},
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 505521197832545,
-							"parameters": {
-								"layout": "PC"
-							}
-						}
-					],
-					"sid": 650235253679940
+					"text": "PC"
 				},
 				{
 					"eventType": "block",
@@ -1319,82 +1274,168 @@
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Tela de escolha ao colidir com a cama"
+							"text": "Interação com a cama"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-collision-with-another-object",
+									"id": "is-overlapping-another-object",
 									"objectClass": "player",
-									"sid": 521898366888229,
+									"sid": 349314132457291,
 									"parameters": {
 										"object": "bed"
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "save_sign",
+									"sid": 109287225674348,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "save_sign",
+									"sid": 685327190549112,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
 							"sid": 275674593469972,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 608583393776181
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 964638412674986,
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 721152164985954,
 											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 205092765701005,
-											"parameters": {
-												"layer": "\"save\"",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-layer-interactive",
-											"objectClass": "System",
-											"sid": 319862813671177,
-											"parameters": {
-												"layer": "\"save\"",
-												"interactive": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 450725257189569,
-											"parameters": {
-												"layer": "\"yes_no\"",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-layer-interactive",
-											"objectClass": "System",
-											"sid": 114951128961628,
-											"parameters": {
-												"layer": "\"yes_no\"",
-												"interactive": true
+												"key": 69
 											}
 										}
 									],
-									"sid": 953068966247240
+									"actions": [],
+									"sid": 344739530227274,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 295149792800702
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 877604699231659,
+													"parameters": {
+														"variable": "PlayerMoving",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "choosing_save",
+													"sid": 778409432065426,
+													"parameters": {
+														"width": "0",
+														"height": "0"
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 362099018743277,
+													"parameters": {
+														"layer": "\"save\"",
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "choosing_save",
+													"sid": 155331486642478,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"choosing_appear\"",
+														"property": "size",
+														"end-x": "767",
+														"end-y": "614",
+														"time": "0.3",
+														"ease": "easeoutback",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 679060381529322
+												},
+												{
+													"id": "set-layer-interactive",
+													"objectClass": "System",
+													"sid": 766952058525334,
+													"parameters": {
+														"layer": "\"yes_no\"",
+														"interactive": true
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 988391387399284,
+													"parameters": {
+														"layer": "\"yes_no\"",
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 381364163255522
+										}
+									]
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 292029694260955
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "save_sign",
+									"sid": 537718672901369,
+									"parameters": {
+										"opacity": "50"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "save_sign",
+									"sid": 308116554459408,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 140066193816512
 						},
 						{
 							"eventType": "comment",
@@ -1412,40 +1453,21 @@
 										"click-type": "clicked",
 										"object-clicked": "sim"
 									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 679508418078858,
+									"parameters": {
+										"layer": "\"save\""
+									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 858563337802581,
-									"parameters": {
-										"layer": "\"cursor\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 657845839580623,
-									"parameters": {
-										"layer": "\"save\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 529672363217242,
-									"parameters": {
-										"layer": "\"save\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 960975004745627,
+									"sid": 966533220300777,
 									"parameters": {
 										"layer": "\"yes_no\"",
 										"visibility": "invisible"
@@ -1454,10 +1476,42 @@
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 283399255078010,
+									"sid": 314790622214252,
 									"parameters": {
 										"layer": "\"yes_no\"",
 										"interactive": false
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "choosing_save",
+									"sid": 757411218475513,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"choosing_appear\"",
+										"property": "size",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.3",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 156150540469401
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 681110101680148,
+									"parameters": {
+										"layer": "\"save\"",
+										"visibility": "invisible"
 									}
 								},
 								{
@@ -1495,33 +1549,73 @@
 										"click-type": "clicked",
 										"object-clicked": "nao"
 									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 825475914314253,
+									"parameters": {
+										"layer": "\"save\""
+									}
 								}
 							],
 							"actions": [
 								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 331511107392562,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 754760233970767,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"interactive": false
+									}
+								},
+								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 686976193173788,
+									"sid": 384477952604233,
 									"parameters": {
 										"variable": "PlayerMoving",
 										"value": "true"
 									}
 								},
 								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 831691756583084,
+									"id": "tween-two-properties",
+									"objectClass": "choosing_save",
+									"sid": 874238638715573,
+									"behaviorType": "Tween",
 									"parameters": {
-										"layer": "\"save\"",
-										"visibility": "invisible"
+										"tags": "\"choosing_appear\"",
+										"property": "size",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.3",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 174828567349656
 								},
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 993977249427837,
+									"sid": 887099716335163,
 									"parameters": {
-										"layer": "\"yes_no\"",
+										"layer": "\"save\"",
 										"visibility": "invisible"
 									}
 								}
@@ -1538,42 +1632,82 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 262964914872743,
+									"sid": 512721628963221,
 									"parameters": {
 										"key": 27
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 835696665331631,
+									"parameters": {
+										"layer": "\"save\""
 									}
 								}
 							],
 							"actions": [
 								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 722473435281085,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 122012063610441,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"interactive": false
+									}
+								},
+								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 125515797273716,
+									"sid": 712491225456949,
 									"parameters": {
 										"variable": "PlayerMoving",
 										"value": "true"
 									}
 								},
 								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 890579339866328,
+									"id": "tween-two-properties",
+									"objectClass": "choosing_save",
+									"sid": 171261815751478,
+									"behaviorType": "Tween",
 									"parameters": {
-										"layer": "\"save\"",
-										"visibility": "invisible"
+										"tags": "\"choosing_appear\"",
+										"property": "size",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.3",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 760733119304031
 								},
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 691441413585925,
+									"sid": 630568833625856,
 									"parameters": {
-										"layer": "\"yes_no\"",
+										"layer": "\"save\"",
 										"visibility": "invisible"
 									}
 								}
 							],
-							"sid": 871430218731750
+							"sid": 454549476729959
 						}
 					],
 					"sid": 442508971418497,
@@ -1592,73 +1726,175 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": true,
+					"disabled": false,
 					"title": "CHOOSING_DOOR",
 					"description": "Tela de escolha da porta",
 					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Tela de escolha ao colidir com a porta"
+							"text": "Interação com a cama"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-collision-with-another-object",
+									"id": "is-overlapping-another-object",
 									"objectClass": "player",
-									"sid": 273754979048800,
+									"sid": 430239081242997,
 									"parameters": {
 										"object": "door"
 									}
 								}
 							],
-							"actions": [],
-							"sid": 660599621464591,
-							"disabled": true,
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "menu_sign",
+									"sid": 296105151608182,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "menu_sign",
+									"sid": 772781209235587,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 357432606118685,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 308477388165136
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 868681180492852,
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 633867318676640,
 											"parameters": {
-												"variable": "PlayerMoving",
-												"value": "false"
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 950335616858413,
-											"parameters": {
-												"layer": "\"menu\"",
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 330803074494113,
-											"parameters": {
-												"layer": "\"yes_no\"",
-												"visibility": "visible"
+												"key": 69
 											}
 										}
 									],
-									"sid": 347259749094875,
-									"disabled": true
+									"actions": [],
+									"sid": 179855979052327,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 215940220560726
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 992944280854287,
+													"parameters": {
+														"variable": "PlayerMoving",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-size",
+													"objectClass": "choosing_save",
+													"sid": 190748161157461,
+													"parameters": {
+														"width": "0",
+														"height": "0"
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 132021502582281,
+													"parameters": {
+														"layer": "\"menu\"",
+														"visibility": "visible"
+													}
+												},
+												{
+													"id": "tween-two-properties",
+													"objectClass": "choosing_menu",
+													"sid": 134450089873433,
+													"behaviorType": "Tween",
+													"parameters": {
+														"tags": "\"choosing_appear\"",
+														"property": "size",
+														"end-x": "767",
+														"end-y": "614",
+														"time": "0.3",
+														"ease": "easeoutback",
+														"destroy-on-complete": "no",
+														"loop": "no",
+														"ping-pong": "no",
+														"repeat-count": "1"
+													}
+												},
+												{
+													"id": "wait-for-previous-actions",
+													"objectClass": "System",
+													"sid": 423502234860179
+												},
+												{
+													"id": "set-layer-interactive",
+													"objectClass": "System",
+													"sid": 867615909661826,
+													"parameters": {
+														"layer": "\"yes_no\"",
+														"interactive": true
+													}
+												},
+												{
+													"id": "set-layer-visible",
+													"objectClass": "System",
+													"sid": 191529648990584,
+													"parameters": {
+														"layer": "\"yes_no\"",
+														"visibility": "visible"
+													}
+												}
+											],
+											"sid": 281585407647773
+										}
+									]
 								}
 							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 891441289258513
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "menu_sign",
+									"sid": 772932858005866,
+									"parameters": {
+										"opacity": "50"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "menu_sign",
+									"sid": 744939517045555,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 272087518410839
 						},
 						{
 							"eventType": "comment",
@@ -1670,7 +1906,7 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 985091890245025,
+									"sid": 967185096681730,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
@@ -1680,7 +1916,7 @@
 								{
 									"id": "layer-is-visible",
 									"objectClass": "System",
-									"sid": 700800859409515,
+									"sid": 252928630968923,
 									"parameters": {
 										"layer": "\"menu\""
 									}
@@ -1690,7 +1926,55 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 866226377767848,
+									"sid": 792541914168793,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 973715474939870,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "choosing_menu",
+									"sid": 484759057192864,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"choosing_appear\"",
+										"property": "size",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.3",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 982112538486115
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 136384434376222,
+									"parameters": [
+										"\"Menu\""
+									]
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 548099888752855,
 									"parameters": {
 										"layer": "\"menu\"",
 										"visibility": "invisible"
@@ -1699,22 +1983,14 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 161197091764973,
+									"sid": 702333595981329,
 									"parameters": {
-										"layer": "\"yes_no\"",
+										"layer": "\"sign\"",
 										"visibility": "invisible"
 									}
-								},
-								{
-									"callFunction": "Transition",
-									"sid": 778378318205410,
-									"parameters": [
-										"\"Menu\""
-									]
 								}
 							],
-							"sid": 538553496790223,
-							"disabled": true
+							"sid": 605635998865078
 						},
 						{
 							"eventType": "comment",
@@ -1726,45 +2002,84 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 176752502412962,
+									"sid": 499681196204031,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
 										"object-clicked": "nao"
 									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 553450813787089,
+									"parameters": {
+										"layer": "\"menu\""
+									}
 								}
 							],
 							"actions": [
 								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 630040149511798,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 132398334559361,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"interactive": false
+									}
+								},
+								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 322605428410852,
+									"sid": 529318915564000,
 									"parameters": {
 										"variable": "PlayerMoving",
 										"value": "true"
 									}
 								},
 								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 177861570459704,
+									"id": "tween-two-properties",
+									"objectClass": "choosing_menu",
+									"sid": 420098891186579,
+									"behaviorType": "Tween",
 									"parameters": {
-										"layer": "\"menu\"",
-										"visibility": "invisible"
+										"tags": "\"choosing_appear\"",
+										"property": "size",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.3",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 688414685299065
 								},
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 792736170322645,
+									"sid": 843354220227319,
 									"parameters": {
-										"layer": "\"yes_no\"",
+										"layer": "\"menu\"",
 										"visibility": "invisible"
 									}
 								}
 							],
-							"sid": 974842487845033,
-							"disabled": true
+							"sid": 584956355318783
 						},
 						{
 							"eventType": "comment",
@@ -1776,46 +2091,374 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 916813527176704,
+									"sid": 236223462288346,
 									"parameters": {
 										"key": 27
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 735448153710363,
+									"parameters": {
+										"layer": "\"menu\""
 									}
 								}
 							],
 							"actions": [
 								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 508390965778012,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 142849419360504,
+									"parameters": {
+										"layer": "\"yes_no\"",
+										"interactive": false
+									}
+								},
+								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 420445115428784,
+									"sid": 534140256004104,
 									"parameters": {
 										"variable": "PlayerMoving",
 										"value": "true"
 									}
 								},
 								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 300331191210917,
+									"id": "tween-two-properties",
+									"objectClass": "choosing_menu",
+									"sid": 323586516180934,
+									"behaviorType": "Tween",
 									"parameters": {
-										"layer": "\"menu\"",
-										"visibility": "invisible"
+										"tags": "\"choosing_appear\"",
+										"property": "size",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.3",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
 									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 362773579135027
 								},
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 708323038211387,
+									"sid": 545954450375757,
 									"parameters": {
-										"layer": "\"yes_no\"",
+										"layer": "\"menu\"",
 										"visibility": "invisible"
 									}
 								}
 							],
-							"sid": 820100709019181,
-							"disabled": true
+							"sid": 146972327364428
 						}
 					],
-					"sid": 857311464197527,
+					"sid": 511260408989421,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.9882352941176471,
+						0.9882352941176471,
+						0.00784313725490196,
+						1
+					]
+				},
+				{
+					"bookmark": true,
+					"eventType": "group",
+					"disabled": false,
+					"title": "CHOOSING_OTHERS",
+					"description": "Interações sem tela de escolha",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Closet"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "player",
+									"sid": 504821381356821,
+									"parameters": {
+										"object": "closet"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "closet_sign",
+									"sid": 692181301960070,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "closet_sign",
+									"sid": 783007474542013,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 482343642728916,
+							"children": [
+								{
+									"bookmark": true,
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 652192259134300,
+											"parameters": {
+												"key": 69
+											}
+										}
+									],
+									"actions": [],
+									"sid": 113664189359624
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 190227188854701
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "closet_sign",
+									"sid": 892847751958026,
+									"parameters": {
+										"opacity": "50"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "closet_sign",
+									"sid": 796118954317835,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 810097917264384
+						},
+						{
+							"eventType": "comment",
+							"text": "PC"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "player",
+									"sid": 461364780238013,
+									"parameters": {
+										"object": "pc"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "mouse_sign",
+									"sid": 239843672546081,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "mouse_sign",
+									"sid": 412242286690049,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 775635948493541,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 570880179067673,
+											"parameters": {
+												"key": 69
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 377281758910134,
+											"parameters": {
+												"variable": "layout",
+												"value": "\"PC\""
+											}
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 808232360316197,
+											"parameters": {
+												"layout": "PC"
+											}
+										}
+									],
+									"sid": 545874551199048
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 483650447908395
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "mouse_sign",
+									"sid": 427509530801687,
+									"parameters": {
+										"opacity": "50"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "mouse_sign",
+									"sid": 897653108978840,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 886279705094545
+						},
+						{
+							"eventType": "comment",
+							"text": "Bin"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "player",
+									"sid": 988961188441112,
+									"parameters": {
+										"object": "trash"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "trash_sign",
+									"sid": 712735563914699,
+									"parameters": {
+										"opacity": "100"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "trash_sign",
+									"sid": 382780802355207,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 367457764131884,
+							"children": [
+								{
+									"bookmark": true,
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 289643977665205,
+											"parameters": {
+												"key": 69
+											}
+										}
+									],
+									"actions": [],
+									"sid": 289612667454040
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 181848244845349
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "trash_sign",
+									"sid": 261555121438379,
+									"parameters": {
+										"opacity": "50"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "trash_sign",
+									"sid": 621233520439311,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 637768528005142
+						}
+					],
+					"sid": 815184531960908,
 					"text-color": [
 						0,
 						0,
@@ -1831,6 +2474,105 @@
 				},
 				{
 					"eventType": "comment",
+					"text": "Animação over sim"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 457268413768369,
+							"parameters": {
+								"object": "sim"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "sim",
+							"sid": 892976005321029,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 471341893862255
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 222806011887513
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "sim",
+							"sid": 912907191556564,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 427734635738527
+				},
+				{
+					"eventType": "comment",
+					"text": "Animação over não"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 756845916652908,
+							"parameters": {
+								"object": "nao"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "nao",
+							"sid": 310656241063393,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 748286970370022,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 948602132171898
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "nao",
+							"sid": 345661553619883,
+							"parameters": {
+								"frame-number": "1"
+							}
+						}
+					],
+					"sid": 890464788259524
+				},
+				{
+					"eventType": "comment",
 					"text": "Placa desativa quando está em tela de escolha"
 				},
 				{
@@ -1839,7 +2581,7 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 953763605046914,
+							"sid": 574447547653092,
 							"parameters": {
 								"layer": "\"save\""
 							}
@@ -1847,7 +2589,7 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 796453913770862,
+							"sid": 798035714542816,
 							"parameters": {
 								"layer": "\"menu\""
 							}
@@ -1857,7 +2599,7 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 962399792483817,
+							"sid": 131414673236942,
 							"parameters": {
 								"layer": "\"cursor\"",
 								"visibility": "visible"
@@ -1866,14 +2608,14 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 212755303422105,
+							"sid": 395931122805896,
 							"parameters": {
 								"layer": "\"sign\"",
 								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 989601547530549,
+					"sid": 781730907426608,
 					"isOrBlock": true
 				},
 				{
@@ -1886,7 +2628,7 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 236720857251281,
+							"sid": 883627077114788,
 							"parameters": {
 								"layer": "\"save\""
 							},
@@ -1895,7 +2637,7 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 712986611095120,
+							"sid": 398798738290254,
 							"parameters": {
 								"layer": "\"menu\""
 							},
@@ -1904,7 +2646,7 @@
 						{
 							"id": "compare-opacity",
 							"objectClass": "fade",
-							"sid": 349941094216520,
+							"sid": 411340256261427,
 							"parameters": {
 								"comparison": 0,
 								"opacity": "0"
@@ -1915,7 +2657,7 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 940804911652607,
+							"sid": 637091560830614,
 							"parameters": {
 								"layer": "\"sign\"",
 								"visibility": "visible"
@@ -1924,113 +2666,14 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 482799426480141,
+							"sid": 223373913583544,
 							"parameters": {
 								"layer": "\"cursor\"",
 								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 994041131978330
-				},
-				{
-					"eventType": "comment",
-					"text": "Animação over sim"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 872663919610317,
-							"parameters": {
-								"object": "sim"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "sim",
-							"sid": 866032490481040,
-							"parameters": {
-								"frame-number": "0"
-							}
-						}
-					],
-					"sid": 163798814374966
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 494969098732428
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "sim",
-							"sid": 663526280727300,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 184673669565288
-				},
-				{
-					"eventType": "comment",
-					"text": "Animação over não"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "cursor-is-over-object",
-							"objectClass": "Mouse",
-							"sid": 676823925089484,
-							"parameters": {
-								"object": "nao"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "nao",
-							"sid": 925542628039433,
-							"parameters": {
-								"frame-number": "0"
-							}
-						}
-					],
-					"sid": 230211164948430,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "else",
-							"objectClass": "System",
-							"sid": 366311576331709
-						}
-					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "nao",
-							"sid": 444157934639335,
-							"parameters": {
-								"frame-number": "1"
-							}
-						}
-					],
-					"sid": 217674296677988
+					"sid": 139331659084055
 				}
 			],
 			"sid": 486112191158838,
@@ -2050,233 +2693,19 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "HUD",
-			"description": "Interface",
+			"title": "WASD_TUTORIAL",
+			"description": "Animação de tutorial de como andar",
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "WASD_TUTORIAL",
-					"description": "Animação de tutorial de como andar",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Checa se é a primeira vez no quarto"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-start-of-layout",
-									"objectClass": "System",
-									"sid": 143934454892105
-								}
-							],
-							"actions": [
-								{
-									"id": "check-item-exists",
-									"objectClass": "LocalStorage",
-									"sid": 355853567639771,
-									"parameters": {
-										"key": "\"WASD_entrada\""
-									}
-								}
-							],
-							"sid": 551079676258434
-						},
-						{
-							"eventType": "comment",
-							"text": "Sim"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-item-get",
-									"objectClass": "LocalStorage",
-									"sid": 131719644389818,
-									"parameters": {
-										"key": "\"WASD_entrada\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "destroy",
-									"objectClass": "WASD",
-									"sid": 244292240362623
-								}
-							],
-							"sid": 931552102107134
-						},
-						{
-							"eventType": "comment",
-							"text": "Nâo"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-item-missing",
-									"objectClass": "LocalStorage",
-									"sid": 312238270708783,
-									"parameters": {
-										"key": "\"WASD_entrada\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "wait-for-signal",
-									"objectClass": "System",
-									"sid": 682670291613897,
-									"parameters": {
-										"tag": "\"end_transition\""
-									}
-								},
-								{
-									"id": "tween-one-property",
-									"objectClass": "WASD",
-									"sid": 865323035270127,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"WASD_entrada\"",
-										"property": "offsetX",
-										"end-value": "1368",
-										"time": "1",
-										"ease": "easeinsine",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
-								}
-							],
-							"sid": 927168569102412
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-tweens-finished",
-									"objectClass": "WASD",
-									"sid": 437559105106986,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"WASD_entrada\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "tween-value",
-									"objectClass": "WASD",
-									"sid": 148228305691532,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"WASD_pausa\"",
-										"start-value": "0",
-										"end-value": "0",
-										"time": "5",
-										"ease": "default",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
-								}
-							],
-							"sid": 950894517566377
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-tweens-finished",
-									"objectClass": "WASD",
-									"sid": 939210950152767,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"WASD_pausa\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "tween-one-property",
-									"objectClass": "WASD",
-									"sid": 967041229695528,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"WASD_saída\"",
-										"property": "offsetX",
-										"end-value": "1550",
-										"time": "1",
-										"ease": "easeinsine",
-										"destroy-on-complete": "yes",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
-									}
-								}
-							],
-							"sid": 593918306595869
-						},
-						{
-							"eventType": "comment",
-							"text": "Salva alteração"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-tweens-finished",
-									"objectClass": "WASD",
-									"sid": 978340289020626,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"WASD_entrada\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-item",
-									"objectClass": "LocalStorage",
-									"sid": 443049474201003,
-									"parameters": {
-										"key": "\"WASD_entrada\"",
-										"value": "\"WASD_entrada\""
-									}
-								}
-							],
-							"sid": 829102650132100
-						}
-					],
-					"sid": 902234406484525,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						0,
-						0.6,
-						0.07058823529411765,
-						1
-					]
+					"eventType": "comment",
+					"text": "Checa se é a primeira vez no quarto"
 				},
 				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "SIGN",
-					"description": "Placas de interação (ao chegar perto)",
-					"isActiveOnStart": true,
-					"children": [
+					"eventType": "block",
+					"conditions": [
 						{
+<<<<<<< Updated upstream
 							"eventType": "comment",
 							"text": "Mouse: valor da opacidade relativo a distância"
 						},
@@ -2443,24 +2872,195 @@
 								}
 							],
 							"sid": 371923946385549
+=======
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 733662347916028
+>>>>>>> Stashed changes
 						}
 					],
-					"sid": 290615469753357,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
+					"actions": [
+						{
+							"id": "check-item-exists",
+							"objectClass": "LocalStorage",
+							"sid": 740636763105851,
+							"parameters": {
+								"key": "\"WASD_entrada\""
+							}
+						}
 					],
-					"background-color": [
-						0,
-						0.6,
-						0.07058823529411765,
-						1
-					]
+					"sid": 755695777840715
+				},
+				{
+					"eventType": "comment",
+					"text": "Sim"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-get",
+							"objectClass": "LocalStorage",
+							"sid": 174154703022525,
+							"parameters": {
+								"key": "\"WASD_entrada\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "WASD",
+							"sid": 187929457726152
+						}
+					],
+					"sid": 917155925895485
+				},
+				{
+					"eventType": "comment",
+					"text": "Nâo"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-item-missing",
+							"objectClass": "LocalStorage",
+							"sid": 461254147583402,
+							"parameters": {
+								"key": "\"WASD_entrada\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait-for-signal",
+							"objectClass": "System",
+							"sid": 717798997038180,
+							"parameters": {
+								"tag": "\"end_transition\""
+							}
+						},
+						{
+							"id": "tween-one-property",
+							"objectClass": "WASD",
+							"sid": 529745925009726,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"WASD_entrada\"",
+								"property": "offsetX",
+								"end-value": "1368",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 961135582129136
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "WASD",
+							"sid": 923322905384643,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"WASD_entrada\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-value",
+							"objectClass": "WASD",
+							"sid": 756331171916378,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"WASD_pausa\"",
+								"start-value": "0",
+								"end-value": "0",
+								"time": "5",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 207098966804806
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "WASD",
+							"sid": 269329897441665,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"WASD_pausa\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "tween-one-property",
+							"objectClass": "WASD",
+							"sid": 540583811375163,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"WASD_saída\"",
+								"property": "offsetX",
+								"end-value": "1550",
+								"time": "1",
+								"ease": "easeinsine",
+								"destroy-on-complete": "yes",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						}
+					],
+					"sid": 917744976662168
+				},
+				{
+					"eventType": "comment",
+					"text": "Salva alteração"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-tweens-finished",
+							"objectClass": "WASD",
+							"sid": 801500001377939,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"WASD_entrada\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-item",
+							"objectClass": "LocalStorage",
+							"sid": 355546519101000,
+							"parameters": {
+								"key": "\"WASD_entrada\"",
+								"value": "\"WASD_entrada\""
+							}
+						}
+					],
+					"sid": 246209410358650
 				}
 			],
-			"sid": 748358231314975,
+			"sid": 176314243400736,
 			"text-color": [
 				0,
 				0,
