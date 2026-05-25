@@ -40,9 +40,57 @@
 								"layer": "\"cursor\"",
 								"visibility": "visible"
 							}
+						},
+						{
+							"id": "stop",
+							"objectClass": "Audio",
+							"sid": 710950314821685,
+							"parameters": {
+								"tag": "\"passos\""
+							}
 						}
 					],
-					"sid": 741880394947535
+					"sid": 741880394947535,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 116277353866767,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "\"none\""
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 272340104073098,
+									"parameters": {
+										"variable": "layout",
+										"comparison": 0,
+										"value": "\"Bedroom\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 427607492254049,
+									"parameters": {
+										"variable": "layout",
+										"value": "\"PC\""
+									}
+								}
+							],
+							"sid": 274478245490117,
+							"isOrBlock": true
+						}
+					]
 				},
 				{
 					"eventType": "comment",

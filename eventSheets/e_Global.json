@@ -12,6 +12,16 @@
 			"sid": 345529679003487
 		},
 		{
+			"eventType": "variable",
+			"name": "IsChoosing",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "Estado de tela de escolha",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 529706212372961
+		},
+		{
 			"eventType": "comment",
 			"text": "Tela cheia"
 		},
@@ -158,37 +168,6 @@
 							"sid": 858926861359942
 						}
 					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Cursor no layout Bedroom"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 542547097823799,
-							"parameters": {
-								"first-value": "LayoutName",
-								"comparison": 0,
-								"second-value": "\"Bedroom\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 143279825323947,
-							"parameters": {
-								"layer": "\"cursor\"",
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 111259884053089
 				}
 			],
 			"sid": 143760530796771,
@@ -1475,13 +1454,21 @@
 									"parameters": {
 										"object": "Yes_No_Familly"
 									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 495234379156014,
+									"parameters": {
+										"variable": "IsChoosing"
+									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-animation-frame",
 									"objectClass": "Yes_No_Familly",
-									"sid": 598860417569259,
+									"sid": 643254359601294,
 									"parameters": {
 										"frame-number": "0"
 									}
@@ -1502,7 +1489,7 @@
 										{
 											"id": "play-by-name",
 											"objectClass": "Audio",
-											"sid": 135584195407671,
+											"sid": 456137558438393,
 											"parameters": {
 												"folder": "sounds",
 												"audio-file-name": "\"bip 1\"",
@@ -1521,16 +1508,20 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 105059022647522
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 772591063587460,
+									"parameters": {
+										"object": "Yes_No_Familly"
+									},
+									"isInverted": true
 								}
 							],
 							"actions": [
 								{
 									"id": "set-animation-frame",
 									"objectClass": "Yes_No_Familly",
-									"sid": 381925620941515,
+									"sid": 817725865577268,
 									"parameters": {
 										"frame-number": "1"
 									}
@@ -1553,6 +1544,14 @@
 										"mouse-button": "left",
 										"click-type": "clicked",
 										"object-clicked": "Yes_No_Familly"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 447804507501323,
+									"parameters": {
+										"variable": "IsChoosing"
 									}
 								}
 							],
