@@ -7,6 +7,31 @@
 		},
 		{
 			"eventType": "comment",
+			"text": "Volume master"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-any-playing",
+					"objectClass": "Audio",
+					"sid": 833482240964882
+				}
+			],
+			"actions": [
+				{
+					"id": "set-master-volume",
+					"objectClass": "Audio",
+					"sid": 843825050157181,
+					"parameters": {
+						"db": "-20"
+					}
+				}
+			],
+			"sid": 569761106392331
+		},
+		{
+			"eventType": "comment",
 			"text": "Texto + som 1"
 		},
 		{

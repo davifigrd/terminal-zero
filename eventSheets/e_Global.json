@@ -2,7 +2,6 @@
 	"name": "e_Global",
 	"events": [
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "layout",
 			"type": "string",
@@ -17,6 +16,7 @@
 			"text": "Tela cheia"
 		},
 		{
+			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1444,6 +1444,328 @@
 				0.9725490196078431,
 				0.33725490196078434,
 				0.3215686274509804,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "FAMILIES",
+			"description": "Interação com famílias",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "YES_NO_FAMILLY",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Animação cursor sobre sim ou não"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 835989358253983,
+									"parameters": {
+										"object": "Yes_No_Familly"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Yes_No_Familly",
+									"sid": 598860417569259,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 961417735865114,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 746888209905663
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 135584195407671,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "\"bip 1\"",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"SFX\""
+											}
+										}
+									],
+									"sid": 749005391267593
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 105059022647522
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Yes_No_Familly",
+									"sid": 381925620941515,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 319699475959240
+						},
+						{
+							"eventType": "comment",
+							"text": "Botão selecionado"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 539173470800792,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "Yes_No_Familly"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 879251062903008,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "\"bip 1.2\"",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"SFX\""
+									}
+								}
+							],
+							"sid": 737845927362147
+						}
+					],
+					"sid": 383161184276498,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.8666666666666667,
+						0.9764705882352941,
+						0.16862745098039217,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "SIGN_FAMILLY",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Não está em cima de uma hitbox"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 221379822295645
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "Sign_Familly",
+									"sid": 676208629606686,
+									"parameters": {
+										"opacity": "50"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Sign_Familly",
+									"sid": 530538304027448,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 961303870182010,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Está em cima de uma hitbox"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "player",
+											"sid": 187141533618216,
+											"parameters": {
+												"object": "Sign_Hitbox_Familly"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Sign_Familly",
+											"sid": 836068526304724,
+											"parameters": {
+												"instance-variable": "sign",
+												"comparison": 0,
+												"value": "Sign_Hitbox_Familly.sign"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "Sign_Familly",
+											"sid": 652259808413944,
+											"parameters": {
+												"opacity": "100"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Sign_Familly",
+											"sid": 807272827422784,
+											"parameters": {
+												"frame-number": "1"
+											}
+										}
+									],
+									"sid": 452254222683485
+								}
+							]
+						}
+					],
+					"sid": 207071007562189,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.8666666666666667,
+						0.9764705882352941,
+						0.16862745098039217,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "XFAMILLY",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [],
+					"sid": 453886057900979,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.8666666666666667,
+						0.9764705882352941,
+						0.16862745098039217,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "XFAMILLY2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [],
+					"sid": 508987417272576,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.8666666666666667,
+						0.9764705882352941,
+						0.16862745098039217,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "XFAMILLY3",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [],
+					"sid": 860287871119113,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.8666666666666667,
+						0.9764705882352941,
+						0.16862745098039217,
+						1
+					]
+				}
+			],
+			"sid": 668918229335458,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.8666666666666667,
+				0.9764705882352941,
+				0.16862745098039217,
 				1
 			]
 		}

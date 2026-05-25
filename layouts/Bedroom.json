@@ -80,7 +80,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "door",
+					"type": "hitbox_door",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -91,7 +91,9 @@
 					"uid": 27,
 					"sid": 489565652494674,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sign": "menu"
+					},
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 489565652494674,
@@ -207,7 +209,7 @@
 					}
 				},
 				{
-					"type": "pc",
+					"type": "hitbox_pc",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -218,7 +220,9 @@
 					"uid": 4,
 					"sid": 691348124051935,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sign": "mouse"
+					},
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 691348124051935,
@@ -244,7 +248,7 @@
 					}
 				},
 				{
-					"type": "bed",
+					"type": "hitbox_bed",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -255,7 +259,9 @@
 					"uid": 13,
 					"sid": 715806193448630,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sign": "save"
+					},
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 715806193448630,
@@ -815,7 +821,7 @@
 			],
 			"sid": 148432864228112,
 			"effectTypes": [],
-			"isInitiallyVisible": true,
+			"isInitiallyVisible": false,
 			"isInitiallyInteractive": true,
 			"isHTMLElementsLayer": false,
 			"color": [
@@ -882,8 +888,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 730.105666330359,
-						"y": 437.9482973874926,
+						"x": 858,
+						"y": 436,
 						"width": 122,
 						"height": 332,
 						"originX": 0.5,
@@ -967,8 +973,8 @@
 							"world": {
 								"x": 726.5,
 								"y": 394,
-								"width": 766,
-								"height": 595,
+								"width": 0,
+								"height": 0,
 								"originX": 0.5,
 								"originY": 0.50561797752809,
 								"color": [
@@ -1046,8 +1052,8 @@
 							"world": {
 								"x": 726.5,
 								"y": 394,
-								"width": 766,
-								"height": 595,
+								"width": 0,
+								"height": 0,
 								"originX": 0.5,
 								"originY": 0.5056070263048383,
 								"color": [
@@ -1108,7 +1114,9 @@
 							"uid": 21,
 							"sid": 950995496223654,
 							"tags": "",
-							"instanceVariables": {},
+							"instanceVariables": {
+								"yes_no": "no"
+							},
 							"behaviors": {
 								"Tween": {
 									"properties": {
@@ -1151,7 +1159,9 @@
 							"uid": 52,
 							"sid": 716254679250063,
 							"tags": "",
-							"instanceVariables": {},
+							"instanceVariables": {
+								"yes_no": "yes"
+							},
 							"behaviors": {
 								"Tween": {
 									"properties": {
@@ -1305,7 +1315,9 @@
 					"uid": 76,
 					"sid": 513253664661811,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sign": "mouse"
+					},
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 513253664661811,
@@ -1324,7 +1336,7 @@
 							1,
 							1,
 							1,
-							1
+							0.5
 						],
 						"z": 0,
 						"angle": 0
@@ -1342,7 +1354,9 @@
 					"uid": 77,
 					"sid": 577155911902743,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sign": "save"
+					},
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 577155911902743,
@@ -1361,7 +1375,7 @@
 							1,
 							1,
 							1,
-							1
+							0.5
 						],
 						"z": 0,
 						"angle": 0
@@ -1379,7 +1393,9 @@
 					"uid": 78,
 					"sid": 373796963685242,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sign": "menu"
+					},
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 373796963685242,
@@ -1398,7 +1414,7 @@
 							1,
 							1,
 							1,
-							1
+							0.5
 						],
 						"z": 0,
 						"angle": 0
@@ -1416,7 +1432,9 @@
 					"uid": 69,
 					"sid": 469093925220311,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sign": "bin"
+					},
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 469093925220311,
@@ -1435,7 +1453,7 @@
 							1,
 							1,
 							1,
-							1
+							0.5
 						],
 						"z": 0,
 						"angle": 0
@@ -1453,7 +1471,9 @@
 					"uid": 118,
 					"sid": 411811927665925,
 					"tags": "",
-					"instanceVariables": {},
+					"instanceVariables": {
+						"sign": "closet"
+					},
 					"behaviors": {},
 					"instanceFolderItem": {
 						"sid": 411811927665925,
@@ -1472,7 +1492,7 @@
 							1,
 							1,
 							1,
-							1
+							0.5
 						],
 						"z": 0,
 						"angle": 0
