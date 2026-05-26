@@ -11,7 +11,7 @@
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "lvl2_pasta",
+							"type": "lvl2_notebook3",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -19,22 +19,71 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 99,
-							"sid": 249987603519853,
+							"uid": 84,
+							"sid": 452299827397642,
 							"tags": "",
 							"instanceVariables": {},
 							"behaviors": {},
 							"instanceFolderItem": {
-								"sid": 249987603519853,
+								"sid": 452299827397642,
 								"expanded": true
 							},
 							"showing": true,
 							"locked": false,
 							"world": {
-								"x": 696,
-								"y": 396,
-								"width": 157,
-								"height": 141,
+								"x": 757,
+								"y": 916,
+								"width": 589,
+								"height": 184,
+								"originX": 0.499151103565365,
+								"originY": 0.5217391304347826,
+								"color": [
+									1,
+									1,
+									1,
+									1
+								],
+								"z": 0,
+								"angle": 0
+							}
+						},
+						{
+							"type": "lvl2_virus2",
+							"properties": {
+								"initially-visible": true,
+								"initial-animation": "Animation 1",
+								"initial-frame": 0,
+								"enable-collisions": true,
+								"live-preview": false
+							},
+							"uid": 91,
+							"sid": 504654475288067,
+							"tags": "",
+							"instanceVariables": {},
+							"behaviors": {
+								"MoverPara2": {
+									"properties": {
+										"max-speed": 200,
+										"acceleration": 600,
+										"deceleration": 600,
+										"rotate-speed": 0,
+										"set-angle": true,
+										"stop-on-solids": false,
+										"enabled": true
+									}
+								}
+							},
+							"instanceFolderItem": {
+								"sid": 504654475288067,
+								"expanded": true
+							},
+							"showing": true,
+							"locked": false,
+							"world": {
+								"x": 8,
+								"y": 1087,
+								"width": 391,
+								"height": 306,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -48,7 +97,7 @@
 							}
 						},
 						{
-							"type": "lvl2_virusEtapa1",
+							"type": "lvl2_virus3",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -56,34 +105,34 @@
 								"enable-collisions": true,
 								"live-preview": false
 							},
-							"uid": 112,
-							"sid": 499913273778761,
+							"uid": 92,
+							"sid": 926167469111115,
 							"tags": "",
 							"instanceVariables": {},
 							"behaviors": {
-								"Projétil": {
+								"MoverPara2": {
 									"properties": {
-										"speed": 150,
-										"acceleration": 0,
-										"gravity": 0,
-										"bounce-off-solids": false,
+										"max-speed": 200,
+										"acceleration": 600,
+										"deceleration": 600,
+										"rotate-speed": 0,
 										"set-angle": true,
-										"step": false,
+										"stop-on-solids": false,
 										"enabled": true
 									}
 								}
 							},
 							"instanceFolderItem": {
-								"sid": 499913273778761,
+								"sid": 926167469111115,
 								"expanded": true
 							},
 							"showing": true,
 							"locked": false,
 							"world": {
-								"x": -37,
-								"y": 352,
-								"width": 92,
-								"height": 109,
+								"x": 1083,
+								"y": 1058,
+								"width": 429,
+								"height": 243,
 								"originX": 0.5,
 								"originY": 0.5,
 								"color": [
@@ -94,104 +143,6 @@
 								],
 								"z": 0,
 								"angle": 0
-							}
-						},
-						{
-							"type": "lvl2_virusEtapa11",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 113,
-							"sid": 255503731925210,
-							"tags": "",
-							"instanceVariables": {},
-							"behaviors": {
-								"Projétil": {
-									"properties": {
-										"speed": 150,
-										"acceleration": 0,
-										"gravity": 0,
-										"bounce-off-solids": false,
-										"set-angle": true,
-										"step": false,
-										"enabled": true
-									}
-								}
-							},
-							"instanceFolderItem": {
-								"sid": 255503731925210,
-								"expanded": true
-							},
-							"showing": true,
-							"locked": false,
-							"world": {
-								"x": 712.0089198075343,
-								"y": 804.0071358392222,
-								"width": 92,
-								"height": 109,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"z": 0,
-								"angle": 4.71238898038469
-							}
-						},
-						{
-							"type": "lvl2_virusEtapa111",
-							"properties": {
-								"initially-visible": true,
-								"initial-animation": "Animation 1",
-								"initial-frame": 0,
-								"enable-collisions": true,
-								"live-preview": false
-							},
-							"uid": 114,
-							"sid": 423368452374202,
-							"tags": "",
-							"instanceVariables": {},
-							"behaviors": {
-								"Projétil": {
-									"properties": {
-										"speed": 150,
-										"acceleration": 0,
-										"gravity": 0,
-										"bounce-off-solids": false,
-										"set-angle": true,
-										"step": false,
-										"enabled": true
-									}
-								}
-							},
-							"instanceFolderItem": {
-								"sid": 423368452374202,
-								"expanded": true
-							},
-							"showing": true,
-							"locked": false,
-							"world": {
-								"x": 1418,
-								"y": 401,
-								"width": 92,
-								"height": 109,
-								"originX": 0.5,
-								"originY": 0.5,
-								"color": [
-									1,
-									1,
-									1,
-									1
-								],
-								"z": 0,
-								"angle": 3.141592653589793
 							}
 						}
 					],
@@ -226,7 +177,316 @@
 					"global": false
 				}
 			],
-			"instances": [],
+			"instances": [
+				{
+					"type": "lvl2_fundo",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 71,
+					"sid": 635354912584715,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 635354912584715,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -7,
+						"y": 3,
+						"width": 1379,
+						"height": 770,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl2_notebook1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 83,
+					"sid": 389815919319223,
+					"tags": "",
+					"instanceVariables": {
+						"VidaDoPC": 10,
+						"virusMortos": 0,
+						"etapa": 0
+					},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 389815919319223,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 676,
+						"y": 409,
+						"width": 248.92812331149125,
+						"height": 169.43261891157604,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl2_virusEtapa1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 93,
+					"sid": 859621979883908,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {
+						"MoverPara2": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						},
+						"Projétil": {
+							"properties": {
+								"speed": 150,
+								"acceleration": 0,
+								"gravity": 0,
+								"bounce-off-solids": false,
+								"set-angle": true,
+								"step": false,
+								"enabled": true
+							}
+						},
+						"MoverPara": {
+							"properties": {
+								"max-speed": 200,
+								"acceleration": 600,
+								"deceleration": 600,
+								"rotate-speed": 0,
+								"set-angle": true,
+								"stop-on-solids": false,
+								"enabled": true
+							}
+						}
+					},
+					"instanceFolderItem": {
+						"sid": 859621979883908,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1547.4389682506915,
+						"y": 900.1722558622324,
+						"width": 164.87793650138312,
+						"height": 195.34451172446478,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "TXT_DoLVL2_vidadopc",
+					"properties": {
+						"text": "Texto",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 25,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 98,
+					"sid": 586806620926359,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 586806620926359,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 34,
+						"y": 78,
+						"width": 383.2800375606799,
+						"height": 73.44200563410197,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "TXT_DoLVL2_virusmorto",
+					"properties": {
+						"text": "Texto",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 25,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 99,
+					"sid": 862139437765969,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 862139437765969,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 32,
+						"y": 175,
+						"width": 330,
+						"height": 51,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "TXT_DoLVL2_mudoufase",
+					"properties": {
+						"text": "Texto",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 25,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 72,
+					"sid": 405711440080391,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"instanceFolderItem": {
+						"sid": 405711440080391,
+						"expanded": true
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 36,
+						"y": 281,
+						"width": 256,
+						"height": 58,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				}
+			],
 			"sid": 517649603681410,
 			"effectTypes": [],
 			"isInitiallyVisible": true,

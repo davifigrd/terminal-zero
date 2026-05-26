@@ -1,10 +1,32 @@
 {
 	"name": "lvl2_notebook1",
 	"plugin-id": "Sprite",
-	"sid": 962054400072312,
+	"sid": 794044135522214,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "VidaDoPC",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 847967302923774
+		},
+		{
+			"name": "virusMortos",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 843052049305066
+		},
+		{
+			"name": "etapa",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 279345156140635
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -12,39 +34,67 @@
 			{
 				"frames": [
 					{
-						"width": 589,
+						"width": 191,
 						"height": 184,
-						"originX": 0.499151103565365,
-						"originY": 0.5217391304347826,
+						"originX": 0.5,
+						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 7194401,
+						"imageSpriteId": 4433668,
 						"collisionPoly": {
 							"points": [
-								0.03735144312393888,
+								0,
 								0.010869565217391304,
-								0.9728353140916808,
+								1,
 								0.043478260869565216,
-								0.9830220713073005,
+								1,
 								0.9891304347826086,
-								0.001697792869269949,
+								0,
 								0.9565217391304348
 							]
 						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
+					},
+					{
+						"width": 484,
+						"height": 460,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 273501,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					},
+					{
+						"width": 484,
+						"height": 459,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"fileType": "image/png",
+						"imageSpriteId": 3148763,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
 					}
 				],
-				"sid": 484955743833879,
+				"sid": 644205107348442,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
 				"repeatTo": 0,
-				"speed": 5
+				"speed": 0
 			}
 		],
 		"subfolders": []

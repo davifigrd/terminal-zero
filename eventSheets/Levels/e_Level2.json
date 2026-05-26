@@ -2,61 +2,554 @@
 	"name": "e_Level2",
 	"events": [
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "tudo",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "on-collision-with-another-object",
-					"objectClass": "lvl2_virusEtapa1",
-					"sid": 671381791733673,
-					"parameters": {
-						"object": "lvl2_pasta"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "lvl2_virusEtapa1",
-					"sid": 504594169854187
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 995928710543668,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "virus"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "virus",
+							"sid": 938554902189772
+						}
+					],
+					"sid": 162807737276389
 				},
 				{
-					"id": "destroy",
-					"objectClass": "lvl2_pasta",
-					"sid": 779329894522706
+					"functionName": "criarVirus",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 976518777474098,
+							"parameters": {
+								"object-to-create": "virus",
+								"layer": "1",
+								"x": "choose(646,1329,579,44)",
+								"y": "choose(704,390,51,409)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 343434835403035
 				},
 				{
-					"id": "go-to-layout",
-					"objectClass": "System",
-					"sid": 412479158697218,
-					"parameters": {
-						"layout": "PC"
-					}
-				}
-			],
-			"sid": 743766145091704
-		},
-		{
-			"eventType": "block",
-			"conditions": [
+					"functionName": "criarVirusTipo2",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 176070874974812,
+							"parameters": {
+								"object-to-create": "lvl2_virusEtapa11",
+								"layer": "1",
+								"x": "choose(646,1329,579,44)",
+								"y": "choose(704,390,51,409)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 266902078796485
+				},
 				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 922298318849376,
-					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "lvl2_virusEtapa1"
-					}
-				}
-			],
-			"actions": [
+					"functionName": "criarVirusTipo3",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "create-object",
+							"objectClass": "System",
+							"sid": 136736907210535,
+							"parameters": {
+								"object-to-create": "lvl2_virus3",
+								"layer": "1",
+								"x": "choose(646,1329,579,44)",
+								"y": "choose(704,390,51,409)",
+								"create-hierarchy": false,
+								"template-name": "\"\""
+							}
+						}
+					],
+					"sid": 260647934054311
+				},
 				{
-					"id": "destroy",
-					"objectClass": "lvl2_virusEtapa1",
-					"sid": 682321293976428
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 632006481550879,
+							"parameters": {
+								"interval-seconds": "choose(3,4)"
+							}
+						},
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 702775614240038,
+							"parameters": {
+								"count": "1"
+							}
+						},
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 112612014474347
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "criarVirus",
+							"sid": 698842977467786
+						}
+					],
+					"sid": 143524299711131
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 542240278852837
+						}
+					],
+					"actions": [
+						{
+							"id": "move-to-object",
+							"objectClass": "virus",
+							"sid": 600716552759445,
+							"behaviorType": "MoverPara2",
+							"parameters": {
+								"object": "lvl2_notebook1",
+								"image-point": "0",
+								"mode": "direct"
+							}
+						}
+					],
+					"sid": 330143734133618
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-created",
+							"objectClass": "virus",
+							"sid": 801318353194826
+						}
+					],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "virus",
+							"sid": 258509318280997,
+							"parameters": {
+								"width": "166",
+								"height": "196"
+							}
+						}
+					],
+					"sid": 175144873946691
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-collision-with-another-object",
+							"objectClass": "virus",
+							"sid": 192394727254575,
+							"parameters": {
+								"object": "lvl2_notebook1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "lvl2_notebook1",
+							"sid": 854885519201740,
+							"parameters": {
+								"instance-variable": "VidaDoPC",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 379204315874275
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl2_notebook1",
+							"sid": 818334923168958,
+							"parameters": {
+								"instance-variable": "VidaDoPC",
+								"comparison": 3,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "lvl2_notebook1",
+							"sid": 861171461628544
+						},
+						{
+							"id": "restart-layout",
+							"objectClass": "System",
+							"sid": 771591950894463
+						}
+					],
+					"sid": 570362442959585
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 530552187211185
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "TXT_DoLVL2_virusmorto",
+							"sid": 678019104481057,
+							"parameters": {
+								"text": "\"Virus mortos  : \"&lvl2_notebook1.virusMortos"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TXT_DoLVL2_vidadopc",
+							"sid": 407736707518328,
+							"parameters": {
+								"text": "\"Vida do PC : \"&lvl2_notebook1.VidaDoPC"
+							}
+						}
+					],
+					"sid": 287851590957764
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl2_notebook1",
+							"sid": 649078628198794,
+							"parameters": {
+								"instance-variable": "virusMortos",
+								"comparison": 5,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl2_notebook1",
+							"sid": 469097314927737,
+							"parameters": {
+								"instance-variable": "etapa",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 879242506142752
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl2_notebook1",
+							"sid": 311475915011209,
+							"parameters": {
+								"instance-variable": "virusMortos",
+								"comparison": 5,
+								"value": "10"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl2_notebook1",
+							"sid": 648107159304064,
+							"parameters": {
+								"instance-variable": "etapa",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 852407852998403
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl2_notebook1",
+							"sid": 813579049475767,
+							"parameters": {
+								"instance-variable": "virusMortos",
+								"comparison": 5,
+								"value": "15"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 788871525254943,
+							"parameters": {
+								"layout": "Level3"
+							}
+						}
+					],
+					"sid": 429306612833767
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 995920606730437
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl2_notebook1",
+							"sid": 468943717063650,
+							"parameters": {
+								"instance-variable": "VidaDoPC",
+								"value": "10"
+							}
+						}
+					],
+					"sid": 807950766278647
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl2_notebook1",
+							"sid": 434168025377654,
+							"parameters": {
+								"instance-variable": "etapa",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl2_notebook1",
+							"sid": 866390140002298,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "lvl2_notebook1",
+							"sid": 332073283537637,
+							"parameters": {
+								"width": "249",
+								"height": "170"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TXT_DoLVL2_mudoufase",
+							"sid": 826008639601637,
+							"parameters": {
+								"text": "\"FASE  1\""
+							}
+						}
+					],
+					"sid": 142931063981102
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl2_notebook1",
+							"sid": 368239999034394,
+							"parameters": {
+								"instance-variable": "etapa",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl2_notebook1",
+							"sid": 813633405183236,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "lvl2_notebook1",
+							"sid": 933161097027174,
+							"parameters": {
+								"width": "249",
+								"height": "170"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TXT_DoLVL2_mudoufase",
+							"sid": 877651996286190,
+							"parameters": {
+								"text": "\"FASE  2\""
+							}
+						}
+					],
+					"sid": 537782064075473
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl2_notebook1",
+							"sid": 517871347968696,
+							"parameters": {
+								"instance-variable": "etapa",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl2_notebook1",
+							"sid": 188947651405965,
+							"parameters": {
+								"frame-number": "2"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "lvl2_notebook1",
+							"sid": 346531364344499,
+							"parameters": {
+								"width": "249",
+								"height": "170"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "TXT_DoLVL2_mudoufase",
+							"sid": 117565189096263,
+							"parameters": {
+								"text": "\"FASE 3\""
+							}
+						}
+					],
+					"sid": 820162402784572
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-destroyed",
+							"objectClass": "virus",
+							"sid": 101589011062254
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-instvar",
+							"objectClass": "lvl2_notebook1",
+							"sid": 285675275781464,
+							"parameters": {
+								"instance-variable": "virusMortos",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 510067526676737
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 954487919386609
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl2_notebook1",
+							"sid": 564644825654503,
+							"parameters": {
+								"instance-variable": "etapa",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 530873895285761
 				}
 			],
-			"sid": 477669019330137
+			"sid": 616939904205052
 		}
 	],
 	"sid": 479958128321061
