@@ -10,11 +10,11 @@
 			"text": "=== MENU ===\n3 saves"
 		},
 		{
+			"bookmark": true,
 			"eventType": "comment",
 			"text": "// Função Genérica para Tutoriais\n----* On function 'RunTutorial'\n----* Parameter 'KeyName' (String)  --> ex: \"WASD_entrada\"\n----* Parameter 'SpriteObject' (Object) --> O Sprite específico\n\n    // Checa LocalStorage usando o Parameter 'KeyName'\n    ----+ System: On start of layout\n    -----> LocalStorage: Check item KeyName exists\n\n    // Se não existir, executa o Tween no SpriteObject\n    ----+ LocalStorage: On item missing\n    -----> SpriteObject: Tween \"Entrada\" property X..."
 		},
 		{
-			"bookmark": true,
 			"eventType": "comment",
 			"text": "============================================================================"
 		},
