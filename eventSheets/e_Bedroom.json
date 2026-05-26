@@ -481,6 +481,86 @@
 										}
 									],
 									"sid": 824505680787211
+								},
+								{
+									"eventType": "comment",
+									"text": "Armário"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Sign_Hitbox_Familly",
+											"sid": 420882305162342,
+											"parameters": {
+												"instance-variable": "sign",
+												"comparison": 0,
+												"value": "\"closet\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 479635574068347,
+											"parameters": {
+												"layer": "\"closet\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 484305876082724,
+											"parameters": {
+												"layer": "\"closet\"",
+												"interactive": true
+											}
+										}
+									],
+									"sid": 156842689660398
+								},
+								{
+									"eventType": "comment",
+									"text": "Lixeira"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Sign_Hitbox_Familly",
+											"sid": 871283402251369,
+											"parameters": {
+												"instance-variable": "sign",
+												"comparison": 0,
+												"value": "\"trash\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 446714733141123,
+											"parameters": {
+												"layer": "\"trash\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 840392196118952,
+											"parameters": {
+												"layer": "\"trash\"",
+												"interactive": true
+											}
+										}
+									],
+									"sid": 899790701064491
 								}
 							]
 						}
