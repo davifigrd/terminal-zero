@@ -18,14 +18,14 @@
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
-								"object-clicked": "virus"
+								"object-clicked": "lvl2_Virus"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "destroy",
-							"objectClass": "virus",
+							"objectClass": "lvl2_Virus",
 							"sid": 938554902189772
 						}
 					],
@@ -47,7 +47,7 @@
 							"objectClass": "System",
 							"sid": 976518777474098,
 							"parameters": {
-								"object-to-create": "virus",
+								"object-to-create": "lvl2_Virus",
 								"layer": "1",
 								"x": "choose(646,1329,579,44)",
 								"y": "choose(704,390,51,409)",
@@ -157,7 +157,7 @@
 					"actions": [
 						{
 							"id": "move-to-object",
-							"objectClass": "virus",
+							"objectClass": "lvl2_Virus",
 							"sid": 600716552759445,
 							"behaviorType": "MoverPara2",
 							"parameters": {
@@ -174,14 +174,14 @@
 					"conditions": [
 						{
 							"id": "on-created",
-							"objectClass": "virus",
+							"objectClass": "lvl2_Virus",
 							"sid": 801318353194826
 						}
 					],
 					"actions": [
 						{
 							"id": "set-size",
-							"objectClass": "virus",
+							"objectClass": "lvl2_Virus",
 							"sid": 258509318280997,
 							"parameters": {
 								"width": "166",
@@ -196,7 +196,7 @@
 					"conditions": [
 						{
 							"id": "on-collision-with-another-object",
-							"objectClass": "virus",
+							"objectClass": "lvl2_Virus",
 							"sid": 192394727254575,
 							"parameters": {
 								"object": "lvl2_notebook1"
@@ -256,7 +256,7 @@
 					"actions": [
 						{
 							"id": "set-text",
-							"objectClass": "TXT_DoLVL2_virusmorto",
+							"objectClass": "lvl2_virusmorto",
 							"sid": 678019104481057,
 							"parameters": {
 								"text": "\"Virus mortos  : \"&lvl2_notebook1.virusMortos"
@@ -264,7 +264,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "TXT_DoLVL2_vidadopc",
+							"objectClass": "lvl2_vidadopc",
 							"sid": 407736707518328,
 							"parameters": {
 								"text": "\"Vida do PC : \"&lvl2_notebook1.VidaDoPC"
@@ -409,7 +409,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "TXT_DoLVL2_mudoufase",
+							"objectClass": "lvl2_mudoufase",
 							"sid": 826008639601637,
 							"parameters": {
 								"text": "\"FASE  1\""
@@ -452,7 +452,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "TXT_DoLVL2_mudoufase",
+							"objectClass": "lvl2_mudoufase",
 							"sid": 877651996286190,
 							"parameters": {
 								"text": "\"FASE  2\""
@@ -495,7 +495,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "TXT_DoLVL2_mudoufase",
+							"objectClass": "lvl2_mudoufase",
 							"sid": 117565189096263,
 							"parameters": {
 								"text": "\"FASE 3\""
@@ -509,7 +509,7 @@
 					"conditions": [
 						{
 							"id": "on-destroyed",
-							"objectClass": "virus",
+							"objectClass": "lvl2_Virus",
 							"sid": 101589011062254
 						}
 					],
