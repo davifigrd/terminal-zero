@@ -101,6 +101,15 @@
 					}
 				},
 				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 565547571529739,
+					"parameters": {
+						"seconds": "2.0",
+						"use-timescale": true
+					}
+				},
+				{
 					"id": "set-position",
 					"objectClass": "lvl4_mouse",
 					"sid": 214781214578818,
@@ -1459,11 +1468,11 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 640457249223220,
+					"sid": 761551650293059,
 					"parameters": {
 						"variable": "lvl4_Ordem",
 						"comparison": 0,
-						"value": "\"364152\""
+						"value": "\"361524\""
 					}
 				}
 			],
@@ -1639,6 +1648,64 @@
 						"variable": "lvl4_PodeClicar",
 						"value": "1"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Erro",
+					"sid": 428888599900721,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 546501522611675,
+					"parameters": {
+						"seconds": "0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Certo",
+					"sid": 169919981543258,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Erro",
+					"sid": 196553703635227,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 728408176248165,
+					"parameters": {
+						"seconds": "2.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Erro",
+					"sid": 637069190533887,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Certo",
+					"sid": 901565494948761,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 248387730576528
@@ -1794,6 +1861,64 @@
 						"variable": "lvl4_PodeClicar",
 						"value": "1"
 					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Erro",
+					"sid": 685803381092196,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 762378269197114,
+					"parameters": {
+						"seconds": "0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Certo",
+					"sid": 311775132816240,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Erro",
+					"sid": 805011853400675,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 203959379142384,
+					"parameters": {
+						"seconds": "2.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Erro",
+					"sid": 250399315041405,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Certo",
+					"sid": 710131439010355,
+					"parameters": {
+						"visibility": "invisible"
+					}
 				}
 			],
 			"sid": 687186956695665
@@ -1814,11 +1939,11 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 339127937278868,
+					"sid": 223040376835850,
 					"parameters": {
 						"variable": "lvl4_Ordem",
 						"comparison": 1,
-						"value": "\"364152\""
+						"value": "\"361524\""
 					}
 				},
 				{
@@ -1948,6 +2073,64 @@
 					"parameters": {
 						"variable": "lvl4_PodeClicar",
 						"value": "1"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Erro",
+					"sid": 914131984903657,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 141380144870211,
+					"parameters": {
+						"seconds": "0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Certo",
+					"sid": 822990222500015,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Erro",
+					"sid": 902115043430871,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 882981924921958,
+					"parameters": {
+						"seconds": "2.0",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Erro",
+					"sid": 675672122024898,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "lvl4_Certo",
+					"sid": 616158240763564,
+					"parameters": {
+						"visibility": "invisible"
 					}
 				}
 			],
