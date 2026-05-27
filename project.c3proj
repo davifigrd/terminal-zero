@@ -16,42 +16,42 @@
 		{
 			"type": "plugin",
 			"id": "Arr",
-			"name": "Matriz",
+			"name": "Array",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Audio",
-			"name": "Áudio",
+			"name": "Audio",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Browser",
-			"name": "Navegador",
+			"name": "Browser",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Dictionary",
-			"name": "Dicionário",
+			"name": "Dictionary",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Teclado",
+			"name": "Keyboard",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "LocalStorage",
-			"name": "Armazenamento local",
+			"name": "Local storage",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -72,56 +72,56 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Texto",
+			"name": "Text",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TextBox",
-			"name": "Entrada de texto",
+			"name": "Text input",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TiledBg",
-			"name": "Plano de Fundo em Blocos",
+			"name": "Tiled Background",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Bullet",
-			"name": "Projétil",
+			"name": "Bullet",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "DragnDrop",
-			"name": "Arrastar & Soltar",
+			"name": "Drag & Drop",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direções",
+			"name": "8 Direction",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Fade",
-			"name": "Esmaecer",
+			"name": "Fade",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Flash",
-			"name": "Piscar",
+			"name": "Flash",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -135,42 +135,51 @@
 		{
 			"type": "behavior",
 			"id": "Pin",
-			"name": "Fixar",
+			"name": "Pin",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "Senóide",
+			"name": "Sine",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Tween",
-			"name": "Interpolação",
+			"name": "Tween",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "scrollto",
-			"name": "Centrar em",
+			"name": "Scroll To",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Sólido",
+			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
 		}
 	],
 	"uniqueId": "infcrcpul51",
 	"objectTypes": {
-		"items": [],
+		"items": [
+			"lvl9_EntradaDeTexto",
+			"lvl9_txt_resultado",
+			"lvl9_txt_etapaqueta",
+			"lvl9_operadores",
+			"lvl9_botaoexit",
+			"lvl9_desenhos",
+			"lvl9_fundo",
+			"Sprite"
+		],
 		"subfolders": [
 			{
 				"items": [
@@ -492,7 +501,9 @@
 						"name": "Level 7"
 					},
 					{
-						"items": [],
+						"items": [
+							"lvl9_imgantesdafase9"
+						],
 						"subfolders": [],
 						"name": "Level 9"
 					}
@@ -832,6 +843,20 @@
 					],
 					"subfolders": [],
 					"name": "Level 7"
+				},
+				{
+					"items": [
+						{
+							"name": "lvl9__xcreenplay__hypersonic-hackers.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 180202189862730,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Level 9"
 				}
 			]
 		},

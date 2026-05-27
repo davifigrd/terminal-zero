@@ -1,5 +1,1577 @@
 {
 	"name": "e_level9",
-	"events": [],
-	"sid": 421235626178355
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "lvl9_etapa",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 165750490080872
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl9_resposta",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 289011614087044
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 532436485574521
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 683471563325348,
+					"parameters": {
+						"layer": "1",
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 295081344381159,
+					"parameters": {
+						"layer": "0",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 167305098521613,
+					"parameters": {
+						"seconds": "3",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 345795359688360,
+					"parameters": {
+						"layer": "1",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 344410762643683,
+					"parameters": {
+						"layer": "0",
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 202927918829732
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "caixa_de_texto",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 165289149538255
+						}
+					],
+					"actions": [
+						{
+							"id": "set-css-style",
+							"objectClass": "lvl9_EntradaDeTexto",
+							"sid": 454970256191232,
+							"parameters": {
+								"property-name": "\"background-color\"\r\n",
+								"value": "\"black\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "lvl9_EntradaDeTexto",
+							"sid": 147458709515817,
+							"parameters": {
+								"property-name": "\"border\"\r\n",
+								"value": "\"1px solid lime\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "lvl9_EntradaDeTexto",
+							"sid": 582765011070685,
+							"parameters": {
+								"property-name": "\"outline\"\r\n",
+								"value": "\"none\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "lvl9_EntradaDeTexto",
+							"sid": 803864705677431,
+							"parameters": {
+								"property-name": "\"text-align\"\r\n",
+								"value": "\"center\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "lvl9_EntradaDeTexto",
+							"sid": 972104406537711,
+							"parameters": {
+								"property-name": "\"color\"\r\n",
+								"value": " \"lime\""
+							}
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "lvl9_EntradaDeTexto",
+							"sid": 180045327511906,
+							"parameters": {
+								"property-name": "\"font-size\"\r\n",
+								"value": " \"40px\""
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 175400800235436,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 9/lvl9__xcreenplay__hypersonic-hackers"
+								},
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 472268725751750
+				}
+			],
+			"sid": 939967662469884
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "fase 9 ",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 422584450875657
+						}
+					],
+					"actions": [
+						{
+							"id": "set-cursor-from-sprite",
+							"objectClass": "Mouse",
+							"sid": 361462413032023,
+							"parameters": {
+								"sprite": "cursor"
+							}
+						}
+					],
+					"sid": 707060470103364
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 323902479329906,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl9_botaoexit"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 321077587580550,
+							"parameters": {
+								"layout": "Menu"
+							}
+						},
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 797518874340023
+						}
+					],
+					"sid": 595243395454830
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 679551345309569
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 761229659515088,
+							"parameters": {
+								"variable": "lvl9_etapa",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 933238455413006
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "etapa1",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 959746789214032,
+									"parameters": {
+										"variable": "lvl9_etapa",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 443472555291657,
+									"parameters": {
+										"variable": "lvl9_resposta",
+										"value": "9"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lvl9_txt_etapaqueta",
+									"sid": 881440582761254,
+									"parameters": {
+										"text": "\"Nivel : 1\""
+									}
+								}
+							],
+							"sid": 189712262569771,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 841338865745523,
+											"parameters": {
+												"key": 13
+											}
+										},
+										{
+											"id": "compare-text",
+											"objectClass": "lvl9_EntradaDeTexto",
+											"sid": 294170329554863,
+											"parameters": {
+												"text": "\"9\"",
+												"case": "case-insensitive"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 402260776337953,
+											"parameters": {
+												"variable": "lvl9_etapa",
+												"comparison": 0,
+												"value": "0"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 470542888031181,
+											"parameters": {
+												"variable": "lvl9_resposta",
+												"comparison": 0,
+												"value": "9"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 795490576238450,
+											"parameters": {
+												"variable": "lvl9_etapa",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "lvl9_EntradaDeTexto",
+											"sid": 505531496858808,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 728878607571657
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "desenhos-resultados-etapa1",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 659305594708821,
+													"parameters": {
+														"instance-variable": "idtexto",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 932300596067472,
+													"parameters": {
+														"text": "\"8\""
+													}
+												}
+											],
+											"sid": 317670812568976
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 308685397468087,
+													"parameters": {
+														"instance-variable": "idtexto",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 399515086964189,
+													"parameters": {
+														"text": "\"7\""
+													}
+												}
+											],
+											"sid": 200043444380575
+										}
+									],
+									"sid": 544280388357287
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "operadores-etapa1",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_operadores",
+													"sid": 484788226339628,
+													"parameters": {
+														"instance-variable": "idoperadores",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_operadores",
+													"sid": 503615843666513,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 916946952586198
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_operadores",
+													"sid": 882808803637606,
+													"parameters": {
+														"instance-variable": "idoperadores",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_operadores",
+													"sid": 883004720881565,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 501308103291966
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_operadores",
+													"sid": 209012314024655,
+													"parameters": {
+														"instance-variable": "idoperadores",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_operadores",
+													"sid": 384396277568222,
+													"parameters": {
+														"frame-number": "2"
+													}
+												}
+											],
+											"sid": 745170016276139
+										}
+									],
+									"sid": 845892783477915
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "desenhos-etapa-1",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 641362056880852,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 185981555378088,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 528939607824363
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 185453978547383,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 450548983572633,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 471670347646808
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 544834050170371,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 912464421766513,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 400279975256815
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 497446702887999,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 922778796503865,
+													"parameters": {
+														"frame-number": "2"
+													}
+												}
+											],
+											"sid": 381662737028577
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 737854522112926,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "4"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 849511550521963,
+													"parameters": {
+														"frame-number": "2"
+													}
+												}
+											],
+											"sid": 206757581056632
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 645794221440473,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 765402601034244,
+													"parameters": {
+														"frame-number": "2"
+													}
+												}
+											],
+											"sid": 403574539772752
+										}
+									],
+									"sid": 557204653753382
+								}
+							]
+						}
+					],
+					"sid": 392139778020160
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "etapa 2",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 715423824804943,
+									"parameters": {
+										"variable": "lvl9_etapa",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 458471392267453,
+									"parameters": {
+										"variable": "lvl9_resposta",
+										"value": "144"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lvl9_txt_etapaqueta",
+									"sid": 898264158195583,
+									"parameters": {
+										"text": "\"Nivel : 2\""
+									}
+								}
+							],
+							"sid": 485623480104875,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 766909195730049,
+											"parameters": {
+												"key": 13
+											}
+										},
+										{
+											"id": "compare-text",
+											"objectClass": "lvl9_EntradaDeTexto",
+											"sid": 155947137946374,
+											"parameters": {
+												"text": "\"144\"",
+												"case": "case-insensitive"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 473644201795108,
+											"parameters": {
+												"variable": "lvl9_etapa",
+												"comparison": 0,
+												"value": "1"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 595541986526971,
+											"parameters": {
+												"variable": "lvl9_resposta",
+												"comparison": 0,
+												"value": "144"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 377628164583424,
+											"parameters": {
+												"variable": "lvl9_etapa",
+												"value": "2"
+											}
+										},
+										{
+											"id": "set-text",
+											"objectClass": "lvl9_EntradaDeTexto",
+											"sid": 872488621485706,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 111701712771264
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "texto-resultado-etapa2",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 682232065584634,
+													"parameters": {
+														"instance-variable": "idtexto",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 633663473990532,
+													"parameters": {
+														"text": "\"81\""
+													}
+												}
+											],
+											"sid": 561332652627184
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 504946001111165,
+													"parameters": {
+														"instance-variable": "idtexto",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 991783497902371,
+													"parameters": {
+														"text": "\"21\""
+													}
+												}
+											],
+											"sid": 946556259227254
+										}
+									],
+									"sid": 786704411704436
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "operadores-etapa 2",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_operadores",
+													"sid": 244030379397890,
+													"parameters": {
+														"instance-variable": "idoperadores",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_operadores",
+													"sid": 637301687896118,
+													"parameters": {
+														"frame-number": "2"
+													}
+												}
+											],
+											"sid": 821477835358948
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_operadores",
+													"sid": 470965278230433,
+													"parameters": {
+														"instance-variable": "idoperadores",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_operadores",
+													"sid": 121628367180401,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 529708174671300
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_operadores",
+													"sid": 630267979083734,
+													"parameters": {
+														"instance-variable": "idoperadores",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_operadores",
+													"sid": 522670814539620,
+													"parameters": {
+														"frame-number": "2"
+													}
+												}
+											],
+											"sid": 644676545008722
+										}
+									],
+									"sid": 472940785211287
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "desenhos-etapa2",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 299321823849325,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 715291306010720,
+													"parameters": {
+														"frame-number": "3"
+													}
+												}
+											],
+											"sid": 267687408821912
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 473798793985367,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 238231155564390,
+													"parameters": {
+														"frame-number": "3"
+													}
+												}
+											],
+											"sid": 920811694853420
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 354258052846684,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 446600160819000,
+													"parameters": {
+														"frame-number": "3"
+													}
+												}
+											],
+											"sid": 371524911181676
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 817015765155069,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 366486946075226,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 160990618322916
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 702499608048639,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "4"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 572201644305358,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 507353035112738
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 582991984413510,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 556307993718454,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 110497432929935
+										}
+									],
+									"sid": 481229911771521
+								}
+							]
+						}
+					],
+					"sid": 843195438082260
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "etapa 3",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 809836850692144,
+									"parameters": {
+										"variable": "lvl9_etapa",
+										"comparison": 0,
+										"value": "2"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 537711260917941,
+									"disabled": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 620544887387819,
+									"parameters": {
+										"variable": "lvl9_resposta",
+										"value": "100"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lvl9_txt_etapaqueta",
+									"sid": 616925282768800,
+									"parameters": {
+										"text": "\"Nivel : 3\""
+									}
+								}
+							],
+							"sid": 925288683140951,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "on-key-pressed",
+											"objectClass": "Keyboard",
+											"sid": 754672694561095,
+											"parameters": {
+												"key": 13
+											}
+										},
+										{
+											"id": "compare-text",
+											"objectClass": "lvl9_EntradaDeTexto",
+											"sid": 867553266938187,
+											"parameters": {
+												"text": "\"100\"",
+												"case": "case-insensitive"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 227324573882189,
+											"parameters": {
+												"variable": "lvl9_etapa",
+												"comparison": 0,
+												"value": "2"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 169774432585929,
+											"parameters": {
+												"variable": "lvl9_resposta",
+												"comparison": 0,
+												"value": "100"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 615657928957923,
+											"parameters": {
+												"variable": "lvl9_etapa",
+												"value": "3"
+											}
+										},
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 894758819143415,
+											"disabled": true,
+											"parameters": {
+												"layout": "Menu"
+											}
+										}
+									],
+									"sid": 807271499998255
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "operadores-etapa3",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_operadores",
+													"sid": 113223268000370,
+													"parameters": {
+														"instance-variable": "idoperadores",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_operadores",
+													"sid": 728222950683760,
+													"parameters": {
+														"frame-number": "2"
+													}
+												}
+											],
+											"sid": 941997248638705
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_operadores",
+													"sid": 110316878500640,
+													"parameters": {
+														"instance-variable": "idoperadores",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_operadores",
+													"sid": 348700526328837,
+													"parameters": {
+														"frame-number": "0"
+													}
+												}
+											],
+											"sid": 633135215052038
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_operadores",
+													"sid": 821350767834852,
+													"parameters": {
+														"instance-variable": "idoperadores",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_operadores",
+													"sid": 516940169354711,
+													"parameters": {
+														"frame-number": "2"
+													}
+												}
+											],
+											"sid": 847176292607896
+										}
+									],
+									"sid": 571520293774535
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "desenhos-etapa-3",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 799678486888147,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 904611033359531,
+													"parameters": {
+														"frame-number": "5"
+													}
+												}
+											],
+											"sid": 842899252727492
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 259894070643678,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 769670092688993,
+													"parameters": {
+														"frame-number": "5"
+													}
+												}
+											],
+											"sid": 688045274946964
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 453622170543403,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "2"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 828019257909016,
+													"parameters": {
+														"frame-number": "5"
+													}
+												}
+											],
+											"sid": 611035794815738
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 936866098230406,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "3"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 791101797657274,
+													"parameters": {
+														"frame-number": "3"
+													}
+												}
+											],
+											"sid": 734513080139292
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 145073808276215,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "4"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 821041382208586,
+													"parameters": {
+														"frame-number": "3"
+													}
+												}
+											],
+											"sid": 999512183426025
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_desenhos",
+													"sid": 387467603236093,
+													"parameters": {
+														"instance-variable": "id",
+														"comparison": 0,
+														"value": "5"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-animation-frame",
+													"objectClass": "lvl9_desenhos",
+													"sid": 450190289610894,
+													"parameters": {
+														"frame-number": "3"
+													}
+												}
+											],
+											"sid": 643345672734055
+										}
+									],
+									"sid": 309832449369876
+								},
+								{
+									"eventType": "group",
+									"disabled": false,
+									"title": "texto-resultado-etapa3",
+									"description": "",
+									"isActiveOnStart": true,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 276512377161035,
+													"parameters": {
+														"instance-variable": "idtexto",
+														"comparison": 0,
+														"value": "0"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 867986990255065,
+													"parameters": {
+														"text": "\"400\""
+													}
+												}
+											],
+											"sid": 458011138210657
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-instance-variable",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 715653658574773,
+													"parameters": {
+														"instance-variable": "idtexto",
+														"comparison": 0,
+														"value": "1"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-text",
+													"objectClass": "lvl9_txt_resultado",
+													"sid": 816032157265861,
+													"parameters": {
+														"text": "\"30\""
+													}
+												}
+											],
+											"sid": 398405340447254
+										}
+									],
+									"sid": 305720790056143
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 966746927179305,
+									"parameters": {
+										"variable": "lvl9_etapa",
+										"comparison": 0,
+										"value": "3"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 297849091065551
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 341780147869179,
+									"parameters": {
+										"layout": "Menu"
+									}
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 558199189852654
+								}
+							],
+							"sid": 708277858727192
+						}
+					],
+					"sid": 671567967510170
+				}
+			],
+			"sid": 344358161438780
+		}
+	],
+	"sid": 816730990787456
 }
