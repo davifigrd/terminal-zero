@@ -9,7 +9,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 165750490080872
+			"sid": 873816340847310
 		},
 		{
 			"eventType": "variable",
@@ -19,7 +19,7 @@
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 289011614087044
+			"sid": 522993148151838
 		},
 		{
 			"eventType": "block",
@@ -27,14 +27,14 @@
 				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
-					"sid": 532436485574521
+					"sid": 569681181190325
 				}
 			],
 			"actions": [
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 683471563325348,
+					"sid": 529210727524360,
 					"parameters": {
 						"layer": "1",
 						"visibility": "visible"
@@ -43,7 +43,7 @@
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 295081344381159,
+					"sid": 133000285160419,
 					"parameters": {
 						"layer": "0",
 						"visibility": "invisible"
@@ -52,7 +52,7 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 167305098521613,
+					"sid": 215876967561863,
 					"parameters": {
 						"seconds": "3",
 						"use-timescale": true
@@ -61,7 +61,7 @@
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 345795359688360,
+					"sid": 168383220831442,
 					"parameters": {
 						"layer": "1",
 						"visibility": "invisible"
@@ -70,14 +70,14 @@
 				{
 					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 344410762643683,
+					"sid": 782123114598130,
 					"parameters": {
 						"layer": "0",
 						"visibility": "visible"
 					}
 				}
 			],
-			"sid": 202927918829732
+			"sid": 243565812567765
 		},
 		{
 			"eventType": "group",
@@ -92,14 +92,14 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 165289149538255
+							"sid": 739410122226576
 						}
 					],
 					"actions": [
 						{
 							"id": "set-css-style",
 							"objectClass": "lvl9_EntradaDeTexto",
-							"sid": 454970256191232,
+							"sid": 267637977718050,
 							"parameters": {
 								"property-name": "\"background-color\"\r\n",
 								"value": "\"black\""
@@ -108,7 +108,7 @@
 						{
 							"id": "set-css-style",
 							"objectClass": "lvl9_EntradaDeTexto",
-							"sid": 147458709515817,
+							"sid": 640815870910865,
 							"parameters": {
 								"property-name": "\"border\"\r\n",
 								"value": "\"1px solid lime\""
@@ -117,7 +117,7 @@
 						{
 							"id": "set-css-style",
 							"objectClass": "lvl9_EntradaDeTexto",
-							"sid": 582765011070685,
+							"sid": 668735297656901,
 							"parameters": {
 								"property-name": "\"outline\"\r\n",
 								"value": "\"none\""
@@ -126,7 +126,7 @@
 						{
 							"id": "set-css-style",
 							"objectClass": "lvl9_EntradaDeTexto",
-							"sid": 803864705677431,
+							"sid": 115922793860338,
 							"parameters": {
 								"property-name": "\"text-align\"\r\n",
 								"value": "\"center\""
@@ -135,7 +135,7 @@
 						{
 							"id": "set-css-style",
 							"objectClass": "lvl9_EntradaDeTexto",
-							"sid": 972104406537711,
+							"sid": 126341696704928,
 							"parameters": {
 								"property-name": "\"color\"\r\n",
 								"value": " \"lime\""
@@ -144,7 +144,7 @@
 						{
 							"id": "set-css-style",
 							"objectClass": "lvl9_EntradaDeTexto",
-							"sid": 180045327511906,
+							"sid": 897224771137163,
 							"parameters": {
 								"property-name": "\"font-size\"\r\n",
 								"value": " \"40px\""
@@ -153,7 +153,7 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 175400800235436,
+							"sid": 810737656574228,
 							"parameters": {
 								"audio-file": {
 									"path": "Level 9/lvl9__xcreenplay__hypersonic-hackers"
@@ -165,10 +165,10 @@
 							}
 						}
 					],
-					"sid": 472268725751750
+					"sid": 428035569986688
 				}
 			],
-			"sid": 939967662469884
+			"sid": 882328612215431
 		},
 		{
 			"eventType": "group",
@@ -183,20 +183,20 @@
 						{
 							"id": "every-tick",
 							"objectClass": "System",
-							"sid": 422584450875657
+							"sid": 930891893273188
 						}
 					],
 					"actions": [
 						{
 							"id": "set-cursor-from-sprite",
 							"objectClass": "Mouse",
-							"sid": 361462413032023,
+							"sid": 550292138563322,
 							"parameters": {
 								"sprite": "cursor"
 							}
 						}
 					],
-					"sid": 707060470103364
+					"sid": 439247579471703
 				},
 				{
 					"eventType": "block",
@@ -204,7 +204,7 @@
 						{
 							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 323902479329906,
+							"sid": 525499602297472,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
@@ -216,7 +216,7 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 321077587580550,
+							"sid": 612192720284011,
 							"parameters": {
 								"layout": "Menu"
 							}
@@ -224,10 +224,10 @@
 						{
 							"id": "stop-all",
 							"objectClass": "Audio",
-							"sid": 797518874340023
+							"sid": 410899896393225
 						}
 					],
-					"sid": 595243395454830
+					"sid": 371636367194989
 				},
 				{
 					"eventType": "block",
@@ -235,21 +235,21 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 679551345309569
+							"sid": 406203991166124
 						}
 					],
 					"actions": [
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 761229659515088,
+							"sid": 559095776905059,
 							"parameters": {
 								"variable": "lvl9_etapa",
 								"value": "0"
 							}
 						}
 					],
-					"sid": 933238455413006
+					"sid": 815160767736289
 				},
 				{
 					"eventType": "group",
@@ -264,7 +264,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 959746789214032,
+									"sid": 232347732080930,
 									"parameters": {
 										"variable": "lvl9_etapa",
 										"comparison": 0,
@@ -276,7 +276,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 443472555291657,
+									"sid": 120202779668661,
 									"parameters": {
 										"variable": "lvl9_resposta",
 										"value": "9"
@@ -285,13 +285,13 @@
 								{
 									"id": "set-text",
 									"objectClass": "lvl9_txt_etapaqueta",
-									"sid": 881440582761254,
+									"sid": 573258149971718,
 									"parameters": {
 										"text": "\"Nivel : 1\""
 									}
 								}
 							],
-							"sid": 189712262569771,
+							"sid": 715136451575301,
 							"children": [
 								{
 									"eventType": "block",
@@ -299,7 +299,7 @@
 										{
 											"id": "on-key-pressed",
 											"objectClass": "Keyboard",
-											"sid": 841338865745523,
+											"sid": 643219464786994,
 											"parameters": {
 												"key": 13
 											}
@@ -307,7 +307,7 @@
 										{
 											"id": "compare-text",
 											"objectClass": "lvl9_EntradaDeTexto",
-											"sid": 294170329554863,
+											"sid": 495407513604338,
 											"parameters": {
 												"text": "\"9\"",
 												"case": "case-insensitive"
@@ -316,7 +316,7 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 402260776337953,
+											"sid": 307097060759389,
 											"parameters": {
 												"variable": "lvl9_etapa",
 												"comparison": 0,
@@ -326,7 +326,7 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 470542888031181,
+											"sid": 733272978627307,
 											"parameters": {
 												"variable": "lvl9_resposta",
 												"comparison": 0,
@@ -338,7 +338,7 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 795490576238450,
+											"sid": 576948103909619,
 											"parameters": {
 												"variable": "lvl9_etapa",
 												"value": "1"
@@ -347,13 +347,13 @@
 										{
 											"id": "set-text",
 											"objectClass": "lvl9_EntradaDeTexto",
-											"sid": 505531496858808,
+											"sid": 413780696022893,
 											"parameters": {
 												"text": "\"\""
 											}
 										}
 									],
-									"sid": 728878607571657
+									"sid": 324640769501614
 								},
 								{
 									"eventType": "group",
@@ -368,7 +368,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 659305594708821,
+													"sid": 180047150313719,
 													"parameters": {
 														"instance-variable": "idtexto",
 														"comparison": 0,
@@ -380,13 +380,13 @@
 												{
 													"id": "set-text",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 932300596067472,
+													"sid": 835597363423223,
 													"parameters": {
 														"text": "\"8\""
 													}
 												}
 											],
-											"sid": 317670812568976
+											"sid": 733242346244077
 										},
 										{
 											"eventType": "block",
@@ -394,7 +394,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 308685397468087,
+													"sid": 410813112088922,
 													"parameters": {
 														"instance-variable": "idtexto",
 														"comparison": 0,
@@ -406,16 +406,16 @@
 												{
 													"id": "set-text",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 399515086964189,
+													"sid": 458208647170127,
 													"parameters": {
 														"text": "\"7\""
 													}
 												}
 											],
-											"sid": 200043444380575
+											"sid": 140234527452926
 										}
 									],
-									"sid": 544280388357287
+									"sid": 670728721497795
 								},
 								{
 									"eventType": "group",
@@ -430,7 +430,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_operadores",
-													"sid": 484788226339628,
+													"sid": 219165845318282,
 													"parameters": {
 														"instance-variable": "idoperadores",
 														"comparison": 0,
@@ -442,13 +442,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_operadores",
-													"sid": 503615843666513,
+													"sid": 962079310395771,
 													"parameters": {
 														"frame-number": "0"
 													}
 												}
 											],
-											"sid": 916946952586198
+											"sid": 276435152419738
 										},
 										{
 											"eventType": "block",
@@ -456,7 +456,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_operadores",
-													"sid": 882808803637606,
+													"sid": 590932669618642,
 													"parameters": {
 														"instance-variable": "idoperadores",
 														"comparison": 0,
@@ -468,13 +468,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_operadores",
-													"sid": 883004720881565,
+													"sid": 261644221276793,
 													"parameters": {
 														"frame-number": "0"
 													}
 												}
 											],
-											"sid": 501308103291966
+											"sid": 340311358990067
 										},
 										{
 											"eventType": "block",
@@ -482,7 +482,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_operadores",
-													"sid": 209012314024655,
+													"sid": 568938224679054,
 													"parameters": {
 														"instance-variable": "idoperadores",
 														"comparison": 0,
@@ -494,16 +494,16 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_operadores",
-													"sid": 384396277568222,
+													"sid": 156180886890676,
 													"parameters": {
 														"frame-number": "2"
 													}
 												}
 											],
-											"sid": 745170016276139
+											"sid": 396837776753086
 										}
 									],
-									"sid": 845892783477915
+									"sid": 559729932239009
 								},
 								{
 									"eventType": "group",
@@ -518,7 +518,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 641362056880852,
+													"sid": 886697055836296,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -530,13 +530,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 185981555378088,
+													"sid": 973774315391590,
 													"parameters": {
 														"frame-number": "0"
 													}
 												}
 											],
-											"sid": 528939607824363
+											"sid": 388876646340845
 										},
 										{
 											"eventType": "block",
@@ -544,7 +544,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 185453978547383,
+													"sid": 935481695953021,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -556,13 +556,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 450548983572633,
+													"sid": 777775838765940,
 													"parameters": {
 														"frame-number": "0"
 													}
 												}
 											],
-											"sid": 471670347646808
+											"sid": 942152226409470
 										},
 										{
 											"eventType": "block",
@@ -570,7 +570,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 544834050170371,
+													"sid": 959665773660746,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -582,13 +582,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 912464421766513,
+													"sid": 542117748441759,
 													"parameters": {
 														"frame-number": "0"
 													}
 												}
 											],
-											"sid": 400279975256815
+											"sid": 506397389442203
 										},
 										{
 											"eventType": "block",
@@ -596,7 +596,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 497446702887999,
+													"sid": 145047041108196,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -608,13 +608,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 922778796503865,
+													"sid": 409075156008021,
 													"parameters": {
 														"frame-number": "2"
 													}
 												}
 											],
-											"sid": 381662737028577
+											"sid": 322300512683904
 										},
 										{
 											"eventType": "block",
@@ -622,7 +622,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 737854522112926,
+													"sid": 754378288841560,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -634,13 +634,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 849511550521963,
+													"sid": 300949086201093,
 													"parameters": {
 														"frame-number": "2"
 													}
 												}
 											],
-											"sid": 206757581056632
+											"sid": 610445025616281
 										},
 										{
 											"eventType": "block",
@@ -648,7 +648,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 645794221440473,
+													"sid": 520542398979370,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -660,21 +660,21 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 765402601034244,
+													"sid": 611161687688925,
 													"parameters": {
 														"frame-number": "2"
 													}
 												}
 											],
-											"sid": 403574539772752
+											"sid": 268476159047585
 										}
 									],
-									"sid": 557204653753382
+									"sid": 806838166922562
 								}
 							]
 						}
 					],
-					"sid": 392139778020160
+					"sid": 358989470197996
 				},
 				{
 					"eventType": "group",
@@ -689,7 +689,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 715423824804943,
+									"sid": 303629078762125,
 									"parameters": {
 										"variable": "lvl9_etapa",
 										"comparison": 0,
@@ -701,7 +701,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 458471392267453,
+									"sid": 835445237725615,
 									"parameters": {
 										"variable": "lvl9_resposta",
 										"value": "144"
@@ -710,13 +710,13 @@
 								{
 									"id": "set-text",
 									"objectClass": "lvl9_txt_etapaqueta",
-									"sid": 898264158195583,
+									"sid": 871365964172839,
 									"parameters": {
 										"text": "\"Nivel : 2\""
 									}
 								}
 							],
-							"sid": 485623480104875,
+							"sid": 658730640035027,
 							"children": [
 								{
 									"eventType": "block",
@@ -724,7 +724,7 @@
 										{
 											"id": "on-key-pressed",
 											"objectClass": "Keyboard",
-											"sid": 766909195730049,
+											"sid": 416170176712864,
 											"parameters": {
 												"key": 13
 											}
@@ -732,7 +732,7 @@
 										{
 											"id": "compare-text",
 											"objectClass": "lvl9_EntradaDeTexto",
-											"sid": 155947137946374,
+											"sid": 686779024434455,
 											"parameters": {
 												"text": "\"144\"",
 												"case": "case-insensitive"
@@ -741,7 +741,7 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 473644201795108,
+											"sid": 764771657950137,
 											"parameters": {
 												"variable": "lvl9_etapa",
 												"comparison": 0,
@@ -751,7 +751,7 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 595541986526971,
+											"sid": 642535959533416,
 											"parameters": {
 												"variable": "lvl9_resposta",
 												"comparison": 0,
@@ -763,7 +763,7 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 377628164583424,
+											"sid": 712230098972205,
 											"parameters": {
 												"variable": "lvl9_etapa",
 												"value": "2"
@@ -772,13 +772,13 @@
 										{
 											"id": "set-text",
 											"objectClass": "lvl9_EntradaDeTexto",
-											"sid": 872488621485706,
+											"sid": 333512321751387,
 											"parameters": {
 												"text": "\"\""
 											}
 										}
 									],
-									"sid": 111701712771264
+									"sid": 893251029326159
 								},
 								{
 									"eventType": "group",
@@ -793,7 +793,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 682232065584634,
+													"sid": 823513074324039,
 													"parameters": {
 														"instance-variable": "idtexto",
 														"comparison": 0,
@@ -805,13 +805,13 @@
 												{
 													"id": "set-text",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 633663473990532,
+													"sid": 710506730393309,
 													"parameters": {
 														"text": "\"81\""
 													}
 												}
 											],
-											"sid": 561332652627184
+											"sid": 110110622081868
 										},
 										{
 											"eventType": "block",
@@ -819,7 +819,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 504946001111165,
+													"sid": 195849344466315,
 													"parameters": {
 														"instance-variable": "idtexto",
 														"comparison": 0,
@@ -831,16 +831,16 @@
 												{
 													"id": "set-text",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 991783497902371,
+													"sid": 489209514427662,
 													"parameters": {
 														"text": "\"21\""
 													}
 												}
 											],
-											"sid": 946556259227254
+											"sid": 787925421973037
 										}
 									],
-									"sid": 786704411704436
+									"sid": 944843669496077
 								},
 								{
 									"eventType": "group",
@@ -855,7 +855,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_operadores",
-													"sid": 244030379397890,
+													"sid": 910863530420231,
 													"parameters": {
 														"instance-variable": "idoperadores",
 														"comparison": 0,
@@ -867,13 +867,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_operadores",
-													"sid": 637301687896118,
+													"sid": 573019766144742,
 													"parameters": {
 														"frame-number": "2"
 													}
 												}
 											],
-											"sid": 821477835358948
+											"sid": 573768427205749
 										},
 										{
 											"eventType": "block",
@@ -881,7 +881,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_operadores",
-													"sid": 470965278230433,
+													"sid": 294973384847988,
 													"parameters": {
 														"instance-variable": "idoperadores",
 														"comparison": 0,
@@ -893,13 +893,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_operadores",
-													"sid": 121628367180401,
+													"sid": 187851153543598,
 													"parameters": {
 														"frame-number": "0"
 													}
 												}
 											],
-											"sid": 529708174671300
+											"sid": 511511488737839
 										},
 										{
 											"eventType": "block",
@@ -907,7 +907,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_operadores",
-													"sid": 630267979083734,
+													"sid": 195636820524570,
 													"parameters": {
 														"instance-variable": "idoperadores",
 														"comparison": 0,
@@ -919,16 +919,16 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_operadores",
-													"sid": 522670814539620,
+													"sid": 111388845923968,
 													"parameters": {
 														"frame-number": "2"
 													}
 												}
 											],
-											"sid": 644676545008722
+											"sid": 367983749441822
 										}
 									],
-									"sid": 472940785211287
+									"sid": 791767544114727
 								},
 								{
 									"eventType": "group",
@@ -943,7 +943,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 299321823849325,
+													"sid": 652644933019053,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -955,13 +955,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 715291306010720,
+													"sid": 883103824668969,
 													"parameters": {
 														"frame-number": "3"
 													}
 												}
 											],
-											"sid": 267687408821912
+											"sid": 718169945641930
 										},
 										{
 											"eventType": "block",
@@ -969,7 +969,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 473798793985367,
+													"sid": 290835723830872,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -981,13 +981,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 238231155564390,
+													"sid": 363379566514706,
 													"parameters": {
 														"frame-number": "3"
 													}
 												}
 											],
-											"sid": 920811694853420
+											"sid": 361858224722590
 										},
 										{
 											"eventType": "block",
@@ -995,7 +995,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 354258052846684,
+													"sid": 906282577123479,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -1007,13 +1007,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 446600160819000,
+													"sid": 374187949063634,
 													"parameters": {
 														"frame-number": "3"
 													}
 												}
 											],
-											"sid": 371524911181676
+											"sid": 894510355183259
 										},
 										{
 											"eventType": "block",
@@ -1021,7 +1021,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 817015765155069,
+													"sid": 665270457427434,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -1033,13 +1033,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 366486946075226,
+													"sid": 836473600112524,
 													"parameters": {
 														"frame-number": "0"
 													}
 												}
 											],
-											"sid": 160990618322916
+											"sid": 135490485529809
 										},
 										{
 											"eventType": "block",
@@ -1047,7 +1047,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 702499608048639,
+													"sid": 345141394963794,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -1059,13 +1059,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 572201644305358,
+													"sid": 919720229622039,
 													"parameters": {
 														"frame-number": "0"
 													}
 												}
 											],
-											"sid": 507353035112738
+											"sid": 510956413567614
 										},
 										{
 											"eventType": "block",
@@ -1073,7 +1073,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 582991984413510,
+													"sid": 725336064276666,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -1085,21 +1085,21 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 556307993718454,
+													"sid": 692535146043361,
 													"parameters": {
 														"frame-number": "0"
 													}
 												}
 											],
-											"sid": 110497432929935
+											"sid": 569228158407473
 										}
 									],
-									"sid": 481229911771521
+									"sid": 564259178004506
 								}
 							]
 						}
 					],
-					"sid": 843195438082260
+					"sid": 805518188588724
 				},
 				{
 					"eventType": "group",
@@ -1114,7 +1114,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 809836850692144,
+									"sid": 463886352032668,
 									"parameters": {
 										"variable": "lvl9_etapa",
 										"comparison": 0,
@@ -1124,7 +1124,7 @@
 								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
-									"sid": 537711260917941,
+									"sid": 204673416942119,
 									"disabled": true
 								}
 							],
@@ -1132,7 +1132,7 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 620544887387819,
+									"sid": 637894312976266,
 									"parameters": {
 										"variable": "lvl9_resposta",
 										"value": "100"
@@ -1141,13 +1141,13 @@
 								{
 									"id": "set-text",
 									"objectClass": "lvl9_txt_etapaqueta",
-									"sid": 616925282768800,
+									"sid": 820529588548184,
 									"parameters": {
 										"text": "\"Nivel : 3\""
 									}
 								}
 							],
-							"sid": 925288683140951,
+							"sid": 452734945350209,
 							"children": [
 								{
 									"eventType": "block",
@@ -1155,7 +1155,7 @@
 										{
 											"id": "on-key-pressed",
 											"objectClass": "Keyboard",
-											"sid": 754672694561095,
+											"sid": 900280333038775,
 											"parameters": {
 												"key": 13
 											}
@@ -1163,7 +1163,7 @@
 										{
 											"id": "compare-text",
 											"objectClass": "lvl9_EntradaDeTexto",
-											"sid": 867553266938187,
+											"sid": 890418650973694,
 											"parameters": {
 												"text": "\"100\"",
 												"case": "case-insensitive"
@@ -1172,7 +1172,7 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 227324573882189,
+											"sid": 313659112231827,
 											"parameters": {
 												"variable": "lvl9_etapa",
 												"comparison": 0,
@@ -1182,7 +1182,7 @@
 										{
 											"id": "compare-eventvar",
 											"objectClass": "System",
-											"sid": 169774432585929,
+											"sid": 507656167789197,
 											"parameters": {
 												"variable": "lvl9_resposta",
 												"comparison": 0,
@@ -1194,7 +1194,7 @@
 										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
-											"sid": 615657928957923,
+											"sid": 332614521242076,
 											"parameters": {
 												"variable": "lvl9_etapa",
 												"value": "3"
@@ -1203,14 +1203,14 @@
 										{
 											"id": "go-to-layout",
 											"objectClass": "System",
-											"sid": 894758819143415,
+											"sid": 699203939153170,
 											"disabled": true,
 											"parameters": {
 												"layout": "Menu"
 											}
 										}
 									],
-									"sid": 807271499998255
+									"sid": 584294850210011
 								},
 								{
 									"eventType": "group",
@@ -1225,7 +1225,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_operadores",
-													"sid": 113223268000370,
+													"sid": 192946535269095,
 													"parameters": {
 														"instance-variable": "idoperadores",
 														"comparison": 0,
@@ -1237,13 +1237,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_operadores",
-													"sid": 728222950683760,
+													"sid": 460248179686808,
 													"parameters": {
 														"frame-number": "2"
 													}
 												}
 											],
-											"sid": 941997248638705
+											"sid": 869185657278906
 										},
 										{
 											"eventType": "block",
@@ -1251,7 +1251,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_operadores",
-													"sid": 110316878500640,
+													"sid": 717995997476939,
 													"parameters": {
 														"instance-variable": "idoperadores",
 														"comparison": 0,
@@ -1263,13 +1263,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_operadores",
-													"sid": 348700526328837,
+													"sid": 476414159135627,
 													"parameters": {
 														"frame-number": "0"
 													}
 												}
 											],
-											"sid": 633135215052038
+											"sid": 730344562977269
 										},
 										{
 											"eventType": "block",
@@ -1277,7 +1277,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_operadores",
-													"sid": 821350767834852,
+													"sid": 578164126727710,
 													"parameters": {
 														"instance-variable": "idoperadores",
 														"comparison": 0,
@@ -1289,16 +1289,16 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_operadores",
-													"sid": 516940169354711,
+													"sid": 206607083852680,
 													"parameters": {
 														"frame-number": "2"
 													}
 												}
 											],
-											"sid": 847176292607896
+											"sid": 657780827386882
 										}
 									],
-									"sid": 571520293774535
+									"sid": 538736420967771
 								},
 								{
 									"eventType": "group",
@@ -1313,7 +1313,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 799678486888147,
+													"sid": 191532572257015,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -1325,13 +1325,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 904611033359531,
+													"sid": 930396568089801,
 													"parameters": {
 														"frame-number": "5"
 													}
 												}
 											],
-											"sid": 842899252727492
+											"sid": 569051219162711
 										},
 										{
 											"eventType": "block",
@@ -1339,7 +1339,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 259894070643678,
+													"sid": 869355961640359,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -1351,13 +1351,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 769670092688993,
+													"sid": 142934664999587,
 													"parameters": {
 														"frame-number": "5"
 													}
 												}
 											],
-											"sid": 688045274946964
+											"sid": 991941418759941
 										},
 										{
 											"eventType": "block",
@@ -1365,7 +1365,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 453622170543403,
+													"sid": 190151718413213,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -1377,13 +1377,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 828019257909016,
+													"sid": 560731787565545,
 													"parameters": {
 														"frame-number": "5"
 													}
 												}
 											],
-											"sid": 611035794815738
+											"sid": 808356233572162
 										},
 										{
 											"eventType": "block",
@@ -1391,7 +1391,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 936866098230406,
+													"sid": 135229627101121,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -1403,13 +1403,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 791101797657274,
+													"sid": 295747535044911,
 													"parameters": {
 														"frame-number": "3"
 													}
 												}
 											],
-											"sid": 734513080139292
+											"sid": 517764708778805
 										},
 										{
 											"eventType": "block",
@@ -1417,7 +1417,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 145073808276215,
+													"sid": 318795783166643,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -1429,13 +1429,13 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 821041382208586,
+													"sid": 503347639685101,
 													"parameters": {
 														"frame-number": "3"
 													}
 												}
 											],
-											"sid": 999512183426025
+											"sid": 731675753424911
 										},
 										{
 											"eventType": "block",
@@ -1443,7 +1443,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_desenhos",
-													"sid": 387467603236093,
+													"sid": 481045764620524,
 													"parameters": {
 														"instance-variable": "id",
 														"comparison": 0,
@@ -1455,16 +1455,16 @@
 												{
 													"id": "set-animation-frame",
 													"objectClass": "lvl9_desenhos",
-													"sid": 450190289610894,
+													"sid": 490779051989987,
 													"parameters": {
 														"frame-number": "3"
 													}
 												}
 											],
-											"sid": 643345672734055
+											"sid": 219162582317233
 										}
 									],
-									"sid": 309832449369876
+									"sid": 292637974892939
 								},
 								{
 									"eventType": "group",
@@ -1479,7 +1479,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 276512377161035,
+													"sid": 997537497102551,
 													"parameters": {
 														"instance-variable": "idtexto",
 														"comparison": 0,
@@ -1491,13 +1491,13 @@
 												{
 													"id": "set-text",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 867986990255065,
+													"sid": 446790302221692,
 													"parameters": {
 														"text": "\"400\""
 													}
 												}
 											],
-											"sid": 458011138210657
+											"sid": 428911296270262
 										},
 										{
 											"eventType": "block",
@@ -1505,7 +1505,7 @@
 												{
 													"id": "compare-instance-variable",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 715653658574773,
+													"sid": 451482590486350,
 													"parameters": {
 														"instance-variable": "idtexto",
 														"comparison": 0,
@@ -1517,16 +1517,16 @@
 												{
 													"id": "set-text",
 													"objectClass": "lvl9_txt_resultado",
-													"sid": 816032157265861,
+													"sid": 479934178140262,
 													"parameters": {
 														"text": "\"30\""
 													}
 												}
 											],
-											"sid": 398405340447254
+											"sid": 565184345909148
 										}
 									],
-									"sid": 305720790056143
+									"sid": 539130887272499
 								}
 							]
 						},
@@ -1536,7 +1536,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 966746927179305,
+									"sid": 561673482097584,
 									"parameters": {
 										"variable": "lvl9_etapa",
 										"comparison": 0,
@@ -1546,14 +1546,14 @@
 								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
-									"sid": 297849091065551
+									"sid": 438244140421948
 								}
 							],
 							"actions": [
 								{
 									"id": "go-to-layout",
 									"objectClass": "System",
-									"sid": 341780147869179,
+									"sid": 740676978316893,
 									"parameters": {
 										"layout": "Menu"
 									}
@@ -1561,17 +1561,17 @@
 								{
 									"id": "stop-all",
 									"objectClass": "Audio",
-									"sid": 558199189852654
+									"sid": 506443666265265
 								}
 							],
-							"sid": 708277858727192
+							"sid": 534489233580200
 						}
 					],
-					"sid": 671567967510170
+					"sid": 273667889567745
 				}
 			],
-			"sid": 344358161438780
+			"sid": 345193089946713
 		}
 	],
-	"sid": 816730990787456
+	"sid": 970995932359665
 }
