@@ -67,13 +67,13 @@
 						{
 							"id": "play",
 							"objectClass": "Audio",
-							"sid": 461333248557463,
+							"sid": 637439760208756,
 							"parameters": {
 								"audio-file": {
 									"path": "level 7/lvl7_soundScary"
 								},
-								"loop": "not-looping",
-								"volume": "-25",
+								"loop": "looping",
+								"volume": "-40",
 								"stereo-pan": "0",
 								"tag-optional": "\"\""
 							}
@@ -220,11 +220,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 675308351705342,
+							"sid": 944627078326194,
 							"parameters": {
 								"first-value": "lowercase(lvl7_TextInput.Text)",
 								"comparison": 0,
-								"second-value": "\"cfiaanj\""
+								"second-value": "\"cbrcara\""
 							}
 						}
 					],
@@ -283,11 +283,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 726196643395101,
+							"sid": 370928455783185,
 							"parameters": {
 								"first-value": "lowercase(lvl7_TextInput.Text)",
 								"comparison": 0,
-								"second-value": "\"cfiaanj\""
+								"second-value": "\"cbrcara\""
 							},
 							"isInverted": true
 						}
@@ -701,6 +701,140 @@
 				}
 			],
 			"sid": 615319523960823
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "lvl7_Linhas",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 481690976152080
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "spr_linhavertical",
+							"sid": 653646556886091,
+							"parameters": {
+								"x": "clamp(Mouse.X, 243, 1157)",
+								"y": "308"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "spr_linhahorizontal",
+							"sid": 768507045596804,
+							"parameters": {
+								"x": "700",
+								"y": "clamp(Mouse.Y, 83, 534)"
+							}
+						}
+					],
+					"sid": 141151437829148
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 321946963896840,
+							"parameters": {
+								"first-value": "Mouse.X",
+								"comparison": 4,
+								"second-value": "243"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 364539171527705,
+							"parameters": {
+								"first-value": "Mouse.X",
+								"comparison": 2,
+								"second-value": "1157"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 850840873510739,
+							"parameters": {
+								"first-value": "Mouse.Y",
+								"comparison": 4,
+								"second-value": "83"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 830674198452853,
+							"parameters": {
+								"first-value": "Mouse.Y",
+								"comparison": 2,
+								"second-value": "534"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "spr_linhavertical",
+							"sid": 425234789539609,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "spr_linhahorizontal",
+							"sid": 411077032954629,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 128815646693707
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 367149555682826
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "spr_linhavertical",
+							"sid": 940305200825431,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "spr_linhahorizontal",
+							"sid": 814039901469633,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 342199999375463
+				}
+			],
+			"sid": 731498265634845
 		},
 		{
 			"eventType": "group",
@@ -1384,6 +1518,318 @@
 						}
 					],
 					"sid": 954193531153884
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 117008803885432,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Chade"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 340786447734083,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 159603303126836,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 706988191540113,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: CHADE DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 203798762656611,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 758163898187545
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 164619074458669,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Sudao"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 437198948004716,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 441696178831332,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 424359848426448,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: SUDÃO DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 348022558027583,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 485368760258408
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 474236815957414,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_RepublicaCongo"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 101465795596153,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 982516262777891,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 350002144212981,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: REPÚBLICA DEMOCRÁTICA DO CONGO DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 444521566743067,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 705519161129875
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 256636961128646,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_libia"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 883279201516425,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 428599849935115,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 947580667561838,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: LÍBIA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 352801051515029,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 832716972567855
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 967204835588094,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Egito"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 529155786258927,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 474545931012295,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 361671254629821,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: EGITO DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 570529217022508,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 513650737426367
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 752392871780251,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Alemanha"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 414118068852643,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 555513758281434,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 226411785247525,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: ALEMANHA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 939928423221067,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 192448580380745
 				}
 			],
 			"sid": 882777918833006
