@@ -382,11 +382,11 @@
 										{
 											"id": "compare-instance-variable",
 											"objectClass": "Sign_Hitbox_Familly",
-											"sid": 839892373815327,
+											"sid": 500567513630617,
 											"parameters": {
 												"instance-variable": "sign",
 												"comparison": 0,
-												"value": "\"menu\""
+												"value": "\"door\""
 											}
 										}
 									],
@@ -394,18 +394,18 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 166960622087979,
+											"sid": 195701816031469,
 											"parameters": {
-												"layer": "\"menu\"",
+												"layer": "\"door\"",
 												"visibility": "visible"
 											}
 										},
 										{
 											"id": "set-layer-interactive",
 											"objectClass": "System",
-											"sid": 633316275259323,
+											"sid": 964330069861285,
 											"parameters": {
-												"layer": "\"menu\"",
+												"layer": "\"door\"",
 												"interactive": true
 											}
 										},
@@ -502,6 +502,15 @@
 									],
 									"actions": [
 										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 376150308579876,
+											"parameters": {
+												"layer": "\"yes_no\"",
+												"interactive": false
+											}
+										},
+										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
 											"sid": 479635574068347,
@@ -542,6 +551,15 @@
 									],
 									"actions": [
 										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 475600266086296,
+											"parameters": {
+												"layer": "\"yes_no\"",
+												"interactive": false
+											}
+										},
+										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
 											"sid": 446714733141123,
@@ -568,7 +586,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Interação com a cama"
+					"text": "Tela de escolha"
 				},
 				{
 					"eventType": "block",
@@ -721,9 +739,9 @@
 										{
 											"id": "layer-is-visible",
 											"objectClass": "System",
-											"sid": 170627598613264,
+											"sid": 145232124907277,
 											"parameters": {
-												"layer": "\"menu\""
+												"layer": "\"door\""
 											}
 										}
 									],
@@ -771,18 +789,18 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 506444282354659,
+											"sid": 749443434921046,
 											"parameters": {
-												"layer": "\"menu\"",
+												"layer": "\"door\"",
 												"visibility": "invisible"
 											}
 										},
 										{
 											"id": "set-layer-interactive",
 											"objectClass": "System",
-											"sid": 745721292029098,
+											"sid": 398833496134427,
 											"parameters": {
-												"layer": "\"menu\"",
+												"layer": "\"door\"",
 												"interactive": false
 											}
 										},
@@ -890,9 +908,9 @@
 										{
 											"id": "layer-is-visible",
 											"objectClass": "System",
-											"sid": 761728064864495,
+											"sid": 839710622967745,
 											"parameters": {
-												"layer": "\"menu\""
+												"layer": "\"door\""
 											}
 										}
 									],
@@ -932,9 +950,9 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 727223017087272,
+											"sid": 590811643710354,
 											"parameters": {
-												"layer": "\"menu\"",
+												"layer": "\"door\"",
 												"visibility": "invisible"
 											}
 										}
@@ -944,6 +962,230 @@
 							]
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Sair da lixeira ou armário"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 266487569687811,
+							"parameters": {
+								"key": 27
+							}
+						},
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 320124461104798,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "esc"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 375283899277709,
+							"parameters": {
+								"variable": "IsChoosing",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 284759849215713,
+							"parameters": {
+								"variable": "PlayerMoving",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 589674738863504,
+							"parameters": {
+								"layer": "\"yes_no\"",
+								"interactive": true
+							}
+						}
+					],
+					"sid": 363811991807325,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 416790936983445,
+									"parameters": {
+										"layer": "\"closet\""
+									}
+								},
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 484563125225791,
+									"parameters": {
+										"layer": "\"trash\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 390568146531014,
+									"parameters": {
+										"layer": "\"closet\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 135692605780633,
+									"parameters": {
+										"layer": "\"closet\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 395910782865884,
+									"parameters": {
+										"layer": "\"trash\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 718987090471354,
+									"parameters": {
+										"layer": "\"trash\"",
+										"interactive": false
+									}
+								}
+							],
+							"sid": 565154977770010,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 287115710493748
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 249607518891578,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "\"bip 1.2\"",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 108138460357827
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "Sair da lixeira ou armário"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 836712621823067,
+							"parameters": {
+								"object": "esc"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "esc",
+							"sid": 454899567663673,
+							"parameters": {
+								"opacity": "100"
+							}
+						}
+					],
+					"sid": 173193207174064,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 547811099758962
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 253981304817009,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "\"bip 1\"",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 463986545278186
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 708822276485852
+						}
+					],
+					"actions": [
+						{
+							"id": "set-opacity",
+							"objectClass": "esc",
+							"sid": 791025664766706,
+							"parameters": {
+								"opacity": "10"
+							}
+						}
+					],
+					"sid": 780614350099765
 				},
 				{
 					"eventType": "comment",
@@ -1063,43 +1305,6 @@
 						}
 					],
 					"sid": 966552059038894
-				},
-				{
-					"eventType": "comment",
-					"text": "Placa desativa quando cursor está visível"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 685875332960638,
-							"parameters": {
-								"layer": "\"cursor\""
-							}
-						}
-					],
-					"actions": [],
-					"sid": 355998126127693,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 471345633248199,
-							"parameters": {
-								"layer": "\"cursor\""
-							},
-							"isInverted": true
-						}
-					],
-					"actions": [],
-					"sid": 200194903194321,
-					"disabled": true
 				}
 			],
 			"sid": 486112191158838,
