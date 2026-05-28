@@ -479,360 +479,6 @@
 						},
 						{
 							"eventType": "comment",
-							"text": "Animação teclas de controle"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 777702588198679
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "control_key",
-									"sid": 632601531827794,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 982432860844418,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "WASD"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 544751313806947,
-											"parameters": {
-												"key": 87
-											}
-										},
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 140268096912549,
-											"parameters": {
-												"object": "control_key",
-												"expression": "control_key.key",
-												"comparison": 0,
-												"value": "\"W\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 607742361945416,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 774773571264924
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 722255557154436,
-											"parameters": {
-												"key": 65
-											}
-										},
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 230540626884520,
-											"parameters": {
-												"object": "control_key",
-												"expression": "control_key.key",
-												"comparison": 0,
-												"value": "\"A\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 669337503834154,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 741546679829976
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 252221957846536,
-											"parameters": {
-												"key": 83
-											}
-										},
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 777137548470769,
-											"parameters": {
-												"object": "control_key",
-												"expression": "control_key.key",
-												"comparison": 0,
-												"value": "\"S\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 329083593037655,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 192353600545393
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 805986093878120,
-											"parameters": {
-												"key": 68
-											}
-										},
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 418688994460685,
-											"parameters": {
-												"object": "control_key",
-												"expression": "control_key.key",
-												"comparison": 0,
-												"value": "\"D\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 270696323818681,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 833422263868275
-								},
-								{
-									"eventType": "comment",
-									"text": "⭡⭠⭣⭢"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 377140005500915,
-											"parameters": {
-												"key": 38
-											}
-										},
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 126597110277861,
-											"parameters": {
-												"object": "control_key",
-												"expression": "control_key.key",
-												"comparison": 0,
-												"value": "\"8\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 162353603379527,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 163163770763320
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 523241296585233,
-											"parameters": {
-												"key": 37
-											}
-										},
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 458815847390208,
-											"parameters": {
-												"object": "control_key",
-												"expression": "control_key.key",
-												"comparison": 0,
-												"value": "\"4\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 653913354883770,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 597604695529280
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 507644669109420,
-											"parameters": {
-												"key": 40
-											}
-										},
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 486116892597399,
-											"parameters": {
-												"object": "control_key",
-												"expression": "control_key.key",
-												"comparison": 0,
-												"value": "\"2\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 296871156823214,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 282086111905720
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 992075449148026,
-											"parameters": {
-												"key": 39
-											}
-										},
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 153111500755944,
-											"parameters": {
-												"object": "control_key",
-												"expression": "control_key.key",
-												"comparison": 0,
-												"value": "\"6\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 407177534698480,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 428843691390480
-								},
-								{
-									"eventType": "comment",
-									"text": "E"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 981546540459986,
-											"parameters": {
-												"key": 69
-											}
-										},
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 276587424736326,
-											"parameters": {
-												"object": "control_key",
-												"expression": "control_key.key",
-												"comparison": 0,
-												"value": "\"E\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 224538557142845,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 851817448802398
-								}
-							]
-						},
-						{
-							"eventType": "comment",
 							"text": "Créditos"
 						},
 						{
@@ -1012,6 +658,459 @@
 								}
 							],
 							"sid": 545686590420257
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Animação teclas de controle"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "control_key",
+							"sid": 971363540779771,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 670711821812196,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "WASD"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 596724262057402,
+									"parameters": {
+										"key": 87
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "control_key",
+									"sid": 545141664247046,
+									"parameters": {
+										"instance-variable": "key",
+										"comparison": 0,
+										"value": "\"W\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "control_key",
+									"sid": 141100472904501,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 746312969262323
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 842016353477639,
+									"parameters": {
+										"key": 65
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "control_key",
+									"sid": 318136348123826,
+									"parameters": {
+										"instance-variable": "key",
+										"comparison": 0,
+										"value": "\"A\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "control_key",
+									"sid": 520788767251805,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 963553832885278
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 779273544480277,
+									"parameters": {
+										"key": 83
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "control_key",
+									"sid": 146003363165294,
+									"parameters": {
+										"instance-variable": "key",
+										"comparison": 0,
+										"value": "\"S\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "control_key",
+									"sid": 363804271532284,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 193006183860425
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 889094193564338,
+									"parameters": {
+										"key": 68
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "control_key",
+									"sid": 488569860256290,
+									"parameters": {
+										"instance-variable": "key",
+										"comparison": 0,
+										"value": "\"D\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "control_key",
+									"sid": 275282140385672,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 167796396399215
+						},
+						{
+							"eventType": "comment",
+							"text": "⭡⭠⭣⭢"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 321266537554386,
+									"parameters": {
+										"key": 38
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "control_key",
+									"sid": 865779458428943,
+									"parameters": {
+										"instance-variable": "key",
+										"comparison": 0,
+										"value": "\"8\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "control_key",
+									"sid": 633744442172391,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 962159270787659
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 832717367292693,
+									"parameters": {
+										"key": 37
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "control_key",
+									"sid": 546713705783798,
+									"parameters": {
+										"instance-variable": "key",
+										"comparison": 0,
+										"value": "\"4\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "control_key",
+									"sid": 989709417061621,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 114177654569526
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 200292395057029,
+									"parameters": {
+										"key": 40
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "control_key",
+									"sid": 136509630205550,
+									"parameters": {
+										"instance-variable": "key",
+										"comparison": 0,
+										"value": "\"2\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "control_key",
+									"sid": 137939988013622,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 957966038804199
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 637244289149282,
+									"parameters": {
+										"key": 39
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "control_key",
+									"sid": 120559059790398,
+									"parameters": {
+										"instance-variable": "key",
+										"comparison": 0,
+										"value": "\"6\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "control_key",
+									"sid": 904455717578035,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 649280462597539
+						},
+						{
+							"eventType": "comment",
+							"text": "E"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "key-is-down",
+									"objectClass": "Keyboard",
+									"sid": 726906836850835,
+									"parameters": {
+										"key": 69
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "control_key",
+									"sid": 794907979937402,
+									"parameters": {
+										"instance-variable": "key",
+										"comparison": 0,
+										"value": "\"E\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "control_key",
+									"sid": 778556413123256,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 599362287105273
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Animação mouse de controle"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "middle_click",
+							"sid": 553951009672078,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "right_click",
+							"sid": 409739283317490,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "left_click",
+							"sid": 175189422874713,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 393162337612101,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Mouse"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 377440048433828,
+									"parameters": {
+										"mouse-button": "left"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "left_click",
+									"sid": 924681374965929,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 904100875087988
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 194963034584550,
+									"parameters": {
+										"mouse-button": "middle"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "middle_click",
+									"sid": 832423934633900,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 671377006465241,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "mouse-button-is-down",
+									"objectClass": "Mouse",
+									"sid": 798193864676515,
+									"parameters": {
+										"mouse-button": "right"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "right_click",
+									"sid": 242206525239991,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 246010176103760
 						}
 					]
 				},
