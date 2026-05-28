@@ -38,12 +38,12 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 890478652252492,
+					"sid": 264796222083058,
 					"parameters": {
 						"audio-file": {
 							"path": "Level 5/lvl5_soundTrack"
 						},
-						"loop": "not-looping",
+						"loop": "looping",
 						"volume": "-10",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
@@ -397,6 +397,11 @@
 							"parameters": {
 								"layout": "Bedroom"
 							}
+						},
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 546223713278149
 						}
 					],
 					"sid": 398700796124866
