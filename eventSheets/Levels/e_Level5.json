@@ -6,6 +6,26 @@
 			"includeSheet": "e_Global"
 		},
 		{
+			"eventType": "variable",
+			"name": "Lvl5_FaseAtual",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 730194750670319
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl5_senhaDaVez",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 412078120004835
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -27,6 +47,15 @@
 						"volume": "-10",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 868362142952840,
+					"parameters": {
+						"variable": "lvl5_senhaDaVez",
+						"value": "\"ercm1\""
 					}
 				}
 			],
@@ -145,15 +174,32 @@
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 606961891896337,
+					"sid": 933484471293721,
 					"parameters": {
 						"first-value": "lowercase(lvl5_TextInput.Text)",
 						"comparison": 0,
-						"second-value": "\"ercm1\""
+						"second-value": "lvl5_senhaDaVez"
 					}
 				}
 			],
 			"actions": [
+				{
+					"id": "tween-one-property",
+					"objectClass": "fade",
+					"sid": 560516220364674,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "100",
+						"time": "0.5",
+						"ease": "easeoutquint",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
+				},
 				{
 					"id": "set-enabled",
 					"objectClass": "lvl5_TextInput",
@@ -172,20 +218,190 @@
 					}
 				},
 				{
-					"id": "go-to-layout",
+					"id": "set-layer-visible",
 					"objectClass": "System",
-					"sid": 163661892355165,
+					"sid": 109851630232864,
 					"parameters": {
-						"layout": "Bedroom"
+						"layer": "0",
+						"visibility": "invisible"
 					}
 				},
 				{
-					"id": "stop-all",
-					"objectClass": "Audio",
-					"sid": 494597199858799
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 265300519463739,
+					"parameters": {
+						"variable": "Lvl5_FaseAtual",
+						"value": "1"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "lvl5_TextInput",
+					"sid": 583687434845911,
+					"parameters": {
+						"text": "\"\""
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "lvl5_TextInput",
+					"sid": 959149028426233,
+					"parameters": {
+						"mode": "enabled"
+					}
+				},
+				{
+					"id": "set-focused",
+					"objectClass": "lvl5_TextInput",
+					"sid": 691034689093408
+				},
+				{
+					"id": "tween-one-property",
+					"objectClass": "fade",
+					"sid": 511981935614142,
+					"behaviorType": "Tween",
+					"parameters": {
+						"tags": "\"\"",
+						"property": "offsetOpacity",
+						"end-value": "0",
+						"time": "0.5",
+						"ease": "easeoutquint",
+						"destroy-on-complete": "no",
+						"loop": "no",
+						"ping-pong": "no",
+						"repeat-count": "1"
+					}
 				}
 			],
-			"sid": 247895600030033
+			"sid": 247895600030033,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 851658249796615,
+							"parameters": {
+								"variable": "Lvl5_FaseAtual",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 767415879998893,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 464439690917928,
+							"parameters": {
+								"layer": "0",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 102892524657012,
+							"parameters": {
+								"layer": "1",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 426807047343335,
+							"parameters": {
+								"variable": "lvl5_senhaDaVez",
+								"value": "\"zaxp3\""
+							}
+						}
+					],
+					"sid": 312390450906513
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 546408678657189,
+							"parameters": {
+								"variable": "Lvl5_FaseAtual",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 968447767084027,
+							"parameters": {
+								"layer": "1",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 627767611068982,
+							"parameters": {
+								"layer": "2",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 300824636598936,
+							"parameters": {
+								"variable": "lvl5_senhaDaVez",
+								"value": "\"wayp1\""
+							}
+						}
+					],
+					"sid": 216407145567878
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 767174670911419,
+							"parameters": {
+								"variable": "Lvl5_FaseAtual",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 511671770008995,
+							"parameters": {
+								"layout": "Bedroom"
+							}
+						}
+					],
+					"sid": 398700796124866
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -208,11 +424,11 @@
 				{
 					"id": "compare-two-values",
 					"objectClass": "System",
-					"sid": 156183868010661,
+					"sid": 586202057294300,
 					"parameters": {
 						"first-value": "lowercase(lvl5_TextInput.Text)",
 						"comparison": 0,
-						"second-value": "\"ercm1\""
+						"second-value": "lvl5_senhaDaVez"
 					},
 					"isInverted": true
 				}
