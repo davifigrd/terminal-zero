@@ -1,10 +1,18 @@
 {
-	"name": "login",
+	"name": "cover_login",
 	"plugin-id": "Sprite",
-	"sid": 863373199718179,
+	"sid": 608860752905193,
 	"isGlobal": false,
 	"editorNewInstanceIsReplica": true,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "ID",
+			"type": "number",
+			"desc": "",
+			"show": true,
+			"sid": 406663863769530
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -12,21 +20,33 @@
 			{
 				"frames": [
 					{
-						"width": 1535,
-						"height": 1024,
+						"width": 104,
+						"height": 102,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
 						"fileType": "image/png",
-						"imageSpriteId": 6855093,
+						"imageSpriteId": 9568179,
+						"collisionPoly": {
+							"points": [
+								0.009615384615384616,
+								0.00980392156862745,
+								0.9903846153846154,
+								0.00980392156862745,
+								0.9903846153846154,
+								0.9901960784313726,
+								0.009615384615384616,
+								0.9901960784313726
+							]
+						},
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 166251675186824,
+				"sid": 546339279528606,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

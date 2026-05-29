@@ -1505,6 +1505,169 @@
 				0.9333333333333333,
 				1
 			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LOGIN",
+			"description": "Interações com a tela de login",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Animação botão de fechar login"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 532906037793626,
+							"parameters": {
+								"object": "close_login"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "close_login",
+							"sid": 150236280780940,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 604377348284640
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 376224731717779
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "close_login",
+							"sid": 348973898728484,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 965839998902419
+				},
+				{
+					"eventType": "comment",
+					"text": "Sair do login"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 374521433965835,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "close_login"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-layout",
+							"objectClass": "System",
+							"sid": 494002682047696,
+							"parameters": {
+								"layout": "Bedroom"
+							}
+						}
+					],
+					"sid": 950028541901879
+				},
+				{
+					"eventType": "comment",
+					"text": "Sair do login"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 788327916910733
+				}
+			],
+			"sid": 779442191254970,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.14901960784313725,
+				0.8705882352941177,
+				0.3254901960784314,
+				1
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 904470041198402,
+					"parameters": {
+						"key": 74
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 581540685831871,
+					"parameters": {
+						"layer": "\"window\"",
+						"interactive": true
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 663687077423228,
+					"parameters": {
+						"layer": "\"icon\"",
+						"interactive": true
+					}
+				},
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 386996666555943,
+					"parameters": {
+						"layer": "\"login\"",
+						"visibility": "invisible"
+					}
+				},
+				{
+					"id": "set-layer-interactive",
+					"objectClass": "System",
+					"sid": 773506116829540,
+					"parameters": {
+						"layer": "\"login\"",
+						"interactive": false
+					}
+				}
+			],
+			"sid": 513077078394478
 		}
 	],
 	"sid": 473027040696098
