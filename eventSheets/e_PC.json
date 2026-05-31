@@ -1514,6 +1514,260 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 600969322011255
+						}
+					],
+					"actions": [
+						{
+							"id": "set-focused",
+							"objectClass": "input_login",
+							"sid": 832832787895445
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "input_login",
+							"sid": 691019482042965,
+							"disabled": true,
+							"parameters": {
+								"property-name": "\"opacity\"",
+								"value": "\"0\""
+							}
+						},
+						{
+							"id": "set-master-volume",
+							"objectClass": "Audio",
+							"sid": 984948955061594,
+							"parameters": {
+								"db": "-10"
+							}
+						}
+					],
+					"sid": 781894518006862
+				},
+				{
+					"eventType": "comment",
+					"text": "Senha"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-text-changed",
+							"objectClass": "input_login",
+							"sid": 940105392536080
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "input_login",
+							"sid": 788533250987937,
+							"parameters": {
+								"text": "Left(input_login.Text, 4)"
+							}
+						},
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 944540429964714,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"bip 2\"",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 449886406608414,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Verificação de senha"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 444977944881841,
+									"parameters": {
+										"first-value": "len(input_login.Text)",
+										"comparison": 0,
+										"second-value": "4"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 912666977300197,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Acertou"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 674467014769765,
+											"parameters": {
+												"first-value": "input_login.Text",
+												"comparison": 0,
+												"second-value": "tokenat(\"1111,2222,3333,4444,5555,6666,7777,8888,9999,1010\", level_done, \",\")"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 122171399924845,
+											"parameters": {
+												"layer": "\"window\"",
+												"interactive": true
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 870577171964424,
+											"parameters": {
+												"layer": "\"icon\"",
+												"interactive": true
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 289382628835073,
+											"parameters": {
+												"layer": "\"login\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 317521826772677,
+											"parameters": {
+												"layer": "\"login\"",
+												"interactive": false
+											}
+										}
+									],
+									"sid": 682524664953231
+								},
+								{
+									"eventType": "comment",
+									"text": "Errou"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 297418993714634
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "input_login",
+											"sid": 816990639222352,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 900751583938263
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Digitar senha"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 971240966951111,
+									"parameters": {
+										"object": "cover_login"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "cover_login",
+									"sid": 871148204666358,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 3,
+										"value": "len(input_login.Text)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "cover_login",
+									"sid": 645290230458242,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 546956456961268
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 846592483222308,
+									"parameters": {
+										"object": "cover_login"
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "cover_login",
+									"sid": 538724010767990,
+									"parameters": {
+										"instance-variable": "ID",
+										"comparison": 4,
+										"value": "len(input_login.Text)"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "cover_login",
+									"sid": 121998264522550,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 157526209349164
+						}
+					]
+				},
+				{
 					"eventType": "comment",
 					"text": "Animação botão de fechar login"
 				},
@@ -1523,7 +1777,7 @@
 						{
 							"id": "cursor-is-over-object",
 							"objectClass": "Mouse",
-							"sid": 532906037793626,
+							"sid": 479747268374899,
 							"parameters": {
 								"object": "close_login"
 							}
@@ -1533,13 +1787,13 @@
 						{
 							"id": "set-visible",
 							"objectClass": "close_login",
-							"sid": 150236280780940,
+							"sid": 736023921769504,
 							"parameters": {
 								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 604377348284640
+					"sid": 576554105868067
 				},
 				{
 					"eventType": "block",
@@ -1547,24 +1801,24 @@
 						{
 							"id": "else",
 							"objectClass": "System",
-							"sid": 376224731717779
+							"sid": 452834067341981
 						}
 					],
 					"actions": [
 						{
 							"id": "set-visible",
 							"objectClass": "close_login",
-							"sid": 348973898728484,
+							"sid": 998162755062015,
 							"parameters": {
 								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 965839998902419
+					"sid": 645738335976595
 				},
 				{
 					"eventType": "comment",
-					"text": "Sair do login"
+					"text": "Sair do PC"
 				},
 				{
 					"eventType": "block",
@@ -1572,7 +1826,7 @@
 						{
 							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 374521433965835,
+							"sid": 317260321926378,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
@@ -1584,26 +1838,16 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 494002682047696,
+							"sid": 736044142107748,
 							"parameters": {
 								"layout": "Bedroom"
 							}
 						}
 					],
-					"sid": 950028541901879
-				},
-				{
-					"eventType": "comment",
-					"text": "Sair do login"
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [],
-					"sid": 788327916910733
+					"sid": 797229507443389
 				}
 			],
-			"sid": 779442191254970,
+			"sid": 351493706452100,
 			"text-color": [
 				0,
 				0,
