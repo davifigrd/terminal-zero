@@ -32,266 +32,513 @@
 			"sid": 509546889485805
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Camera",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 246526094363739
-						}
-					],
-					"actions": [
-						{
-							"id": "look-parallel-to-layout",
-							"objectClass": "3DCamera",
-							"sid": 652430596262783,
-							"parameters": {
-								"cam-x": "lvl10_player.X",
-								"cam-y": "lvl10_player.Y",
-								"cam-z": "lvl10_player.Zelevation+PlayerHeight",
-								"look-angle": "lvl10_player.Angle"
-							}
-						}
-					],
-					"sid": 409180253026591
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 348924937790775
-						}
-					],
-					"actions": [
-						{
-							"id": "set-position",
-							"objectClass": "3DCamera",
-							"sid": 518897285522071,
-							"parameters": {
-								"x": "lvl10_player.X",
-								"y": "lvl10_player.Y",
-								"z": "lvl10_player.Zelevation+PlayerHeight",
-								"which": "camera"
-							}
-						}
-					],
-					"sid": 797022592561475
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-movement",
-							"objectClass": "Mouse",
-							"sid": 897268802324966
-						}
-					],
-					"actions": [
-						{
-							"id": "rotate-camera",
-							"objectClass": "3DCamera",
-							"sid": 374433679218047,
-							"parameters": {
-								"rotate-x": "Mouse.MovementX/MouseSense",
-								"rotate-y": "Mouse.MovementY/MouseSense",
-								"min-polar-angle": "20",
-								"max-polar-angle": "160"
-							}
-						}
-					],
-					"sid": 626185388368817
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-click",
-							"objectClass": "Mouse",
-							"sid": 100413183526196,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "request-pointer-lock",
-							"objectClass": "Mouse",
-							"sid": 469906194109998,
-							"parameters": {
-								"unadjusted-movement": false
-							}
-						}
-					],
-					"sid": 995757422874289
-				}
-			],
-			"sid": 967833965767867
+			"eventType": "variable",
+			"name": "dz",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 198107319528111
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Movement",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 686287542062568,
-							"parameters": {
-								"key": 87
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "move-at-angle",
-							"objectClass": "lvl10_player",
-							"sid": 460568041163309,
-							"parameters": {
-								"angle": "3DCamera.CameraXRotation",
-								"distance": "PlayerSpeed*dt"
-							}
-						},
-						{
-							"id": "push-out-solid-at-angle",
-							"objectClass": "lvl10_player",
-							"sid": 389170393995845,
-							"behaviorType": "Custom",
-							"parameters": {
-								"angle": "3DCamera.CameraXRotation+180"
-							}
-						}
-					],
-					"sid": 262598075145657
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 180956499787671,
-							"parameters": {
-								"key": 65
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "move-at-angle",
-							"objectClass": "lvl10_player",
-							"sid": 420688960098173,
-							"parameters": {
-								"angle": "3DCamera.CameraXRotation-90",
-								"distance": "PlayerSpeed*dt"
-							}
-						},
-						{
-							"id": "push-out-solid-at-angle",
-							"objectClass": "lvl10_player",
-							"sid": 766416174321911,
-							"behaviorType": "Custom",
-							"parameters": {
-								"angle": "3DCamera.CameraXRotation+90"
-							}
-						}
-					],
-					"sid": 445725237571066
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 491145403039960,
-							"parameters": {
-								"key": 68
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "move-at-angle",
-							"objectClass": "lvl10_player",
-							"sid": 653778640136333,
-							"parameters": {
-								"angle": "3DCamera.CameraXRotation+90",
-								"distance": "PlayerSpeed*dt"
-							}
-						},
-						{
-							"id": "push-out-solid-at-angle",
-							"objectClass": "lvl10_player",
-							"sid": 437032975676102,
-							"behaviorType": "Custom",
-							"parameters": {
-								"angle": "3DCamera.CameraXRotation-90"
-							}
-						}
-					],
-					"sid": 899232039292642
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 854950610903466,
-							"parameters": {
-								"key": 83
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "move-at-angle",
-							"objectClass": "lvl10_player",
-							"sid": 824975517979271,
-							"parameters": {
-								"angle": "3DCamera.CameraXRotation",
-								"distance": "-PlayerSpeed*dt"
-							}
-						},
-						{
-							"id": "push-out-solid-at-angle",
-							"objectClass": "lvl10_player",
-							"sid": 811012379845597,
-							"behaviorType": "Custom",
-							"parameters": {
-								"angle": "3DCamera.CameraXRotation"
-							}
-						}
-					],
-					"sid": 202955847249519
-				}
-			],
-			"sid": 229394491098741
+			"eventType": "variable",
+			"name": "Gravity",
+			"type": "number",
+			"initialValue": "3.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 922714784042082
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "Block Collison",
-			"description": "",
-			"isActiveOnStart": true,
-			"children": [],
-			"sid": 902462313894715
+			"eventType": "variable",
+			"name": "onGround",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 854637932858559
+		},
+		{
+			"eventType": "variable",
+			"name": "jump_strength",
+			"type": "number",
+			"initialValue": "1.5",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 538163840256007
+		},
+		{
+			"eventType": "comment",
+			"text": "Camera"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 552692194476601
+				}
+			],
+			"actions": [
+				{
+					"id": "look-parallel-to-layout",
+					"objectClass": "3DCamera",
+					"sid": 352815707853409,
+					"parameters": {
+						"cam-x": "lvl10_player.X",
+						"cam-y": "lvl10_player.Y",
+						"cam-z": "lvl10_player.Zelevation+PlayerHeight",
+						"look-angle": "lvl10_player.Angle"
+					}
+				}
+			],
+			"sid": 823711932385869
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 499493452615248
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "3DCamera",
+					"sid": 328571030158065,
+					"parameters": {
+						"x": "lvl10_player.X",
+						"y": "lvl10_player.Y",
+						"z": "lvl10_player.Zelevation+PlayerHeight",
+						"which": "camera"
+					}
+				}
+			],
+			"sid": 744075027402236
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-movement",
+					"objectClass": "Mouse",
+					"sid": 688243678812800
+				}
+			],
+			"actions": [
+				{
+					"id": "rotate-camera",
+					"objectClass": "3DCamera",
+					"sid": 581948822474735,
+					"parameters": {
+						"rotate-x": "Mouse.MovementX/MouseSense",
+						"rotate-y": "Mouse.MovementY/MouseSense",
+						"min-polar-angle": "20",
+						"max-polar-angle": "160"
+					}
+				}
+			],
+			"sid": 386638253231311
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 694201830129960,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "request-pointer-lock",
+					"objectClass": "Mouse",
+					"sid": 116775619704196,
+					"parameters": {
+						"unadjusted-movement": false
+					}
+				}
+			],
+			"sid": 424871017711775
+		},
+		{
+			"eventType": "comment",
+			"text": "Movement"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 794821416751282,
+					"parameters": {
+						"key": 87
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-at-angle",
+					"objectClass": "lvl10_player",
+					"sid": 383594186773202,
+					"parameters": {
+						"angle": "3DCamera.CameraXRotation",
+						"distance": "PlayerSpeed*dt"
+					}
+				},
+				{
+					"id": "push-out-solid-at-angle",
+					"objectClass": "lvl10_player",
+					"sid": 367059536491662,
+					"behaviorType": "Custom",
+					"parameters": {
+						"angle": "3DCamera.CameraXRotation+180"
+					}
+				}
+			],
+			"sid": 279627740025220
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 369284204374741,
+					"parameters": {
+						"key": 65
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-at-angle",
+					"objectClass": "lvl10_player",
+					"sid": 428450330082781,
+					"parameters": {
+						"angle": "3DCamera.CameraXRotation-90",
+						"distance": "PlayerSpeed*dt"
+					}
+				},
+				{
+					"id": "push-out-solid-at-angle",
+					"objectClass": "lvl10_player",
+					"sid": 787024201930738,
+					"behaviorType": "Custom",
+					"parameters": {
+						"angle": "3DCamera.CameraXRotation+90"
+					}
+				}
+			],
+			"sid": 948230392202855
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 545138904168550,
+					"parameters": {
+						"key": 68
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-at-angle",
+					"objectClass": "lvl10_player",
+					"sid": 686202753960371,
+					"parameters": {
+						"angle": "3DCamera.CameraXRotation+90",
+						"distance": "PlayerSpeed*dt"
+					}
+				},
+				{
+					"id": "push-out-solid-at-angle",
+					"objectClass": "lvl10_player",
+					"sid": 709404691277612,
+					"behaviorType": "Custom",
+					"parameters": {
+						"angle": "3DCamera.CameraXRotation-90"
+					}
+				}
+			],
+			"sid": 742366118591970
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "key-is-down",
+					"objectClass": "Keyboard",
+					"sid": 202014807493467,
+					"parameters": {
+						"key": 83
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "move-at-angle",
+					"objectClass": "lvl10_player",
+					"sid": 823227468194603,
+					"parameters": {
+						"angle": "3DCamera.CameraXRotation",
+						"distance": "-PlayerSpeed*dt"
+					}
+				},
+				{
+					"id": "push-out-solid-at-angle",
+					"objectClass": "lvl10_player",
+					"sid": 584762530962567,
+					"behaviorType": "Custom",
+					"parameters": {
+						"angle": "3DCamera.CameraXRotation"
+					}
+				}
+			],
+			"sid": 915897291492092
+		},
+		{
+			"eventType": "comment",
+			"text": "block Collison"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 760961812974105
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "block",
+					"sid": 784356694735255,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 497890628100691
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "block",
+					"sid": 487391265735549,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 4,
+						"z-elevation": "player.zelevation-self.zheight+1"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "block",
+					"sid": 842441202677912,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 2,
+						"z-elevation": "player.Zelevation+PlayerHeight"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "block",
+					"sid": 327874674056915,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "enabled"
+					}
+				}
+			],
+			"sid": 558796637642495
+		},
+		{
+			"eventType": "comment",
+			"text": "Gravity"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 241466922846456
+				}
+			],
+			"actions": [
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 669467395232026,
+					"parameters": {
+						"variable": "dz",
+						"value": "Gravity*dt"
+					}
+				},
+				{
+					"id": "set-z-elevation",
+					"objectClass": "lvl10_player",
+					"sid": 326193338577014,
+					"parameters": {
+						"z": "lvl10_player.Zelevation+dz"
+					}
+				}
+			],
+			"sid": 698729079499292
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 714317836054077,
+					"parameters": {
+						"variable": "dz",
+						"comparison": 2,
+						"value": "0"
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 653323021807575,
+					"parameters": {
+						"object": "block"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "block",
+					"sid": 177487021836378,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 5,
+						"z-elevation": "lvl10_player.Zelevation-Self.zheight"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "block",
+					"sid": 423265035699646,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 3,
+						"z-elevation": "lvl10_player.Zelevation+PlayerHeight-Self.zheight"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 956253356000847,
+					"parameters": {
+						"variable": "dz",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-z-elevation",
+					"objectClass": "lvl10_player",
+					"sid": 614672618866939,
+					"parameters": {
+						"z": "block.Zelevation+block.zheight"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 859090228283806,
+					"parameters": {
+						"variable": "onGround",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 399088359864090
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 873817866642829
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 329749948448558,
+					"parameters": {
+						"variable": "onGround",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 281304557962935
+		},
+		{
+			"eventType": "comment",
+			"text": "Jumping"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 841437255272806,
+					"parameters": {
+						"key": 32
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 705448479348281,
+					"parameters": {
+						"variable": "onGround"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 172225831587990,
+					"parameters": {
+						"variable": "dz",
+						"value": "jump_strength"
+					}
+				}
+			],
+			"sid": 415420856993748
 		}
 	],
 	"sid": 758226248430815
