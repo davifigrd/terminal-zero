@@ -25,8 +25,8 @@
 			"eventType": "variable",
 			"name": "level_done",
 			"type": "number",
-			"initialValue": "3",
-			"comment": "Define qual cadeado desbloquear para a janela do Terminal Zero",
+			"initialValue": "10",
+			"comment": "Define qual fase já foi concluída",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 322105363857792
@@ -36,7 +36,7 @@
 			"name": "cheat",
 			"type": "string",
 			"initialValue": "",
-			"comment": "Ativa trapaças no jogo",
+			"comment": "Ativa trapaças por código",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 617926902858488
@@ -814,6 +814,7 @@
 			]
 		},
 		{
+			"bookmark": true,
 			"eventType": "group",
 			"disabled": false,
 			"title": "RESET",
@@ -1224,6 +1225,34 @@
 						}
 					],
 					"sid": 895183204776547
+				},
+				{
+					"eventType": "comment",
+					"text": "Reseta login"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 956562040146039,
+							"parameters": {
+								"key": 187
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "remove-item",
+							"objectClass": "LocalStorage",
+							"sid": 440825598191375,
+							"parameters": {
+								"key": "\"login_done\" & level_done"
+							}
+						}
+					],
+					"sid": 143065052900592
 				}
 			],
 			"sid": 912091851435917,

@@ -1812,7 +1812,7 @@
 						"initially-visible": false,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
-						"enable-collisions": true,
+						"enable-collisions": false,
 						"live-preview": false
 					},
 					"uid": 176,
@@ -1835,45 +1835,6 @@
 						"y": 166,
 						"width": 35.99378932711329,
 						"height": 35.05692199150252,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							0.1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "close_error",
-					"properties": {
-						"initially-visible": false,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 119,
-					"sid": 735924681305247,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {
-						"Pin": {
-							"properties": {
-								"destroy": false
-							}
-						}
-					},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 991.943966979085,
-						"y": 192.20875374867234,
-						"width": 36.20808139220196,
-						"height": 31.475724519082085,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2471,7 +2432,7 @@
 					"subLayers": [],
 					"instances": [
 						{
-							"type": "login",
+							"type": "login_background",
 							"properties": {
 								"initially-visible": true,
 								"initial-animation": "Animation 1",
@@ -2483,7 +2444,18 @@
 							"sid": 867631781405822,
 							"tags": "",
 							"instanceVariables": {},
-							"behaviors": {},
+							"behaviors": {
+								"Fade": {
+									"properties": {
+										"fade-in-time": 0,
+										"wait-time": 0,
+										"fade-out-time": 1,
+										"destroy": false,
+										"enabled": false,
+										"live-preview": false
+									}
+								}
+							},
 							"showing": true,
 							"locked": false,
 							"world": {
@@ -2516,7 +2488,18 @@
 							"sid": 245619523084249,
 							"tags": "",
 							"instanceVariables": {},
-							"behaviors": {},
+							"behaviors": {
+								"Fade": {
+									"properties": {
+										"fade-in-time": 0,
+										"wait-time": 0,
+										"fade-out-time": 1,
+										"destroy": false,
+										"enabled": false,
+										"live-preview": false
+									}
+								}
+							},
 							"showing": true,
 							"locked": false,
 							"world": {
@@ -2549,7 +2532,18 @@
 							"sid": 254089908024017,
 							"tags": "",
 							"instanceVariables": {},
-							"behaviors": {},
+							"behaviors": {
+								"Fade": {
+									"properties": {
+										"fade-in-time": 0,
+										"wait-time": 0,
+										"fade-out-time": 1,
+										"destroy": false,
+										"enabled": false,
+										"live-preview": false
+									}
+								}
+							},
 							"showing": true,
 							"locked": false,
 							"world": {
@@ -2582,7 +2576,18 @@
 							"sid": 982379243998258,
 							"tags": "",
 							"instanceVariables": {},
-							"behaviors": {},
+							"behaviors": {
+								"Fade": {
+									"properties": {
+										"fade-in-time": 0,
+										"wait-time": 0,
+										"fade-out-time": 1,
+										"destroy": false,
+										"enabled": false,
+										"live-preview": false
+									}
+								}
+							},
 							"showing": true,
 							"locked": false,
 							"world": {
@@ -2615,7 +2620,18 @@
 							"sid": 549591413354776,
 							"tags": "",
 							"instanceVariables": {},
-							"behaviors": {},
+							"behaviors": {
+								"Fade": {
+									"properties": {
+										"fade-in-time": 0,
+										"wait-time": 0,
+										"fade-out-time": 1,
+										"destroy": false,
+										"enabled": false,
+										"live-preview": false
+									}
+								}
+							},
 							"showing": true,
 							"locked": false,
 							"world": {
@@ -2675,7 +2691,7 @@
 						{
 							"type": "tip_login",
 							"properties": {
-								"text": "dica: aslkidjsoaijdsaoijdaosidjoasjdisajdoiasodijsadasfghjfghfggfhfretertertdica: aslkidjsoaijdsaoijdaosidjoasjdisajdoiasodijsadasfghjfghfggfhfretertert",
+								"text": "Dica:",
 								"enable-bbcode": true,
 								"font": "Terminal F4",
 								"size": 13,
@@ -2701,7 +2717,18 @@
 							"sid": 257536533200286,
 							"tags": "",
 							"instanceVariables": {},
-							"behaviors": {},
+							"behaviors": {
+								"Fade": {
+									"properties": {
+										"fade-in-time": 0,
+										"wait-time": 0,
+										"fade-out-time": 1,
+										"destroy": false,
+										"enabled": false,
+										"live-preview": false
+									}
+								}
+							},
 							"showing": true,
 							"locked": false,
 							"world": {
@@ -2768,6 +2795,16 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						},
 						"Pin": {
 							"properties": {
 								"destroy": false
@@ -2808,14 +2845,25 @@
 					"instanceVariables": {
 						"ID": 1
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
 						"x": 550.256354,
 						"y": 438.731967,
 						"width": 77.97836,
-						"height": 60.792527,
+						"height": 60.79252699999999,
 						"originX": 0.5046296296296297,
 						"originY": 0.5,
 						"color": [
@@ -2843,7 +2891,18 @@
 					"instanceVariables": {
 						"ID": 2
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -2878,14 +2937,25 @@
 					"instanceVariables": {
 						"ID": 3
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
 						"x": 731.98952,
 						"y": 438.782562,
 						"width": 77.97836,
-						"height": 60.792527,
+						"height": 60.79252699999999,
 						"originX": 0.5046296296296297,
 						"originY": 0.5,
 						"color": [
@@ -2913,14 +2983,25 @@
 					"instanceVariables": {
 						"ID": 4
 					},
-					"behaviors": {},
+					"behaviors": {
+						"Fade": {
+							"properties": {
+								"fade-in-time": 0,
+								"wait-time": 0,
+								"fade-out-time": 1,
+								"destroy": false,
+								"enabled": false,
+								"live-preview": false
+							}
+						}
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
 						"x": 823.266123,
 						"y": 438.692656,
 						"width": 77.438783,
-						"height": 59.893233,
+						"height": 59.89323300000001,
 						"originX": 0.5046296296296297,
 						"originY": 0.5,
 						"color": [
@@ -2936,8 +3017,8 @@
 			],
 			"sid": 957537444493535,
 			"effectTypes": [],
-			"isInitiallyVisible": true,
-			"isInitiallyInteractive": true,
+			"isInitiallyVisible": false,
+			"isInitiallyInteractive": false,
 			"isHTMLElementsLayer": false,
 			"color": [
 				1,

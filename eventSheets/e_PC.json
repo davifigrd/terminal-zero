@@ -1022,6 +1022,11 @@
 									"parameters": {
 										"object": "close_error"
 									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "Error_Familly",
+									"sid": 170879014722244
 								}
 							],
 							"actions": [
@@ -1315,6 +1320,11 @@
 									"parameters": {
 										"object": "close_terminalzero"
 									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "Terminalzero_Familly",
+									"sid": 459873475328995
 								}
 							],
 							"actions": [
@@ -1578,231 +1588,468 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 719652263497660
-						}
-					],
-					"actions": [
-						{
-							"id": "request-project-file",
-							"objectClass": "AJAX",
-							"sid": 596517251144508,
-							"parameters": {
-								"tag": "\"login_password\"",
-								"file": {
-									"path": "login_password.json"
-								}
-							}
-						},
-						{
-							"id": "set-master-volume",
-							"objectClass": "Audio",
-							"sid": 958634381966589,
-							"parameters": {
-								"db": "-10"
-							}
-						},
-						{
-							"id": "set-enabled",
-							"objectClass": "input_login",
-							"sid": 796102582536854,
-							"parameters": {
-								"mode": "enabled"
-							}
-						},
-						{
-							"id": "set-css-style",
-							"objectClass": "input_login",
-							"sid": 727842188544557,
-							"parameters": {
-								"property-name": "\"opacity\"",
-								"value": "\"0\""
-							}
-						},
-						{
-							"id": "set-position",
-							"objectClass": "input_login",
-							"sid": 655586161377753,
-							"parameters": {
-								"x": "1270",
-								"y": "650"
-							}
-						}
-					],
-					"sid": 681270874443094,
+					"eventType": "group",
+					"disabled": false,
+					"title": "LOGIN_START",
+					"description": "Interações com a tela de login",
+					"isActiveOnStart": true,
 					"children": [
 						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 756093181918354
+								}
+							],
+							"actions": [
+								{
+									"id": "set-master-volume",
+									"objectClass": "Audio",
+									"sid": 924678611991722,
+									"parameters": {
+										"db": "-10"
+									}
+								}
+							],
+							"sid": 795767361637123,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Inicia música de fundo"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-tag-playing",
+											"objectClass": "Audio",
+											"sid": 940918052033638,
+											"parameters": {
+												"tag": "\"musica ambiente\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 786600158796049,
+											"parameters": {
+												"folder": "music",
+												"audio-file-name": "\"musica ambiente\"",
+												"loop": "looping",
+												"volume": "-10",
+												"stereo-pan": "0",
+												"tag-optional": "\"BGM\""
+											}
+										}
+									],
+									"sid": 115809965384336
+								},
+								{
+									"eventType": "comment",
+									"text": "Checa se já digitou a senha correta"
+								},
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "check-item-exists",
+											"objectClass": "LocalStorage",
+											"sid": 243436109845814,
+											"parameters": {
+												"key": "\"login_done\" & level_done"
+											}
+										},
+										{
+											"id": "request-project-file",
+											"objectClass": "AJAX",
+											"sid": 251052779990471,
+											"parameters": {
+												"tag": "\"login_password\"",
+												"file": {
+													"path": "login_password.json"
+												}
+											}
+										}
+									],
+									"sid": 739093044864569
+								}
+							],
+							"isOrBlock": true
+						},
+						{
 							"eventType": "comment",
-							"text": "Inicia música de fundo"
+							"text": "Sincroniza o array para as senhas e dicas"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-tag-playing",
-									"objectClass": "Audio",
-									"sid": 447267243548324,
+									"id": "on-completed",
+									"objectClass": "AJAX",
+									"sid": 964819417696448,
 									"parameters": {
-										"tag": "\"musica ambiente\""
-									},
+										"tag": "\"login_password\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "load",
+									"objectClass": "array_login",
+									"sid": 432630816487160,
+									"parameters": {
+										"json": "AJAX.LastData"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "tip_login",
+									"sid": 174950675434395,
+									"parameters": {
+										"text": "str(array_login.At(1, level_done))"
+									}
+								}
+							],
+							"sid": 395278373817194
+						},
+						{
+							"eventType": "comment",
+							"text": "Já digitou a senha correta"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-missing",
+									"objectClass": "LocalStorage",
+									"sid": 782473434198193,
+									"parameters": {
+										"key": "\"login_done\" & level_done"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 848269548317488,
+									"parameters": {
+										"group-name": "\"LOGIN_TYPPING\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 178754464842954,
+									"parameters": {
+										"layer": "\"login\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 878510353074123,
+									"parameters": {
+										"layer": "\"login\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 479826347209077,
+									"parameters": {
+										"layer": "\"window\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 468799620806566,
+									"parameters": {
+										"layer": "\"icon\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "input_login",
+									"sid": 518713728709269,
+									"parameters": {
+										"mode": "enabled"
+									}
+								},
+								{
+									"id": "set-css-style",
+									"objectClass": "input_login",
+									"sid": 397860468608891,
+									"parameters": {
+										"property-name": "\"opacity\"",
+										"value": "\"0\""
+									}
+								},
+								{
+									"id": "set-position",
+									"objectClass": "input_login",
+									"sid": 638968195941917,
+									"parameters": {
+										"x": "1270",
+										"y": "650"
+									}
+								}
+							],
+							"sid": 235862446649979
+						},
+						{
+							"eventType": "comment",
+							"text": "Não digitou a senha correta"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 945986335485198,
+									"parameters": {
+										"key": "\"login_done\" & level_done"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 662210474804798,
+									"parameters": {
+										"group-name": "\"LOGIN_TYPPING\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-enabled",
+									"objectClass": "input_login",
+									"sid": 777841604735431,
+									"parameters": {
+										"mode": "disabled"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 624311433962314,
+									"parameters": {
+										"layer": "\"window\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 140405763742726,
+									"parameters": {
+										"layer": "\"icon\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 432347962676065,
+									"parameters": {
+										"layer": "\"login\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 832999454136099,
+									"parameters": {
+										"layer": "\"login\"",
+										"interactive": false
+									}
+								}
+							],
+							"sid": 441408667261985
+						}
+					],
+					"sid": 720656010648550,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						1,
+						0,
+						0,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "LOGIN_TYPPING",
+					"description": "Interações com a tela de login",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Mantem o input em foco"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-focused",
+									"objectClass": "input_login",
+									"sid": 124555849735841,
 									"isInverted": true
 								}
 							],
 							"actions": [
 								{
-									"id": "play-by-name",
-									"objectClass": "Audio",
-									"sid": 824576979509820,
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 619399221485993,
 									"parameters": {
-										"folder": "music",
-										"audio-file-name": "\"musica ambiente\"",
-										"loop": "looping",
-										"volume": "-10",
-										"stereo-pan": "0",
-										"tag-optional": "\"BGM\""
+										"seconds": "0.1",
+										"use-timescale": true
 									}
+								},
+								{
+									"id": "set-focused",
+									"objectClass": "input_login",
+									"sid": 982647911713410
 								}
 							],
-							"sid": 147744344637961
-						}
-					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "comment",
-					"text": "Sincroniza o array para as senhas e dicas"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-completed",
-							"objectClass": "AJAX",
-							"sid": 559508166250341,
-							"parameters": {
-								"tag": "\"login_password\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "load",
-							"objectClass": "array_login",
-							"sid": 878544264297052,
-							"parameters": {
-								"json": "AJAX.LastData"
-							}
+							"sid": 369240657410124,
+							"isOrBlock": true
 						},
-						{
-							"id": "set-text",
-							"objectClass": "tip_login",
-							"sid": 138390335382710,
-							"parameters": {
-								"text": "str(array_login.At(level_done, 1))"
-							}
-						}
-					],
-					"sid": 834939416999466
-				},
-				{
-					"eventType": "comment",
-					"text": "Mantem o input em foco"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-focused",
-							"objectClass": "input_login",
-							"sid": 372815380714181,
-							"isInverted": true
-						}
-					],
-					"actions": [
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 564199827246960,
-							"parameters": {
-								"seconds": "0.1",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "set-focused",
-							"objectClass": "input_login",
-							"sid": 349270587268735
-						}
-					],
-					"sid": 550950247308954,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "comment",
-					"text": "Senha"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-text-changed",
-							"objectClass": "input_login",
-							"sid": 940105392536080
-						}
-					],
-					"actions": [
-						{
-							"id": "set-text",
-							"objectClass": "input_login",
-							"sid": 788533250987937,
-							"parameters": {
-								"text": "Left(input_login.Text, 4)"
-							}
-						},
-						{
-							"id": "play-by-name",
-							"objectClass": "Audio",
-							"sid": 944540429964714,
-							"parameters": {
-								"folder": "sounds",
-								"audio-file-name": "\"bip 2\"",
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						}
-					],
-					"sid": 449886406608414,
-					"children": [
 						{
 							"eventType": "comment",
-							"text": "Verificação de senha"
+							"text": "Digitação"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 444977944881841,
+									"id": "on-text-changed",
+									"objectClass": "input_login",
+									"sid": 154574911930866
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "input_login",
+									"sid": 759849898652689,
 									"parameters": {
-										"first-value": "len(input_login.Text)",
-										"comparison": 0,
-										"second-value": "4"
+										"text": "Left(input_login.Text, 4)"
+									}
+								},
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 292760951899504,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "\"bip 2\"",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
 									}
 								}
 							],
-							"actions": [],
-							"sid": 912666977300197,
+							"sid": 934284388461422,
 							"children": [
 								{
 									"eventType": "comment",
-									"text": "Acertou"
+									"text": "Esconder senha"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 208081350000568,
+											"parameters": {
+												"object": "cover_login"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "cover_login",
+											"sid": 973794401576517,
+											"parameters": {
+												"instance-variable": "ID",
+												"comparison": 3,
+												"value": "len(input_login.Text)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "cover_login",
+											"sid": 320244248323408,
+											"parameters": {
+												"visibility": "invisible"
+											}
+										}
+									],
+									"sid": 746765367528979
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 657747880106546,
+											"parameters": {
+												"object": "cover_login"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "cover_login",
+											"sid": 387022538911046,
+											"parameters": {
+												"instance-variable": "ID",
+												"comparison": 4,
+												"value": "len(input_login.Text)"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "cover_login",
+											"sid": 903153608349262,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 986655848958763
+								},
+								{
+									"eventType": "comment",
+									"text": "Verificação de senha"
 								},
 								{
 									"eventType": "block",
@@ -1810,266 +2057,277 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 167499601645927,
+											"sid": 692032649228411,
 											"parameters": {
-												"first-value": "input_login.Text",
+												"first-value": "len(input_login.Text)",
 												"comparison": 0,
-												"second-value": "str(array_login.At(level_done, 0))"
+												"second-value": "4"
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 991227851414846,
+									"children": [
 										{
-											"id": "set-enabled",
-											"objectClass": "input_login",
-											"sid": 549780934334286,
-											"parameters": {
-												"mode": "disabled"
-											}
+											"eventType": "comment",
+											"text": "Acertou"
 										},
 										{
-											"id": "play-by-name",
-											"objectClass": "Audio",
-											"sid": 351079334616473,
-											"parameters": {
-												"folder": "sounds",
-												"audio-file-name": "\"success sound\"",
-												"loop": "not-looping",
-												"volume": "0",
-												"stereo-pan": "0",
-												"tag-optional": "\"\""
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 793808016497710,
+													"parameters": {
+														"first-value": "input_login.Text",
+														"comparison": 0,
+														"second-value": "str(array_login.At(0, level_done))"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-item",
+													"objectClass": "LocalStorage",
+													"sid": 307047398951504,
+													"parameters": {
+														"key": "\"login_done\" & level_done",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 836055888444998,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "input_login",
+															"sid": 933171595748994,
+															"parameters": {
+																"mode": "disabled"
+															}
+														},
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 842136783597928,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"success sound\"",
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"\""
+															}
+														},
+														{
+															"id": "start-fade",
+															"objectClass": "Login_Familly",
+															"sid": 406494810815403,
+															"behaviorType": "Fade"
+														},
+														{
+															"id": "start-fade",
+															"objectClass": "tip_login",
+															"sid": 540395265182733,
+															"behaviorType": "Fade"
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 258649453673367,
+															"parameters": {
+																"seconds": "1",
+																"use-timescale": true
+															}
+														},
+														{
+															"id": "set-layer-interactive",
+															"objectClass": "System",
+															"sid": 949342429124252,
+															"parameters": {
+																"layer": "\"window\"",
+																"interactive": true
+															}
+														},
+														{
+															"id": "set-layer-interactive",
+															"objectClass": "System",
+															"sid": 956544236094390,
+															"parameters": {
+																"layer": "\"icon\"",
+																"interactive": true
+															}
+														},
+														{
+															"id": "set-layer-visible",
+															"objectClass": "System",
+															"sid": 250272914775355,
+															"parameters": {
+																"layer": "\"login\"",
+																"visibility": "invisible"
+															}
+														},
+														{
+															"id": "set-layer-interactive",
+															"objectClass": "System",
+															"sid": 123160761618651,
+															"parameters": {
+																"layer": "\"login\"",
+																"interactive": false
+															}
+														}
+													],
+													"sid": 731444727561526
+												}
+											]
 										},
 										{
-											"id": "set-layer-interactive",
-											"objectClass": "System",
-											"sid": 122171399924845,
-											"parameters": {
-												"layer": "\"window\"",
-												"interactive": true
-											}
+											"eventType": "comment",
+											"text": "Errou"
 										},
 										{
-											"id": "set-layer-interactive",
-											"objectClass": "System",
-											"sid": 870577171964424,
-											"parameters": {
-												"layer": "\"icon\"",
-												"interactive": true
-											}
-										},
-										{
-											"id": "set-layer-visible",
-											"objectClass": "System",
-											"sid": 289382628835073,
-											"parameters": {
-												"layer": "\"login\"",
-												"visibility": "invisible"
-											}
-										},
-										{
-											"id": "set-layer-interactive",
-											"objectClass": "System",
-											"sid": 317521826772677,
-											"parameters": {
-												"layer": "\"login\"",
-												"interactive": false
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 312477398478949
+												}
+											],
+											"actions": [],
+											"sid": 466004802849135,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [],
+													"actions": [
+														{
+															"id": "set-enabled",
+															"objectClass": "input_login",
+															"sid": 419387901571942,
+															"parameters": {
+																"mode": "disabled"
+															}
+														},
+														{
+															"id": "play-by-name",
+															"objectClass": "Audio",
+															"sid": 540570344600743,
+															"parameters": {
+																"folder": "sounds",
+																"audio-file-name": "\"wrong\"",
+																"loop": "not-looping",
+																"volume": "0",
+																"stereo-pan": "0",
+																"tag-optional": "\"\""
+															}
+														},
+														{
+															"id": "set-animation-frame",
+															"objectClass": "login_background",
+															"sid": 372698723810158,
+															"parameters": {
+																"frame-number": "1"
+															}
+														},
+														{
+															"id": "set-animation-frame",
+															"objectClass": "dot_login",
+															"sid": 211728233107439,
+															"parameters": {
+																"frame-number": "1"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 891012520717817,
+															"parameters": {
+																"seconds": "0.5",
+																"use-timescale": true
+															}
+														},
+														{
+															"id": "set-animation-frame",
+															"objectClass": "login_background",
+															"sid": 272649713439659,
+															"parameters": {
+																"frame-number": "0"
+															}
+														},
+														{
+															"id": "set-animation-frame",
+															"objectClass": "dot_login",
+															"sid": 309672377618283,
+															"parameters": {
+																"frame-number": "0"
+															}
+														},
+														{
+															"id": "set-text",
+															"objectClass": "input_login",
+															"sid": 901704535029215,
+															"parameters": {
+																"text": "\"\""
+															}
+														},
+														{
+															"id": "set-visible",
+															"objectClass": "cover_login",
+															"sid": 449345340552631,
+															"parameters": {
+																"visibility": "visible"
+															}
+														},
+														{
+															"id": "wait",
+															"objectClass": "System",
+															"sid": 115835809458683,
+															"parameters": {
+																"seconds": "0.3",
+																"use-timescale": true
+															}
+														},
+														{
+															"id": "set-enabled",
+															"objectClass": "input_login",
+															"sid": 636083032964906,
+															"parameters": {
+																"mode": "enabled"
+															}
+														},
+														{
+															"id": "set-focused",
+															"objectClass": "input_login",
+															"sid": 947644197241748
+														}
+													],
+													"sid": 144852725947588
+												}
+											]
 										}
-									],
-									"sid": 682524664953231
-								},
-								{
-									"eventType": "comment",
-									"text": "Errou"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 297418993714634
-										}
-									],
-									"actions": [
-										{
-											"id": "set-enabled",
-											"objectClass": "input_login",
-											"sid": 787423905183460,
-											"parameters": {
-												"mode": "disabled"
-											}
-										},
-										{
-											"id": "play-by-name",
-											"objectClass": "Audio",
-											"sid": 694143253159980,
-											"parameters": {
-												"folder": "sounds",
-												"audio-file-name": "\"wrong\"",
-												"loop": "not-looping",
-												"volume": "0",
-												"stereo-pan": "0",
-												"tag-optional": "\"\""
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "login",
-											"sid": 345298351727792,
-											"parameters": {
-												"frame-number": "1"
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "dot_login",
-											"sid": 936011845981779,
-											"parameters": {
-												"frame-number": "1"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 220033520116390,
-											"parameters": {
-												"seconds": "0.5",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "login",
-											"sid": 411975182848878,
-											"parameters": {
-												"frame-number": "0"
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "dot_login",
-											"sid": 253550475011217,
-											"parameters": {
-												"frame-number": "0"
-											}
-										},
-										{
-											"id": "set-text",
-											"objectClass": "input_login",
-											"sid": 987356346228495,
-											"parameters": {
-												"text": "\"\""
-											}
-										},
-										{
-											"id": "set-visible",
-											"objectClass": "cover_login",
-											"sid": 480567183033215,
-											"parameters": {
-												"visibility": "visible"
-											}
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 748390399514408,
-											"parameters": {
-												"seconds": "0.3",
-												"use-timescale": true
-											}
-										},
-										{
-											"id": "set-enabled",
-											"objectClass": "input_login",
-											"sid": 727332245908747,
-											"parameters": {
-												"mode": "enabled"
-											}
-										},
-										{
-											"id": "set-focused",
-											"objectClass": "input_login",
-											"sid": 177423891253225
-										}
-									],
-									"sid": 900751583938263
+									]
 								}
 							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Digitar senha"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 971240966951111,
-									"parameters": {
-										"object": "cover_login"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "cover_login",
-									"sid": 871148204666358,
-									"parameters": {
-										"instance-variable": "ID",
-										"comparison": 3,
-										"value": "len(input_login.Text)"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "cover_login",
-									"sid": 645290230458242,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 546956456961268
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for-each",
-									"objectClass": "System",
-									"sid": 846592483222308,
-									"parameters": {
-										"object": "cover_login"
-									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "cover_login",
-									"sid": 538724010767990,
-									"parameters": {
-										"instance-variable": "ID",
-										"comparison": 4,
-										"value": "len(input_login.Text)"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "cover_login",
-									"sid": 121998264522550,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 157526209349164
 						}
+					],
+					"sid": 916133113016981,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						1,
+						0,
+						0,
+						1
 					]
 				},
 				{
@@ -2082,9 +2340,17 @@
 						{
 							"id": "cursor-is-over-object",
 							"objectClass": "Mouse",
-							"sid": 479747268374899,
+							"sid": 305120926186487,
 							"parameters": {
 								"object": "close_login"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 129661429891302,
+							"parameters": {
+								"layer": "\"login\""
 							}
 						}
 					],
@@ -2092,13 +2358,13 @@
 						{
 							"id": "set-visible",
 							"objectClass": "close_login",
-							"sid": 736023921769504,
+							"sid": 443693514730013,
 							"parameters": {
 								"visibility": "visible"
 							}
 						}
 					],
-					"sid": 576554105868067
+					"sid": 756093410376877
 				},
 				{
 					"eventType": "block",
@@ -2106,20 +2372,20 @@
 						{
 							"id": "else",
 							"objectClass": "System",
-							"sid": 452834067341981
+							"sid": 372024395371834
 						}
 					],
 					"actions": [
 						{
 							"id": "set-visible",
 							"objectClass": "close_login",
-							"sid": 998162755062015,
+							"sid": 822647028600963,
 							"parameters": {
 								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 645738335976595
+					"sid": 600672213047710
 				},
 				{
 					"eventType": "comment",
@@ -2131,7 +2397,7 @@
 						{
 							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 317260321926378,
+							"sid": 174887074031094,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
@@ -2143,13 +2409,13 @@
 						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 736044142107748,
+							"sid": 414745831205386,
 							"parameters": {
 								"layout": "Bedroom"
 							}
 						}
 					],
-					"sid": 797229507443389
+					"sid": 330169332850954
 				}
 			],
 			"sid": 351493706452100,
@@ -2170,21 +2436,20 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 904470041198402,
-					"disabled": true,
-					"parameters": {
-						"key": 74
-					}
-				},
-				{
 					"id": "on-start-of-layout",
 					"objectClass": "System",
 					"sid": 638732706926236
 				}
 			],
 			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "input_login",
+					"sid": 579526551479655,
+					"parameters": {
+						"mode": "disabled"
+					}
+				},
 				{
 					"id": "set-layer-interactive",
 					"objectClass": "System",
