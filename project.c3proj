@@ -309,7 +309,10 @@
 							"close_login",
 							"cover_login",
 							"input_login",
-							"login"
+							"login",
+							"dot_login",
+							"array_login",
+							"tip_login"
 						],
 						"subfolders": [],
 						"name": "login"
@@ -813,7 +816,7 @@
 					}
 				},
 				{
-					"name": "sucess sound.webm",
+					"name": "success sound.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 459221828611062,
 					"file-info": {
@@ -832,6 +835,14 @@
 					"name": "wrong.webm",
 					"type": "audio/webm; codecs=opus",
 					"sid": 425943531170939,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "bip 3.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 876515678233693,
 					"file-info": {
 						"purpose": "none"
 					}
@@ -1088,7 +1099,16 @@
 			"subfolders": []
 		},
 		"general": {
-			"items": [],
+			"items": [
+				{
+					"name": "login_password.json",
+					"type": "application/json",
+					"sid": 828268786156082,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		}
 	},

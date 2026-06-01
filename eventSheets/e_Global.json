@@ -25,43 +25,663 @@
 			"eventType": "variable",
 			"name": "level_done",
 			"type": "number",
-			"initialValue": "1",
+			"initialValue": "3",
 			"comment": "Define qual cadeado desbloquear para a janela do Terminal Zero",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 322105363857792
 		},
 		{
-			"eventType": "comment",
-			"text": "Tela cheia"
+			"eventType": "variable",
+			"name": "cheat",
+			"type": "string",
+			"initialValue": "",
+			"comment": "Ativa trapaças no jogo",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 617926902858488
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"bookmark": true,
+			"eventType": "group",
+			"disabled": false,
+			"title": "GLOBAL",
+			"description": "Código geral",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "is-in-preview",
-					"objectClass": "System",
-					"sid": 664908839994281
+					"eventType": "comment",
+					"text": "Sempre em tela cheia"
 				},
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 996407279517731
-				}
-			],
-			"actions": [
+					"bookmark": true,
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-in-preview",
+							"objectClass": "System",
+							"sid": 989036932407321
+						},
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 395494296138294
+						}
+					],
+					"actions": [
+						{
+							"id": "request-fullscreen",
+							"objectClass": "Browser",
+							"sid": 891444387504046,
+							"parameters": {
+								"mode": "stretch-scale-inner",
+								"navigation-ui": "auto"
+							}
+						}
+					],
+					"sid": 461084270585429,
+					"disabled": true
+				},
 				{
-					"id": "request-fullscreen",
-					"objectClass": "Browser",
-					"sid": 692841547138656,
-					"parameters": {
-						"mode": "stretch-scale-inner",
-						"navigation-ui": "auto"
-					}
+					"eventType": "comment",
+					"text": "Ativa/ desativa trapaças"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 727227218354153,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 556350453766049
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 851923892300728,
+									"parameters": {
+										"variable": "cheat",
+										"value": "right(cheat & Keyboard.TypedKey, 4)"
+									}
+								}
+							],
+							"sid": 199925805957289
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 686741012956131,
+									"parameters": {
+										"variable": "cheat",
+										"comparison": 0,
+										"value": "\"kaua\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 135350339961301,
+									"parameters": {
+										"group-name": "\"CHEAT\"",
+										"state": "toggle-active"
+									}
+								}
+							],
+							"sid": 340912622614036,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 637081628018258
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 238042067401000,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "\"bip 3\"",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										}
+									],
+									"sid": 642583953960601
+								}
+							]
+						}
+					]
 				}
 			],
-			"sid": 851112825147190,
-			"disabled": true
+			"sid": 916839982201345,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0,
+				0.8666666666666667,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "CHEAT",
+			"description": "Trapaças do jogo",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Atalhos para as fases e layouts"
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "CHEAT_SKIP",
+					"description": "Tecla de atalho para pular fases",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Fases"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-any-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 531412119804884
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 571987697906635,
+									"parameters": {
+										"first-value": "Keyboard.TypedKey",
+										"comparison": 5,
+										"second-value": "0"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 702731892162450,
+									"parameters": {
+										"first-value": "Keyboard.TypedKey",
+										"comparison": 3,
+										"second-value": "9"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 156194152432587,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Fase 10"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 996194644741860,
+											"parameters": {
+												"first-value": "Keyboard.TypedKey",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout",
+											"objectClass": "System",
+											"sid": 647881949017336,
+											"parameters": {
+												"layout": "Level10"
+											}
+										}
+									],
+									"sid": 923393024555383
+								},
+								{
+									"eventType": "comment",
+									"text": "Fase 1-9"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 398811043199114
+										}
+									],
+									"actions": [
+										{
+											"id": "go-to-layout-by-name",
+											"objectClass": "System",
+											"sid": 464735659391509,
+											"parameters": {
+												"layout": "\"Level\" & Keyboard.TypedKey"
+											}
+										}
+									],
+									"sid": 400066388065674
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Quarto"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 487628924939963,
+									"parameters": {
+										"key": 66
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 672156962011573,
+									"parameters": {
+										"layout": "Bedroom"
+									}
+								}
+							],
+							"sid": 402268715709472
+						},
+						{
+							"eventType": "comment",
+							"text": "Computador"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 530439551564467,
+									"parameters": {
+										"key": 80
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 361319238360808,
+									"parameters": {
+										"layout": "PC"
+									}
+								}
+							],
+							"sid": 164105673536320
+						}
+					],
+					"sid": 230956769179057,
+					"text-color": [
+						0,
+						0,
+						0,
+						1
+					],
+					"background-color": [
+						1,
+						0.4823529411764706,
+						0,
+						1
+					]
+				}
+			],
+			"sid": 531775917341314,
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				1,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "FAMILIES",
+			"description": "Interação com famílias",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "YES_NO_FAMILLY",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Animação cursor sobre sim ou não"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 332354873289541,
+									"parameters": {
+										"object": "Yes_No_Familly"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 549630327109441,
+									"parameters": {
+										"variable": "IsChoosing"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Yes_No_Familly",
+									"sid": 984037720839861,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 566554986491000,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 774515234308778
+										}
+									],
+									"actions": [
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 858850634909546,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "\"bip 1\"",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"SFX\""
+											}
+										}
+									],
+									"sid": 747864030084259
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 833490409807709,
+									"parameters": {
+										"object": "Yes_No_Familly"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Yes_No_Familly",
+									"sid": 634996722807351,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 710234222556807
+						},
+						{
+							"eventType": "comment",
+							"text": "Botão selecionado"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 737831371640262,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "Yes_No_Familly"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 284318168867657,
+									"parameters": {
+										"variable": "IsChoosing"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 616928285105672,
+									"parameters": {
+										"folder": "sounds",
+										"audio-file-name": "\"bip 1.2\"",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"SFX\""
+									}
+								}
+							],
+							"sid": 138559043624393
+						}
+					],
+					"sid": 769183294118315,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.8666666666666667,
+						0.9764705882352941,
+						0.16862745098039217,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "SIGN_FAMILLY",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Não está em cima de uma hitbox"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 265338961375553
+								}
+							],
+							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "Sign_Familly",
+									"sid": 504488992697713,
+									"parameters": {
+										"opacity": "50"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "Sign_Familly",
+									"sid": 397327013609482,
+									"parameters": {
+										"frame-number": "0"
+									}
+								}
+							],
+							"sid": 986007276557125,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Está em cima de uma hitbox"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "player",
+											"sid": 744949649753279,
+											"parameters": {
+												"object": "Sign_Hitbox_Familly"
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Sign_Familly",
+											"sid": 847031676396876,
+											"parameters": {
+												"instance-variable": "sign",
+												"comparison": 0,
+												"value": "Sign_Hitbox_Familly.sign"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-opacity",
+											"objectClass": "Sign_Familly",
+											"sid": 562213014171304,
+											"parameters": {
+												"opacity": "100"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "Sign_Familly",
+											"sid": 330527466147165,
+											"parameters": {
+												"frame-number": "1"
+											}
+										}
+									],
+									"sid": 449006063278359
+								}
+							]
+						}
+					],
+					"sid": 893284153113637,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.8666666666666667,
+						0.9764705882352941,
+						0.16862745098039217,
+						1
+					]
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "XFAMILLY",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [],
+					"sid": 213039129497658,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.8666666666666667,
+						0.9764705882352941,
+						0.16862745098039217,
+						1
+					]
+				}
+			],
+			"sid": 237485358482658,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.8666666666666667,
+				0.9764705882352941,
+				0.16862745098039217,
+				1
+			]
 		},
 		{
 			"eventType": "group",
@@ -181,15 +801,442 @@
 			],
 			"sid": 143760530796771,
 			"text-color": [
-				1,
-				1,
-				1,
+				0,
+				0,
+				0,
 				1
 			],
 			"background-color": [
 				0.26666666666666666,
 				1,
 				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "RESET",
+			"description": "Restaura o arquivo local",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Restaura as variáveis das fases"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 999836101627876
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 805762204046379,
+							"parameters": {
+								"first-value": "find(LayoutName, \"Level\")",
+								"comparison": 5,
+								"second-value": "0"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 498253197372297,
+							"parameters": {
+								"variable": "layout",
+								"value": "LayoutName"
+							}
+						}
+					],
+					"sid": 291904261217453,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Fase 1"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 584217238541692,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level1\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 281343639437908,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 394080023048574,
+											"parameters": {
+												"variable": "lvl1_current_score"
+											}
+										},
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 841686330600408,
+											"parameters": {
+												"variable": "lvl1_current_stage"
+											}
+										},
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 576466094972052,
+											"parameters": {
+												"variable": "lvl1_gameState"
+											}
+										},
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 684502633382492,
+											"parameters": {
+												"variable": "lvl1_idle_timer"
+											}
+										},
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 179119714712641,
+											"parameters": {
+												"variable": "lvl1_InputBlock"
+											}
+										},
+										{
+											"id": "reset-eventvar",
+											"objectClass": "System",
+											"sid": 422673284563938,
+											"parameters": {
+												"variable": "lvl1_sequence_index"
+											}
+										}
+									],
+									"sid": 741007815874803
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 2"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 256244887096810,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level2\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 467727052909034,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 318331372387839
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 3"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 961326864328856,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level3\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 389665283306260,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 880891382146753
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 4"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 317222021303755,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level4\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 637471158431143,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 622657084072728
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 5"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 942439779476878,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level5\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 702338366005865,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 882801284990792
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 6"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 959479859027903,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level6\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 108458693931202,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 998130633883888
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 7"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 429148160333535,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level7\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 832730579079263,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 763709241004995
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 8"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 644222667968766,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level8\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 424651163314212,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 333940082726827
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 9"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 720765620086975,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level9\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 327928908558633,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 348648757170162
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 10"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 771304980623535,
+									"parameters": {
+										"first-value": "layout",
+										"comparison": 0,
+										"second-value": "\"Level10\""
+									}
+								}
+							],
+							"actions": [],
+							"sid": 889467848994828,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [],
+									"sid": 208838735809470
+								}
+							]
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Tutorial WASD no layout Bedroom"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 512754793181066,
+							"parameters": {
+								"key": 192
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "remove-item",
+							"objectClass": "LocalStorage",
+							"sid": 702589071292196,
+							"parameters": {
+								"key": "\"WASD_entrada\""
+							}
+						}
+					],
+					"sid": 895183204776547
+				}
+			],
+			"sid": 912091851435917,
+			"text-color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"background-color": [
+				0.9725490196078431,
+				0.33725490196078434,
+				0.3215686274509804,
 				1
 			]
 		},
@@ -706,1032 +1753,6 @@
 				0.16862745098039217,
 				0.5137254901960784,
 				0.2549019607843137,
-				1
-			]
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "LEVEL",
-			"description": "Tecla de atalho para pular níveis",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "LEVEL_SKIP",
-					"description": "'NumLock\" + (número da fase)",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "FASE 1"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 860249096546318,
-									"parameters": {
-										"key": 97
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 409000873137463,
-									"parameters": {
-										"layout": "Level1"
-									}
-								}
-							],
-							"sid": 670422919000466
-						},
-						{
-							"eventType": "comment",
-							"text": "FASE 2"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 865410931924100,
-									"parameters": {
-										"key": 98
-									}
-								}
-							],
-							"actions": [],
-							"sid": 714672493839578
-						},
-						{
-							"eventType": "comment",
-							"text": "FASE 3"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 965285556771223,
-									"parameters": {
-										"key": 99
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 141085524904012,
-									"parameters": {
-										"layout": "Level3"
-									}
-								}
-							],
-							"sid": 810269561152739
-						},
-						{
-							"eventType": "comment",
-							"text": "FASE 4"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 655406489597277,
-									"parameters": {
-										"key": 100
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 337728091254382,
-									"parameters": {
-										"layout": "Level4"
-									}
-								}
-							],
-							"sid": 460356042441412
-						},
-						{
-							"eventType": "comment",
-							"text": "FASE 5"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 784081003549036,
-									"parameters": {
-										"key": 101
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 157597748969594,
-									"parameters": {
-										"layout": "Level5"
-									}
-								}
-							],
-							"sid": 752074615600643
-						},
-						{
-							"eventType": "comment",
-							"text": "FASE 6"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 765884439125129,
-									"parameters": {
-										"key": 102
-									}
-								}
-							],
-							"actions": [],
-							"sid": 824003604561253
-						},
-						{
-							"eventType": "comment",
-							"text": "FASE 7"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 920123418052254,
-									"parameters": {
-										"key": 103
-									}
-								}
-							],
-							"actions": [],
-							"sid": 286495975669845
-						},
-						{
-							"eventType": "comment",
-							"text": "FASE 8"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 723349057190872,
-									"parameters": {
-										"key": 104
-									}
-								}
-							],
-							"actions": [],
-							"sid": 181415097923944
-						},
-						{
-							"eventType": "comment",
-							"text": "FASE 9"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 942475864985292,
-									"parameters": {
-										"key": 105
-									}
-								}
-							],
-							"actions": [],
-							"sid": 293766431319658
-						},
-						{
-							"eventType": "comment",
-							"text": "FASE 10"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 192451423122100,
-									"parameters": {
-										"key": 96
-									}
-								}
-							],
-							"actions": [],
-							"sid": 392864074840054
-						}
-					],
-					"sid": 178475059414971,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						1,
-						0.4823529411764706,
-						0,
-						1
-					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Ativa/ desativa os atalhos para as fases no teclado numérico (NumLock)"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 604654299932785,
-							"parameters": {
-								"key": 144
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 706749346089184,
-							"parameters": {
-								"group-name": "\"LEVEL_SKIP\"",
-								"state": "toggle-active"
-							}
-						}
-					],
-					"sid": 869927536441235
-				}
-			],
-			"sid": 639576217351447,
-			"text-color": [
-				0,
-				0,
-				0,
-				0
-			],
-			"background-color": [
-				1,
-				0.4823529411764706,
-				0,
-				1
-			]
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "RESET",
-			"description": "Restaura o arquivo local",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "Restaura as variáveis das fases"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 480500450527645
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 772737216256732,
-							"parameters": {
-								"first-value": "find(LayoutName, \"Level\")",
-								"comparison": 5,
-								"second-value": "0"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 433029605531023,
-							"parameters": {
-								"variable": "layout",
-								"value": "LayoutName"
-							}
-						}
-					],
-					"sid": 702361737033630,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Fase 1"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 441227187992145,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level1\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 388651046951164,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 174292959317188,
-											"parameters": {
-												"variable": "lvl1_current_score"
-											}
-										},
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 336968908603224,
-											"parameters": {
-												"variable": "lvl1_current_stage"
-											}
-										},
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 954975131375180,
-											"parameters": {
-												"variable": "lvl1_gameState"
-											}
-										},
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 315249267782326,
-											"parameters": {
-												"variable": "lvl1_idle_timer"
-											}
-										},
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 968698614482377,
-											"parameters": {
-												"variable": "lvl1_InputBlock"
-											}
-										},
-										{
-											"id": "reset-eventvar",
-											"objectClass": "System",
-											"sid": 442346389571582,
-											"parameters": {
-												"variable": "lvl1_sequence_index"
-											}
-										}
-									],
-									"sid": 975077781742379
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 2"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 758751959290734,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level2\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 524365536457307,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 940096840507424
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 3"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 534185367161374,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level3\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 369973146782693,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 579979509512681
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 4"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 727496926886191,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level4\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 850759261816783,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 841240457101728
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 5"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 897963272909526,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level5\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 768645733337158,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 858537076399097
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 6"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 598665437109720,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level6\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 373187931253615,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 301718342698141
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 7"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 174121343579601,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level7\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 708409816889393,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 293004833408057
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 8"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 940603289872043,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level8\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 830023457891695,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 683334936232709
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 9"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 799419235371186,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level9\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 752359309137655,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 654921640793796
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Fase 10"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 360677435369185,
-									"parameters": {
-										"first-value": "layout",
-										"comparison": 0,
-										"second-value": "\"Level10\""
-									}
-								}
-							],
-							"actions": [],
-							"sid": 574015273801543,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [],
-									"sid": 336821913589437
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Tutorial WASD no layout Bedroom"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 857542628663833,
-							"parameters": {
-								"key": 192
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "remove-item",
-							"objectClass": "LocalStorage",
-							"sid": 832918860706119,
-							"parameters": {
-								"key": "\"WASD_entrada\""
-							}
-						}
-					],
-					"sid": 672323790507587
-				}
-			],
-			"sid": 124037823196975,
-			"text-color": [
-				1,
-				1,
-				1,
-				1
-			],
-			"background-color": [
-				0.9725490196078431,
-				0.33725490196078434,
-				0.3215686274509804,
-				1
-			]
-		},
-		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "FAMILIES",
-			"description": "Interação com famílias",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "YES_NO_FAMILLY",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Animação cursor sobre sim ou não"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 835989358253983,
-									"parameters": {
-										"object": "Yes_No_Familly"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 495234379156014,
-									"parameters": {
-										"variable": "IsChoosing"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "Yes_No_Familly",
-									"sid": 643254359601294,
-									"parameters": {
-										"frame-number": "0"
-									}
-								}
-							],
-							"sid": 961417735865114,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 746888209905663
-										}
-									],
-									"actions": [
-										{
-											"id": "play-by-name",
-											"objectClass": "Audio",
-											"sid": 456137558438393,
-											"parameters": {
-												"folder": "sounds",
-												"audio-file-name": "\"bip 1\"",
-												"loop": "not-looping",
-												"volume": "0",
-												"stereo-pan": "0",
-												"tag-optional": "\"SFX\""
-											}
-										}
-									],
-									"sid": 749005391267593
-								}
-							]
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 772591063587460,
-									"parameters": {
-										"object": "Yes_No_Familly"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "Yes_No_Familly",
-									"sid": 817725865577268,
-									"parameters": {
-										"frame-number": "1"
-									}
-								}
-							],
-							"sid": 319699475959240
-						},
-						{
-							"eventType": "comment",
-							"text": "Botão selecionado"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-object-clicked",
-									"objectClass": "Mouse",
-									"sid": 539173470800792,
-									"parameters": {
-										"mouse-button": "left",
-										"click-type": "clicked",
-										"object-clicked": "Yes_No_Familly"
-									}
-								},
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 447804507501323,
-									"parameters": {
-										"variable": "IsChoosing"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "play-by-name",
-									"objectClass": "Audio",
-									"sid": 879251062903008,
-									"parameters": {
-										"folder": "sounds",
-										"audio-file-name": "\"bip 1.2\"",
-										"loop": "not-looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "\"SFX\""
-									}
-								}
-							],
-							"sid": 737845927362147
-						}
-					],
-					"sid": 383161184276498,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						0.8666666666666667,
-						0.9764705882352941,
-						0.16862745098039217,
-						1
-					]
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "SIGN_FAMILLY",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [
-						{
-							"eventType": "comment",
-							"text": "Não está em cima de uma hitbox"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 221379822295645
-								}
-							],
-							"actions": [
-								{
-									"id": "set-opacity",
-									"objectClass": "Sign_Familly",
-									"sid": 676208629606686,
-									"parameters": {
-										"opacity": "50"
-									}
-								},
-								{
-									"id": "set-animation-frame",
-									"objectClass": "Sign_Familly",
-									"sid": 530538304027448,
-									"parameters": {
-										"frame-number": "0"
-									}
-								}
-							],
-							"sid": 961303870182010,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "Está em cima de uma hitbox"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "player",
-											"sid": 187141533618216,
-											"parameters": {
-												"object": "Sign_Hitbox_Familly"
-											}
-										},
-										{
-											"id": "compare-instance-variable",
-											"objectClass": "Sign_Familly",
-											"sid": 836068526304724,
-											"parameters": {
-												"instance-variable": "sign",
-												"comparison": 0,
-												"value": "Sign_Hitbox_Familly.sign"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-opacity",
-											"objectClass": "Sign_Familly",
-											"sid": 652259808413944,
-											"parameters": {
-												"opacity": "100"
-											}
-										},
-										{
-											"id": "set-animation-frame",
-											"objectClass": "Sign_Familly",
-											"sid": 807272827422784,
-											"parameters": {
-												"frame-number": "1"
-											}
-										}
-									],
-									"sid": 452254222683485
-								}
-							]
-						}
-					],
-					"sid": 207071007562189,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						0.8666666666666667,
-						0.9764705882352941,
-						0.16862745098039217,
-						1
-					]
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "XFAMILLY",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [],
-					"sid": 453886057900979,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						0.8666666666666667,
-						0.9764705882352941,
-						0.16862745098039217,
-						1
-					]
-				}
-			],
-			"sid": 668918229335458,
-			"text-color": [
-				0,
-				0,
-				0,
-				0
-			],
-			"background-color": [
-				0.8666666666666667,
-				0.9764705882352941,
-				0.16862745098039217,
 				1
 			]
 		}

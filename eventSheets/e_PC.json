@@ -1248,7 +1248,35 @@
 											}
 										}
 									],
-									"sid": 249553779502478
+									"sid": 249553779502478,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 454636189643537
+												}
+											],
+											"actions": [
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 974698641661468,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"bip 1\"",
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 136268214164988
+										}
+									]
 								}
 							]
 						},
@@ -1382,9 +1410,45 @@
 									"id": "is-visible",
 									"objectClass": "terminalzero_window",
 									"sid": 965402381926894
+								},
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 286515058556156,
+									"parameters": {
+										"object": "level_hover",
+										"expression": "level_hover.level",
+										"comparison": 0,
+										"value": "locker.level"
+									}
 								}
 							],
 							"actions": [
+								{
+									"id": "set-opacity",
+									"objectClass": "level_hover",
+									"sid": 949239814833751,
+									"parameters": {
+										"opacity": "30"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 408296457218182,
+									"parameters": {
+										"seconds": "0.1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-opacity",
+									"objectClass": "level_hover",
+									"sid": 913594301702774,
+									"parameters": {
+										"opacity": "0"
+									}
+								},
 								{
 									"callFunction": "Transition",
 									"sid": 651095769968159,
@@ -1519,35 +1583,163 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 600969322011255
+							"sid": 719652263497660
 						}
 					],
 					"actions": [
 						{
-							"id": "set-focused",
+							"id": "request-project-file",
+							"objectClass": "AJAX",
+							"sid": 596517251144508,
+							"parameters": {
+								"tag": "\"login_password\"",
+								"file": {
+									"path": "login_password.json"
+								}
+							}
+						},
+						{
+							"id": "set-master-volume",
+							"objectClass": "Audio",
+							"sid": 958634381966589,
+							"parameters": {
+								"db": "-10"
+							}
+						},
+						{
+							"id": "set-enabled",
 							"objectClass": "input_login",
-							"sid": 832832787895445
+							"sid": 796102582536854,
+							"parameters": {
+								"mode": "enabled"
+							}
 						},
 						{
 							"id": "set-css-style",
 							"objectClass": "input_login",
-							"sid": 691019482042965,
-							"disabled": true,
+							"sid": 727842188544557,
 							"parameters": {
 								"property-name": "\"opacity\"",
 								"value": "\"0\""
 							}
 						},
 						{
-							"id": "set-master-volume",
-							"objectClass": "Audio",
-							"sid": 984948955061594,
+							"id": "set-position",
+							"objectClass": "input_login",
+							"sid": 655586161377753,
 							"parameters": {
-								"db": "-10"
+								"x": "1270",
+								"y": "650"
 							}
 						}
 					],
-					"sid": 781894518006862
+					"sid": 681270874443094,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Inicia música de fundo"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 447267243548324,
+									"parameters": {
+										"tag": "\"musica ambiente\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 824576979509820,
+									"parameters": {
+										"folder": "music",
+										"audio-file-name": "\"musica ambiente\"",
+										"loop": "looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"BGM\""
+									}
+								}
+							],
+							"sid": 147744344637961
+						}
+					],
+					"isOrBlock": true
+				},
+				{
+					"eventType": "comment",
+					"text": "Sincroniza o array para as senhas e dicas"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-completed",
+							"objectClass": "AJAX",
+							"sid": 559508166250341,
+							"parameters": {
+								"tag": "\"login_password\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "load",
+							"objectClass": "array_login",
+							"sid": 878544264297052,
+							"parameters": {
+								"json": "AJAX.LastData"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "tip_login",
+							"sid": 138390335382710,
+							"parameters": {
+								"text": "str(array_login.At(level_done, 1))"
+							}
+						}
+					],
+					"sid": 834939416999466
+				},
+				{
+					"eventType": "comment",
+					"text": "Mantem o input em foco"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-focused",
+							"objectClass": "input_login",
+							"sid": 372815380714181,
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 564199827246960,
+							"parameters": {
+								"seconds": "0.1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-focused",
+							"objectClass": "input_login",
+							"sid": 349270587268735
+						}
+					],
+					"sid": 550950247308954,
+					"isOrBlock": true
 				},
 				{
 					"eventType": "comment",
@@ -1618,15 +1810,36 @@
 										{
 											"id": "compare-two-values",
 											"objectClass": "System",
-											"sid": 674467014769765,
+											"sid": 167499601645927,
 											"parameters": {
 												"first-value": "input_login.Text",
 												"comparison": 0,
-												"second-value": "tokenat(\"1111,2222,3333,4444,5555,6666,7777,8888,9999,1010\", level_done, \",\")"
+												"second-value": "str(array_login.At(level_done, 0))"
 											}
 										}
 									],
 									"actions": [
+										{
+											"id": "set-enabled",
+											"objectClass": "input_login",
+											"sid": 549780934334286,
+											"parameters": {
+												"mode": "disabled"
+											}
+										},
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 351079334616473,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "\"success sound\"",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										},
 										{
 											"id": "set-layer-interactive",
 											"objectClass": "System",
@@ -1681,12 +1894,104 @@
 									],
 									"actions": [
 										{
+											"id": "set-enabled",
+											"objectClass": "input_login",
+											"sid": 787423905183460,
+											"parameters": {
+												"mode": "disabled"
+											}
+										},
+										{
+											"id": "play-by-name",
+											"objectClass": "Audio",
+											"sid": 694143253159980,
+											"parameters": {
+												"folder": "sounds",
+												"audio-file-name": "\"wrong\"",
+												"loop": "not-looping",
+												"volume": "0",
+												"stereo-pan": "0",
+												"tag-optional": "\"\""
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "login",
+											"sid": 345298351727792,
+											"parameters": {
+												"frame-number": "1"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "dot_login",
+											"sid": 936011845981779,
+											"parameters": {
+												"frame-number": "1"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 220033520116390,
+											"parameters": {
+												"seconds": "0.5",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "login",
+											"sid": 411975182848878,
+											"parameters": {
+												"frame-number": "0"
+											}
+										},
+										{
+											"id": "set-animation-frame",
+											"objectClass": "dot_login",
+											"sid": 253550475011217,
+											"parameters": {
+												"frame-number": "0"
+											}
+										},
+										{
 											"id": "set-text",
 											"objectClass": "input_login",
-											"sid": 816990639222352,
+											"sid": 987356346228495,
 											"parameters": {
 												"text": "\"\""
 											}
+										},
+										{
+											"id": "set-visible",
+											"objectClass": "cover_login",
+											"sid": 480567183033215,
+											"parameters": {
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 748390399514408,
+											"parameters": {
+												"seconds": "0.3",
+												"use-timescale": true
+											}
+										},
+										{
+											"id": "set-enabled",
+											"objectClass": "input_login",
+											"sid": 727332245908747,
+											"parameters": {
+												"mode": "enabled"
+											}
+										},
+										{
+											"id": "set-focused",
+											"objectClass": "input_login",
+											"sid": 177423891253225
 										}
 									],
 									"sid": 900751583938263
@@ -1855,9 +2160,9 @@
 				0
 			],
 			"background-color": [
-				0.14901960784313725,
-				0.8705882352941177,
-				0.3254901960784314,
+				1,
+				0,
+				0,
 				1
 			]
 		},
@@ -1868,9 +2173,15 @@
 					"id": "on-key-pressed",
 					"objectClass": "Keyboard",
 					"sid": 904470041198402,
+					"disabled": true,
 					"parameters": {
 						"key": 74
 					}
+				},
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 638732706926236
 				}
 			],
 			"actions": [
@@ -1911,7 +2222,9 @@
 					}
 				}
 			],
-			"sid": 513077078394478
+			"sid": 513077078394478,
+			"disabled": true,
+			"isOrBlock": true
 		}
 	],
 	"sid": 473027040696098
