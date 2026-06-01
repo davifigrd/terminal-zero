@@ -965,7 +965,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Sair da lixeira ou armário"
+					"text": "Sair"
 				},
 				{
 					"eventType": "block",
@@ -1020,6 +1020,10 @@
 					],
 					"sid": 363811991807325,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "Lixeira ou armário"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -1076,10 +1080,150 @@
 										"layer": "\"trash\"",
 										"interactive": false
 									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 991141200094806,
+									"parameters": {
+										"layer": "\"choosing\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 329200566817724,
+									"parameters": {
+										"layer": "\"choosing\"",
+										"interactive": false
+									}
 								}
 							],
 							"sid": 565154977770010,
 							"isOrBlock": true
+						},
+						{
+							"eventType": "comment",
+							"text": "Tela de escolha da cama"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 671752721536559,
+									"parameters": {
+										"layer": "\"save\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 993695913159523,
+									"parameters": {
+										"variable": "PlayerMoving",
+										"value": "true"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "choosing_save",
+									"sid": 807097803428814,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"choosing_appear\"",
+										"property": "size",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.3",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 300702223629402
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 251789265935562,
+									"parameters": {
+										"layer": "\"save\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 699409154894082
+						},
+						{
+							"eventType": "comment",
+							"text": "Tela de escolha da porta"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "layer-is-visible",
+									"objectClass": "System",
+									"sid": 302581524900091,
+									"parameters": {
+										"layer": "\"door\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 706562775523865,
+									"parameters": {
+										"variable": "PlayerMoving",
+										"value": "true"
+									}
+								},
+								{
+									"id": "tween-two-properties",
+									"objectClass": "choosing_menu",
+									"sid": 356140912497547,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"choosing_appear\"",
+										"property": "size",
+										"end-x": "0",
+										"end-y": "0",
+										"time": "0.3",
+										"ease": "default",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait-for-previous-actions",
+									"objectClass": "System",
+									"sid": 358846682610964
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 392112907052338,
+									"parameters": {
+										"layer": "\"door\"",
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 732093181433446
 						},
 						{
 							"eventType": "block",
@@ -1189,7 +1333,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Cursor ativa quando está em tela de escolha"
+					"text": "Cursor ativa quando está em tela de escolha ou pause"
 				},
 				{
 					"eventType": "block",
@@ -1200,6 +1344,14 @@
 							"sid": 277797439060645,
 							"parameters": {
 								"variable": "IsChoosing"
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 130751022241243,
+							"parameters": {
+								"layer": "\"pause\""
 							}
 						}
 					],
@@ -1272,6 +1424,15 @@
 							"sid": 381485416044068,
 							"parameters": {
 								"variable": "IsChoosing"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 980628185474530,
+							"parameters": {
+								"layer": "\"pause\""
 							},
 							"isInverted": true
 						}
