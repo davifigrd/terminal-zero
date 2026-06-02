@@ -6,6 +6,53 @@
 			"includeSheet": "e_Global"
 		},
 		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 725454826945949,
+					"parameters": {
+						"object": "lvl7_cursor_area"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 809610273938505,
+					"parameters": {
+						"layer": "\"cursor\"",
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 520920581706938
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 244044646120281
+				}
+			],
+			"actions": [
+				{
+					"id": "set-layer-visible",
+					"objectClass": "System",
+					"sid": 645879256623027,
+					"parameters": {
+						"layer": "\"cursor\"",
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 795376012810676
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "lvl7_Audios",
@@ -105,6 +152,15 @@
 							"id": "set-focused",
 							"objectClass": "lvl7_Textinput",
 							"sid": 808619747609623
+						},
+						{
+							"id": "set-css-style",
+							"objectClass": "lvl7_Textinput",
+							"sid": 709424502060765,
+							"parameters": {
+								"property-name": "\"opacity\"",
+								"value": "\"0\""
+							}
 						}
 					],
 					"sid": 106099758148447
@@ -116,6 +172,16 @@
 							"id": "every-tick",
 							"objectClass": "System",
 							"sid": 721131066860768
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl7_coordenadas",
+							"sid": 181107507583691,
+							"parameters": {
+								"instance-variable": "etapa",
+								"comparison": 2,
+								"value": "2"
+							}
 						}
 					],
 					"actions": [
@@ -210,6 +276,11 @@
 					"sid": 645044269229910
 				},
 				{
+					"bookmark": true,
+					"eventType": "comment",
+					"text": "Primeira etapa concluída"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -220,7 +291,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 944627078326194,
+							"sid": 712450308497660,
 							"parameters": {
 								"first-value": "lowercase(lvl7_TextInput.Text)",
 								"comparison": 0,
@@ -230,37 +301,406 @@
 					],
 					"actions": [
 						{
-							"id": "set-enabled",
-							"objectClass": "lvl7_Textinput",
-							"sid": 985781310705371,
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 251639307035292,
 							"parameters": {
-								"mode": "disabled"
+								"folder": "sounds",
+								"audio-file-name": "\"success sound\"",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						},
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 823707811809037,
+							"sid": 728551334464184,
 							"parameters": {
-								"seconds": "1.0",
+								"seconds": "2",
 								"use-timescale": true
 							}
 						},
 						{
-							"id": "go-to-layout",
+							"id": "start-fade",
+							"objectClass": "lvl7_black",
+							"sid": 354861234415073,
+							"behaviorType": "Fade"
+						},
+						{
+							"id": "signal",
 							"objectClass": "System",
-							"sid": 885005083021149,
+							"sid": 359257495540534,
 							"parameters": {
-								"layout": "Bedroom"
+								"tag": "\"lvl7_próxima_etapa\""
+							}
+						}
+					],
+					"sid": 806659588530738
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-signal",
+							"objectClass": "System",
+							"sid": 133710549897831,
+							"parameters": {
+								"tag": "\"lvl7_próxima_etapa\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 513014903698644,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl5_Texto1",
+							"sid": 317249495840618,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto2",
+							"sid": 899840325565520,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto3",
+							"sid": 424192491280256,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto4",
+							"sid": 630796078616851,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto5",
+							"sid": 783005122762847,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto6",
+							"sid": 352110549826904,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Texto7",
+							"sid": 658335984032847,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_coordenadas",
+							"sid": 476499858336304,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl7_coordenadas",
+							"sid": 278448772967730,
+							"parameters": {
+								"instance-variable": "etapa",
+								"value": "2"
+							}
+						}
+					],
+					"sid": 690148589959416,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "lvl7_coordenadas",
+									"sid": 339168771958709,
+									"parameters": {
+										"instance-variable": "etapa",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 619461843469436,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 602539534974564,
+											"parameters": {
+												"instance-variable": "posicao",
+												"comparison": 0,
+												"value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 865396999339196,
+											"parameters": {
+												"text": "\"(-150, 15)\""
+											}
+										}
+									],
+									"sid": 838891377566786
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 530597183489434,
+											"parameters": {
+												"instance-variable": "posicao",
+												"comparison": 0,
+												"value": "2"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 193736877173721,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 406889095612166
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 254030523118883,
+											"parameters": {
+												"instance-variable": "posicao",
+												"comparison": 0,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 362312561237717,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 183912281699828
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 994419910393945,
+											"parameters": {
+												"instance-variable": "posicao",
+												"comparison": 0,
+												"value": "4"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 389192265273328,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 603701431172950
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 686209233252247,
+											"parameters": {
+												"instance-variable": "posicao",
+												"comparison": 0,
+												"value": "5"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 895607069299602,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 218664500096318
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 530825372332664,
+											"parameters": {
+												"instance-variable": "posicao",
+												"comparison": 0,
+												"value": "6"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 345187646171269,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 776221080288604
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 442613620456205,
+											"parameters": {
+												"instance-variable": "posicao",
+												"comparison": 0,
+												"value": "7"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "lvl7_coordenadas",
+											"sid": 473078100724657,
+											"parameters": {
+												"text": "\"\""
+											}
+										}
+									],
+									"sid": 811324794084001
+								}
+							]
+						}
+					]
+				},
+				{
+					"bookmark": true,
+					"eventType": "comment",
+					"text": "Segunda etapa concluída"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-text-changed",
+							"objectClass": "lvl7_Textinput",
+							"sid": 814636010117140
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 278863306226027,
+							"parameters": {
+								"first-value": "lowercase(lvl7_TextInput.Text)",
+								"comparison": 0,
+								"second-value": "\"e\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 224800134578481,
+							"parameters": {
+								"folder": "sounds",
+								"audio-file-name": "\"success sound\"",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 526050439601609,
+							"parameters": {
+								"seconds": "2",
+								"use-timescale": true
 							}
 						},
 						{
 							"id": "stop-all",
 							"objectClass": "Audio",
-							"sid": 445144013942291
+							"sid": 459682976337651
+						},
+						{
+							"callFunction": "Transition",
+							"sid": 512430261735690,
+							"parameters": [
+								"\"Bedroom\""
+							]
 						}
 					],
-					"sid": 806659588530738
+					"sid": 845300263251051
 				},
 				{
 					"eventType": "block",
