@@ -53,6 +53,14 @@
 							}
 						},
 						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 541247361106610,
+							"parameters": {
+								"time-scale": "1"
+							}
+						},
+						{
 							"id": "set-opacity",
 							"objectClass": "cursor",
 							"sid": 612887208253834,
@@ -688,6 +696,11 @@
 							"parameters": {
 								"variable": "IsChoosing"
 							}
+						},
+						{
+							"id": "is-visible",
+							"objectClass": "choosing_leave",
+							"sid": 969925016012944
 						}
 					],
 					"actions": [],
@@ -823,110 +836,6 @@
 							"sid": 133289640101744
 						}
 					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Voltar (esc)"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 621799429572221,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "esc"
-							}
-						},
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 228746013646843,
-							"parameters": {
-								"key": 27
-							}
-						}
-					],
-					"actions": [],
-					"sid": 395594121513896,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 606824872027917,
-									"parameters": {
-										"variable": "IsChoosing"
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 257134599447073,
-									"parameters": {
-										"layer": "\"controles\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 926489871361893,
-									"parameters": {
-										"layer": "\"controles\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 269755639953198,
-									"parameters": {
-										"layer": "\"creditos\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 520972733836858,
-									"parameters": {
-										"layer": "\"creditos\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 477105873497867,
-									"parameters": {
-										"layer": "\"menu\"",
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 736286787141485,
-									"parameters": {
-										"layer": "\"menu\"",
-										"interactive": true
-									}
-								}
-							],
-							"sid": 187774526271321,
-							"isOrBlock": true
-						}
-					],
-					"isOrBlock": true
 				}
 			],
 			"sid": 750828073481552,

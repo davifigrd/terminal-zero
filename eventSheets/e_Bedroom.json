@@ -89,40 +89,6 @@
 						},
 						{
 							"eventType": "comment",
-							"text": "Inicia música de fundo"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-tag-playing",
-									"objectClass": "Audio",
-									"sid": 912871929058757,
-									"parameters": {
-										"tag": "\"musica ambiente\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "play-by-name",
-									"objectClass": "Audio",
-									"sid": 554499045904504,
-									"parameters": {
-										"folder": "music",
-										"audio-file-name": "\"musica ambiente\"",
-										"loop": "looping",
-										"volume": "-10",
-										"stereo-pan": "0",
-										"tag-optional": "\"BGM\""
-									}
-								}
-							],
-							"sid": 486417230641217
-						},
-						{
-							"eventType": "comment",
 							"text": "PC → Bedroom"
 						},
 						{
@@ -196,6 +162,48 @@
 						}
 					],
 					"sid": 563562033262813
+				},
+				{
+					"eventType": "comment",
+					"text": "Inicia música de fundo"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 903131417411669,
+							"parameters": {
+								"interval-seconds": "0.5"
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 979095034907442,
+							"parameters": {
+								"tag": "\"musica ambiente\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 890826925359526,
+							"parameters": {
+								"folder": "music",
+								"audio-file-name": "\"musica ambiente\"",
+								"loop": "looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"BGM\""
+							}
+						}
+					],
+					"sid": 154486468222974
 				}
 			],
 			"sid": 413555915179035,
