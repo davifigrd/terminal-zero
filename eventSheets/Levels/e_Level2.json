@@ -59,7 +59,7 @@
 					"sid": 343434835403035
 				},
 				{
-					"functionName": "criarVirusTipo2",
+					"functionName": "criarVirus2",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -72,9 +72,9 @@
 						{
 							"id": "create-object",
 							"objectClass": "System",
-							"sid": 176070874974812,
+							"sid": 168346056876533,
 							"parameters": {
-								"object-to-create": "lvl2_virusEtapa11",
+								"object-to-create": "lvl2_Virus",
 								"layer": "1",
 								"x": "choose(646,1329,579,44)",
 								"y": "choose(704,390,51,409)",
@@ -83,34 +83,33 @@
 							}
 						}
 					],
-					"sid": 266902078796485
-				},
-				{
-					"functionName": "criarVirusTipo3",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
+					"sid": 458837018883413,
+					"children": [
 						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 136736907210535,
-							"parameters": {
-								"object-to-create": "lvl2_virus3",
-								"layer": "1",
-								"x": "choose(646,1329,579,44)",
-								"y": "choose(704,390,51,409)",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-tick",
+									"objectClass": "System",
+									"sid": 791843269222273
+								}
+							],
+							"actions": [
+								{
+									"id": "flash",
+									"objectClass": "lvl2_Virus",
+									"sid": 577131373491537,
+									"behaviorType": "Piscar",
+									"parameters": {
+										"on-time": "0.5",
+										"off-time": "0.4",
+										"duration": "4"
+									}
+								}
+							],
+							"sid": 860588541548890
 						}
-					],
-					"sid": 260647934054311
+					]
 				},
 				{
 					"eventType": "block",
@@ -118,9 +117,9 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 632006481550879,
+							"sid": 975101417603028,
 							"parameters": {
-								"interval-seconds": "choose(3,4)"
+								"interval-seconds": "choose(2,3)"
 							}
 						},
 						{
@@ -143,7 +142,8 @@
 							"sid": 698842977467786
 						}
 					],
-					"sid": 143524299711131
+					"sid": 143524299711131,
+					"disabled": true
 				},
 				{
 					"eventType": "block",
@@ -201,6 +201,14 @@
 							"parameters": {
 								"object": "lvl2_notebook1"
 							}
+						},
+						{
+							"id": "repeat",
+							"objectClass": "System",
+							"sid": 104371302367994,
+							"parameters": {
+								"count": "1"
+							}
 						}
 					],
 					"actions": [
@@ -211,6 +219,39 @@
 							"parameters": {
 								"instance-variable": "VidaDoPC",
 								"value": "1"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "lvl2_vidadopc",
+							"sid": 277496227968825,
+							"behaviorType": "Piscar",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "0.2"
+							}
+						},
+						{
+							"id": "shake",
+							"objectClass": "lvl2_notebook1",
+							"sid": 145123334148962,
+							"behaviorType": "CentrarEm",
+							"parameters": {
+								"magnitude": "18",
+								"duration": "0.1",
+								"mode": "reducing-magnitude"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "lvl2_notebook1",
+							"sid": 381540240919916,
+							"behaviorType": "Piscar",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "0.3"
 							}
 						}
 					],
@@ -343,9 +384,41 @@
 					],
 					"actions": [
 						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 598154551842745,
+							"parameters": {
+								"layer": "2",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "lvl2_notebook1",
+							"sid": 707170021745064
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 695248507739363,
+							"parameters": {
+								"layer": "1",
+								"interactive": false
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 830744840909562,
+							"parameters": {
+								"seconds": "3.8",
+								"use-timescale": true
+							}
+						},
+						{
 							"id": "go-to-layout",
 							"objectClass": "System",
-							"sid": 788871525254943,
+							"sid": 404203028754956,
 							"parameters": {
 								"layout": "Level3"
 							}
@@ -416,7 +489,42 @@
 							}
 						}
 					],
-					"sid": 142931063981102
+					"sid": 142931063981102,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 512878508708828,
+									"parameters": {
+										"interval-seconds": "choose(2,3)"
+									}
+								},
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 896543252600941,
+									"parameters": {
+										"count": "1"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 862540450916093
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "criarVirus",
+									"sid": 303380060317800
+								}
+							],
+							"sid": 129010239290641
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -457,9 +565,52 @@
 							"parameters": {
 								"text": "\"FASE  2\""
 							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl2_mudoufase",
+							"sid": 734880293271872,
+							"parameters": {
+								"color": "rgb(255, 255, 0)"
+							}
 						}
 					],
-					"sid": 537782064075473
+					"sid": 537782064075473,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 459721808255943,
+									"parameters": {
+										"interval-seconds": "choose(2,3)"
+									}
+								},
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 764554666191717,
+									"parameters": {
+										"count": "1"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 224169808792628
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "criarVirus",
+									"sid": 855296980433009
+								}
+							],
+							"sid": 731678164120679
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -500,9 +651,52 @@
 							"parameters": {
 								"text": "\"FASE 3\""
 							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl2_mudoufase",
+							"sid": 156178643882365,
+							"parameters": {
+								"color": "rgb(255, 219, 187)"
+							}
 						}
 					],
-					"sid": 820162402784572
+					"sid": 820162402784572,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "every-x-seconds",
+									"objectClass": "System",
+									"sid": 116731851474102,
+									"parameters": {
+										"interval-seconds": "choose(2,3)"
+									}
+								},
+								{
+									"id": "repeat",
+									"objectClass": "System",
+									"sid": 514338579658479,
+									"parameters": {
+										"count": "1"
+									}
+								},
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 168162443221780
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "criarVirus2",
+									"sid": 798114901267387
+								}
+							],
+							"sid": 281788724287152
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -550,6 +744,27 @@
 				}
 			],
 			"sid": 616939904205052
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 806875042910210
+				}
+			],
+			"actions": [
+				{
+					"id": "set-cursor-from-sprite",
+					"objectClass": "Mouse",
+					"sid": 860159952763909,
+					"parameters": {
+						"sprite": "cursor"
+					}
+				}
+			],
+			"sid": 899864824474440
 		}
 	],
 	"sid": 479958128321061
