@@ -2,6 +2,16 @@
 	"name": "e_Level7",
 	"events": [
 		{
+			"eventType": "variable",
+			"name": "lvl7_senhaDaVez",
+			"type": "string",
+			"initialValue": "",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 595715457812616
+		},
+		{
 			"eventType": "include",
 			"includeSheet": "e_Global"
 		},
@@ -66,6 +76,12 @@
 							"id": "on-start-of-layout",
 							"objectClass": "System",
 							"sid": 608619738468988
+						},
+						{
+							"id": "on-fade-out-finished",
+							"objectClass": "lvl7_black",
+							"sid": 544182027544603,
+							"behaviorType": "Fade"
 						}
 					],
 					"actions": [
@@ -126,7 +142,31 @@
 							}
 						}
 					],
-					"sid": 999653975953030
+					"sid": 999653975953030,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 225629644555771
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 336565340248697,
+							"parameters": {
+								"variable": "lvl7_senhaDaVez",
+								"value": "\"cfiabrr\""
+							}
+						}
+					],
+					"sid": 583615298604874,
+					"isOrBlock": true
 				}
 			],
 			"sid": 764586396613043
@@ -172,16 +212,6 @@
 							"id": "every-tick",
 							"objectClass": "System",
 							"sid": 721131066860768
-						},
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "lvl7_coordenadas",
-							"sid": 181107507583691,
-							"parameters": {
-								"instance-variable": "etapa",
-								"comparison": 2,
-								"value": "2"
-							}
 						}
 					],
 					"actions": [
@@ -276,11 +306,6 @@
 					"sid": 645044269229910
 				},
 				{
-					"bookmark": true,
-					"eventType": "comment",
-					"text": "Primeira etapa concluída"
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -291,11 +316,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 712450308497660,
+							"sid": 249687672236853,
 							"parameters": {
 								"first-value": "lowercase(lvl7_TextInput.Text)",
 								"comparison": 0,
-								"second-value": "\"cbrcara\""
+								"second-value": "lvl7_senhaDaVez"
 							}
 						}
 					],
@@ -323,6 +348,11 @@
 							}
 						},
 						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 821454261928682
+						},
+						{
 							"id": "start-fade",
 							"objectClass": "lvl7_black",
 							"sid": 354861234415073,
@@ -331,9 +361,9 @@
 						{
 							"id": "signal",
 							"objectClass": "System",
-							"sid": 359257495540534,
+							"sid": 414363407911330,
 							"parameters": {
-								"tag": "\"lvl7_próxima_etapa\""
+								"tag": "\"lvl7_next\""
 							}
 						}
 					],
@@ -345,13 +375,30 @@
 						{
 							"id": "on-signal",
 							"objectClass": "System",
-							"sid": 133710549897831,
+							"sid": 904274729097201,
 							"parameters": {
-								"tag": "\"lvl7_próxima_etapa\""
+								"tag": "\"lvl7_next\""
 							}
 						}
 					],
 					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 502391468151114,
+							"parameters": {
+								"variable": "lvl7_senhaDaVez",
+								"value": "\"eepncac\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl7_Textinput",
+							"sid": 907955010721849,
+							"parameters": {
+								"text": "\"\""
+							}
+						},
 						{
 							"id": "wait",
 							"objectClass": "System",
@@ -363,7 +410,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "lvl5_Texto1",
+							"objectClass": "lvl7_Texto1",
 							"sid": 317249495840618,
 							"parameters": {
 								"text": "\"\""
@@ -498,9 +545,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "lvl7_coordenadas",
-											"sid": 193736877173721,
+											"sid": 540305848808178,
 											"parameters": {
-												"text": "\"\""
+												"text": "\"(-15, 15)\""
 											}
 										}
 									],
@@ -524,9 +571,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "lvl7_coordenadas",
-											"sid": 362312561237717,
+											"sid": 874379218391393,
 											"parameters": {
-												"text": "\"\""
+												"text": "\"(65, 5)\""
 											}
 										}
 									],
@@ -550,9 +597,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "lvl7_coordenadas",
-											"sid": 389192265273328,
+											"sid": 872131136287472,
 											"parameters": {
-												"text": "\"\""
+												"text": "\"(180, -80)\""
 											}
 										}
 									],
@@ -576,9 +623,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "lvl7_coordenadas",
-											"sid": 895607069299602,
+											"sid": 658469024523819,
 											"parameters": {
-												"text": "\"\""
+												"text": "\"(-85 -60)\""
 											}
 										}
 									],
@@ -602,9 +649,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "lvl7_coordenadas",
-											"sid": 345187646171269,
+											"sid": 454758206244637,
 											"parameters": {
-												"text": "\"\""
+												"text": "\"(10, -40)\""
 											}
 										}
 									],
@@ -628,9 +675,9 @@
 										{
 											"id": "set-text",
 											"objectClass": "lvl7_coordenadas",
-											"sid": 473078100724657,
+											"sid": 847492251583150,
 											"parameters": {
-												"text": "\"\""
+												"text": "\"(110, 10)\""
 											}
 										}
 									],
@@ -641,11 +688,6 @@
 					]
 				},
 				{
-					"bookmark": true,
-					"eventType": "comment",
-					"text": "Segunda etapa concluída"
-				},
-				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -654,13 +696,23 @@
 							"sid": 814636010117140
 						},
 						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl7_coordenadas",
+							"sid": 450541443661302,
+							"parameters": {
+								"instance-variable": "etapa",
+								"comparison": 0,
+								"value": "2"
+							}
+						},
+						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 278863306226027,
+							"sid": 427388218556149,
 							"parameters": {
 								"first-value": "lowercase(lvl7_TextInput.Text)",
 								"comparison": 0,
-								"second-value": "\"e\""
+								"second-value": "lvl7_senhaDaVez"
 							}
 						}
 					],
@@ -703,6 +755,11 @@
 					"sid": 845300263251051
 				},
 				{
+					"bookmark": true,
+					"eventType": "comment",
+					"text": "xxxx"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -713,7 +770,7 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 315893285772112,
+							"sid": 987096462666463,
 							"parameters": {
 								"first-value": "len(lvl7_TextInput.Text)",
 								"comparison": 0,
@@ -723,11 +780,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 370928455783185,
+							"sid": 853620193605260,
 							"parameters": {
 								"first-value": "lowercase(lvl7_TextInput.Text)",
 								"comparison": 0,
-								"second-value": "\"cbrcara\""
+								"second-value": "lvl7_senhaDaVez"
 							},
 							"isInverted": true
 						}
@@ -1334,6 +1391,214 @@
 						}
 					],
 					"sid": 489409189596231
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 412066817651690,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_NovaZelandia"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 363058312474254,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 272086892013925,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 634465333572594,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: NOVA ZELÂNDIA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 429176517836165,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 321567410929552
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 978128267315667,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Paquistao"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 209869236540791,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 656803776112243,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 904398808048349,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: PAQUISTÃO DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 929998048724521,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 507907167477180
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 836853088947752,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Espanha"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 756143693481009,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 523506767641988,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 603197080109450,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: ESPANHA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 206079402609877,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 954287656335625
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 102910459188305,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl7_hb_Franca"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 886814915800991,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl7_spr_marcador",
+							"sid": 232847174660494,
+							"parameters": {
+								"x": "Mouse.x",
+								"y": "Mouse.y"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 414528826931038,
+							"parameters": {
+								"text": "\"SISTEMA DE LOCALIZAÇÃO: FRANCA DETECTADO\""
+							}
+						},
+						{
+							"id": "set-position",
+							"objectClass": "lvl_7_nomePaís",
+							"sid": 741038641933355,
+							"parameters": {
+								"x": "clamp(Mouse.X + 25, 50, LayoutWidth - 200)",
+								"y": "clamp(Mouse.Y - 10, 30, LayoutHeight - 50)"
+							}
+						}
+					],
+					"sid": 299730828702413
 				},
 				{
 					"eventType": "block",
