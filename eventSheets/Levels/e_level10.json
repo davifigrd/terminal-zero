@@ -65,7 +65,7 @@
 			"eventType": "variable",
 			"name": "jump_strength",
 			"type": "number",
-			"initialValue": "1.5",
+			"initialValue": "1.8",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
@@ -180,6 +180,37 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 128706284205964
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "lvl10_player",
+					"sid": 552313155605761,
+					"parameters": {
+						"instance-variable": "old_x",
+						"value": "lvl10_player.X"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "lvl10_player",
+					"sid": 443851641805626,
+					"parameters": {
+						"instance-variable": "old_y",
+						"value": "lvl10_player.Y"
+					}
+				}
+			],
+			"sid": 179798258331277
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "key-is-down",
 					"objectClass": "Keyboard",
 					"sid": 794821416751282,
@@ -196,15 +227,6 @@
 					"parameters": {
 						"angle": "3DCamera.CameraXRotation",
 						"distance": "PlayerSpeed*dt"
-					}
-				},
-				{
-					"id": "push-out-solid-at-angle",
-					"objectClass": "lvl10_player",
-					"sid": 367059536491662,
-					"behaviorType": "Custom",
-					"parameters": {
-						"angle": "3DCamera.CameraXRotation+180"
 					}
 				}
 			],
@@ -231,15 +253,6 @@
 						"angle": "3DCamera.CameraXRotation-90",
 						"distance": "PlayerSpeed*dt"
 					}
-				},
-				{
-					"id": "push-out-solid-at-angle",
-					"objectClass": "lvl10_player",
-					"sid": 787024201930738,
-					"behaviorType": "Custom",
-					"parameters": {
-						"angle": "3DCamera.CameraXRotation+90"
-					}
 				}
 			],
 			"sid": 948230392202855
@@ -264,15 +277,6 @@
 					"parameters": {
 						"angle": "3DCamera.CameraXRotation+90",
 						"distance": "PlayerSpeed*dt"
-					}
-				},
-				{
-					"id": "push-out-solid-at-angle",
-					"objectClass": "lvl10_player",
-					"sid": 709404691277612,
-					"behaviorType": "Custom",
-					"parameters": {
-						"angle": "3DCamera.CameraXRotation-90"
 					}
 				}
 			],
@@ -299,18 +303,40 @@
 						"angle": "3DCamera.CameraXRotation",
 						"distance": "-PlayerSpeed*dt"
 					}
-				},
-				{
-					"id": "push-out-solid-at-angle",
-					"objectClass": "lvl10_player",
-					"sid": 584762530962567,
-					"behaviorType": "Custom",
-					"parameters": {
-						"angle": "3DCamera.CameraXRotation"
-					}
 				}
 			],
 			"sid": 915897291492092
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 534537661700340
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "lvl10_player",
+					"sid": 365488382050765,
+					"parameters": {
+						"instance-variable": "mid_x",
+						"value": "lvl10_player.X"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "lvl10_player",
+					"sid": 914205356364648,
+					"parameters": {
+						"instance-variable": "mid_y",
+						"value": "lvl10_player.Y"
+					}
+				}
+			],
+			"sid": 596642365373358
 		},
 		{
 			"eventType": "comment",
@@ -320,60 +346,117 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 760961812974105
-				}
-			],
-			"actions": [
-				{
-					"id": "set-enabled",
-					"objectClass": "block",
-					"sid": 784356694735255,
-					"behaviorType": "Solid",
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 323475987110459,
 					"parameters": {
-						"state": "disabled"
-					}
-				}
-			],
-			"sid": 497890628100691
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "block",
-					"sid": 487391265735549,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 4,
-						"z-elevation": "player.zelevation-self.zheight+1"
+						"object": "block"
 					}
 				},
 				{
 					"id": "compare-z-elevation",
 					"objectClass": "block",
-					"sid": 842441202677912,
+					"sid": 642645517630215,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 5,
+						"z-elevation": "lvl10_player.ZElevation - block.ZHeight"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "block",
+					"sid": 970613264312908,
 					"parameters": {
 						"which": "z-elevation",
 						"comparison": 2,
-						"z-elevation": "player.Zelevation+PlayerHeight"
+						"z-elevation": "lvl10_player.ZElevation + PlayerHeight"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 716851629153145,
+					"parameters": {
+						"first-value": "lvl10_player.Z",
+						"comparison": 2,
+						"second-value": "block.ZElevation + block.ZHeight - 1"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "set-enabled",
-					"objectClass": "block",
-					"sid": 327874674056915,
-					"behaviorType": "Solid",
+					"id": "set-x",
+					"objectClass": "lvl10_player",
+					"sid": 894746904154943,
 					"parameters": {
-						"state": "enabled"
+						"x": "lvl10_player.old_x"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "lvl10_player",
+					"sid": 740379789204580,
+					"parameters": {
+						"y": "lvl10_player.old_y"
 					}
 				}
 			],
 			"sid": 558796637642495
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 714972242507097,
+					"parameters": {
+						"object": "block"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "block",
+					"sid": 845749707241864,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 5,
+						"z-elevation": "lvl10_player.ZElevation - block.ZHeight"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "block",
+					"sid": 645834624127028,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 2,
+						"z-elevation": "lvl10_player.ZElevation + PlayerHeight"
+					}
+				},
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 759767570935551,
+					"parameters": {
+						"first-value": "lvl10_player.Z",
+						"comparison": 2,
+						"second-value": "block.ZElevation + block.ZHeight - 1"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "lvl10_player",
+					"sid": 453936231125245,
+					"parameters": {
+						"x": "lvl10_player.old_x"
+					}
+				}
+			],
+			"sid": 604037175091928
 		},
 		{
 			"eventType": "comment",
@@ -415,10 +498,10 @@
 				{
 					"id": "compare-eventvar",
 					"objectClass": "System",
-					"sid": 714317836054077,
+					"sid": 533732902590558,
 					"parameters": {
 						"variable": "dz",
-						"comparison": 2,
+						"comparison": 3,
 						"value": "0"
 					}
 				},
@@ -536,9 +619,90 @@
 						"variable": "dz",
 						"value": "jump_strength"
 					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 815408134579423,
+					"parameters": {
+						"variable": "onGround",
+						"value": "false"
+					}
 				}
 			],
 			"sid": 415420856993748
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 107369419837184,
+					"parameters": {
+						"variable": "dz",
+						"comparison": 3,
+						"value": "0"
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 968285056611501,
+					"parameters": {
+						"object": "ground"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "ground",
+					"sid": 888526734156700,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 5,
+						"z-elevation": "lvl10_player.Zelevation-Self.zheight"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "ground",
+					"sid": 195741958212337,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 3,
+						"z-elevation": "lvl10_player.Zelevation+PlayerHeight-Self.zheight"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 566254529814452,
+					"parameters": {
+						"variable": "dz",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-z-elevation",
+					"objectClass": "lvl10_player",
+					"sid": 132922838437179,
+					"parameters": {
+						"z": "ground.Zelevation+ground.zheight"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 867020965072265,
+					"parameters": {
+						"variable": "onGround",
+						"value": "true"
+					}
+				}
+			],
+			"sid": 754982476208378
 		}
 	],
 	"sid": 758226248430815
