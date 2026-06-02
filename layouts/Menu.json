@@ -1250,13 +1250,7 @@
 							"instanceVariables": {
 								"yes_no": "no"
 							},
-							"behaviors": {
-								"Tween": {
-									"properties": {
-										"enabled": true
-									}
-								}
-							},
+							"behaviors": {},
 							"showing": true,
 							"locked": false,
 							"world": {
@@ -1280,7 +1274,7 @@
 							"type": "sim",
 							"properties": {
 								"initially-visible": true,
-								"initial-animation": "Animation 1",
+								"initial-animation": "sim",
 								"initial-frame": 1,
 								"enable-collisions": true,
 								"live-preview": false
@@ -1291,13 +1285,7 @@
 							"instanceVariables": {
 								"yes_no": "yes"
 							},
-							"behaviors": {
-								"Tween": {
-									"properties": {
-										"enabled": true
-									}
-								}
-							},
+							"behaviors": {},
 							"showing": true,
 							"locked": false,
 							"world": {
@@ -1448,6 +1436,41 @@
 			"blendMode": "normal",
 			"zElevation": 0,
 			"global": true
+		},
+		{
+			"name": "pause",
+			"overriden": 1,
+			"subLayers": [],
+			"instances": [],
+			"sid": 607285529520421,
+			"effectTypes": [],
+			"isInitiallyVisible": false,
+			"isInitiallyInteractive": false,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
 		},
 		{
 			"name": "transition",

@@ -52,6 +52,7 @@
 			"sid": 322105363857792
 		},
 		{
+			"bookmark": true,
 			"eventType": "group",
 			"disabled": false,
 			"title": "GLOBAL",
@@ -63,6 +64,7 @@
 					"text": "Sempre em tela cheia"
 				},
 				{
+					"bookmark": true,
 					"eventType": "block",
 					"conditions": [
 						{
@@ -315,9 +317,9 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 487628924939963,
+									"sid": 430404671442377,
 									"parameters": {
-										"key": 66
+										"key": 81
 									}
 								}
 							],
@@ -343,9 +345,9 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 530439551564467,
+									"sid": 120104303467058,
 									"parameters": {
-										"key": 80
+										"key": 67
 									}
 								}
 							],
@@ -371,7 +373,7 @@
 					],
 					"background-color": [
 						1,
-						0.4823529411764706,
+						0,
 						0,
 						1
 					]
@@ -379,9 +381,9 @@
 			],
 			"sid": 531775917341314,
 			"text-color": [
-				1,
-				1,
-				1,
+				0,
+				0,
+				0,
 				1
 			],
 			"background-color": [
@@ -413,19 +415,24 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 332354873289541,
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 216070583049642,
 									"parameters": {
-										"object": "Yes_No_Familly"
+										"variable": "IsChoosing"
 									}
 								},
 								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 549630327109441,
+									"id": "is-visible",
+									"objectClass": "Yes_No_Familly",
+									"sid": 365850120814705
+								},
+								{
+									"id": "cursor-is-over-object",
+									"objectClass": "Mouse",
+									"sid": 446019280636868,
 									"parameters": {
-										"variable": "IsChoosing"
+										"object": "Yes_No_Familly"
 									}
 								}
 							],
@@ -433,13 +440,13 @@
 								{
 									"id": "set-animation-frame",
 									"objectClass": "Yes_No_Familly",
-									"sid": 984037720839861,
+									"sid": 784286406106253,
 									"parameters": {
 										"frame-number": "0"
 									}
 								}
 							],
-							"sid": 566554986491000,
+							"sid": 712208634540872,
 							"children": [
 								{
 									"eventType": "block",
@@ -447,14 +454,14 @@
 										{
 											"id": "trigger-once-while-true",
 											"objectClass": "System",
-											"sid": 774515234308778
+											"sid": 313876850240632
 										}
 									],
 									"actions": [
 										{
 											"id": "play-by-name",
 											"objectClass": "Audio",
-											"sid": 858850634909546,
+											"sid": 161326863153598,
 											"parameters": {
 												"folder": "sounds",
 												"audio-file-name": "\"bip 1\"",
@@ -465,7 +472,7 @@
 											}
 										}
 									],
-									"sid": 747864030084259
+									"sid": 964606571989696
 								}
 							]
 						},
@@ -473,26 +480,22 @@
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 833490409807709,
-									"parameters": {
-										"object": "Yes_No_Familly"
-									},
-									"isInverted": true
+									"id": "else",
+									"objectClass": "System",
+									"sid": 258864632693136
 								}
 							],
 							"actions": [
 								{
 									"id": "set-animation-frame",
 									"objectClass": "Yes_No_Familly",
-									"sid": 634996722807351,
+									"sid": 820839068209173,
 									"parameters": {
 										"frame-number": "1"
 									}
 								}
 							],
-							"sid": 710234222556807
+							"sid": 661703268566383
 						},
 						{
 							"eventType": "comment",
@@ -521,6 +524,15 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "Yes_No_Familly",
+									"sid": 609863684108072,
+									"disabled": true,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
 								{
 									"id": "play-by-name",
 									"objectClass": "Audio",
@@ -654,27 +666,6 @@
 						0.16862745098039217,
 						1
 					]
-				},
-				{
-					"eventType": "group",
-					"disabled": false,
-					"title": "XFAMILLY",
-					"description": "",
-					"isActiveOnStart": true,
-					"children": [],
-					"sid": 213039129497658,
-					"text-color": [
-						0,
-						0,
-						0,
-						0
-					],
-					"background-color": [
-						0.8666666666666667,
-						0.9764705882352941,
-						0.16862745098039217,
-						1
-					]
 				}
 			],
 			"sid": 237485358482658,
@@ -740,6 +731,14 @@
 								"animation": "\"arrow\"",
 								"from": "current-frame"
 							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "cursor",
+							"sid": 388940502512900,
+							"parameters": {
+								"opacity": "100"
+							}
 						}
 					],
 					"sid": 874130220458251,
@@ -803,37 +802,45 @@
 								}
 							],
 							"sid": 858926861359942
-						},
-						{
-							"eventType": "comment",
-							"text": "Cursor no pause"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "layer-is-visible",
-									"objectClass": "System",
-									"sid": 679352528229126,
-									"parameters": {
-										"layer": "\"pause\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 859853394006084,
-									"parameters": {
-										"layer": "\"cursor\"",
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 802420566533753
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Cursor volta a opacidade original"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-signal",
+							"objectClass": "System",
+							"sid": 748768659061814,
+							"parameters": {
+								"tag": "\"cursor_opacity=0\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 437650409481817,
+							"parameters": {
+								"seconds": "3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-opacity",
+							"objectClass": "cursor",
+							"sid": 984228287048131,
+							"parameters": {
+								"opacity": "100"
+							}
+						}
+					],
+					"sid": 280599268861351
 				}
 			],
 			"sid": 143760530796771,
@@ -861,7 +868,7 @@
 					"eventType": "group",
 					"disabled": false,
 					"title": "PAUSE_INPUT",
-					"description": "Pause do jogo",
+					"description": "Entrada e saída do pause",
 					"isActiveOnStart": true,
 					"children": [
 						{
@@ -874,105 +881,302 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 750386631464340,
+									"sid": 476930435798470,
 									"parameters": {
 										"key": 80
 									}
+								}
+							],
+							"actions": [],
+							"sid": 824884960991868,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 124149826122363,
+											"parameters": {
+												"variable": "gamePaused"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 881871150573012,
+											"parameters": {
+												"layer": "\"pause\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 840623744544397,
+											"parameters": {
+												"layer": "\"controles\""
+											},
+											"isInverted": true
+										},
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 121445948278594,
+											"parameters": {
+												"layer": "\"creditos\""
+											},
+											"isInverted": true
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 219176895481737,
+											"parameters": {
+												"variable": "gamePaused",
+												"value": "true"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 748371231201033,
+											"parameters": {
+												"layer": "\"pause\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 508990947478124,
+											"parameters": {
+												"layer": "\"pause\"",
+												"interactive": true
+											}
+										},
+										{
+											"id": "stop-all",
+											"objectClass": "Audio",
+											"sid": 792049619117135
+										},
+										{
+											"id": "set-time-scale",
+											"objectClass": "System",
+											"sid": 764901434130250,
+											"parameters": {
+												"time-scale": "0"
+											}
+										}
+									],
+									"sid": 559970323927299,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 220354631052456,
+													"parameters": {
+														"first-value": "LayoutName",
+														"comparison": 0,
+														"second-value": "\"Bedroom\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 304104062149449,
+													"parameters": {
+														"group-name": "\"PLAYER_CONTROL\"",
+														"state": "deactivated"
+													}
+												}
+											],
+											"sid": 304305113851470
+										}
+									]
 								},
 								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 947903127846786,
+									"eventType": "comment",
+									"text": "Despausar pelo P"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 872880283240992
+										},
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 609221146293118,
+											"parameters": {
+												"layer": "\"pause\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 442791940220419,
+											"parameters": {
+												"variable": "gamePaused",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 302615477930655,
+											"parameters": {
+												"layer": "\"pause\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 262337408286955,
+											"parameters": {
+												"layer": "\"pause\"",
+												"interactive": false
+											}
+										},
+										{
+											"id": "set-time-scale",
+											"objectClass": "System",
+											"sid": 505865619317783,
+											"parameters": {
+												"time-scale": "1"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 699922915252211,
+											"parameters": {
+												"group-name": "\"PAUSE_CONTROLS_ANIM\"",
+												"state": "deactivated"
+											}
+										}
+									],
+									"sid": 261439492168794,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 101832841263256,
+													"parameters": {
+														"first-value": "LayoutName",
+														"comparison": 0,
+														"second-value": "\"Bedroom\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 313894794589325,
+													"parameters": {
+														"group-name": "\"PLAYER_CONTROL\"",
+														"state": "activated"
+													}
+												}
+											],
+											"sid": 668669420651815
+										}
+									]
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Despausar pelo esc"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 652246547338118,
 									"parameters": {
-										"variable": "gamePaused"
-									},
-									"isInverted": true
+										"key": 27
+									}
 								},
 								{
 									"id": "layer-is-visible",
 									"objectClass": "System",
-									"sid": 545645079862138,
+									"sid": 685196852044673,
 									"parameters": {
 										"layer": "\"pause\""
-									},
-									"isInverted": true
+									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 752244208936445,
+									"sid": 484476816162604,
 									"parameters": {
 										"variable": "gamePaused",
-										"value": "true"
+										"value": "false"
 									}
 								},
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 815661186886299,
+									"sid": 852710198528880,
 									"parameters": {
 										"layer": "\"pause\"",
-										"visibility": "visible"
+										"visibility": "invisible"
 									}
 								},
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 488501310345067,
+									"sid": 285659957135764,
 									"parameters": {
 										"layer": "\"pause\"",
-										"interactive": true
+										"interactive": false
 									}
-								},
-								{
-									"id": "stop-all",
-									"objectClass": "Audio",
-									"sid": 946602555248374
 								},
 								{
 									"id": "set-time-scale",
 									"objectClass": "System",
-									"sid": 587509903025005,
+									"sid": 275439306655549,
 									"parameters": {
-										"time-scale": "0"
+										"time-scale": "1"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 849337473048362,
+									"parameters": {
+										"group-name": "\"PAUSE_CONTROLS_ANIM\"",
+										"state": "deactivated"
 									}
 								}
 							],
-							"sid": 174368302315849,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 698537269496214,
-											"parameters": {
-												"first-value": "LayoutName",
-												"comparison": 0,
-												"second-value": "\"Bedroom\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-group-active",
-											"objectClass": "System",
-											"sid": 174382500760707,
-											"parameters": {
-												"group-name": "\"PLAYER_CONTROL\"",
-												"state": "toggle-active"
-											}
-										}
-									],
-									"sid": 367021271871676
-								}
-							]
+							"sid": 955172390941574
 						}
 					],
-					"sid": 667862515075481,
+					"sid": 523428383757147,
 					"text-color": [
 						0,
 						0,
@@ -989,190 +1193,242 @@
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "PAUSE_MENU",
-					"description": "Pause do jogo",
-					"isActiveOnStart": false,
+					"title": "PAUSE_SUBMENUS",
+					"description": "Controle / Créditos",
+					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Despausar pelo P"
+							"text": "Som e animação mouse sobre botão"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 786702886733074,
+									"id": "for-each",
+									"objectClass": "System",
+									"sid": 347182242777566,
 									"parameters": {
-										"key": 80
+										"object": "menu_button"
 									}
+								}
+							],
+							"actions": [],
+							"sid": 116089064206439,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Animação do cursor sobre botão"
 								},
 								{
-									"id": "compare-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 934591101467375,
-									"parameters": {
-										"variable": "gamePaused"
-									}
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "cursor-is-over-object",
+											"objectClass": "Mouse",
+											"sid": 826458862305293,
+											"parameters": {
+												"object": "menu_button"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "menu_button",
+											"sid": 715109283426528,
+											"parameters": {
+												"frame-number": "1"
+											}
+										}
+									],
+									"sid": 948255067652115,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Som ao cursor sobre botão"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "trigger-once-while-true",
+													"objectClass": "System",
+													"sid": 700380692842152
+												}
+											],
+											"actions": [
+												{
+													"id": "play-by-name",
+													"objectClass": "Audio",
+													"sid": 309406415540218,
+													"parameters": {
+														"folder": "sounds",
+														"audio-file-name": "\"bip 1\"",
+														"loop": "not-looping",
+														"volume": "0",
+														"stereo-pan": "0",
+														"tag-optional": "\"\""
+													}
+												}
+											],
+											"sid": 485965699118245
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 258568880617248
+												}
+											],
+											"actions": [
+												{
+													"id": "stop",
+													"objectClass": "Audio",
+													"sid": 528647157788542,
+													"parameters": {
+														"tag": "\"bip 1\""
+													}
+												}
+											],
+											"sid": 786846410464811
+										}
+									]
 								},
 								{
-									"id": "layer-is-visible",
-									"objectClass": "System",
-									"sid": 514193257260099,
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 791487646009746
+										}
+									],
+									"actions": [
+										{
+											"id": "set-animation-frame",
+											"objectClass": "menu_button",
+											"sid": 349665093262207,
+											"parameters": {
+												"frame-number": "0"
+											}
+										}
+									],
+									"sid": 514533664787738
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Botão selecionado"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 385420715494386,
 									"parameters": {
-										"layer": "\"pause\""
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "menu_button"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 637437363951234,
-									"parameters": {
-										"variable": "gamePaused",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 955243817977815,
-									"parameters": {
-										"layer": "\"pause\"",
-										"visibility": "invisible"
-									}
-								},
-								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 158342979558275,
+									"sid": 730007039964768,
 									"parameters": {
-										"layer": "\"pause\"",
+										"layer": "\"yes_no\"",
 										"interactive": false
 									}
 								},
 								{
-									"id": "set-time-scale",
-									"objectClass": "System",
-									"sid": 821116340911811,
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 296653311759408,
 									"parameters": {
-										"time-scale": "1"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 381105790403079,
-									"parameters": {
-										"group-name": "\"PAUSE_MENU\"",
-										"state": "deactivated"
+										"folder": "sounds",
+										"audio-file-name": "\"bip 1.2\"",
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"SFX\""
 									}
 								}
 							],
-							"sid": 279504435520251,
+							"sid": 570140986915294,
 							"children": [
 								{
+									"eventType": "comment",
+									"text": "Jogar / Continuar"
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 912673694373866,
+											"id": "compare-instance-variable",
+											"objectClass": "menu_button",
+											"sid": 678389175786823,
 											"parameters": {
-												"first-value": "LayoutName",
+												"instance-variable": "button",
 												"comparison": 0,
-												"second-value": "\"Bedroom\""
+												"value": "\"continuar\""
 											}
 										}
 									],
 									"actions": [
-										{
-											"id": "set-group-active",
-											"objectClass": "System",
-											"sid": 159685036833583,
-											"parameters": {
-												"group-name": "\"PLAYER_CONTROL\"",
-												"state": "toggle-active"
-											}
-										}
-									],
-									"sid": 465821439350394
-								},
-								{
-									"eventType": "comment",
-									"text": "Continuar"
-								},
-								{
-									"eventType": "comment",
-									"text": "Pausar"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 272924762293267,
-											"parameters": {
-												"variable": "gamePaused"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "layer-is-visible",
-											"objectClass": "System",
-											"sid": 780721860601378,
-											"parameters": {
-												"layer": "\"pause\""
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 138243052408977,
-											"parameters": {
-												"variable": "gamePaused",
-												"value": "true"
-											}
-										},
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
-											"sid": 263510029301638,
+											"sid": 270710777530425,
 											"parameters": {
 												"layer": "\"pause\"",
-												"visibility": "visible"
+												"visibility": "invisible"
 											}
 										},
 										{
 											"id": "set-layer-interactive",
 											"objectClass": "System",
-											"sid": 906667040925136,
+											"sid": 864814820060922,
 											"parameters": {
 												"layer": "\"pause\"",
-												"interactive": true
+												"interactive": false
 											}
 										},
 										{
-											"id": "stop-all",
-											"objectClass": "Audio",
-											"sid": 305675611384371
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 475991693292228,
+											"parameters": {
+												"variable": "gamePaused",
+												"value": "false"
+											}
 										},
 										{
 											"id": "set-time-scale",
 											"objectClass": "System",
-											"sid": 198675987414060,
+											"sid": 826690908969079,
 											"parameters": {
-												"time-scale": "0"
+												"time-scale": "1"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 783029173341877,
+											"parameters": {
+												"group-name": "\"PAUSE_CONTROLS_ANIM\"",
+												"state": "deactivated"
 											}
 										}
 									],
-									"sid": 476121556951530,
+									"sid": 820850847461465,
 									"children": [
 										{
 											"eventType": "block",
@@ -1180,7 +1436,7 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 807203500195776,
+													"sid": 960157080811465,
 													"parameters": {
 														"first-value": "LayoutName",
 														"comparison": 0,
@@ -1192,508 +1448,555 @@
 												{
 													"id": "set-group-active",
 													"objectClass": "System",
-													"sid": 349050056678369,
+													"sid": 485061660007789,
 													"parameters": {
 														"group-name": "\"PLAYER_CONTROL\"",
-														"state": "toggle-active"
+														"state": "activated"
 													}
 												}
 											],
-											"sid": 603439992307457
+											"sid": 358897581445479
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Controles"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "menu_button",
+											"sid": 871785233107855,
+											"parameters": {
+												"instance-variable": "button",
+												"comparison": 0,
+												"value": "\"controles\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 806210778869208,
+											"parameters": {
+												"group-name": "\"PAUSE_CONTROLS_ANIM\"",
+												"state": "activated"
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 643458008338466,
+											"parameters": {
+												"layer": "\"pause\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 381026951773044,
+											"parameters": {
+												"layer": "\"pause\"",
+												"interactive": false
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 650812735762906,
+											"parameters": {
+												"layer": "\"menu\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 593490939332606,
+											"parameters": {
+												"layer": "\"menu\"",
+												"interactive": false
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 290596557599730,
+											"parameters": {
+												"layer": "\"controles\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 496589865618428,
+											"parameters": {
+												"layer": "\"controles\"",
+												"interactive": true
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 619316437456808,
+											"parameters": {
+												"layer": "\"cursor\"",
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 364743139515280,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 428855627343263,
+													"parameters": {
+														"first-value": "LayoutName",
+														"comparison": 0,
+														"second-value": "\"Bedroom\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 444982928305922,
+													"parameters": {
+														"group-name": "\"PLAYER_CONTROL\"",
+														"state": "deactivated"
+													}
+												}
+											],
+											"sid": 299828067226397
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Créditos"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "menu_button",
+											"sid": 249789819239941,
+											"parameters": {
+												"instance-variable": "button",
+												"comparison": 0,
+												"value": "\"creditos\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 383158493207206,
+											"parameters": {
+												"layer": "\"pause\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 413889557613911,
+											"parameters": {
+												"layer": "\"pause\"",
+												"interactive": false
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 191822568841594,
+											"parameters": {
+												"layer": "\"menu\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 548159489844282,
+											"parameters": {
+												"layer": "\"menu\"",
+												"interactive": false
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 202225521370137,
+											"parameters": {
+												"layer": "\"creditos\"",
+												"visibility": "visible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 228453947556325,
+											"parameters": {
+												"layer": "\"creditos\"",
+												"interactive": true
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 589995741416085,
+											"parameters": {
+												"layer": "\"cursor\"",
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 385399348241235,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 437656453865277,
+													"parameters": {
+														"first-value": "LayoutName",
+														"comparison": 0,
+														"second-value": "\"Bedroom\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 230367003596846,
+													"parameters": {
+														"group-name": "\"PLAYER_CONTROL\"",
+														"state": "deactivated"
+													}
+												}
+											],
+											"sid": 631633549315390
+										}
+									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Menu principal"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "menu_button",
+											"sid": 975919847447267,
+											"parameters": {
+												"instance-variable": "button",
+												"comparison": 0,
+												"value": "\"menu_principal\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 607066051077908,
+											"parameters": {
+												"layer": "\"pause\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 658720486859891,
+											"parameters": {
+												"layer": "\"pause\"",
+												"interactive": false
+											}
+										},
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 163720269355315,
+											"parameters": {
+												"variable": "gamePaused",
+												"value": "false"
+											}
+										},
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 844451887039825,
+											"parameters": {
+												"group-name": "\"PAUSE_CONTROLS_ANIM\"",
+												"state": "deactivated"
+											}
+										},
+										{
+											"id": "set-time-scale",
+											"objectClass": "System",
+											"sid": 882357241152390,
+											"parameters": {
+												"time-scale": "1"
+											}
+										},
+										{
+											"callFunction": "Transition",
+											"sid": 996072017644278,
+											"parameters": [
+												"\"Menu\""
+											]
+										}
+									],
+									"sid": 875423944246095,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 196023225738304,
+													"parameters": {
+														"first-value": "LayoutName",
+														"comparison": 0,
+														"second-value": "\"Bedroom\""
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "stop-animation",
+													"objectClass": "player",
+													"sid": 838453833457793
+												},
+												{
+													"id": "stop",
+													"objectClass": "player",
+													"sid": 797032011151199,
+													"behaviorType": "8Direction"
+												},
+												{
+													"id": "set-group-active",
+													"objectClass": "System",
+													"sid": 446580788800140,
+													"parameters": {
+														"group-name": "\"PLAYER_CONTROL\"",
+														"state": "deactivated"
+													}
+												}
+											],
+											"sid": 589885588238677
 										}
 									]
 								}
-							]
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "comment",
-							"text": "Animação teclas em controles"
+							"text": "Voltar para o menu de pause (esc)"
 						},
 						{
 							"eventType": "block",
-							"conditions": [],
-							"actions": [
+							"conditions": [
 								{
-									"id": "set-visible",
-									"objectClass": "control_key",
-									"sid": 228164355486108,
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 593273230699185,
 									"parameters": {
-										"visibility": "invisible"
+										"key": 27
+									}
+								},
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 795936110826588,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "esc"
 									}
 								}
 							],
-							"sid": 988211386330063,
+							"actions": [],
+							"sid": 395124617328846,
 							"children": [
 								{
-									"eventType": "comment",
-									"text": "WASD"
-								},
-								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 136344773271519,
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 115482202634626,
 											"parameters": {
-												"key": 87
+												"layer": "\"controles\""
 											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "control_key",
-											"sid": 956733312007969,
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 237105798435095,
 											"parameters": {
-												"instance-variable": "key",
-												"comparison": 0,
-												"value": "\"W\""
+												"layer": "\"creditos\""
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 418521003721880,
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 430494862517322,
 											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 234347000558981
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 651882540797208,
-											"parameters": {
-												"key": 65
+												"group-name": "\"PAUSE_CONTROLS_ANIM\"",
+												"state": "deactivated"
 											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "control_key",
-											"sid": 551161518068294,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 490625469221040,
 											"parameters": {
-												"instance-variable": "key",
-												"comparison": 0,
-												"value": "\"A\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 249697052571116,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 725810979507067
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 959102676792463,
-											"parameters": {
-												"key": 83
+												"layer": "\"controles\"",
+												"visibility": "invisible"
 											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "control_key",
-											"sid": 531420475241163,
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 312392034373131,
 											"parameters": {
-												"instance-variable": "key",
-												"comparison": 0,
-												"value": "\"S\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 179270785376167,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 651702780445025
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 359100557760310,
-											"parameters": {
-												"key": 68
+												"layer": "\"controles\"",
+												"interactive": false
 											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "control_key",
-											"sid": 607535084517371,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 549516808339450,
 											"parameters": {
-												"instance-variable": "key",
-												"comparison": 0,
-												"value": "\"D\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 680711359005304,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 251402161385226
-								},
-								{
-									"eventType": "comment",
-									"text": "⭡⭠⭣⭢"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 619639233732896,
-											"parameters": {
-												"key": 38
+												"layer": "\"creditos\"",
+												"visibility": "invisible"
 											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "control_key",
-											"sid": 140861183380136,
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 622826617701595,
 											"parameters": {
-												"instance-variable": "key",
-												"comparison": 0,
-												"value": "\"8\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 874564469933948,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 883643320280546
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 415610964809010,
-											"parameters": {
-												"key": 37
+												"layer": "\"creditos\"",
+												"interactive": false
 											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "control_key",
-											"sid": 455010785557981,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 761709114261253,
 											"parameters": {
-												"instance-variable": "key",
-												"comparison": 0,
-												"value": "\"4\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 805219420349166,
-											"parameters": {
+												"layer": "\"menu\"",
 												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 504568402633952
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 655982762906911,
-											"parameters": {
-												"key": 40
 											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "control_key",
-											"sid": 763021457385097,
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 104069047524148,
 											"parameters": {
-												"instance-variable": "key",
-												"comparison": 0,
-												"value": "\"2\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 666549305302340,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 234323375324452
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 757460409549906,
-											"parameters": {
-												"key": 39
+												"layer": "\"menu\"",
+												"interactive": true
 											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "control_key",
-											"sid": 200294799341823,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 641871230564186,
 											"parameters": {
-												"instance-variable": "key",
-												"comparison": 0,
-												"value": "\"6\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 853759661217597,
-											"parameters": {
+												"layer": "\"pause\"",
 												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 662097773115455
-								},
-								{
-									"eventType": "comment",
-									"text": "E | P"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 560259652746722,
-											"parameters": {
-												"key": 69
 											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "control_key",
-											"sid": 882225241049621,
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 999071614770003,
 											"parameters": {
-												"instance-variable": "key",
-												"comparison": 0,
-												"value": "\"E\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 710551962939140,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 703713525922103
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "key-is-down",
-											"objectClass": "Keyboard",
-											"sid": 913197439082769,
-											"parameters": {
-												"key": 80
+												"layer": "\"pause\"",
+												"interactive": true
 											}
 										},
 										{
-											"id": "compare-instance-variable",
-											"objectClass": "control_key",
-											"sid": 259439735250945,
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 624712917053556,
 											"parameters": {
-												"instance-variable": "key",
-												"comparison": 0,
-												"value": "\"P\""
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "control_key",
-											"sid": 233185454026823,
-											"parameters": {
+												"layer": "\"cursor\"",
 												"visibility": "visible"
 											}
 										}
 									],
-									"sid": 108570407772904
-								}
-							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Animação mouse em controles"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "middle_click",
-									"sid": 381250513594126,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "right_click",
-									"sid": 196736991575254,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-visible",
-									"objectClass": "left_click",
-									"sid": 263032215082059,
-									"parameters": {
-										"visibility": "invisible"
-									}
-								}
-							],
-							"sid": 463878155605461,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "Mouse"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "mouse-button-is-down",
-											"objectClass": "Mouse",
-											"sid": 987645752004591,
-											"parameters": {
-												"mouse-button": "left"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "left_click",
-											"sid": 305467214430502,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 415219435702067
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "mouse-button-is-down",
-											"objectClass": "Mouse",
-											"sid": 717166323032957,
-											"parameters": {
-												"mouse-button": "middle"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-visible",
-											"objectClass": "middle_click",
-											"sid": 725742826095442,
-											"parameters": {
-												"visibility": "visible"
-											}
-										}
-									],
-									"sid": 353549764137701,
+									"sid": 346229684762831,
 									"isOrBlock": true
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "mouse-button-is-down",
-											"objectClass": "Mouse",
-											"sid": 747540385043305,
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 901752788730348,
 											"parameters": {
-												"mouse-button": "right"
+												"first-value": "LayoutName",
+												"comparison": 0,
+												"second-value": "\"Bedroom\""
 											}
+										},
+										{
+											"id": "layer-is-visible",
+											"objectClass": "System",
+											"sid": 645242383785868,
+											"parameters": {
+												"layer": "\"pause\"\n"
+											},
+											"isInverted": true
 										}
 									],
 									"actions": [
 										{
-											"id": "set-visible",
-											"objectClass": "right_click",
-											"sid": 216030337432297,
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 560771105310296,
 											"parameters": {
-												"visibility": "visible"
+												"group-name": "\"PLAYER_CONTROL\"",
+												"state": "activated"
 											}
 										}
 									],
-									"sid": 321440186571792
+									"sid": 859961661584521
 								}
-							]
+							],
+							"isOrBlock": true
 						}
 					],
-					"sid": 520778781392233,
+					"sid": 607726655117506,
 					"text-color": [
 						0,
 						0,
@@ -1708,727 +2011,513 @@
 					]
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 623824733814189,
-							"parameters": {
-								"key": 27
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 517604500718797,
-							"parameters": {
-								"variable": "gamePaused"
-							}
-						},
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 400716244148039,
-							"parameters": {
-								"layer": "\"pause\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 577350517334216,
-							"parameters": {
-								"variable": "gamePaused",
-								"value": "false"
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 907828832571407,
-							"parameters": {
-								"layer": "\"pause\"",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 875072264128930,
-							"parameters": {
-								"layer": "\"pause\"",
-								"interactive": false
-							}
-						},
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 588101939759778,
-							"parameters": {
-								"time-scale": "1"
-							}
-						}
-					],
-					"sid": 205828768601798,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 800992028551422,
-									"parameters": {
-										"first-value": "LayoutName",
-										"comparison": 0,
-										"second-value": "\"Bedroom\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 252199138298832,
-									"parameters": {
-										"group-name": "\"PLAYER_CONTROL\"",
-										"state": "toggle-active"
-									}
-								}
-							],
-							"sid": 641928346867150
-						}
-					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Som e animação mouse sobre botão"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "for-each",
-							"objectClass": "System",
-							"sid": 981138191311450,
-							"parameters": {
-								"object": "menu_button"
-							}
-						}
-					],
-					"actions": [],
-					"sid": 270443690924665,
+					"eventType": "group",
+					"disabled": false,
+					"title": "PAUSE_CONTROLS_ANIM",
+					"description": "Animação dos controles",
+					"isActiveOnStart": false,
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Animação do cursor sobre botão"
+							"text": "Animação teclas em controles"
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "cursor-is-over-object",
-									"objectClass": "Mouse",
-									"sid": 717103679152981,
-									"parameters": {
-										"object": "menu_button"
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
-									"id": "set-animation-frame",
-									"objectClass": "menu_button",
-									"sid": 302123133831306,
+									"id": "set-visible",
+									"objectClass": "control_key",
+									"sid": 108385943895067,
 									"parameters": {
-										"frame-number": "1"
+										"visibility": "invisible"
 									}
 								}
 							],
-							"sid": 169140854268982,
+							"sid": 852086775708840,
 							"children": [
 								{
 									"eventType": "comment",
-									"text": "Som ao cursor sobre botão"
+									"text": "WASD"
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "trigger-once-while-true",
-											"objectClass": "System",
-											"sid": 297566476612882
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 565492956487567,
+											"parameters": {
+												"key": 87
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "control_key",
+											"sid": 923865123179564,
+											"parameters": {
+												"instance-variable": "key",
+												"comparison": 0,
+												"value": "\"W\""
+											}
 										}
 									],
 									"actions": [
 										{
-											"id": "play-by-name",
-											"objectClass": "Audio",
-											"sid": 839305305265828,
+											"id": "set-visible",
+											"objectClass": "control_key",
+											"sid": 928705983898448,
 											"parameters": {
-												"folder": "sounds",
-												"audio-file-name": "\"bip 1\"",
-												"loop": "not-looping",
-												"volume": "0",
-												"stereo-pan": "0",
-												"tag-optional": "\"\""
+												"visibility": "visible"
 											}
 										}
 									],
-									"sid": 777075770407204
+									"sid": 142457614164076
 								},
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 290321603376765
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 367059671920559,
+											"parameters": {
+												"key": 65
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "control_key",
+											"sid": 372185218186182,
+											"parameters": {
+												"instance-variable": "key",
+												"comparison": 0,
+												"value": "\"A\""
+											}
 										}
 									],
 									"actions": [
 										{
-											"id": "stop",
-											"objectClass": "Audio",
-											"sid": 469994875370534,
+											"id": "set-visible",
+											"objectClass": "control_key",
+											"sid": 137161143212349,
 											"parameters": {
-												"tag": "\"bip 1\""
+												"visibility": "visible"
 											}
 										}
 									],
-									"sid": 586365403710784
+									"sid": 220328070528845
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 145131514837097,
+											"parameters": {
+												"key": 83
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "control_key",
+											"sid": 695992072318779,
+											"parameters": {
+												"instance-variable": "key",
+												"comparison": 0,
+												"value": "\"S\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "control_key",
+											"sid": 386115569826219,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 676045186467890
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 994600224625332,
+											"parameters": {
+												"key": 68
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "control_key",
+											"sid": 473250574592748,
+											"parameters": {
+												"instance-variable": "key",
+												"comparison": 0,
+												"value": "\"D\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "control_key",
+											"sid": 467564508555687,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 811784160380187
+								},
+								{
+									"eventType": "comment",
+									"text": "⭡⭠⭣⭢"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 720198674306207,
+											"parameters": {
+												"key": 38
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "control_key",
+											"sid": 858948805715549,
+											"parameters": {
+												"instance-variable": "key",
+												"comparison": 0,
+												"value": "\"8\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "control_key",
+											"sid": 869525932476940,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 448306512093656
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 310381434555332,
+											"parameters": {
+												"key": 37
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "control_key",
+											"sid": 827465686291582,
+											"parameters": {
+												"instance-variable": "key",
+												"comparison": 0,
+												"value": "\"4\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "control_key",
+											"sid": 281149030753466,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 682601306709233
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 332628470632489,
+											"parameters": {
+												"key": 40
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "control_key",
+											"sid": 770526697624586,
+											"parameters": {
+												"instance-variable": "key",
+												"comparison": 0,
+												"value": "\"2\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "control_key",
+											"sid": 805843312521430,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 140071314391767
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 103074506641716,
+											"parameters": {
+												"key": 39
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "control_key",
+											"sid": 181597060048534,
+											"parameters": {
+												"instance-variable": "key",
+												"comparison": 0,
+												"value": "\"6\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "control_key",
+											"sid": 723300313194140,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 621846627837189
+								},
+								{
+									"eventType": "comment",
+									"text": "E | P"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 420108631828721,
+											"parameters": {
+												"key": 69
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "control_key",
+											"sid": 875179122593247,
+											"parameters": {
+												"instance-variable": "key",
+												"comparison": 0,
+												"value": "\"E\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "control_key",
+											"sid": 658796045438184,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 535132935383385
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "key-is-down",
+											"objectClass": "Keyboard",
+											"sid": 600651892173572,
+											"parameters": {
+												"key": 80
+											}
+										},
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "control_key",
+											"sid": 400896048225721,
+											"parameters": {
+												"instance-variable": "key",
+												"comparison": 0,
+												"value": "\"P\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "control_key",
+											"sid": 459257858192629,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 338870433777796
 								}
 							]
 						},
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 351198251656265
-								}
-							],
-							"actions": [
-								{
-									"id": "set-animation-frame",
-									"objectClass": "menu_button",
-									"sid": 342614130037069,
-									"parameters": {
-										"frame-number": "0"
-									}
-								}
-							],
-							"sid": 127837521632024
-						}
-					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Botão selecionado"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 678219669006531,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "menu_button"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "play-by-name",
-							"objectClass": "Audio",
-							"sid": 526822403743242,
-							"parameters": {
-								"folder": "sounds",
-								"audio-file-name": "\"bip 1.2\"",
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"SFX\""
-							}
-						}
-					],
-					"sid": 114886235105108,
-					"children": [
-						{
 							"eventType": "comment",
-							"text": "Jogar"
+							"text": "Animação mouse em controles"
 						},
 						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "menu_button",
-									"sid": 338590402084772,
-									"parameters": {
-										"instance-variable": "button",
-										"comparison": 0,
-										"value": "\"continuar\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 479385005570889,
+									"id": "set-visible",
+									"objectClass": "middle_click",
+									"sid": 457513108922443,
 									"parameters": {
-										"layer": "\"pause\"",
 										"visibility": "invisible"
 									}
 								},
 								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 710752554121032,
+									"id": "set-visible",
+									"objectClass": "right_click",
+									"sid": 302876947875990,
 									"parameters": {
-										"layer": "\"pause\"",
-										"interactive": false
+										"visibility": "invisible"
 									}
 								},
 								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 324507440370263,
+									"id": "set-visible",
+									"objectClass": "left_click",
+									"sid": 854834914047830,
 									"parameters": {
-										"variable": "gamePaused",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-time-scale",
-									"objectClass": "System",
-									"sid": 972767225166649,
-									"parameters": {
-										"time-scale": "1"
+										"visibility": "invisible"
 									}
 								}
 							],
-							"sid": 691825060180380,
+							"sid": 508254399429866,
 							"children": [
 								{
+									"eventType": "comment",
+									"text": "Mouse"
+								},
+								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 390298331627276,
+											"id": "mouse-button-is-down",
+											"objectClass": "Mouse",
+											"sid": 878804323437651,
 											"parameters": {
-												"first-value": "LayoutName",
-												"comparison": 0,
-												"second-value": "\"Bedroom\""
+												"mouse-button": "left"
 											}
 										}
 									],
 									"actions": [
 										{
-											"id": "set-group-active",
-											"objectClass": "System",
-											"sid": 619360917644972,
+											"id": "set-visible",
+											"objectClass": "left_click",
+											"sid": 930265936442122,
 											"parameters": {
-												"group-name": "\"PLAYER_CONTROL\"",
-												"state": "toggle-active"
+												"visibility": "visible"
 											}
 										}
 									],
-									"sid": 281581031427919
+									"sid": 967577237181331
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "mouse-button-is-down",
+											"objectClass": "Mouse",
+											"sid": 462588854498869,
+											"parameters": {
+												"mouse-button": "middle"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "middle_click",
+											"sid": 685927266344458,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 654302601062065,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "mouse-button-is-down",
+											"objectClass": "Mouse",
+											"sid": 519509940093168,
+											"parameters": {
+												"mouse-button": "right"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-visible",
+											"objectClass": "right_click",
+											"sid": 907719902011071,
+											"parameters": {
+												"visibility": "visible"
+											}
+										}
+									],
+									"sid": 568033597512344
 								}
 							]
-						},
-						{
-							"eventType": "comment",
-							"text": "Controles"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "menu_button",
-									"sid": 900824519682376,
-									"parameters": {
-										"instance-variable": "button",
-										"comparison": 0,
-										"value": "\"controles\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 831063106568581,
-									"parameters": {
-										"layer": "\"cursor\"",
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 682308401932758,
-									"parameters": {
-										"layer": "\"pause\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 816985319079173,
-									"parameters": {
-										"layer": "\"pause\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 875957270068010,
-									"parameters": {
-										"layer": "\"menu\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 911151430518088,
-									"parameters": {
-										"layer": "\"menu\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 522346562583275,
-									"parameters": {
-										"layer": "\"controles\"",
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 138740107256632,
-									"parameters": {
-										"layer": "\"controles\"",
-										"interactive": true
-									}
-								}
-							],
-							"sid": 127774797499396
-						},
-						{
-							"eventType": "comment",
-							"text": "Créditos"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "menu_button",
-									"sid": 131838826962614,
-									"parameters": {
-										"instance-variable": "button",
-										"comparison": 0,
-										"value": "\"creditos\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 712865467705367,
-									"parameters": {
-										"layer": "\"cursor\"",
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 279654775207534,
-									"parameters": {
-										"layer": "\"pause\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 165544084444772,
-									"parameters": {
-										"layer": "\"pause\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 549292681273197,
-									"parameters": {
-										"layer": "\"menu\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 997063419398648,
-									"parameters": {
-										"layer": "\"menu\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 597129392745972,
-									"parameters": {
-										"layer": "\"creditos\"",
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 112170351061180,
-									"parameters": {
-										"layer": "\"creditos\"",
-										"interactive": true
-									}
-								}
-							],
-							"sid": 589787235916925
-						},
-						{
-							"eventType": "comment",
-							"text": "Sair"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "menu_button",
-									"sid": 897288047483593,
-									"parameters": {
-										"instance-variable": "button",
-										"comparison": 0,
-										"value": "\"menu_principal\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-object-time-scale",
-									"objectClass": "System",
-									"sid": 465732065542914,
-									"parameters": {
-										"object": "fade",
-										"time-scale": "1.0"
-									}
-								},
-								{
-									"id": "set-object-time-scale",
-									"objectClass": "System",
-									"sid": 934310826616104,
-									"parameters": {
-										"object": "loading_fade",
-										"time-scale": "1.0"
-									}
-								},
-								{
-									"callFunction": "Transition",
-									"sid": 801716209822259,
-									"parameters": [
-										"\"Menu\""
-									]
-								},
-								{
-									"id": "wait-for-signal",
-									"objectClass": "System",
-									"sid": 783407416839977,
-									"parameters": {
-										"tag": "\"end_transition\""
-									}
-								},
-								{
-									"id": "set-time-scale",
-									"objectClass": "System",
-									"sid": 824932540903480,
-									"parameters": {
-										"time-scale": "1.0"
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 834339177709131,
-									"parameters": {
-										"layer": "\"pause\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 160201664337727,
-									"parameters": {
-										"layer": "\"pause\"",
-										"interactive": false
-									}
-								}
-							],
-							"sid": 691040359400785
 						}
 					],
-					"isOrBlock": true
-				},
-				{
-					"eventType": "comment",
-					"text": "Voltar (esc)"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 921526283629213,
-							"parameters": {
-								"key": 27
-							}
-						},
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 240790044817077,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "esc"
-							}
-						}
+					"sid": 750636783439416,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
 					],
-					"actions": [],
-					"sid": 874277204811701,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "layer-is-visible",
-									"objectClass": "System",
-									"sid": 926926974666814,
-									"parameters": {
-										"layer": "\"controles\""
-									}
-								},
-								{
-									"id": "layer-is-visible",
-									"objectClass": "System",
-									"sid": 508925346352131,
-									"parameters": {
-										"layer": "\"creditos\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 668279955071665,
-									"parameters": {
-										"layer": "\"controles\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 146871847225575,
-									"parameters": {
-										"layer": "\"controles\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 571472804827542,
-									"parameters": {
-										"layer": "\"creditos\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 635124595175367,
-									"parameters": {
-										"layer": "\"creditos\"",
-										"interactive": false
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 846443190167404,
-									"parameters": {
-										"layer": "\"menu\"",
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 459405848763685,
-									"parameters": {
-										"layer": "\"menu\"",
-										"interactive": true
-									}
-								},
-								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 765125684767318,
-									"parameters": {
-										"layer": "\"pause\"",
-										"visibility": "visible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 424928503414189,
-									"parameters": {
-										"layer": "\"pause\"",
-										"interactive": true
-									}
-								}
-							],
-							"sid": 867409967210892,
-							"isOrBlock": true
-						}
-					],
-					"isOrBlock": true
+					"background-color": [
+						0.2235294117647059,
+						0.984313725490196,
+						0.18823529411764706,
+						1
+					]
 				}
 			],
 			"sid": 169398127416239,
@@ -2887,6 +2976,33 @@
 						}
 					],
 					"sid": 143065052900592
+				},
+				{
+					"bookmark": true,
+					"eventType": "comment",
+					"text": "Reseta tudo"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 917606834847698,
+							"parameters": {
+								"key": 35
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "clear-storage",
+							"objectClass": "LocalStorage",
+							"sid": 784386365723366
+						}
+					],
+					"sid": 211772348976915,
+					"disabled": true
 				}
 			],
 			"sid": 912091851435917,

@@ -33,20 +33,21 @@
 					],
 					"actions": [
 						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 521819638656254,
+							"parameters": {
+								"group-name": "\"PLAYER_CONTROL\"",
+								"state": "activated"
+							}
+						},
+						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
 							"sid": 294974535458527,
 							"parameters": {
 								"variable": "IsChoosing",
 								"value": "false"
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "cursor",
-							"sid": 365274047288322,
-							"parameters": {
-								"opacity": "100"
 							}
 						},
 						{
@@ -173,9 +174,9 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 903131417411669,
+							"sid": 122729090586787,
 							"parameters": {
-								"interval-seconds": "0.5"
+								"interval-seconds": "2"
 							}
 						},
 						{
@@ -365,14 +366,18 @@
 											}
 										},
 										{
-											"id": "wait-for-previous-actions",
+											"id": "wait",
 											"objectClass": "System",
-											"sid": 539856463565566
+											"sid": 714782689813147,
+											"parameters": {
+												"seconds": "0.3",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "set-visible",
 											"objectClass": "Yes_No_Familly",
-											"sid": 898135623362084,
+											"sid": 579721496958720,
 											"parameters": {
 												"visibility": "visible"
 											}
@@ -436,14 +441,18 @@
 											}
 										},
 										{
-											"id": "wait-for-previous-actions",
+											"id": "wait",
 											"objectClass": "System",
-											"sid": 612618811044418
+											"sid": 865020339863315,
+											"parameters": {
+												"seconds": "0.3",
+												"use-timescale": true
+											}
 										},
 										{
 											"id": "set-visible",
 											"objectClass": "Yes_No_Familly",
-											"sid": 103563850552462,
+											"sid": 930383199092129,
 											"parameters": {
 												"visibility": "visible"
 											}
@@ -614,7 +623,7 @@
 						{
 							"id": "set-visible",
 							"objectClass": "Yes_No_Familly",
-							"sid": 483633495734037,
+							"sid": 551500876297588,
 							"parameters": {
 								"visibility": "invisible"
 							}
@@ -684,6 +693,14 @@
 											"sid": 181835490480295,
 											"parameters": {
 												"opacity": "0"
+											}
+										},
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 239585009800912,
+											"parameters": {
+												"tag": "\"cursor_opacity=0\""
 											}
 										},
 										{
@@ -769,6 +786,14 @@
 											"sid": 840507634267512,
 											"parameters": {
 												"opacity": "0"
+											}
+										},
+										{
+											"id": "signal",
+											"objectClass": "System",
+											"sid": 561068671336806,
+											"parameters": {
+												"tag": "\"cursor_opacity=0\""
 											}
 										},
 										{
@@ -973,7 +998,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Sair"
+					"text": "Sair da tela de escolha"
 				},
 				{
 					"eventType": "block",
@@ -1017,12 +1042,11 @@
 							}
 						},
 						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 589674738863504,
+							"id": "set-visible",
+							"objectClass": "Yes_No_Familly",
+							"sid": 577237542102237,
 							"parameters": {
-								"layer": "\"yes_no\"",
-								"interactive": true
+								"visibility": "invisible"
 							}
 						}
 					],
@@ -1232,39 +1256,13 @@
 								}
 							],
 							"sid": 732093181433446
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 287115710493748
-								}
-							],
-							"actions": [
-								{
-									"id": "play-by-name",
-									"objectClass": "Audio",
-									"sid": 249607518891578,
-									"parameters": {
-										"folder": "sounds",
-										"audio-file-name": "\"bip 1.2\"",
-										"loop": "not-looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "\"\""
-									}
-								}
-							],
-							"sid": 108138460357827
 						}
 					],
 					"isOrBlock": true
 				},
 				{
 					"eventType": "comment",
-					"text": "Sair da lixeira ou armário"
+					"text": "Animação esc"
 				},
 				{
 					"eventType": "block",
@@ -1349,7 +1347,7 @@
 						{
 							"id": "compare-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 277797439060645,
+							"sid": 190894730201561,
 							"parameters": {
 								"variable": "IsChoosing"
 							}
@@ -1357,7 +1355,23 @@
 						{
 							"id": "layer-is-visible",
 							"objectClass": "System",
-							"sid": 130751022241243,
+							"sid": 768130718681550,
+							"parameters": {
+								"layer": "\"controles\""
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 469259605542445,
+							"parameters": {
+								"layer": "\"creditos\""
+							}
+						},
+						{
+							"id": "layer-is-visible",
+							"objectClass": "System",
+							"sid": 212190583334933,
 							"parameters": {
 								"layer": "\"pause\""
 							}
@@ -1367,89 +1381,39 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 159164661293802,
+							"sid": 460688879328476,
 							"parameters": {
-								"layer": "\"sign\"",
-								"visibility": "invisible"
+								"layer": "\"cursor\"",
+								"visibility": "visible"
 							}
 						},
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 222232089076492,
+							"sid": 563271762741589,
 							"parameters": {
-								"layer": "\"cursor\"",
-								"visibility": "visible"
+								"layer": "\"sign\"",
+								"visibility": "invisible"
 							}
 						}
 					],
 					"sid": 793368492832097,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-tweens-released",
-									"objectClass": "choosing_menu",
-									"sid": 146043064797606,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"choosing_appear\""
-									}
-								},
-								{
-									"id": "on-tweens-released",
-									"objectClass": "choosing_save",
-									"sid": 580594777112969,
-									"behaviorType": "Tween",
-									"parameters": {
-										"tags": "\"choosing_appear\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "Yes_No_Familly",
-									"sid": 283635047240823,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 261190710852101,
-							"isOrBlock": true
-						}
-					],
 					"isOrBlock": true
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-boolean-eventvar",
+							"id": "else",
 							"objectClass": "System",
-							"sid": 381485416044068,
-							"parameters": {
-								"variable": "IsChoosing"
-							},
-							"isInverted": true
-						},
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 980628185474530,
-							"parameters": {
-								"layer": "\"pause\""
-							},
-							"isInverted": true
+							"sid": 554838111309492
 						}
 					],
 					"actions": [
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 472923071857334,
+							"sid": 186157674843172,
 							"parameters": {
 								"layer": "\"cursor\"",
 								"visibility": "invisible"
@@ -1458,22 +1422,14 @@
 						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
-							"sid": 575489887726677,
+							"sid": 764225364539972,
 							"parameters": {
 								"layer": "\"sign\"",
 								"visibility": "visible"
 							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Yes_No_Familly",
-							"sid": 906325598721491,
-							"parameters": {
-								"visibility": "invisible"
-							}
 						}
 					],
-					"sid": 966552059038894
+					"sid": 157243579075852
 				}
 			],
 			"sid": 486112191158838,
