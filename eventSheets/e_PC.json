@@ -23,6 +23,14 @@
 					],
 					"actions": [
 						{
+							"id": "set-master-volume",
+							"objectClass": "Audio",
+							"sid": 188270185380014,
+							"parameters": {
+								"db": "-10"
+							}
+						},
+						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
 							"sid": 684324425297054,
@@ -42,6 +50,40 @@
 					],
 					"sid": 741880394947535,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "Inicia música de fundo"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 843673861495318,
+									"parameters": {
+										"tag": "\"musica ambiente\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 489414813908356,
+									"parameters": {
+										"folder": "music",
+										"audio-file-name": "\"musica ambiente\"",
+										"loop": "looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"BGM\""
+									}
+								}
+							],
+							"sid": 646739317662874
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -1595,94 +1637,6 @@
 					"isActiveOnStart": true,
 					"children": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-start-of-layout",
-									"objectClass": "System",
-									"sid": 756093181918354
-								}
-							],
-							"actions": [
-								{
-									"id": "set-master-volume",
-									"objectClass": "Audio",
-									"sid": 924678611991722,
-									"parameters": {
-										"db": "-10"
-									}
-								}
-							],
-							"sid": 795767361637123,
-							"children": [
-								{
-									"eventType": "comment",
-									"text": "Inicia música de fundo"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-tag-playing",
-											"objectClass": "Audio",
-											"sid": 940918052033638,
-											"parameters": {
-												"tag": "\"musica ambiente\""
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [
-										{
-											"id": "play-by-name",
-											"objectClass": "Audio",
-											"sid": 786600158796049,
-											"parameters": {
-												"folder": "music",
-												"audio-file-name": "\"musica ambiente\"",
-												"loop": "looping",
-												"volume": "-10",
-												"stereo-pan": "0",
-												"tag-optional": "\"BGM\""
-											}
-										}
-									],
-									"sid": 115809965384336
-								},
-								{
-									"eventType": "comment",
-									"text": "Checa se já digitou a senha correta"
-								},
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "check-item-exists",
-											"objectClass": "LocalStorage",
-											"sid": 243436109845814,
-											"parameters": {
-												"key": "\"login_done\" & level_done"
-											}
-										},
-										{
-											"id": "request-project-file",
-											"objectClass": "AJAX",
-											"sid": 251052779990471,
-											"parameters": {
-												"tag": "\"login_password\"",
-												"file": {
-													"path": "login_password.json"
-												}
-											}
-										}
-									],
-									"sid": 739093044864569
-								}
-							],
-							"isOrBlock": true
-						},
-						{
 							"eventType": "comment",
 							"text": "Sincroniza o array para as senhas e dicas"
 						},
@@ -1692,7 +1646,7 @@
 								{
 									"id": "on-completed",
 									"objectClass": "AJAX",
-									"sid": 964819417696448,
+									"sid": 966078961432983,
 									"parameters": {
 										"tag": "\"login_password\""
 									}
@@ -1710,9 +1664,17 @@
 								{
 									"id": "set-text",
 									"objectClass": "tip_login",
-									"sid": 174950675434395,
+									"sid": 149817203323167,
 									"parameters": {
-										"text": "str(array_login.At(1, level_done))"
+										"text": "str(array_login.At(level_done + 1, 1))"
+									}
+								},
+								{
+									"id": "check-item-exists",
+									"objectClass": "LocalStorage",
+									"sid": 999031621045742,
+									"parameters": {
+										"key": "\"login_done\" & level_done"
 									}
 								}
 							],
@@ -2078,11 +2040,11 @@
 												{
 													"id": "compare-two-values",
 													"objectClass": "System",
-													"sid": 793808016497710,
+													"sid": 557190949062948,
 													"parameters": {
-														"first-value": "input_login.Text",
+														"first-value": "int(input_login.Text)",
 														"comparison": 0,
-														"second-value": "str(array_login.At(0, level_done))"
+														"second-value": "int(array_login.At(level_done + 1, 0))"
 													}
 												}
 											],
@@ -2431,65 +2393,6 @@
 				0,
 				1
 			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 638732706926236
-				}
-			],
-			"actions": [
-				{
-					"id": "set-enabled",
-					"objectClass": "input_login",
-					"sid": 579526551479655,
-					"parameters": {
-						"mode": "disabled"
-					}
-				},
-				{
-					"id": "set-layer-interactive",
-					"objectClass": "System",
-					"sid": 581540685831871,
-					"parameters": {
-						"layer": "\"window\"",
-						"interactive": true
-					}
-				},
-				{
-					"id": "set-layer-interactive",
-					"objectClass": "System",
-					"sid": 663687077423228,
-					"parameters": {
-						"layer": "\"icon\"",
-						"interactive": true
-					}
-				},
-				{
-					"id": "set-layer-visible",
-					"objectClass": "System",
-					"sid": 386996666555943,
-					"parameters": {
-						"layer": "\"login\"",
-						"visibility": "invisible"
-					}
-				},
-				{
-					"id": "set-layer-interactive",
-					"objectClass": "System",
-					"sid": 773506116829540,
-					"parameters": {
-						"layer": "\"login\"",
-						"interactive": false
-					}
-				}
-			],
-			"sid": 513077078394478,
-			"disabled": true,
-			"isOrBlock": true
 		}
 	],
 	"sid": 473027040696098
