@@ -16,49 +16,49 @@
 		{
 			"type": "plugin",
 			"id": "Arr",
-			"name": "Array",
+			"name": "Matriz",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Audio",
-			"name": "Audio",
+			"name": "Áudio",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Browser",
-			"name": "Browser",
+			"name": "Navegador",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Camera3D",
-			"name": "3D camera",
+			"name": "Câmera 3D",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Keyboard",
+			"name": "Teclado",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "LocalStorage",
-			"name": "Local storage",
+			"name": "Armazenamento local",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Model3D",
-			"name": "3D model",
+			"name": "Modelo 3D",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -72,7 +72,7 @@
 		{
 			"type": "plugin",
 			"id": "Shape3D",
-			"name": "3D shape",
+			"name": "Forma 3D",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -86,106 +86,127 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Text",
+			"name": "Texto",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TextBox",
-			"name": "Text input",
+			"name": "Entrada de texto",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TiledBg",
-			"name": "Tiled Background",
+			"name": "Plano de Fundo em Blocos",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Bullet",
-			"name": "Bullet",
+			"name": "Projétil",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "DragnDrop",
-			"name": "Drag & Drop",
+			"name": "Arrastar & Soltar",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direction",
+			"name": "8 Direções",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Fade",
-			"name": "Fade",
+			"name": "Esmaecer",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Flash",
-			"name": "Flash",
+			"name": "Piscar",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "MoveTo",
-			"name": "Move To",
+			"name": "Mover Para",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Pin",
-			"name": "Pin",
+			"name": "Fixar",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "Sine",
+			"name": "Senóide",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Tween",
-			"name": "Tween",
+			"name": "Interpolação",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "custom",
-			"name": "Custom",
+			"name": "Personalizado",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "scrollto",
-			"name": "Scroll To",
+			"name": "Centrar em",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Solid",
+			"name": "Sólido",
 			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "colorblend",
+			"name": "Cor",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "glowhorizontal",
+			"name": "Brilho horizontal",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "effect",
+			"id": "vignette",
+			"name": "Vinheta",
+			"author": "Brad Larson",
 			"bundled": false
 		}
 	],
@@ -409,7 +430,8 @@
 								"items": [
 									"lvl3_feedback_ok",
 									"lvl3_feedback_erro",
-									"lvl3_background"
+									"lvl3_background",
+									"lvl3_bg"
 								],
 								"subfolders": [],
 								"name": "sprites"
@@ -418,7 +440,7 @@
 								"items": [
 									"lvl3_txt_Processo",
 									"lvl3_txt_Origem",
-									"lvl3_txt_TImestamp",
+									"lvl3_txt_Timestamp",
 									"lvl3_txt_Permissoes",
 									"lvl3_txt_Assinatura",
 									"lvl3_txt_Corretos",
@@ -576,15 +598,32 @@
 						"name": "Level 9"
 					},
 					{
-						"items": [],
+						"items": [
+							"lvl8_background"
+						],
 						"subfolders": [
 							{
 								"items": [
-									"lvl3_background_1",
-									"lvl3_background_2",
-									"lvl3_background_3"
+									"lvl8_HUD"
 								],
-								"subfolders": [],
+								"subfolders": [
+									{
+										"items": [
+											"lvl8_fioamarelo",
+											"lvl8_fioazul",
+											"lvl8_fioverde",
+											"lvl8_fiovermelho",
+											"lvl8_caixadefio",
+											"lvl8_caixadefio2",
+											"lvl8_fioamarelo2",
+											"lvl8_fioverde2",
+											"lvl8_fiovermelho2",
+											"lvl8_fioazul2"
+										],
+										"subfolders": [],
+										"name": "fios"
+									}
+								],
 								"name": "sprites"
 							}
 						],

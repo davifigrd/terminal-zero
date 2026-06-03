@@ -57,6 +57,21 @@
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
+					"effects": {
+						"Vinheta": {
+							"isEnabled": true,
+							"parameters": {
+								"start-radius": 0.5,
+								"end-radius": 0.75
+							}
+						},
+						"BrilhoHorizontal": {
+							"isEnabled": true,
+							"parameters": {
+								"intensity": 0.3
+							}
+						}
+					},
 					"showing": true,
 					"locked": false,
 					"world": {
@@ -471,7 +486,7 @@
 				{
 					"type": "lvl3_txt_Assinatura",
 					"properties": {
-						"text": "Texto",
+						"text": "Carregando...",
 						"enable-bbcode": true,
 						"font": "system-ui",
 						"size": 15,
@@ -520,7 +535,7 @@
 				{
 					"type": "lvl3_txt_Origem",
 					"properties": {
-						"text": "Texto",
+						"text": "Carregando...",
 						"enable-bbcode": true,
 						"font": "system-ui",
 						"size": 15,
@@ -569,7 +584,7 @@
 				{
 					"type": "lvl3_txt_Permissoes",
 					"properties": {
-						"text": "Texto",
+						"text": "Carregando...",
 						"enable-bbcode": true,
 						"font": "system-ui",
 						"size": 15,
@@ -618,7 +633,7 @@
 				{
 					"type": "lvl3_txt_Processo",
 					"properties": {
-						"text": "Texto",
+						"text": "Carregando...",
 						"enable-bbcode": true,
 						"font": "system-ui",
 						"size": 15,
@@ -665,9 +680,9 @@
 					}
 				},
 				{
-					"type": "lvl3_txt_TImestamp",
+					"type": "lvl3_txt_Timestamp",
 					"properties": {
-						"text": "Texto",
+						"text": "Carregando...",
 						"enable-bbcode": true,
 						"font": "system-ui",
 						"size": 15,
@@ -716,7 +731,7 @@
 				{
 					"type": "lvl3_txt_Processos",
 					"properties": {
-						"text": "Texto",
+						"text": "Analisando...",
 						"enable-bbcode": true,
 						"font": "system-ui",
 						"size": 14,
@@ -746,9 +761,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 778.9777763390092,
+						"x": 744.8012298984256,
 						"y": 711,
-						"width": 51.60971530945767,
+						"width": 126.24005485575105,
 						"height": 30,
 						"originX": 0,
 						"originY": 0,
@@ -765,7 +780,7 @@
 				{
 					"type": "lvl3_txt_Erros",
 					"properties": {
-						"text": "Texto",
+						"text": "Analisando...",
 						"enable-bbcode": true,
 						"font": "system-ui",
 						"size": 14,
@@ -795,9 +810,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 590.5863410578183,
+						"x": 550.829972975884,
 						"y": 711,
-						"width": 51.60971530945767,
+						"width": 131.12245147332646,
 						"height": 30,
 						"originX": 0,
 						"originY": 0,
@@ -814,7 +829,7 @@
 				{
 					"type": "lvl3_txt_Corretos",
 					"properties": {
-						"text": "Texto",
+						"text": "Analisando...",
 						"enable-bbcode": true,
 						"font": "system-ui",
 						"size": 14,
@@ -844,9 +859,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 410.67595401534686,
+						"x": 382.77675357589374,
 						"y": 711,
-						"width": 51.60971530945767,
+						"width": 117.60971530945767,
 						"height": 30,
 						"originX": 0,
 						"originY": 0,
@@ -937,7 +952,7 @@
 					"world": {
 						"x": 932,
 						"y": 686,
-						"width": 469.56968367983876,
+						"width": 399.56968367983876,
 						"height": 50.53490029352395,
 						"originX": 0,
 						"originY": 0,

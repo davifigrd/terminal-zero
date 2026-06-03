@@ -2,7 +2,6 @@
 	"name": "e_Level3",
 	"events": [
 		{
-			"bookmark": true,
 			"eventType": "include",
 			"includeSheet": "e_Global"
 		},
@@ -67,7 +66,6 @@
 			"sid": 291391944133220
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "lvl3_ID_regra_ativa",
 			"type": "number",
@@ -78,7 +76,6 @@
 			"sid": 812101684665137
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "lvl3_regraAplicada",
 			"type": "number",
@@ -99,7 +96,6 @@
 			"sid": 332153172641181
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "lvl3_respostaCorreta",
 			"type": "string",
@@ -120,7 +116,6 @@
 			"sid": 790466887362058
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "lvl3_ip",
 			"type": "string",
@@ -438,6 +433,96 @@
 							"sid": 909843271925164
 						}
 					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 466948727109289,
+							"parameters": {
+								"object": "lvl3_btn_permitir"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl3_btn_permitir",
+							"sid": 347226582197013,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 138943809481135
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 334269566476907
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl3_btn_permitir",
+							"sid": 550539353572722,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 173853970532016
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "cursor-is-over-object",
+							"objectClass": "Mouse",
+							"sid": 205784034099241,
+							"parameters": {
+								"object": "lvl3_btn_bloquear"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl3_btn_bloquear",
+							"sid": 883003395382106,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 993237135423649
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 416715522334346
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl3_btn_bloquear",
+							"sid": 124395116879389,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 410637136466964
 				}
 			],
 			"sid": 975911184553901
@@ -492,6 +577,48 @@
 							"parameters": {
 								"seconds": "1.5",
 								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl3_feedback_ok",
+							"sid": 519660529870662,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "lvl3_feedback_ok",
+							"sid": 307978685651354,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 280673509739891,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "stop-flashing",
+							"objectClass": "lvl3_feedback_ok",
+							"sid": 508169863450289,
+							"behaviorType": "Flash"
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl3_feedback_ok",
+							"sid": 364169601705305,
+							"parameters": {
+								"visibility": "invisible"
 							}
 						}
 					],
@@ -604,6 +731,48 @@
 							"parameters": {
 								"seconds": "2.5",
 								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl3_feedback_erro",
+							"sid": 167740246967131,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "flash",
+							"objectClass": "lvl3_feedback_erro",
+							"sid": 613652034016081,
+							"behaviorType": "Flash",
+							"parameters": {
+								"on-time": "0.1",
+								"off-time": "0.1",
+								"duration": "1.0"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 413732752755905,
+							"parameters": {
+								"seconds": "0.5",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "stop-flashing",
+							"objectClass": "lvl3_feedback_erro",
+							"sid": 191726123255074,
+							"behaviorType": "Flash"
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl3_feedback_erro",
+							"sid": 642724957662920,
+							"parameters": {
+								"visibility": "invisible"
 							}
 						}
 					],
@@ -1126,7 +1295,7 @@
 				{
 					"id": "set-text",
 					"objectClass": "lvl3_txt_Processo",
-					"sid": 996729712521699,
+					"sid": 809328968293462,
 					"parameters": {
 						"text": "lvl3_nome"
 					}
@@ -1141,7 +1310,7 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "lvl3_txt_TImestamp",
+					"objectClass": "lvl3_txt_Timestamp",
 					"sid": 265897933191036,
 					"parameters": {
 						"text": "lvl3_timestamp"
