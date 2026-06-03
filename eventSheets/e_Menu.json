@@ -19,15 +19,6 @@
 							"id": "on-start-of-layout",
 							"objectClass": "System",
 							"sid": 173688785022011
-						},
-						{
-							"id": "is-tag-playing",
-							"objectClass": "Audio",
-							"sid": 114447969315746,
-							"parameters": {
-								"tag": "\"musica tema\""
-							},
-							"isInverted": true
 						}
 					],
 					"actions": [
@@ -37,35 +28,6 @@
 							"sid": 246921556470999,
 							"parameters": {
 								"db": "-10"
-							}
-						},
-						{
-							"id": "play-by-name",
-							"objectClass": "Audio",
-							"sid": 931539743434477,
-							"parameters": {
-								"folder": "music",
-								"audio-file-name": "\"musica tema\"",
-								"loop": "looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"BGM\""
-							}
-						},
-						{
-							"id": "set-time-scale",
-							"objectClass": "System",
-							"sid": 541247361106610,
-							"parameters": {
-								"time-scale": "1"
-							}
-						},
-						{
-							"id": "set-opacity",
-							"objectClass": "cursor",
-							"sid": 612887208253834,
-							"parameters": {
-								"opacity": "100"
 							}
 						},
 						{
@@ -85,28 +47,76 @@
 								"variable": "layout",
 								"value": "\"Menu\""
 							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 898872754292095,
-							"parameters": {
-								"layer": "\"menu\"",
-								"interactive": false
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 807902103863197,
-							"parameters": {
-								"layer": "\"menu\"",
-								"interactive": true
-							}
 						}
 					],
 					"sid": 994649201546090,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "Tocar música tema"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 649096896003328,
+									"parameters": {
+										"tag": "\"musica tema\""
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "play-by-name",
+									"objectClass": "Audio",
+									"sid": 906409984075673,
+									"parameters": {
+										"folder": "music",
+										"audio-file-name": "\"musica tema\"",
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"BGM\""
+									}
+								}
+							],
+							"sid": 555147170476609
+						},
+						{
+							"eventType": "comment",
+							"text": "Parar música ambiente"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-tag-playing",
+									"objectClass": "Audio",
+									"sid": 858521561893153,
+									"parameters": {
+										"tag": "\"musica ambiente\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "stop",
+									"objectClass": "Audio",
+									"sid": 450172760930614,
+									"parameters": {
+										"tag": "\"musica ambiente\""
+									}
+								}
+							],
+							"sid": 637903529126343
+						},
+						{
+							"eventType": "comment",
+							"text": "Delay durante transição"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -121,6 +131,15 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 239231311751651,
+									"parameters": {
+										"layer": "\"menu_button\"",
+										"interactive": false
+									}
+								},
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
@@ -140,15 +159,6 @@
 									}
 								},
 								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 545393791718859,
-									"parameters": {
-										"layer": "\"menu\"",
-										"interactive": false
-									}
-								},
-								{
 									"id": "wait",
 									"objectClass": "System",
 									"sid": 252324622261265,
@@ -160,9 +170,9 @@
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 886002802705240,
+									"sid": 636135782845725,
 									"parameters": {
-										"layer": "\"menu\"",
+										"layer": "\"menu_button\"",
 										"interactive": true
 									}
 								}
@@ -171,37 +181,47 @@
 						},
 						{
 							"eventType": "comment",
-							"text": "Desativa BGM"
+							"text": "Pause não funciona no menu"
 						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "is-tag-playing",
-									"objectClass": "Audio",
-									"sid": 935142866230602,
+									"id": "layer-name-exists",
+									"objectClass": "System",
+									"sid": 336203091817306,
 									"parameters": {
-										"tag": "\"musica ambiente\""
+										"layer": "\"pause\""
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "stop",
-									"objectClass": "Audio",
-									"sid": 233514450281524,
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 603448664647810,
 									"parameters": {
-										"tag": "\"musica ambiente\""
+										"layer": "\"pause\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 555745841230267,
+									"parameters": {
+										"layer": "\"pause\"",
+										"interactive": false
 									}
 								}
 							],
-							"sid": 118857180303250
+							"sid": 784005799064801
 						}
 					]
 				},
 				{
 					"eventType": "comment",
-					"text": "Desativa BGM"
+					"text": "Desativa tudo"
 				},
 				{
 					"eventType": "block",
@@ -220,49 +240,6 @@
 						}
 					],
 					"sid": 215323958238843
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "layer-is-interactive",
-							"objectClass": "System",
-							"sid": 512441131172167,
-							"parameters": {
-								"layer": "\"pause\""
-							}
-						},
-						{
-							"id": "layer-is-visible",
-							"objectClass": "System",
-							"sid": 625010293735221,
-							"parameters": {
-								"layer": "\"pause\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 420695700086172,
-							"parameters": {
-								"layer": "\"pause\"",
-								"interactive": false
-							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 661535152852834,
-							"parameters": {
-								"layer": "\"pause\"",
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 425933798049004,
-					"isOrBlock": true
 				}
 			],
 			"sid": 188182124183528,
@@ -273,8 +250,8 @@
 				1
 			],
 			"background-color": [
-				0,
-				0.06666666666666667,
+				1,
+				1,
 				1,
 				1
 			]
@@ -316,6 +293,24 @@
 								"volume": "0",
 								"stereo-pan": "0",
 								"tag-optional": "\"SFX\""
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 503174212910367,
+							"parameters": {
+								"layer": "\"menu_button\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 340598684568762,
+							"parameters": {
+								"layer": "\"menu_button\"",
+								"interactive": false
 							}
 						}
 					],
@@ -437,24 +432,6 @@
 									}
 								},
 								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 195259922113549,
-									"parameters": {
-										"layer": "\"menu\"",
-										"visibility": "invisible"
-									}
-								},
-								{
-									"id": "set-layer-interactive",
-									"objectClass": "System",
-									"sid": 409820734130630,
-									"parameters": {
-										"layer": "\"menu\"",
-										"interactive": false
-									}
-								},
-								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 460174080444583,
@@ -478,7 +455,7 @@
 				},
 				{
 					"eventType": "comment",
-					"text": "Sair"
+					"text": "Tela de escolha sair"
 				},
 				{
 					"eventType": "block",
@@ -594,18 +571,18 @@
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 459968608922542,
+									"sid": 903153417110937,
 									"parameters": {
-										"layer": "\"menu\"",
+										"layer": "\"menu_button\"",
 										"visibility": "visible"
 									}
 								},
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 200504792677809,
+									"sid": 584757489491633,
 									"parameters": {
-										"layer": "\"menu\"",
+										"layer": "\"menu_button\"",
 										"interactive": true
 									}
 								},
