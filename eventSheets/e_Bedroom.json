@@ -317,6 +317,15 @@
 								"group-name": "\"ESC_MAIN\"",
 								"state": "deactivated"
 							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 718864498421527,
+							"parameters": {
+								"group-name": "\"ESC_BEDROOM\"",
+								"state": "activated"
+							}
 						}
 					],
 					"sid": 564460481323689,
@@ -347,15 +356,6 @@
 									"parameters": {
 										"variable": "IsChoosing",
 										"value": "true"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 558126159807303,
-									"parameters": {
-										"group-name": "\"ESC_BEDROOM_BED_DOOR\"",
-										"state": "activated"
 									}
 								},
 								{
@@ -451,15 +451,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 858715645110905,
-									"parameters": {
-										"group-name": "\"ESC_BEDROOM_BED_DOOR\"",
-										"state": "activated"
-									}
-								},
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
@@ -563,15 +554,6 @@
 							],
 							"actions": [
 								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 893088866564860,
-									"parameters": {
-										"group-name": "\"ESC_BEDROOM_TRASH_CLOSET\"",
-										"state": "activated"
-									}
-								},
-								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
 									"sid": 639854189221367,
@@ -612,15 +594,6 @@
 								}
 							],
 							"actions": [
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 396146806150651,
-									"parameters": {
-										"group-name": "\"ESC_BEDROOM_TRASH_CLOSET\"",
-										"state": "activated"
-									}
-								},
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
