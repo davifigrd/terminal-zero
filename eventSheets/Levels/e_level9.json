@@ -2,6 +2,10 @@
 	"name": "e_level9",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
 			"eventType": "variable",
 			"name": "lvl9_etapa",
 			"type": "number",
@@ -74,6 +78,15 @@
 					"parameters": {
 						"layer": "0",
 						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 621986312363296,
+					"parameters": {
+						"variable": "lvl9_etapa",
+						"value": "0"
 					}
 				}
 			],
@@ -177,80 +190,6 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 930891893273188
-						}
-					],
-					"actions": [
-						{
-							"id": "set-cursor-from-sprite",
-							"objectClass": "Mouse",
-							"sid": 550292138563322,
-							"parameters": {
-								"sprite": "cursor"
-							}
-						}
-					],
-					"sid": 439247579471703
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 525499602297472,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "lvl9_botaoexit"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 612192720284011,
-							"parameters": {
-								"layout": "Menu"
-							}
-						},
-						{
-							"id": "stop-all",
-							"objectClass": "Audio",
-							"sid": 410899896393225
-						}
-					],
-					"sid": 371636367194989
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 406203991166124
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 559095776905059,
-							"parameters": {
-								"variable": "lvl9_etapa",
-								"value": "0"
-							}
-						}
-					],
-					"sid": 815160767736289
-				},
 				{
 					"eventType": "group",
 					"disabled": false,
@@ -1199,15 +1138,6 @@
 												"variable": "lvl9_etapa",
 												"value": "3"
 											}
-										},
-										{
-											"id": "go-to-layout",
-											"objectClass": "System",
-											"sid": 699203939153170,
-											"disabled": true,
-											"parameters": {
-												"layout": "Menu"
-											}
 										}
 									],
 									"sid": 584294850210011
@@ -1551,17 +1481,16 @@
 							],
 							"actions": [
 								{
-									"id": "go-to-layout",
-									"objectClass": "System",
-									"sid": 740676978316893,
-									"parameters": {
-										"layout": "Menu"
-									}
-								},
-								{
 									"id": "stop-all",
 									"objectClass": "Audio",
-									"sid": 506443666265265
+									"sid": 895024172831035
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 495707866660217,
+									"parameters": [
+										"\"Bedroom\""
+									]
 								}
 							],
 							"sid": 534489233580200

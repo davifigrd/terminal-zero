@@ -1493,6 +1493,13 @@
 						"variable": "lvl4_PodeClicar",
 						"value": "0"
 					}
+				},
+				{
+					"callFunction": "Transition",
+					"sid": 801462886833840,
+					"parameters": [
+						"\"Bedroom\""
+					]
 				}
 			],
 			"sid": 343330658609338
@@ -2135,27 +2142,6 @@
 				}
 			],
 			"sid": 867197995206982
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 584326609296371
-				}
-			],
-			"actions": [
-				{
-					"id": "set-cursor-from-sprite",
-					"objectClass": "Mouse",
-					"sid": 298821288561721,
-					"parameters": {
-						"sprite": "cursor"
-					}
-				}
-			],
-			"sid": 997627221882037
 		}
 	],
 	"sid": 986251233977125

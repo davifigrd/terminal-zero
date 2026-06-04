@@ -281,6 +281,19 @@
 						"ping-pong": "no",
 						"repeat-count": "1"
 					}
+				},
+				{
+					"id": "play-by-name",
+					"objectClass": "Audio",
+					"sid": 671300598632975,
+					"parameters": {
+						"folder": "sounds",
+						"audio-file-name": "\"success sound\"",
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
 				}
 			],
 			"sid": 247895600030033,
@@ -400,17 +413,16 @@
 					],
 					"actions": [
 						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 511671770008995,
-							"parameters": {
-								"layout": "Bedroom"
-							}
-						},
-						{
 							"id": "stop-all",
 							"objectClass": "Audio",
 							"sid": 546223713278149
+						},
+						{
+							"callFunction": "Transition",
+							"sid": 561939097108620,
+							"parameters": [
+								"\"Bedroom\""
+							]
 						}
 					],
 					"sid": 398700796124866
