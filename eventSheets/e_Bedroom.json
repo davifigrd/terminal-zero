@@ -332,6 +332,24 @@
 							],
 							"actions": [
 								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 633933181570588,
+									"parameters": {
+										"group-name": "\"ESC_BEDROOM\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 853902957407019,
+									"parameters": {
+										"group-name": "\"PAUSE_INPUT\"",
+										"state": "deactivated"
+									}
+								},
+								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
 									"sid": 591293791416420,
@@ -374,15 +392,6 @@
 										"loop": "no",
 										"ping-pong": "no",
 										"repeat-count": "1"
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 776691421134208,
-									"parameters": {
-										"group-name": "\"PAUSE_INPUT\"",
-										"state": "deactivated"
 									}
 								},
 								{
@@ -443,18 +452,18 @@
 							],
 							"actions": [
 								{
-									"id": "set-layer-visible",
+									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 394087758164789,
+									"sid": 892294670276265,
 									"parameters": {
-										"layer": "\"cursor\"",
-										"visibility": "visible"
+										"group-name": "\"ESC_BEDROOM\"",
+										"state": "activated"
 									}
 								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 613572681200100,
+									"sid": 695829146426309,
 									"parameters": {
 										"group-name": "\"PAUSE_INPUT\"",
 										"state": "deactivated"
@@ -463,10 +472,19 @@
 								{
 									"id": "set-boolean-eventvar",
 									"objectClass": "System",
-									"sid": 565649760622177,
+									"sid": 904146514520303,
 									"parameters": {
 										"variable": "IsChoosing",
 										"value": "true"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 394087758164789,
+									"parameters": {
+										"layer": "\"cursor\"",
+										"visibility": "visible"
 									}
 								},
 								{
@@ -570,6 +588,15 @@
 										"layer": "\"closet\"",
 										"interactive": true
 									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 537647381611900,
+									"parameters": {
+										"group-name": "\"ESC_BEDROOM\"",
+										"state": "activated"
+									}
 								}
 							],
 							"sid": 104571545002553,
@@ -594,6 +621,15 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 734933224204886,
+									"parameters": {
+										"group-name": "\"ESC_BEDROOM\"",
+										"state": "activated"
+									}
+								},
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
@@ -703,19 +739,19 @@
 					],
 					"actions": [
 						{
+							"id": "set-visible",
+							"objectClass": "Yes_No_Familly",
+							"sid": 538922470575414,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
 							"id": "set-layer-visible",
 							"objectClass": "System",
 							"sid": 339055475746213,
 							"parameters": {
 								"layer": "\"cursor\"",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "Yes_No_Familly",
-							"sid": 551500876297588,
-							"parameters": {
 								"visibility": "invisible"
 							}
 						},
@@ -1087,7 +1123,8 @@
 								}
 							]
 						}
-					]
+					],
+					"isOrBlock": true
 				}
 			],
 			"sid": 486112191158838,

@@ -294,24 +294,6 @@
 								"stereo-pan": "0",
 								"tag-optional": "\"SFX\""
 							}
-						},
-						{
-							"id": "set-layer-visible",
-							"objectClass": "System",
-							"sid": 503174212910367,
-							"parameters": {
-								"layer": "\"menu_button\"",
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "set-layer-interactive",
-							"objectClass": "System",
-							"sid": 340598684568762,
-							"parameters": {
-								"layer": "\"menu_button\"",
-								"interactive": false
-							}
 						}
 					],
 					"sid": 358252198283293,
@@ -335,6 +317,15 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 513896290470407,
+									"parameters": {
+										"layer": "\"menu_button\"",
+										"interactive": true
+									}
+								},
 								{
 									"callFunction": "Transition",
 									"sid": 831222860996324,
@@ -374,34 +365,30 @@
 							],
 							"actions": [
 								{
-									"id": "play-by-name",
-									"objectClass": "Audio",
-									"sid": 216341581576402,
-									"parameters": {
-										"folder": "sounds",
-										"audio-file-name": "\"bip 1.2\"",
-										"loop": "not-looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "\"SFX\""
-									}
-								},
-								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 698976010333518,
+									"sid": 307449726964100,
 									"parameters": {
-										"layer": "\"choosing\"",
-										"visibility": "visible"
+										"layer": "\"menu_button\"",
+										"visibility": "invisible"
 									}
 								},
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 750547935802829,
+									"sid": 721826667112430,
 									"parameters": {
-										"layer": "\"choosing\"",
-										"interactive": true
+										"layer": "\"menu_button\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 294638917855940,
+									"parameters": {
+										"variable": "IsChoosing",
+										"value": "true"
 									}
 								},
 								{
@@ -432,12 +419,12 @@
 									}
 								},
 								{
-									"id": "set-boolean-eventvar",
+									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 460174080444583,
+									"sid": 309958090045175,
 									"parameters": {
-										"variable": "IsChoosing",
-										"value": "true"
+										"layer": "\"yes_no\"",
+										"interactive": true
 									}
 								},
 								{
@@ -536,15 +523,24 @@
 								{
 									"id": "set-visible",
 									"objectClass": "Yes_No_Familly",
-									"sid": 327577203300594,
+									"sid": 989345177412456,
 									"parameters": {
 										"visibility": "invisible"
 									}
 								},
 								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 494854576037240,
+									"parameters": {
+										"variable": "IsChoosing",
+										"value": "false"
+									}
+								},
+								{
 									"id": "tween-two-properties",
 									"objectClass": "choosing_leave",
-									"sid": 116179580151450,
+									"sid": 450133796195527,
 									"behaviorType": "Tween",
 									"parameters": {
 										"tags": "\"choosing_appear\"",
@@ -552,7 +548,7 @@
 										"end-x": "0",
 										"end-y": "0",
 										"time": "0.3",
-										"ease": "easeoutback",
+										"ease": "default",
 										"destroy-on-complete": "no",
 										"loop": "no",
 										"ping-pong": "no",
@@ -562,16 +558,16 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 794594730276341,
+									"sid": 955916470613113,
 									"parameters": {
-										"seconds": "0.1",
+										"seconds": "0.3",
 										"use-timescale": true
 									}
 								},
 								{
 									"id": "set-layer-visible",
 									"objectClass": "System",
-									"sid": 903153417110937,
+									"sid": 882199758050687,
 									"parameters": {
 										"layer": "\"menu_button\"",
 										"visibility": "visible"
@@ -580,43 +576,116 @@
 								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 584757489491633,
+									"sid": 977454205651620,
 									"parameters": {
 										"layer": "\"menu_button\"",
 										"interactive": true
 									}
 								},
 								{
-									"id": "set-layer-visible",
-									"objectClass": "System",
-									"sid": 986788053060256,
-									"parameters": {
-										"layer": "\"choosing\"",
-										"visibility": "invisible"
-									}
-								},
-								{
 									"id": "set-layer-interactive",
 									"objectClass": "System",
-									"sid": 565955132329709,
+									"sid": 786640979164457,
 									"parameters": {
-										"layer": "\"choosing\"",
+										"layer": "\"yes_no\"",
 										"interactive": false
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 733052301148829,
-									"parameters": {
-										"variable": "IsChoosing",
-										"value": "false"
 									}
 								}
 							],
 							"sid": 133289640101744
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Fechar tela de escolha sair"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 538743895309324,
+							"parameters": {
+								"key": 27
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "Yes_No_Familly",
+							"sid": 421843837729039,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 336556932199258,
+							"parameters": {
+								"variable": "IsChoosing",
+								"value": "false"
+							}
+						},
+						{
+							"id": "tween-two-properties",
+							"objectClass": "choosing_leave",
+							"sid": 498076281405790,
+							"behaviorType": "Tween",
+							"parameters": {
+								"tags": "\"choosing_appear\"",
+								"property": "size",
+								"end-x": "0",
+								"end-y": "0",
+								"time": "0.3",
+								"ease": "default",
+								"destroy-on-complete": "no",
+								"loop": "no",
+								"ping-pong": "no",
+								"repeat-count": "1"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 664272239783484,
+							"parameters": {
+								"seconds": "0.3",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 833322114557883,
+							"parameters": {
+								"layer": "\"menu_button\"",
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 994887403204026,
+							"parameters": {
+								"layer": "\"menu_button\"",
+								"interactive": true
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 112536900845053,
+							"parameters": {
+								"layer": "\"yes_no\"",
+								"interactive": false
+							}
+						}
+					],
+					"sid": 800035864661852
 				}
 			],
 			"sid": 750828073481552,
