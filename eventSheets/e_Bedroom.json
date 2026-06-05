@@ -785,7 +785,17 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 821912040830664,
+									"parameters": {
+										"group-name": "\"PAUSE_INPUT\"",
+										"state": "activated"
+									}
+								}
+							],
 							"sid": 305088356883173,
 							"children": [
 								{
@@ -805,6 +815,15 @@
 										}
 									],
 									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 912329106190241,
+											"parameters": {
+												"group-name": "\"PAUSE_INPUT\"",
+												"state": "deactivated"
+											}
+										},
 										{
 											"id": "tween-two-properties",
 											"objectClass": "choosing_save",
@@ -856,6 +875,15 @@
 											"parameters": [
 												"\"Bedroom\""
 											]
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 110786568089027,
+											"parameters": {
+												"layer": "\"save\"",
+												"visibility": "invisible"
+											}
 										}
 									],
 									"sid": 233857914646505
@@ -877,6 +905,15 @@
 										}
 									],
 									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 189723684530195,
+											"parameters": {
+												"group-name": "\"PAUSE_INPUT\"",
+												"state": "deactivated"
+											}
+										},
 										{
 											"id": "tween-two-properties",
 											"objectClass": "choosing_menu",
@@ -923,6 +960,15 @@
 											}
 										},
 										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
+											"sid": 870260241799176,
+											"parameters": {
+												"layer": "\"door\"",
+												"visibility": "invisible"
+											}
+										},
+										{
 											"callFunction": "Transition",
 											"sid": 351720714427811,
 											"parameters": [
@@ -952,7 +998,17 @@
 									}
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 106181984968784,
+									"parameters": {
+										"group-name": "\"PAUSE_INPUT\"",
+										"state": "activated"
+									}
+								}
+							],
 							"sid": 401451639858116,
 							"children": [
 								{

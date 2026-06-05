@@ -70,40 +70,6 @@
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Inicia música de fundo"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-tag-playing",
-									"objectClass": "Audio",
-									"sid": 843673861495318,
-									"parameters": {
-										"tag": "\"musica ambiente\""
-									},
-									"isInverted": true
-								}
-							],
-							"actions": [
-								{
-									"id": "play-by-name",
-									"objectClass": "Audio",
-									"sid": 772583404189039,
-									"parameters": {
-										"folder": "music",
-										"audio-file-name": "\"musica ambiente\"",
-										"loop": "looping",
-										"volume": "-20",
-										"stereo-pan": "0",
-										"tag-optional": "\"BGM\""
-									}
-								}
-							],
-							"sid": 646739317662874
-						},
-						{
-							"eventType": "comment",
 							"text": "Define layout"
 						},
 						{
@@ -215,6 +181,70 @@
 						}
 					],
 					"sid": 808306119682801
+				},
+				{
+					"eventType": "comment",
+					"text": "Inicia música de fundo"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-x-seconds",
+							"objectClass": "System",
+							"sid": 386357461188612,
+							"parameters": {
+								"interval-seconds": "2"
+							}
+						},
+						{
+							"id": "is-tag-playing",
+							"objectClass": "Audio",
+							"sid": 533910226237028,
+							"parameters": {
+								"tag": "\"musica ambiente\""
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "play-by-name",
+							"objectClass": "Audio",
+							"sid": 662521570121651,
+							"parameters": {
+								"folder": "music",
+								"audio-file-name": "\"musica ambiente\"",
+								"loop": "looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"BGM\""
+							}
+						}
+					],
+					"sid": 706548616109904
+				},
+				{
+					"eventType": "comment",
+					"text": "Para o som ao sair do layout"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 381781257759870
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 772598658911611
+						}
+					],
+					"sid": 928758985680030
 				}
 			],
 			"sid": 836311122198057,
@@ -1534,6 +1564,15 @@
 								}
 							],
 							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 923261303761005,
+									"parameters": {
+										"group-name": "\"PAUSE_INPUT\"",
+										"state": "deactivated"
+									}
+								},
 								{
 									"id": "set-opacity",
 									"objectClass": "level_hover",

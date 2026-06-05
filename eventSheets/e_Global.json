@@ -52,6 +52,7 @@
 			"sid": 322105363857792
 		},
 		{
+			"bookmark": true,
 			"eventType": "group",
 			"disabled": false,
 			"title": "GLOBAL",
@@ -63,6 +64,7 @@
 					"text": "Sempre em tela cheia"
 				},
 				{
+					"bookmark": true,
 					"eventType": "block",
 					"conditions": [
 						{
@@ -2569,6 +2571,24 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
+											"sid": 249773518458120,
+											"parameters": {
+												"layer": "\"pause\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 254599210860252,
+											"parameters": {
+												"layer": "\"pause\"",
+												"interactive": false
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
 											"sid": 500772399943345,
 											"parameters": {
 												"layer": "\"controles\"",
@@ -2663,6 +2683,24 @@
 										{
 											"id": "set-layer-visible",
 											"objectClass": "System",
+											"sid": 817017201901367,
+											"parameters": {
+												"layer": "\"pause\"",
+												"visibility": "invisible"
+											}
+										},
+										{
+											"id": "set-layer-interactive",
+											"objectClass": "System",
+											"sid": 427118739196784,
+											"parameters": {
+												"layer": "\"pause\"",
+												"interactive": false
+											}
+										},
+										{
+											"id": "set-layer-visible",
+											"objectClass": "System",
 											"sid": 882847748887243,
 											"parameters": {
 												"layer": "\"creditos\"",
@@ -2727,6 +2765,15 @@
 										}
 									],
 									"actions": [
+										{
+											"id": "set-group-active",
+											"objectClass": "System",
+											"sid": 655870263292878,
+											"parameters": {
+												"group-name": "\"PAUSE_INPUT\"",
+												"state": "deactivated"
+											}
+										},
 										{
 											"id": "destroy",
 											"objectClass": "background_pause",
@@ -3501,6 +3548,7 @@
 			]
 		},
 		{
+			"bookmark": true,
 			"eventType": "group",
 			"disabled": false,
 			"title": "RESET",
@@ -3885,6 +3933,7 @@
 					]
 				},
 				{
+					"bookmark": true,
 					"eventType": "comment",
 					"text": "Tutorial WASD no layout Bedroom"
 				},
@@ -4121,6 +4170,15 @@
 							"parameters": {
 								"seconds": "1",
 								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 652933857732244,
+							"parameters": {
+								"group-name": "\"PAUSE_INPUT\"",
+								"state": "activated"
 							}
 						}
 					],
