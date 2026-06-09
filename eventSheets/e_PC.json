@@ -502,16 +502,6 @@
 										"comparison": 1,
 										"value": "\"terminalzero\""
 									}
-								},
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "Icon_Familly",
-									"sid": 552049987200595,
-									"parameters": {
-										"instance-variable": "app",
-										"comparison": 1,
-										"value": "\"notes\""
-									}
 								}
 							],
 							"actions": [
@@ -723,6 +713,36 @@
 										}
 									],
 									"sid": 265521792676179
+								},
+								{
+									"eventType": "comment",
+									"text": "Bloco de notas"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Icon_Familly",
+											"sid": 873745448375460,
+											"parameters": {
+												"instance-variable": "app",
+												"comparison": 0,
+												"value": "\"notes\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "txt_error",
+											"sid": 186390030910528,
+											"parameters": {
+												"text": "\"3RR0R 404: Você já anotou códigos demais.\"\r\n\r\n"
+											}
+										}
+									],
+									"sid": 590460684581474
 								}
 							]
 						}
@@ -1743,14 +1763,14 @@
 								{
 									"id": "on-start-of-layout",
 									"objectClass": "System",
-									"sid": 896344948908080
+									"sid": 814102388536850
 								}
 							],
 							"actions": [
 								{
 									"id": "check-item-exists",
 									"objectClass": "LocalStorage",
-									"sid": 999031621045742,
+									"sid": 228783616076631,
 									"parameters": {
 										"key": "\"login_done\" & level_done"
 									}
@@ -1758,7 +1778,7 @@
 								{
 									"id": "request-project-file",
 									"objectClass": "AJAX",
-									"sid": 130793856133364,
+									"sid": 173660491044583,
 									"parameters": {
 										"tag": "\"login_password\"",
 										"file": {
@@ -1767,7 +1787,7 @@
 									}
 								}
 							],
-							"sid": 332113075793072
+							"sid": 698137512649832
 						},
 						{
 							"eventType": "comment",
@@ -1779,7 +1799,7 @@
 								{
 									"id": "on-completed",
 									"objectClass": "AJAX",
-									"sid": 966078961432983,
+									"sid": 752571662941020,
 									"parameters": {
 										"tag": "\"login_password\""
 									}
@@ -1789,7 +1809,7 @@
 								{
 									"id": "load",
 									"objectClass": "array_login",
-									"sid": 432630816487160,
+									"sid": 414541755568874,
 									"parameters": {
 										"json": "AJAX.LastData"
 									}
@@ -1797,13 +1817,13 @@
 								{
 									"id": "set-text",
 									"objectClass": "tip_login",
-									"sid": 623344592643585,
+									"sid": 641136016931805,
 									"parameters": {
 										"text": "str(array_login.At(1, level_done))"
 									}
 								}
 							],
-							"sid": 395278373817194
+							"sid": 648010027059315
 						},
 						{
 							"eventType": "comment",
@@ -1964,6 +1984,15 @@
 									"parameters": {
 										"x": "1270",
 										"y": "650"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "input_login",
+									"sid": 810845472953043,
+									"parameters": {
+										"width": "1400",
+										"height": "800"
 									}
 								},
 								{
