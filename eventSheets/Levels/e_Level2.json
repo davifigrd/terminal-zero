@@ -186,10 +186,10 @@
 						{
 							"id": "set-size",
 							"objectClass": "lvl2_Virus",
-							"sid": 258509318280997,
+							"sid": 669027264020009,
 							"parameters": {
-								"width": "166",
-								"height": "196"
+								"width": "70",
+								"height": "70"
 							}
 						}
 					],
@@ -302,15 +302,16 @@
 						{
 							"id": "set-text",
 							"objectClass": "lvl2_virusmorto",
-							"sid": 678019104481057,
+							"sid": 152616056091563,
 							"parameters": {
-								"text": "\"Virus mortos  : \"&lvl2_notebook1.virusMortos"
+								"text": "lvl2_notebook1.virusMortos"
 							}
 						},
 						{
 							"id": "set-text",
 							"objectClass": "lvl2_vidadopc",
 							"sid": 407736707518328,
+							"disabled": true,
 							"parameters": {
 								"text": "\"Vida do PC : \"&lvl2_notebook1.VidaDoPC"
 							}
@@ -324,11 +325,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "lvl2_notebook1",
-							"sid": 649078628198794,
+							"sid": 802778517099485,
 							"parameters": {
 								"instance-variable": "virusMortos",
 								"comparison": 5,
-								"value": "5"
+								"value": "10"
 							}
 						}
 					],
@@ -351,11 +352,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "lvl2_notebook1",
-							"sid": 311475915011209,
+							"sid": 705563785171907,
 							"parameters": {
 								"instance-variable": "virusMortos",
 								"comparison": 5,
-								"value": "10"
+								"value": "20"
 							}
 						}
 					],
@@ -378,11 +379,11 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "lvl2_notebook1",
-							"sid": 813579049475767,
+							"sid": 317368398751631,
 							"parameters": {
 								"instance-variable": "virusMortos",
 								"comparison": 5,
-								"value": "15"
+								"value": "30"
 							}
 						}
 					],
@@ -443,10 +444,10 @@
 						{
 							"id": "set-instvar-value",
 							"objectClass": "lvl2_notebook1",
-							"sid": 468943717063650,
+							"sid": 992991191698332,
 							"parameters": {
 								"instance-variable": "VidaDoPC",
-								"value": "10"
+								"value": "30"
 							}
 						}
 					],
@@ -487,9 +488,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "lvl2_mudoufase",
-							"sid": 826008639601637,
+							"sid": 816787007955824,
 							"parameters": {
-								"text": "\"FASE  1\""
+								"text": "\"1\""
 							}
 						}
 					],
@@ -565,9 +566,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "lvl2_mudoufase",
-							"sid": 877651996286190,
+							"sid": 166691773555670,
 							"parameters": {
-								"text": "\"FASE  2\""
+								"text": "\"2\""
 							}
 						},
 						{
@@ -587,15 +588,15 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 459721808255943,
+									"sid": 296569533394375,
 									"parameters": {
-										"interval-seconds": "choose(2,3)"
+										"interval-seconds": "choose(1,2)"
 									}
 								},
 								{
 									"id": "repeat",
 									"objectClass": "System",
-									"sid": 764554666191717,
+									"sid": 100923852025630,
 									"parameters": {
 										"count": "1"
 									}
@@ -651,9 +652,9 @@
 						{
 							"id": "set-text",
 							"objectClass": "lvl2_mudoufase",
-							"sid": 117565189096263,
+							"sid": 933484630033575,
 							"parameters": {
-								"text": "\"FASE 3\""
+								"text": "\"3\""
 							}
 						},
 						{
@@ -673,17 +674,17 @@
 								{
 									"id": "every-x-seconds",
 									"objectClass": "System",
-									"sid": 116731851474102,
+									"sid": 161678875021700,
 									"parameters": {
-										"interval-seconds": "choose(2,3)"
+										"interval-seconds": "choose(2,2)"
 									}
 								},
 								{
 									"id": "repeat",
 									"objectClass": "System",
-									"sid": 514338579658479,
+									"sid": 245479611136833,
 									"parameters": {
-										"count": "1"
+										"count": "2"
 									}
 								},
 								{
@@ -769,6 +770,112 @@
 				}
 			],
 			"sid": 899864824474440
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "lvl2_notebook1",
+					"sid": 391211317804369,
+					"parameters": {
+						"instance-variable": "VidaDoPC",
+						"comparison": 0,
+						"value": "20"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "lvl2_vida",
+					"sid": 904314978035209,
+					"parameters": {
+						"frame-number": "1"
+					}
+				}
+			],
+			"sid": 616399802406497
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "lvl2_notebook1",
+					"sid": 175065056858017,
+					"parameters": {
+						"instance-variable": "VidaDoPC",
+						"comparison": 0,
+						"value": "10"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "lvl2_vida",
+					"sid": 121185922487868,
+					"parameters": {
+						"frame-number": "2"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 404028740920705,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 3/lvl3_error"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 958204117410948
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "lvl2_notebook1",
+					"sid": 746347841758642,
+					"parameters": {
+						"instance-variable": "VidaDoPC",
+						"comparison": 0,
+						"value": "0"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-animation-frame",
+					"objectClass": "lvl2_vida",
+					"sid": 220198602920285,
+					"parameters": {
+						"frame-number": "3"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 504766198556659,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 3/lvl3_error"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 964401097006980
 		}
 	],
 	"sid": 479958128321061
