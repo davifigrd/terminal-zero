@@ -119,40 +119,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "every-x-seconds",
-							"objectClass": "System",
-							"sid": 975101417603028,
-							"parameters": {
-								"interval-seconds": "choose(2,3)"
-							}
-						},
-						{
-							"id": "repeat",
-							"objectClass": "System",
-							"sid": 702775614240038,
-							"parameters": {
-								"count": "1"
-							}
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 112612014474347
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "criarVirus",
-							"sid": 698842977467786
-						}
-					],
-					"sid": 143524299711131,
-					"disabled": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "every-tick",
 							"objectClass": "System",
 							"sid": 542240278852837
@@ -906,39 +872,6 @@
 				}
 			],
 			"sid": 597020766875712
-		},
-		{
-			"eventType": "block",
-			"conditions": [],
-			"actions": [],
-			"sid": 415156064201403
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-start-of-layout",
-					"objectClass": "System",
-					"sid": 241326728178482
-				}
-			],
-			"actions": [
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 579448504171900,
-					"parameters": {
-						"audio-file": {
-							"path": "windows xp"
-						},
-						"loop": "looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				}
-			],
-			"sid": 314869487490193
 		}
 	],
 	"sid": 479958128321061
