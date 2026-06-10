@@ -876,6 +876,69 @@
 				}
 			],
 			"sid": 964401097006980
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "lvl2_notebook1",
+					"sid": 894870707369795,
+					"parameters": {
+						"object": "lvl2_Virus"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 582947644612873,
+					"parameters": {
+						"audio-file": {
+							"path": "bip 2"
+						},
+						"loop": "not-looping",
+						"volume": "2",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 597020766875712
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 415156064201403
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 241326728178482
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 579448504171900,
+					"parameters": {
+						"audio-file": {
+							"path": "windows xp"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 314869487490193
 		}
 	],
 	"sid": 479958128321061
