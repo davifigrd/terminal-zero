@@ -387,12 +387,11 @@
 							}
 						},
 						{
-							"id": "go-to-layout",
-							"objectClass": "System",
-							"sid": 404203028754956,
-							"parameters": {
-								"layout": "Level3"
-							}
+							"callFunction": "Transition",
+							"sid": 878280388221127,
+							"parameters": [
+								"\"Bedroom\""
+							]
 						}
 					],
 					"sid": 429306612833767
@@ -711,7 +710,54 @@
 							}
 						}
 					],
-					"sid": 530873895285761
+					"sid": 530873895285761,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 952953663324076
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 296974335028709,
+									"parameters": {
+										"audio-file": {
+											"path": "musica fase 2"
+										},
+										"loop": "looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 597256808432985
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-end-of-layout",
+							"objectClass": "System",
+							"sid": 872042589707969
+						}
+					],
+					"actions": [
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 673972445632838
+						}
+					],
+					"sid": 178566117919337
 				}
 			],
 			"sid": 616939904205052
