@@ -59,6 +59,33 @@
 			"eventType": "block",
 			"conditions": [
 				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 708824816989880
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 760962618101529,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 6/chiado TV"
+						},
+						"loop": "looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 969346275731800
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
 					"id": "every-tick",
 					"objectClass": "System",
 					"sid": 334019859929255
@@ -68,7 +95,7 @@
 				{
 					"id": "set-size",
 					"objectClass": "lvl6_green_wave",
-					"sid": 248109731554391,
+					"sid": 297195043670577,
 					"parameters": {
 						"width": "lvl6_width",
 						"height": "lvl6_heigth"
@@ -76,508 +103,465 @@
 				},
 				{
 					"id": "set-size",
-					"objectClass": "lvl6_target_wave",
-					"sid": 169685710990921,
+					"objectClass": "lvl6_green_wave2",
+					"sid": 431867613534381,
 					"parameters": {
-						"width": "lvl6_width_target",
-						"height": "lvl6_heigth_target"
+						"width": "lvl6_width",
+						"height": "lvl6_heigth"
 					}
 				},
 				{
-					"id": "set-image-offset-x",
+					"id": "set-x",
 					"objectClass": "lvl6_green_wave",
-					"sid": 418042707328048,
+					"sid": 150320884484328,
 					"parameters": {
-						"offset-x": "lvl6_wave_speed"
+						"x": "lvl6_green_wave.X - (200 * dt)"
 					}
 				},
 				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 647024311146471,
+					"id": "set-x",
+					"objectClass": "lvl6_green_wave2",
+					"sid": 910813278763713,
 					"parameters": {
-						"variable": "lvl6_wave_speed",
-						"value": "222 * dt"
+						"x": "lvl6_green_wave2.X - (200 * dt)"
 					}
 				}
 			],
-			"sid": 636366391988425
-		},
-		{
-			"eventType": "comment",
-			"text": "⭡"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 469531718428455,
-					"parameters": {
-						"key": 38
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "lvl6_click",
-					"sid": 987125002784253,
-					"parameters": {
-						"instance-variable": "arrow",
-						"comparison": 0,
-						"value": "8"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl6_click",
-					"sid": 449031698354874,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 166927438786072,
+			"sid": 636366391988425,
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [],
-					"actions": [
+					"conditions": [
 						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 177209021829048,
+							"id": "compare-x",
+							"objectClass": "lvl6_green_wave",
+							"sid": 520677564467557,
 							"parameters": {
-								"variable": "lvl6_heigth",
-								"value": "15"
+								"comparison": 3,
+								"x-co-ordinate": "53.578707 - lvl6_width"
 							}
 						}
 					],
-					"sid": 529288179069546
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "lvl6_green_wave",
+							"sid": 547305475092932,
+							"parameters": {
+								"x": "lvl6_green_wave2.X + lvl6_width"
+							}
+						}
+					],
+					"sid": 294367061253805
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "lvl6_green_wave2",
+							"sid": 187507901606878,
+							"parameters": {
+								"comparison": 3,
+								"x-co-ordinate": "53.578707 - lvl6_width"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "lvl6_green_wave2",
+							"sid": 223924894087025,
+							"parameters": {
+								"x": "lvl6_green_wave2.X + lvl6_width"
+							}
+						}
+					],
+					"sid": 291187217490400
 				}
 			]
 		},
 		{
 			"eventType": "comment",
-			"text": "⭠"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 611794504118574,
-					"parameters": {
-						"key": 37
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "lvl6_click",
-					"sid": 845346646966554,
-					"parameters": {
-						"instance-variable": "arrow",
-						"comparison": 0,
-						"value": "4"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl6_click",
-					"sid": 939475799511107,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 393248847366469,
-					"parameters": {
-						"variable": "lvl6_width",
-						"value": "15"
-					}
-				}
-			],
-			"sid": 901052319174631
-		},
-		{
-			"eventType": "comment",
-			"text": "⭣"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 990962652137922,
-					"parameters": {
-						"key": 40
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "lvl6_click",
-					"sid": 473797466322548,
-					"parameters": {
-						"instance-variable": "arrow",
-						"comparison": 0,
-						"value": "2"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl6_click",
-					"sid": 366669927265238,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 770053101639668,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 528441474113108,
-							"parameters": {
-								"variable": "lvl6_heigth",
-								"value": "15"
-							}
-						}
-					],
-					"sid": 821401152046383
-				}
-			]
-		},
-		{
-			"eventType": "comment",
-			"text": "⭢"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 190412209247034,
-					"parameters": {
-						"key": 39
-					}
-				},
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "lvl6_click",
-					"sid": 349235278316799,
-					"parameters": {
-						"instance-variable": "arrow",
-						"comparison": 0,
-						"value": "6"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl6_click",
-					"sid": 727894436502659,
-					"parameters": {
-						"visibility": "visible"
-					}
-				}
-			],
-			"sid": 534518764255707,
-			"children": [
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 776539919519746,
-							"parameters": {
-								"variable": "lvl6_heigth",
-								"value": "15"
-							}
-						}
-					],
-					"sid": 120182892401375
-				}
-			]
+			"text": "⭡⭠⭣⭢"
 		},
 		{
 			"eventType": "block",
 			"conditions": [],
 			"actions": [],
-			"sid": 233125956677945,
+			"sid": 254348959799310,
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "⭡⭠⭣⭢"
+					"text": "⭡"
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 235879987354196,
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 804203946428287,
 							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "lvl6_click"
+								"key": 38
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl6_click",
+							"sid": 755406712455687,
+							"parameters": {
+								"instance-variable": "arrow",
+								"comparison": 0,
+								"value": "8"
 							}
 						}
 					],
-					"actions": [],
-					"sid": 993578385598803,
-					"disabled": true,
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 601313598468772,
+							"parameters": {
+								"variable": "lvl6_heigth",
+								"value": "25"
+							}
+						}
+					],
+					"sid": 440204517237447,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "⭡"
-						},
-						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "lvl6_click",
-									"sid": 174315574841882,
-									"parameters": {
-										"instance-variable": "arrow",
-										"comparison": 0,
-										"value": "8"
-									}
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 810484289492485
 								}
 							],
 							"actions": [
 								{
 									"id": "set-visible",
 									"objectClass": "lvl6_click",
-									"sid": 993831392369760,
+									"sid": 500466328094748,
 									"parameters": {
 										"visibility": "visible"
 									}
-								}
-							],
-							"sid": 642056418819587,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "⭠"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
+								},
 								{
-									"id": "compare-instance-variable",
-									"objectClass": "lvl6_click",
-									"sid": 795081492029065,
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 790595509466292,
 									"parameters": {
-										"instance-variable": "arrow",
-										"comparison": 0,
-										"value": "4"
+										"audio-file": {
+											"path": "bip 3"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
 									}
-								}
-							],
-							"actions": [
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 943007773005096,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
 								{
 									"id": "set-visible",
 									"objectClass": "lvl6_click",
-									"sid": 185117644827821,
+									"sid": 341617760110178,
 									"parameters": {
-										"visibility": "visible"
+										"visibility": "invisible"
 									}
 								}
 							],
-							"sid": 857475621610858,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "⭣"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "lvl6_click",
-									"sid": 775594635509167,
-									"parameters": {
-										"instance-variable": "arrow",
-										"comparison": 0,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "lvl6_click",
-									"sid": 335267831265458,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 163525642989655,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "⭢"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "lvl6_click",
-									"sid": 302466357429553,
-									"parameters": {
-										"instance-variable": "arrow",
-										"comparison": 0,
-										"value": "6"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "lvl6_click",
-									"sid": 739523825643292,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 432134202385873,
-							"disabled": true
-						},
-						{
-							"eventType": "comment",
-							"text": "target"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "lvl6_click",
-									"sid": 748583337903804,
-									"parameters": {
-										"instance-variable": "arrow",
-										"comparison": 0,
-										"value": "5"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-visible",
-									"objectClass": "lvl6_click",
-									"sid": 211665654744715,
-									"parameters": {
-										"visibility": "visible"
-									}
-								}
-							],
-							"sid": 165626285576910,
-							"disabled": true
+							"sid": 913066832424613
 						}
 					]
 				},
 				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "mouse-button-is-down",
-							"objectClass": "Mouse",
-							"sid": 134401003036453,
-							"parameters": {
-								"mouse-button": "left"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "lvl6_click",
-							"sid": 152053780552243,
-							"parameters": {
-								"visibility": "visible"
-							}
-						}
-					],
-					"sid": 147339832229694,
-					"disabled": true
+					"eventType": "comment",
+					"text": "⭠"
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "mouse-button-is-down",
-							"objectClass": "Mouse",
-							"sid": 708027325602397,
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 203283995087730,
 							"parameters": {
-								"mouse-button": "middle"
+								"key": 37
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl6_click",
+							"sid": 725991758322412,
+							"parameters": {
+								"instance-variable": "arrow",
+								"comparison": 0,
+								"value": "4"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "lvl6_click",
-							"sid": 192060331833432,
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 675229834928978,
 							"parameters": {
-								"visibility": "visible"
+								"variable": "lvl6_width",
+								"value": "50"
 							}
 						}
 					],
-					"sid": 943246206019331,
-					"disabled": true,
-					"isOrBlock": true
+					"sid": 225796156271127,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 321869602872996
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl6_click",
+									"sid": 822727861787550,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 677241597201233,
+									"parameters": {
+										"audio-file": {
+											"path": "bip 3"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 404822913798242,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl6_click",
+									"sid": 501063893129088,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 126888318592245
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "⭣"
 				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "mouse-button-is-down",
-							"objectClass": "Mouse",
-							"sid": 295700202845891,
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 505380076220561,
 							"parameters": {
-								"mouse-button": "right"
+								"key": 40
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl6_click",
+							"sid": 863619355790000,
+							"parameters": {
+								"instance-variable": "arrow",
+								"comparison": 0,
+								"value": "2"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-visible",
-							"objectClass": "lvl6_click",
-							"sid": 133371052789029,
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 802579521230230,
 							"parameters": {
-								"visibility": "visible"
+								"variable": "lvl6_heigth",
+								"value": "25"
 							}
 						}
 					],
-					"sid": 521563549085238,
-					"disabled": true
+					"sid": 430773132666078,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 622931251076165
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl6_click",
+									"sid": 496986983266822,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 637135660406607,
+									"parameters": {
+										"audio-file": {
+											"path": "bip 3"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 245894633274914,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl6_click",
+									"sid": 701373856513312,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 452176703534138
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "⭢"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 546613462772946,
+							"parameters": {
+								"key": 39
+							}
+						},
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "lvl6_click",
+							"sid": 563169815427676,
+							"parameters": {
+								"instance-variable": "arrow",
+								"comparison": 0,
+								"value": "6"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 590737875507809,
+							"parameters": {
+								"variable": "lvl6_width",
+								"value": "50"
+							}
+						}
+					],
+					"sid": 507632058751224,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 995795464618302
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl6_click",
+									"sid": 834401058434666,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 621539820535994,
+									"parameters": {
+										"audio-file": {
+											"path": "bip 3"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 531989778865604,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl6_click",
+									"sid": 210878302848749,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 173492013570046
+						}
+					]
 				}
 			]
 		}
