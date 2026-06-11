@@ -198,7 +198,7 @@
 		{
 			"type": "effect",
 			"id": "grayscale",
-			"name": "Grayscale",
+			"name": "Escala de cinza",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -440,7 +440,8 @@
 									"lvl3_txt_Assinatura",
 									"lvl3_txt_Corretos",
 									"lvl3_txt_Erros",
-									"lvl3_txt_Processos"
+									"lvl3_txt_Processos",
+									"lvl3_txt_regra"
 								],
 								"subfolders": [],
 								"name": "Texto"
@@ -600,12 +601,28 @@
 					},
 					{
 						"items": [
-							"lvl8_background"
+							"lvl8_bg",
+							"lvl8_txt_display",
+							"lvl8_txt_resposta",
+							"lvl8_txt_deletar",
+							"lvl8_txt_enviar",
+							"lvl8_txt_btn1",
+							"lvl8_txt_btn2",
+							"lvl8_txt_instrucao"
 						],
 						"subfolders": [
 							{
 								"items": [
-									"lvl8_HUD"
+									"lvl8_button",
+									"lvl8_hex",
+									"lvl8_painel",
+									"lvl8_digitar",
+									"lvl8_enviar",
+									"lvl8_excluir",
+									"lvl8_erro1",
+									"lvl8_erro2",
+									"lvl8_erro3",
+									"lvl8_cordobtn"
 								],
 								"subfolders": [
 									{
@@ -1038,9 +1055,41 @@
 				{
 					"items": [
 						{
-							"name": "lvl3_error.webm",
+							"name": "lvl3_erroretapa.webm",
 							"type": "audio/webm; codecs=opus",
 							"sid": 673869315262566,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "lvl3_error.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 373859798522580,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "lvl3_acerto.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 608186613908361,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "lvl3_soundTrack.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 367599357965205,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "lvl3_avancoetapa.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 676712338064588,
 							"file-info": {
 								"purpose": "none"
 							}

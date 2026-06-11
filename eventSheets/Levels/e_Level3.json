@@ -67,7 +67,6 @@
 			"sid": 291391944133220
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "lvl3_ID_regra_ativa",
 			"type": "number",
@@ -78,7 +77,6 @@
 			"sid": 812101684665137
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "lvl3_regraAplicada",
 			"type": "number",
@@ -99,7 +97,6 @@
 			"sid": 332153172641181
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "lvl3_respostaCorreta",
 			"type": "string",
@@ -120,7 +117,6 @@
 			"sid": 790466887362058
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "lvl3_ip",
 			"type": "string",
@@ -162,6 +158,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "lvl3_feedbackRegra",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 880821944028898
+		},
+		{
+			"eventType": "variable",
 			"name": "lvl3_precisaGerar",
 			"type": "number",
 			"initialValue": "0",
@@ -169,6 +175,10 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 318576073770282
+		},
+		{
+			"eventType": "comment",
+			"text": "Precisa adicionar trava entre os processos e etapas, para evitar duplo click sem querer\nEstá com bug quando passa de 5 na etapa 1, de 7 na etapa 2 e 10 na etapa 3, ele fica infinito.\nVi pelo Regra Ativa que ta gerando a maior parte 0 e 1, e algumas vezes 6"
 		},
 		{
 			"eventType": "group",
@@ -265,6 +275,20 @@
 							"parameters": {
 								"variable": "lvl3_travaInput",
 								"value": "0"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 177948166019569,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_soundTrack"
+								},
+								"loop": "looping",
+								"volume": "-8",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -576,18 +600,23 @@
 							]
 						},
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 138374340106844,
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 180564785427846,
 							"parameters": {
-								"seconds": "1.5",
-								"use-timescale": true
+								"audio-file": {
+									"path": "Level 3/lvl3_acerto"
+								},
+								"loop": "not-looping",
+								"volume": "-8",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						},
 						{
 							"id": "set-visible",
 							"objectClass": "lvl3_feedback_ok",
-							"sid": 519660529870662,
+							"sid": 953814726326915,
 							"parameters": {
 								"visibility": "visible"
 							}
@@ -595,7 +624,7 @@
 						{
 							"id": "flash",
 							"objectClass": "lvl3_feedback_ok",
-							"sid": 307978685651354,
+							"sid": 915144059342656,
 							"behaviorType": "Flash",
 							"parameters": {
 								"on-time": "0.1",
@@ -606,7 +635,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 280673509739891,
+							"sid": 370775575688928,
 							"parameters": {
 								"seconds": "0.5",
 								"use-timescale": true
@@ -615,15 +644,24 @@
 						{
 							"id": "stop-flashing",
 							"objectClass": "lvl3_feedback_ok",
-							"sid": 508169863450289,
+							"sid": 936142384371916,
 							"behaviorType": "Flash"
 						},
 						{
 							"id": "set-visible",
 							"objectClass": "lvl3_feedback_ok",
-							"sid": 364169601705305,
+							"sid": 648423500194064,
 							"parameters": {
 								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 138374340106844,
+							"parameters": {
+								"seconds": "1.5",
+								"use-timescale": true
 							}
 						}
 					],
@@ -724,24 +762,29 @@
 						},
 						{
 							"callFunction": "TypingEffect",
-							"sid": 292367437301713,
+							"sid": 864228209305371,
 							"parameters": [
-								"\"ALERTA: Violação de diretriz detectada. Regra correspondente: \" & lvl3_ID_regra_ativa"
+								"lvl3_feedbackRegra & \" Regra correspondente: \" & lvl3_ID_regra_ativa"
 							]
 						},
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 477162527476428,
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 186509939815219,
 							"parameters": {
-								"seconds": "2.5",
-								"use-timescale": true
+								"audio-file": {
+									"path": "Level 3/lvl3_error"
+								},
+								"loop": "not-looping",
+								"volume": "5",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						},
 						{
 							"id": "set-visible",
 							"objectClass": "lvl3_feedback_erro",
-							"sid": 167740246967131,
+							"sid": 559970607661523,
 							"parameters": {
 								"visibility": "visible"
 							}
@@ -749,7 +792,7 @@
 						{
 							"id": "flash",
 							"objectClass": "lvl3_feedback_erro",
-							"sid": 613652034016081,
+							"sid": 984299449573333,
 							"behaviorType": "Flash",
 							"parameters": {
 								"on-time": "0.1",
@@ -760,7 +803,7 @@
 						{
 							"id": "wait",
 							"objectClass": "System",
-							"sid": 413732752755905,
+							"sid": 496601193344452,
 							"parameters": {
 								"seconds": "0.5",
 								"use-timescale": true
@@ -769,15 +812,24 @@
 						{
 							"id": "stop-flashing",
 							"objectClass": "lvl3_feedback_erro",
-							"sid": 191726123255074,
+							"sid": 353091132928733,
 							"behaviorType": "Flash"
 						},
 						{
 							"id": "set-visible",
 							"objectClass": "lvl3_feedback_erro",
-							"sid": 642724957662920,
+							"sid": 603873213277192,
 							"parameters": {
 								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 477162527476428,
+							"parameters": {
+								"seconds": "2.5",
+								"use-timescale": true
 							}
 						}
 					],
@@ -846,6 +898,20 @@
 									]
 								},
 								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 734986540400687,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_erroretapa"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
 									"id": "wait",
 									"objectClass": "System",
 									"sid": 974958418957262,
@@ -875,6 +941,20 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 803464612418925,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_avancoetapa"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
 						{
 							"id": "add-to-eventvar",
 							"objectClass": "System",
@@ -948,9 +1028,9 @@
 								{
 									"id": "wait",
 									"objectClass": "System",
-									"sid": 523994337530089,
+									"sid": 683922089714380,
 									"parameters": {
-										"seconds": "2.5",
+										"seconds": "3.0",
 										"use-timescale": true
 									}
 								},
@@ -1057,6 +1137,11 @@
 									"parameters": [
 										"\"SISTEMA TOTALMENTE COMPROMETIDO. LIMPANDO RASTROS... REDIRECIONANDO.\""
 									]
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 295513626075071
 								},
 								{
 									"id": "wait",
@@ -1284,6 +1369,69 @@
 						}
 					],
 					"sid": 552062703223544
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 574632640318859,
+							"parameters": {
+								"variable": "lvl3_tipoCenario",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 932928678026677,
+							"parameters": {
+								"variable": "lvl3_nome",
+								"value": "choose(\"MAINT_updater.exe\", \"MAINT_patch.bat\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 342624121588746,
+							"parameters": {
+								"variable": "lvl3_ip",
+								"value": "\"192.168.0.\" & int(random(2, 254))"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 231821046723413,
+							"parameters": {
+								"variable": "lvl3_timestamp",
+								"value": "choose(\"02:15:40\", \"03:22:11\", \"03:55:00\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 586037316774929,
+							"parameters": {
+								"variable": "lvl3_permissao",
+								"value": "\"ADMIN\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 433042506696014,
+							"parameters": {
+								"variable": "lvl3_assinatura",
+								"value": "choose(\"VÁLIDA\", \"INVÁLIDA\")"
+							}
+						}
+					],
+					"sid": 846248193841301
 				}
 			]
 		},
@@ -1359,6 +1507,14 @@
 					"sid": 231130459889556,
 					"parameters": {
 						"text": "lvl3_processoAtual & \" / \" & lvl3_totalProcessos"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "lvl3_txt_regra",
+					"sid": 895769085756562,
+					"parameters": {
+						"text": "\"REGRA ATIVA: \" & lvl3_ID_regra_ativa"
 					}
 				}
 			],
@@ -1466,9 +1622,92 @@
 								"variable": "lvl3_regraAplicada",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 453755690715775,
+							"parameters": {
+								"variable": "lvl3_feedbackRegra",
+								"value": "\"ROOT com assinatura inválida. Acesso proibido.\""
+							}
 						}
 					],
 					"sid": 177447208006003
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 858087418346055,
+							"parameters": {
+								"variable": "lvl3_regraAplicada",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 577117555936637,
+							"parameters": {
+								"first-value": "left(lvl3_nome, 3)",
+								"comparison": 0,
+								"second-value": "\"EXT\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 819719334670092,
+							"parameters": {
+								"variable": "lvl3_assinatura",
+								"comparison": 0,
+								"value": "\"INVÁLIDA\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 374536077820208,
+							"parameters": {
+								"variable": "lvl3_respostaCorreta",
+								"value": "\"BLOQUEAR\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 751936982728918,
+							"parameters": {
+								"variable": "lvl3_ID_regra_ativa",
+								"value": "4"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 301254856440740,
+							"parameters": {
+								"variable": "lvl3_regraAplicada",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 519663570332249,
+							"parameters": {
+								"variable": "lvl3_feedbackRegra",
+								"value": "\"Arquivo externo sem certificação. Bloqueado.\""
+							}
+						}
+					],
+					"sid": 369232638139644
 				},
 				{
 					"eventType": "block",
@@ -1531,6 +1770,15 @@
 								"variable": "lvl3_regraAplicada",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 436591950386162,
+							"parameters": {
+								"variable": "lvl3_feedbackRegra",
+								"value": "\"Manutenção não autorizada por ADMIN. Suspeito.\""
+							}
 						}
 					],
 					"sid": 570910671118101
@@ -1541,7 +1789,7 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 454176693466815,
+							"sid": 307560920320631,
 							"parameters": {
 								"variable": "lvl3_regraAplicada",
 								"comparison": 0,
@@ -1551,21 +1799,11 @@
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 121099590870225,
+							"sid": 730844322047284,
 							"parameters": {
-								"first-value": "left(lvl3_nome, 3)",
+								"first-value": "left(lvl3_ip, 7)",
 								"comparison": 0,
-								"second-value": "\"EXT\""
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 420156265706077,
-							"parameters": {
-								"variable": "lvl3_assinatura",
-								"comparison": 0,
-								"value": "\"INVÁLIDA\""
+								"second-value": "\"192.168\""
 							}
 						}
 					],
@@ -1573,32 +1811,41 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 314385193719602,
+							"sid": 823864943154216,
 							"parameters": {
 								"variable": "lvl3_respostaCorreta",
-								"value": "\"BLOQUEAR\""
+								"value": "\"PERMITIR\""
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 968463531396873,
+							"sid": 403953670722347,
 							"parameters": {
 								"variable": "lvl3_ID_regra_ativa",
-								"value": "4"
+								"value": "1"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 601052165572639,
+							"sid": 615054313709666,
 							"parameters": {
 								"variable": "lvl3_regraAplicada",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 834347174446567,
+							"parameters": {
+								"variable": "lvl3_feedbackRegra",
+								"value": "\"IP interno reconhecido. Acesso liberado.\""
+							}
 						}
 					],
-					"sid": 954134168094659
+					"sid": 498793965410451
 				},
 				{
 					"eventType": "block",
@@ -1651,64 +1898,18 @@
 								"variable": "lvl3_regraAplicada",
 								"value": "1"
 							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 444406405544019,
+							"parameters": {
+								"variable": "lvl3_feedbackRegra",
+								"value": "\"Processo de sistema verificado. Liberado.\""
+							}
 						}
 					],
 					"sid": 497592893195181
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 705581218794675,
-							"parameters": {
-								"variable": "lvl3_regraAplicada",
-								"comparison": 0,
-								"value": "0"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 335024008663030,
-							"parameters": {
-								"first-value": "left(lvl3_ip, 7)",
-								"comparison": 0,
-								"second-value": "\"192.168\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 521717394939935,
-							"parameters": {
-								"variable": "lvl3_respostaCorreta",
-								"value": "\"PERMITIR\""
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 899714338998173,
-							"parameters": {
-								"variable": "lvl3_ID_regra_ativa",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 315883802020013,
-							"parameters": {
-								"variable": "lvl3_regraAplicada",
-								"value": "1"
-							}
-						}
-					],
-					"sid": 572404152568334
 				}
 			]
 		}

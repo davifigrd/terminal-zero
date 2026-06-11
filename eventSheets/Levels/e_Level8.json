@@ -4,6 +4,169 @@
 		{
 			"eventType": "include",
 			"includeSheet": "e_Global"
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_palavraAtual",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 125927235125981
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_hexAtual",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 145564942844163
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_respostaCorreta",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 548143013334730
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_inputJogador",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 387629939405403
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_travaInput",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 192755875862700
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_corBotao",
+			"type": "string",
+			"initialValue": "\"branco\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 696798200736434
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_tentativas",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 710525952310594
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_etapa",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 245264671597823
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL9_LAYOUT",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 710398633995886
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 689676822451336,
+							"parameters": {
+								"variable": "lvl3_travaInput",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 367721385441176,
+							"parameters": {
+								"variable": "lvl8_inputJogador",
+								"value": "\"\""
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl8_txt_resposta",
+							"sid": 443830823483263,
+							"parameters": {
+								"text": "\"Digite sua resposta...\""
+							}
+						}
+					],
+					"sid": 107104501354954
+				}
+			],
+			"sid": 993108338041617
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL8_FUNÇÕES",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "lvl8_gerarRodada",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 386513675429839,
+							"parameters": {
+								"variable": "lvl8_palavraAtual",
+								"comparison": 0,
+								"value": "choose(\"ABORT\",\"ALERT\",\"ARMED\",\"BLOCK\",\"CRASH\",\"DEBUG\",\"ERROR\",\"FLASH\",\"GHOST\",\"PATCH\",\"VIRUS\",\"WIRED\")"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 670843348207243
+				}
+			],
+			"sid": 401572603468875
 		}
 	],
 	"sid": 653966239576836
