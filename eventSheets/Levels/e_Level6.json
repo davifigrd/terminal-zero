@@ -7,297 +7,577 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "lvl6_etapa_ativa",
+			"name": "lvl6_wave_speed",
 			"type": "number",
-			"initialValue": "1",
-			"comment": "Defina qual etapa está ativa",
+			"initialValue": "10",
+			"comment": "Velocidade da onda",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 342963659984331
+			"sid": 860560371107024
 		},
 		{
-			"eventType": "comment",
-			"text": "Girar peça"
+			"eventType": "variable",
+			"name": "lvl6_heigth",
+			"type": "number",
+			"initialValue": "245",
+			"comment": "Altura da onda",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 173493968407770
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl6_width",
+			"type": "number",
+			"initialValue": "955",
+			"comment": "Largura da onda",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 691493999131507
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl6_heigth_target",
+			"type": "number",
+			"initialValue": "150",
+			"comment": "Altura alvo da onda",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 268177085485057
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl6_width_target",
+			"type": "number",
+			"initialValue": "600",
+			"comment": "Largura alvo da onda",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 489850602526267
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-object-clicked",
-					"objectClass": "Mouse",
-					"sid": 834086348440042,
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 334019859929255
+				}
+			],
+			"actions": [
+				{
+					"id": "set-size",
+					"objectClass": "lvl6_green_wave",
+					"sid": 248109731554391,
 					"parameters": {
-						"mouse-button": "left",
-						"click-type": "clicked",
-						"object-clicked": "lvl6_Cable_Familly"
+						"width": "lvl6_width",
+						"height": "lvl6_heigth"
+					}
+				},
+				{
+					"id": "set-size",
+					"objectClass": "lvl6_target_wave",
+					"sid": 169685710990921,
+					"parameters": {
+						"width": "lvl6_width_target",
+						"height": "lvl6_heigth_target"
+					}
+				},
+				{
+					"id": "set-image-offset-x",
+					"objectClass": "lvl6_green_wave",
+					"sid": 418042707328048,
+					"parameters": {
+						"offset-x": "lvl6_wave_speed"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 647024311146471,
+					"parameters": {
+						"variable": "lvl6_wave_speed",
+						"value": "222 * dt"
+					}
+				}
+			],
+			"sid": 636366391988425
+		},
+		{
+			"eventType": "comment",
+			"text": "⭡"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 469531718428455,
+					"parameters": {
+						"key": 38
 					}
 				},
 				{
 					"id": "compare-instance-variable",
-					"objectClass": "lvl6_Cable_Familly",
-					"sid": 829982671754775,
+					"objectClass": "lvl6_click",
+					"sid": 987125002784253,
 					"parameters": {
-						"instance-variable": "etapa",
+						"instance-variable": "arrow",
 						"comparison": 0,
-						"value": "lvl6_etapa_ativa"
+						"value": "8"
 					}
 				}
 			],
 			"actions": [
 				{
-					"id": "rotate-clockwise",
-					"objectClass": "lvl6_Cable_Familly",
-					"sid": 589554982470022,
+					"id": "set-visible",
+					"objectClass": "lvl6_click",
+					"sid": 449031698354874,
 					"parameters": {
-						"degrees": "90"
+						"visibility": "visible"
 					}
 				}
 			],
-			"sid": 106059382390076
-		},
-		{
-			"eventType": "comment",
-			"text": ""
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-at-offset",
-					"objectClass": "lvl6_Cable_Familly",
-					"sid": 741820555208625,
-					"parameters": {
-						"object": "lvl6_Cable_Familly",
-						"offset-x": "lvl6_inicio.ImagePointX(\"ponta\")",
-						"offset-y": "lvl6_inicio.ImagePointY(\"ponta\")"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-effect-enabled",
-					"objectClass": "lvl6_Cable_Familly",
-					"sid": 834541645619428,
-					"parameters": {
-						"mode": "disable",
-						"effect": "\"Grayscale\""
-					}
-				}
-			],
-			"sid": 781282216763972
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "else",
-					"objectClass": "System",
-					"sid": 451544976216813
-				}
-			],
-			"actions": [
-				{
-					"id": "set-effect-enabled",
-					"objectClass": "lvl6_Cable_Familly",
-					"sid": 652670338703652,
-					"parameters": {
-						"mode": "enable",
-						"effect": "\"Grayscale\""
-					}
-				}
-			],
-			"sid": 391708778782312
-		},
-		{
-			"eventType": "comment",
-			"text": ""
-		},
-		{
-			"eventType": "comment",
-			"text": ""
-		},
-		{
-			"eventType": "comment",
-			"text": ""
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl6_Cable_Familly",
-					"sid": 496711930798558,
-					"parameters": {
-						"object": "lvl6_inicio"
-					}
-				},
-				{
-					"id": "pick-overlapping-point",
-					"objectClass": "System",
-					"sid": 422543226024903,
-					"parameters": {
-						"object": "lvl6_Cable_Familly",
-						"x": "lvl6_inicio.ImagePointX(\"ponta\")\n",
-						"y": "lvl6_inicio.ImagePointY(\"ponta\")"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 329562620981600,
+			"sid": 166927438786072,
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-boolean-instance-variable-set",
-							"objectClass": "lvl6_Cable_Familly",
-							"sid": 540636527224197,
-							"parameters": {
-								"instance-variable": "Conectado"
-							},
-							"isInverted": true
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
-							"id": "set-boolean-instvar",
-							"objectClass": "lvl6_Cable_Familly",
-							"sid": 800274402463828,
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 177209021829048,
 							"parameters": {
-								"instance-variable": "Conectado",
-								"value": "true"
-							}
-						},
-						{
-							"id": "set-effect-enabled",
-							"objectClass": "lvl6_Cable_Familly",
-							"sid": 901664455660146,
-							"parameters": {
-								"mode": "disable",
-								"effect": "\"Grayscale\""
+								"variable": "lvl6_heigth",
+								"value": "15"
 							}
 						}
 					],
-					"sid": 413959242618344
+					"sid": 529288179069546
 				}
 			]
 		},
 		{
 			"eventType": "comment",
-			"text": "Verificar circuito de energia"
+			"text": "⭠"
 		},
 		{
-			"functionName": "lvl6_VerificarCircuito",
-			"functionDescription": "",
-			"functionCategory": "",
-			"functionReturnType": "none",
-			"functionCopyPicked": false,
-			"functionIsAsync": false,
-			"functionParameters": [],
-			"eventType": "function-block",
-			"conditions": [],
-			"actions": [
+			"eventType": "block",
+			"conditions": [
 				{
-					"id": "set-effect-enabled",
-					"objectClass": "lvl6_Cable_Familly",
-					"sid": 406956977343563,
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 611794504118574,
 					"parameters": {
-						"mode": "enable",
-						"effect": "\"Grayscale\""
+						"key": 37
 					}
 				},
 				{
-					"id": "set-boolean-instvar",
-					"objectClass": "lvl6_Cable_Familly",
-					"sid": 313454756276560,
+					"id": "compare-instance-variable",
+					"objectClass": "lvl6_click",
+					"sid": 845346646966554,
 					"parameters": {
-						"instance-variable": "Conectado",
-						"value": "false"
+						"instance-variable": "arrow",
+						"comparison": 0,
+						"value": "4"
 					}
 				}
 			],
-			"sid": 857996907857871,
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "lvl6_click",
+					"sid": 939475799511107,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "subtract-from-eventvar",
+					"objectClass": "System",
+					"sid": 393248847366469,
+					"parameters": {
+						"variable": "lvl6_width",
+						"value": "15"
+					}
+				}
+			],
+			"sid": 901052319174631
+		},
+		{
+			"eventType": "comment",
+			"text": "⭣"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 990962652137922,
+					"parameters": {
+						"key": 40
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "lvl6_click",
+					"sid": 473797466322548,
+					"parameters": {
+						"instance-variable": "arrow",
+						"comparison": 0,
+						"value": "2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "lvl6_click",
+					"sid": 366669927265238,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 770053101639668,
 			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 528441474113108,
+							"parameters": {
+								"variable": "lvl6_heigth",
+								"value": "15"
+							}
+						}
+					],
+					"sid": 821401152046383
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "⭢"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 190412209247034,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "compare-instance-variable",
+					"objectClass": "lvl6_click",
+					"sid": 349235278316799,
+					"parameters": {
+						"instance-variable": "arrow",
+						"comparison": 0,
+						"value": "6"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "lvl6_click",
+					"sid": 727894436502659,
+					"parameters": {
+						"visibility": "visible"
+					}
+				}
+			],
+			"sid": 534518764255707,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 776539919519746,
+							"parameters": {
+								"variable": "lvl6_heigth",
+								"value": "15"
+							}
+						}
+					],
+					"sid": 120182892401375
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [],
+			"actions": [],
+			"sid": 233125956677945,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "⭡⭠⭣⭢"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "lvl6_Cable_Familly",
-							"sid": 913458208084460,
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 235879987354196,
 							"parameters": {
-								"object": "lvl6_inicio"
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl6_click"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 522143276540274,
+					"sid": 993578385598803,
+					"disabled": true,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "⭡"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 690314609257375,
+									"id": "compare-instance-variable",
+									"objectClass": "lvl6_click",
+									"sid": 174315574841882,
 									"parameters": {
-										"first-value": "distance(lvl6_inicio.ImagePointX(\"ponta 1\"), lvl6_inicio.ImagePointY(\"ponta 1\"), lvl6_Cable_Familly.ImagePointX(\"ponta 1\"), lvl6_Cable_Familly.ImagePointY(\"ponta 1\"))",
-										"comparison": 4,
-										"second-value": "5"
+										"instance-variable": "arrow",
+										"comparison": 0,
+										"value": "8"
 									}
 								}
 							],
-							"actions": [],
-							"sid": 621727470463414,
-							"children": [
+							"actions": [
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "pick-by-comparison",
-											"objectClass": "System",
-											"sid": 270955478993551,
-											"parameters": {
-												"object": "lvl6_Cable_Familly",
-												"expression": "lvl6_Cable_Familly.UID",
-												"comparison": 1,
-												"value": "lvl6_inicio.UID"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-effect-enabled",
-											"objectClass": "lvl6_Cable_Familly",
-											"sid": 582834876510256,
-											"parameters": {
-												"mode": "disable",
-												"effect": "\"Grayscale\""
-											}
-										},
-										{
-											"id": "set-boolean-instvar",
-											"objectClass": "lvl6_Cable_Familly",
-											"sid": 183001819704036,
-											"parameters": {
-												"instance-variable": "Conectado",
-												"value": "true"
-											}
-										}
-									],
-									"sid": 197096101420750
+									"id": "set-visible",
+									"objectClass": "lvl6_click",
+									"sid": 993831392369760,
+									"parameters": {
+										"visibility": "visible"
+									}
 								}
-							]
+							],
+							"sid": 642056418819587,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "⭠"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "lvl6_click",
+									"sid": 795081492029065,
+									"parameters": {
+										"instance-variable": "arrow",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl6_click",
+									"sid": 185117644827821,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 857475621610858,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "⭣"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "lvl6_click",
+									"sid": 775594635509167,
+									"parameters": {
+										"instance-variable": "arrow",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl6_click",
+									"sid": 335267831265458,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 163525642989655,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "⭢"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "lvl6_click",
+									"sid": 302466357429553,
+									"parameters": {
+										"instance-variable": "arrow",
+										"comparison": 0,
+										"value": "6"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl6_click",
+									"sid": 739523825643292,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 432134202385873,
+							"disabled": true
+						},
+						{
+							"eventType": "comment",
+							"text": "target"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "lvl6_click",
+									"sid": 748583337903804,
+									"parameters": {
+										"instance-variable": "arrow",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl6_click",
+									"sid": 211665654744715,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 165626285576910,
+							"disabled": true
 						}
 					]
 				},
 				{
-					"eventType": "comment",
-					"text": "Acender a primeira peça"
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 134401003036453,
+							"parameters": {
+								"mouse-button": "left"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl6_click",
+							"sid": 152053780552243,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 147339832229694,
+					"disabled": true
 				},
 				{
-					"eventType": "comment",
-					"text": "Efeito cascata"
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 708027325602397,
+							"parameters": {
+								"mouse-button": "middle"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl6_click",
+							"sid": 192060331833432,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 943246206019331,
+					"disabled": true,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "mouse-button-is-down",
+							"objectClass": "Mouse",
+							"sid": 295700202845891,
+							"parameters": {
+								"mouse-button": "right"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl6_click",
+							"sid": 133371052789029,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 521563549085238,
+					"disabled": true
 				}
 			]
 		}
