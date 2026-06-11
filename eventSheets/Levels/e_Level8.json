@@ -7,6 +7,46 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "lvl8_travaInput",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 163674037631982
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_tentativas",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 171267677052159
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_etapa",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 623426220540089
+		},
+		{
+			"eventType": "comment",
+			"text": "hex",
+			"text-color": [
+				1,
+				0.4823529411764706,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "variable",
 			"name": "lvl8_palavraAtual",
 			"type": "string",
 			"initialValue": "\"\"",
@@ -46,44 +86,144 @@
 			"sid": 387629939405403
 		},
 		{
-			"eventType": "variable",
-			"name": "lvl8_travaInput",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 192755875862700
+			"eventType": "comment",
+			"text": "botao1",
+			"text-color": [
+				1,
+				0,
+				0.9686274509803922,
+				1
+			]
 		},
 		{
 			"eventType": "variable",
-			"name": "lvl8_corBotao",
+			"name": "lvl8_btn1_nomeAtual",
 			"type": "string",
-			"initialValue": "\"branco\"",
+			"initialValue": "\"\"",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 696798200736434
+			"sid": 953529499080994
 		},
 		{
 			"eventType": "variable",
-			"name": "lvl8_tentativas",
+			"name": "lvl8_btn1_corAtual",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 629488508519152
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn1_direcaoCorreta",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 350905761399399
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn1_cliquesNecessarios",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 710525952310594
+			"sid": 989455569068829
 		},
 		{
 			"eventType": "variable",
-			"name": "lvl8_etapa",
+			"name": "lvl8_btn1_cliquesFeitos",
 			"type": "number",
-			"initialValue": "1",
+			"initialValue": "0",
 			"comment": "",
 			"isStatic": false,
 			"isConstant": false,
-			"sid": 245264671597823
+			"sid": 101348236427686
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn1_Confirmado",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 496526509225352
+		},
+		{
+			"eventType": "comment",
+			"text": "botao2",
+			"text-color": [
+				1,
+				0,
+				0.9686274509803922,
+				1
+			]
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_nomeAtual",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 453803567838555
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_corAtual",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 958431603324819
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_direcaoCorreta",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 794179356531023
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_cliquesNecessarios",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 956791804889058
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_cliquesFeitos",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 586680970777098
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_Confirmado",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 274087390882915
 		},
 		{
 			"eventType": "group",
@@ -105,9 +245,9 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 689676822451336,
+							"sid": 612575571863527,
 							"parameters": {
-								"variable": "lvl3_travaInput",
+								"variable": "lvl8_travaInput",
 								"value": "0"
 							}
 						},
@@ -127,6 +267,21 @@
 							"parameters": {
 								"text": "\"Digite sua resposta...\""
 							}
+						},
+						{
+							"callFunction": "TypingEffect",
+							"sid": 154825736055026,
+							"parameters": [
+								"\"INICIANDO A PRIMEIRA ETAPA...\""
+							]
+						},
+						{
+							"callFunction": "lvl8_gerarHex",
+							"sid": 792921343087688
+						},
+						{
+							"callFunction": "lvl8_gerarBotao",
+							"sid": 308532200833010
 						}
 					],
 					"sid": 107104501354954
@@ -142,7 +297,100 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
-					"functionName": "lvl8_gerarRodada",
+					"functionName": "lvl8_atualizarInstrucao",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 540525227464765,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 749909651544567,
+									"parameters": {
+										"variable": "lvl8_etapa",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "lvl8_txt_instrucao",
+									"sid": 612031110293025,
+									"parameters": {
+										"text": "\"MÓDULO 01\n   DECODIFICAÇÃO HEX\n   ──────────────────\n   Os valores no display\n   representam caracteres\n   ASCII em hexadecimal.\n\n   Converta cada valor\n   e forme a palavra.\n\n   O botão lateral muda\n   o indicador de status.\n\n   Digite a resposta\n   e pressione ENVIAR.\""
+									}
+								}
+							],
+							"sid": 424399436111700
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 986741686312889,
+									"parameters": {
+										"variable": "lvl8_etapa",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "lvl8_txt_instrucao",
+									"sid": 212681539981296,
+									"parameters": {
+										"text": "\"\""
+									}
+								}
+							],
+							"sid": 351548960693174
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 109880680891076,
+									"parameters": {
+										"variable": "lvl8_etapa",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "lvl8_txt_instrucao",
+									"sid": 357602367044577,
+									"parameters": {
+										"text": "\"\""
+									}
+								}
+							],
+							"sid": 993112956919299
+						}
+					]
+				},
+				{
+					"functionName": "lvl8_gerarHex",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -162,11 +410,614 @@
 							}
 						}
 					],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 656504558367394,
+							"parameters": {
+								"variable": "lvl8_hexAtual",
+								"value": "\"\""
+							}
+						}
+					],
 					"sid": 670843348207243
+				},
+				{
+					"functionName": "lvl8_gerarBotao",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "--- SORTEAR COR ---"
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 883493785441779,
+							"parameters": {
+								"variable": "lvl8_btn1_corAtual",
+								"value": "choose(\"branco\", \"amarelo\", \"azul\", \"vermelho\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 631713399083124,
+							"parameters": {
+								"variable": "lvl8_btn2_corAtual",
+								"value": "choose(\"branco\", \"amarelo\", \"azul\", \"vermelho\")"
+							}
+						},
+						{
+							"type": "comment",
+							"text": "--- SORTEAR NOME ---"
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 758561848247882,
+							"parameters": {
+								"variable": "lvl8_btn1_nomeAtual",
+								"value": "choose(\"EJETAR\", \"ABORTAR\", \"ARMAR\", \"TRAVAR\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 347990057356230,
+							"parameters": {
+								"variable": "lvl8_btn2_nomeAtual",
+								"value": "choose(\"EJETAR\", \"ABORTAR\", \"ARMAR\", \"TRAVAR\")"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl8_txt_btn1",
+							"sid": 791328349862788,
+							"parameters": {
+								"text": "lvl8_btn1_nomeAtual"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl8_txt_btn2",
+							"sid": 357050916350437,
+							"parameters": {
+								"text": "lvl8_btn2_nomeAtual"
+							}
+						}
+					],
+					"sid": 303409929118711,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "--- APLICAR COR VISUAL 1 ---"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 965560018182102,
+									"parameters": {
+										"variable": "lvl8_btn1_corAtual",
+										"comparison": 0,
+										"value": "\"branco\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn",
+									"sid": 946821937479944,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 404293559809460,
+									"parameters": {
+										"variable": "lvl8_btn1_cliquesNecessarios",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 665806805652013
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 566397200521028,
+									"parameters": {
+										"variable": "lvl8_btn1_corAtual",
+										"comparison": 0,
+										"value": "\"amarelo\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn",
+									"sid": 344148411379774,
+									"parameters": {
+										"color": "rgb(255, 210, 0)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 558818086067285,
+									"parameters": {
+										"variable": "lvl8_btn1_cliquesNecessarios",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 761118964442553
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 692722605367179,
+									"parameters": {
+										"variable": "lvl8_btn1_corAtual",
+										"comparison": 0,
+										"value": "\"azul\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn",
+									"sid": 603477267689997,
+									"parameters": {
+										"color": "rgb(50, 120, 255)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 353355287119492,
+									"parameters": {
+										"variable": "lvl8_btn1_cliquesNecessarios",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 308589733327073
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 655848394986002,
+									"parameters": {
+										"variable": "lvl8_btn1_corAtual",
+										"comparison": 0,
+										"value": "\"vermelho\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn",
+									"sid": 311092110435059,
+									"parameters": {
+										"color": "rgb(220, 40, 40)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 672446530602214,
+									"parameters": {
+										"variable": "lvl8_btn1_cliquesNecessarios",
+										"value": "10"
+									}
+								}
+							],
+							"sid": 547435791644657
+						},
+						{
+							"eventType": "comment",
+							"text": "--- APLICAR COR VISUAL 2 ---"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 312146252466241,
+									"parameters": {
+										"variable": "lvl8_btn2_corAtual",
+										"comparison": 0,
+										"value": "\"branco\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn2",
+									"sid": 274528684327764,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 250994313272846,
+									"parameters": {
+										"variable": "lvl8_btn2_cliquesNecessarios",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 822678136635826
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 809994162859039,
+									"parameters": {
+										"variable": "lvl8_btn2_corAtual",
+										"comparison": 0,
+										"value": "\"amarelo\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn2",
+									"sid": 927573089128295,
+									"parameters": {
+										"color": "rgb(255, 210, 0)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 792314138273086,
+									"parameters": {
+										"variable": "lvl8_btn2_cliquesNecessarios",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 629529976947422
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 635188743029983,
+									"parameters": {
+										"variable": "lvl8_btn2_corAtual",
+										"comparison": 0,
+										"value": "\"azul\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn2",
+									"sid": 758173462037867,
+									"parameters": {
+										"color": "rgb(50, 120, 255)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 778452934372924,
+									"parameters": {
+										"variable": "lvl8_btn2_cliquesNecessarios",
+										"value": "5"
+									}
+								}
+							],
+							"sid": 250381031210424
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 657150433712738,
+									"parameters": {
+										"variable": "lvl8_btn2_corAtual",
+										"comparison": 0,
+										"value": "\"vermelho\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn2",
+									"sid": 714050330092277,
+									"parameters": {
+										"color": "rgb(220, 40, 40)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 166547494675340,
+									"parameters": {
+										"variable": "lvl8_btn2_cliquesNecessarios",
+										"value": "10"
+									}
+								}
+							],
+							"sid": 308337894366611
+						},
+						{
+							"eventType": "comment",
+							"text": "--- DEFINIR DIREÇÃO CORRETA 1 ---"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 641001951567761,
+									"parameters": {
+										"variable": "lvl8_btn1_nomeAtual",
+										"comparison": 0,
+										"value": "\"EJETAR\""
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 755456316777022,
+									"parameters": {
+										"variable": "lvl8_btn1_nomeAtual",
+										"comparison": 0,
+										"value": "\"ARMAR\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 594677801752240,
+									"parameters": {
+										"variable": "lvl8_btn1_direcaoCorreta",
+										"value": "\"cima\""
+									}
+								}
+							],
+							"sid": 283373883359359,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 734295704955566,
+									"parameters": {
+										"variable": "lvl8_btn1_nomeAtual",
+										"comparison": 0,
+										"value": "\"ABORTAR\""
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 884307063546532,
+									"parameters": {
+										"variable": "lvl8_btn1_nomeAtual",
+										"comparison": 0,
+										"value": "\"TRAVAR\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 984769392823098,
+									"parameters": {
+										"variable": "lvl8_btn1_direcaoCorreta",
+										"value": "\"baixo\""
+									}
+								}
+							],
+							"sid": 122932082667596,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "comment",
+							"text": "--- DEFINIR DIREÇÃO CORRETA 2 ---"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 386766492655747,
+									"parameters": {
+										"variable": "lvl8_btn2_nomeAtual",
+										"comparison": 0,
+										"value": "\"EJETAR\""
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 983833901638175,
+									"parameters": {
+										"variable": "lvl8_btn2_nomeAtual",
+										"comparison": 0,
+										"value": "\"ARMAR\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 667044517409640,
+									"parameters": {
+										"variable": "lvl8_btn1_direcaoCorreta",
+										"value": "\"cima\""
+									}
+								}
+							],
+							"sid": 982496427656443,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 278452949833785,
+									"parameters": {
+										"variable": "lvl8_btn2_nomeAtual",
+										"comparison": 0,
+										"value": "\"ABORTAR\""
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 907749554658516,
+									"parameters": {
+										"variable": "lvl8_btn2_nomeAtual",
+										"comparison": 0,
+										"value": "\"TRAVAR\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 985508785672738,
+									"parameters": {
+										"variable": "lvl8_btn1_direcaoCorreta",
+										"value": "\"baixo\""
+									}
+								}
+							],
+							"sid": 331204765148793,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "comment",
+							"text": "--- RESET DE CLIQUES 1 ---"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 153490086501617,
+									"parameters": {
+										"variable": "lvl8_btn1_cliquesFeitos",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 344291826967128,
+									"parameters": {
+										"variable": "lvl8_btn1_Confirmado",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 310625091470630,
+							"isOrBlock": true
+						},
+						{
+							"eventType": "comment",
+							"text": "--- RESET DE CLIQUES 2 ---"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 114820529081139,
+									"parameters": {
+										"variable": "lvl8_btn2_cliquesFeitos",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 740663797285703,
+									"parameters": {
+										"variable": "lvl8_btn2_Confirmado",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 315444751690872,
+							"isOrBlock": true
+						}
+					]
 				}
 			],
 			"sid": 401572603468875
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL8_GAMEPLAY",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [],
+			"sid": 222232719548771
 		}
 	],
 	"sid": 653966239576836
