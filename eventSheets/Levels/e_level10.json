@@ -72,6 +72,36 @@
 			"sid": 538163840256007
 		},
 		{
+			"eventType": "variable",
+			"name": "temChaveAzul",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 994111107957308
+		},
+		{
+			"eventType": "variable",
+			"name": "temChaveAmarela",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 749919610670817
+		},
+		{
+			"eventType": "variable",
+			"name": "temChaveVermelha",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 279867473982078
+		},
+		{
 			"eventType": "comment",
 			"text": "Camera"
 		},
@@ -379,19 +409,19 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "lvl10_player",
-							"sid": 106252724609585,
+							"sid": 879710740845361,
 							"parameters": {
-								"object": "block"
+								"object": "lvl10_Colisao"
 							}
 						},
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 114881163400996,
+							"sid": 921972984448832,
 							"parameters": {
 								"first-value": "lvl10_player.ZElevation",
 								"comparison": 2,
-								"second-value": "block.ZElevation + block.ZHeight - 1"
+								"second-value": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight - 1"
 							}
 						}
 					],
@@ -445,19 +475,19 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "lvl10_player",
-							"sid": 742096332226636,
+							"sid": 740316031883365,
 							"parameters": {
-								"object": "block"
+								"object": "lvl10_Colisao"
 							}
 						},
 						{
 							"id": "compare-two-values",
 							"objectClass": "System",
-							"sid": 885935901461818,
+							"sid": 707534972113193,
 							"parameters": {
 								"first-value": "lvl10_player.ZElevation ",
 								"comparison": 2,
-								"second-value": "block.ZElevation + block.ZHeight - 1"
+								"second-value": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight - 1"
 							}
 						}
 					],
@@ -639,15 +669,15 @@
 				{
 					"id": "is-overlapping-another-object",
 					"objectClass": "lvl10_player",
-					"sid": 642227976600250,
+					"sid": 581774207216683,
 					"parameters": {
-						"object": "block"
+						"object": "lvl10_Colisao"
 					}
 				},
 				{
 					"id": "compare-z-elevation",
-					"objectClass": "block",
-					"sid": 173443676125334,
+					"objectClass": "lvl10_Colisao",
+					"sid": 177550443048615,
 					"parameters": {
 						"which": "z-elevation",
 						"comparison": 5,
@@ -656,8 +686,8 @@
 				},
 				{
 					"id": "compare-z-elevation",
-					"objectClass": "block",
-					"sid": 237576942690975,
+					"objectClass": "lvl10_Colisao",
+					"sid": 179210447180792,
 					"parameters": {
 						"which": "z-elevation",
 						"comparison": 3,
@@ -678,9 +708,9 @@
 				{
 					"id": "set-z-elevation",
 					"objectClass": "lvl10_player",
-					"sid": 475050741189861,
+					"sid": 683922728941640,
 					"parameters": {
-						"z": "block.Zelevation+block.zheight"
+						"z": "lvl10_Colisao.Zelevation+lvl10_Colisao.zheight"
 					}
 				},
 				{
@@ -694,6 +724,236 @@
 				}
 			],
 			"sid": 403518247391855
+		},
+		{
+			"eventType": "comment",
+			"text": "Interagir"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 338193531834579,
+					"parameters": {
+						"object": "lvl10_chaveAzul"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "txtInteragir",
+					"sid": 784534496551511,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "txtInteragir",
+					"sid": 200913531021659,
+					"parameters": {
+						"text": "\"Aperte E para pegar a chave azul\""
+					}
+				}
+			],
+			"sid": 526588904155365
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 535710917566585,
+					"parameters": {
+						"object": "lvl10_chaveAzul"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "txtInteragir",
+					"sid": 595569327851632,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 837016209782822
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 706293818059192,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 346648575211289,
+					"parameters": {
+						"object": "lvl10_chaveAzul"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 271277220048125,
+					"parameters": {
+						"variable": "temChaveAzul",
+						"value": "true"
+					}
+				},
+				{
+					"id": "destroy",
+					"objectClass": "lvl10_chaveAzul",
+					"sid": 948980594066336
+				},
+				{
+					"id": "set-visible",
+					"objectClass": "txtInteragir",
+					"sid": 661508902201853,
+					"parameters": {
+						"visibility": "invisible"
+					}
+				}
+			],
+			"sid": 627712839789560
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 103434534775160,
+					"parameters": {
+						"object": "lvl10_portaTrigger"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 420730492201785,
+					"parameters": {
+						"variable": "temChaveAzul"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "txtInteragir",
+					"sid": 586237342836887,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "txtInteragir",
+					"sid": 985044033317596,
+					"parameters": {
+						"text": "\"Aperte E para abrir\""
+					}
+				}
+			],
+			"sid": 652263355176992
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 309449661448957,
+					"parameters": {
+						"object": "lvl10_portaTrigger"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 525081976757528,
+					"parameters": {
+						"variable": "temChaveAzul"
+					},
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "set-visible",
+					"objectClass": "txtInteragir",
+					"sid": 150391957586708,
+					"parameters": {
+						"visibility": "visible"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "txtInteragir",
+					"sid": 448381291746886,
+					"parameters": {
+						"text": "\"Você precisa da chave azul\""
+					}
+				}
+			],
+			"sid": 610890697313092
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 310812804840241,
+					"parameters": {
+						"key": 69
+					}
+				},
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 566976570594774,
+					"parameters": {
+						"object": "lvl10_portaTrigger"
+					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 312569000613718,
+					"parameters": {
+						"variable": "temChaveAzul"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "destroy",
+					"objectClass": "lvl10_portaAzul",
+					"sid": 409420112153326
+				},
+				{
+					"id": "destroy",
+					"objectClass": "lvl10_portaTrigger",
+					"sid": 232106253764011
+				}
+			],
+			"sid": 217019004962181
 		}
 	],
 	"sid": 758226248430815
