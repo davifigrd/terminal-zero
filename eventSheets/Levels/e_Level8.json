@@ -398,30 +398,369 @@
 					"functionIsAsync": false,
 					"functionParameters": [],
 					"eventType": "function-block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 386513675429839,
-							"parameters": {
-								"variable": "lvl8_palavraAtual",
-								"comparison": 0,
-								"value": "choose(\"ABORT\",\"ALERT\",\"ARMED\",\"BLOCK\",\"CRASH\",\"DEBUG\",\"ERROR\",\"FLASH\",\"GHOST\",\"PATCH\",\"VIRUS\",\"WIRED\")"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 656504558367394,
+							"sid": 703463667011434,
 							"parameters": {
-								"variable": "lvl8_hexAtual",
-								"value": "\"\""
+								"variable": "lvl8_palavraAtual",
+								"value": "choose(\"ABORT\",\"ALERT\",\"ARMED\",\"BLOCK\",\"CRASH\",\"DEBUG\",\"ERROR\",\"FLASH\",\"GHOST\",\"PATCH\",\"VIRUS\",\"WIRED\")"
 							}
 						}
 					],
-					"sid": 670843348207243
+					"sid": 670843348207243,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 591523369333890,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"abort\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 783802418602328,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"61 62 6F 72 74\""
+									}
+								}
+							],
+							"sid": 218370625322813
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 415879894438327,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"alert\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 951251062456097,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"61 6C 65 72 74\""
+									}
+								}
+							],
+							"sid": 191625258893280
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 242653171147989,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"armed\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 906679221936744,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"61 72 6D 65 64\""
+									}
+								}
+							],
+							"sid": 248914952137438
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 948989219378266,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"block\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 354907751724622,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"62 6C 6F 63 6B\""
+									}
+								}
+							],
+							"sid": 474495243938295
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 770433850094940,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"crash\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 962700065367597,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"63 72 61 73 68\""
+									}
+								}
+							],
+							"sid": 726866360542805
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 359813713014553,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"debug\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 582633073751411,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"64 65 62 75 67\""
+									}
+								}
+							],
+							"sid": 669976578320763
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 649390512868357,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"error\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 162829833456903,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"65 72 72 6F 72\""
+									}
+								}
+							],
+							"sid": 992333788887942
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 870896408180031,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"flash\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 324804009663006,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"66 6C 61 73 68\""
+									}
+								}
+							],
+							"sid": 467737704845910
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 326686613199876,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"ghost\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 127041475907541,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"67 68 6F 73 74\""
+									}
+								}
+							],
+							"sid": 585183989425427
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 588732517872155,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"patch\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 622632322611745,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"70 61 74 63 68\""
+									}
+								}
+							],
+							"sid": 706444908400968
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 431835560486951,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"virus\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 620561212527435,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"76 69 72 75 73\""
+									}
+								}
+							],
+							"sid": 381778743916206
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 963624179671621,
+									"parameters": {
+										"variable": "lvl8_palavraAtual",
+										"comparison": 0,
+										"value": "\"wired\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 755999624301685,
+									"parameters": {
+										"variable": "lvl8_hexAtual",
+										"value": "\"77 69 72 65 64\""
+									}
+								}
+							],
+							"sid": 274757931073935
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "lvl8_txt_display",
+									"sid": 337020804959575,
+									"parameters": {
+										"text": "lvl8_hexAtual"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 763129957228583,
+									"parameters": {
+										"variable": "lvl8_respostaCorreta",
+										"value": "lvl8_palavraAtual"
+									}
+								}
+							],
+							"sid": 950024286412753
+						}
+					]
 				},
 				{
 					"functionName": "lvl8_gerarBotao",
@@ -472,7 +811,7 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 347990057356230,
+							"sid": 630732226373771,
 							"parameters": {
 								"variable": "lvl8_btn2_nomeAtual",
 								"value": "choose(\"EJETAR\", \"ABORTAR\", \"ARMAR\", \"TRAVAR\")"
@@ -897,9 +1236,9 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 667044517409640,
+									"sid": 590795142816006,
 									"parameters": {
-										"variable": "lvl8_btn1_direcaoCorreta",
+										"variable": "lvl8_btn2_direcaoCorreta",
 										"value": "\"cima\""
 									}
 								}
@@ -935,9 +1274,9 @@
 								{
 									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 985508785672738,
+									"sid": 542891606342007,
 									"parameters": {
-										"variable": "lvl8_btn1_direcaoCorreta",
+										"variable": "lvl8_btn2_direcaoCorreta",
 										"value": "\"baixo\""
 									}
 								}
@@ -1006,6 +1345,19 @@
 							"isOrBlock": true
 						}
 					]
+				},
+				{
+					"functionName": "lvl8_verificarVitoria",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 445953149513951
 				}
 			],
 			"sid": 401572603468875
@@ -1016,7 +1368,454 @@
 			"title": "LVL8_GAMEPLAY",
 			"description": "",
 			"isActiveOnStart": true,
-			"children": [],
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "click no btn 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 378378683219479,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 162061054918677,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 833690440790521,
+							"parameters": {
+								"variable": "lvl8_btn1_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 159546483512457,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "precisa adicionar audio"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 897027978669225,
+									"parameters": {
+										"variable": "lvl8_btn1_direcaoCorreta",
+										"comparison": 0,
+										"value": "\"cima\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 731015834365135,
+									"parameters": {
+										"variable": "lvl8_btn1_cliquesFeitos",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 191613645563706
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 260845604574483
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 888791127967275,
+									"parameters": {
+										"variable": "lvl8_btn1_cliquesFeitos",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 949409057504997
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 989571668706439,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 761431651985153,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 409535743891938,
+							"parameters": {
+								"variable": "lvl8_btn1_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 283223605376718,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "precisa adicionar audio"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 866059148197998,
+									"parameters": {
+										"variable": "lvl8_btn1_direcaoCorreta",
+										"comparison": 0,
+										"value": "\"baixo\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 934772453813569,
+									"parameters": {
+										"variable": "lvl8_btn1_cliquesFeitos",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 977615508652450
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 578249547673704
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 956656483829412,
+									"parameters": {
+										"variable": "lvl8_btn1_cliquesFeitos",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 535941093544200
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 476028767160654,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 975863678959085,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 873974739136312,
+							"parameters": {
+								"variable": "lvl8_btn1_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 929753286119761,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 717318369859951,
+									"parameters": {
+										"first-value": "lvl8_btn1_cliquesFeitos",
+										"comparison": 0,
+										"second-value": "lvl8_btn1_cliquesNecessarios"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 576772980131999,
+									"parameters": {
+										"variable": "lvl8_btn1_Confirmado",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "lvl8_verificarVitoria",
+									"sid": 621935014246611
+								}
+							],
+							"sid": 534687591224955
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "click no btn 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 349492720851494,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 395286335306412,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 873299148114346,
+							"parameters": {
+								"variable": "lvl8_btn2_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 412030758978418,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "precisa adicionar audio"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 137512561198396,
+									"parameters": {
+										"variable": "lvl8_btn2_direcaoCorreta",
+										"comparison": 0,
+										"value": "\"cima\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 286269898463830,
+									"parameters": {
+										"variable": "lvl8_btn2_cliquesFeitos",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 326578196649404
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 759991672898011
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 265299498664430,
+									"parameters": {
+										"variable": "lvl8_btn2_cliquesFeitos",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 756818567693533
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 777923166640135,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 215460178723175,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 858008303573421,
+							"parameters": {
+								"variable": "lvl8_btn2_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 323417967449050,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "precisa adicionar audio"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 519405443062116,
+									"parameters": {
+										"variable": "lvl8_btn2_direcaoCorreta",
+										"comparison": 0,
+										"value": "\"baixo\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 177097164974378,
+									"parameters": {
+										"variable": "lvl8_btn2_cliquesFeitos",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 614856390127058
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 673963434680418
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 283313282861284,
+									"parameters": {
+										"variable": "lvl8_btn2_cliquesFeitos",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 324787689265455
+						}
+					]
+				}
+			],
 			"sid": 222232719548771
 		}
 	],
