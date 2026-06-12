@@ -7,19 +7,9 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "lvl6_wave_speed",
-			"type": "number",
-			"initialValue": "10",
-			"comment": "Velocidade da onda",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 860560371107024
-		},
-		{
-			"eventType": "variable",
 			"name": "lvl6_heigth",
 			"type": "number",
-			"initialValue": "245",
+			"initialValue": "75",
 			"comment": "Altura da onda",
 			"isStatic": false,
 			"isConstant": false,
@@ -29,7 +19,7 @@
 			"eventType": "variable",
 			"name": "lvl6_width",
 			"type": "number",
-			"initialValue": "955",
+			"initialValue": "1500",
 			"comment": "Largura da onda",
 			"isStatic": false,
 			"isConstant": false,
@@ -37,23 +27,387 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "lvl6_heigth_target",
+			"name": "lvl6_step",
 			"type": "number",
-			"initialValue": "150",
-			"comment": "Altura alvo da onda",
+			"initialValue": "0",
+			"comment": "Etapa atual da fase",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 788228462433210
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl6_target_heigth",
+			"type": "number",
+			"initialValue": "250",
+			"comment": "Altura da onda alvo",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 268177085485057
 		},
 		{
 			"eventType": "variable",
-			"name": "lvl6_width_target",
+			"name": "lvl6_target_width",
 			"type": "number",
-			"initialValue": "600",
-			"comment": "Largura alvo da onda",
+			"initialValue": "1000",
+			"comment": "Largura da onda alvo",
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 489850602526267
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl6_movement",
+			"type": "number",
+			"initialValue": "200",
+			"comment": "Velocidade da onda",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 254159057636207
+		},
+		{
+			"functionName": "lvl6_NextStep",
+			"functionDescription": "Próxima etapa da fase",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 502062395329094,
+					"parameters": {
+						"variable": "lvl6_step",
+						"value": "1"
+					}
+				}
+			],
+			"sid": 869130769348261,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "⭠ 10x + ⭡ 5x"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 974441799690978,
+							"parameters": {
+								"variable": "lvl6_step",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 456048876184578,
+							"parameters": {
+								"variable": "lvl6_width",
+								"value": "1500"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 364653388185958,
+							"parameters": {
+								"variable": "lvl6_target_width",
+								"value": "1000"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 918756091759458,
+							"parameters": {
+								"variable": "lvl6_heigth",
+								"value": "75"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 588052720859090,
+							"parameters": {
+								"variable": "lvl6_target_heigth",
+								"value": "200"
+							}
+						}
+					],
+					"sid": 329936610461301
+				},
+				{
+					"eventType": "comment",
+					"text": "⭢ 6x + ⭣ 6x"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 103245563376813,
+							"parameters": {
+								"variable": "lvl6_step",
+								"comparison": 0,
+								"value": "2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 802215960951516,
+							"parameters": {
+								"variable": "lvl6_width",
+								"value": "1000"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 350505923122023,
+							"parameters": {
+								"variable": "lvl6_target_width",
+								"value": "1300"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 645232803859452,
+							"parameters": {
+								"variable": "lvl6_heigth",
+								"value": "300"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 393001786706551,
+							"parameters": {
+								"variable": "lvl6_target_heigth",
+								"value": "150"
+							}
+						}
+					],
+					"sid": 240609719741437
+				},
+				{
+					"eventType": "comment",
+					"text": "⭠ 8x + ⭣ 6x"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 779440007666617,
+							"parameters": {
+								"variable": "lvl6_step",
+								"comparison": 0,
+								"value": "3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 439781519705660,
+							"parameters": {
+								"variable": "lvl6_width",
+								"value": "1500"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 323734994116743,
+							"parameters": {
+								"variable": "lvl6_target_width",
+								"value": "1100"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 855306102392774,
+							"parameters": {
+								"variable": "lvl6_heigth",
+								"value": "250"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 201102316690775,
+							"parameters": {
+								"variable": "lvl6_target_heigth",
+								"value": "100"
+							}
+						}
+					],
+					"sid": 793119761335930
+				},
+				{
+					"eventType": "comment",
+					"text": "⭢ 9x + ⭡ 9x"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 526028039634469,
+							"parameters": {
+								"variable": "lvl6_step",
+								"comparison": 0,
+								"value": "4"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 460919341487642,
+							"parameters": {
+								"variable": "lvl6_width",
+								"value": "1000"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 564694637715005,
+							"parameters": {
+								"variable": "lvl6_target_width",
+								"value": "1500"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 972703251409556,
+							"parameters": {
+								"variable": "lvl6_heigth",
+								"value": "50"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 985454009156191,
+							"parameters": {
+								"variable": "lvl6_target_heigth",
+								"value": "250"
+							}
+						}
+					],
+					"sid": 938347670962265
+				},
+				{
+					"eventType": "comment",
+					"text": "⭢ 10x + ⭣ 10x"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 528560508846230,
+							"parameters": {
+								"variable": "lvl6_step",
+								"comparison": 0,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 283757083984059,
+							"parameters": {
+								"variable": "lvl6_width",
+								"value": "1000"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 625126176201770,
+							"parameters": {
+								"variable": "lvl6_target_width",
+								"value": "1400"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 109293982096142,
+							"parameters": {
+								"variable": "lvl6_heigth",
+								"value": "300"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 550372648221197,
+							"parameters": {
+								"variable": "lvl6_target_heigth",
+								"value": "50"
+							}
+						}
+					],
+					"sid": 994794424857140
+				},
+				{
+					"eventType": "comment",
+					"text": "Fim"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 907710487258992,
+							"parameters": {
+								"variable": "lvl6_step",
+								"comparison": 4,
+								"value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "Transition",
+							"sid": 180992209248928,
+							"parameters": [
+								"\"Bedroom\""
+							]
+						}
+					],
+					"sid": 106568971000703
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -78,9 +432,58 @@
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
+				},
+				{
+					"callFunction": "lvl6_NextStep",
+					"sid": 295055022413385
 				}
 			],
 			"sid": 969346275731800
+		},
+		{
+			"eventType": "comment",
+			"text": "Validação"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 345006641731146,
+					"parameters": {
+						"variable": "lvl6_heigth",
+						"comparison": 0,
+						"value": "lvl6_target_heigth"
+					}
+				},
+				{
+					"id": "compare-eventvar",
+					"objectClass": "System",
+					"sid": 517002761380833,
+					"parameters": {
+						"variable": "lvl6_width",
+						"comparison": 0,
+						"value": "lvl6_target_width"
+					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 445558243005111
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "lvl6_NextStep",
+					"sid": 758075054276522
+				}
+			],
+			"sid": 719201017597879
+		},
+		{
+			"eventType": "comment",
+			"text": "Ondas"
 		},
 		{
 			"eventType": "block",
@@ -96,117 +499,226 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "Limite de segurança"
+					"text": "Onda verde"
 				},
 				{
 					"eventType": "block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 121360332450709,
+					"children": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 820255912823401,
-							"parameters": {
-								"variable": "lvl6_width",
-								"value": "clamp(lvl6_width, 960, 32000)"
-							}
+							"eventType": "comment",
+							"text": "Limite de segurança"
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 980197504586506,
-							"parameters": {
-								"variable": "lvl6_heigth",
-								"value": "clamp(lvl6_heigth, 50, 300)"
-							}
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 766263381737211,
+									"parameters": {
+										"variable": "lvl6_width",
+										"value": "clamp(lvl6_width, 960, 1550)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 443486137413193,
+									"parameters": {
+										"variable": "lvl6_heigth",
+										"value": "clamp(lvl6_heigth, 50, 300)"
+									}
+								}
+							],
+							"sid": 382351722740470
+						},
+						{
+							"eventType": "comment",
+							"text": "Efeito sanfona"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "lvl6_green_wave",
+									"sid": 158254610209486,
+									"parameters": {
+										"width": "lvl6_width",
+										"height": "lvl6_heigth"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "lvl6_green_wave2",
+									"sid": 985458879337415,
+									"parameters": {
+										"width": "lvl6_width",
+										"height": "lvl6_heigth"
+									}
+								}
+							],
+							"sid": 164891619739714
+						},
+						{
+							"eventType": "comment",
+							"text": "Movimentação"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "lvl6_green_wave",
+									"sid": 715212381176613,
+									"parameters": {
+										"x": "lvl6_green_wave.X - (lvl6_movement* dt)"
+									}
+								},
+								{
+									"id": "set-x",
+									"objectClass": "lvl6_green_wave2",
+									"sid": 506858949215557,
+									"parameters": {
+										"x": "lvl6_green_wave.X + lvl6_green_wave.Width"
+									}
+								}
+							],
+							"sid": 688069905347371
+						},
+						{
+							"eventType": "comment",
+							"text": "Efeito infinito"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "lvl6_green_wave",
+									"sid": 803328045918998,
+									"parameters": {
+										"comparison": 3,
+										"x-co-ordinate": "53.578707 - lvl6_green_wave.Width"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "lvl6_green_wave",
+									"sid": 571425771885694,
+									"parameters": {
+										"x": "lvl6_green_wave.X + lvl6_green_wave.Width"
+									}
+								}
+							],
+							"sid": 185337426208580
 						}
-					],
-					"sid": 341771697142090
+					]
 				},
 				{
 					"eventType": "comment",
-					"text": "Efeito sanfona"
+					"text": "Onda alvo"
 				},
 				{
 					"eventType": "block",
 					"conditions": [],
-					"actions": [
+					"actions": [],
+					"sid": 713223134309075,
+					"children": [
 						{
-							"id": "set-size",
-							"objectClass": "lvl6_green_wave",
-							"sid": 158785636840524,
-							"parameters": {
-								"width": "lvl6_width",
-								"height": "lvl6_heigth"
-							}
+							"eventType": "comment",
+							"text": "Tamanho"
 						},
 						{
-							"id": "set-size",
-							"objectClass": "lvl6_green_wave2",
-							"sid": 763231497316724,
-							"parameters": {
-								"width": "lvl6_width",
-								"height": "lvl6_heigth"
-							}
-						}
-					],
-					"sid": 280091444002632
-				},
-				{
-					"eventType": "comment",
-					"text": "Movimentação da onda"
-				},
-				{
-					"eventType": "block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "set-x",
-							"objectClass": "lvl6_green_wave",
-							"sid": 949126163442805,
-							"parameters": {
-								"x": "lvl6_green_wave.X - (200 * dt)"
-							}
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-size",
+									"objectClass": "lvl6_target_wave",
+									"sid": 726908026973775,
+									"parameters": {
+										"width": "lvl6_target_width",
+										"height": "lvl6_target_heigth"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "lvl6_target_wave2",
+									"sid": 870305632012380,
+									"parameters": {
+										"width": "lvl6_target_width",
+										"height": "lvl6_target_heigth"
+									}
+								}
+							],
+							"sid": 720731800387536
 						},
 						{
-							"id": "set-x",
-							"objectClass": "lvl6_green_wave2",
-							"sid": 738124798722330,
-							"parameters": {
-								"x": "lvl6_green_wave.X + lvl6_green_wave.Width"
-							}
-						}
-					],
-					"sid": 786405829703591
-				},
-				{
-					"eventType": "comment",
-					"text": "Efeito infinito"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
+							"eventType": "comment",
+							"text": "Movimentação"
+						},
 						{
-							"id": "compare-x",
-							"objectClass": "lvl6_green_wave",
-							"sid": 322221991442660,
-							"parameters": {
-								"comparison": 3,
-								"x-co-ordinate": "53.578707 - lvl6_green_wave.Width"
-							}
-						}
-					],
-					"actions": [
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "lvl6_target_wave",
+									"sid": 606934717402397,
+									"parameters": {
+										"x": "lvl6_target_wave.X - (lvl6_movement* dt)"
+									}
+								},
+								{
+									"id": "set-x",
+									"objectClass": "lvl6_target_wave2",
+									"sid": 333869206033329,
+									"parameters": {
+										"x": "lvl6_target_wave.X + lvl6_target_wave.Width"
+									}
+								}
+							],
+							"sid": 169160731723019
+						},
 						{
-							"id": "set-x",
-							"objectClass": "lvl6_green_wave",
-							"sid": 282047268055784,
-							"parameters": {
-								"x": "lvl6_green_wave.X + lvl6_green_wave.Width"
-							}
+							"eventType": "comment",
+							"text": "Efeito infinito"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-x",
+									"objectClass": "lvl6_target_wave",
+									"sid": 382303942037362,
+									"parameters": {
+										"comparison": 3,
+										"x-co-ordinate": "53.578707 - lvl6_target_wave.Width"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "lvl6_target_wave",
+									"sid": 733738529766600,
+									"parameters": {
+										"x": "lvl6_target_wave.X + lvl6_target_wave.Width"
+									}
+								}
+							],
+							"sid": 437279150542842
 						}
-					],
-					"sid": 294367061253805
+					]
 				}
 			]
 		},

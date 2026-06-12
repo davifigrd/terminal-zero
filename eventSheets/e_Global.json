@@ -32,7 +32,6 @@
 			"sid": 493548685789260
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "layout",
 			"type": "string",
@@ -59,37 +58,6 @@
 			"description": "Código geral",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"eventType": "comment",
-					"text": "Sempre em tela cheia"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-in-preview",
-							"objectClass": "System",
-							"sid": 989036932407321
-						},
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 395494296138294
-						}
-					],
-					"actions": [
-						{
-							"id": "request-fullscreen",
-							"objectClass": "Browser",
-							"sid": 891444387504046,
-							"parameters": {
-								"mode": "stretch-scale-inner",
-								"navigation-ui": "auto"
-							}
-						}
-					],
-					"sid": 461084270585429
-				},
 				{
 					"eventType": "comment",
 					"text": "Ativa/ desativa trapaças"

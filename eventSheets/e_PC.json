@@ -914,6 +914,21 @@
 										"height-type": "no",
 										"z": false
 									}
+								},
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "reveal",
+									"sid": 264725538668615,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "miguxos",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
 								}
 							],
 							"sid": 270919819977014
@@ -1162,9 +1177,47 @@
 									"parameters": {
 										"visibility": "invisible"
 									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "miguxos",
+									"sid": 908472107702801,
+									"parameters": {
+										"frame-number": "0"
+									}
 								}
 							],
 							"sid": 100042767456687
+						},
+						{
+							"eventType": "comment",
+							"text": "Trocar por foto original"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 745003660247802,
+									"parameters": {
+										"mouse-button": "middle",
+										"click-type": "clicked",
+										"object-clicked": "miguxos"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "miguxos",
+									"sid": 540349859019123,
+									"parameters": {
+										"frame-number": "1"
+									}
+								}
+							],
+							"sid": 668506730284561
 						}
 					],
 					"sid": 371174908703850,
@@ -1762,6 +1815,11 @@
 									"id": "move-to-top",
 									"objectClass": "Png_Familly",
 									"sid": 374300434859889
+								},
+								{
+									"id": "move-to-top",
+									"objectClass": "reveal",
+									"sid": 775396761605242
 								}
 							],
 							"sid": 680669128603057
