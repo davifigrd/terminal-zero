@@ -91,54 +91,108 @@
 					"sid": 334019859929255
 				}
 			],
-			"actions": [
-				{
-					"id": "set-size",
-					"objectClass": "lvl6_green_wave",
-					"sid": 297195043670577,
-					"parameters": {
-						"width": "lvl6_width",
-						"height": "lvl6_heigth"
-					}
-				},
-				{
-					"id": "set-size",
-					"objectClass": "lvl6_green_wave2",
-					"sid": 431867613534381,
-					"parameters": {
-						"width": "lvl6_width",
-						"height": "lvl6_heigth"
-					}
-				},
-				{
-					"id": "set-x",
-					"objectClass": "lvl6_green_wave",
-					"sid": 150320884484328,
-					"parameters": {
-						"x": "lvl6_green_wave.X - (200 * dt)"
-					}
-				},
-				{
-					"id": "set-x",
-					"objectClass": "lvl6_green_wave2",
-					"sid": 910813278763713,
-					"parameters": {
-						"x": "lvl6_green_wave2.X - (200 * dt)"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 636366391988425,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "Limite de segurança"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 820255912823401,
+							"parameters": {
+								"variable": "lvl6_width",
+								"value": "clamp(lvl6_width, 960, 32000)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 980197504586506,
+							"parameters": {
+								"variable": "lvl6_heigth",
+								"value": "clamp(lvl6_heigth, 50, 300)"
+							}
+						}
+					],
+					"sid": 341771697142090
+				},
+				{
+					"eventType": "comment",
+					"text": "Efeito sanfona"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-size",
+							"objectClass": "lvl6_green_wave",
+							"sid": 158785636840524,
+							"parameters": {
+								"width": "lvl6_width",
+								"height": "lvl6_heigth"
+							}
+						},
+						{
+							"id": "set-size",
+							"objectClass": "lvl6_green_wave2",
+							"sid": 763231497316724,
+							"parameters": {
+								"width": "lvl6_width",
+								"height": "lvl6_heigth"
+							}
+						}
+					],
+					"sid": 280091444002632
+				},
+				{
+					"eventType": "comment",
+					"text": "Movimentação da onda"
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "lvl6_green_wave",
+							"sid": 949126163442805,
+							"parameters": {
+								"x": "lvl6_green_wave.X - (200 * dt)"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "lvl6_green_wave2",
+							"sid": 738124798722330,
+							"parameters": {
+								"x": "lvl6_green_wave.X + lvl6_green_wave.Width"
+							}
+						}
+					],
+					"sid": 786405829703591
+				},
+				{
+					"eventType": "comment",
+					"text": "Efeito infinito"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "compare-x",
 							"objectClass": "lvl6_green_wave",
-							"sid": 520677564467557,
+							"sid": 322221991442660,
 							"parameters": {
 								"comparison": 3,
-								"x-co-ordinate": "53.578707 - lvl6_width"
+								"x-co-ordinate": "53.578707 - lvl6_green_wave.Width"
 							}
 						}
 					],
@@ -146,44 +200,19 @@
 						{
 							"id": "set-x",
 							"objectClass": "lvl6_green_wave",
-							"sid": 547305475092932,
+							"sid": 282047268055784,
 							"parameters": {
-								"x": "lvl6_green_wave2.X + lvl6_width"
+								"x": "lvl6_green_wave.X + lvl6_green_wave.Width"
 							}
 						}
 					],
 					"sid": 294367061253805
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-x",
-							"objectClass": "lvl6_green_wave2",
-							"sid": 187507901606878,
-							"parameters": {
-								"comparison": 3,
-								"x-co-ordinate": "53.578707 - lvl6_width"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-x",
-							"objectClass": "lvl6_green_wave2",
-							"sid": 223924894087025,
-							"parameters": {
-								"x": "lvl6_green_wave2.X + lvl6_width"
-							}
-						}
-					],
-					"sid": 291187217490400
 				}
 			]
 		},
 		{
 			"eventType": "comment",
-			"text": "⭡⭠⭣⭢"
+			"text": "Controle da frequênica"
 		},
 		{
 			"eventType": "block",
@@ -252,6 +281,7 @@
 									"id": "play",
 									"objectClass": "Audio",
 									"sid": 508139681802578,
+									"disabled": true,
 									"parameters": {
 										"audio-file": {
 											"path": "bip 3"
@@ -345,6 +375,7 @@
 									"id": "play",
 									"objectClass": "Audio",
 									"sid": 677241597201233,
+									"disabled": true,
 									"parameters": {
 										"audio-file": {
 											"path": "bip 3"
@@ -438,6 +469,7 @@
 									"id": "play",
 									"objectClass": "Audio",
 									"sid": 637135660406607,
+									"disabled": true,
 									"parameters": {
 										"audio-file": {
 											"path": "bip 3"
@@ -531,6 +563,7 @@
 									"id": "play",
 									"objectClass": "Audio",
 									"sid": 621539820535994,
+									"disabled": true,
 									"parameters": {
 										"audio-file": {
 											"path": "bip 3"
