@@ -452,7 +452,7 @@
 						},
 						{
 							"eventType": "comment",
-							"text": "Terminal Zero"
+							"text": "PNG"
 						},
 						{
 							"eventType": "block",
@@ -460,31 +460,30 @@
 								{
 									"id": "compare-instance-variable",
 									"objectClass": "Icon_Familly",
-									"sid": 580455096141732,
+									"sid": 416566857565834,
 									"parameters": {
 										"instance-variable": "app",
 										"comparison": 0,
-										"value": "\"notes\""
+										"value": "\"png\""
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Terminalzero_Familly",
-									"sid": 761847187001502,
+									"objectClass": "Png_Familly",
+									"sid": 795048641722030,
 									"parameters": {
 										"visibility": "visible"
 									}
 								},
 								{
 									"id": "move-to-top",
-									"objectClass": "Terminalzero_Familly",
-									"sid": 459212959972243
+									"objectClass": "Png_Familly",
+									"sid": 753817796070568
 								}
 							],
-							"sid": 335456529021890,
-							"disabled": true
+							"sid": 627533513811748
 						},
 						{
 							"eventType": "comment",
@@ -501,6 +500,16 @@
 										"instance-variable": "app",
 										"comparison": 1,
 										"value": "\"terminalzero\""
+									}
+								},
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "Icon_Familly",
+									"sid": 531136624307563,
+									"parameters": {
+										"instance-variable": "app",
+										"comparison": 1,
+										"value": "\"png\""
 									}
 								}
 							],
@@ -743,66 +752,40 @@
 										}
 									],
 									"sid": 590460684581474
+								},
+								{
+									"eventType": "comment",
+									"text": "Bloco de notas"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "Icon_Familly",
+											"sid": 990294619753740,
+											"parameters": {
+												"instance-variable": "app",
+												"comparison": 0,
+												"value": "\"notes\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-text",
+											"objectClass": "txt_error",
+											"sid": 971244705502913,
+											"parameters": {
+												"text": "\"3RR0R 404: Você já anotou códigos demais.\"\r\n\r\n"
+											}
+										}
+									],
+									"sid": 753141797376341
 								}
 							]
 						}
 					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Fechar aplicativo"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 699683768842231,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "close_terminalzero"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "Terminalzero_Familly",
-							"sid": 994310813652478,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 618896286904299
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-object-clicked",
-							"objectClass": "Mouse",
-							"sid": 351023414801322,
-							"parameters": {
-								"mouse-button": "left",
-								"click-type": "clicked",
-								"object-clicked": "close_error"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-visible",
-							"objectClass": "Error_Familly",
-							"sid": 801194881742360,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						}
-					],
-					"sid": 183034356368015
 				}
 			],
 			"sid": 904864220009052,
@@ -833,16 +816,6 @@
 					"description": "Prende as janelas na tela do monitor",
 					"isActiveOnStart": true,
 					"children": [
-						{
-							"eventType": "comment",
-							"text": "Bloco de notas"
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [],
-							"sid": 481599651424638
-						},
 						{
 							"eventType": "comment",
 							"text": "Erro"
@@ -912,6 +885,61 @@
 								}
 							],
 							"sid": 196325655108564
+						},
+						{
+							"eventType": "comment",
+							"text": "Png"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-start-of-layout",
+									"objectClass": "System",
+									"sid": 969041655073726
+								}
+							],
+							"actions": [
+								{
+									"id": "pin-to-object-properties",
+									"objectClass": "close_png",
+									"sid": 799898452726052,
+									"behaviorType": "Pin",
+									"parameters": {
+										"pin-to": "miguxos",
+										"x": true,
+										"y": true,
+										"angle": true,
+										"width-type": "no",
+										"height-type": "no",
+										"z": false
+									}
+								}
+							],
+							"sid": 270919819977014
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-dragging",
+									"objectClass": "miguxos",
+									"sid": 921398252640045,
+									"behaviorType": "DragDrop"
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "miguxos",
+									"sid": 968365620085474,
+									"parameters": {
+										"x": "clamp(miguxos.X, screen_window.BBoxLeft + (miguxos.Width / 2), screen_window.BBoxRight - (miguxos.Width / 2))",
+										"y": "clamp(miguxos.Y, screen_window.BBoxTop + (miguxos.Height / 2), screen_window.BBoxBottom - (miguxos.Height / 2))"
+									}
+								}
+							],
+							"sid": 747571038411570
 						},
 						{
 							"eventType": "comment",
@@ -1049,8 +1077,8 @@
 				},
 				{
 					"eventType": "group",
-					"disabled": true,
-					"title": "WINDOW_NOTES",
+					"disabled": false,
+					"title": "WINDOW_PNG",
 					"description": "Interações com a janela de bloco de notas",
 					"isActiveOnStart": true,
 					"children": [
@@ -1064,24 +1092,28 @@
 								{
 									"id": "cursor-is-over-object",
 									"objectClass": "Mouse",
-									"sid": 872247753043092,
+									"sid": 525504709694941,
 									"parameters": {
-										"object": "close_error"
+										"object": "close_png"
 									}
+								},
+								{
+									"id": "is-visible",
+									"objectClass": "Png_Familly",
+									"sid": 165647441232702
 								}
 							],
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "close_error",
-									"sid": 347168166097955,
+									"objectClass": "close_png",
+									"sid": 511532732243975,
 									"parameters": {
 										"visibility": "visible"
 									}
 								}
 							],
-							"sid": 718440733946480,
-							"disabled": true
+							"sid": 965569841875463
 						},
 						{
 							"eventType": "block",
@@ -1089,21 +1121,20 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 354971716965251
+									"sid": 533096441930123
 								}
 							],
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "close_error",
-									"sid": 913693325135211,
+									"objectClass": "close_png",
+									"sid": 555940672160430,
 									"parameters": {
 										"visibility": "invisible"
 									}
 								}
 							],
-							"sid": 119480988916686,
-							"disabled": true
+							"sid": 650499867469992
 						},
 						{
 							"eventType": "comment",
@@ -1115,26 +1146,25 @@
 								{
 									"id": "on-object-clicked",
 									"objectClass": "Mouse",
-									"sid": 386089791881707,
+									"sid": 719201688484500,
 									"parameters": {
 										"mouse-button": "left",
 										"click-type": "clicked",
-										"object-clicked": "close_error"
+										"object-clicked": "close_png"
 									}
 								}
 							],
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "Error_Familly",
-									"sid": 546818671177718,
+									"objectClass": "Png_Familly",
+									"sid": 975164682662103,
 									"parameters": {
 										"visibility": "invisible"
 									}
 								}
 							],
-							"sid": 270646312840709,
-							"disabled": true
+							"sid": 100042767456687
 						}
 					],
 					"sid": 371174908703850,
@@ -1708,6 +1738,33 @@
 								}
 							],
 							"sid": 341218790532138
+						},
+						{
+							"eventType": "comment",
+							"text": "Foco na janela de erro"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-object-clicked",
+									"objectClass": "Mouse",
+									"sid": 221831040267046,
+									"parameters": {
+										"mouse-button": "left",
+										"click-type": "clicked",
+										"object-clicked": "miguxos"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "move-to-top",
+									"objectClass": "Png_Familly",
+									"sid": 374300434859889
+								}
+							],
+							"sid": 680669128603057
 						}
 					],
 					"sid": 609920040038943,
