@@ -32,7 +32,6 @@
 			"sid": 493548685789260
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "layout",
 			"type": "string",
@@ -206,51 +205,6 @@
 				{
 					"eventType": "comment",
 					"text": "Escada de fases concluídas"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "is-in-preview",
-							"objectClass": "System",
-							"sid": 919945444941549
-						},
-						{
-							"id": "trigger-once-while-true",
-							"objectClass": "System",
-							"sid": 373833315537285
-						}
-					],
-					"actions": [],
-					"sid": 664630996495094,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "for",
-									"objectClass": "System",
-									"sid": 630986993643926,
-									"parameters": {
-										"name": "\"checar_fases\"",
-										"start-index": "1",
-										"end-index": "10"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "check-item-exists",
-									"objectClass": "LocalStorage",
-									"sid": 358760488368232,
-									"parameters": {
-										"key": "\"login_done\" & LoopIndex(\"checar_fases\")"
-									}
-								}
-							],
-							"sid": 111448836655087
-						}
-					]
 				},
 				{
 					"eventType": "block",
@@ -690,9 +644,9 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 980171793486998,
+							"sid": 808659468737128,
 							"parameters": {
-								"key": 76
+								"key": 192
 							}
 						}
 					],
@@ -709,6 +663,20 @@
 							"parameters": {
 								"variable": "level_done",
 								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 882664319162783,
+							"parameters": {
+								"audio-file": {
+									"path": "bip 3"
+								},
+								"loop": "not-looping",
+								"volume": "40",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
