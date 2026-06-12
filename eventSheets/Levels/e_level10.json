@@ -1148,9 +1148,9 @@
 				{
 					"id": "is-overlapping-another-object",
 					"objectClass": "lvl10_player",
-					"sid": 100771213595695,
+					"sid": 570611744911478,
 					"parameters": {
-						"object": "cubo"
+						"object": "cuboTrigger"
 					}
 				},
 				{
@@ -1296,6 +1296,393 @@
 				}
 			],
 			"sid": 134748211029191
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 940609676127591,
+					"parameters": {
+						"object": "cubo"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "cubo",
+					"sid": 855709981869431,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 5,
+						"z-elevation": "lvl10_player.ZElevation - Self.ZHeight"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "cubo",
+					"sid": 203884253165722,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 3,
+						"z-elevation": "lvl10_player.ZElevation + PlayerHeight"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "cubo",
+					"sid": 793851888945065,
+					"parameters": {
+						"instance-variable": "vel_x",
+						"value": "lvl10_player.move_x"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "cubo",
+					"sid": 456517255610897,
+					"parameters": {
+						"instance-variable": "vel_y",
+						"value": "lvl10_player.move_y"
+					}
+				}
+			],
+			"sid": 438777635037724
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 361325518482448
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "cubo",
+					"sid": 382059779794340,
+					"parameters": {
+						"instance-variable": "old_x",
+						"value": "cubo.X"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "cubo",
+					"sid": 853819184142795,
+					"parameters": {
+						"x": "cubo.X + cubo.vel_x * dt"
+					}
+				}
+			],
+			"sid": 348862843137231
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "cubo",
+					"sid": 558977773491285,
+					"parameters": {
+						"object": "lvl10_Colisao"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "cubo",
+					"sid": 619732149002805,
+					"parameters": {
+						"x": "cubo.old_x"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "cubo",
+					"sid": 358672080038767,
+					"parameters": {
+						"instance-variable": "vel_x",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 403514393969389
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 362510274595075,
+					"parameters": {
+						"object": "cubo"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-x",
+					"objectClass": "cubo",
+					"sid": 620002549592088,
+					"parameters": {
+						"x": "cubo.old_x"
+					}
+				}
+			],
+			"sid": 605567305031876
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 202381767335832
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "cubo",
+					"sid": 215708736562110,
+					"parameters": {
+						"instance-variable": "old_y",
+						"value": "cubo.Y"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "cubo",
+					"sid": 848164470935383,
+					"parameters": {
+						"y": "cubo.Y + cubo.vel_y * dt"
+					}
+				}
+			],
+			"sid": 200674289484608
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "cubo",
+					"sid": 367816041508876,
+					"parameters": {
+						"object": "lvl10_Colisao"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "cubo",
+					"sid": 775690978825993,
+					"parameters": {
+						"y": "cubo.old_Y"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "cubo",
+					"sid": 835757263313644,
+					"parameters": {
+						"instance-variable": "vel_y",
+						"value": "0"
+					}
+				}
+			],
+			"sid": 526871276282245
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 497756346629008,
+					"parameters": {
+						"object": "cubo"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "cubo",
+					"sid": 440466516307136,
+					"parameters": {
+						"y": "cubo.old_Y"
+					}
+				}
+			],
+			"sid": 668938734101796
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 191133718297007
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "cubo",
+					"sid": 855914474225518,
+					"parameters": {
+						"instance-variable": "vel_x",
+						"value": "lerp(cubo.vel_x, 0, 8 * dt)"
+					}
+				},
+				{
+					"id": "set-instvar-value",
+					"objectClass": "cubo",
+					"sid": 311684789917697,
+					"parameters": {
+						"instance-variable": "vel_y",
+						"value": "lerp(cubo.vel_y, 0, 8 * dt)"
+					}
+				}
+			],
+			"sid": 320804513836398
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 781752325763292,
+					"parameters": {
+						"object": "cubo"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "cubo",
+					"sid": 819903697997622,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 5,
+						"z-elevation": "lvl10_player.ZElevation - Self.ZHeight"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "cubo",
+					"sid": 961652075605340,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 3,
+						"z-elevation": "lvl10_player.ZElevation + PlayerHeight"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "cubo",
+					"sid": 664808376810563,
+					"parameters": {
+						"instance-variable": "carregado",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-x",
+					"objectClass": "lvl10_player",
+					"sid": 636433715418373,
+					"parameters": {
+						"x": "lvl10_player.old_x"
+					}
+				}
+			],
+			"sid": 729698348694118
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "lvl10_player",
+					"sid": 119524888662312,
+					"parameters": {
+						"object": "cubo"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "cubo",
+					"sid": 562791321235994,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 5,
+						"z-elevation": "lvl10_player.ZElevation - Self.ZHeight"
+					}
+				},
+				{
+					"id": "compare-z-elevation",
+					"objectClass": "cubo",
+					"sid": 681673185100633,
+					"parameters": {
+						"which": "z-elevation",
+						"comparison": 3,
+						"z-elevation": "lvl10_player.ZElevation + PlayerHeight"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-boolean-instvar",
+					"objectClass": "cubo",
+					"sid": 228339440682075,
+					"parameters": {
+						"instance-variable": "carregado",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "lvl10_player",
+					"sid": 493995729979873,
+					"parameters": {
+						"y": "lvl10_player.old_y"
+					}
+				}
+			],
+			"sid": 550759677736895
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 916463962621126
+				}
+			],
+			"actions": [
+				{
+					"id": "set-position",
+					"objectClass": "cuboTrigger",
+					"sid": 526579745490337,
+					"parameters": {
+						"x": "cubo.x",
+						"y": "cubo.y"
+					}
+				}
+			],
+			"sid": 179740312122583
 		}
 	],
 	"sid": 758226248430815

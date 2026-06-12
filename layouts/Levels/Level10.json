@@ -295,7 +295,11 @@
 					"tags": "",
 					"instanceVariables": {
 						"carregado": false,
-						"dz": 0
+						"dz": 0,
+						"vel_x": 0,
+						"vel_y": 0,
+						"old_x": 0,
+						"old_y": 0
 					},
 					"behaviors": {},
 					"showing": true,
@@ -315,6 +319,39 @@
 						],
 						"z": 0,
 						"depth": 32,
+						"angle": 0
+					}
+				},
+				{
+					"type": "cuboTrigger",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 446,
+					"sid": 145721011284742,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": -55,
+						"y": -59,
+						"width": 45,
+						"height": 45,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
 						"angle": 0
 					}
 				},
