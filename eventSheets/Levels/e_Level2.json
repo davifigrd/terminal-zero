@@ -241,19 +241,141 @@
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 570362442959585,
+					"children": [
 						{
-							"id": "destroy",
-							"objectClass": "lvl2_notebook1",
-							"sid": 861171461628544
-						},
-						{
-							"id": "restart-layout",
-							"objectClass": "System",
-							"sid": 771591950894463
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 372997748366365
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl2_vida",
+									"sid": 326738153286552,
+									"parameters": {
+										"frame-number": "3"
+									}
+								},
+								{
+									"id": "destroy",
+									"objectClass": "lvl2_notebook1",
+									"sid": 809969900211281
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 608612817792553,
+									"parameters": {
+										"layer": "\"cursor\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 599250246212781
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "lvl2_telaPreta",
+									"sid": 671446007864681,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": "1",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 764864629765231,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl2_mensagem",
+									"sid": 771251704955528,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 851258595275650,
+									"parameters": {
+										"seconds": "3",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl2_mensagem",
+									"sid": 888199925605588,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "lvl2_telaPreta",
+									"sid": 687405712662810,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"transition\"",
+										"property": "offsetOpacity",
+										"end-value": "0",
+										"time": "1",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 512786775388104,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 931550025116811,
+									"parameters": {
+										"layer": "\"cursor\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 866005219265230
+								}
+							],
+							"sid": 209934849321437
 						}
-					],
-					"sid": 570362442959585
+					]
 				},
 				{
 					"eventType": "block",
@@ -387,6 +509,11 @@
 							}
 						},
 						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 129149043708471
+						},
+						{
 							"callFunction": "Transition",
 							"sid": 878280388221127,
 							"parameters": [
@@ -402,21 +529,59 @@
 						{
 							"id": "on-start-of-layout",
 							"objectClass": "System",
-							"sid": 995920606730437
+							"sid": 162523469108266
 						}
 					],
 					"actions": [
 						{
 							"id": "set-instvar-value",
 							"objectClass": "lvl2_notebook1",
-							"sid": 992991191698332,
+							"sid": 121225326317092,
 							"parameters": {
 								"instance-variable": "VidaDoPC",
 								"value": "30"
 							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl2_notebook1",
+							"sid": 559255032138779,
+							"parameters": {
+								"instance-variable": "etapa",
+								"value": "0"
+							}
 						}
 					],
-					"sid": 807950766278647
+					"sid": 838467375570873,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 337004017640423
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 601321332836773,
+									"parameters": {
+										"audio-file": {
+											"path": "musica fase 2"
+										},
+										"loop": "looping",
+										"volume": "-20",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 634747066993780
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -694,57 +859,6 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "on-start-of-layout",
-							"objectClass": "System",
-							"sid": 954487919386609
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl2_notebook1",
-							"sid": 564644825654503,
-							"parameters": {
-								"instance-variable": "etapa",
-								"value": "0"
-							}
-						}
-					],
-					"sid": 530873895285761,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "trigger-once-while-true",
-									"objectClass": "System",
-									"sid": 952953663324076
-								}
-							],
-							"actions": [
-								{
-									"id": "play",
-									"objectClass": "Audio",
-									"sid": 296974335028709,
-									"parameters": {
-										"audio-file": {
-											"path": "musica fase 2"
-										},
-										"loop": "looping",
-										"volume": "0",
-										"stereo-pan": "0",
-										"tag-optional": "\"\""
-									}
-								}
-							],
-							"sid": 597256808432985
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "on-end-of-layout",
 							"objectClass": "System",
 							"sid": 872042589707969
@@ -766,27 +880,6 @@
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 806875042910210
-				}
-			],
-			"actions": [
-				{
-					"id": "set-cursor-from-sprite",
-					"objectClass": "Mouse",
-					"sid": 860159952763909,
-					"parameters": {
-						"sprite": "cursor"
-					}
-				}
-			],
-			"sid": 899864824474440
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
 					"id": "compare-instance-variable",
 					"objectClass": "lvl2_notebook1",
 					"sid": 391211317804369,
@@ -797,17 +890,45 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 616399802406497,
+			"children": [
 				{
-					"id": "set-animation-frame",
-					"objectClass": "lvl2_vida",
-					"sid": 904314978035209,
-					"parameters": {
-						"frame-number": "1"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 959884293332964
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl2_vida",
+							"sid": 939739443217667,
+							"parameters": {
+								"frame-number": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 768606648020951,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_error"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 166931982452070
 				}
-			],
-			"sid": 616399802406497
+			]
 		},
 		{
 			"eventType": "block",
@@ -823,71 +944,45 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 958204117410948,
+			"children": [
 				{
-					"id": "set-animation-frame",
-					"objectClass": "lvl2_vida",
-					"sid": 121185922487868,
-					"parameters": {
-						"frame-number": "2"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 404028740920705,
-					"parameters": {
-						"audio-file": {
-							"path": "Level 3/lvl3_error"
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "trigger-once-while-true",
+							"objectClass": "System",
+							"sid": 899555466397929
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl2_vida",
+							"sid": 598329959779296,
+							"parameters": {
+								"frame-number": "2"
+							}
 						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 139097783626274,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_error"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 569687282325864
 				}
-			],
-			"sid": 958204117410948
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-instance-variable",
-					"objectClass": "lvl2_notebook1",
-					"sid": 746347841758642,
-					"parameters": {
-						"instance-variable": "VidaDoPC",
-						"comparison": 0,
-						"value": "0"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-animation-frame",
-					"objectClass": "lvl2_vida",
-					"sid": 220198602920285,
-					"parameters": {
-						"frame-number": "3"
-					}
-				},
-				{
-					"id": "play",
-					"objectClass": "Audio",
-					"sid": 504766198556659,
-					"parameters": {
-						"audio-file": {
-							"path": "Level 3/lvl3_error"
-						},
-						"loop": "not-looping",
-						"volume": "0",
-						"stereo-pan": "0",
-						"tag-optional": "\"\""
-					}
-				}
-			],
-			"sid": 964401097006980
+			]
 		},
 		{
 			"eventType": "block",

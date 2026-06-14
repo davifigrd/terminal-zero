@@ -297,29 +297,6 @@
 						}
 					],
 					"sid": 751016749137309
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 217012861697159,
-							"parameters": {
-								"key": 27
-							}
-						}
-					],
-					"actions": [
-						{
-							"callFunction": "Transition",
-							"sid": 566176925958617,
-							"parameters": [
-								"\"PC\""
-							]
-						}
-					],
-					"sid": 493190434607096
 				}
 			],
 			"sid": 347615887815880
@@ -1146,15 +1123,6 @@
 									"id": "stop-all",
 									"objectClass": "Audio",
 									"sid": 295513626075071
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 259746110413672,
-									"parameters": {
-										"seconds": "3.0",
-										"use-timescale": true
-									}
 								},
 								{
 									"callFunction": "Transition",
