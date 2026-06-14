@@ -8,10 +8,256 @@
 		{
 			"eventType": "group",
 			"disabled": false,
-			"title": "tudo",
+			"title": "lvl2_tudo",
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "lvl2_criarvirus",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"functionName": "criarVirus",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 908118506295381,
+									"parameters": {
+										"object-to-create": "lvl2_Virus",
+										"layer": "1",
+										"x": "choose(646,1329,579,44)",
+										"y": "choose(704,390,51,409)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 320457270546218
+						},
+						{
+							"functionName": "criarVirus2",
+							"functionDescription": "",
+							"functionCategory": "",
+							"functionReturnType": "none",
+							"functionCopyPicked": false,
+							"functionIsAsync": false,
+							"functionParameters": [],
+							"eventType": "function-block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "create-object",
+									"objectClass": "System",
+									"sid": 739058432250207,
+									"parameters": {
+										"object-to-create": "lvl2_Virus",
+										"layer": "1",
+										"x": "choose(646,1329,579,44)",
+										"y": "choose(704,390,51,409)",
+										"create-hierarchy": false,
+										"template-name": "\"\""
+									}
+								}
+							],
+							"sid": 370631884039808,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-tick",
+											"objectClass": "System",
+											"sid": 154907335731813
+										}
+									],
+									"actions": [
+										{
+											"id": "flash",
+											"objectClass": "lvl2_Virus",
+											"sid": 442176248489292,
+											"behaviorType": "Piscar",
+											"parameters": {
+												"on-time": "0.5",
+												"off-time": "0.4",
+												"duration": "4"
+											}
+										}
+									],
+									"sid": 548950620378083
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "lvl2_notebook1",
+									"sid": 335113381345293,
+									"parameters": {
+										"instance-variable": "etapa",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 864031630521582,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 199582822225679,
+											"parameters": {
+												"interval-seconds": "choose(2,3)"
+											}
+										},
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 553565713247662,
+											"parameters": {
+												"count": "1"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 849912119299257
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "criarVirus",
+											"sid": 518841535475312
+										}
+									],
+									"sid": 999574986624274
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "lvl2_notebook1",
+									"sid": 983688849450430,
+									"parameters": {
+										"instance-variable": "etapa",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 681424592496427,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 873994119390180,
+											"parameters": {
+												"interval-seconds": "choose(1,1)"
+											}
+										},
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 699785313960434,
+											"parameters": {
+												"count": "2"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 674342947741429
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "criarVirus",
+											"sid": 462463723369154
+										}
+									],
+									"sid": 804014373370592
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "lvl2_notebook1",
+									"sid": 987478203747276,
+									"parameters": {
+										"instance-variable": "etapa",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 209460948577323,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "every-x-seconds",
+											"objectClass": "System",
+											"sid": 618516566524013,
+											"parameters": {
+												"interval-seconds": "choose(2,2)"
+											}
+										},
+										{
+											"id": "repeat",
+											"objectClass": "System",
+											"sid": 941179003698402,
+											"parameters": {
+												"count": "3"
+											}
+										},
+										{
+											"id": "trigger-once-while-true",
+											"objectClass": "System",
+											"sid": 525082280857508
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "criarVirus2",
+											"sid": 305953099978616
+										}
+									],
+									"sid": 205915022470131
+								}
+							]
+						}
+					],
+					"sid": 935516596648762
+				},
 				{
 					"eventType": "block",
 					"conditions": [
@@ -34,86 +280,6 @@
 						}
 					],
 					"sid": 162807737276389
-				},
-				{
-					"functionName": "criarVirus",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 976518777474098,
-							"parameters": {
-								"object-to-create": "lvl2_Virus",
-								"layer": "1",
-								"x": "choose(646,1329,579,44)",
-								"y": "choose(704,390,51,409)",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						}
-					],
-					"sid": 343434835403035
-				},
-				{
-					"functionName": "criarVirus2",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [
-						{
-							"id": "create-object",
-							"objectClass": "System",
-							"sid": 168346056876533,
-							"parameters": {
-								"object-to-create": "lvl2_Virus",
-								"layer": "1",
-								"x": "choose(646,1329,579,44)",
-								"y": "choose(704,390,51,409)",
-								"create-hierarchy": false,
-								"template-name": "\"\""
-							}
-						}
-					],
-					"sid": 458837018883413,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "every-tick",
-									"objectClass": "System",
-									"sid": 791843269222273
-								}
-							],
-							"actions": [
-								{
-									"id": "flash",
-									"objectClass": "lvl2_Virus",
-									"sid": 577131373491537,
-									"behaviorType": "Piscar",
-									"parameters": {
-										"on-time": "0.5",
-										"off-time": "0.4",
-										"duration": "4"
-									}
-								}
-							],
-							"sid": 860588541548890
-						}
-					]
 				},
 				{
 					"eventType": "block",
@@ -233,10 +399,10 @@
 						{
 							"id": "compare-instance-variable",
 							"objectClass": "lvl2_notebook1",
-							"sid": 818334923168958,
+							"sid": 331288398963878,
 							"parameters": {
 								"instance-variable": "VidaDoPC",
-								"comparison": 3,
+								"comparison": 0,
 								"value": "0"
 							}
 						}
@@ -393,15 +559,6 @@
 							"sid": 152616056091563,
 							"parameters": {
 								"text": "lvl2_notebook1.virusMortos"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "lvl2_vidadopc",
-							"sid": 407736707518328,
-							"disabled": true,
-							"parameters": {
-								"text": "\"Vida do PC : \"&lvl2_notebook1.VidaDoPC"
 							}
 						}
 					],
@@ -597,67 +754,46 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "lvl2_notebook1",
-							"sid": 866390140002298,
-							"parameters": {
-								"frame-number": "0"
-							}
-						},
-						{
-							"id": "set-size",
-							"objectClass": "lvl2_notebook1",
-							"sid": 332073283537637,
-							"parameters": {
-								"width": "249",
-								"height": "170"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "lvl2_mudoufase",
-							"sid": 816787007955824,
-							"parameters": {
-								"text": "\"1\""
-							}
-						}
-					],
+					"actions": [],
 					"sid": 142931063981102,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "every-x-seconds",
-									"objectClass": "System",
-									"sid": 512878508708828,
-									"parameters": {
-										"interval-seconds": "choose(2,3)"
-									}
-								},
-								{
-									"id": "repeat",
-									"objectClass": "System",
-									"sid": 896543252600941,
-									"parameters": {
-										"count": "1"
-									}
-								},
-								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
-									"sid": 862540450916093
+									"sid": 621043984056282
 								}
 							],
 							"actions": [
 								{
-									"callFunction": "criarVirus",
-									"sid": 303380060317800
+									"id": "set-animation-frame",
+									"objectClass": "lvl2_notebook1",
+									"sid": 460397325685947,
+									"parameters": {
+										"frame-number": "0"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "lvl2_notebook1",
+									"sid": 553960066406449,
+									"parameters": {
+										"width": "249",
+										"height": "170"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lvl2_mudoufase",
+									"sid": 220388391392239,
+									"parameters": {
+										"text": "\"1\""
+									}
 								}
 							],
-							"sid": 129010239290641
+							"sid": 593565214300701
 						}
 					]
 				},
@@ -675,75 +811,194 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "lvl2_notebook1",
-							"sid": 813633405183236,
-							"parameters": {
-								"frame-number": "1"
-							}
-						},
-						{
-							"id": "set-size",
-							"objectClass": "lvl2_notebook1",
-							"sid": 933161097027174,
-							"parameters": {
-								"width": "249",
-								"height": "170"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "lvl2_mudoufase",
-							"sid": 166691773555670,
-							"parameters": {
-								"text": "\"2\""
-							}
-						},
-						{
-							"id": "set-font-color",
-							"objectClass": "lvl2_mudoufase",
-							"sid": 734880293271872,
-							"parameters": {
-								"color": "rgb(255, 255, 0)"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 537782064075473,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "every-x-seconds",
-									"objectClass": "System",
-									"sid": 454147377413459,
-									"parameters": {
-										"interval-seconds": "choose(1,1)"
-									}
-								},
-								{
-									"id": "repeat",
-									"objectClass": "System",
-									"sid": 968192286033244,
-									"parameters": {
-										"count": "2"
-									}
-								},
-								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
-									"sid": 224169808792628
+									"sid": 919713089709934
 								}
 							],
 							"actions": [
 								{
-									"callFunction": "criarVirus",
-									"sid": 855296980433009
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 774281982857310,
+									"parameters": {
+										"group-name": "\"lvl2_criarvirus\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 442605220441211,
+									"parameters": {
+										"layer": "\"cursor\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 700402066074927
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "lvl2_telaPreta",
+									"sid": 711913881268002,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": "1",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lvl2_etapa",
+									"sid": 943812810555620,
+									"parameters": {
+										"text": "\"Segunda etapa\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 619421729192486,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl2_etapa",
+									"sid": 496160621258005,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 993493039346150,
+									"parameters": {
+										"seconds": "3",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl2_etapa",
+									"sid": 675008573575123,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl2_notebook1",
+									"sid": 532373448505928,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "lvl2_notebook1",
+									"sid": 899087961629215,
+									"parameters": {
+										"width": "249",
+										"height": "170"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lvl2_mudoufase",
+									"sid": 604093339620653,
+									"parameters": {
+										"text": "\"2\""
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl2_mudoufase",
+									"sid": 794156089483717,
+									"parameters": {
+										"color": "rgb(255, 255, 0)"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "lvl2_telaPreta",
+									"sid": 703593632575276,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"transition\"",
+										"property": "offsetOpacity",
+										"end-value": "0",
+										"time": "1",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 174733347339850,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 280551058468642,
+									"parameters": {
+										"layer": "\"cursor\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 421963602843216,
+									"parameters": {
+										"audio-file": {
+											"path": "musica fase 2"
+										},
+										"loop": "looping",
+										"volume": "-20",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 204094680943468,
+									"parameters": {
+										"group-name": "\"lvl2_criarvirus\"",
+										"state": "activated"
+									}
 								}
 							],
-							"sid": 731678164120679
+							"sid": 929394059867662
 						}
 					]
 				},
@@ -761,75 +1016,194 @@
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-animation-frame",
-							"objectClass": "lvl2_notebook1",
-							"sid": 188947651405965,
-							"parameters": {
-								"frame-number": "2"
-							}
-						},
-						{
-							"id": "set-size",
-							"objectClass": "lvl2_notebook1",
-							"sid": 346531364344499,
-							"parameters": {
-								"width": "249",
-								"height": "170"
-							}
-						},
-						{
-							"id": "set-text",
-							"objectClass": "lvl2_mudoufase",
-							"sid": 933484630033575,
-							"parameters": {
-								"text": "\"3\""
-							}
-						},
-						{
-							"id": "set-font-color",
-							"objectClass": "lvl2_mudoufase",
-							"sid": 156178643882365,
-							"parameters": {
-								"color": "rgb(255, 219, 187)"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 820162402784572,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
-									"id": "every-x-seconds",
-									"objectClass": "System",
-									"sid": 161678875021700,
-									"parameters": {
-										"interval-seconds": "choose(2,2)"
-									}
-								},
-								{
-									"id": "repeat",
-									"objectClass": "System",
-									"sid": 355185016284288,
-									"parameters": {
-										"count": "3"
-									}
-								},
-								{
 									"id": "trigger-once-while-true",
 									"objectClass": "System",
-									"sid": 168162443221780
+									"sid": 240753408385074
 								}
 							],
 							"actions": [
 								{
-									"callFunction": "criarVirus2",
-									"sid": 798114901267387
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 776530899117792,
+									"parameters": {
+										"group-name": "\"lvl2_criarvirus\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 770642651279049,
+									"parameters": {
+										"layer": "\"cursor\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 459579660654371
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "lvl2_telaPreta",
+									"sid": 228983687442443,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": "1",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lvl2_etapa",
+									"sid": 887185139262214,
+									"parameters": {
+										"text": "\"Etapa final\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 652722325636322,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl2_etapa",
+									"sid": 194892783052742,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 154052537753992,
+									"parameters": {
+										"seconds": "3",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl2_etapa",
+									"sid": 536431821781348,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl2_notebook1",
+									"sid": 522684573596506,
+									"parameters": {
+										"frame-number": "2"
+									}
+								},
+								{
+									"id": "set-size",
+									"objectClass": "lvl2_notebook1",
+									"sid": 561612392634764,
+									"parameters": {
+										"width": "249",
+										"height": "170"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "lvl2_mudoufase",
+									"sid": 262179815348898,
+									"parameters": {
+										"text": "\"3\""
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl2_mudoufase",
+									"sid": 424277198546774,
+									"parameters": {
+										"color": "rgb(255, 219, 187)"
+									}
+								},
+								{
+									"id": "tween-one-property",
+									"objectClass": "lvl2_telaPreta",
+									"sid": 444607110121106,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"transition\"",
+										"property": "offsetOpacity",
+										"end-value": "0",
+										"time": "1",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 598485652809792,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 996932456834453,
+									"parameters": {
+										"layer": "\"cursor\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 724555622904765,
+									"parameters": {
+										"audio-file": {
+											"path": "musica fase 2"
+										},
+										"loop": "looping",
+										"volume": "-20",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 265080689785916,
+									"parameters": {
+										"group-name": "\"lvl2_criarvirus\"",
+										"state": "activated"
+									}
 								}
 							],
-							"sid": 281788724287152
+							"sid": 216648871545993
 						}
 					]
 				},
@@ -854,24 +1228,6 @@
 						}
 					],
 					"sid": 510067526676737
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-end-of-layout",
-							"objectClass": "System",
-							"sid": 872042589707969
-						}
-					],
-					"actions": [
-						{
-							"id": "stop-all",
-							"objectClass": "Audio",
-							"sid": 673972445632838
-						}
-					],
-					"sid": 178566117919337
 				}
 			],
 			"sid": 616939904205052
