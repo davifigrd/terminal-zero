@@ -666,9 +666,28 @@
 						"comparison": 0,
 						"value": "\"123456\""
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 653702722728616
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 744890019995639,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 4/lvl4_correct"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_certo2",
@@ -1077,9 +1096,28 @@
 						"comparison": 0,
 						"value": "\"214365\""
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 315926026013306
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 452933858679126,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 4/lvl4_correct"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_certo2",
@@ -1240,18 +1278,18 @@
 				{
 					"id": "set-position",
 					"objectClass": "lvl4_teclado",
-					"sid": 955381140076327,
+					"sid": 624737796051885,
 					"parameters": {
-						"x": "183",
+						"x": "165",
 						"y": "350"
 					}
 				},
 				{
 					"id": "set-position",
 					"objectClass": "lvl4_antena",
-					"sid": 988025791338858,
+					"sid": 148032564153390,
 					"parameters": {
-						"x": "346",
+						"x": "350",
 						"y": "354"
 					}
 				},
@@ -1488,15 +1526,43 @@
 						"comparison": 0,
 						"value": "\"361524\""
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 479447476550808
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 121465420069927,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 4/lvl4_correct"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_certo2",
 					"sid": 274085554068532,
 					"parameters": {
 						"visibility": "visible"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 772658784051027,
+					"parameters": {
+						"seconds": "1",
+						"use-timescale": true
 					}
 				},
 				{
@@ -1555,9 +1621,28 @@
 						"comparison": 0,
 						"value": "1"
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 237153987520055
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 820132230025821,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 4/lvl4_error"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_erro2",
@@ -1768,9 +1853,28 @@
 						"comparison": 0,
 						"value": "2"
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 923951113323585
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 838226883933341,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 4/lvl4_error"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_erro2",
@@ -1981,9 +2085,28 @@
 						"comparison": 0,
 						"value": "3"
 					}
+				},
+				{
+					"id": "trigger-once-while-true",
+					"objectClass": "System",
+					"sid": 465512838664661
 				}
 			],
 			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 290794467372331,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 4/lvl4_error"
+						},
+						"loop": "not-looping",
+						"volume": "0",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
 				{
 					"id": "set-visible",
 					"objectClass": "lvl4_erro2",
