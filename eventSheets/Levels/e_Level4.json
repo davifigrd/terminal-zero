@@ -117,9 +117,9 @@
 				{
 					"id": "wait",
 					"objectClass": "System",
-					"sid": 565547571529739,
+					"sid": 290686192478583,
 					"parameters": {
-						"seconds": "2.0",
+						"seconds": "5",
 						"use-timescale": true
 					}
 				},
@@ -677,13 +677,13 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 744890019995639,
+					"sid": 891405870915299,
 					"parameters": {
 						"audio-file": {
 							"path": "Level 4/lvl4_correct"
 						},
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "-10",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
@@ -1107,13 +1107,13 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 452933858679126,
+					"sid": 966758341951320,
 					"parameters": {
 						"audio-file": {
 							"path": "Level 4/lvl4_correct"
 						},
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "-10",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
@@ -1537,13 +1537,13 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 121465420069927,
+					"sid": 450247527488203,
 					"parameters": {
 						"audio-file": {
 							"path": "Level 4/lvl4_correct"
 						},
 						"loop": "not-looping",
-						"volume": "0",
+						"volume": "-10",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
 					}
@@ -2284,6 +2284,91 @@
 				}
 			],
 			"sid": 867197995206982
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-visible",
+					"objectClass": "lvl4_mouse_baixo",
+					"sid": 452343755045574
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "lvl4_pendrive_baixo",
+					"sid": 923142025058151
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "lvl4_teclado_baixo",
+					"sid": 728456110849161
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "lvl4_disquete_baixo",
+					"sid": 232756480948435
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "lvl4_drone_baixo",
+					"sid": 574515619100726
+				},
+				{
+					"id": "is-visible",
+					"objectClass": "lvl4_antena_baixo",
+					"sid": 656547662570403
+				}
+			],
+			"actions": [],
+			"sid": 109902259099933,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 397413110949687,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl4_Erro"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 913926147910156,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 916195822905465
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 357929932185684,
+									"parameters": {
+										"audio-file": {
+											"path": "bip 1.2"
+										},
+										"loop": "not-looping",
+										"volume": "10",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 177028388269032
+						}
+					]
+				}
+			]
 		}
 	],
 	"sid": 986251233977125
