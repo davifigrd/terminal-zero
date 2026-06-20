@@ -112,6 +112,16 @@
 			"sid": 243453153270513
 		},
 		{
+			"eventType": "variable",
+			"name": "FogTime",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 371686584340677
+		},
+		{
 			"eventType": "comment",
 			"text": "Camera"
 		},
@@ -135,6 +145,24 @@
 						"cam-z": "lvl10_player.Zelevation+PlayerHeight",
 						"look-angle": "lvl10_player.Angle"
 					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 279792464435706,
+					"parameters": {
+						"audio-file": {
+							"path": "Level 10/musica ambiente lvl10"
+						},
+						"loop": "not-looping",
+						"volume": "-15",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"callFunction": "Flicker",
+					"sid": 698398933799931
 				}
 			],
 			"sid": 823711932385869
@@ -211,6 +239,42 @@
 				}
 			],
 			"sid": 424871017711775
+		},
+		{
+			"functionName": "Flicker",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 612110886692556,
+					"parameters": {
+						"seconds": "random(0.03, 0.15)",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 361942866753696,
+					"parameters": {
+						"seconds": "random(5, 20)",
+						"use-timescale": true
+					}
+				},
+				{
+					"callFunction": "Flicker",
+					"sid": 264372270520697
+				}
+			],
+			"sid": 257015229324652
 		},
 		{
 			"eventType": "comment",
@@ -763,9 +827,9 @@
 				{
 					"id": "set-text",
 					"objectClass": "txtInteragir",
-					"sid": 200913531021659,
+					"sid": 987864355674408,
 					"parameters": {
-						"text": "\"Aperte E para pegar a chave azul\""
+						"text": "\"Aperte E para pegar\""
 					}
 				}
 			],
@@ -915,9 +979,9 @@
 				{
 					"id": "set-text",
 					"objectClass": "txtInteragir",
-					"sid": 448381291746886,
+					"sid": 750904620275425,
 					"parameters": {
-						"text": "\"Você precisa da chave azul\""
+						"text": "\"Você precisa de uma chave\""
 					}
 				}
 			],
