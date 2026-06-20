@@ -368,89 +368,18 @@
 														"seconds": "2",
 														"use-timescale": true
 													}
+												},
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 765942502309469,
+													"parameters": {
+														"variable": "lvl6_step",
+														"value": "1"
+													}
 												}
 											],
-											"sid": 942419275970897,
-											"children": [
-												{
-													"eventType": "comment",
-													"text": "Fim da fase"
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-eventvar",
-															"objectClass": "System",
-															"sid": 898317162447858,
-															"parameters": {
-																"variable": "lvl6_step",
-																"comparison": 0,
-																"value": "5"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "add-to-eventvar",
-															"objectClass": "System",
-															"sid": 521947504123493,
-															"parameters": {
-																"variable": "lvl6_step",
-																"value": "1"
-															}
-														},
-														{
-															"id": "stop-all",
-															"objectClass": "Audio",
-															"sid": 579031671659283
-														},
-														{
-															"callFunction": "Transition",
-															"sid": 256053946175940,
-															"parameters": [
-																"\"Bedroom\""
-															]
-														},
-														{
-															"id": "wait",
-															"objectClass": "System",
-															"sid": 786725504398938,
-															"parameters": {
-																"seconds": "2",
-																"use-timescale": true
-															}
-														}
-													],
-													"sid": 946022154371076
-												},
-												{
-													"eventType": "comment",
-													"text": "Próxima etapa"
-												},
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "compare-eventvar",
-															"objectClass": "System",
-															"sid": 766029143238988,
-															"parameters": {
-																"variable": "lvl6_step",
-																"comparison": 1,
-																"value": "5"
-															}
-														}
-													],
-													"actions": [
-														{
-															"callFunction": "lvl6_NextStep",
-															"sid": 521704660146124
-														}
-													],
-													"sid": 205170764760804
-												}
-											]
+											"sid": 942419275970897
 										}
 									]
 								}
@@ -489,39 +418,9 @@
 								{
 									"id": "pick-all",
 									"objectClass": "System",
-									"sid": 285048958830227,
-									"parameters": {
-										"object": "lvl6_click"
-									}
-								},
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 750006451337682,
-									"parameters": {
-										"object": "lvl6_click",
-										"expression": "lvl6_click.arrow",
-										"comparison": 0,
-										"value": "arrow_id"
-									}
-								},
-								{
-									"id": "pick-all",
-									"objectClass": "System",
 									"sid": 101849538222145,
 									"parameters": {
 										"object": "lvl6_arrow"
-									}
-								},
-								{
-									"id": "pick-by-comparison",
-									"objectClass": "System",
-									"sid": 718943246445562,
-									"parameters": {
-										"object": "lvl6_arrow",
-										"expression": "distance(lvl6_arrow.X, lvl6_arrow.Y, lvl6_click.X, lvl6_click.Y)",
-										"comparison": 2,
-										"value": "30"
 									}
 								}
 							],
@@ -835,578 +734,6 @@
 											"sid": 121940962009209
 										}
 									]
-								}
-							]
-						}
-					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Próxima etapa"
-				},
-				{
-					"functionName": "lvl6_NextStep",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 559874397736493,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 722886050784925,
-									"parameters": {
-										"variable": "lvl6_message",
-										"value": "1"
-									}
-								},
-								{
-									"id": "set-boolean-eventvar",
-									"objectClass": "System",
-									"sid": 858359997869481,
-									"parameters": {
-										"variable": "lvl6_step_done",
-										"value": "false"
-									}
-								},
-								{
-									"id": "set-x",
-									"objectClass": "lvl6_target_wave",
-									"sid": 731252677313255,
-									"parameters": {
-										"x": "50"
-									}
-								},
-								{
-									"id": "set-x",
-									"objectClass": "lvl6_green_wave",
-									"sid": 608146043723077,
-									"parameters": {
-										"x": "50"
-									}
-								},
-								{
-									"id": "set-x",
-									"objectClass": "lvl6_target_wave2",
-									"sid": 149970181881070,
-									"parameters": {
-										"x": "50 + lvl6_target_width"
-									}
-								},
-								{
-									"id": "set-x",
-									"objectClass": "lvl6_green_wave2",
-									"sid": 380881627695743,
-									"parameters": {
-										"x": "50 + lvl6_width"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 323070681871628,
-									"parameters": {
-										"variable": "lvl6_current_freq",
-										"value": "108 - (((lvl6_width - 900) / 700) * 15) - (((lvl6_heigth - 50) / 250) * 5.5)"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 211014695447155,
-									"parameters": {
-										"variable": "lvl6_target_freq",
-										"value": "108 - (((lvl6_target_width - 900) / 700) * 15) - (((lvl6_target_heigth - 50) / 250) * 5.5)"
-									}
-								}
-							],
-							"sid": 737737676420299,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 187320586350490,
-											"parameters": {
-												"variable": "lvl6_step",
-												"comparison": 0,
-												"value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 514294529364495,
-											"parameters": {
-												"variable": "lvl6_step",
-												"value": "1"
-											}
-										}
-									],
-									"sid": 776066809184483
-								},
-								{
-									"eventType": "comment",
-									"text": "Primeira etapa"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 872496824260200,
-											"parameters": {
-												"variable": "lvl6_step",
-												"comparison": 0,
-												"value": "1"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 565060336350742,
-											"parameters": {
-												"variable": "lvl6_step",
-												"value": "2"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 553870726814393,
-											"parameters": {
-												"variable": "lvl6_width",
-												"value": "1500"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 652348767194523,
-											"parameters": {
-												"variable": "lvl6_target_width",
-												"value": "1000"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 155447047006200,
-											"parameters": {
-												"variable": "lvl6_heigth",
-												"value": "75"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 639772849975045,
-											"parameters": {
-												"variable": "lvl6_target_heigth",
-												"value": "200"
-											}
-										}
-									],
-									"sid": 371133285873501
-								},
-								{
-									"eventType": "comment",
-									"text": "Segunda etapa"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 808442223726463,
-											"parameters": {
-												"variable": "lvl6_step",
-												"comparison": 0,
-												"value": "2"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 529133742400413,
-											"parameters": {
-												"variable": "lvl6_step",
-												"value": "3"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 104477465786186,
-											"parameters": {
-												"variable": "lvl6_width",
-												"value": "1000"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 393064168129713,
-											"parameters": {
-												"variable": "lvl6_target_width",
-												"value": "1300"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 880767571249869,
-											"parameters": {
-												"variable": "lvl6_heigth",
-												"value": "300"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 917559960168826,
-											"parameters": {
-												"variable": "lvl6_target_heigth",
-												"value": "150"
-											}
-										}
-									],
-									"sid": 559548092606719,
-									"children": [
-										{
-											"eventType": "comment",
-											"text": "Apagar sinal"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "lvl6_hide_tip",
-													"sid": 494219519550112,
-													"parameters": {
-														"instance-variable": "tip",
-														"comparison": 0,
-														"value": "\"signal\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "tween-one-property",
-													"objectClass": "lvl6_hide_tip",
-													"sid": 604070415046145,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"transition\"",
-														"property": "offsetOpacity",
-														"end-value": "100",
-														"time": "0.5",
-														"ease": "noease",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "no",
-														"repeat-count": "1"
-													}
-												}
-											],
-											"sid": 864580787745551
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "Terceira etapa"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 654982351186074,
-											"parameters": {
-												"variable": "lvl6_step",
-												"comparison": 0,
-												"value": "3"
-											}
-										},
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 804024783359492,
-											"parameters": {
-												"variable": "lvl6_step_done"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 364233910983798,
-											"parameters": {
-												"variable": "lvl6_step",
-												"value": "4"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 534376701399522,
-											"parameters": {
-												"variable": "lvl6_width",
-												"value": "1500"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 745528107621215,
-											"parameters": {
-												"variable": "lvl6_target_width",
-												"value": "1100"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 826524040724706,
-											"parameters": {
-												"variable": "lvl6_heigth",
-												"value": "250"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 843386766834688,
-											"parameters": {
-												"variable": "lvl6_target_heigth",
-												"value": "100"
-											}
-										}
-									],
-									"sid": 661597987989510,
-									"children": [
-										{
-											"eventType": "comment",
-											"text": "Apagar frequência"
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-instance-variable",
-													"objectClass": "lvl6_hide_tip",
-													"sid": 889178214620142,
-													"parameters": {
-														"instance-variable": "tip",
-														"comparison": 0,
-														"value": "\"freq\""
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "tween-one-property",
-													"objectClass": "lvl6_hide_tip",
-													"sid": 228436461076888,
-													"behaviorType": "Tween",
-													"parameters": {
-														"tags": "\"transition\"",
-														"property": "offsetOpacity",
-														"end-value": "100",
-														"time": "0.5",
-														"ease": "noease",
-														"destroy-on-complete": "no",
-														"loop": "no",
-														"ping-pong": "no",
-														"repeat-count": "1"
-													}
-												}
-											],
-											"sid": 917715851976975
-										}
-									]
-								},
-								{
-									"eventType": "comment",
-									"text": "Quarta etapa"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 835804729398564,
-											"parameters": {
-												"variable": "lvl6_step",
-												"comparison": 0,
-												"value": "4"
-											}
-										},
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 854036064417193,
-											"parameters": {
-												"variable": "lvl6_step_done"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 809213110492883,
-											"parameters": {
-												"variable": "lvl6_step",
-												"value": "5"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 375469908367302,
-											"parameters": {
-												"variable": "lvl6_width",
-												"value": "1000"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 608941215663644,
-											"parameters": {
-												"variable": "lvl6_target_width",
-												"value": "1500"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 826256982313002,
-											"parameters": {
-												"variable": "lvl6_heigth",
-												"value": "50"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 330947213320906,
-											"parameters": {
-												"variable": "lvl6_target_heigth",
-												"value": "250"
-											}
-										},
-										{
-											"callFunction": "lvl6_ShuffleLoop",
-											"sid": 793585402181869
-										}
-									],
-									"sid": 319375045048592
-								},
-								{
-									"eventType": "comment",
-									"text": "Quinta etapa"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 727703311355711,
-											"parameters": {
-												"variable": "lvl6_step",
-												"comparison": 0,
-												"value": "5"
-											}
-										},
-										{
-											"id": "compare-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 839787957888492,
-											"parameters": {
-												"variable": "lvl6_step_done"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 735681534261422,
-											"parameters": {
-												"variable": "lvl6_step",
-												"value": "6"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 240641452631685,
-											"parameters": {
-												"variable": "lvl6_width",
-												"value": "1000"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 450999314508347,
-											"parameters": {
-												"variable": "lvl6_target_width",
-												"value": "1400"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 635588060153390,
-											"parameters": {
-												"variable": "lvl6_heigth",
-												"value": "300"
-											}
-										},
-										{
-											"id": "set-eventvar-value",
-											"objectClass": "System",
-											"sid": 962446584485147,
-											"parameters": {
-												"variable": "lvl6_target_heigth",
-												"value": "50"
-											}
-										},
-										{
-											"callFunction": "lvl6_ShuffleLoop",
-											"sid": 621799198944106
-										}
-									],
-									"sid": 256392926272579
 								}
 							]
 						}
@@ -1933,7 +1260,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "Inicia primeira etapa e som de chiado"
+					"text": "Som de chiado"
 				},
 				{
 					"eventType": "block",
@@ -2020,7 +1347,7 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 219232415904316,
+							"sid": 374183206997904,
 							"parameters": {
 								"interval-seconds": "1"
 							}
@@ -2470,10 +1797,6 @@
 								"seconds": "1",
 								"use-timescale": true
 							}
-						},
-						{
-							"callFunction": "lvl1_NextStep",
-							"sid": 509572855487773
 						}
 					],
 					"sid": 164337924215456,
@@ -3509,6 +2832,664 @@
 			]
 		},
 		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "Group1",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 405407610775267,
+							"parameters": {
+								"variable": "lvl6_message",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "lvl6_target_wave",
+							"sid": 408004031671576,
+							"parameters": {
+								"x": "50"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "lvl6_green_wave",
+							"sid": 231133157852180,
+							"parameters": {
+								"x": "50"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "lvl6_target_wave2",
+							"sid": 506592803050767,
+							"parameters": {
+								"x": "50 + lvl6_target_width"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "lvl6_green_wave2",
+							"sid": 810076836793560,
+							"parameters": {
+								"x": "50 + lvl6_width"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 994732072173658,
+							"parameters": {
+								"variable": "lvl6_current_freq",
+								"value": "108 - (((lvl6_width - 900) / 700) * 15) - (((lvl6_heigth - 50) / 250) * 5.5)"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 972632606304827,
+							"parameters": {
+								"variable": "lvl6_target_freq",
+								"value": "108 - (((lvl6_target_width - 900) / 700) * 15) - (((lvl6_target_heigth - 50) / 250) * 5.5)"
+							}
+						}
+					],
+					"sid": 438751594555641,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "Primeira etapa"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 160540567990237,
+									"parameters": {
+										"variable": "lvl6_step",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 884994117561709,
+									"parameters": {
+										"variable": "lvl6_step",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 365763474622998,
+									"parameters": {
+										"variable": "lvl6_step_done",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 733860239405618,
+									"parameters": {
+										"variable": "lvl6_width",
+										"value": "1500"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 429416646320660,
+									"parameters": {
+										"variable": "lvl6_target_width",
+										"value": "1000"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 250645053951982,
+									"parameters": {
+										"variable": "lvl6_heigth",
+										"value": "75"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 663955329259078,
+									"parameters": {
+										"variable": "lvl6_target_heigth",
+										"value": "200"
+									}
+								}
+							],
+							"sid": 910014487442239
+						},
+						{
+							"eventType": "comment",
+							"text": "Segunda etapa"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 360038028179668,
+									"parameters": {
+										"variable": "lvl6_step",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 810455566872906,
+									"parameters": {
+										"variable": "lvl6_step_done"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 768847892022518,
+									"parameters": {
+										"variable": "lvl6_step",
+										"value": "2"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 342469272960124,
+									"parameters": {
+										"variable": "lvl6_step_done",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 653449595867554,
+									"parameters": {
+										"variable": "lvl6_width",
+										"value": "1000"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 145670058732752,
+									"parameters": {
+										"variable": "lvl6_target_width",
+										"value": "1300"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 339972822778020,
+									"parameters": {
+										"variable": "lvl6_heigth",
+										"value": "300"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 622845874530756,
+									"parameters": {
+										"variable": "lvl6_target_heigth",
+										"value": "150"
+									}
+								}
+							],
+							"sid": 559254777671046
+						},
+						{
+							"eventType": "comment",
+							"text": "Terceira etapa"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 914750928915132,
+									"parameters": {
+										"variable": "lvl6_step",
+										"comparison": 0,
+										"value": "2"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 652734012667896,
+									"parameters": {
+										"variable": "lvl6_step_done"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 802234081956073,
+									"parameters": {
+										"variable": "lvl6_step",
+										"value": "3"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 820205913894715,
+									"parameters": {
+										"variable": "lvl6_step_done",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 155084403727451,
+									"parameters": {
+										"variable": "lvl6_width",
+										"value": "1500"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 298674714206077,
+									"parameters": {
+										"variable": "lvl6_target_width",
+										"value": "1100"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 148541846753564,
+									"parameters": {
+										"variable": "lvl6_heigth",
+										"value": "250"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 760265439135006,
+									"parameters": {
+										"variable": "lvl6_target_heigth",
+										"value": "100"
+									}
+								}
+							],
+							"sid": 625988894793553,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Apagar sinal"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "lvl6_hide_tip",
+											"sid": 509494555048080,
+											"parameters": {
+												"instance-variable": "tip",
+												"comparison": 0,
+												"value": "\"signal\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-one-property",
+											"objectClass": "lvl6_hide_tip",
+											"sid": 919011569065394,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"transition\"",
+												"property": "offsetOpacity",
+												"end-value": "100",
+												"time": "0.5",
+												"ease": "noease",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 824835429221729
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Quarta etapa"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 660089630397071,
+									"parameters": {
+										"variable": "lvl6_step",
+										"comparison": 0,
+										"value": "3"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 511500588441865,
+									"parameters": {
+										"variable": "lvl6_step_done"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 271167482403912,
+									"parameters": {
+										"variable": "lvl6_step",
+										"value": "4"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 813764376476258,
+									"parameters": {
+										"variable": "lvl6_step_done",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 373969701185993,
+									"parameters": {
+										"variable": "lvl6_width",
+										"value": "1000"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 384905317942173,
+									"parameters": {
+										"variable": "lvl6_target_width",
+										"value": "1500"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 590220215677337,
+									"parameters": {
+										"variable": "lvl6_heigth",
+										"value": "50"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 608078892383878,
+									"parameters": {
+										"variable": "lvl6_target_heigth",
+										"value": "250"
+									}
+								},
+								{
+									"callFunction": "lvl6_ShuffleLoop",
+									"sid": 122596106149709
+								}
+							],
+							"sid": 804198393190723,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Apagar frequência"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-instance-variable",
+											"objectClass": "lvl6_hide_tip",
+											"sid": 115944525731741,
+											"parameters": {
+												"instance-variable": "tip",
+												"comparison": 0,
+												"value": "\"freq\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "tween-one-property",
+											"objectClass": "lvl6_hide_tip",
+											"sid": 646370202066194,
+											"behaviorType": "Tween",
+											"parameters": {
+												"tags": "\"transition\"",
+												"property": "offsetOpacity",
+												"end-value": "100",
+												"time": "0.5",
+												"ease": "noease",
+												"destroy-on-complete": "no",
+												"loop": "no",
+												"ping-pong": "no",
+												"repeat-count": "1"
+											}
+										}
+									],
+									"sid": 423453241319987
+								}
+							]
+						},
+						{
+							"eventType": "comment",
+							"text": "Quinta etapa"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 706597548175193,
+									"parameters": {
+										"variable": "lvl6_step",
+										"comparison": 0,
+										"value": "4"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 509940152057026,
+									"parameters": {
+										"variable": "lvl6_step_done"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 714248980549954,
+									"parameters": {
+										"variable": "lvl6_step",
+										"value": "5"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 860980899315353,
+									"parameters": {
+										"variable": "lvl6_step_done",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 545897983936590,
+									"parameters": {
+										"variable": "lvl6_step_done",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 484271713363160,
+									"parameters": {
+										"variable": "lvl6_width",
+										"value": "1000"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 746698104149328,
+									"parameters": {
+										"variable": "lvl6_target_width",
+										"value": "1400"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 805819159661920,
+									"parameters": {
+										"variable": "lvl6_heigth",
+										"value": "300"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 428879186410861,
+									"parameters": {
+										"variable": "lvl6_target_heigth",
+										"value": "50"
+									}
+								},
+								{
+									"callFunction": "lvl6_ShuffleLoop",
+									"sid": 348943873634990
+								}
+							],
+							"sid": 928633309727116
+						},
+						{
+							"eventType": "comment",
+							"text": "Fim da fase"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 893387282446951,
+									"parameters": {
+										"variable": "lvl6_step",
+										"comparison": 0,
+										"value": "5"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 867207219128591,
+									"parameters": {
+										"variable": "lvl6_step_done"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 298886108578530,
+									"parameters": {
+										"variable": "lvl6_step",
+										"value": "6"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 807721831047608,
+									"parameters": {
+										"variable": "lvl6_step_done",
+										"value": "false"
+									}
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 964957296195526
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 449922124344093,
+									"parameters": [
+										"\"Bedroom\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 584720601493602,
+									"parameters": {
+										"seconds": "2",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 934782519821601
+						}
+					]
+				}
+			],
+			"sid": 373395544462907
+		},
+		{
 			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
@@ -3523,8 +3504,22 @@
 			],
 			"actions": [
 				{
-					"callFunction": "lvl6_NextStep",
-					"sid": 146507382878544
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 356804975968588,
+					"parameters": {
+						"variable": "lvl6_step_done",
+						"value": "true"
+					}
+				},
+				{
+					"id": "add-to-eventvar",
+					"objectClass": "System",
+					"sid": 244312243255294,
+					"parameters": {
+						"variable": "lvl6_step",
+						"value": "1"
+					}
 				}
 			],
 			"sid": 948233310487912
