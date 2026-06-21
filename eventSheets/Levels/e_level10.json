@@ -122,6 +122,16 @@
 			"sid": 371686584340677
 		},
 		{
+			"eventType": "variable",
+			"name": "cuboAtual",
+			"type": "number",
+			"initialValue": "-1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 838534905821493
+		},
+		{
 			"eventType": "comment",
 			"text": "Camera"
 		},
@@ -1247,25 +1257,54 @@
 			],
 			"actions": [
 				{
-					"id": "set-boolean-eventvar",
+					"id": "set-eventvar-value",
 					"objectClass": "System",
-					"sid": 107059337421724,
+					"sid": 392646676230093,
 					"parameters": {
-						"variable": "segurandoCubo",
-						"value": "true"
-					}
-				},
-				{
-					"id": "set-boolean-instvar",
-					"objectClass": "cubo",
-					"sid": 139314884711901,
-					"parameters": {
-						"instance-variable": "carregado",
-						"value": "true"
+						"variable": "cuboAtual",
+						"value": "cuboTrigger.ID"
 					}
 				}
 			],
-			"sid": 411767089422576
+			"sid": 411767089422576,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "cubo",
+							"sid": 348266843286059,
+							"parameters": {
+								"instance-variable": "ID",
+								"comparison": 0,
+								"value": "cuboAtual"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "cubo",
+							"sid": 520898330643208,
+							"parameters": {
+								"instance-variable": "carregado",
+								"value": "true"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 134111557297403,
+							"parameters": {
+								"variable": "segurandoCubo",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 141027715922423
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -1296,43 +1335,72 @@
 						"variable": "segurandoCubo",
 						"value": "false"
 					}
-				},
-				{
-					"id": "set-boolean-instvar",
-					"objectClass": "cubo",
-					"sid": 869618117661093,
-					"parameters": {
-						"instance-variable": "carregado",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "cubo",
-					"sid": 124083250636994,
-					"parameters": {
-						"instance-variable": "dz",
-						"value": "-1"
-					}
-				},
-				{
-					"id": "set-x",
-					"objectClass": "cubo",
-					"sid": 365839991184230,
-					"parameters": {
-						"x": "cubo.X + cos(3DCamera.CameraXRotation) * 40"
-					}
-				},
-				{
-					"id": "set-y",
-					"objectClass": "cubo",
-					"sid": 987554215203053,
-					"parameters": {
-						"y": "cubo.Y + sin(3DCamera.CameraXRotation) * 40"
-					}
 				}
 			],
-			"sid": 310121314419896
+			"sid": 310121314419896,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "cubo",
+							"sid": 185360823216833,
+							"parameters": {
+								"instance-variable": "ID",
+								"comparison": 0,
+								"value": "cuboAtual"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-instvar",
+							"objectClass": "cubo",
+							"sid": 194744278500466,
+							"parameters": {
+								"instance-variable": "carregado",
+								"value": "false"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "cubo",
+							"sid": 181621180998536,
+							"parameters": {
+								"instance-variable": "dz",
+								"value": "-1"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 179035622094622,
+							"parameters": {
+								"variable": "cuboAtual",
+								"value": "-1"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "cubo",
+							"sid": 602559727063169,
+							"parameters": {
+								"x": "cubo.X + cos(3DCamera.CameraXRotation) * 40"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "cubo",
+							"sid": 106194656544220,
+							"parameters": {
+								"y": "cubo.Y + sin(3DCamera.CameraXRotation) * 40"
+							}
+						}
+					],
+					"sid": 818714116886466
+				}
+			]
 		},
 		{
 			"eventType": "block",
@@ -1602,148 +1670,6 @@
 				}
 			],
 			"sid": 438777635037724
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 781752325763292,
-					"parameters": {
-						"object": "cubo"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "cubo",
-					"sid": 819903697997622,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 5,
-						"z-elevation": "lvl10_player.ZElevation - Self.ZHeight"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "cubo",
-					"sid": 961652075605340,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 3,
-						"z-elevation": "lvl10_player.ZElevation + PlayerHeight"
-					}
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "cubo",
-					"sid": 454060631714833,
-					"parameters": {
-						"instance-variable": "carregado"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-instvar",
-					"objectClass": "cubo",
-					"sid": 664808376810563,
-					"parameters": {
-						"instance-variable": "carregado",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-x",
-					"objectClass": "lvl10_player",
-					"sid": 636433715418373,
-					"parameters": {
-						"x": "lvl10_player.old_x"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 579700189034448,
-					"parameters": {
-						"variable": "segurandoCubo",
-						"value": "false"
-					}
-				}
-			],
-			"sid": 729698348694118
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 119524888662312,
-					"parameters": {
-						"object": "cubo"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "cubo",
-					"sid": 562791321235994,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 5,
-						"z-elevation": "lvl10_player.ZElevation - Self.ZHeight"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "cubo",
-					"sid": 681673185100633,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 3,
-						"z-elevation": "lvl10_player.ZElevation + PlayerHeight"
-					}
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "cubo",
-					"sid": 605601485752016,
-					"parameters": {
-						"instance-variable": "carregado"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-instvar",
-					"objectClass": "cubo",
-					"sid": 228339440682075,
-					"parameters": {
-						"instance-variable": "carregado",
-						"value": "false"
-					}
-				},
-				{
-					"id": "set-y",
-					"objectClass": "lvl10_player",
-					"sid": 493995729979873,
-					"parameters": {
-						"y": "lvl10_player.old_y"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 428952920122870,
-					"parameters": {
-						"variable": "segurandoCubo",
-						"value": "false"
-					}
-				}
-			],
-			"sid": 550759677736895
 		},
 		{
 			"eventType": "block",
