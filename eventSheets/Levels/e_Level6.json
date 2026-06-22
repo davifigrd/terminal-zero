@@ -45,6 +45,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "lvl6_CoolDown",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "Trava de espera para clickar",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 892648713717903
+		},
+		{
+			"eventType": "variable",
 			"name": "lvl6_width",
 			"type": "number",
 			"initialValue": "1500",
@@ -156,7 +166,17 @@
 					],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 664562372619208,
+							"parameters": {
+								"variable": "lvl6_CoolDown",
+								"value": "true"
+							}
+						}
+					],
 					"sid": 198668281123052,
 					"children": [
 						{
@@ -285,6 +305,35 @@
 								}
 							],
 							"sid": 449385354732279
+						},
+						{
+							"eventType": "comment",
+							"text": "Trava de espera para clickar"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 302625533259980,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 461027141511636,
+									"parameters": {
+										"variable": "lvl6_CoolDown",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 273992697211152
 						}
 					]
 				},
@@ -2049,6 +2098,15 @@
 								"variable": "lvl6_step_done"
 							},
 							"isInverted": true
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 396474471090418,
+							"parameters": {
+								"variable": "lvl6_CoolDown"
+							},
+							"isInverted": true
 						}
 					],
 					"actions": [],
@@ -3415,52 +3473,107 @@
 									"sid": 720098996395094
 								}
 							],
-							"sid": 434803850788460,
-							"children": [
+							"sid": 434803850788460
+						},
+						{
+							"eventType": "comment",
+							"text": "Fim da fase"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
 								{
-									"eventType": "comment",
-									"text": "Fim da fase"
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 659218469309072,
+									"parameters": {
+										"variable": "lvl6_step",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 347212753722655,
+									"parameters": {
+										"variable": "lvl6_step",
+										"value": "6"
+									}
 								},
 								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-eventvar",
-											"objectClass": "System",
-											"sid": 835579784249002,
-											"parameters": {
-												"variable": "lvl6_step",
-												"comparison": 0,
-												"value": "5"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "stop-all",
-											"objectClass": "Audio",
-											"sid": 146056236076956
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 442983203520066,
+									"parameters": {
+										"variable": "lvl6_step_done",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-x",
+									"objectClass": "lvl6_green_wave",
+									"sid": 502806862431155,
+									"parameters": {
+										"x": "lvl6_target_wave.X"
+									}
+								},
+								{
+									"id": "set-x",
+									"objectClass": "lvl6_green_wave2",
+									"sid": 457666934264173,
+									"parameters": {
+										"x": "lvl6_target_wave2.X"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 172064611154615,
+									"parameters": {
+										"audio-file": {
+											"path": "success sound"
 										},
-										{
-											"callFunction": "Transition",
-											"sid": 223008603968488,
-											"parameters": [
-												"\"Bedroom\""
-											]
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 274122321145060,
-											"parameters": {
-												"seconds": "2",
-												"use-timescale": true
-											}
-										}
-									],
-									"sid": 767277878596982
+										"loop": "not-looping",
+										"volume": "-15",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 377214371466969,
+									"parameters": {
+										"seconds": "2",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 970902636055572
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 883464419026731,
+									"parameters": [
+										"\"Bedroom\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 967046619167309,
+									"parameters": {
+										"seconds": "2",
+										"use-timescale": true
+									}
 								}
-							]
+							],
+							"sid": 144056933968440
 						}
 					],
 					"isOrBlock": true
@@ -3586,9 +3699,9 @@
 						{
 							"id": "every-x-seconds",
 							"objectClass": "System",
-							"sid": 335642184538341,
+							"sid": 977027148255962,
 							"parameters": {
-								"interval-seconds": "1"
+								"interval-seconds": "0.5"
 							}
 						}
 					],
@@ -4219,77 +4332,36 @@
 					"sid": 286279825912284,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "Apagar frequência"
-						},
-						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "lvl6_hide_tip",
-									"sid": 666746219476495,
-									"parameters": {
-										"instance-variable": "tip",
-										"comparison": 0,
-										"value": "\"freq\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
-									"id": "tween-one-property",
-									"objectClass": "lvl6_hide_tip",
-									"sid": 153128212895331,
-									"behaviorType": "Tween",
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 161666576953526,
 									"parameters": {
-										"tags": "\"hide_tip\"",
-										"property": "offsetOpacity",
-										"end-value": "100",
-										"time": "0.1",
-										"ease": "noease",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 952988131973074,
+									"parameters": [
+										"\"> quarta etapa...\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 806906898865858,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
 									}
 								}
 							],
-							"sid": 630051242815434,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 881338654351571,
-											"parameters": {
-												"seconds": "0.5",
-												"use-timescale": true
-											}
-										},
-										{
-											"callFunction": "TypingEffect",
-											"sid": 245958596811193,
-											"parameters": [
-												"\"> quarta etapa...\""
-											]
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 263279137771882,
-											"parameters": {
-												"seconds": "1",
-												"use-timescale": true
-											}
-										}
-									],
-									"sid": 461232247738557
-								}
-							]
+							"sid": 536740175998135
 						}
 					]
 				},
@@ -4320,77 +4392,36 @@
 					"sid": 693034851386961,
 					"children": [
 						{
-							"eventType": "comment",
-							"text": "Apagar frequência"
-						},
-						{
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-instance-variable",
-									"objectClass": "lvl6_hide_tip",
-									"sid": 650255956682729,
-									"parameters": {
-										"instance-variable": "tip",
-										"comparison": 0,
-										"value": "\"freq\""
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
 								{
-									"id": "tween-one-property",
-									"objectClass": "lvl6_hide_tip",
-									"sid": 518644671755345,
-									"behaviorType": "Tween",
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 787203016165127,
 									"parameters": {
-										"tags": "\"hide_tip\"",
-										"property": "offsetOpacity",
-										"end-value": "100",
-										"time": "0.5",
-										"ease": "noease",
-										"destroy-on-complete": "no",
-										"loop": "no",
-										"ping-pong": "no",
-										"repeat-count": "1"
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 318363793649134,
+									"parameters": [
+										"\"> quinta etapa...\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 854397633031216,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
 									}
 								}
 							],
-							"sid": 499445750265903,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [],
-									"actions": [
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 756337215972401,
-											"parameters": {
-												"seconds": "0.5",
-												"use-timescale": true
-											}
-										},
-										{
-											"callFunction": "TypingEffect",
-											"sid": 880343159849326,
-											"parameters": [
-												"\"> quinta etapa...\""
-											]
-										},
-										{
-											"id": "wait",
-											"objectClass": "System",
-											"sid": 792918978890365,
-											"parameters": {
-												"seconds": "1",
-												"use-timescale": true
-											}
-										}
-									],
-									"sid": 826008356749624
-								}
-							]
+							"sid": 927863199549125
 						}
 					]
 				},
@@ -4417,34 +4448,83 @@
 							"sid": 875808005920546
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 809275342279618,
+					"children": [
 						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 564122938324623,
-							"parameters": {
-								"seconds": "0.5",
-								"use-timescale": true
-							}
+							"eventType": "comment",
+							"text": "Apagar frequência"
 						},
 						{
-							"callFunction": "TypingEffect",
-							"sid": 226873190946641,
-							"parameters": [
-								"\"> etapa final...\""
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-instance-variable",
+									"objectClass": "lvl6_hide_tip",
+									"sid": 128351163489490,
+									"parameters": {
+										"instance-variable": "tip",
+										"comparison": 0,
+										"value": "\"freq\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "tween-one-property",
+									"objectClass": "lvl6_hide_tip",
+									"sid": 298817359186311,
+									"behaviorType": "Tween",
+									"parameters": {
+										"tags": "\"hide_tip\"",
+										"property": "offsetOpacity",
+										"end-value": "100",
+										"time": "0.5",
+										"ease": "noease",
+										"destroy-on-complete": "no",
+										"loop": "no",
+										"ping-pong": "no",
+										"repeat-count": "1"
+									}
+								}
+							],
+							"sid": 804169621259983,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [],
+									"actions": [
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 242113582269452,
+											"parameters": {
+												"seconds": "0.5",
+												"use-timescale": true
+											}
+										},
+										{
+											"callFunction": "TypingEffect",
+											"sid": 206182408815519,
+											"parameters": [
+												"\"> etapa final...\""
+											]
+										},
+										{
+											"id": "wait",
+											"objectClass": "System",
+											"sid": 801489272581045,
+											"parameters": {
+												"seconds": "1",
+												"use-timescale": true
+											}
+										}
+									],
+									"sid": 557237198539842
+								}
 							]
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 427951491152139,
-							"parameters": {
-								"seconds": "1",
-								"use-timescale": true
-							}
 						}
-					],
-					"sid": 809275342279618
+					]
 				}
 			],
 			"sid": 895092705058006,
@@ -4870,114 +4950,6 @@
 				0.2196078431372549,
 				1
 			]
-		},
-		{
-			"bookmark": true,
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 997823672921570,
-					"parameters": {
-						"key": 72
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 356804975968588,
-					"parameters": {
-						"variable": "lvl6_step_done",
-						"value": "true"
-					}
-				},
-				{
-					"callFunction": "lvl6_NextStep",
-					"sid": 239969911277771
-				}
-			],
-			"sid": 948233310487912
-		},
-		{
-			"bookmark": true,
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 999856586219429,
-					"parameters": {
-						"key": 74
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "add-to-eventvar",
-					"objectClass": "System",
-					"sid": 301205426283261,
-					"parameters": {
-						"variable": "lvl6_step",
-						"value": "1"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 115249180268347,
-					"parameters": {
-						"variable": "lvl6_text",
-						"value": "3"
-					}
-				}
-			],
-			"sid": 304032213801783
-		},
-		{
-			"bookmark": true,
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 395538200237378,
-					"parameters": {
-						"key": 75
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "lvl6_ShuffleLoop",
-					"sid": 802620384979916
-				}
-			],
-			"sid": 899333320858694
-		},
-		{
-			"bookmark": true,
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-x-seconds",
-					"objectClass": "System",
-					"sid": 343758384206794,
-					"parameters": {
-						"interval-seconds": "1"
-					}
-				}
-			],
-			"actions": [
-				{
-					"callFunction": "lvl6_ShuffleLoop",
-					"sid": 882705280201264
-				}
-			],
-			"sid": 714826308909227,
-			"disabled": true
 		}
 	],
 	"sid": 575231460152758
