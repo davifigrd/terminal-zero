@@ -696,22 +696,89 @@
 						"name": "Level 8"
 					},
 					{
-						"items": [
-							"parede",
-							"lvl10_player",
-							"3DCamera",
-							"ground",
-							"crosshair",
-							"txtInteragir",
-							"lvl10_chaveAzul",
-							"lvl10_portaAzul",
-							"lvl10_portaTrigger",
-							"cubo",
-							"cuboTrigger",
-							"escuro",
-							"3DShape"
+						"items": [],
+						"subfolders": [
+							{
+								"items": [],
+								"subfolders": [
+									{
+										"items": [
+											"lvl10_chaveAzul",
+											"lvl10_portaAzul",
+											"lvl10_portaTriggerAzul"
+										],
+										"subfolders": [],
+										"name": "azul"
+									},
+									{
+										"items": [
+											"lvl10_chaveVermelha",
+											"lvl10_portaTriggerVermelha",
+											"lvl10_portaVermelha"
+										],
+										"subfolders": [],
+										"name": "vermelho"
+									},
+									{
+										"items": [
+											"lvl10_portaTriggerAmarelo",
+											"lvl10_chaveAmarelo",
+											"lvl10_portaAmarelo"
+										],
+										"subfolders": [],
+										"name": "amarelo"
+									}
+								],
+								"name": "portas_chaves"
+							},
+							{
+								"items": [
+									"txtInteragir",
+									"txtInteragir2",
+									"txtInteragir3"
+								],
+								"subfolders": [],
+								"name": "text"
+							},
+							{
+								"items": [
+									"crosshair",
+									"escuro"
+								],
+								"subfolders": [],
+								"name": "hud"
+							},
+							{
+								"items": [
+									"3DCamera",
+									"lvl10_player"
+								],
+								"subfolders": [],
+								"name": "player"
+							},
+							{
+								"items": [],
+								"subfolders": [
+									{
+										"items": [
+											"cubo1",
+											"cuboTrigger1"
+										],
+										"subfolders": [],
+										"name": "cubo1"
+									}
+								],
+								"name": "portas_cubos_botoes"
+							},
+							{
+								"items": [
+									"ground",
+									"parede"
+								],
+								"subfolders": [],
+								"name": "cenario"
+							}
 						],
-						"subfolders": [],
 						"name": "Level 10"
 					},
 					{
@@ -1286,15 +1353,7 @@
 						{
 							"name": "lvl7_sound1.webm",
 							"type": "audio/webm; codecs=opus",
-							"sid": 192097519364433,
-							"file-info": {
-								"purpose": "none"
-							}
-						},
-						{
-							"name": "lvl7_sound3.webm",
-							"type": "audio/webm; codecs=opus",
-							"sid": 750961302469938,
+							"sid": 473829752115968,
 							"file-info": {
 								"purpose": "none"
 							}
@@ -1302,7 +1361,7 @@
 						{
 							"name": "lvl7_sound2.webm",
 							"type": "audio/webm; codecs=opus",
-							"sid": 848636790005585,
+							"sid": 351703400531245,
 							"file-info": {
 								"purpose": "none"
 							}
@@ -1310,14 +1369,22 @@
 						{
 							"name": "lvl7_soundScary.webm",
 							"type": "audio/webm; codecs=opus",
-							"sid": 300185384888738,
+							"sid": 725412822149717,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "lvl7_sound3.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 614376876093840,
 							"file-info": {
 								"purpose": "none"
 							}
 						}
 					],
 					"subfolders": [],
-					"name": "Level 7"
+					"name": "level 7"
 				}
 			]
 		},
