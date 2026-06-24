@@ -112,26 +112,6 @@
 			"sid": 243453153270513
 		},
 		{
-			"eventType": "variable",
-			"name": "FogTime",
-			"type": "number",
-			"initialValue": "0",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 371686584340677
-		},
-		{
-			"eventType": "variable",
-			"name": "cuboAtual",
-			"type": "number",
-			"initialValue": "-1",
-			"comment": "",
-			"isStatic": false,
-			"isConstant": false,
-			"sid": 838534905821493
-		},
-		{
 			"eventType": "comment",
 			"text": "Camera"
 		},
@@ -1719,33 +1699,12 @@
 					"isInverted": true
 				}
 			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 392646676230093,
-					"parameters": {
-						"variable": "cuboAtual",
-						"value": "cuboTrigger1.ID"
-					}
-				}
-			],
+			"actions": [],
 			"sid": 411767089422576,
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "cubo1",
-							"sid": 348266843286059,
-							"parameters": {
-								"instance-variable": "ID",
-								"comparison": 0,
-								"value": "cuboAtual"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"id": "set-boolean-instvar",
@@ -1805,18 +1764,7 @@
 			"children": [
 				{
 					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-instance-variable",
-							"objectClass": "cubo1",
-							"sid": 185360823216833,
-							"parameters": {
-								"instance-variable": "ID",
-								"comparison": 0,
-								"value": "cuboAtual"
-							}
-						}
-					],
+					"conditions": [],
 					"actions": [
 						{
 							"id": "set-boolean-instvar",
@@ -1833,15 +1781,6 @@
 							"sid": 181621180998536,
 							"parameters": {
 								"instance-variable": "dz",
-								"value": "-1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 179035622094622,
-							"parameters": {
-								"variable": "cuboAtual",
 								"value": "-1"
 							}
 						},

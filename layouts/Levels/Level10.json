@@ -53,39 +53,6 @@
 					}
 				},
 				{
-					"type": "lvl10_portaTriggerVermelha",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 528,
-					"sid": 183307875186504,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 823.4119347209493,
-						"y": 1211.0876500249399,
-						"width": 185.98936947101205,
-						"height": 68.74217493771731,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": -3.7009339332580566,
-						"angle": 0
-					}
-				},
-				{
 					"type": "parede",
 					"properties": {
 						"shape": "box",
@@ -666,9 +633,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 831.3164080842489,
+						"x": 841.2571178463314,
 						"y": 272.0520978141936,
-						"width": 1210.5353948053396,
+						"width": 1230.4168143295046,
 						"height": 84.27856218209736,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -712,9 +679,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1797.5866777383646,
+						"x": 1784.3323980555879,
 						"y": 268.68470538739655,
-						"width": 290.1709453978289,
+						"width": 316.6795047633824,
 						"height": 83.06038719408325,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -2892,6 +2859,131 @@
 					}
 				},
 				{
+					"type": "lvl10_portaVerde",
+					"properties": {
+						"shape": "box",
+						"z-origin": "back",
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"back-face-culling": false,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 483,
+					"sid": 143671746157499,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 2202.015270048177,
+						"y": 1203.2785934485382,
+						"width": 32.75762635020169,
+						"height": 174.0656963463539,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": -1.9726009368896484,
+						"depth": 200,
+						"angle": 1.5707963267948966
+					}
+				},
+				{
+					"type": "lvl10_portaBranco",
+					"properties": {
+						"shape": "box",
+						"z-origin": "back",
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"back-face-culling": false,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 534,
+					"sid": 785865328149108,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1541.38818359375,
+						"y": 257.63336181640625,
+						"width": 32.75762635020169,
+						"height": 174.0656963463539,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": -1.9726009368896484,
+						"depth": 200,
+						"angle": 1.5707963267948966
+					}
+				},
+				{
+					"type": "lvl10_portaTriggerVermelha",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 528,
+					"sid": 183307875186504,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 823.4119347209493,
+						"y": 1211.0876500249399,
+						"width": 185.98936947101205,
+						"height": 68.74217493771731,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": -0.6935076713562012,
+						"angle": 0
+					}
+				},
+				{
 					"type": "lvl10_portaAzul",
 					"properties": {
 						"shape": "box",
@@ -2949,15 +3041,13 @@
 					"uid": 474,
 					"sid": 668857393447233,
 					"tags": "",
-					"instanceVariables": {
-						"ID": 2
-					},
+					"instanceVariables": {},
 					"behaviors": {},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2984,
-						"y": 852,
+						"x": 2961.715087890625,
+						"y": 854.5013427734375,
 						"width": 45,
 						"height": 45,
 						"originX": 0.5,
@@ -3002,15 +3092,14 @@
 						"vel_x": 0,
 						"vel_y": 0,
 						"old_x": 0,
-						"old_y": 0,
-						"ID": 2
+						"old_y": 0
 					},
 					"behaviors": {},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2985,
-						"y": 855,
+						"x": 2962.260498046875,
+						"y": 857.5013427734375,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
@@ -3119,6 +3208,190 @@
 					}
 				},
 				{
+					"type": "lvl10_portaRoxa",
+					"properties": {
+						"shape": "box",
+						"z-origin": "back",
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"back-face-culling": false,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 442,
+					"sid": 221760531868927,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 682.5214893771665,
+						"y": 859.1047957690248,
+						"width": 40.450128099336894,
+						"height": 185.38651924466512,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"depth": 200,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl10_botaoRoxo",
+					"properties": {
+						"shape": "box",
+						"z-origin": "back",
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"back-face-culling": false,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 447,
+					"sid": 707649485310203,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 806.7488310443651,
+						"y": 134.45871707014658,
+						"width": 90,
+						"height": 90,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"depth": 10,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl10_botaoVerde",
+					"properties": {
+						"shape": "box",
+						"z-origin": "back",
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"back-face-culling": false,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 484,
+					"sid": 771715637631415,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 379.37066011708333,
+						"y": 367.7098480205178,
+						"width": 90,
+						"height": 90,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"depth": 10,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl10_botaoBranco",
+					"properties": {
+						"shape": "box",
+						"z-origin": "back",
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"back-face-culling": false,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 533,
+					"sid": 911462688418045,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 3196.358154296875,
+						"y": 129.98321533203125,
+						"width": 90,
+						"height": 90,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"depth": 10,
+						"angle": 0
+					}
+				},
+				{
 					"type": "lvl10_portaTriggerAmarelo",
 					"properties": {
 						"initially-visible": true,
@@ -3147,8 +3420,56 @@
 							1,
 							1
 						],
-						"z": 0,
+						"z": 1.6474504470825195,
 						"angle": 0.00010001972792483826
+					}
+				},
+				{
+					"type": "lvl10_player",
+					"properties": {
+						"initially-visible": false,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 348,
+					"sid": 297309536163325,
+					"tags": "",
+					"instanceVariables": {
+						"old_x": 0,
+						"old_y": 0,
+						"mid_x": 0,
+						"mid_y": 0,
+						"move_x": 0,
+						"move_y": 0
+					},
+					"behaviors": {
+						"Custom": {
+							"properties": {
+								"stepping-mode": "none",
+								"pixels-per-step": 5,
+								"enabled": true
+							}
+						}
+					},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 222.39488220214844,
+						"y": 1300.9873657226562,
+						"width": 32,
+						"height": 32,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 2,
+						"angle": 0
 					}
 				},
 				{
@@ -3185,39 +3506,6 @@
 					}
 				},
 				{
-					"type": "lvl10_chaveAmarelo",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 532,
-					"sid": 453130349224306,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 88.29142712216006,
-						"y": 1334.6480241207773,
-						"width": 64.56165856015045,
-						"height": 70.93973932990724,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 2.7174673080444336,
-						"angle": 5.686684294424733
-					}
-				},
-				{
 					"type": "lvl10_chaveVermelha",
 					"properties": {
 						"initially-visible": true,
@@ -3251,41 +3539,26 @@
 					}
 				},
 				{
-					"type": "lvl10_player",
+					"type": "lvl10_chaveAmarelo",
 					"properties": {
-						"initially-visible": false,
+						"initially-visible": true,
 						"initial-animation": "Animation 1",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 348,
-					"sid": 297309536163325,
+					"uid": 532,
+					"sid": 453130349224306,
 					"tags": "",
-					"instanceVariables": {
-						"old_x": 0,
-						"old_y": 0,
-						"mid_x": 0,
-						"mid_y": 0,
-						"move_x": 0,
-						"move_y": 0
-					},
-					"behaviors": {
-						"Custom": {
-							"properties": {
-								"stepping-mode": "none",
-								"pixels-per-step": 5,
-								"enabled": true
-							}
-						}
-					},
+					"instanceVariables": {},
+					"behaviors": {},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1098,
-						"y": 87,
-						"width": 32,
-						"height": 32,
+						"x": 100.68352459530456,
+						"y": 1324.3151383785898,
+						"width": 64.56165856015045,
+						"height": 70.93973932990724,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -3294,8 +3567,8 @@
 							1,
 							1
 						],
-						"z": 5.684848785400391,
-						"angle": 0
+						"z": 7.809932,
+						"angle": 5.686684294424733
 					}
 				},
 				{
@@ -3327,7 +3600,7 @@
 							1,
 							1
 						],
-						"z": 7.809931755065918,
+						"z": 7.809932,
 						"angle": 0.8531924631199378
 					}
 				}
