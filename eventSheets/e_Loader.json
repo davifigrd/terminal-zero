@@ -356,39 +356,6 @@
 				}
 			],
 			"sid": 600130652186611
-		},
-		{
-			"eventType": "comment",
-			"text": "Pula loader"
-		},
-		{
-			"bookmark": true,
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 778329696921040,
-					"parameters": {
-						"key": 32
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "TypingEffect",
-					"sid": 967914275398889
-				},
-				{
-					"callFunction": "Transition",
-					"sid": 509063377173388,
-					"parameters": [
-						"\"Menu\""
-					]
-				}
-			],
-			"sid": 426589588062843
 		}
 	],
 	"sid": 965542077792832

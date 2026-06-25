@@ -141,6 +141,13 @@
 		},
 		{
 			"type": "behavior",
+			"id": "Physics",
+			"name": "Physics",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "behavior",
 			"id": "Pin",
 			"name": "Pin",
 			"author": "Scirra",
@@ -753,6 +760,19 @@
 										],
 										"subfolders": [],
 										"name": "porta fim"
+									},
+									{
+										"items": [
+											"lvl10_baseRoxa",
+											"lvl10_baseVermelha",
+											"lvl10_baseAmarela",
+											"lvl10_baseBranca",
+											"lvl10_baseAzul",
+											"lvl10_baseVerde",
+											"lvl10_baseFim"
+										],
+										"subfolders": [],
+										"name": "BASES PORTAS"
 									}
 								],
 								"name": "portas_chaves"
@@ -777,33 +797,36 @@
 								"subfolders": [
 									{
 										"items": [
-											"lvl10_cubo1",
-											"lvl10_cuboTrigger1",
+											"lvl10_cuboRoxo",
+											"lvl10_cuboTriggerRoxo",
 											"lvl10_portaRoxa",
-											"lvl10_botaoRoxo"
+											"lvl10_botaoRoxo",
+											"lvl10_botaoTriggerRoxo"
 										],
 										"subfolders": [],
-										"name": "cubo1"
+										"name": "cubo roxo"
 									},
 									{
 										"items": [
 											"lvl10_portaVerde",
 											"lvl10_botaoVerde",
-											"lvl10_cubo2",
-											"lvl10_cuboTrigger2"
+											"lvl10_cuboVerde",
+											"lvl10_cuboTriggerVerde",
+											"lvl10_botaoTriggerVerde"
 										],
 										"subfolders": [],
-										"name": "cubo2"
+										"name": "cubo verde"
 									},
 									{
 										"items": [
-											"lvl10_cubo3",
-											"lvl10_cuboTrigger3",
+											"lvl10_cuboBranco",
+											"lvl10_cuboTriggerBranco",
 											"lvl10_botaoBranco",
-											"lvl10_portaBranco"
+											"lvl10_portaBranco",
+											"lvl10_botaoTriggerBranco"
 										],
 										"subfolders": [],
-										"name": "cubo3"
+										"name": "cubo branco"
 									}
 								],
 								"name": "portas_cubos_botoes"
@@ -813,8 +836,7 @@
 									"lvl10_ground",
 									"lvl10_parede",
 									"lvl10_sky",
-									"lvl10_",
-									"lvl10_sky2"
+									"lvl10_ladosLabirinto"
 								],
 								"subfolders": [],
 								"name": "cenario"
@@ -992,7 +1014,8 @@
 			"Bedroom",
 			"Loader",
 			"Menu",
-			"PC"
+			"PC",
+			"Credits"
 		],
 		"subfolders": [
 			{
@@ -1019,7 +1042,8 @@
 			"e_PC",
 			"e_Menu",
 			"e_Global",
-			"e_Loader"
+			"e_Loader",
+			"e_Credits"
 		],
 		"subfolders": [
 			{
@@ -1330,6 +1354,36 @@
 					],
 					"subfolders": [],
 					"name": "Level 6"
+				},
+				{
+					"items": [
+						{
+							"name": "lvl10_chave.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 527020706698541,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "lvl10_botao.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 571009996297129,
+							"file-info": {
+								"purpose": "none"
+							}
+						},
+						{
+							"name": "lvl10_porta.webm",
+							"type": "audio/webm; codecs=opus",
+							"sid": 715835667418540,
+							"file-info": {
+								"purpose": "none"
+							}
+						}
+					],
+					"subfolders": [],
+					"name": "Level 10"
 				}
 			]
 		},

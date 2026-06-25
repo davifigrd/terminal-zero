@@ -2,6 +2,10 @@
 	"name": "e_level10",
 	"events": [
 		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
 			"eventType": "variable",
 			"name": "lvl10_PlayerHeight",
 			"type": "number",
@@ -72,6 +76,10 @@
 			"sid": 538163840256007
 		},
 		{
+			"eventType": "comment",
+			"text": "TemChave"
+		},
+		{
 			"eventType": "variable",
 			"name": "lvl10_temChaveAzul",
 			"type": "boolean",
@@ -100,6 +108,20 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 279867473982078
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl10_temChaveFim",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 935840642324420
+		},
+		{
+			"eventType": "comment",
+			"text": "Cubo"
 		},
 		{
 			"eventType": "variable",
@@ -139,12 +161,12 @@
 				{
 					"id": "play",
 					"objectClass": "Audio",
-					"sid": 279792464435706,
+					"sid": 730110694687127,
 					"parameters": {
 						"audio-file": {
 							"path": "Level 10/musica ambiente lvl10"
 						},
-						"loop": "not-looping",
+						"loop": "looping",
 						"volume": "-15",
 						"stereo-pan": "0",
 						"tag-optional": "\"\""
@@ -267,275 +289,3236 @@
 			"sid": 257015229324652
 		},
 		{
-			"eventType": "comment",
-			"text": "Movement"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 128706284205964
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 807549470143445,
-					"parameters": {
-						"instance-variable": "move_x",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 988499563804814,
-					"parameters": {
-						"instance-variable": "move_y",
-						"value": "0"
-					}
-				}
-			],
-			"sid": 179798258331277
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 794821416751282,
-					"parameters": {
-						"key": 87
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 275303043366645,
-					"parameters": {
-						"instance-variable": "move_x",
-						"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 550190016569433,
-					"parameters": {
-						"instance-variable": "move_y",
-						"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
-					}
-				}
-			],
-			"sid": 279627740025220,
-			"isOrBlock": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 206598466821364,
-					"parameters": {
-						"key": 83
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 856053875276030,
-					"parameters": {
-						"instance-variable": "move_x",
-						"value": "lvl10_player.move_x - cos(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 870252664766958,
-					"parameters": {
-						"instance-variable": "move_y",
-						"value": "lvl10_player.move_y - sin(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
-					}
-				}
-			],
-			"sid": 592733391758136,
-			"isOrBlock": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 369284204374741,
-					"parameters": {
-						"key": 65
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 820691576600065,
-					"parameters": {
-						"instance-variable": "move_x",
-						"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation - 90) * lvl10_PlayerSpeed"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 685050437309663,
-					"parameters": {
-						"instance-variable": "move_y",
-						"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation - 90) * lvl10_PlayerSpeed"
-					}
-				}
-			],
-			"sid": 948230392202855,
-			"isOrBlock": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "key-is-down",
-					"objectClass": "Keyboard",
-					"sid": 545138904168550,
-					"parameters": {
-						"key": 68
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 701863581847633,
-					"parameters": {
-						"instance-variable": "move_x",
-						"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation + 90) * lvl10_PlayerSpeed"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 566018890538143,
-					"parameters": {
-						"instance-variable": "move_y",
-						"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation + 90) * lvl10_PlayerSpeed"
-					}
-				}
-			],
-			"sid": 742366118591970,
-			"isOrBlock": true
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 177021861526820
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 362107866888596,
-					"parameters": {
-						"instance-variable": "old_x",
-						"value": "lvl10_player.X"
-					}
-				},
-				{
-					"id": "set-x",
-					"objectClass": "lvl10_player",
-					"sid": 286959898865312,
-					"parameters": {
-						"x": "lvl10_player.X + lvl10_player.move_x * dt"
-					}
-				}
-			],
-			"sid": 489708395091371,
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL10_CHAVE_AZUL",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
+				{
+					"eventType": "comment",
+					"text": "Azul"
+				},
 				{
 					"eventType": "block",
 					"conditions": [
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "lvl10_player",
-							"sid": 879710740845361,
+							"sid": 755341440262265,
+							"parameters": {
+								"object": "lvl10_chaveAzul"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 639941220292829,
+							"parameters": {
+								"text": "\"Aperte E para pegar\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 822438690517232,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 959362197962863
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 888518106456039,
+							"parameters": {
+								"object": "lvl10_portaTriggerAzul"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 805263804072997,
+							"parameters": {
+								"variable": "lvl10_temChaveAzul"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 907674871992026,
+							"parameters": {
+								"text": "\"Você precisa de uma chave\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 762061555988577,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 838120634386571
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 517106236962332,
+							"parameters": {
+								"object": "lvl10_chaveAzul"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 999725551081515,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 628760933666839
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 554710300839252,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 996485809690175,
+							"parameters": {
+								"object": "lvl10_chaveAzul"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 464118972172560,
+							"parameters": {
+								"variable": "lvl10_temChaveAzul",
+								"value": "true"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_chaveAzul",
+							"sid": 659721129491316
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 743443901738749,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 449560076928450,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 10/lvl10_chave"
+								},
+								"loop": "not-looping",
+								"volume": "-15",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 114316990630402
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 835517152528641,
+							"parameters": {
+								"object": "lvl10_portaTriggerAzul"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 719393802965814,
+							"parameters": {
+								"variable": "lvl10_temChaveAzul"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 814218516279974,
+							"parameters": {
+								"text": "\"Aperte E para abrir\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 107659107676781,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 740838319789776
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 753982183962304,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 115696247042775,
+							"parameters": {
+								"object": "lvl10_portaTriggerAzul"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 480630322044877,
+							"parameters": {
+								"variable": "lvl10_temChaveAzul"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_portaAzul",
+							"sid": 353229066094820
+						},
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_portaTriggerAzul",
+							"sid": 619979578642648
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 609923940026099,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 841367446801826,
+							"parameters": {
+								"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 756974092670942,
+							"parameters": {
+								"group-name": "\"LEVEL10_CHAVE_AZUL\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 753745986150464
+				}
+			],
+			"sid": 856215082645601,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0,
+				0.2,
+				1,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL10_CUBO_BRANCO",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "LEVEL10_CUBO_BRANCO_PEGAR",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 603528930955994,
+									"parameters": {
+										"key": 69
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "lvl10_player",
+									"sid": 433751664724521,
+									"parameters": {
+										"object": "lvl10_cuboTriggerBranco"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 777269105079424,
+									"parameters": {
+										"variable": "lvl10_segurandoCubo"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "lvl10_cuboBranco",
+									"sid": 628716694957366,
+									"parameters": {
+										"instance-variable": "carregado",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 394246623376580,
+									"parameters": {
+										"variable": "lvl10_segurandoCubo",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 387619265568668
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "lvl10_player",
+									"sid": 242300926423144,
+									"parameters": {
+										"object": "lvl10_cuboTriggerBranco"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 173355684132092,
+									"parameters": {
+										"variable": "lvl10_segurandoCubo"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "lvl10_txtInteragir",
+									"sid": 276417428647263,
+									"parameters": {
+										"text": "\"Aperte E para interagir\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl10_txtInteragir",
+									"sid": 909515936670729,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 925841946333006
+						}
+					],
+					"sid": 300152534363864,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						1,
+						1,
+						1,
+						1
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "cubo"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 963971848700270
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 449674397625528,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 841354485939360,
+							"parameters": {
+								"instance-variable": "dz",
+								"value": "lvl10_Gravity * dt"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 516505341941850,
+							"parameters": {
+								"z": "lvl10_cuboBranco.ZElevation + lvl10_cuboBranco.dz"
+							}
+						}
+					],
+					"sid": 371348953707032
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 699403274745792,
+							"parameters": {
+								"first-value": "lvl10_cuboBranco.dz",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 873376269365883,
+							"parameters": {
+								"object": "lvl10_ground"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_ground",
+							"sid": 809923738504651,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_cuboBranco.ZElevation - Self.ZHeight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_ground",
+							"sid": 952422439423311,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_cuboBranco.ZElevation + 1"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 456213618488084,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 840816882742901,
+							"parameters": {
+								"instance-variable": "dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 348116428539788,
+							"parameters": {
+								"z": "lvl10_ground.ZElevation + lvl10_ground.ZHeight"
+							}
+						}
+					],
+					"sid": 928821137088560
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 345462934500251,
+							"parameters": {
+								"first-value": "lvl10_cuboBranco.dz",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 960491711864927,
 							"parameters": {
 								"object": "lvl10_Colisao"
 							}
 						},
 						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 921972984448832,
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_Colisao",
+							"sid": 504592468311115,
 							"parameters": {
-								"first-value": "lvl10_player.ZElevation",
-								"comparison": 2,
-								"second-value": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight - 1"
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_cuboBranco.ZElevation - Self.ZHeight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_Colisao",
+							"sid": 495582157020260,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_cuboBranco.ZElevation + 1"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 743834506292618,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 702554950720447,
+							"parameters": {
+								"instance-variable": "dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 866245131019789,
+							"parameters": {
+								"z": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight"
+							}
+						}
+					],
+					"sid": 274368365389336
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 495930584402190,
+							"parameters": {
+								"variable": "lvl10_segurandoCubo"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 433880085730363,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 629926229721245
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 567433102213719,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 980394832006167,
+							"parameters": {
+								"variable": "lvl10_segurandoCubo"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 766617251174243,
+							"parameters": {
+								"variable": "lvl10_segurandoCubo",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 569074299481746,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "lvl10_cuboBranco",
+									"sid": 490707807609580,
+									"parameters": {
+										"instance-variable": "carregado",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "lvl10_cuboBranco",
+									"sid": 285631109296719,
+									"parameters": {
+										"instance-variable": "dz",
+										"value": "-1"
+									}
+								},
+								{
+									"id": "set-x",
+									"objectClass": "lvl10_cuboBranco",
+									"sid": 620014353819845,
+									"parameters": {
+										"x": "lvl10_cuboBranco.X + cos(3DCamera.CameraXRotation) * 40"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "lvl10_cuboBranco",
+									"sid": 158218301761067,
+									"parameters": {
+										"y": "lvl10_cuboBranco.Y + sin(3DCamera.CameraXRotation) * 40"
+									}
+								}
+							],
+							"sid": 294244616280227
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 631601452592168,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 562245704999913,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 142361234525881,
+							"parameters": {
+								"x": "lvl10_cuboBranco.old_x"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 156614221451053,
+							"parameters": {
+								"y": "lvl10_cuboBranco.old_y"
+							}
+						}
+					],
+					"sid": 663734444751548
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 862234763741553
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 295095601361344,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 501618509343796,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 333534708947148,
+							"parameters": {
+								"instance-variable": "old_x",
+								"value": "lvl10_cuboBranco.X"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 693296388916656,
+							"parameters": {
+								"x": "lvl10_player.X + cos(3DCamera.CameraXRotation) * 60"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 595812607314081,
+							"parameters": {
+								"z": "lvl10_player.ZElevation + 30"
+							}
+						}
+					],
+					"sid": 497754429355866
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 861717149972649,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 331592401467367,
+							"parameters": {
+								"object": "lvl10_Colisao"
 							}
 						}
 					],
 					"actions": [
 						{
 							"id": "set-x",
-							"objectClass": "lvl10_player",
-							"sid": 261472064543106,
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 495580723790276,
 							"parameters": {
-								"x": "lvl10_player.old_x"
+								"x": "lvl10_cuboBranco.old_x"
 							}
 						}
 					],
-					"sid": 364939511050684
+					"sid": 822613820168036
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 608465071097653
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 884118920608529,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 853434003603226,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 133326553916496,
+							"parameters": {
+								"instance-variable": "old_y",
+								"value": "lvl10_cuboBranco.Y"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 560089856148931,
+							"parameters": {
+								"y": "lvl10_player.Y + sin(3DCamera.CameraXRotation) * 60"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 317571720902845,
+							"parameters": {
+								"z": "lvl10_player.ZElevation + 30"
+							}
+						}
+					],
+					"sid": 721716370093950
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 901684589418467,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 576925533331873,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 918661670934634,
+							"parameters": {
+								"y": "lvl10_cuboBranco.old_y"
+							}
+						}
+					],
+					"sid": 868040929491420
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 963062574722309,
+							"parameters": {
+								"object": "lvl10_cuboBranco"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 952369534836311,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_player.ZElevation - Self.ZHeight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 469742256575477,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_player.ZElevation + lvl10_PlayerHeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 377719577457978,
+							"parameters": {
+								"instance-variable": "vel_x",
+								"value": "lvl10_player.move_x"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 547610980173600,
+							"parameters": {
+								"instance-variable": "vel_y",
+								"value": "lvl10_player.move_y"
+							}
+						}
+					],
+					"sid": 298670050795375
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 702141285371943
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "lvl10_cuboTriggerBranco",
+							"sid": 403118398962080,
+							"parameters": {
+								"x": "lvl10_cuboBranco.x",
+								"y": "lvl10_cuboBranco.y"
+							}
+						}
+					],
+					"sid": 832931462413466
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 411431421107867,
+							"parameters": {
+								"object": "lvl10_botaoTriggerBranco"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboBranco",
+							"sid": 707786056372483,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_portaBranco",
+							"sid": 475198919666307
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 533770591656403,
+							"parameters": {
+								"group-name": "\"LEVEL10_CUBO_BRANCO_PEGAR\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 943085550204679,
+							"parameters": {
+								"group-name": "\"LEVEL10_CUBO_ROXO\"",
+								"state": "activated"
+							}
+						}
+					],
+					"sid": 417478180509654,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 132996944095868
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 269994888362938,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 10/lvl10_porta"
+										},
+										"loop": "not-looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 863789708853922
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 327814341876867,
+									"parameters": {
+										"seconds": "1",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 229705377277173,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_BRANCO\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 444860859342953
+						}
+					]
 				}
+			],
+			"sid": 933436025372109,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				1,
+				1,
+				1
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL10_CHAVE_VERMELHA",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
 				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 947336626481583
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_player",
-					"sid": 834196922443884,
-					"parameters": {
-						"instance-variable": "old_y",
-						"value": "lvl10_player.Y"
-					}
+					"eventType": "comment",
+					"text": "Vermelho"
 				},
 				{
-					"id": "set-y",
-					"objectClass": "lvl10_player",
-					"sid": 422890474769571,
-					"parameters": {
-						"y": "lvl10_player.Y + lvl10_player.move_y * dt"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 550925459613273,
+							"parameters": {
+								"object": "lvl10_chaveVermelha"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 460033333357659,
+							"parameters": {
+								"text": "\"Aperte E para pegar\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 220610332118527,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 389791909443879
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 873653186775909,
+							"parameters": {
+								"object": "lvl10_portaTriggerVermelha"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 727484006088230,
+							"parameters": {
+								"variable": "lvl10_temChaveVermelha"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 606439964871625,
+							"parameters": {
+								"text": "\"Você precisa de uma chave\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 169219186877645,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 104097885652681
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 358451565802713,
+							"parameters": {
+								"object": "lvl10_chaveVermelha"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 249394302504660,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 809895741791587
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 390738946920565,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 890556150789815,
+							"parameters": {
+								"object": "lvl10_chaveVermelha"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 702049116271154,
+							"parameters": {
+								"variable": "lvl10_temChaveVermelha",
+								"value": "true"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_chaveVermelha",
+							"sid": 749864832926092
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 204724615049603,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 310141074237844,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 10/lvl10_chave"
+								},
+								"loop": "not-looping",
+								"volume": "-15",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 696427479816169
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 820014172638862,
+							"parameters": {
+								"object": "lvl10_portaTriggerVermelha"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 691980226835859,
+							"parameters": {
+								"variable": "lvl10_temChaveVermelha"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 812500393069957,
+							"parameters": {
+								"text": "\"Aperte E para abrir\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 797764374355712,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 711201189134071
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 806961305075202,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 156074015516115,
+							"parameters": {
+								"object": "lvl10_portaTriggerVermelha"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 842385350075523,
+							"parameters": {
+								"variable": "lvl10_temChaveVermelha"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_portaVermelha",
+							"sid": 104484433334908
+						},
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_portaTriggerVermelha",
+							"sid": 513795800339898
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 195177467441828,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 145759285755702,
+							"parameters": {
+								"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 320440363369929,
+							"parameters": {
+								"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 229185246376636
 				}
 			],
-			"sid": 640239183641033,
+			"sid": 669505300074930,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL10_CUBO_ROXO",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "LEVEL10_CUBO_ROXO_PEGAR",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 849907385948811,
+									"parameters": {
+										"key": 69
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "lvl10_player",
+									"sid": 965044809261515,
+									"parameters": {
+										"object": "lvl10_cuboTriggerRoxo"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 329791438622079,
+									"parameters": {
+										"variable": "lvl10_segurandoCubo"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "lvl10_cuboRoxo",
+									"sid": 827871034100467,
+									"parameters": {
+										"instance-variable": "carregado",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 970216754639176,
+									"parameters": {
+										"variable": "lvl10_segurandoCubo",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 607218445505599
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "lvl10_player",
+									"sid": 188772547015761,
+									"parameters": {
+										"object": "lvl10_cuboTriggerRoxo"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 827530333525959,
+									"parameters": {
+										"variable": "lvl10_segurandoCubo"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "lvl10_txtInteragir",
+									"sid": 481009118796244,
+									"parameters": {
+										"text": "\"Aperte E para interagir\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl10_txtInteragir",
+									"sid": 117049937061885,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 721646084516860
+						}
+					],
+					"sid": 612154468779120,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.3411764705882353,
+						0.1450980392156863,
+						0.6823529411764706,
+						1
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "cubo"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 163219824639686
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 855769901037773,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 235994876920786,
+							"parameters": {
+								"instance-variable": "dz",
+								"value": "lvl10_Gravity * dt"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 787540412354982,
+							"parameters": {
+								"z": "lvl10_cuboRoxo.ZElevation + lvl10_cuboRoxo.dz"
+							}
+						}
+					],
+					"sid": 829257645142097
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 613170032510500,
+							"parameters": {
+								"first-value": "lvl10_cuboRoxo.dz",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 834800718466395,
+							"parameters": {
+								"object": "lvl10_ground"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_ground",
+							"sid": 659819877345102,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_cuboRoxo.ZElevation - Self.ZHeight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_ground",
+							"sid": 486042576290737,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_cuboRoxo.ZElevation + 1"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 175313296060836,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 931154089807097,
+							"parameters": {
+								"instance-variable": "dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 250723616771739,
+							"parameters": {
+								"z": "lvl10_ground.ZElevation + lvl10_ground.ZHeight"
+							}
+						}
+					],
+					"sid": 791517562092067
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 576504641211386,
+							"parameters": {
+								"first-value": "lvl10_cuboRoxo.dz",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 558022043945849,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_Colisao",
+							"sid": 506135254659236,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_cuboRoxo.ZElevation - Self.ZHeight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_Colisao",
+							"sid": 953380810540764,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_cuboRoxo.ZElevation + 1"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 123044859130266,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 748942543926383,
+							"parameters": {
+								"instance-variable": "dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 583524904668159,
+							"parameters": {
+								"z": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight"
+							}
+						}
+					],
+					"sid": 262189552611234
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 814760343371882,
+							"parameters": {
+								"variable": "lvl10_segurandoCubo"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 963125238302892,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 284636114865839
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 593760413889479,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 827037877656086,
+							"parameters": {
+								"variable": "lvl10_segurandoCubo"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 879019166785156,
+							"parameters": {
+								"variable": "lvl10_segurandoCubo",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 663018590639301,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "lvl10_cuboRoxo",
+									"sid": 388632144062320,
+									"parameters": {
+										"instance-variable": "carregado",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "lvl10_cuboRoxo",
+									"sid": 267833693916379,
+									"parameters": {
+										"instance-variable": "dz",
+										"value": "-1"
+									}
+								},
+								{
+									"id": "set-x",
+									"objectClass": "lvl10_cuboRoxo",
+									"sid": 512908637411262,
+									"parameters": {
+										"x": "lvl10_cuboRoxo.X + cos(3DCamera.CameraXRotation) * 40"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "lvl10_cuboRoxo",
+									"sid": 392563779885435,
+									"parameters": {
+										"y": "lvl10_cuboRoxo.Y + sin(3DCamera.CameraXRotation) * 40"
+									}
+								}
+							],
+							"sid": 392663341062227
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 111065936812316,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 154044734011945,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 765671085268600,
+							"parameters": {
+								"x": "lvl10_cuboRoxo.old_x"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 318874512945494,
+							"parameters": {
+								"y": "lvl10_cuboRoxo.old_y"
+							}
+						}
+					],
+					"sid": 118420630168060
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 555536021524211
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 426204572841476,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 342884529969814,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 712158746015065,
+							"parameters": {
+								"instance-variable": "old_x",
+								"value": "lvl10_cuboRoxo.X"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 613294927024104,
+							"parameters": {
+								"x": "lvl10_player.X + cos(3DCamera.CameraXRotation) * 60"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 788366909331826,
+							"parameters": {
+								"z": "lvl10_player.ZElevation + 30"
+							}
+						}
+					],
+					"sid": 372841231266099
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 205566101275295,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 338508943545190,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 520208006634797,
+							"parameters": {
+								"x": "lvl10_cuboRoxo.old_x"
+							}
+						}
+					],
+					"sid": 110519129552998
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 499904692088447
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 290169263489520,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 929742271457659,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 127552301605880,
+							"parameters": {
+								"instance-variable": "old_y",
+								"value": "lvl10_cuboRoxo.Y"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 553674103856424,
+							"parameters": {
+								"y": "lvl10_player.Y + sin(3DCamera.CameraXRotation) * 60"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 630486497507235,
+							"parameters": {
+								"z": "lvl10_player.ZElevation + 30"
+							}
+						}
+					],
+					"sid": 761302140667979
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 137770344654260,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 624868088851661,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 574291611051677,
+							"parameters": {
+								"y": "lvl10_cuboRoxo.old_y"
+							}
+						}
+					],
+					"sid": 470951738030344
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 890665620875261,
+							"parameters": {
+								"object": "lvl10_cuboRoxo"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 393168214504771,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_player.ZElevation - Self.ZHeight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 743276074884654,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_player.ZElevation + lvl10_PlayerHeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 197731711746830,
+							"parameters": {
+								"instance-variable": "vel_x",
+								"value": "lvl10_player.move_x"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 380377416229248,
+							"parameters": {
+								"instance-variable": "vel_y",
+								"value": "lvl10_player.move_y"
+							}
+						}
+					],
+					"sid": 975146545566779
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 956501949735091
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "lvl10_cuboTriggerRoxo",
+							"sid": 745091451051907,
+							"parameters": {
+								"x": "lvl10_cuboRoxo.x",
+								"y": "lvl10_cuboRoxo.y"
+							}
+						}
+					],
+					"sid": 703402730337765
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 355859642162599,
+							"parameters": {
+								"object": "lvl10_botaoTriggerRoxo"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboRoxo",
+							"sid": 350918457725345,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_portaRoxa",
+							"sid": 157749311873363
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 542421888947632,
+							"parameters": {
+								"group-name": "\"LEVEL10_CUBO_ROXO_PEGAR\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 333138277226722,
+							"parameters": {
+								"group-name": "\"LEVEL10_CUBO_VERDE\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 543044947124390,
+							"parameters": {
+								"seconds": "1",
+								"use-timescale": true
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 561315806416771,
+							"parameters": {
+								"group-name": "\"LEVEL10_CUBO_ROXO\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 473666932988688
+				}
+			],
+			"sid": 832835085731692,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.3411764705882353,
+				0.1450980392156863,
+				0.6823529411764706,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL10_CHAVE_AMARELA",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Amarelo"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 201244151296721,
+							"parameters": {
+								"object": "lvl10_chaveAmarelo"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 857734724281652,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 573545733347145,
+							"parameters": {
+								"text": "\"Aperte E para pegar\""
+							}
+						}
+					],
+					"sid": 551132822801721
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 776589915242749,
+							"parameters": {
+								"object": "lvl10_portaTriggerAmarelo"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 275798338317199,
+							"parameters": {
+								"variable": "lvl10_temChaveAmarela"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 840856455555209,
+							"parameters": {
+								"text": "\"Você precisa de uma chave\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 606663846924197,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 905356503149271
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 328938155113211,
+							"parameters": {
+								"object": "lvl10_chaveAmarelo"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 197881917116296,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 262539281712883
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 107338196028361,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 606357986960100,
+							"parameters": {
+								"object": "lvl10_chaveAmarelo"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 612355585494198,
+							"parameters": {
+								"variable": "lvl10_temChaveAmarela",
+								"value": "true"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_chaveAmarelo",
+							"sid": 511148654766099
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 195313765430924,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 100711266565506,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 10/lvl10_chave"
+								},
+								"loop": "not-looping",
+								"volume": "-15",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 943194153036355
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 964221093588934,
+							"parameters": {
+								"object": "lvl10_portaTriggerAmarelo"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 577855305992668,
+							"parameters": {
+								"variable": "lvl10_temChaveAmarela"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 772420530124146,
+							"parameters": {
+								"text": "\"Aperte E para abrir\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 714669033633217,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 980253695199897
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 623924232158394,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 717306885567360,
+							"parameters": {
+								"object": "lvl10_portaTriggerAmarelo"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 712702251517755,
+							"parameters": {
+								"variable": "lvl10_temChaveAmarela"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_portaAmarelo",
+							"sid": 681221878927782
+						},
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_portaTriggerAmarelo",
+							"sid": 991743313176004
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 589711183212474,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 656073923404479,
+							"parameters": {
+								"group-name": "\"LEVEL10_CHAVE_FIM\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 176794167392120,
+							"parameters": {
+								"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 840461366081055
+				}
+			],
+			"sid": 313058264688645,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0.9176470588235294,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL10_CUBO_VERDE",
+			"description": "",
+			"isActiveOnStart": false,
+			"children": [
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "LEVEL10_CUBO_VERDE_PEGAR",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 391903790908535,
+									"parameters": {
+										"key": 69
+									}
+								},
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "lvl10_player",
+									"sid": 926551064095920,
+									"parameters": {
+										"object": "lvl10_cuboTriggerVerde"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 823483519524449,
+									"parameters": {
+										"variable": "lvl10_segurandoCubo"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "lvl10_cuboVerde",
+									"sid": 239694732910697,
+									"parameters": {
+										"instance-variable": "carregado",
+										"value": "true"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 125427053746380,
+									"parameters": {
+										"variable": "lvl10_segurandoCubo",
+										"value": "true"
+									}
+								}
+							],
+							"sid": 626403202332683
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "lvl10_player",
+									"sid": 649259778988997,
+									"parameters": {
+										"object": "lvl10_cuboTriggerVerde"
+									}
+								},
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 818952677755872,
+									"parameters": {
+										"variable": "lvl10_segurandoCubo"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "set-text",
+									"objectClass": "lvl10_txtInteragir",
+									"sid": 612133078410197,
+									"parameters": {
+										"text": "\"Aperte E para interagir\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl10_txtInteragir",
+									"sid": 677670910178844,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 314220773588330
+						}
+					],
+					"sid": 510183231672995,
+					"text-color": [
+						0,
+						0,
+						0,
+						0
+					],
+					"background-color": [
+						0.15294117647058825,
+						0.4392156862745098,
+						0,
+						1
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "cubo"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 673481701403522
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 806117341110513,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-instvar",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 165713199854815,
+							"parameters": {
+								"instance-variable": "dz",
+								"value": "lvl10_Gravity * dt"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 374253862469870,
+							"parameters": {
+								"z": "lvl10_cuboVerde.ZElevation + lvl10_cuboVerde.dz"
+							}
+						}
+					],
+					"sid": 373548954372865
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 561051708196325,
+							"parameters": {
+								"first-value": "lvl10_cuboVerde.dz",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 306029056169151,
+							"parameters": {
+								"object": "lvl10_ground"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_ground",
+							"sid": 645141296241357,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_cuboVerde.ZElevation - Self.ZHeight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_ground",
+							"sid": 294440274808362,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_cuboVerde.ZElevation + 1"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 428347396632577,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 208650279156143,
+							"parameters": {
+								"instance-variable": "dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 113085288109953,
+							"parameters": {
+								"z": "lvl10_ground.ZElevation + lvl10_ground.ZHeight"
+							}
+						}
+					],
+					"sid": 869297455467779
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 217164940921576,
+							"parameters": {
+								"first-value": "lvl10_cuboVerde.dz",
+								"comparison": 3,
+								"second-value": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 869284215067151,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_Colisao",
+							"sid": 984039614610654,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_cuboVerde.ZElevation - Self.ZHeight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_Colisao",
+							"sid": 497067748009072,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_cuboVerde.ZElevation + 1"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 843679557915543,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 530911521360861,
+							"parameters": {
+								"instance-variable": "dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 705796207514760,
+							"parameters": {
+								"z": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight"
+							}
+						}
+					],
+					"sid": 381663413322054
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 560046047554945,
+							"parameters": {
+								"variable": "lvl10_segurandoCubo"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 620126906843260,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 768500036293093
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 502178166136230,
+							"parameters": {
+								"key": 81
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 991572808985167,
+							"parameters": {
+								"variable": "lvl10_segurandoCubo"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 988227394625762,
+							"parameters": {
+								"variable": "lvl10_segurandoCubo",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 418549577334267,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-boolean-instvar",
+									"objectClass": "lvl10_cuboVerde",
+									"sid": 317907766563972,
+									"parameters": {
+										"instance-variable": "carregado",
+										"value": "false"
+									}
+								},
+								{
+									"id": "set-instvar-value",
+									"objectClass": "lvl10_cuboVerde",
+									"sid": 191651311301830,
+									"parameters": {
+										"instance-variable": "dz",
+										"value": "-1"
+									}
+								},
+								{
+									"id": "set-x",
+									"objectClass": "lvl10_cuboVerde",
+									"sid": 369354726719382,
+									"parameters": {
+										"x": "lvl10_cuboVerde.X + cos(3DCamera.CameraXRotation) * 40"
+									}
+								},
+								{
+									"id": "set-y",
+									"objectClass": "lvl10_cuboVerde",
+									"sid": 341215870847037,
+									"parameters": {
+										"y": "lvl10_cuboVerde.Y + sin(3DCamera.CameraXRotation) * 40"
+									}
+								}
+							],
+							"sid": 964257410670882
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 773189920504682,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 447888659114946,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 735048067721866,
+							"parameters": {
+								"x": "lvl10_cuboVerde.old_x"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 516144231291707,
+							"parameters": {
+								"y": "lvl10_cuboVerde.old_y"
+							}
+						}
+					],
+					"sid": 217123353254304
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 533913066134252
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 547138422282564,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 932233544490039,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 535975852013472,
+							"parameters": {
+								"instance-variable": "old_x",
+								"value": "lvl10_cuboVerde.X"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 394714301814928,
+							"parameters": {
+								"x": "lvl10_player.X + cos(3DCamera.CameraXRotation) * 60"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 994774817705751,
+							"parameters": {
+								"z": "lvl10_player.ZElevation + 30"
+							}
+						}
+					],
+					"sid": 444558085805807
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 479732703534283,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 698267791380118,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-x",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 428869866473117,
+							"parameters": {
+								"x": "lvl10_cuboVerde.old_x"
+							}
+						}
+					],
+					"sid": 431658831560326
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 152356387162177
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 812267888329802,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 710878077327682,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 506717028303352,
+							"parameters": {
+								"instance-variable": "old_y",
+								"value": "lvl10_cuboVerde.Y"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 121890042012070,
+							"parameters": {
+								"y": "lvl10_player.Y + sin(3DCamera.CameraXRotation) * 60"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 551169738582080,
+							"parameters": {
+								"z": "lvl10_player.ZElevation + 30"
+							}
+						}
+					],
+					"sid": 314470511971562
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 903478547090948,
+							"parameters": {
+								"instance-variable": "carregado"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 802702363528096,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-y",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 384825381770331,
+							"parameters": {
+								"y": "lvl10_cuboVerde.old_y"
+							}
+						}
+					],
+					"sid": 694660276786416
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 223594414177275,
+							"parameters": {
+								"object": "lvl10_cuboVerde"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 193977961961251,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_player.ZElevation - Self.ZHeight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 699859311865814,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_player.ZElevation + lvl10_PlayerHeight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 965173296829033,
+							"parameters": {
+								"instance-variable": "vel_x",
+								"value": "lvl10_player.move_x"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 639797411447526,
+							"parameters": {
+								"instance-variable": "vel_y",
+								"value": "lvl10_player.move_y"
+							}
+						}
+					],
+					"sid": 655587483413346
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 534051632036640
+						}
+					],
+					"actions": [
+						{
+							"id": "set-position",
+							"objectClass": "lvl10_cuboTriggerVerde",
+							"sid": 354096087459498,
+							"parameters": {
+								"x": "lvl10_cuboVerde.x",
+								"y": "lvl10_cuboVerde.y"
+							}
+						}
+					],
+					"sid": 607745678603407
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 745196532703196,
+							"parameters": {
+								"object": "lvl10_botaoTriggerVerde"
+							}
+						},
+						{
+							"id": "is-boolean-instance-variable-set",
+							"objectClass": "lvl10_cuboVerde",
+							"sid": 223548704256828,
+							"parameters": {
+								"instance-variable": "carregado"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_portaVerde",
+							"sid": 124396204068973
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 740746383549056,
+							"parameters": {
+								"group-name": "\"LEVEL10_CUBO_VERDE_PEGAR\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 570643034817840
+				}
+			],
+			"sid": 884690609923113,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.15294117647058825,
+				0.4392156862745098,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL10_CHAVE_FIM",
+			"description": "",
+			"isActiveOnStart": false,
 			"children": [
 				{
 					"eventType": "block",
@@ -543,1562 +3526,1541 @@
 						{
 							"id": "is-overlapping-another-object",
 							"objectClass": "lvl10_player",
-							"sid": 740316031883365,
+							"sid": 993006530393346,
 							"parameters": {
-								"object": "lvl10_Colisao"
+								"object": "lvl10_chaveFim"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 801778758729837,
+							"parameters": {
+								"text": "\"Aperte E para pegar\""
 							}
 						},
 						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 707534972113193,
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 855363748975730,
 							"parameters": {
-								"first-value": "lvl10_player.ZElevation ",
-								"comparison": 2,
-								"second-value": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight - 1"
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 638055909219118
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 902856395956993,
+							"parameters": {
+								"object": "lvl10_portaTriggerFim"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 569319722318245,
+							"parameters": {
+								"variable": "lvl10_temChaveFim"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 855056130767951,
+							"parameters": {
+								"text": "\"Você precisa de uma chave\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 244252768607837,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 681225362463072
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 959938938644125,
+							"parameters": {
+								"object": "lvl10_portaTriggerFim"
+							},
+							"isInverted": true
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 124773901631725,
+							"parameters": {
+								"object": "lvl10_chaveFim"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 564775374842713,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 186389406552372
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 651243920675843,
+							"parameters": {
+								"object": "lvl10_chaveFim"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 542291260062970,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 399710787423493
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 114241646437508,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 791855555730424,
+							"parameters": {
+								"object": "lvl10_chaveFim"
 							}
 						}
 					],
 					"actions": [
 						{
-							"id": "set-y",
-							"objectClass": "lvl10_player",
-							"sid": 222852162311840,
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 799124885841117,
 							"parameters": {
-								"y": "lvl10_player.old_y"
+								"variable": "lvl10_temChaveFim",
+								"value": "true"
+							}
+						},
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_chaveFim",
+							"sid": 847176837309565
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 610168867935682,
+							"parameters": {
+								"visibility": "invisible"
 							}
 						}
 					],
-					"sid": 768306418325898
+					"sid": 968886588403093
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 677275278362529,
+							"parameters": {
+								"object": "lvl10_portaTriggerFim"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 312592254190396,
+							"parameters": {
+								"variable": "lvl10_temChaveFim"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 368997324781214,
+							"parameters": {
+								"text": "\"Aperte E para abrir\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 753533206221043,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 852254780970201
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 446514823649722,
+							"parameters": {
+								"key": 69
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 180060104171941,
+							"parameters": {
+								"object": "lvl10_portaTriggerFim"
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 368596279348490,
+							"parameters": {
+								"variable": "lvl10_temChaveFim"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_portaFim",
+							"sid": 673652912110843
+						},
+						{
+							"id": "destroy",
+							"objectClass": "lvl10_portaTriggerFim",
+							"sid": 319808171282633
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl10_txtInteragir",
+							"sid": 835655246441979,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 334507757580784
 				}
+			],
+			"sid": 715275538346783,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				0.16862745098039217,
+				0.996078431372549,
+				0.00392156862745098,
+				1
 			]
 		},
 		{
-			"eventType": "comment",
-			"text": "Jumping"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 507828223397241
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-eventvar",
-					"objectClass": "System",
-					"sid": 744494104356242,
-					"parameters": {
-						"variable": "lvl10_dz",
-						"value": "lvl10_Gravity*dt"
-					}
-				},
-				{
-					"id": "set-z-elevation",
-					"objectClass": "lvl10_player",
-					"sid": 444186346551720,
-					"parameters": {
-						"z": "lvl10_player.Zelevation+lvl10_dz"
-					}
-				}
-			],
-			"sid": 536293600141913
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 841437255272806,
-					"parameters": {
-						"key": 32
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 705448479348281,
-					"parameters": {
-						"variable": "lvl10_onGround"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 172225831587990,
-					"parameters": {
-						"variable": "lvl10_dz",
-						"value": "lvl10_jump_strength"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 815408134579423,
-					"parameters": {
-						"variable": "lvl10_onGround",
-						"value": "false"
-					}
-				}
-			],
-			"sid": 415420856993748
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 107369419837184,
-					"parameters": {
-						"variable": "lvl10_dz",
-						"comparison": 3,
-						"value": "0"
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 968285056611501,
-					"parameters": {
-						"object": "lvl10_ground"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "lvl10_ground",
-					"sid": 888526734156700,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 5,
-						"z-elevation": "lvl10_player.Zelevation-Self.zheight"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "lvl10_ground",
-					"sid": 195741958212337,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 3,
-						"z-elevation": "lvl10_player.Zelevation+lvl10_PlayerHeight-Self.zheight"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 566254529814452,
-					"parameters": {
-						"variable": "lvl10_dz",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-z-elevation",
-					"objectClass": "lvl10_player",
-					"sid": 132922838437179,
-					"parameters": {
-						"z": "lvl10_ground.Zelevation+lvl10_ground.zheight"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 867020965072265,
-					"parameters": {
-						"variable": "lvl10_onGround",
-						"value": "true"
-					}
-				}
-			],
-			"sid": 754982476208378
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 908942361209123,
-					"parameters": {
-						"variable": "lvl10_dz",
-						"comparison": 3,
-						"value": "0"
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 581774207216683,
-					"parameters": {
-						"object": "lvl10_Colisao"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "lvl10_Colisao",
-					"sid": 177550443048615,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 5,
-						"z-elevation": "lvl10_player.Zelevation-Self.zheight"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "lvl10_Colisao",
-					"sid": 179210447180792,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 3,
-						"z-elevation": "lvl10_player.Zelevation+lvl10_PlayerHeight-Self.zheight"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 322707489012585,
-					"parameters": {
-						"variable": "lvl10_dz",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-z-elevation",
-					"objectClass": "lvl10_player",
-					"sid": 683922728941640,
-					"parameters": {
-						"z": "lvl10_Colisao.Zelevation+lvl10_Colisao.zheight"
-					}
-				},
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 977841781477085,
-					"parameters": {
-						"variable": "lvl10_onGround",
-						"value": "true"
-					}
-				}
-			],
-			"sid": 403518247391855
-		},
-		{
-			"eventType": "comment",
-			"text": "Interagir"
-		},
-		{
-			"eventType": "comment",
-			"text": "Azul"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 338193531834579,
-					"parameters": {
-						"object": "lvl10_chaveAzul"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir",
-					"sid": 784534496551511,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl10_txtInteragir",
-					"sid": 987864355674408,
-					"parameters": {
-						"text": "\"Aperte E para pegar\""
-					}
-				}
-			],
-			"sid": 526588904155365
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 535710917566585,
-					"parameters": {
-						"object": "lvl10_chaveAzul"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir",
-					"sid": 595569327851632,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 837016209782822
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 706293818059192,
-					"parameters": {
-						"key": 69
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 346648575211289,
-					"parameters": {
-						"object": "lvl10_chaveAzul"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 271277220048125,
-					"parameters": {
-						"variable": "lvl10_temChaveAzul",
-						"value": "true"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "lvl10_chaveAzul",
-					"sid": 948980594066336
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir",
-					"sid": 661508902201853,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 627712839789560
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 103434534775160,
-					"parameters": {
-						"object": "lvl10_portaTriggerAzul"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 420730492201785,
-					"parameters": {
-						"variable": "lvl10_temChaveAzul"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir",
-					"sid": 586237342836887,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl10_txtInteragir",
-					"sid": 985044033317596,
-					"parameters": {
-						"text": "\"Aperte E para abrir\""
-					}
-				}
-			],
-			"sid": 652263355176992
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 309449661448957,
-					"parameters": {
-						"object": "lvl10_portaTriggerAzul"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 525081976757528,
-					"parameters": {
-						"variable": "lvl10_temChaveAzul"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir",
-					"sid": 150391957586708,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl10_txtInteragir",
-					"sid": 750904620275425,
-					"parameters": {
-						"text": "\"Você precisa de uma chave\""
-					}
-				}
-			],
-			"sid": 610890697313092
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 310812804840241,
-					"parameters": {
-						"key": 69
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 566976570594774,
-					"parameters": {
-						"object": "lvl10_portaTriggerAzul"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 312569000613718,
-					"parameters": {
-						"variable": "lvl10_temChaveAzul"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "lvl10_portaAzul",
-					"sid": 409420112153326
-				},
-				{
-					"id": "destroy",
-					"objectClass": "lvl10_portaTriggerAzul",
-					"sid": 232106253764011
-				}
-			],
-			"sid": 217019004962181
-		},
-		{
-			"eventType": "comment",
-			"text": "Vermelho"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 341141452486013,
-					"parameters": {
-						"object": "lvl10_chaveVermelha"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir2",
-					"sid": 869339705442908,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl10_txtInteragir2",
-					"sid": 507803811204688,
-					"parameters": {
-						"text": "\"Aperte E para pegar\""
-					}
-				}
-			],
-			"sid": 485009439000724
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 790282682430849,
-					"parameters": {
-						"object": "lvl10_chaveVermelha"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir2",
-					"sid": 102587894129976,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 562113255107324
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 527743203445620,
-					"parameters": {
-						"key": 69
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 675750164339231,
-					"parameters": {
-						"object": "lvl10_chaveVermelha"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 854572857646745,
-					"parameters": {
-						"variable": "lvl10_temChaveVermelha",
-						"value": "true"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "lvl10_chaveVermelha",
-					"sid": 108030874077587
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir2",
-					"sid": 682879772380334,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 755418632475964
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 245589071904931,
-					"parameters": {
-						"object": "lvl10_portaTriggerVermelha"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 655896918565821,
-					"parameters": {
-						"variable": "lvl10_temChaveVermelha"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir2",
-					"sid": 266594461047642,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl10_txtInteragir2",
-					"sid": 874452046538348,
-					"parameters": {
-						"text": "\"Aperte E para abrir\""
-					}
-				}
-			],
-			"sid": 681990900770468
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 776998550869011,
-					"parameters": {
-						"object": "lvl10_portaTriggerVermelha"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 558593073459851,
-					"parameters": {
-						"variable": "lvl10_temChaveVermelha"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir2",
-					"sid": 186787658245586,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl10_txtInteragir2",
-					"sid": 411097416581144,
-					"parameters": {
-						"text": "\"Você precisa de uma chave\""
-					}
-				}
-			],
-			"sid": 385907697349672
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 320681062849922,
-					"parameters": {
-						"key": 69
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 602306117159200,
-					"parameters": {
-						"object": "lvl10_portaTriggerVermelha"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 212095602179516,
-					"parameters": {
-						"variable": "lvl10_temChaveVermelha"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "lvl10_portaVermelha",
-					"sid": 701949984871809
-				},
-				{
-					"id": "destroy",
-					"objectClass": "lvl10_portaTriggerVermelha",
-					"sid": 662131306066457
-				}
-			],
-			"sid": 776031618513241
-		},
-		{
-			"eventType": "comment",
-			"text": "Amarelo"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 787940657720532,
-					"parameters": {
-						"object": "lvl10_chaveAmarelo"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir3",
-					"sid": 832788013098307,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl10_txtInteragir3",
-					"sid": 860925030227878,
-					"parameters": {
-						"text": "\"Aperte E para pegar\""
-					}
-				}
-			],
-			"sid": 191931981333236
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 731481693646186,
-					"parameters": {
-						"object": "lvl10_chaveAmarelo"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir3",
-					"sid": 626019891936200,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 550327531060039
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 539176020279706,
-					"parameters": {
-						"key": 69
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 333741920015949,
-					"parameters": {
-						"object": "lvl10_chaveAmarelo"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 341591532714024,
-					"parameters": {
-						"variable": "lvl10_temChaveAmarela",
-						"value": "true"
-					}
-				},
-				{
-					"id": "destroy",
-					"objectClass": "lvl10_chaveAmarelo",
-					"sid": 801620810842301
-				},
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir3",
-					"sid": 460394757552374,
-					"parameters": {
-						"visibility": "invisible"
-					}
-				}
-			],
-			"sid": 868315789004472
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 754228880614311,
-					"parameters": {
-						"object": "lvl10_portaTriggerAmarelo"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 200444271912422,
-					"parameters": {
-						"variable": "lvl10_temChaveAmarela"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir3",
-					"sid": 984308023217534,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl10_txtInteragir3",
-					"sid": 436389066106753,
-					"parameters": {
-						"text": "\"Aperte E para abrir\""
-					}
-				}
-			],
-			"sid": 206255588968189
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 404993021852999,
-					"parameters": {
-						"object": "lvl10_portaTriggerAmarelo"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 854202907779692,
-					"parameters": {
-						"variable": "lvl10_temChaveAmarela"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-visible",
-					"objectClass": "lvl10_txtInteragir3",
-					"sid": 306429696781399,
-					"parameters": {
-						"visibility": "visible"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl10_txtInteragir3",
-					"sid": 462749101650620,
-					"parameters": {
-						"text": "\"Você precisa de uma chave\""
-					}
-				}
-			],
-			"sid": 139351919650058
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 124599379303067,
-					"parameters": {
-						"key": 69
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 857345905318933,
-					"parameters": {
-						"object": "lvl10_portaTriggerAmarelo"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 175600192930489,
-					"parameters": {
-						"variable": "lvl10_temChaveAmarela"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "destroy",
-					"objectClass": "lvl10_portaAmarelo",
-					"sid": 120627871104762
-				},
-				{
-					"id": "destroy",
-					"objectClass": "lvl10_portaTriggerAmarelo",
-					"sid": 511689105185478
-				}
-			],
-			"sid": 505238683083675
-		},
-		{
-			"eventType": "comment",
-			"text": "cubo"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 452649504799194
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "lvl10_cubo1",
-					"sid": 921387538129424,
-					"parameters": {
-						"instance-variable": "carregado"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "subtract-from-instvar",
-					"objectClass": "lvl10_cubo1",
-					"sid": 433446982016022,
-					"parameters": {
-						"instance-variable": "dz",
-						"value": "lvl10_Gravity * dt"
-					}
-				},
-				{
-					"id": "set-z-elevation",
-					"objectClass": "lvl10_cubo1",
-					"sid": 279213627889181,
-					"parameters": {
-						"z": "lvl10_cubo1.ZElevation + lvl10_cubo1.dz"
-					}
-				}
-			],
-			"sid": 353375742461750
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 443910938940680,
-					"parameters": {
-						"first-value": "lvl10_cubo1.dz",
-						"comparison": 3,
-						"second-value": "0"
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_cubo1",
-					"sid": 324710086735731,
-					"parameters": {
-						"object": "lvl10_ground"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "lvl10_ground",
-					"sid": 169881121061714,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 5,
-						"z-elevation": "lvl10_cubo1.ZElevation - Self.ZHeight"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "lvl10_ground",
-					"sid": 857431162647987,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 3,
-						"z-elevation": "lvl10_cubo1.ZElevation + 1"
-					}
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "lvl10_cubo1",
-					"sid": 985029497829727,
-					"parameters": {
-						"instance-variable": "carregado"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_cubo1",
-					"sid": 807993339948356,
-					"parameters": {
-						"instance-variable": "dz",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-z-elevation",
-					"objectClass": "lvl10_cubo1",
-					"sid": 460304451303844,
-					"parameters": {
-						"z": "lvl10_ground.ZElevation + lvl10_ground.ZHeight"
-					}
-				}
-			],
-			"sid": 611508868756476
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-two-values",
-					"objectClass": "System",
-					"sid": 673263088216285,
-					"parameters": {
-						"first-value": "lvl10_cubo1.dz",
-						"comparison": 3,
-						"second-value": "0"
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_cubo1",
-					"sid": 527955633076427,
-					"parameters": {
-						"object": "lvl10_Colisao"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "lvl10_Colisao",
-					"sid": 128171571443383,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 5,
-						"z-elevation": "lvl10_cubo1.ZElevation - Self.ZHeight"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "lvl10_Colisao",
-					"sid": 795433731650517,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 3,
-						"z-elevation": "lvl10_cubo1.ZElevation + 1"
-					}
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "lvl10_cubo1",
-					"sid": 459776219091162,
-					"parameters": {
-						"instance-variable": "carregado"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_cubo1",
-					"sid": 326116489954513,
-					"parameters": {
-						"instance-variable": "dz",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-z-elevation",
-					"objectClass": "lvl10_cubo1",
-					"sid": 592712060610438,
-					"parameters": {
-						"z": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight"
-					}
-				}
-			],
-			"sid": 674176567118973
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 486585506770901,
-					"parameters": {
-						"key": 69
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 570611744911478,
-					"parameters": {
-						"object": "lvl10_cuboTrigger1"
-					}
-				},
-				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 374777164412570,
-					"parameters": {
-						"variable": "lvl10_segurandoCubo"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [],
-			"sid": 411767089422576,
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL10_MOVE",
+			"description": "Movimentação do jogador",
+			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "Movement"
+				},
+				{
 					"eventType": "block",
-					"conditions": [],
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 519509740615684
+						}
+					],
 					"actions": [
 						{
-							"id": "set-boolean-instvar",
-							"objectClass": "lvl10_cubo1",
-							"sid": 520898330643208,
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 499729970685676,
 							"parameters": {
-								"instance-variable": "carregado",
-								"value": "true"
+								"instance-variable": "move_x",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 430227156480203,
+							"parameters": {
+								"instance-variable": "move_y",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 315493002444494
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 177363976591054,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 639636073366531,
+							"parameters": {
+								"instance-variable": "move_x",
+								"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 743897129432967,
+							"parameters": {
+								"instance-variable": "move_y",
+								"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
+							}
+						}
+					],
+					"sid": 627392321815984,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 914576325067496,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 491119159349413,
+							"parameters": {
+								"instance-variable": "move_x",
+								"value": "lvl10_player.move_x - cos(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 593045414879656,
+							"parameters": {
+								"instance-variable": "move_y",
+								"value": "lvl10_player.move_y - sin(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
+							}
+						}
+					],
+					"sid": 438306785656960,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 782481209362905,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 467208604650011,
+							"parameters": {
+								"instance-variable": "move_x",
+								"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation - 90) * lvl10_PlayerSpeed"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 705756950965785,
+							"parameters": {
+								"instance-variable": "move_y",
+								"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation - 90) * lvl10_PlayerSpeed"
+							}
+						}
+					],
+					"sid": 898091013027513,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 976810894269580,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 513083422605908,
+							"parameters": {
+								"instance-variable": "move_x",
+								"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation + 90) * lvl10_PlayerSpeed"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 752215940435779,
+							"parameters": {
+								"instance-variable": "move_y",
+								"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation + 90) * lvl10_PlayerSpeed"
+							}
+						}
+					],
+					"sid": 144847622733319,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 273513508691216
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 659071161198103,
+							"parameters": {
+								"instance-variable": "old_x",
+								"value": "lvl10_player.X"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "lvl10_player",
+							"sid": 696544792767646,
+							"parameters": {
+								"x": "lvl10_player.X + lvl10_player.move_x * dt"
+							}
+						}
+					],
+					"sid": 401527139584762,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "lvl10_player",
+									"sid": 335955352112065,
+									"parameters": {
+										"object": "lvl10_Colisao"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 889678653270268,
+									"parameters": {
+										"first-value": "lvl10_player.ZElevation",
+										"comparison": 2,
+										"second-value": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight - 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "lvl10_player",
+									"sid": 201302937549666,
+									"parameters": {
+										"x": "lvl10_player.old_x"
+									}
+								}
+							],
+							"sid": 745521266138561
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 622925536945260
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 314638054863050,
+							"parameters": {
+								"instance-variable": "old_y",
+								"value": "lvl10_player.Y"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "lvl10_player",
+							"sid": 253408409861719,
+							"parameters": {
+								"y": "lvl10_player.Y + lvl10_player.move_y * dt"
+							}
+						}
+					],
+					"sid": 898772239287457,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "lvl10_player",
+									"sid": 780296113862742,
+									"parameters": {
+										"object": "lvl10_Colisao"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 630039078683723,
+									"parameters": {
+										"first-value": "lvl10_player.ZElevation ",
+										"comparison": 2,
+										"second-value": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight - 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "lvl10_player",
+									"sid": 220131773039800,
+									"parameters": {
+										"y": "lvl10_player.old_y"
+									}
+								}
+							],
+							"sid": 652289706661611
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Jumping"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 603729560508112
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 199235519175698,
+							"parameters": {
+								"variable": "lvl10_dz",
+								"value": "lvl10_Gravity*dt"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_player",
+							"sid": 205403926510510,
+							"parameters": {
+								"z": "lvl10_player.Zelevation+lvl10_dz"
+							}
+						}
+					],
+					"sid": 449988586594753
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 906417168567218,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 943019121798850,
+							"parameters": {
+								"variable": "lvl10_onGround"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 926556025580601,
+							"parameters": {
+								"variable": "lvl10_dz",
+								"value": "lvl10_jump_strength"
 							}
 						},
 						{
 							"id": "set-boolean-eventvar",
 							"objectClass": "System",
-							"sid": 134111557297403,
+							"sid": 335463786562212,
 							"parameters": {
-								"variable": "lvl10_segurandoCubo",
+								"variable": "lvl10_onGround",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 955175037803157
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 462575150621364,
+							"parameters": {
+								"variable": "lvl10_dz",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 345039536849904,
+							"parameters": {
+								"object": "lvl10_ground"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_ground",
+							"sid": 742746335629943,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_player.Zelevation-Self.zheight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_ground",
+							"sid": 252534226997581,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_player.Zelevation+lvl10_PlayerHeight-Self.zheight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 731666858088929,
+							"parameters": {
+								"variable": "lvl10_dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_player",
+							"sid": 177411926741684,
+							"parameters": {
+								"z": "lvl10_ground.Zelevation+lvl10_ground.zheight"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 204135342179406,
+							"parameters": {
+								"variable": "lvl10_onGround",
 								"value": "true"
 							}
 						}
 					],
-					"sid": 141027715922423
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-key-pressed",
-					"objectClass": "Keyboard",
-					"sid": 284097992345653,
-					"parameters": {
-						"key": 81
-					}
+					"sid": 431871192552902
 				},
 				{
-					"id": "compare-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 267883796117117,
-					"parameters": {
-						"variable": "lvl10_segurandoCubo"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-boolean-eventvar",
-					"objectClass": "System",
-					"sid": 968497982751787,
-					"parameters": {
-						"variable": "lvl10_segurandoCubo",
-						"value": "false"
-					}
-				}
-			],
-			"sid": 310121314419896,
-			"children": [
-				{
 					"eventType": "block",
-					"conditions": [],
-					"actions": [
+					"conditions": [
 						{
-							"id": "set-boolean-instvar",
-							"objectClass": "lvl10_cubo1",
-							"sid": 194744278500466,
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 878719152519205,
 							"parameters": {
-								"instance-variable": "carregado",
-								"value": "false"
+								"variable": "lvl10_dz",
+								"comparison": 3,
+								"value": "0"
 							}
 						},
 						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_cubo1",
-							"sid": 181621180998536,
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 662788673204022,
 							"parameters": {
-								"instance-variable": "dz",
-								"value": "-1"
+								"object": "lvl10_Colisao"
 							}
 						},
 						{
-							"id": "set-x",
-							"objectClass": "lvl10_cubo1",
-							"sid": 602559727063169,
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_Colisao",
+							"sid": 938036716694439,
 							"parameters": {
-								"x": "lvl10_cubo1.X + cos(3DCamera.CameraXRotation) * 40"
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_player.Zelevation-Self.zheight"
 							}
 						},
 						{
-							"id": "set-y",
-							"objectClass": "lvl10_cubo1",
-							"sid": 106194656544220,
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_Colisao",
+							"sid": 226363988066264,
 							"parameters": {
-								"y": "lvl10_cubo1.Y + sin(3DCamera.CameraXRotation) * 40"
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_player.Zelevation+lvl10_PlayerHeight-Self.zheight"
 							}
 						}
 					],
-					"sid": 818714116886466
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 638052548595694,
+							"parameters": {
+								"variable": "lvl10_dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_player",
+							"sid": 805805982343890,
+							"parameters": {
+								"z": "lvl10_Colisao.Zelevation+lvl10_Colisao.zheight"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 597515494394068,
+							"parameters": {
+								"variable": "lvl10_onGround",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 786132589834283
 				}
+			],
+			"sid": 487705692403485,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0,
+				0.8156862745098039,
+				1
 			]
 		},
 		{
-			"eventType": "block",
-			"conditions": [
+			"bookmark": true,
+			"eventType": "group",
+			"disabled": false,
+			"title": "TP",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
 				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_cubo1",
-					"sid": 875597280886398,
-					"parameters": {
-						"object": "lvl10_Colisao"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 313987867176573,
+							"parameters": {
+								"key": 49
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 169343973184570,
+							"parameters": {
+								"group-name": "\"AZUL\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 437146383486710,
+							"parameters": {
+								"group-name": "\"VERMELHA\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 178645742052143,
+							"parameters": {
+								"group-name": "\"AMARELA\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 958575334816989,
+							"parameters": {
+								"group-name": "\"FIM\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 477300349454414,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 900718050757971,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AZUL\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 434152401366793,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 977836430445137,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 385703782545836,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_FIM\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 918046643690049
+						}
+					]
 				},
 				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "lvl10_cubo1",
-					"sid": 166301670043234,
-					"parameters": {
-						"instance-variable": "carregado"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-x",
-					"objectClass": "lvl10_cubo1",
-					"sid": 993190235735240,
-					"parameters": {
-						"x": "lvl10_cubo1.old_x"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 126182104601756,
+							"parameters": {
+								"key": 50
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 263884201278900,
+							"parameters": {
+								"group-name": "\"VERMELHA\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 103949378594436,
+							"parameters": {
+								"group-name": "\"AZUL\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 887249847873786,
+							"parameters": {
+								"group-name": "\"AMARELA\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 908725308854096,
+							"parameters": {
+								"group-name": "\"FIM\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 447552125949561,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 656033500240913,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 850090471589840,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AZUL\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 885250519346246,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 163271234346090,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_FIM\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 155451799171127
+						}
+					]
 				},
 				{
-					"id": "set-y",
-					"objectClass": "lvl10_cubo1",
-					"sid": 259381279231506,
-					"parameters": {
-						"y": "lvl10_cubo1.old_y"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 760438446796870,
+							"parameters": {
+								"key": 51
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 684819627230931,
+							"parameters": {
+								"group-name": "\"AMARELA\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 288742706228474,
+							"parameters": {
+								"group-name": "\"VERMELHA\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 804352831217586,
+							"parameters": {
+								"group-name": "\"AZUL\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 305412689867795,
+							"parameters": {
+								"group-name": "\"FIM\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 959171122213034,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 752066728374431,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 653942936940951,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 929400380604135,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AZUL\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 295044275616371,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_FIM\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 517359140705155
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 221318664948707,
+							"parameters": {
+								"key": 52
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 264830343520131,
+							"parameters": {
+								"group-name": "\"FIM\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 239439656514360,
+							"parameters": {
+								"group-name": "\"VERMELHA\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 843495203340940,
+							"parameters": {
+								"group-name": "\"AZUL\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 406409484720030,
+							"parameters": {
+								"group-name": "\"AMARELA\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 434752639989290,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 668142533820827,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_FIM\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 486439187191829,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 532644916074707,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 175823682967007,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AZUL\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 775569417346234
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 948694063472614,
+							"parameters": {
+								"key": 189
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 700712622189118,
+							"parameters": {
+								"group-name": "\"AZUL\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 680166293321181,
+							"parameters": {
+								"group-name": "\"VERMELHA\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 722215422664477,
+							"parameters": {
+								"group-name": "\"AMARELA\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 375330199392474,
+							"parameters": {
+								"group-name": "\"FIM\"",
+								"state": "deactivated"
+							}
+						}
+					],
+					"sid": 657680318208006
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "AZUL",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 773924647210473,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 740207767908482,
+									"parameters": {
+										"x": "2982",
+										"y": "1317"
+									}
+								}
+							],
+							"sid": 619975443948697
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 689287460285448,
+									"parameters": {
+										"key": 75
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 677387933701082,
+									"parameters": {
+										"x": "3101",
+										"y": "1798"
+									}
+								}
+							],
+							"sid": 913782478211504
+						}
+					],
+					"sid": 854237668736035
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "VERMELHA",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 557205054130539,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 633496918119861,
+									"parameters": {
+										"x": "823",
+										"y": "1110"
+									}
+								}
+							],
+							"sid": 833644193707142
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 351841201819554,
+									"parameters": {
+										"key": 75
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 436585353471293,
+									"parameters": {
+										"x": "2512",
+										"y": "446"
+									}
+								}
+							],
+							"sid": 792322701949098
+						}
+					],
+					"sid": 222369278543715
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "AMARELA",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 536365269786502,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 960897955898640,
+									"parameters": {
+										"x": "1316",
+										"y": "1127"
+									}
+								}
+							],
+							"sid": 286167550104001
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 181873895906736,
+									"parameters": {
+										"key": 75
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 122046685567222,
+									"parameters": {
+										"x": "158",
+										"y": "1344"
+									}
+								}
+							],
+							"sid": 194749077571192
+						}
+					],
+					"sid": 920298702271247
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "FIM",
+					"description": "",
+					"isActiveOnStart": false,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 478857786712752,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 447770707183965,
+									"parameters": {
+										"x": "1839",
+										"y": "1818"
+									}
+								}
+							],
+							"sid": 472710326852546
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 302600958391010,
+									"parameters": {
+										"key": 75
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 701392649358554,
+									"parameters": {
+										"x": "1839",
+										"y": "1818"
+									}
+								}
+							],
+							"sid": 395011321254470
+						}
+					],
+					"sid": 800805235804562
 				}
 			],
-			"sid": 516116225515938
+			"sid": 858628033216989
+		},
+		{
+			"eventType": "comment",
+			"text": "Fim da fase (créditos)"
 		},
 		{
 			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 569384812821081
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "lvl10_cubo1",
-					"sid": 952097882991753,
-					"parameters": {
-						"instance-variable": "carregado"
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_cubo1",
-					"sid": 147667689361900,
-					"parameters": {
-						"object": "lvl10_Colisao"
-					},
-					"isInverted": true
-				}
-			],
+			"conditions": [],
 			"actions": [
 				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_cubo1",
-					"sid": 172608639081129,
-					"parameters": {
-						"instance-variable": "old_x",
-						"value": "lvl10_cubo1.X"
-					}
-				},
-				{
-					"id": "set-x",
-					"objectClass": "lvl10_cubo1",
-					"sid": 454859356273737,
-					"parameters": {
-						"x": "lvl10_player.X + cos(3DCamera.CameraXRotation) * 60"
-					}
-				},
-				{
-					"id": "set-z-elevation",
-					"objectClass": "lvl10_cubo1",
-					"sid": 787014796760804,
-					"parameters": {
-						"z": "lvl10_player.ZElevation + 30"
-					}
+					"callFunction": "Transition",
+					"sid": 208857725723173,
+					"parameters": [
+						"\"Credits\""
+					]
 				}
 			],
-			"sid": 134748211029191
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "lvl10_cubo1",
-					"sid": 583035686932945,
-					"parameters": {
-						"instance-variable": "carregado"
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_cubo1",
-					"sid": 458898852886800,
-					"parameters": {
-						"object": "lvl10_Colisao"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-x",
-					"objectClass": "lvl10_cubo1",
-					"sid": 949714597879636,
-					"parameters": {
-						"x": "lvl10_cubo1.old_x"
-					}
-				}
-			],
-			"sid": 713144983061203
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 424070377815441
-				},
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "lvl10_cubo1",
-					"sid": 436791366156020,
-					"parameters": {
-						"instance-variable": "carregado"
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_cubo1",
-					"sid": 276317818074857,
-					"parameters": {
-						"object": "lvl10_Colisao"
-					},
-					"isInverted": true
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_cubo1",
-					"sid": 126197259213643,
-					"parameters": {
-						"instance-variable": "old_y",
-						"value": "lvl10_cubo1.Y"
-					}
-				},
-				{
-					"id": "set-y",
-					"objectClass": "lvl10_cubo1",
-					"sid": 957297287403171,
-					"parameters": {
-						"y": "lvl10_player.Y + sin(3DCamera.CameraXRotation) * 60"
-					}
-				},
-				{
-					"id": "set-z-elevation",
-					"objectClass": "lvl10_cubo1",
-					"sid": 840144549193215,
-					"parameters": {
-						"z": "lvl10_player.ZElevation + 30"
-					}
-				}
-			],
-			"sid": 140108296956414
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-boolean-instance-variable-set",
-					"objectClass": "lvl10_cubo1",
-					"sid": 335208655492157,
-					"parameters": {
-						"instance-variable": "carregado"
-					}
-				},
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_cubo1",
-					"sid": 431535482106657,
-					"parameters": {
-						"object": "lvl10_Colisao"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-y",
-					"objectClass": "lvl10_cubo1",
-					"sid": 723511776330645,
-					"parameters": {
-						"y": "lvl10_cubo1.old_y"
-					}
-				}
-			],
-			"sid": 875540465896032
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "is-overlapping-another-object",
-					"objectClass": "lvl10_player",
-					"sid": 940609676127591,
-					"parameters": {
-						"object": "lvl10_cubo1"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "lvl10_cubo1",
-					"sid": 855709981869431,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 5,
-						"z-elevation": "lvl10_player.ZElevation - Self.ZHeight"
-					}
-				},
-				{
-					"id": "compare-z-elevation",
-					"objectClass": "lvl10_cubo1",
-					"sid": 203884253165722,
-					"parameters": {
-						"which": "z-elevation",
-						"comparison": 3,
-						"z-elevation": "lvl10_player.ZElevation + lvl10_PlayerHeight"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_cubo1",
-					"sid": 793851888945065,
-					"parameters": {
-						"instance-variable": "vel_x",
-						"value": "lvl10_player.move_x"
-					}
-				},
-				{
-					"id": "set-instvar-value",
-					"objectClass": "lvl10_cubo1",
-					"sid": 456517255610897,
-					"parameters": {
-						"instance-variable": "vel_y",
-						"value": "lvl10_player.move_y"
-					}
-				}
-			],
-			"sid": 438777635037724
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 916463962621126
-				}
-			],
-			"actions": [
-				{
-					"id": "set-position",
-					"objectClass": "lvl10_cuboTrigger1",
-					"sid": 526579745490337,
-					"parameters": {
-						"x": "lvl10_cubo1.x",
-						"y": "lvl10_cubo1.y"
-					}
-				}
-			],
-			"sid": 179740312122583
+			"sid": 946699466772659,
+			"disabled": true
 		}
 	],
 	"sid": 758226248430815
