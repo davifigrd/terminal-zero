@@ -138,6 +138,7 @@
 			"text": "Camera"
 		},
 		{
+			"bookmark": true,
 			"eventType": "block",
 			"conditions": [
 				{
@@ -287,6 +288,555 @@
 				}
 			],
 			"sid": 257015229324652
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LEVEL10_MOVE",
+			"description": "Movimentação do jogador",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Movement"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 670449104420328
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 597102240923932,
+							"parameters": {
+								"instance-variable": "move_x",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 334037169752172,
+							"parameters": {
+								"instance-variable": "move_y",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 552647410047593
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 881080611443248,
+							"parameters": {
+								"key": 87
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 514930829454453,
+							"parameters": {
+								"instance-variable": "move_x",
+								"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 589636551407864,
+							"parameters": {
+								"instance-variable": "move_y",
+								"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
+							}
+						}
+					],
+					"sid": 717336499752285,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 135427725105023,
+							"parameters": {
+								"key": 83
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 686975754101331,
+							"parameters": {
+								"instance-variable": "move_x",
+								"value": "lvl10_player.move_x - cos(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 465961481541325,
+							"parameters": {
+								"instance-variable": "move_y",
+								"value": "lvl10_player.move_y - sin(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
+							}
+						}
+					],
+					"sid": 498111368115699,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 345949077337425,
+							"parameters": {
+								"key": 65
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 270176028227099,
+							"parameters": {
+								"instance-variable": "move_x",
+								"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation - 90) * lvl10_PlayerSpeed"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 401698440969793,
+							"parameters": {
+								"instance-variable": "move_y",
+								"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation - 90) * lvl10_PlayerSpeed"
+							}
+						}
+					],
+					"sid": 290150419270865,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "key-is-down",
+							"objectClass": "Keyboard",
+							"sid": 558793506199286,
+							"parameters": {
+								"key": 68
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 384270655343851,
+							"parameters": {
+								"instance-variable": "move_x",
+								"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation + 90) * lvl10_PlayerSpeed"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 102496566119616,
+							"parameters": {
+								"instance-variable": "move_y",
+								"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation + 90) * lvl10_PlayerSpeed"
+							}
+						}
+					],
+					"sid": 940737088865695,
+					"isOrBlock": true
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 879844298293267
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 757285439356472,
+							"parameters": {
+								"instance-variable": "old_x",
+								"value": "lvl10_player.X"
+							}
+						},
+						{
+							"id": "set-x",
+							"objectClass": "lvl10_player",
+							"sid": 125311384458136,
+							"parameters": {
+								"x": "lvl10_player.X + lvl10_player.move_x * dt"
+							}
+						}
+					],
+					"sid": 284271513859071,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "lvl10_player",
+									"sid": 583592062679818,
+									"parameters": {
+										"object": "lvl10_Colisao"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 757174444610902,
+									"parameters": {
+										"first-value": "lvl10_player.ZElevation",
+										"comparison": 2,
+										"second-value": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight - 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "lvl10_player",
+									"sid": 446724531125105,
+									"parameters": {
+										"x": "lvl10_player.old_x"
+									}
+								}
+							],
+							"sid": 505098232403199
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 360207824633980
+						}
+					],
+					"actions": [
+						{
+							"id": "set-instvar-value",
+							"objectClass": "lvl10_player",
+							"sid": 755090732956640,
+							"parameters": {
+								"instance-variable": "old_y",
+								"value": "lvl10_player.Y"
+							}
+						},
+						{
+							"id": "set-y",
+							"objectClass": "lvl10_player",
+							"sid": 448259037994106,
+							"parameters": {
+								"y": "lvl10_player.Y + lvl10_player.move_y * dt"
+							}
+						}
+					],
+					"sid": 813864820137646,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-another-object",
+									"objectClass": "lvl10_player",
+									"sid": 100999221869107,
+									"parameters": {
+										"object": "lvl10_Colisao"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 882681469478594,
+									"parameters": {
+										"first-value": "lvl10_player.ZElevation ",
+										"comparison": 2,
+										"second-value": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight - 1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "lvl10_player",
+									"sid": 537291168279289,
+									"parameters": {
+										"y": "lvl10_player.old_y"
+									}
+								}
+							],
+							"sid": 627835682816364
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Jumping"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 102797693216033
+						}
+					],
+					"actions": [
+						{
+							"id": "subtract-from-eventvar",
+							"objectClass": "System",
+							"sid": 225368272719988,
+							"parameters": {
+								"variable": "lvl10_dz",
+								"value": "lvl10_Gravity*dt"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_player",
+							"sid": 209194582814473,
+							"parameters": {
+								"z": "lvl10_player.Zelevation+lvl10_dz"
+							}
+						}
+					],
+					"sid": 794921355647269
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 964444220352022,
+							"parameters": {
+								"key": 32
+							}
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 126018128634334,
+							"parameters": {
+								"variable": "lvl10_onGround"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 953818988391445,
+							"parameters": {
+								"variable": "lvl10_dz",
+								"value": "lvl10_jump_strength"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 805351379541510,
+							"parameters": {
+								"variable": "lvl10_onGround",
+								"value": "false"
+							}
+						}
+					],
+					"sid": 814053901442501
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 915207890098360,
+							"parameters": {
+								"variable": "lvl10_dz",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 346456671048676,
+							"parameters": {
+								"object": "lvl10_ground"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_ground",
+							"sid": 999137747381370,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_player.Zelevation-Self.zheight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_ground",
+							"sid": 440108972835443,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_player.Zelevation+lvl10_PlayerHeight-Self.zheight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 436077241997855,
+							"parameters": {
+								"variable": "lvl10_dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_player",
+							"sid": 862171321916879,
+							"parameters": {
+								"z": "lvl10_ground.Zelevation+lvl10_ground.zheight"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 822642624303927,
+							"parameters": {
+								"variable": "lvl10_onGround",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 811244014070498
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 461793965613191,
+							"parameters": {
+								"variable": "lvl10_dz",
+								"comparison": 3,
+								"value": "0"
+							}
+						},
+						{
+							"id": "is-overlapping-another-object",
+							"objectClass": "lvl10_player",
+							"sid": 242962396441448,
+							"parameters": {
+								"object": "lvl10_Colisao"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_Colisao",
+							"sid": 754602273543613,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 5,
+								"z-elevation": "lvl10_player.Zelevation-Self.zheight"
+							}
+						},
+						{
+							"id": "compare-z-elevation",
+							"objectClass": "lvl10_Colisao",
+							"sid": 677572267071327,
+							"parameters": {
+								"which": "z-elevation",
+								"comparison": 3,
+								"z-elevation": "lvl10_player.Zelevation+lvl10_PlayerHeight-Self.zheight"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 503400009959421,
+							"parameters": {
+								"variable": "lvl10_dz",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-z-elevation",
+							"objectClass": "lvl10_player",
+							"sid": 288091898564057,
+							"parameters": {
+								"z": "lvl10_Colisao.Zelevation+lvl10_Colisao.zheight"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 996620630626241,
+							"parameters": {
+								"variable": "lvl10_onGround",
+								"value": "true"
+							}
+						}
+					],
+					"sid": 593499140690389
+				}
+			],
+			"sid": 454735746098962,
+			"text-color": [
+				0,
+				0,
+				0,
+				0
+			],
+			"background-color": [
+				1,
+				0,
+				0.8156862745098039,
+				1
+			]
 		},
 		{
 			"eventType": "group",
@@ -537,11 +1087,33 @@
 							"sid": 619979578642648
 						},
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 169075095892533,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 10/lvl10_porta"
+								},
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "set-visible",
 							"objectClass": "lvl10_txtInteragir",
 							"sid": 609923940026099,
 							"parameters": {
 								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "icone_portaAzul",
+							"sid": 380444350992908,
+							"parameters": {
+								"visibility": "visible"
 							}
 						},
 						{
@@ -556,18 +1128,28 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 756974092670942,
+							"sid": 326550311503051,
 							"parameters": {
-								"group-name": "\"LEVEL10_CHAVE_AZUL\"",
-								"state": "deactivated"
+								"group-name": "\"LEVEL10_CUBO_BRANCO\"",
+								"state": "activated"
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "icone_portaAzul",
-							"sid": 949455612249750,
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 467835362837319,
 							"parameters": {
-								"visibility": "visible"
+								"group-name": "\"LEVEL10_CUBO_BRANCO_PEGAR\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 299938052073453,
+							"parameters": {
+								"group-name": "\"LEVEL10_CHAVE_AZUL\"",
+								"state": "deactivated"
 							}
 						}
 					],
@@ -593,14 +1175,14 @@
 			"disabled": false,
 			"title": "LEVEL10_CUBO_BRANCO",
 			"description": "",
-			"isActiveOnStart": true,
+			"isActiveOnStart": false,
 			"children": [
 				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "LEVEL10_CUBO_BRANCO_PEGAR",
 					"description": "",
-					"isActiveOnStart": true,
+					"isActiveOnStart": false,
 					"children": [
 						{
 							"eventType": "block",
@@ -659,7 +1241,7 @@
 								{
 									"id": "is-overlapping-another-object",
 									"objectClass": "lvl10_player",
-									"sid": 242300926423144,
+									"sid": 702900459677272,
 									"parameters": {
 										"object": "lvl10_cuboTriggerBranco"
 									}
@@ -686,7 +1268,7 @@
 								{
 									"id": "set-visible",
 									"objectClass": "lvl10_txtInteragir",
-									"sid": 909515936670729,
+									"sid": 225824180311327,
 									"parameters": {
 										"visibility": "visible"
 									}
@@ -1315,6 +1897,14 @@
 							"sid": 475198919666307
 						},
 						{
+							"id": "set-visible",
+							"objectClass": "icone_portaBranco",
+							"sid": 699098301454455,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 533770591656403,
@@ -1326,18 +1916,19 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 943085550204679,
+							"sid": 430202485496348,
 							"parameters": {
-								"group-name": "\"LEVEL10_CUBO_ROXO\"",
+								"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
 								"state": "activated"
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "icone_portaBranco",
-							"sid": 790936476109050,
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 293843161626233,
 							"parameters": {
-								"visibility": "visible"
+								"group-name": "\"LEVEL10_CUBO_BRANCO\"",
+								"state": "deactivated"
 							}
 						}
 					],
@@ -1369,31 +1960,6 @@
 								}
 							],
 							"sid": 863789708853922
-						},
-						{
-							"eventType": "block",
-							"conditions": [],
-							"actions": [
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 327814341876867,
-									"parameters": {
-										"seconds": "1",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 229705377277173,
-									"parameters": {
-										"group-name": "\"LEVEL10_CUBO_BRANCO\"",
-										"state": "deactivated"
-									}
-								}
-							],
-							"sid": 444860859342953
 						}
 					]
 				}
@@ -1669,11 +2235,42 @@
 							}
 						},
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 823849703962982,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 10/lvl10_porta"
+								},
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "icone_portaVermelho",
+							"sid": 448139443433405,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 145759285755702,
+							"sid": 105744984657717,
 							"parameters": {
-								"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+								"group-name": "\"LEVEL10_CUBO_ROXO\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 893232013120783,
+							"parameters": {
+								"group-name": "\"LEVEL10_CUBO_ROXO_PEGAR\"",
 								"state": "activated"
 							}
 						},
@@ -1684,14 +2281,6 @@
 							"parameters": {
 								"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
 								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "icone_portaVermelho",
-							"sid": 845220624634633,
-							"parameters": {
-								"visibility": "visible"
 							}
 						}
 					],
@@ -1724,7 +2313,7 @@
 					"disabled": false,
 					"title": "LEVEL10_CUBO_ROXO_PEGAR",
 					"description": "",
-					"isActiveOnStart": true,
+					"isActiveOnStart": false,
 					"children": [
 						{
 							"eventType": "block",
@@ -2439,6 +3028,14 @@
 							"sid": 157749311873363
 						},
 						{
+							"id": "set-visible",
+							"objectClass": "icone_portaRoxa",
+							"sid": 600359110839791,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 542421888947632,
@@ -2450,40 +3047,52 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 333138277226722,
+							"sid": 844026771704048,
 							"parameters": {
-								"group-name": "\"LEVEL10_CUBO_VERDE\"",
+								"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
 								"state": "activated"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 543044947124390,
-							"parameters": {
-								"seconds": "1",
-								"use-timescale": true
 							}
 						},
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 561315806416771,
+							"sid": 390789914034888,
 							"parameters": {
 								"group-name": "\"LEVEL10_CUBO_ROXO\"",
 								"state": "deactivated"
 							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "icone_portaRoxa",
-							"sid": 879751394505427,
-							"parameters": {
-								"visibility": "visible"
-							}
 						}
 					],
-					"sid": 473666932988688
+					"sid": 473666932988688,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 492491377527773
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 636399194141338,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 10/lvl10_porta"
+										},
+										"loop": "not-looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 208140901673855
+						}
+					]
 				}
 			],
 			"sid": 832835085731692,
@@ -2749,6 +3358,28 @@
 							"sid": 991743313176004
 						},
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 913141373804684,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 10/lvl10_porta"
+								},
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "icone_portaAmarela",
+							"sid": 615517665192999,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "set-visible",
 							"objectClass": "lvl10_txtInteragir",
 							"sid": 589711183212474,
@@ -2759,9 +3390,18 @@
 						{
 							"id": "set-group-active",
 							"objectClass": "System",
-							"sid": 656073923404479,
+							"sid": 816116612855548,
 							"parameters": {
-								"group-name": "\"LEVEL10_CHAVE_FIM\"",
+								"group-name": "\"LEVEL10_CUBO_VERDE\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 933401458214365,
+							"parameters": {
+								"group-name": "\"LEVEL10_CUBO_VERDE_PEGAR\"",
 								"state": "activated"
 							}
 						},
@@ -2772,14 +3412,6 @@
 							"parameters": {
 								"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
 								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "icone_portaAmarela",
-							"sid": 314939240935552,
-							"parameters": {
-								"visibility": "visible"
 							}
 						}
 					],
@@ -2812,7 +3444,7 @@
 					"disabled": false,
 					"title": "LEVEL10_CUBO_VERDE_PEGAR",
 					"description": "",
-					"isActiveOnStart": true,
+					"isActiveOnStart": false,
 					"children": [
 						{
 							"eventType": "block",
@@ -3527,6 +4159,14 @@
 							"sid": 124396204068973
 						},
 						{
+							"id": "set-visible",
+							"objectClass": "icone_portaVerde",
+							"sid": 526950378888496,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
 							"id": "set-group-active",
 							"objectClass": "System",
 							"sid": 740746383549056,
@@ -3536,15 +4176,54 @@
 							}
 						},
 						{
-							"id": "set-visible",
-							"objectClass": "icone_portaVerde",
-							"sid": 396797685361935,
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 703032108506032,
 							"parameters": {
-								"visibility": "visible"
+								"group-name": "\"LEVEL10_CHAVE_FIM\"",
+								"state": "activated"
+							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 291649500615905,
+							"parameters": {
+								"group-name": "\"LEVEL10_CUBO_VERDE\"",
+								"state": "deactivated"
 							}
 						}
 					],
-					"sid": 570643034817840
+					"sid": 570643034817840,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "trigger-once-while-true",
+									"objectClass": "System",
+									"sid": 806007480608639
+								}
+							],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 792304700515702,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 10/lvl10_porta"
+										},
+										"loop": "not-looping",
+										"volume": "-10",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 719049714511585
+						}
+					]
 				}
 			],
 			"sid": 884690609923113,
@@ -3742,6 +4421,20 @@
 							"parameters": {
 								"visibility": "invisible"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 150877660626879,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 10/lvl10_chave"
+								},
+								"loop": "not-looping",
+								"volume": "-15",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 968886588403093
@@ -3816,6 +4509,20 @@
 					],
 					"actions": [
 						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 116370508199417,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 10/lvl10_porta"
+								},
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
 							"id": "destroy",
 							"objectClass": "lvl10_portaFim",
 							"sid": 673652912110843
@@ -3832,6 +4539,27 @@
 							"parameters": {
 								"visibility": "invisible"
 							}
+						},
+						{
+							"id": "set-group-active",
+							"objectClass": "System",
+							"sid": 919635865537522,
+							"parameters": {
+								"group-name": "\"LEVEL10_MOVE\"",
+								"state": "deactivated"
+							}
+						},
+						{
+							"id": "stop-all",
+							"objectClass": "Audio",
+							"sid": 873513572974927
+						},
+						{
+							"callFunction": "Transition",
+							"sid": 342515529302216,
+							"parameters": [
+								"\"Credits\""
+							]
 						}
 					],
 					"sid": 334507757580784
@@ -3852,555 +4580,7 @@
 			]
 		},
 		{
-			"eventType": "group",
-			"disabled": false,
-			"title": "LEVEL10_MOVE",
-			"description": "Movimentação do jogador",
-			"isActiveOnStart": true,
-			"children": [
-				{
-					"eventType": "comment",
-					"text": "Movement"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 519509740615684
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 499729970685676,
-							"parameters": {
-								"instance-variable": "move_x",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 430227156480203,
-							"parameters": {
-								"instance-variable": "move_y",
-								"value": "0"
-							}
-						}
-					],
-					"sid": 315493002444494
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 177363976591054,
-							"parameters": {
-								"key": 87
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 639636073366531,
-							"parameters": {
-								"instance-variable": "move_x",
-								"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 743897129432967,
-							"parameters": {
-								"instance-variable": "move_y",
-								"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
-							}
-						}
-					],
-					"sid": 627392321815984,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 914576325067496,
-							"parameters": {
-								"key": 83
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 491119159349413,
-							"parameters": {
-								"instance-variable": "move_x",
-								"value": "lvl10_player.move_x - cos(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 593045414879656,
-							"parameters": {
-								"instance-variable": "move_y",
-								"value": "lvl10_player.move_y - sin(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
-							}
-						}
-					],
-					"sid": 438306785656960,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 782481209362905,
-							"parameters": {
-								"key": 65
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 467208604650011,
-							"parameters": {
-								"instance-variable": "move_x",
-								"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation - 90) * lvl10_PlayerSpeed"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 705756950965785,
-							"parameters": {
-								"instance-variable": "move_y",
-								"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation - 90) * lvl10_PlayerSpeed"
-							}
-						}
-					],
-					"sid": 898091013027513,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "key-is-down",
-							"objectClass": "Keyboard",
-							"sid": 976810894269580,
-							"parameters": {
-								"key": 68
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 513083422605908,
-							"parameters": {
-								"instance-variable": "move_x",
-								"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation + 90) * lvl10_PlayerSpeed"
-							}
-						},
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 752215940435779,
-							"parameters": {
-								"instance-variable": "move_y",
-								"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation + 90) * lvl10_PlayerSpeed"
-							}
-						}
-					],
-					"sid": 144847622733319,
-					"isOrBlock": true
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 273513508691216
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 659071161198103,
-							"parameters": {
-								"instance-variable": "old_x",
-								"value": "lvl10_player.X"
-							}
-						},
-						{
-							"id": "set-x",
-							"objectClass": "lvl10_player",
-							"sid": 696544792767646,
-							"parameters": {
-								"x": "lvl10_player.X + lvl10_player.move_x * dt"
-							}
-						}
-					],
-					"sid": 401527139584762,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "lvl10_player",
-									"sid": 335955352112065,
-									"parameters": {
-										"object": "lvl10_Colisao"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 889678653270268,
-									"parameters": {
-										"first-value": "lvl10_player.ZElevation",
-										"comparison": 2,
-										"second-value": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight - 1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-x",
-									"objectClass": "lvl10_player",
-									"sid": 201302937549666,
-									"parameters": {
-										"x": "lvl10_player.old_x"
-									}
-								}
-							],
-							"sid": 745521266138561
-						}
-					]
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 622925536945260
-						}
-					],
-					"actions": [
-						{
-							"id": "set-instvar-value",
-							"objectClass": "lvl10_player",
-							"sid": 314638054863050,
-							"parameters": {
-								"instance-variable": "old_y",
-								"value": "lvl10_player.Y"
-							}
-						},
-						{
-							"id": "set-y",
-							"objectClass": "lvl10_player",
-							"sid": 253408409861719,
-							"parameters": {
-								"y": "lvl10_player.Y + lvl10_player.move_y * dt"
-							}
-						}
-					],
-					"sid": 898772239287457,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "is-overlapping-another-object",
-									"objectClass": "lvl10_player",
-									"sid": 780296113862742,
-									"parameters": {
-										"object": "lvl10_Colisao"
-									}
-								},
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 630039078683723,
-									"parameters": {
-										"first-value": "lvl10_player.ZElevation ",
-										"comparison": 2,
-										"second-value": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight - 1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-y",
-									"objectClass": "lvl10_player",
-									"sid": 220131773039800,
-									"parameters": {
-										"y": "lvl10_player.old_y"
-									}
-								}
-							],
-							"sid": 652289706661611
-						}
-					]
-				},
-				{
-					"eventType": "comment",
-					"text": "Jumping"
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "every-tick",
-							"objectClass": "System",
-							"sid": 603729560508112
-						}
-					],
-					"actions": [
-						{
-							"id": "subtract-from-eventvar",
-							"objectClass": "System",
-							"sid": 199235519175698,
-							"parameters": {
-								"variable": "lvl10_dz",
-								"value": "lvl10_Gravity*dt"
-							}
-						},
-						{
-							"id": "set-z-elevation",
-							"objectClass": "lvl10_player",
-							"sid": 205403926510510,
-							"parameters": {
-								"z": "lvl10_player.Zelevation+lvl10_dz"
-							}
-						}
-					],
-					"sid": 449988586594753
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "on-key-pressed",
-							"objectClass": "Keyboard",
-							"sid": 906417168567218,
-							"parameters": {
-								"key": 32
-							}
-						},
-						{
-							"id": "compare-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 943019121798850,
-							"parameters": {
-								"variable": "lvl10_onGround"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 926556025580601,
-							"parameters": {
-								"variable": "lvl10_dz",
-								"value": "lvl10_jump_strength"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 335463786562212,
-							"parameters": {
-								"variable": "lvl10_onGround",
-								"value": "false"
-							}
-						}
-					],
-					"sid": 955175037803157
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 462575150621364,
-							"parameters": {
-								"variable": "lvl10_dz",
-								"comparison": 3,
-								"value": "0"
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "lvl10_player",
-							"sid": 345039536849904,
-							"parameters": {
-								"object": "lvl10_ground"
-							}
-						},
-						{
-							"id": "compare-z-elevation",
-							"objectClass": "lvl10_ground",
-							"sid": 742746335629943,
-							"parameters": {
-								"which": "z-elevation",
-								"comparison": 5,
-								"z-elevation": "lvl10_player.Zelevation-Self.zheight"
-							}
-						},
-						{
-							"id": "compare-z-elevation",
-							"objectClass": "lvl10_ground",
-							"sid": 252534226997581,
-							"parameters": {
-								"which": "z-elevation",
-								"comparison": 3,
-								"z-elevation": "lvl10_player.Zelevation+lvl10_PlayerHeight-Self.zheight"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 731666858088929,
-							"parameters": {
-								"variable": "lvl10_dz",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-z-elevation",
-							"objectClass": "lvl10_player",
-							"sid": 177411926741684,
-							"parameters": {
-								"z": "lvl10_ground.Zelevation+lvl10_ground.zheight"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 204135342179406,
-							"parameters": {
-								"variable": "lvl10_onGround",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 431871192552902
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 878719152519205,
-							"parameters": {
-								"variable": "lvl10_dz",
-								"comparison": 3,
-								"value": "0"
-							}
-						},
-						{
-							"id": "is-overlapping-another-object",
-							"objectClass": "lvl10_player",
-							"sid": 662788673204022,
-							"parameters": {
-								"object": "lvl10_Colisao"
-							}
-						},
-						{
-							"id": "compare-z-elevation",
-							"objectClass": "lvl10_Colisao",
-							"sid": 938036716694439,
-							"parameters": {
-								"which": "z-elevation",
-								"comparison": 5,
-								"z-elevation": "lvl10_player.Zelevation-Self.zheight"
-							}
-						},
-						{
-							"id": "compare-z-elevation",
-							"objectClass": "lvl10_Colisao",
-							"sid": 226363988066264,
-							"parameters": {
-								"which": "z-elevation",
-								"comparison": 3,
-								"z-elevation": "lvl10_player.Zelevation+lvl10_PlayerHeight-Self.zheight"
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 638052548595694,
-							"parameters": {
-								"variable": "lvl10_dz",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-z-elevation",
-							"objectClass": "lvl10_player",
-							"sid": 805805982343890,
-							"parameters": {
-								"z": "lvl10_Colisao.Zelevation+lvl10_Colisao.zheight"
-							}
-						},
-						{
-							"id": "set-boolean-eventvar",
-							"objectClass": "System",
-							"sid": 597515494394068,
-							"parameters": {
-								"variable": "lvl10_onGround",
-								"value": "true"
-							}
-						}
-					],
-					"sid": 786132589834283
-				}
-			],
-			"sid": 487705692403485,
-			"text-color": [
-				0,
-				0,
-				0,
-				0
-			],
-			"background-color": [
-				1,
-				0,
-				0.8156862745098039,
-				1
-			]
-		},
-		{
+			"bookmark": true,
 			"eventType": "group",
 			"disabled": false,
 			"title": "TP",
@@ -4411,53 +4591,37 @@
 					"eventType": "block",
 					"conditions": [
 						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 364065426260385
+						}
+					],
+					"actions": [
+						{
+							"id": "set-time-scale",
+							"objectClass": "System",
+							"sid": 627434307349093,
+							"parameters": {
+								"time-scale": "3"
+							}
+						}
+					],
+					"sid": 654958962900409
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 313987867176573,
+							"sid": 548552978090051,
 							"parameters": {
 								"key": 49
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 169343973184570,
-							"parameters": {
-								"group-name": "\"AZUL\"",
-								"state": "activated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 437146383486710,
-							"parameters": {
-								"group-name": "\"VERMELHA\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 178645742052143,
-							"parameters": {
-								"group-name": "\"AMARELA\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 958575334816989,
-							"parameters": {
-								"group-name": "\"FIM\"",
-								"state": "deactivated"
-							}
-						}
-					],
-					"sid": 477300349454414,
+					"actions": [],
+					"sid": 270563406653702,
 					"children": [
 						{
 							"eventType": "block",
@@ -4466,7 +4630,77 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 900718050757971,
+									"sid": 500515073783716,
+									"parameters": {
+										"group-name": "\"AZUL\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 937329910815579,
+									"parameters": {
+										"group-name": "\"BRANCO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 456786972239962,
+									"parameters": {
+										"group-name": "\"VERMELHO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 864779227371299,
+									"parameters": {
+										"group-name": "\"ROXO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 856218932243009,
+									"parameters": {
+										"group-name": "\"AMARELO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 935058625492232,
+									"parameters": {
+										"group-name": "\"VERDE\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 759743646767131,
+									"parameters": {
+										"group-name": "\"FIM\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 150407770576506
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 174896729359640,
 									"parameters": {
 										"group-name": "\"LEVEL10_CHAVE_AZUL\"",
 										"state": "activated"
@@ -4475,7 +4709,7 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 434152401366793,
+									"sid": 419143343365886,
 									"parameters": {
 										"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
 										"state": "deactivated"
@@ -4484,23 +4718,14 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 977836430445137,
+									"sid": 882944063252686,
 									"parameters": {
 										"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
 										"state": "deactivated"
 									}
-								},
-								{
-									"id": "set-group-active",
-									"objectClass": "System",
-									"sid": 385703782545836,
-									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_FIM\"",
-										"state": "deactivated"
-									}
 								}
 							],
-							"sid": 918046643690049
+							"sid": 526131204608400
 						}
 					]
 				},
@@ -4510,51 +4735,14 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 126182104601756,
+							"sid": 660002865213371,
 							"parameters": {
 								"key": 50
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 263884201278900,
-							"parameters": {
-								"group-name": "\"VERMELHA\"",
-								"state": "activated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 103949378594436,
-							"parameters": {
-								"group-name": "\"AZUL\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 887249847873786,
-							"parameters": {
-								"group-name": "\"AMARELA\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 908725308854096,
-							"parameters": {
-								"group-name": "\"FIM\"",
-								"state": "deactivated"
-							}
-						}
-					],
-					"sid": 447552125949561,
+					"actions": [],
+					"sid": 604160825860040,
 					"children": [
 						{
 							"eventType": "block",
@@ -4563,41 +4751,129 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 656033500240913,
+									"sid": 737595187439591,
 									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+										"group-name": "\"BRANCO\"",
 										"state": "activated"
 									}
 								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 850090471589840,
+									"sid": 649428884194661,
 									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_AZUL\"",
+										"group-name": "\"AZUL\"",
 										"state": "deactivated"
 									}
 								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 885250519346246,
+									"sid": 289296385343708,
 									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+										"group-name": "\"VERMELHO\"",
 										"state": "deactivated"
 									}
 								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 163271234346090,
+									"sid": 844315989108866,
 									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_FIM\"",
+										"group-name": "\"ROXO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 429527507367820,
+									"parameters": {
+										"group-name": "\"AMARELO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 465058383529854,
+									"parameters": {
+										"group-name": "\"VERDE\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 443814770156228,
+									"parameters": {
+										"group-name": "\"FIM\"",
 										"state": "deactivated"
 									}
 								}
 							],
-							"sid": 155451799171127
+							"sid": 388090622008172
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 964920875703072,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_BRANCO\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 947118731501328,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_BRANCO_PEGAR\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 918452961991617,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_ROXO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 763606855719371,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_ROXO_PEGAR\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 481696835734189,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_VERDE\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 837872702751930,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_VERDE_PEGAR\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 873396084292750
 						}
 					]
 				},
@@ -4607,51 +4883,14 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 760438446796870,
+							"sid": 345057703326502,
 							"parameters": {
 								"key": 51
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 684819627230931,
-							"parameters": {
-								"group-name": "\"AMARELA\"",
-								"state": "activated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 288742706228474,
-							"parameters": {
-								"group-name": "\"VERMELHA\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 804352831217586,
-							"parameters": {
-								"group-name": "\"AZUL\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 305412689867795,
-							"parameters": {
-								"group-name": "\"FIM\"",
-								"state": "deactivated"
-							}
-						}
-					],
-					"sid": 959171122213034,
+					"actions": [],
+					"sid": 332752901461118,
 					"children": [
 						{
 							"eventType": "block",
@@ -4660,25 +4899,86 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 752066728374431,
+									"sid": 810698938312155,
 									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+										"group-name": "\"VERMELHO\"",
 										"state": "activated"
 									}
 								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 653942936940951,
+									"sid": 270232138818994,
 									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+										"group-name": "\"AZUL\"",
 										"state": "deactivated"
 									}
 								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 929400380604135,
+									"sid": 732387314248977,
+									"parameters": {
+										"group-name": "\"BRANCO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 819014882126578,
+									"parameters": {
+										"group-name": "\"ROXO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 354556347283616,
+									"parameters": {
+										"group-name": "\"AMARELO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 375985316147297,
+									"parameters": {
+										"group-name": "\"VERDE\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 838254247657762,
+									"parameters": {
+										"group-name": "\"FIM\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 531267670465251
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 208467002937378,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 879519645980879,
 									"parameters": {
 										"group-name": "\"LEVEL10_CHAVE_AZUL\"",
 										"state": "deactivated"
@@ -4687,14 +4987,14 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 295044275616371,
+									"sid": 550496128739527,
 									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_FIM\"",
+										"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
 										"state": "deactivated"
 									}
 								}
 							],
-							"sid": 517359140705155
+							"sid": 161318104972088
 						}
 					]
 				},
@@ -4704,51 +5004,14 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 221318664948707,
+							"sid": 478490328907577,
 							"parameters": {
 								"key": 52
 							}
 						}
 					],
-					"actions": [
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 264830343520131,
-							"parameters": {
-								"group-name": "\"FIM\"",
-								"state": "activated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 239439656514360,
-							"parameters": {
-								"group-name": "\"VERMELHA\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 843495203340940,
-							"parameters": {
-								"group-name": "\"AZUL\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 406409484720030,
-							"parameters": {
-								"group-name": "\"AMARELA\"",
-								"state": "deactivated"
-							}
-						}
-					],
-					"sid": 434752639989290,
+					"actions": [],
+					"sid": 470518582683047,
 					"children": [
 						{
 							"eventType": "block",
@@ -4757,41 +5020,129 @@
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 668142533820827,
+									"sid": 822280221978949,
 									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_FIM\"",
+										"group-name": "\"ROXO\"",
 										"state": "activated"
 									}
 								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 486439187191829,
+									"sid": 821944608525985,
 									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+										"group-name": "\"BRANCO\"",
 										"state": "deactivated"
 									}
 								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 532644916074707,
+									"sid": 203579191210945,
 									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+										"group-name": "\"AZUL\"",
 										"state": "deactivated"
 									}
 								},
 								{
 									"id": "set-group-active",
 									"objectClass": "System",
-									"sid": 175823682967007,
+									"sid": 755410190873697,
 									"parameters": {
-										"group-name": "\"LEVEL10_CHAVE_AZUL\"",
+										"group-name": "\"VERMELHO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 316795707239192,
+									"parameters": {
+										"group-name": "\"AMARELO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 618801121726680,
+									"parameters": {
+										"group-name": "\"VERDE\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 516052111898325,
+									"parameters": {
+										"group-name": "\"FIM\"",
 										"state": "deactivated"
 									}
 								}
 							],
-							"sid": 775569417346234
+							"sid": 881065710869387
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 119767401970653,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_ROXO\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 176716208866961,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_ROXO_PEGAR\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 283858756306846,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_BRANCO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 527964015484665,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_BRANCO_PEGAR\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 538450381217647,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_VERDE\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 456465103809575,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_VERDE_PEGAR\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 972064215766527
 						}
 					]
 				},
@@ -4801,58 +5152,396 @@
 						{
 							"id": "on-key-pressed",
 							"objectClass": "Keyboard",
-							"sid": 948694063472614,
+							"sid": 640591529322981,
 							"parameters": {
-								"key": 189
+								"key": 53
 							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 280700490022356,
+					"children": [
 						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 700712622189118,
-							"parameters": {
-								"group-name": "\"AZUL\"",
-								"state": "deactivated"
-							}
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 427939561224230,
+									"parameters": {
+										"group-name": "\"AMARELO\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 785679101006296,
+									"parameters": {
+										"group-name": "\"VERMELHO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 656801011295069,
+									"parameters": {
+										"group-name": "\"AZUL\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 592992679688502,
+									"parameters": {
+										"group-name": "\"BRANCO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 564692611691989,
+									"parameters": {
+										"group-name": "\"ROXO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 944620074985490,
+									"parameters": {
+										"group-name": "\"VERDE\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 145758752215275,
+									"parameters": {
+										"group-name": "\"FIM\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 100233949869963
 						},
 						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 680166293321181,
-							"parameters": {
-								"group-name": "\"VERMELHA\"",
-								"state": "deactivated"
-							}
-						},
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 487249170471983,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 693313399864685,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 626936547013043,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AZUL\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 540203763788979
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
 						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 722215422664477,
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 555062559099347,
 							"parameters": {
-								"group-name": "\"AMARELA\"",
-								"state": "deactivated"
-							}
-						},
-						{
-							"id": "set-group-active",
-							"objectClass": "System",
-							"sid": 375330199392474,
-							"parameters": {
-								"group-name": "\"FIM\"",
-								"state": "deactivated"
+								"key": 54
 							}
 						}
 					],
-					"sid": 657680318208006
+					"actions": [],
+					"sid": 810680504664556,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 508527894429995,
+									"parameters": {
+										"group-name": "\"VERDE\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 955984827877150,
+									"parameters": {
+										"group-name": "\"ROXO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 664469136347972,
+									"parameters": {
+										"group-name": "\"BRANCO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 492249758172076,
+									"parameters": {
+										"group-name": "\"AZUL\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 422185671856409,
+									"parameters": {
+										"group-name": "\"VERMELHO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 272873516485017,
+									"parameters": {
+										"group-name": "\"AMARELO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 579892697542487,
+									"parameters": {
+										"group-name": "\"FIM\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 611408422857757
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 366667193745319,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_VERDE\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 713319859492915,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_VERDE_PEGAR\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 983160448322500,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_ROXO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 163474700838758,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_ROXO_PEGAR\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 576301376855144,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_BRANCO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 188316081288860,
+									"parameters": {
+										"group-name": "\"LEVEL10_CUBO_BRANCO_PEGAR\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 367016133429531
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 207506304519298,
+							"parameters": {
+								"key": 55
+							}
+						}
+					],
+					"actions": [],
+					"sid": 909301735343594,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 696849519813204,
+									"parameters": {
+										"group-name": "\"FIM\"",
+										"state": "activated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 617483107375902,
+									"parameters": {
+										"group-name": "\"AMARELO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 616381686803068,
+									"parameters": {
+										"group-name": "\"VERMELHO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 720822415289293,
+									"parameters": {
+										"group-name": "\"AZUL\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 348562959082034,
+									"parameters": {
+										"group-name": "\"BRANCO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 865614653915143,
+									"parameters": {
+										"group-name": "\"ROXO\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 670556009617078,
+									"parameters": {
+										"group-name": "\"VERDE\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 226959922950171
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 693431522145437,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AMARELA\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 186468109433408,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_VERMELHA\"",
+										"state": "deactivated"
+									}
+								},
+								{
+									"id": "set-group-active",
+									"objectClass": "System",
+									"sid": 468699380594318,
+									"parameters": {
+										"group-name": "\"LEVEL10_CHAVE_AZUL\"",
+										"state": "deactivated"
+									}
+								}
+							],
+							"sid": 379909324675115
+						}
+					]
 				},
 				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "AZUL",
 					"description": "",
-					"isActiveOnStart": false,
+					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -4860,32 +5549,7 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 773924647210473,
-									"parameters": {
-										"key": 74
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "lvl10_player",
-									"sid": 740207767908482,
-									"parameters": {
-										"x": "2982",
-										"y": "1317"
-									}
-								}
-							],
-							"sid": 619975443948697
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 689287460285448,
+									"sid": 789935057184916,
 									"parameters": {
 										"key": 75
 									}
@@ -4895,24 +5559,49 @@
 								{
 									"id": "set-position",
 									"objectClass": "lvl10_player",
-									"sid": 677387933701082,
+									"sid": 867962073988305,
 									"parameters": {
-										"x": "3101",
-										"y": "1798"
+										"x": "3147",
+										"y": "1781"
 									}
 								}
 							],
-							"sid": 913782478211504
+							"sid": 449327779217482
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 554792703411396,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 451605929740301,
+									"parameters": {
+										"x": "2991",
+										"y": "1285"
+									}
+								}
+							],
+							"sid": 568655051259881
 						}
 					],
-					"sid": 854237668736035
+					"sid": 833758435987557
 				},
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "VERMELHA",
+					"title": "BRANCO",
 					"description": "",
-					"isActiveOnStart": false,
+					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -4920,32 +5609,7 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 557205054130539,
-									"parameters": {
-										"key": 74
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "lvl10_player",
-									"sid": 633496918119861,
-									"parameters": {
-										"x": "823",
-										"y": "1110"
-									}
-								}
-							],
-							"sid": 833644193707142
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 351841201819554,
+									"sid": 258066250459556,
 									"parameters": {
 										"key": 75
 									}
@@ -4955,24 +5619,74 @@
 								{
 									"id": "set-position",
 									"objectClass": "lvl10_player",
-									"sid": 436585353471293,
+									"sid": 134266983263328,
 									"parameters": {
-										"x": "2512",
-										"y": "446"
+										"x": "3134",
+										"y": "880"
 									}
 								}
 							],
-							"sid": 792322701949098
+							"sid": 944321180595548
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 601642112510409,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 384315415672760,
+									"parameters": {
+										"x": "3219",
+										"y": "276"
+									}
+								}
+							],
+							"sid": 378607742432034
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 564085966184963,
+									"parameters": {
+										"key": 76
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 305686032888398,
+									"parameters": {
+										"x": "1524",
+										"y": "127"
+									}
+								}
+							],
+							"sid": 504141226046859
 						}
 					],
-					"sid": 222369278543715
+					"sid": 661555493868727
 				},
 				{
 					"eventType": "group",
 					"disabled": false,
-					"title": "AMARELA",
+					"title": "VERMELHO",
 					"description": "",
-					"isActiveOnStart": false,
+					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -4980,32 +5694,7 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 536365269786502,
-									"parameters": {
-										"key": 74
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "lvl10_player",
-									"sid": 960897955898640,
-									"parameters": {
-										"x": "1316",
-										"y": "1127"
-									}
-								}
-							],
-							"sid": 286167550104001
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 181873895906736,
+									"sid": 290049539091262,
 									"parameters": {
 										"key": 75
 									}
@@ -5015,24 +5704,279 @@
 								{
 									"id": "set-position",
 									"objectClass": "lvl10_player",
-									"sid": 122046685567222,
+									"sid": 699741856748062,
 									"parameters": {
-										"x": "158",
-										"y": "1344"
+										"x": "2493",
+										"y": "499"
 									}
 								}
 							],
-							"sid": 194749077571192
+							"sid": 266976253532428
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 993269283458646,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 396363151445701,
+									"parameters": {
+										"x": "836",
+										"y": "1141"
+									}
+								}
+							],
+							"sid": 557126466611977
 						}
 					],
-					"sid": 920298702271247
+					"sid": 130766821769205
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "ROXO",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 862448769430342,
+									"parameters": {
+										"key": 75
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 234376959419604,
+									"parameters": {
+										"x": "76",
+										"y": "1694"
+									}
+								}
+							],
+							"sid": 450576748391937
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 460253321189299,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 179410999434692,
+									"parameters": {
+										"x": "632",
+										"y": "114"
+									}
+								}
+							],
+							"sid": 153351240681451
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 563636015392281,
+									"parameters": {
+										"key": 76
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 701007774746489,
+									"parameters": {
+										"x": "775",
+										"y": "869"
+									}
+								}
+							],
+							"sid": 239617788297275
+						}
+					],
+					"sid": 422207124129228
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "AMARELO",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 350840533029377,
+									"parameters": {
+										"key": 75
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 363576703347493,
+									"parameters": {
+										"x": "178",
+										"y": "1350"
+									}
+								}
+							],
+							"sid": 337756483684991
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 562439423091475,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 682558438851421,
+									"parameters": {
+										"x": "1310",
+										"y": "1098"
+									}
+								}
+							],
+							"sid": 278158219257254
+						}
+					],
+					"sid": 214782229880361
+				},
+				{
+					"eventType": "group",
+					"disabled": false,
+					"title": "VERDE",
+					"description": "",
+					"isActiveOnStart": true,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 907157278120988,
+									"parameters": {
+										"key": 75
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 791876054300239,
+									"parameters": {
+										"x": "1769",
+										"y": "1503"
+									}
+								}
+							],
+							"sid": 677352427842691
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 830798456331815,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 641500025072417,
+									"parameters": {
+										"x": "512",
+										"y": "361"
+									}
+								}
+							],
+							"sid": 104590593587752
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 811521857331891,
+									"parameters": {
+										"key": 76
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 990550141093298,
+									"parameters": {
+										"x": "2230",
+										"y": "1141"
+									}
+								}
+							],
+							"sid": 534011209676762
+						}
+					],
+					"sid": 649374679907664
 				},
 				{
 					"eventType": "group",
 					"disabled": false,
 					"title": "FIM",
 					"description": "",
-					"isActiveOnStart": false,
+					"isActiveOnStart": true,
 					"children": [
 						{
 							"eventType": "block",
@@ -5040,32 +5984,7 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 478857786712752,
-									"parameters": {
-										"key": 74
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-position",
-									"objectClass": "lvl10_player",
-									"sid": 447770707183965,
-									"parameters": {
-										"x": "1839",
-										"y": "1818"
-									}
-								}
-							],
-							"sid": 472710326852546
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "on-key-pressed",
-									"objectClass": "Keyboard",
-									"sid": 302600958391010,
+									"sid": 184755838356674,
 									"parameters": {
 										"key": 75
 									}
@@ -5075,39 +5994,45 @@
 								{
 									"id": "set-position",
 									"objectClass": "lvl10_player",
-									"sid": 701392649358554,
+									"sid": 981600798055636,
 									"parameters": {
-										"x": "1839",
-										"y": "1818"
+										"x": "2230",
+										"y": "1141"
 									}
 								}
 							],
-							"sid": 395011321254470
+							"sid": 471356492088995
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 385717095728276,
+									"parameters": {
+										"key": 74
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-position",
+									"objectClass": "lvl10_player",
+									"sid": 207925482405400,
+									"parameters": {
+										"x": "2230",
+										"y": "1141"
+									}
+								}
+							],
+							"sid": 206500572671554
 						}
 					],
-					"sid": 800805235804562
+					"sid": 140702833717551
 				}
 			],
-			"sid": 858628033216989
-		},
-		{
-			"eventType": "comment",
-			"text": "Fim da fase (créditos)"
-		},
-		{
-			"eventType": "block",
-			"conditions": [],
-			"actions": [
-				{
-					"callFunction": "Transition",
-					"sid": 208857725723173,
-					"parameters": [
-						"\"Credits\""
-					]
-				}
-			],
-			"sid": 946699466772659,
-			"disabled": true
+			"sid": 631203771308987
 		}
 	],
 	"sid": 758226248430815
