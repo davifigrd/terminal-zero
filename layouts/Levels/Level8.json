@@ -339,7 +339,7 @@
 					}
 				},
 				{
-					"type": "lvl8_excluir",
+					"type": "lvl8_deletar",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -608,7 +608,7 @@
 					}
 				},
 				{
-					"type": "lvl8_txt_resposta",
+					"type": "lvl8_txt_resposta1",
 					"properties": {
 						"text": "Digite aqui...",
 						"enable-bbcode": true,
@@ -623,7 +623,7 @@
 							0.8705882352941177,
 							1
 						],
-						"horizontal-alignment": "left",
+						"horizontal-alignment": "center",
 						"vertical-alignment": "center",
 						"wrapping": "word",
 						"text-direction": "ltr",
@@ -640,9 +640,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 639,
-						"y": 321,
-						"width": 340.0614417803856,
+						"x": 622,
+						"y": 319,
+						"width": 70.06144178038562,
 						"height": 84.06149333535492,
 						"originX": 0,
 						"originY": 0,
@@ -755,202 +755,6 @@
 					}
 				},
 				{
-					"type": "lvl8_txt_btn1",
-					"properties": {
-						"text": "TEXTO",
-						"enable-bbcode": true,
-						"font": "Arial",
-						"size": 18,
-						"line-height": 0,
-						"bold": true,
-						"italic": true,
-						"color": [
-							0,
-							0,
-							0,
-							1
-						],
-						"horizontal-alignment": "center",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"text-direction": "ltr",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 429,
-					"sid": 660429907125455,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 1149,
-						"y": 110.74887190665254,
-						"width": 140.1702430823873,
-						"height": 136.61815017305057,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "lvl8_txt_instrucao",
-					"properties": {
-						"text": "O display mostrará 4 pares de dois caracteres.\n\nCada par deve ser traduzido em uma única letra minúscula.\n\nAs letras não devem ser separadas ao submeter a resposta.\n\nConsulte a tabela ao lado para traduzir os pares.\n\nDificuldade: Fácil",
-						"enable-bbcode": true,
-						"font": "system-ui",
-						"size": 14,
-						"line-height": -3,
-						"bold": false,
-						"italic": false,
-						"color": [
-							0.29411764705882354,
-							0.8392156862745098,
-							0.2980392156862745,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"text-direction": "ltr",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 424,
-					"sid": 104221776331873,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 44,
-						"y": 216,
-						"width": 239.06144178038562,
-						"height": 298.06149333535495,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "lvl8_txt_tabelahex",
-					"properties": {
-						"text": "   Hex        Hex  \na    61     n    6E\nb    62     o    6F\nc    63     p    70\nd    64     q    71\ne    65      r    72\nf    66      s    73\ng    67      t    74\nh    68      u    75\ni    69      v    76\nj    6A     w    77\nk    6B      x    78\nl    6C      y    79\nm    6D     z    7A",
-						"enable-bbcode": true,
-						"font": "system-ui",
-						"size": 14,
-						"line-height": 0,
-						"bold": true,
-						"italic": false,
-						"color": [
-							0.2627450980392157,
-							0.7490196078431373,
-							0.26666666666666666,
-							1
-						],
-						"horizontal-alignment": "right",
-						"vertical-alignment": "center",
-						"wrapping": "word",
-						"text-direction": "ltr",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 433,
-					"sid": 320195293232528,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 294,
-						"y": 200,
-						"width": 182.06144178038562,
-						"height": 314.06149333535495,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
-					"type": "lvl8_txt_titulo",
-					"properties": {
-						"text": "Sobre Hexadecimal",
-						"enable-bbcode": true,
-						"font": "system-ui",
-						"size": 14,
-						"line-height": -3,
-						"bold": true,
-						"italic": true,
-						"color": [
-							0.32941176470588235,
-							0.8509803921568627,
-							0.32941176470588235,
-							1
-						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
-						"wrapping": "word",
-						"text-direction": "ltr",
-						"icon-set": -1,
-						"initially-visible": true,
-						"origin": "top-left",
-						"read-aloud": false
-					},
-					"uid": 422,
-					"sid": 611004942033651,
-					"tags": "",
-					"instanceVariables": {},
-					"behaviors": {},
-					"showing": true,
-					"locked": false,
-					"world": {
-						"x": 34,
-						"y": 180,
-						"width": 189.06144178038562,
-						"height": 26.061493335354953,
-						"originX": 0,
-						"originY": 0,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"z": 0,
-						"angle": 0
-					}
-				},
-				{
 					"type": "lvl8_button2",
 					"properties": {
 						"initially-visible": true,
@@ -1017,6 +821,712 @@
 					}
 				},
 				{
+					"type": "lvl8_txt_resposta2",
+					"properties": {
+						"text": "Digite aqui...",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.8705882352941177,
+							0.8705882352941177,
+							0.8705882352941177,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 461,
+					"sid": 911062750286453,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 697,
+						"y": 319,
+						"width": 70.06144178038562,
+						"height": 84.06149333535492,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_resposta3",
+					"properties": {
+						"text": "Digite aqui...",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.8705882352941177,
+							0.8705882352941177,
+							0.8705882352941177,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 462,
+					"sid": 177929920274778,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 773,
+						"y": 319,
+						"width": 70.06144178038562,
+						"height": 84.06149333535492,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_resposta4",
+					"properties": {
+						"text": "Digite aqui...",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.8705882352941177,
+							0.8705882352941177,
+							0.8705882352941177,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 463,
+					"sid": 360634428056450,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 848,
+						"y": 319,
+						"width": 70.06144178038562,
+						"height": 84.06149333535492,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_resposta5",
+					"properties": {
+						"text": "Digite aqui...",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.8705882352941177,
+							0.8705882352941177,
+							0.8705882352941177,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 464,
+					"sid": 342109263072071,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 923,
+						"y": 319,
+						"width": 70.06144178038562,
+						"height": 84.06149333535492,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				}
+			],
+			"sid": 267370901834914,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "text",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "lvl8_digiteAqui",
+					"properties": {
+						"text": "PRESSIONE AS TECLAS REFERENTE A TABELA AO LADO",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 14,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 460,
+					"sid": 496074572327684,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 634,
+						"y": 318,
+						"width": 338,
+						"height": 90,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_instrucao",
+					"properties": {
+						"text": "CLIQUE NO BOTÃO",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.29411764705882354,
+							0.8392156862745098,
+							0.2980392156862745,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 467,
+					"sid": 707825335173804,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 25.944259643554688,
+						"y": 172.00955200195312,
+						"width": 150.43469671560172,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_instrucao3",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 468,
+					"sid": 959641226908723,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 199.1241549676456,
+						"y": 185.55418578332055,
+						"width": 34.243671263416225,
+						"height": 34.2022436369536,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_instrucao",
+					"properties": {
+						"text": "PARA VISUALIZAR AS INSTRUÇÕES",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 12,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.29411764705882354,
+							0.8392156862745098,
+							0.2980392156862745,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 469,
+					"sid": 529441375372488,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 223.43202209472656,
+						"y": 172.00955200195312,
+						"width": 282.4346967156017,
+						"height": 30,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_instrucaoBotao",
+					"properties": {
+						"text": "A etiqueta define a polaridade do sinal.\n",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 14,
+						"line-height": -3,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.29411764705882354,
+							0.8392156862745098,
+							0.2980392156862745,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 470,
+					"sid": 141658109847231,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 54.52159118652344,
+						"y": 265,
+						"width": 366.6172060249672,
+						"height": 25.380661152952655,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_sobreBotao",
+					"properties": {
+						"text": "Sobre Botão",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 14,
+						"line-height": -3,
+						"bold": true,
+						"italic": true,
+						"color": [
+							0.32941176470588235,
+							0.8509803921568627,
+							0.32941176470588235,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 471,
+					"sid": 287470932361847,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 67.0794677734375,
+						"y": 231.27947998046875,
+						"width": 189.06144178038562,
+						"height": 26.061493335354953,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_instrucaoBotao",
+					"properties": {
+						"text": "A cor define a intensidade necessária.\n",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 14,
+						"line-height": -3,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.29411764705882354,
+							0.8392156862745098,
+							0.2980392156862745,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 472,
+					"sid": 363454285615845,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 54.52159118652344,
+						"y": 418,
+						"width": 344.90440066071034,
+						"height": 24.236914549843732,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_instrucaoBotao",
+					"properties": {
+						"text": "Aplique a sequência correta nas setas. Para confirmar, clique no botão.",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 14,
+						"line-height": -3,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.29411764705882354,
+							0.8392156862745098,
+							0.2980392156862745,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 474,
+					"sid": 631670146679098,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 54.52159118652344,
+						"y": 571,
+						"width": 425.8255180118394,
+						"height": 44.82435340580503,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_instrucaoBotao",
+					"properties": {
+						"text": "     EJETAR / ARMAR\n                 ↑           \n\nABORTAR / TRAVAR\n                 ↓          ",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 14,
+						"line-height": -3,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.29411764705882354,
+							0.8392156862745098,
+							0.2980392156862745,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 475,
+					"sid": 166610317572964,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 157.56735229492188,
+						"y": 295.1032409667969,
+						"width": 165.3178038777898,
+						"height": 108.87416317990687,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_instrucaoBotao",
+					"properties": {
+						"text": "BRANCO   ×1\nAMARELO  ×3\nAZUL     ×5\nVERMELHO ×10",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 14,
+						"line-height": -3,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.29411764705882354,
+							0.8392156862745098,
+							0.2980392156862745,
+							1
+						],
+						"horizontal-alignment": "right",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 476,
+					"sid": 465667380152932,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 181.5676508653965,
+						"y": 451.5347595214844,
+						"width": 141.31750530731517,
+						"height": 87.1429777208366,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
 					"type": "lvl8_txt_btn2",
 					"properties": {
 						"text": "TEXTO",
@@ -1066,28 +1576,44 @@
 					}
 				},
 				{
-					"type": "lvl8_setabaixo",
+					"type": "lvl8_txt_btn1",
 					"properties": {
+						"text": "TEXTO",
+						"enable-bbcode": true,
+						"font": "Arial",
+						"size": 18,
+						"line-height": 0,
+						"bold": true,
+						"italic": true,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
+						"origin": "top-left",
+						"read-aloud": false
 					},
-					"uid": 403,
-					"sid": 938067306028976,
+					"uid": 429,
+					"sid": 660429907125455,
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1219,
-						"y": 230.77757263183594,
-						"width": 41,
-						"height": 36,
-						"originX": 0.5,
-						"originY": 0.5,
+						"x": 1149,
+						"y": 110.74887190665254,
+						"width": 140.1702430823873,
+						"height": 136.61815017305057,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -1099,28 +1625,44 @@
 					}
 				},
 				{
-					"type": "lvl8_setabaixo2",
+					"type": "lvl8_txt_timer",
 					"properties": {
+						"text": "Texto",
+						"enable-bbcode": true,
+						"font": "Orbitron",
+						"size": 40,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
 						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
+						"origin": "top-left",
+						"read-aloud": false
 					},
-					"uid": 404,
-					"sid": 687717173210275,
+					"uid": 478,
+					"sid": 757694269763859,
 					"tags": "",
 					"instanceVariables": {},
 					"behaviors": {},
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1218,
-						"y": 516.3811645507812,
-						"width": 41,
-						"height": 36,
-						"originX": 0.5,
-						"originY": 0.5,
+						"x": 788.1906121571434,
+						"y": 639.0357666015625,
+						"width": 225.16242526839744,
+						"height": 80.324850536795,
+						"originX": 0,
+						"originY": 0,
 						"color": [
 							1,
 							1,
@@ -1130,7 +1672,43 @@
 						"z": 0,
 						"angle": 0
 					}
-				},
+				}
+			],
+			"sid": 701033587012714,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "seta",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
 				{
 					"type": "lvl8_setacima",
 					"properties": {
@@ -1148,8 +1726,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1221,
-						"y": 128.71435546875,
+						"x": 1219.0457618857424,
+						"y": 92.79818725585938,
 						"width": 41,
 						"height": 36,
 						"originX": 0.5,
@@ -1181,8 +1759,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1217,
-						"y": 412.63934326171875,
+						"x": 1219.0457618857424,
+						"y": 375.9663391113281,
 						"width": 41,
 						"height": 36,
 						"originX": 0.5,
@@ -1196,9 +1774,324 @@
 						"z": 0,
 						"angle": 3.1380650616332555
 					}
+				},
+				{
+					"type": "lvl8_setabaixo",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 403,
+					"sid": 938067306028976,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1219.109130859375,
+						"y": 267.1106719970703,
+						"width": 41,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_setabaixo2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 404,
+					"sid": 687717173210275,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1219.109130859375,
+						"y": 551.4314575195312,
+						"width": 41,
+						"height": 36,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
 				}
 			],
-			"sid": 267370901834914,
+			"sid": 302271991764511,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "instrucao",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "lvl8_instrucao1",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 465,
+					"sid": 640224545965982,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 804,
+						"y": 78,
+						"width": 63.00000000000001,
+						"height": 62,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_instrucao2",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 466,
+					"sid": 827936881977725,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1216.883056640625,
+						"y": 315.5583190917969,
+						"width": 63.00000000000001,
+						"height": 62,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_instrucaoHex",
+					"properties": {
+						"text": "O display mostrará 4 pares de dois caracteres.\n\nCada par deve ser traduzido em uma única letra minúscula.\n\nAs letras não devem ser separadas ao submeter a resposta.\n\nConsulte a tabela ao lado para traduzir os pares.\n\nDificuldade: Fácil",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 14,
+						"line-height": -3,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0.29411764705882354,
+							0.8392156862745098,
+							0.2980392156862745,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 424,
+					"sid": 104221776331873,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 54,
+						"y": 266,
+						"width": 229.06144178038562,
+						"height": 298.06149333535495,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_tabelahex",
+					"properties": {
+						"text": "   Hex        Hex  \na    61     n    6E\nb    62     o    6F\nc    63     p    70\nd    64     q    71\ne    65      r    72\nf    66      s    73\ng    67      t    74\nh    68      u    75\ni    69      v    76\nj    6A     w    77\nk    6B      x    78\nl    6C      y    79\nm    6D     z    7A",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 14,
+						"line-height": 0,
+						"bold": true,
+						"italic": false,
+						"color": [
+							0.2627450980392157,
+							0.7490196078431373,
+							0.26666666666666666,
+							1
+						],
+						"horizontal-alignment": "right",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 433,
+					"sid": 320195293232528,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 293,
+						"y": 242,
+						"width": 182.06144178038562,
+						"height": 314.06149333535495,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl8_txt_sobreHex",
+					"properties": {
+						"text": "Sobre Hexadecimal",
+						"enable-bbcode": true,
+						"font": "system-ui",
+						"size": 14,
+						"line-height": -3,
+						"bold": true,
+						"italic": true,
+						"color": [
+							0.32941176470588235,
+							0.8509803921568627,
+							0.32941176470588235,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": false,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 422,
+					"sid": 611004942033651,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 71.71913146972656,
+						"y": 234,
+						"width": 189.06144178038562,
+						"height": 26.061493335354953,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 0,
+						"angle": 0
+					}
+				}
+			],
+			"sid": 536976195392438,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,

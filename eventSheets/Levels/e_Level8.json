@@ -7,6 +7,36 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "lvl8_tempoRestante",
+			"type": "number",
+			"initialValue": "300",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 677392982190176
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_multiplicadorTimer",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 854607359573240
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_erros",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 612184025125911
+		},
+		{
+			"eventType": "variable",
 			"name": "lvl8_travaInput",
 			"type": "number",
 			"initialValue": "0",
@@ -74,6 +104,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 548143013334730
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_hexResolvido",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 595568946876028
 		},
 		{
 			"eventType": "variable",
@@ -261,14 +301,6 @@
 							}
 						},
 						{
-							"id": "set-text",
-							"objectClass": "lvl8_txt_resposta",
-							"sid": 443830823483263,
-							"parameters": {
-								"text": "\"Digite sua resposta...\""
-							}
-						},
-						{
 							"callFunction": "TypingEffect",
 							"sid": 154825736055026,
 							"parameters": [
@@ -285,6 +317,122 @@
 						}
 					],
 					"sid": 107104501354954
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 176000587801885,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_instrucao1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreBotao",
+							"sid": 213258795776578,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoBotao",
+							"sid": 786091718665565,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreHex",
+							"sid": 737731625642433,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_tabelahex",
+							"sid": 887016055918493,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoHex",
+							"sid": 562899409229827,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 603746043454462
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 503835788142349,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_instrucao2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreHex",
+							"sid": 784491373647940,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_tabelahex",
+							"sid": 172253621627687,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoHex",
+							"sid": 883265866101705,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreBotao",
+							"sid": 990529242352571,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoBotao",
+							"sid": 673236725273460,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 493605603655195
 				}
 			],
 			"sid": 993108338041617
@@ -296,99 +444,6 @@
 			"description": "",
 			"isActiveOnStart": true,
 			"children": [
-				{
-					"functionName": "lvl8_atualizarInstrucao",
-					"functionDescription": "",
-					"functionCategory": "",
-					"functionReturnType": "none",
-					"functionCopyPicked": false,
-					"functionIsAsync": false,
-					"functionParameters": [],
-					"eventType": "function-block",
-					"conditions": [],
-					"actions": [],
-					"sid": 540525227464765,
-					"children": [
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 749909651544567,
-									"parameters": {
-										"variable": "lvl8_etapa",
-										"comparison": 0,
-										"value": "1"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl8_txt_instrucao",
-									"sid": 612031110293025,
-									"parameters": {
-										"text": "\"MÓDULO 01\n   DECODIFICAÇÃO HEX\n   ──────────────────\n   Os valores no display\n   representam caracteres\n   ASCII em hexadecimal.\n\n   Converta cada valor\n   e forme a palavra.\n\n   O botão lateral muda\n   o indicador de status.\n\n   Digite a resposta\n   e pressione ENVIAR.\""
-									}
-								}
-							],
-							"sid": 424399436111700
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 986741686312889,
-									"parameters": {
-										"variable": "lvl8_etapa",
-										"comparison": 0,
-										"value": "2"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl8_txt_instrucao",
-									"sid": 212681539981296,
-									"parameters": {
-										"text": "\"\""
-									}
-								}
-							],
-							"sid": 351548960693174
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 109880680891076,
-									"parameters": {
-										"variable": "lvl8_etapa",
-										"comparison": 0,
-										"value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-text",
-									"objectClass": "lvl8_txt_instrucao",
-									"sid": 357602367044577,
-									"parameters": {
-										"text": "\"\""
-									}
-								}
-							],
-							"sid": 993112956919299
-						}
-					]
-				},
 				{
 					"functionName": "lvl8_gerarHex",
 					"functionDescription": "",
@@ -403,10 +458,10 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 703463667011434,
+							"sid": 849778622486533,
 							"parameters": {
 								"variable": "lvl8_palavraAtual",
-								"value": "choose(\"ABORT\",\"ALERT\",\"ARMED\",\"BLOCK\",\"CRASH\",\"DEBUG\",\"ERROR\",\"FLASH\",\"GHOST\",\"PATCH\",\"VIRUS\",\"WIRED\")"
+								"value": "choose(\"abort\",\"alert\",\"armed\",\"block\",\"crash\",\"debug\",\"error\",\"flash\",\"ghost\",\"patch\",\"virus\",\"wired\")"
 							}
 						}
 					],
@@ -1347,7 +1402,7 @@
 					]
 				},
 				{
-					"functionName": "lvl8_verificarVitoria",
+					"functionName": "lvl8_verificarHex",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -1357,7 +1412,460 @@
 					"eventType": "function-block",
 					"conditions": [],
 					"actions": [],
-					"sid": 445953149513951
+					"sid": 445953149513951,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 938702529427851,
+									"parameters": {
+										"first-value": "lowercase(lvl8_inputJogador)",
+										"comparison": 0,
+										"second-value": "lvl8_respostaCorreta"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 227342659620387,
+									"parameters": {
+										"variable": "lvl8_hexResolvido",
+										"value": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 993531306008882,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta1",
+									"sid": 191487104960522,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta2",
+									"sid": 306433042501967,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta3",
+									"sid": 102093968826190,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta4",
+									"sid": 709411497495633,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta5",
+									"sid": 333859767766295,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								}
+							],
+							"sid": 378014039803976
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 346175113386495
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "lvl8_erro",
+									"sid": 858414146114294
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta1",
+									"sid": 884444530496725,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta2",
+									"sid": 418991414746071,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta3",
+									"sid": 236571479495500,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta4",
+									"sid": 153206846982874,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta5",
+									"sid": 997404778876221,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 307853039567637,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta1",
+									"sid": 465740434769677,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta2",
+									"sid": 483333288406582,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta3",
+									"sid": 972033990601785,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta4",
+									"sid": 773922114465555,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta5",
+									"sid": 462952564264399,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 101323972348650,
+									"parameters": {
+										"variable": "lvl8_inputJogador",
+										"value": "\"\""
+									}
+								}
+							],
+							"sid": 400413511174519
+						}
+					]
+				},
+				{
+					"functionName": "lvl8_passarEtapa",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 728093336817244,
+							"parameters": {
+								"variable": "lvl8_hexResolvido",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 929162163459426,
+							"parameters": {
+								"variable": "lvl8_btn1_Confirmado",
+								"comparison": 0,
+								"value": "1"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 647319301217616,
+							"parameters": {
+								"variable": "lvl8_btn2_Confirmado",
+								"comparison": 0,
+								"value": "1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 567982120026977,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"value": "1"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 376326260368628,
+							"parameters": {
+								"variable": "lvl8_etapa",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 770364182996833,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_avancoetapa"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 534583016002386
+				},
+				{
+					"functionName": "lvl8_erro",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 522163698775234,
+							"parameters": {
+								"variable": "lvl8_erros",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 839361001880378,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_error"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 956042275158942,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 330793740208720,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro1",
+									"sid": 324644710883501,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 147795217891566,
+									"parameters": {
+										"variable": "lvl8_multiplicadorTimer",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 758082578009435
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 732075416244995,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro2",
+									"sid": 839753399625258,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 240710336959475,
+									"parameters": {
+										"variable": "lvl8_multiplicadorTimer",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 160943646843111
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 552320077970668,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro3",
+									"sid": 153890386198598,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 627053033586997,
+									"parameters": {
+										"variable": "lvl8_multiplicadorTimer",
+										"value": "4"
+									}
+								}
+							],
+							"sid": 987298408078629
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 322403889700902,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"comparison": 0,
+										"value": "4"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 908547782644765,
+									"parameters": {
+										"variable": "lvl8_tempoRestante",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "restart-layout",
+									"objectClass": "System",
+									"sid": 470798194955570
+								}
+							],
+							"sid": 123083712736717,
+							"isOrBlock": true
+						}
+					]
 				}
 			],
 			"sid": 401572603468875
@@ -1371,7 +1879,7 @@
 			"children": [
 				{
 					"eventType": "comment",
-					"text": "click no btn 1"
+					"text": "click de cima no btn 1"
 				},
 				{
 					"eventType": "block",
@@ -1405,65 +1913,30 @@
 								"comparison": 0,
 								"value": "0"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 291763840109365,
+							"parameters": {
+								"variable": "lvl8_btn1_direcaoCorreta",
+								"comparison": 0,
+								"value": "\"cima\""
+							}
 						}
 					],
-					"actions": [],
-					"sid": 159546483512457,
-					"children": [
+					"actions": [
 						{
-							"eventType": "comment",
-							"text": "precisa adicionar audio"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 897027978669225,
-									"parameters": {
-										"variable": "lvl8_btn1_direcaoCorreta",
-										"comparison": 0,
-										"value": "\"cima\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 731015834365135,
-									"parameters": {
-										"variable": "lvl8_btn1_cliquesFeitos",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 191613645563706
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 260845604574483
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 888791127967275,
-									"parameters": {
-										"variable": "lvl8_btn1_cliquesFeitos",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 949409057504997
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 345737137300826,
+							"parameters": {
+								"variable": "lvl8_btn1_cliquesFeitos",
+								"value": "1"
+							}
 						}
-					]
+					],
+					"sid": 159546483512457
 				},
 				{
 					"eventType": "block",
@@ -1497,65 +1970,29 @@
 								"comparison": 0,
 								"value": "0"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 911075675903250,
+							"parameters": {
+								"variable": "lvl8_btn1_direcaoCorreta",
+								"comparison": 0,
+								"value": "\"cima\""
+							}
 						}
 					],
-					"actions": [],
-					"sid": 283223605376718,
-					"children": [
+					"actions": [
 						{
-							"eventType": "comment",
-							"text": "precisa adicionar audio"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 866059148197998,
-									"parameters": {
-										"variable": "lvl8_btn1_direcaoCorreta",
-										"comparison": 0,
-										"value": "\"baixo\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 934772453813569,
-									"parameters": {
-										"variable": "lvl8_btn1_cliquesFeitos",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 977615508652450
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 578249547673704
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 956656483829412,
-									"parameters": {
-										"variable": "lvl8_btn1_cliquesFeitos",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 535941093544200
+							"callFunction": "lvl8_erro",
+							"sid": 530867664099129
 						}
-					]
+					],
+					"sid": 283223605376718
+				},
+				{
+					"eventType": "comment",
+					"text": "click de baixo no btn 1"
 				},
 				{
 					"eventType": "block",
@@ -1563,17 +2000,17 @@
 						{
 							"id": "on-object-clicked",
 							"objectClass": "Mouse",
-							"sid": 476028767160654,
+							"sid": 710604994319286,
 							"parameters": {
 								"mouse-button": "left",
 								"click-type": "clicked",
-								"object-clicked": "lvl8_cordobtn"
+								"object-clicked": "lvl8_setabaixo"
 							}
 						},
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 975863678959085,
+							"sid": 932658613601412,
 							"parameters": {
 								"variable": "lvl8_travaInput",
 								"comparison": 0,
@@ -1583,53 +2020,228 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 873974739136312,
+							"sid": 177338246229868,
 							"parameters": {
 								"variable": "lvl8_btn1_Confirmado",
 								"comparison": 0,
 								"value": "0"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 597118675909981,
+							"parameters": {
+								"variable": "lvl8_btn1_direcaoCorreta",
+								"comparison": 0,
+								"value": "\"baixo\""
+							}
 						}
 					],
-					"actions": [],
-					"sid": 929753286119761,
-					"children": [
+					"actions": [
 						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-two-values",
-									"objectClass": "System",
-									"sid": 717318369859951,
-									"parameters": {
-										"first-value": "lvl8_btn1_cliquesFeitos",
-										"comparison": 0,
-										"second-value": "lvl8_btn1_cliquesNecessarios"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 576772980131999,
-									"parameters": {
-										"variable": "lvl8_btn1_Confirmado",
-										"value": "1"
-									}
-								},
-								{
-									"callFunction": "lvl8_verificarVitoria",
-									"sid": 621935014246611
-								}
-							],
-							"sid": 534687591224955
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 125794724841777,
+							"parameters": {
+								"variable": "lvl8_btn1_cliquesFeitos",
+								"value": "1"
+							}
 						}
-					]
+					],
+					"sid": 574232918896505
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 976036671535554,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 841639649289380,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 450986570607817,
+							"parameters": {
+								"variable": "lvl8_btn1_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 458424652317685,
+							"parameters": {
+								"variable": "lvl8_btn1_direcaoCorreta",
+								"comparison": 0,
+								"value": "\"baixo\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "lvl8_erro",
+							"sid": 434302783194612
+						}
+					],
+					"sid": 588343835230818
 				},
 				{
 					"eventType": "comment",
-					"text": "click no btn 2"
+					"text": "click no btn 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 978670790755854,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 748309254389229,
+							"parameters": {
+								"variable": "lvl8_btn1_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 993091897289204,
+							"parameters": {
+								"first-value": "lvl8_btn1_cliquesFeitos",
+								"comparison": 0,
+								"second-value": "lvl8_btn1_cliquesNecessarios"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 290509885961542,
+							"parameters": {
+								"variable": "lvl8_btn1_Confirmado",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn1",
+							"sid": 128592369965956,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 374675382722858,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_acerto"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"callFunction": "lvl8_passarEtapa",
+							"sid": 972529725049286
+						}
+					],
+					"sid": 929753286119761
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 287663834716840,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 518063222802139,
+							"parameters": {
+								"variable": "lvl8_btn1_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 461781555619127,
+							"parameters": {
+								"first-value": "lvl8_btn1_cliquesFeitos",
+								"comparison": 1,
+								"second-value": "lvl8_btn1_cliquesNecessarios"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn1",
+							"sid": 324851236380919,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"callFunction": "lvl8_erro",
+							"sid": 896130012259747
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 114357407487200,
+							"parameters": {
+								"variable": "lvl8_btn1_cliquesFeitos",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 607193426623854
+				},
+				{
+					"eventType": "comment",
+					"text": "click de cima no btn 2"
 				},
 				{
 					"eventType": "block",
@@ -1663,65 +2275,30 @@
 								"comparison": 0,
 								"value": "0"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 775515196978410,
+							"parameters": {
+								"variable": "lvl8_btn2_direcaoCorreta",
+								"comparison": 0,
+								"value": "\"cima\""
+							}
 						}
 					],
-					"actions": [],
-					"sid": 412030758978418,
-					"children": [
+					"actions": [
 						{
-							"eventType": "comment",
-							"text": "precisa adicionar audio"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 137512561198396,
-									"parameters": {
-										"variable": "lvl8_btn2_direcaoCorreta",
-										"comparison": 0,
-										"value": "\"cima\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 286269898463830,
-									"parameters": {
-										"variable": "lvl8_btn2_cliquesFeitos",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 326578196649404
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 759991672898011
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 265299498664430,
-									"parameters": {
-										"variable": "lvl8_btn2_cliquesFeitos",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 756818567693533
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 631379444076071,
+							"parameters": {
+								"variable": "lvl8_btn2_cliquesFeitos",
+								"value": "1"
+							}
 						}
-					]
+					],
+					"sid": 412030758978418
 				},
 				{
 					"eventType": "block",
@@ -1755,68 +2332,553 @@
 								"comparison": 0,
 								"value": "0"
 							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 739878398202208,
+							"parameters": {
+								"variable": "lvl8_btn2_direcaoCorreta",
+								"comparison": 0,
+								"value": "\"cima\""
+							}
 						}
 					],
-					"actions": [],
-					"sid": 323417967449050,
-					"children": [
+					"actions": [
 						{
-							"eventType": "comment",
-							"text": "precisa adicionar audio"
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 519405443062116,
-									"parameters": {
-										"variable": "lvl8_btn2_direcaoCorreta",
-										"comparison": 0,
-										"value": "\"baixo\""
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 177097164974378,
-									"parameters": {
-										"variable": "lvl8_btn2_cliquesFeitos",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 614856390127058
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 673963434680418
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 283313282861284,
-									"parameters": {
-										"variable": "lvl8_btn2_cliquesFeitos",
-										"value": "0"
-									}
-								}
-							],
-							"sid": 324787689265455
+							"callFunction": "lvl8_erro",
+							"sid": 554011876032205
 						}
-					]
+					],
+					"sid": 323417967449050
+				},
+				{
+					"eventType": "comment",
+					"text": "click de baixo no btn 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 839557380099685,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 621276589363179,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 356307938251502,
+							"parameters": {
+								"variable": "lvl8_btn2_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 168565196630252,
+							"parameters": {
+								"variable": "lvl8_btn2_direcaoCorreta",
+								"comparison": 0,
+								"value": "\"baixo\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 435359640542279,
+							"parameters": {
+								"variable": "lvl8_btn2_cliquesFeitos",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 170544901581087
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 198482981825702,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 204371364792441,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 711002319443503,
+							"parameters": {
+								"variable": "lvl8_btn2_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 785813070029603,
+							"parameters": {
+								"variable": "lvl8_btn2_direcaoCorreta",
+								"comparison": 0,
+								"value": "\"baixo\""
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "lvl8_erro",
+							"sid": 120248451438780
+						}
+					],
+					"sid": 117941241277499
+				},
+				{
+					"eventType": "comment",
+					"text": "click no btn 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 719103141054477,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 670413314597729,
+							"parameters": {
+								"variable": "lvl8_btn2_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 939613696967907,
+							"parameters": {
+								"first-value": "lvl8_btn2_cliquesFeitos",
+								"comparison": 0,
+								"second-value": "lvl8_btn2_cliquesNecessarios"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 592543213368557,
+							"parameters": {
+								"variable": "lvl8_btn2_Confirmado",
+								"value": "1"
+							}
+						},
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn2",
+							"sid": 144380372033622,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 862102598619263,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_acerto"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"callFunction": "lvl8_passarEtapa",
+							"sid": 895444550246362
+						}
+					],
+					"sid": 269908548401923
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 306135593927776,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 682081218393235,
+							"parameters": {
+								"variable": "lvl8_btn2_Confirmado",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 293892128252357,
+							"parameters": {
+								"first-value": "lvl8_btn2_cliquesFeitos",
+								"comparison": 1,
+								"second-value": "lvl8_btn2_cliquesNecessarios"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn2",
+							"sid": 207106621420235,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						},
+						{
+							"callFunction": "lvl8_erro",
+							"sid": 694422456837054
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 936971736548759,
+							"parameters": {
+								"variable": "lvl8_btn1_cliquesFeitos",
+								"value": "0"
+							}
+						}
+					],
+					"sid": 377492462079438
+				},
+				{
+					"eventType": "comment",
+					"text": "teclado"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 272549010045610
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 720359101843727,
+							"parameters": {
+								"first-value": "len(lvl8_inputJogador)",
+								"comparison": 2,
+								"second-value": "5"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 656080793412627,
+							"parameters": {
+								"first-value": "Keyboard.LastKeyCode",
+								"comparison": 5,
+								"second-value": "65"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 560742081493520,
+							"parameters": {
+								"first-value": "Keyboard.LastKeyCode",
+								"comparison": 3,
+								"second-value": "90"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 474759530597419,
+							"parameters": {
+								"variable": "lvl8_inputJogador",
+								"value": "lvl8_inputJogador & lowercase(Keyboard.StringFromKeyCode(Keyboard.LastKeyCode))"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_digiteAqui",
+							"sid": 601218193957523,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 828274502203804
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 970095881235127,
+							"parameters": {
+								"key": 8
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 943864549896204,
+							"parameters": {
+								"variable": "lvl8_inputJogador",
+								"value": "left(\n    lvl8_inputJogador,\n    len(lvl8_inputJogador)-1\n)"
+							}
+						}
+					],
+					"sid": 614134770722873
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 646186833799637,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "lvl8_verificarHex",
+							"sid": 210721865413082
+						}
+					],
+					"sid": 852442032054281
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 526030510373304
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl8_txt_resposta1",
+							"sid": 570918867899463,
+							"parameters": {
+								"text": "mid(lvl8_inputJogador, 0, 1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl8_txt_resposta2",
+							"sid": 981947950628624,
+							"parameters": {
+								"text": "mid(lvl8_inputJogador,  1, 1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl8_txt_resposta3",
+							"sid": 809381704215206,
+							"parameters": {
+								"text": "mid(lvl8_inputJogador, 2, 1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl8_txt_resposta4",
+							"sid": 973098799213803,
+							"parameters": {
+								"text": "mid(lvl8_inputJogador, 3, 1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl8_txt_resposta5",
+							"sid": 583520984334293,
+							"parameters": {
+								"text": "mid(lvl8_inputJogador, 4, 1)"
+							}
+						}
+					],
+					"sid": 500791762098237
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 771551137381318,
+							"parameters": {
+								"first-value": "len(lvl8_inputJogador)",
+								"comparison": 4,
+								"second-value": "5"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 978456084221756,
+							"parameters": {
+								"variable": "lvl8_inputJogador",
+								"value": "left(lvl8_inputJogador, 5)"
+							}
+						}
+					],
+					"sid": 215495590412193
+				},
+				{
+					"eventType": "comment",
+					"text": "botao deletar"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 960761415730858,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_deletar"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 312515444317725,
+							"parameters": {
+								"variable": "lvl8_inputJogador",
+								"value": "left(lvl8_inputJogador, len(lvl8_inputJogador)-5)"
+							}
+						}
+					],
+					"sid": 296582261904571
+				},
+				{
+					"eventType": "comment",
+					"text": "botao enviar"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 368218976914973,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_enviar"
+							}
+						}
+					],
+					"actions": [
+						{
+							"callFunction": "lvl8_verificarHex",
+							"sid": 572910651090952
+						}
+					],
+					"sid": 595560475745103
 				}
 			],
 			"sid": 222232719548771
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 635249641975679
+				}
+			],
+			"actions": [
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 561942622156173,
+					"parameters": {
+						"variable": "lvl8_tempoRestante",
+						"value": "lvl8_tempoRestante - (dt * lvl8_multiplicadorTimer)"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "lvl8_txt_timer",
+					"sid": 834805719759732,
+					"parameters": {
+						"text": "floor(lvl8_tempoRestante / 60)\n&\n\":\"\n&\nzeropad(floor(lvl8_tempoRestante % 60), 2)"
+					}
+				}
+			],
+			"sid": 369314652966139
 		}
 	],
 	"sid": 653966239576836
