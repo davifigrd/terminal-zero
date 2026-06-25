@@ -16,42 +16,42 @@
 		{
 			"type": "plugin",
 			"id": "Arr",
-			"name": "Matriz",
+			"name": "Array",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Audio",
-			"name": "Áudio",
+			"name": "Audio",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Browser",
-			"name": "Navegador",
+			"name": "Browser",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Camera3D",
-			"name": "Câmera 3D",
+			"name": "3D camera",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "Keyboard",
-			"name": "Teclado",
+			"name": "Keyboard",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "LocalStorage",
-			"name": "Armazenamento local",
+			"name": "Local storage",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -65,7 +65,7 @@
 		{
 			"type": "plugin",
 			"id": "Shape3D",
-			"name": "Forma 3D",
+			"name": "3D shape",
 			"author": "Scirra",
 			"bundled": false
 		},
@@ -79,133 +79,133 @@
 		{
 			"type": "plugin",
 			"id": "Text",
-			"name": "Texto",
+			"name": "Text",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TextBox",
-			"name": "Entrada de texto",
+			"name": "Text input",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "plugin",
 			"id": "TiledBg",
-			"name": "Plano de Fundo em Blocos",
+			"name": "Tiled Background",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Bullet",
-			"name": "Projétil",
+			"name": "Bullet",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "DragnDrop",
-			"name": "Arrastar & Soltar",
+			"name": "Drag & Drop",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "EightDir",
-			"name": "8 Direções",
+			"name": "8 Direction",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Fade",
-			"name": "Esmaecer",
+			"name": "Fade",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Flash",
-			"name": "Piscar",
+			"name": "Flash",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "MoveTo",
-			"name": "Mover Para",
+			"name": "Move To",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Pin",
-			"name": "Fixar",
+			"name": "Pin",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Sin",
-			"name": "Senóide",
+			"name": "Sine",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "Tween",
-			"name": "Interpolação",
+			"name": "Tween",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "custom",
-			"name": "Personalizado",
+			"name": "Custom",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "scrollto",
-			"name": "Centrar em",
+			"name": "Scroll To",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "behavior",
 			"id": "solid",
-			"name": "Sólido",
+			"name": "Solid",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "effect",
 			"id": "colorblend",
-			"name": "Cor",
+			"name": "Color",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "effect",
 			"id": "glowhorizontal",
-			"name": "Brilho horizontal",
+			"name": "Glow horizontal",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "effect",
 			"id": "grayscale",
-			"name": "Escala de cinza",
+			"name": "Grayscale",
 			"author": "Scirra",
 			"bundled": false
 		},
 		{
 			"type": "effect",
 			"id": "vignette",
-			"name": "Vinheta",
+			"name": "Vignette",
 			"author": "Brad Larson",
 			"bundled": false
 		}
@@ -393,7 +393,8 @@
 					"AJAX",
 					"Audio",
 					"TypingEffect",
-					"Browser"
+					"Browser",
+					"3DCamera"
 				],
 				"subfolders": [],
 				"name": "Input"
@@ -718,7 +719,7 @@
 											"lvl10_chaveAzul",
 											"lvl10_portaAzul",
 											"lvl10_portaTriggerAzul",
-											"txtInteragir"
+											"lvl10_txtInteragir"
 										],
 										"subfolders": [],
 										"name": "azul"
@@ -728,7 +729,7 @@
 											"lvl10_chaveVermelha",
 											"lvl10_portaTriggerVermelha",
 											"lvl10_portaVermelha",
-											"txtInteragir2"
+											"lvl10_txtInteragir2"
 										],
 										"subfolders": [],
 										"name": "vermelho"
@@ -738,25 +739,34 @@
 											"lvl10_portaTriggerAmarelo",
 											"lvl10_chaveAmarelo",
 											"lvl10_portaAmarelo",
-											"txtInteragir3"
+											"lvl10_txtInteragir3"
 										],
 										"subfolders": [],
 										"name": "amarelo"
+									},
+									{
+										"items": [
+											"lvl10_portaTriggerFim",
+											"lvl10_chaveFim",
+											"lvl10_portaFim",
+											"lvl10_txtInteragirFim"
+										],
+										"subfolders": [],
+										"name": "porta fim"
 									}
 								],
 								"name": "portas_chaves"
 							},
 							{
 								"items": [
-									"crosshair",
-									"escuro"
+									"lvl10_crosshair",
+									"lvl10_escuro"
 								],
 								"subfolders": [],
 								"name": "hud"
 							},
 							{
 								"items": [
-									"3DCamera",
 									"lvl10_player"
 								],
 								"subfolders": [],
@@ -767,8 +777,8 @@
 								"subfolders": [
 									{
 										"items": [
-											"cubo1",
-											"cuboTrigger1",
+											"lvl10_cubo1",
+											"lvl10_cuboTrigger1",
 											"lvl10_portaRoxa",
 											"lvl10_botaoRoxo"
 										],
@@ -779,16 +789,16 @@
 										"items": [
 											"lvl10_portaVerde",
 											"lvl10_botaoVerde",
-											"cubo2",
-											"cuboTrigger2"
+											"lvl10_cubo2",
+											"lvl10_cuboTrigger2"
 										],
 										"subfolders": [],
 										"name": "cubo2"
 									},
 									{
 										"items": [
-											"cubo3",
-											"cuboTrigger3",
+											"lvl10_cubo3",
+											"lvl10_cuboTrigger3",
 											"lvl10_botaoBranco",
 											"lvl10_portaBranco"
 										],
@@ -800,8 +810,11 @@
 							},
 							{
 								"items": [
-									"ground",
-									"parede"
+									"lvl10_ground",
+									"lvl10_parede",
+									"lvl10_sky",
+									"lvl10_",
+									"lvl10_sky2"
 								],
 								"subfolders": [],
 								"name": "cenario"

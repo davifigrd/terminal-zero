@@ -2,12 +2,12 @@
 	"name": "Level10",
 	"layers": [
 		{
-			"name": "Layer 0",
+			"name": "ground",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "ground",
+					"type": "lvl10_ground",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -51,9 +51,45 @@
 						"depth": 16,
 						"angle": 0
 					}
-				},
+				}
+			],
+			"sid": 569111697069770,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Layer 0",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -99,7 +135,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -145,7 +181,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -191,7 +227,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -237,7 +273,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -266,9 +302,9 @@
 					"locked": false,
 					"world": {
 						"x": 833.79286337851,
-						"y": 1892,
+						"y": 1889.4944340097481,
 						"width": 1723.58572675702,
-						"height": 118.57121339806105,
+						"height": 113.56008141755734,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -283,7 +319,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -329,7 +365,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -375,7 +411,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -421,7 +457,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -467,7 +503,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -495,9 +531,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2134,
+						"x": 2126.9792878895923,
 						"y": 132.410296420587,
-						"width": 100.58226103528108,
+						"width": 114.62368525609659,
 						"height": 272.04259954284225,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -513,7 +549,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -559,7 +595,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -605,7 +641,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -651,7 +687,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -697,7 +733,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -743,7 +779,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -789,7 +825,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -835,7 +871,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -864,9 +900,9 @@
 					"locked": false,
 					"world": {
 						"x": 2596,
-						"y": 1884,
+						"y": 1891.9310974263271,
 						"width": 1469.379952764927,
-						"height": 118.57121339806105,
+						"height": 102.70901854540698,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -881,7 +917,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -927,7 +963,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -973,7 +1009,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1019,7 +1055,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1065,7 +1101,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1111,7 +1147,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1157,7 +1193,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1203,7 +1239,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1249,7 +1285,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1295,7 +1331,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1341,7 +1377,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1387,7 +1423,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1433,7 +1469,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1479,7 +1515,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1525,7 +1561,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1571,7 +1607,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1617,7 +1653,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1663,7 +1699,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1709,7 +1745,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1755,7 +1791,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1801,7 +1837,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1847,7 +1883,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1893,7 +1929,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1939,7 +1975,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -1985,7 +2021,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2031,7 +2067,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2077,7 +2113,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2123,7 +2159,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2169,7 +2205,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2215,7 +2251,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2261,7 +2297,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2307,7 +2343,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2353,7 +2389,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2399,7 +2435,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2445,7 +2481,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2491,7 +2527,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2537,7 +2573,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2583,7 +2619,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2629,7 +2665,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2675,7 +2711,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2704,9 +2740,9 @@
 					"locked": false,
 					"world": {
 						"x": 2801.0448348540763,
-						"y": 1687,
+						"y": 1674.4783214211018,
 						"width": 960.2310093351045,
-						"height": 93.29936483930487,
+						"height": 68.25600768150832,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -2721,7 +2757,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2767,7 +2803,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2813,7 +2849,7 @@
 					}
 				},
 				{
-					"type": "parede",
+					"type": "lvl10_parede",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -2887,10 +2923,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 2202.015270048177,
+						"x": 2205.925643701701,
 						"y": 1203.2785934485382,
 						"width": 32.75762635020169,
-						"height": 174.0656963463539,
+						"height": 172.425177169945,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -3013,9 +3049,9 @@
 					"locked": false,
 					"world": {
 						"x": 3082,
-						"y": 1305.956186629856,
+						"y": 1307.0395053706993,
 						"width": 27.938963674587512,
-						"height": 211.13416485879145,
+						"height": 200.75711165702853,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -3030,7 +3066,7 @@
 					}
 				},
 				{
-					"type": "cuboTrigger1",
+					"type": "lvl10_cuboTrigger1",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -3063,7 +3099,7 @@
 					}
 				},
 				{
-					"type": "cubo1",
+					"type": "lvl10_cubo1",
 					"properties": {
 						"shape": "box",
 						"z-origin": "back",
@@ -3144,10 +3180,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 822.3927284702071,
+						"x": 824.2836312467929,
 						"y": 1217.4570905997423,
 						"width": 38.30898317957576,
-						"height": 185.77886514353918,
+						"height": 177.99279488700938,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -3190,10 +3226,10 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1323.402587890625,
+						"x": 1317.8797305162013,
 						"y": 1203.4326171875,
 						"width": 43.07412755968673,
-						"height": 224.3449952903261,
+						"height": 212.2796761031243,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
@@ -3408,9 +3444,9 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 1320.9974365234375,
-						"y": 1195.7251586914062,
-						"width": 250,
+						"x": 1316.7272201263472,
+						"y": 1196.8484434374539,
+						"width": 240.11093434385475,
 						"height": 82.8195148450618,
 						"originX": 0.5,
 						"originY": 0.5,
@@ -3421,7 +3457,7 @@
 							1
 						],
 						"z": 1.6474504470825195,
-						"angle": 0.00010001972792483826
+						"angle": 0.0001091765936341799
 					}
 				},
 				{
@@ -3456,8 +3492,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 222.39488220214844,
-						"y": 1300.9873657226562,
+						"x": 1756,
+						"y": 1831,
 						"width": 32,
 						"height": 32,
 						"originX": 0.5,
@@ -3588,8 +3624,8 @@
 					"showing": true,
 					"locked": false,
 					"world": {
-						"x": 3209.08837890625,
-						"y": 1781.2261962890625,
+						"x": 3204,
+						"y": 1772,
 						"width": 59.6789902115038,
 						"height": 55.095284729513004,
 						"originX": 0.5,
@@ -3636,12 +3672,160 @@
 			"global": false
 		},
 		{
+			"name": "Layer 1",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "lvl10_portaFim",
+					"properties": {
+						"shape": "box",
+						"z-origin": "back",
+						"initially-visible": true,
+						"face-back": false,
+						"face-front": true,
+						"face-left": true,
+						"face-right": true,
+						"face-top": true,
+						"face-bottom": true,
+						"back-face-culling": false,
+						"z-tiling-factor": 1,
+						"object-back": -1,
+						"object-front": -1,
+						"object-left": -1,
+						"object-right": -1,
+						"object-top": -1,
+						"object-bottom": -1
+					},
+					"uid": 553,
+					"sid": 941928847124336,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1779.096335711586,
+						"y": 1922.3189697265625,
+						"width": 40.808476181859206,
+						"height": 170.03000946232916,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": -40.66655695438385,
+						"depth": 240.110934,
+						"angle": 1.5707963267948966
+					}
+				},
+				{
+					"type": "lvl10_portaTriggerFim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 554,
+					"sid": 309059086725335,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1777.9427406339207,
+						"y": 1899.326548677506,
+						"width": 168.75213765102325,
+						"height": 22.80271319186272,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": -3.959765762090683,
+						"angle": 0
+					}
+				},
+				{
+					"type": "lvl10_chaveFim",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 555,
+					"sid": 719466264804608,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": true,
+					"locked": false,
+					"world": {
+						"x": 1771.7783203125,
+						"y": 1777.6070556640625,
+						"width": 37.8853880862981,
+						"height": 47.96675170427258,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 4.6353302001953125,
+						"angle": 0.8534660042252271
+					}
+				}
+			],
+			"sid": 894336843802724,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "Darkness",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "escuro",
+					"type": "lvl10_escuro",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -3705,12 +3889,81 @@
 			"global": false
 		},
 		{
+			"name": "sky",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
+					"type": "lvl10_sky",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 552,
+					"sid": 559001211158054,
+					"tags": "",
+					"instanceVariables": {},
+					"behaviors": {},
+					"showing": false,
+					"locked": false,
+					"world": {
+						"x": 1433.169120861092,
+						"y": 766.7533942280147,
+						"width": 4600.502674713589,
+						"height": 3318.0967345075564,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"z": 303.7052001953125,
+						"angle": 0
+					}
+				}
+			],
+			"sid": 363447091844683,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.3686274509803922,
+				0.3686274509803922,
+				0.3686274509803922,
+				1
+			],
+			"isTransparent": true,
+			"sampling": "auto",
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
 			"name": "UI",
 			"overriden": 0,
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "txtInteragir",
+					"type": "lvl10_txtInteragir",
 					"properties": {
 						"text": "",
 						"enable-bbcode": true,
@@ -3759,7 +4012,7 @@
 					}
 				},
 				{
-					"type": "crosshair",
+					"type": "lvl10_crosshair",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",

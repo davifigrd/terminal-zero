@@ -3,7 +3,7 @@
 	"events": [
 		{
 			"eventType": "variable",
-			"name": "PlayerHeight",
+			"name": "lvl10_PlayerHeight",
 			"type": "number",
 			"initialValue": "45",
 			"comment": "",
@@ -13,7 +13,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "PlayerSpeed",
+			"name": "lvl10_PlayerSpeed",
 			"type": "number",
 			"initialValue": "200",
 			"comment": "",
@@ -23,7 +23,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "MouseSense",
+			"name": "lvl10_MouseSense",
 			"type": "number",
 			"initialValue": "20",
 			"comment": "",
@@ -33,7 +33,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "dz",
+			"name": "lvl10_dz",
 			"type": "number",
 			"initialValue": "0",
 			"comment": "",
@@ -43,7 +43,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "Gravity",
+			"name": "lvl10_Gravity",
 			"type": "number",
 			"initialValue": "3.5",
 			"comment": "",
@@ -53,7 +53,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "onGround",
+			"name": "lvl10_onGround",
 			"type": "boolean",
 			"initialValue": "false",
 			"comment": "",
@@ -63,7 +63,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "jump_strength",
+			"name": "lvl10_jump_strength",
 			"type": "number",
 			"initialValue": "1.8",
 			"comment": "",
@@ -73,7 +73,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "temChaveAzul",
+			"name": "lvl10_temChaveAzul",
 			"type": "boolean",
 			"initialValue": "false",
 			"comment": "",
@@ -83,7 +83,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "temChaveAmarela",
+			"name": "lvl10_temChaveAmarela",
 			"type": "boolean",
 			"initialValue": "false",
 			"comment": "",
@@ -93,7 +93,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "temChaveVermelha",
+			"name": "lvl10_temChaveVermelha",
 			"type": "boolean",
 			"initialValue": "false",
 			"comment": "",
@@ -103,7 +103,7 @@
 		},
 		{
 			"eventType": "variable",
-			"name": "segurandoCubo",
+			"name": "lvl10_segurandoCubo",
 			"type": "boolean",
 			"initialValue": "false",
 			"comment": "",
@@ -132,7 +132,7 @@
 					"parameters": {
 						"cam-x": "lvl10_player.X",
 						"cam-y": "lvl10_player.Y",
-						"cam-z": "lvl10_player.Zelevation+PlayerHeight",
+						"cam-z": "lvl10_player.Zelevation+lvl10_PlayerHeight",
 						"look-angle": "lvl10_player.Angle"
 					}
 				},
@@ -174,7 +174,7 @@
 					"parameters": {
 						"x": "lvl10_player.X",
 						"y": "lvl10_player.Y",
-						"z": "lvl10_player.Zelevation+PlayerHeight",
+						"z": "lvl10_player.Zelevation+lvl10_PlayerHeight",
 						"which": "camera"
 					}
 				}
@@ -196,8 +196,8 @@
 					"objectClass": "3DCamera",
 					"sid": 581948822474735,
 					"parameters": {
-						"rotate-x": "Mouse.MovementX/MouseSense",
-						"rotate-y": "Mouse.MovementY/MouseSense",
+						"rotate-x": "Mouse.MovementX/lvl10_MouseSense",
+						"rotate-y": "Mouse.MovementY/lvl10_MouseSense",
 						"min-polar-angle": "20",
 						"max-polar-angle": "160"
 					}
@@ -320,7 +320,7 @@
 					"sid": 275303043366645,
 					"parameters": {
 						"instance-variable": "move_x",
-						"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation) * PlayerSpeed"
+						"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
 					}
 				},
 				{
@@ -329,11 +329,12 @@
 					"sid": 550190016569433,
 					"parameters": {
 						"instance-variable": "move_y",
-						"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation) * PlayerSpeed"
+						"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
 					}
 				}
 			],
-			"sid": 279627740025220
+			"sid": 279627740025220,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -354,7 +355,7 @@
 					"sid": 856053875276030,
 					"parameters": {
 						"instance-variable": "move_x",
-						"value": "lvl10_player.move_x - cos(3DCamera.CameraXRotation) * PlayerSpeed"
+						"value": "lvl10_player.move_x - cos(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
 					}
 				},
 				{
@@ -363,11 +364,12 @@
 					"sid": 870252664766958,
 					"parameters": {
 						"instance-variable": "move_y",
-						"value": "lvl10_player.move_y - sin(3DCamera.CameraXRotation) * PlayerSpeed"
+						"value": "lvl10_player.move_y - sin(3DCamera.CameraXRotation) * lvl10_PlayerSpeed"
 					}
 				}
 			],
-			"sid": 592733391758136
+			"sid": 592733391758136,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -388,7 +390,7 @@
 					"sid": 820691576600065,
 					"parameters": {
 						"instance-variable": "move_x",
-						"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation - 90) * PlayerSpeed"
+						"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation - 90) * lvl10_PlayerSpeed"
 					}
 				},
 				{
@@ -397,11 +399,12 @@
 					"sid": 685050437309663,
 					"parameters": {
 						"instance-variable": "move_y",
-						"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation - 90) * PlayerSpeed"
+						"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation - 90) * lvl10_PlayerSpeed"
 					}
 				}
 			],
-			"sid": 948230392202855
+			"sid": 948230392202855,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -422,7 +425,7 @@
 					"sid": 701863581847633,
 					"parameters": {
 						"instance-variable": "move_x",
-						"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation + 90) * PlayerSpeed"
+						"value": "lvl10_player.move_x + cos(3DCamera.CameraXRotation + 90) * lvl10_PlayerSpeed"
 					}
 				},
 				{
@@ -431,11 +434,12 @@
 					"sid": 566018890538143,
 					"parameters": {
 						"instance-variable": "move_y",
-						"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation + 90) * PlayerSpeed"
+						"value": "lvl10_player.move_y + sin(3DCamera.CameraXRotation + 90) * lvl10_PlayerSpeed"
 					}
 				}
 			],
-			"sid": 742366118591970
+			"sid": 742366118591970,
+			"isOrBlock": true
 		},
 		{
 			"eventType": "block",
@@ -588,8 +592,8 @@
 					"objectClass": "System",
 					"sid": 744494104356242,
 					"parameters": {
-						"variable": "dz",
-						"value": "Gravity*dt"
+						"variable": "lvl10_dz",
+						"value": "lvl10_Gravity*dt"
 					}
 				},
 				{
@@ -597,7 +601,7 @@
 					"objectClass": "lvl10_player",
 					"sid": 444186346551720,
 					"parameters": {
-						"z": "lvl10_player.Zelevation+dz"
+						"z": "lvl10_player.Zelevation+lvl10_dz"
 					}
 				}
 			],
@@ -619,7 +623,7 @@
 					"objectClass": "System",
 					"sid": 705448479348281,
 					"parameters": {
-						"variable": "onGround"
+						"variable": "lvl10_onGround"
 					}
 				}
 			],
@@ -629,8 +633,8 @@
 					"objectClass": "System",
 					"sid": 172225831587990,
 					"parameters": {
-						"variable": "dz",
-						"value": "jump_strength"
+						"variable": "lvl10_dz",
+						"value": "lvl10_jump_strength"
 					}
 				},
 				{
@@ -638,7 +642,7 @@
 					"objectClass": "System",
 					"sid": 815408134579423,
 					"parameters": {
-						"variable": "onGround",
+						"variable": "lvl10_onGround",
 						"value": "false"
 					}
 				}
@@ -653,7 +657,7 @@
 					"objectClass": "System",
 					"sid": 107369419837184,
 					"parameters": {
-						"variable": "dz",
+						"variable": "lvl10_dz",
 						"comparison": 3,
 						"value": "0"
 					}
@@ -663,12 +667,12 @@
 					"objectClass": "lvl10_player",
 					"sid": 968285056611501,
 					"parameters": {
-						"object": "ground"
+						"object": "lvl10_ground"
 					}
 				},
 				{
 					"id": "compare-z-elevation",
-					"objectClass": "ground",
+					"objectClass": "lvl10_ground",
 					"sid": 888526734156700,
 					"parameters": {
 						"which": "z-elevation",
@@ -678,12 +682,12 @@
 				},
 				{
 					"id": "compare-z-elevation",
-					"objectClass": "ground",
+					"objectClass": "lvl10_ground",
 					"sid": 195741958212337,
 					"parameters": {
 						"which": "z-elevation",
 						"comparison": 3,
-						"z-elevation": "lvl10_player.Zelevation+PlayerHeight-Self.zheight"
+						"z-elevation": "lvl10_player.Zelevation+lvl10_PlayerHeight-Self.zheight"
 					}
 				}
 			],
@@ -693,7 +697,7 @@
 					"objectClass": "System",
 					"sid": 566254529814452,
 					"parameters": {
-						"variable": "dz",
+						"variable": "lvl10_dz",
 						"value": "0"
 					}
 				},
@@ -702,7 +706,7 @@
 					"objectClass": "lvl10_player",
 					"sid": 132922838437179,
 					"parameters": {
-						"z": "ground.Zelevation+ground.zheight"
+						"z": "lvl10_ground.Zelevation+lvl10_ground.zheight"
 					}
 				},
 				{
@@ -710,7 +714,7 @@
 					"objectClass": "System",
 					"sid": 867020965072265,
 					"parameters": {
-						"variable": "onGround",
+						"variable": "lvl10_onGround",
 						"value": "true"
 					}
 				}
@@ -725,7 +729,7 @@
 					"objectClass": "System",
 					"sid": 908942361209123,
 					"parameters": {
-						"variable": "dz",
+						"variable": "lvl10_dz",
 						"comparison": 3,
 						"value": "0"
 					}
@@ -755,7 +759,7 @@
 					"parameters": {
 						"which": "z-elevation",
 						"comparison": 3,
-						"z-elevation": "lvl10_player.Zelevation+PlayerHeight-Self.zheight"
+						"z-elevation": "lvl10_player.Zelevation+lvl10_PlayerHeight-Self.zheight"
 					}
 				}
 			],
@@ -765,7 +769,7 @@
 					"objectClass": "System",
 					"sid": 322707489012585,
 					"parameters": {
-						"variable": "dz",
+						"variable": "lvl10_dz",
 						"value": "0"
 					}
 				},
@@ -782,7 +786,7 @@
 					"objectClass": "System",
 					"sid": 977841781477085,
 					"parameters": {
-						"variable": "onGround",
+						"variable": "lvl10_onGround",
 						"value": "true"
 					}
 				}
@@ -812,7 +816,7 @@
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir",
+					"objectClass": "lvl10_txtInteragir",
 					"sid": 784534496551511,
 					"parameters": {
 						"visibility": "visible"
@@ -820,7 +824,7 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "txtInteragir",
+					"objectClass": "lvl10_txtInteragir",
 					"sid": 987864355674408,
 					"parameters": {
 						"text": "\"Aperte E para pegar\""
@@ -845,7 +849,7 @@
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir",
+					"objectClass": "lvl10_txtInteragir",
 					"sid": 595569327851632,
 					"parameters": {
 						"visibility": "invisible"
@@ -880,7 +884,7 @@
 					"objectClass": "System",
 					"sid": 271277220048125,
 					"parameters": {
-						"variable": "temChaveAzul",
+						"variable": "lvl10_temChaveAzul",
 						"value": "true"
 					}
 				},
@@ -891,7 +895,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir",
+					"objectClass": "lvl10_txtInteragir",
 					"sid": 661508902201853,
 					"parameters": {
 						"visibility": "invisible"
@@ -916,14 +920,14 @@
 					"objectClass": "System",
 					"sid": 420730492201785,
 					"parameters": {
-						"variable": "temChaveAzul"
+						"variable": "lvl10_temChaveAzul"
 					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir",
+					"objectClass": "lvl10_txtInteragir",
 					"sid": 586237342836887,
 					"parameters": {
 						"visibility": "visible"
@@ -931,7 +935,7 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "txtInteragir",
+					"objectClass": "lvl10_txtInteragir",
 					"sid": 985044033317596,
 					"parameters": {
 						"text": "\"Aperte E para abrir\""
@@ -956,7 +960,7 @@
 					"objectClass": "System",
 					"sid": 525081976757528,
 					"parameters": {
-						"variable": "temChaveAzul"
+						"variable": "lvl10_temChaveAzul"
 					},
 					"isInverted": true
 				}
@@ -964,7 +968,7 @@
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir",
+					"objectClass": "lvl10_txtInteragir",
 					"sid": 150391957586708,
 					"parameters": {
 						"visibility": "visible"
@@ -972,7 +976,7 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "txtInteragir",
+					"objectClass": "lvl10_txtInteragir",
 					"sid": 750904620275425,
 					"parameters": {
 						"text": "\"Você precisa de uma chave\""
@@ -1005,7 +1009,7 @@
 					"objectClass": "System",
 					"sid": 312569000613718,
 					"parameters": {
-						"variable": "temChaveAzul"
+						"variable": "lvl10_temChaveAzul"
 					}
 				}
 			],
@@ -1042,7 +1046,7 @@
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir2",
+					"objectClass": "lvl10_txtInteragir2",
 					"sid": 869339705442908,
 					"parameters": {
 						"visibility": "visible"
@@ -1050,7 +1054,7 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "txtInteragir2",
+					"objectClass": "lvl10_txtInteragir2",
 					"sid": 507803811204688,
 					"parameters": {
 						"text": "\"Aperte E para pegar\""
@@ -1075,7 +1079,7 @@
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir2",
+					"objectClass": "lvl10_txtInteragir2",
 					"sid": 102587894129976,
 					"parameters": {
 						"visibility": "invisible"
@@ -1110,7 +1114,7 @@
 					"objectClass": "System",
 					"sid": 854572857646745,
 					"parameters": {
-						"variable": "temChaveVermelha",
+						"variable": "lvl10_temChaveVermelha",
 						"value": "true"
 					}
 				},
@@ -1121,7 +1125,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir2",
+					"objectClass": "lvl10_txtInteragir2",
 					"sid": 682879772380334,
 					"parameters": {
 						"visibility": "invisible"
@@ -1146,14 +1150,14 @@
 					"objectClass": "System",
 					"sid": 655896918565821,
 					"parameters": {
-						"variable": "temChaveVermelha"
+						"variable": "lvl10_temChaveVermelha"
 					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir2",
+					"objectClass": "lvl10_txtInteragir2",
 					"sid": 266594461047642,
 					"parameters": {
 						"visibility": "visible"
@@ -1161,7 +1165,7 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "txtInteragir2",
+					"objectClass": "lvl10_txtInteragir2",
 					"sid": 874452046538348,
 					"parameters": {
 						"text": "\"Aperte E para abrir\""
@@ -1186,7 +1190,7 @@
 					"objectClass": "System",
 					"sid": 558593073459851,
 					"parameters": {
-						"variable": "temChaveVermelha"
+						"variable": "lvl10_temChaveVermelha"
 					},
 					"isInverted": true
 				}
@@ -1194,7 +1198,7 @@
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir2",
+					"objectClass": "lvl10_txtInteragir2",
 					"sid": 186787658245586,
 					"parameters": {
 						"visibility": "visible"
@@ -1202,7 +1206,7 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "txtInteragir2",
+					"objectClass": "lvl10_txtInteragir2",
 					"sid": 411097416581144,
 					"parameters": {
 						"text": "\"Você precisa de uma chave\""
@@ -1235,7 +1239,7 @@
 					"objectClass": "System",
 					"sid": 212095602179516,
 					"parameters": {
-						"variable": "temChaveVermelha"
+						"variable": "lvl10_temChaveVermelha"
 					}
 				}
 			],
@@ -1272,7 +1276,7 @@
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir3",
+					"objectClass": "lvl10_txtInteragir3",
 					"sid": 832788013098307,
 					"parameters": {
 						"visibility": "visible"
@@ -1280,7 +1284,7 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "txtInteragir3",
+					"objectClass": "lvl10_txtInteragir3",
 					"sid": 860925030227878,
 					"parameters": {
 						"text": "\"Aperte E para pegar\""
@@ -1305,7 +1309,7 @@
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir3",
+					"objectClass": "lvl10_txtInteragir3",
 					"sid": 626019891936200,
 					"parameters": {
 						"visibility": "invisible"
@@ -1340,7 +1344,7 @@
 					"objectClass": "System",
 					"sid": 341591532714024,
 					"parameters": {
-						"variable": "temChaveAmarela",
+						"variable": "lvl10_temChaveAmarela",
 						"value": "true"
 					}
 				},
@@ -1351,7 +1355,7 @@
 				},
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir3",
+					"objectClass": "lvl10_txtInteragir3",
 					"sid": 460394757552374,
 					"parameters": {
 						"visibility": "invisible"
@@ -1376,14 +1380,14 @@
 					"objectClass": "System",
 					"sid": 200444271912422,
 					"parameters": {
-						"variable": "temChaveAmarela"
+						"variable": "lvl10_temChaveAmarela"
 					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir3",
+					"objectClass": "lvl10_txtInteragir3",
 					"sid": 984308023217534,
 					"parameters": {
 						"visibility": "visible"
@@ -1391,7 +1395,7 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "txtInteragir3",
+					"objectClass": "lvl10_txtInteragir3",
 					"sid": 436389066106753,
 					"parameters": {
 						"text": "\"Aperte E para abrir\""
@@ -1416,7 +1420,7 @@
 					"objectClass": "System",
 					"sid": 854202907779692,
 					"parameters": {
-						"variable": "temChaveAmarela"
+						"variable": "lvl10_temChaveAmarela"
 					},
 					"isInverted": true
 				}
@@ -1424,7 +1428,7 @@
 			"actions": [
 				{
 					"id": "set-visible",
-					"objectClass": "txtInteragir3",
+					"objectClass": "lvl10_txtInteragir3",
 					"sid": 306429696781399,
 					"parameters": {
 						"visibility": "visible"
@@ -1432,7 +1436,7 @@
 				},
 				{
 					"id": "set-text",
-					"objectClass": "txtInteragir3",
+					"objectClass": "lvl10_txtInteragir3",
 					"sid": 462749101650620,
 					"parameters": {
 						"text": "\"Você precisa de uma chave\""
@@ -1465,7 +1469,7 @@
 					"objectClass": "System",
 					"sid": 175600192930489,
 					"parameters": {
-						"variable": "temChaveAmarela"
+						"variable": "lvl10_temChaveAmarela"
 					}
 				}
 			],
@@ -1497,7 +1501,7 @@
 				},
 				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 921387538129424,
 					"parameters": {
 						"instance-variable": "carregado"
@@ -1508,19 +1512,19 @@
 			"actions": [
 				{
 					"id": "subtract-from-instvar",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 433446982016022,
 					"parameters": {
 						"instance-variable": "dz",
-						"value": "Gravity * dt"
+						"value": "lvl10_Gravity * dt"
 					}
 				},
 				{
 					"id": "set-z-elevation",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 279213627889181,
 					"parameters": {
-						"z": "cubo1.ZElevation + cubo1.dz"
+						"z": "lvl10_cubo1.ZElevation + lvl10_cubo1.dz"
 					}
 				}
 			],
@@ -1534,42 +1538,42 @@
 					"objectClass": "System",
 					"sid": 443910938940680,
 					"parameters": {
-						"first-value": "cubo1.dz",
+						"first-value": "lvl10_cubo1.dz",
 						"comparison": 3,
 						"second-value": "0"
 					}
 				},
 				{
 					"id": "is-overlapping-another-object",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 324710086735731,
 					"parameters": {
-						"object": "ground"
+						"object": "lvl10_ground"
 					}
 				},
 				{
 					"id": "compare-z-elevation",
-					"objectClass": "ground",
+					"objectClass": "lvl10_ground",
 					"sid": 169881121061714,
 					"parameters": {
 						"which": "z-elevation",
 						"comparison": 5,
-						"z-elevation": "cubo1.ZElevation - Self.ZHeight"
+						"z-elevation": "lvl10_cubo1.ZElevation - Self.ZHeight"
 					}
 				},
 				{
 					"id": "compare-z-elevation",
-					"objectClass": "ground",
+					"objectClass": "lvl10_ground",
 					"sid": 857431162647987,
 					"parameters": {
 						"which": "z-elevation",
 						"comparison": 3,
-						"z-elevation": "cubo1.ZElevation + 1"
+						"z-elevation": "lvl10_cubo1.ZElevation + 1"
 					}
 				},
 				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 985029497829727,
 					"parameters": {
 						"instance-variable": "carregado"
@@ -1580,7 +1584,7 @@
 			"actions": [
 				{
 					"id": "set-instvar-value",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 807993339948356,
 					"parameters": {
 						"instance-variable": "dz",
@@ -1589,10 +1593,10 @@
 				},
 				{
 					"id": "set-z-elevation",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 460304451303844,
 					"parameters": {
-						"z": "ground.ZElevation + ground.ZHeight"
+						"z": "lvl10_ground.ZElevation + lvl10_ground.ZHeight"
 					}
 				}
 			],
@@ -1606,14 +1610,14 @@
 					"objectClass": "System",
 					"sid": 673263088216285,
 					"parameters": {
-						"first-value": "cubo1.dz",
+						"first-value": "lvl10_cubo1.dz",
 						"comparison": 3,
 						"second-value": "0"
 					}
 				},
 				{
 					"id": "is-overlapping-another-object",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 527955633076427,
 					"parameters": {
 						"object": "lvl10_Colisao"
@@ -1626,7 +1630,7 @@
 					"parameters": {
 						"which": "z-elevation",
 						"comparison": 5,
-						"z-elevation": "cubo1.ZElevation - Self.ZHeight"
+						"z-elevation": "lvl10_cubo1.ZElevation - Self.ZHeight"
 					}
 				},
 				{
@@ -1636,12 +1640,12 @@
 					"parameters": {
 						"which": "z-elevation",
 						"comparison": 3,
-						"z-elevation": "cubo1.ZElevation + 1"
+						"z-elevation": "lvl10_cubo1.ZElevation + 1"
 					}
 				},
 				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 459776219091162,
 					"parameters": {
 						"instance-variable": "carregado"
@@ -1652,7 +1656,7 @@
 			"actions": [
 				{
 					"id": "set-instvar-value",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 326116489954513,
 					"parameters": {
 						"instance-variable": "dz",
@@ -1661,7 +1665,7 @@
 				},
 				{
 					"id": "set-z-elevation",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 592712060610438,
 					"parameters": {
 						"z": "lvl10_Colisao.ZElevation + lvl10_Colisao.ZHeight"
@@ -1686,7 +1690,7 @@
 					"objectClass": "lvl10_player",
 					"sid": 570611744911478,
 					"parameters": {
-						"object": "cuboTrigger1"
+						"object": "lvl10_cuboTrigger1"
 					}
 				},
 				{
@@ -1694,7 +1698,7 @@
 					"objectClass": "System",
 					"sid": 374777164412570,
 					"parameters": {
-						"variable": "segurandoCubo"
+						"variable": "lvl10_segurandoCubo"
 					},
 					"isInverted": true
 				}
@@ -1708,7 +1712,7 @@
 					"actions": [
 						{
 							"id": "set-boolean-instvar",
-							"objectClass": "cubo1",
+							"objectClass": "lvl10_cubo1",
 							"sid": 520898330643208,
 							"parameters": {
 								"instance-variable": "carregado",
@@ -1720,7 +1724,7 @@
 							"objectClass": "System",
 							"sid": 134111557297403,
 							"parameters": {
-								"variable": "segurandoCubo",
+								"variable": "lvl10_segurandoCubo",
 								"value": "true"
 							}
 						}
@@ -1745,7 +1749,7 @@
 					"objectClass": "System",
 					"sid": 267883796117117,
 					"parameters": {
-						"variable": "segurandoCubo"
+						"variable": "lvl10_segurandoCubo"
 					}
 				}
 			],
@@ -1755,7 +1759,7 @@
 					"objectClass": "System",
 					"sid": 968497982751787,
 					"parameters": {
-						"variable": "segurandoCubo",
+						"variable": "lvl10_segurandoCubo",
 						"value": "false"
 					}
 				}
@@ -1768,7 +1772,7 @@
 					"actions": [
 						{
 							"id": "set-boolean-instvar",
-							"objectClass": "cubo1",
+							"objectClass": "lvl10_cubo1",
 							"sid": 194744278500466,
 							"parameters": {
 								"instance-variable": "carregado",
@@ -1777,7 +1781,7 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "cubo1",
+							"objectClass": "lvl10_cubo1",
 							"sid": 181621180998536,
 							"parameters": {
 								"instance-variable": "dz",
@@ -1786,18 +1790,18 @@
 						},
 						{
 							"id": "set-x",
-							"objectClass": "cubo1",
+							"objectClass": "lvl10_cubo1",
 							"sid": 602559727063169,
 							"parameters": {
-								"x": "cubo1.X + cos(3DCamera.CameraXRotation) * 40"
+								"x": "lvl10_cubo1.X + cos(3DCamera.CameraXRotation) * 40"
 							}
 						},
 						{
 							"id": "set-y",
-							"objectClass": "cubo1",
+							"objectClass": "lvl10_cubo1",
 							"sid": 106194656544220,
 							"parameters": {
-								"y": "cubo1.Y + sin(3DCamera.CameraXRotation) * 40"
+								"y": "lvl10_cubo1.Y + sin(3DCamera.CameraXRotation) * 40"
 							}
 						}
 					],
@@ -1810,7 +1814,7 @@
 			"conditions": [
 				{
 					"id": "is-overlapping-another-object",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 875597280886398,
 					"parameters": {
 						"object": "lvl10_Colisao"
@@ -1818,7 +1822,7 @@
 				},
 				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 166301670043234,
 					"parameters": {
 						"instance-variable": "carregado"
@@ -1829,18 +1833,18 @@
 			"actions": [
 				{
 					"id": "set-x",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 993190235735240,
 					"parameters": {
-						"x": "cubo1.old_x"
+						"x": "lvl10_cubo1.old_x"
 					}
 				},
 				{
 					"id": "set-y",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 259381279231506,
 					"parameters": {
-						"y": "cubo1.old_y"
+						"y": "lvl10_cubo1.old_y"
 					}
 				}
 			],
@@ -1856,7 +1860,7 @@
 				},
 				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 952097882991753,
 					"parameters": {
 						"instance-variable": "carregado"
@@ -1864,7 +1868,7 @@
 				},
 				{
 					"id": "is-overlapping-another-object",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 147667689361900,
 					"parameters": {
 						"object": "lvl10_Colisao"
@@ -1875,16 +1879,16 @@
 			"actions": [
 				{
 					"id": "set-instvar-value",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 172608639081129,
 					"parameters": {
 						"instance-variable": "old_x",
-						"value": "cubo1.X"
+						"value": "lvl10_cubo1.X"
 					}
 				},
 				{
 					"id": "set-x",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 454859356273737,
 					"parameters": {
 						"x": "lvl10_player.X + cos(3DCamera.CameraXRotation) * 60"
@@ -1892,7 +1896,7 @@
 				},
 				{
 					"id": "set-z-elevation",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 787014796760804,
 					"parameters": {
 						"z": "lvl10_player.ZElevation + 30"
@@ -1906,7 +1910,7 @@
 			"conditions": [
 				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 583035686932945,
 					"parameters": {
 						"instance-variable": "carregado"
@@ -1914,7 +1918,7 @@
 				},
 				{
 					"id": "is-overlapping-another-object",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 458898852886800,
 					"parameters": {
 						"object": "lvl10_Colisao"
@@ -1924,10 +1928,10 @@
 			"actions": [
 				{
 					"id": "set-x",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 949714597879636,
 					"parameters": {
-						"x": "cubo1.old_x"
+						"x": "lvl10_cubo1.old_x"
 					}
 				}
 			],
@@ -1943,7 +1947,7 @@
 				},
 				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 436791366156020,
 					"parameters": {
 						"instance-variable": "carregado"
@@ -1951,7 +1955,7 @@
 				},
 				{
 					"id": "is-overlapping-another-object",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 276317818074857,
 					"parameters": {
 						"object": "lvl10_Colisao"
@@ -1962,16 +1966,16 @@
 			"actions": [
 				{
 					"id": "set-instvar-value",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 126197259213643,
 					"parameters": {
 						"instance-variable": "old_y",
-						"value": "cubo1.Y"
+						"value": "lvl10_cubo1.Y"
 					}
 				},
 				{
 					"id": "set-y",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 957297287403171,
 					"parameters": {
 						"y": "lvl10_player.Y + sin(3DCamera.CameraXRotation) * 60"
@@ -1979,7 +1983,7 @@
 				},
 				{
 					"id": "set-z-elevation",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 840144549193215,
 					"parameters": {
 						"z": "lvl10_player.ZElevation + 30"
@@ -1993,7 +1997,7 @@
 			"conditions": [
 				{
 					"id": "is-boolean-instance-variable-set",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 335208655492157,
 					"parameters": {
 						"instance-variable": "carregado"
@@ -2001,7 +2005,7 @@
 				},
 				{
 					"id": "is-overlapping-another-object",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 431535482106657,
 					"parameters": {
 						"object": "lvl10_Colisao"
@@ -2011,10 +2015,10 @@
 			"actions": [
 				{
 					"id": "set-y",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 723511776330645,
 					"parameters": {
-						"y": "cubo1.old_y"
+						"y": "lvl10_cubo1.old_y"
 					}
 				}
 			],
@@ -2028,12 +2032,12 @@
 					"objectClass": "lvl10_player",
 					"sid": 940609676127591,
 					"parameters": {
-						"object": "cubo1"
+						"object": "lvl10_cubo1"
 					}
 				},
 				{
 					"id": "compare-z-elevation",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 855709981869431,
 					"parameters": {
 						"which": "z-elevation",
@@ -2043,19 +2047,19 @@
 				},
 				{
 					"id": "compare-z-elevation",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 203884253165722,
 					"parameters": {
 						"which": "z-elevation",
 						"comparison": 3,
-						"z-elevation": "lvl10_player.ZElevation + PlayerHeight"
+						"z-elevation": "lvl10_player.ZElevation + lvl10_PlayerHeight"
 					}
 				}
 			],
 			"actions": [
 				{
 					"id": "set-instvar-value",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 793851888945065,
 					"parameters": {
 						"instance-variable": "vel_x",
@@ -2064,7 +2068,7 @@
 				},
 				{
 					"id": "set-instvar-value",
-					"objectClass": "cubo1",
+					"objectClass": "lvl10_cubo1",
 					"sid": 456517255610897,
 					"parameters": {
 						"instance-variable": "vel_y",
@@ -2086,11 +2090,11 @@
 			"actions": [
 				{
 					"id": "set-position",
-					"objectClass": "cuboTrigger1",
+					"objectClass": "lvl10_cuboTrigger1",
 					"sid": 526579745490337,
 					"parameters": {
-						"x": "cubo1.x",
-						"y": "cubo1.y"
+						"x": "lvl10_cubo1.x",
+						"y": "lvl10_cubo1.y"
 					}
 				}
 			],
