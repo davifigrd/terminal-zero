@@ -2,6 +2,7 @@
 	"name": "e_Level3",
 	"events": [
 		{
+			"bookmark": true,
 			"eventType": "include",
 			"includeSheet": "e_Global"
 		},
@@ -46,7 +47,6 @@
 			"sid": 683562412703703
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "lvl3_erros",
 			"type": "number",
@@ -309,6 +309,10 @@
 			"isActiveOnStart": true,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "PERMITIR"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -319,6 +323,16 @@
 								"mouse-button": "left",
 								"click-type": "clicked",
 								"object-clicked": "lvl3_btn_permitir"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 454903424947039,
+							"parameters": {
+								"variable": "lvl3_travaInput",
+								"comparison": 0,
+								"value": "0"
 							}
 						}
 					],
@@ -377,6 +391,10 @@
 					]
 				},
 				{
+					"eventType": "comment",
+					"text": "BLOQUEAR"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -387,6 +405,16 @@
 								"mouse-button": "left",
 								"click-type": "clicked",
 								"object-clicked": "lvl3_btn_bloquear"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 478322712855940,
+							"parameters": {
+								"variable": "lvl3_travaInput",
+								"comparison": 0,
+								"value": "0"
 							}
 						}
 					],
@@ -443,6 +471,10 @@
 							"sid": 909843271925164
 						}
 					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Animação dos botões"
 				},
 				{
 					"eventType": "block",
@@ -554,161 +586,177 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 527621391274325,
-							"parameters": {
-								"variable": "lvl3_travaInput",
-								"value": "1"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 828984714391883,
-							"parameters": {
-								"variable": "lvl3_acertos",
-								"value": "1"
-							}
-						},
-						{
-							"callFunction": "TypingEffect",
-							"sid": 892931836311923,
-							"parameters": [
-								"\"ACESSO DETERMINADO COM SUCESSO.\""
-							]
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 180564785427846,
-							"parameters": {
-								"audio-file": {
-									"path": "Level 3/lvl3_acerto"
-								},
-								"loop": "not-looping",
-								"volume": "-8",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "lvl3_feedback_ok",
-							"sid": 953814726326915,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "lvl3_feedback_ok",
-							"sid": 915144059342656,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "1.0"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 370775575688928,
-							"parameters": {
-								"seconds": "0.5",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "stop-flashing",
-							"objectClass": "lvl3_feedback_ok",
-							"sid": 936142384371916,
-							"behaviorType": "Flash"
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "lvl3_feedback_ok",
-							"sid": 648423500194064,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 138374340106844,
-							"parameters": {
-								"seconds": "1.5",
-								"use-timescale": true
-							}
-						}
-					],
+					"actions": [],
 					"sid": 404226205148920,
 					"children": [
 						{
 							"eventType": "block",
-							"conditions": [
+							"conditions": [],
+							"actions": [
 								{
-									"id": "compare-two-values",
+									"id": "set-eventvar-value",
 									"objectClass": "System",
-									"sid": 853598994634825,
+									"sid": 239347045931213,
 									"parameters": {
-										"first-value": "lvl3_processoAtual",
-										"comparison": 0,
-										"second-value": "lvl3_totalProcessos"
+										"variable": "lvl3_travaInput",
+										"value": "1"
 									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "lvl3_avancarEtapa",
-									"sid": 346339512574275
-								}
-							],
-							"sid": 129043266916538
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "else",
-									"objectClass": "System",
-									"sid": 442943507207810
-								}
-							],
-							"actions": [
+								},
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 437215978367581,
+									"sid": 544823294599005,
 									"parameters": {
-										"variable": "lvl3_processoAtual",
+										"variable": "lvl3_acertos",
 										"value": "1"
 									}
 								},
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 822234906602878,
+									"callFunction": "TypingEffect",
+									"sid": 189633384846949,
+									"parameters": [
+										"\"ACESSO DETERMINADO COM SUCESSO.\""
+									]
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 944159582609238,
 									"parameters": {
-										"variable": "lvl3_precisaGerar",
-										"value": "1"
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "-8",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
 									}
 								},
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 424582323435983,
+									"id": "set-visible",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 628786393382746,
 									"parameters": {
-										"variable": "lvl3_travaInput",
-										"value": "0"
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 581258163585391,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 450540319962360,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 112910083154734,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl3_feedback_ok",
+									"sid": 261550063344155,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 295705312706973,
+									"parameters": {
+										"seconds": "1.5",
+										"use-timescale": true
 									}
 								}
 							],
-							"sid": 105143840990306
+							"sid": 326636982754908,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Concluiu a etapa"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 241623534985052,
+											"parameters": {
+												"first-value": "lvl3_processoAtual",
+												"comparison": 0,
+												"second-value": "lvl3_totalProcessos"
+											}
+										}
+									],
+									"actions": [
+										{
+											"callFunction": "lvl3_avancarEtapa",
+											"sid": 724958449404702
+										}
+									],
+									"sid": 478920426811170
+								},
+								{
+									"eventType": "comment",
+									"text": "Não concluiu a etapa"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 720726998233053
+										}
+									],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 221808037583325,
+											"parameters": {
+												"variable": "lvl3_processoAtual",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 308138548039311,
+											"parameters": {
+												"variable": "lvl3_precisaGerar",
+												"value": "1"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 594232712975614,
+											"parameters": {
+												"variable": "lvl3_travaInput",
+												"value": "0"
+											}
+										}
+									],
+									"sid": 578176456221169
+								}
+							]
 						}
 					]
 				},
@@ -720,148 +768,212 @@
 					"functionCopyPicked": false,
 					"functionIsAsync": false,
 					"functionParameters": [],
+					"bookmark": true,
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 204534030534661,
-							"parameters": {
-								"variable": "lvl3_travaInput",
-								"value": "1"
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 460117265257081,
-							"parameters": {
-								"variable": "lvl3_erros",
-								"value": "1"
-							}
-						},
-						{
-							"callFunction": "TypingEffect",
-							"sid": 864228209305371,
-							"parameters": [
-								"lvl3_feedbackRegra & \" Regra correspondente: \" & lvl3_ID_regra_ativa"
-							]
-						},
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 186509939815219,
-							"parameters": {
-								"audio-file": {
-									"path": "Level 3/lvl3_error"
-								},
-								"loop": "not-looping",
-								"volume": "5",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "lvl3_feedback_erro",
-							"sid": 559970607661523,
-							"parameters": {
-								"visibility": "visible"
-							}
-						},
-						{
-							"id": "flash",
-							"objectClass": "lvl3_feedback_erro",
-							"sid": 984299449573333,
-							"behaviorType": "Flash",
-							"parameters": {
-								"on-time": "0.1",
-								"off-time": "0.1",
-								"duration": "1.0"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 496601193344452,
-							"parameters": {
-								"seconds": "0.5",
-								"use-timescale": true
-							}
-						},
-						{
-							"id": "stop-flashing",
-							"objectClass": "lvl3_feedback_erro",
-							"sid": 353091132928733,
-							"behaviorType": "Flash"
-						},
-						{
-							"id": "set-visible",
-							"objectClass": "lvl3_feedback_erro",
-							"sid": 603873213277192,
-							"parameters": {
-								"visibility": "invisible"
-							}
-						},
-						{
-							"id": "wait",
-							"objectClass": "System",
-							"sid": 477162527476428,
-							"parameters": {
-								"seconds": "2.5",
-								"use-timescale": true
-							}
-						}
-					],
+					"actions": [],
 					"sid": 750276334605004,
 					"children": [
 						{
+							"bookmark": true,
 							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 268528915198004,
-									"parameters": {
-										"variable": "lvl3_etapa",
-										"comparison": 2,
-										"value": "3"
-									}
-								}
-							],
+							"conditions": [],
 							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 911644208883006,
+									"parameters": {
+										"variable": "lvl3_travaInput",
+										"value": "1"
+									}
+								},
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 628553468203481,
+									"sid": 762409066622031,
 									"parameters": {
-										"variable": "lvl3_processoAtual",
+										"variable": "lvl3_erros",
 										"value": "1"
 									}
 								},
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 269519830946256,
+									"callFunction": "TypingEffect",
+									"sid": 803594928433447,
+									"disabled": true,
+									"parameters": [
+										"lvl3_feedbackRegra & \" Regra correspondente: \" & lvl3_ID_regra_ativa"
+									]
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 318067034773955,
 									"parameters": {
-										"variable": "lvl3_travaInput",
-										"value": "0"
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "5",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
 									}
 								},
 								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 528494099272437,
+									"id": "set-visible",
+									"objectClass": "lvl3_feedback_erro",
+									"sid": 956785293857273,
 									"parameters": {
-										"variable": "lvl3_precisaGerar",
-										"value": "1"
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "flash",
+									"objectClass": "lvl3_feedback_erro",
+									"sid": 280722188687174,
+									"behaviorType": "Flash",
+									"parameters": {
+										"on-time": "0.1",
+										"off-time": "0.1",
+										"duration": "1.0"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 126077665624516,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "stop-flashing",
+									"objectClass": "lvl3_feedback_erro",
+									"sid": 395337887027778,
+									"behaviorType": "Flash"
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl3_feedback_erro",
+									"sid": 364764213667123,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 440561127220850,
+									"parameters": {
+										"seconds": "1.5",
+										"use-timescale": true
 									}
 								}
 							],
-							"sid": 812243934833852
+							"sid": 900171352948382,
+							"children": [
+								{
+									"eventType": "comment",
+									"text": "Erro ocorreu nas etapas 1 e 2 + tolerantes"
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 196113853123277,
+											"parameters": {
+												"variable": "lvl3_etapa",
+												"comparison": 2,
+												"value": "3"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 730576966473639,
+									"children": [
+										{
+											"eventType": "comment",
+											"text": "Último"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-two-values",
+													"objectClass": "System",
+													"sid": 855837068944118,
+													"parameters": {
+														"first-value": "lvl3_processoAtual",
+														"comparison": 0,
+														"second-value": "lvl3_totalProcessos"
+													}
+												}
+											],
+											"actions": [
+												{
+													"callFunction": "lvl3_avancarEtapa",
+													"sid": 665740834573771
+												}
+											],
+											"sid": 847125308202676
+										},
+										{
+											"eventType": "comment",
+											"text": "Último"
+										},
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "else",
+													"objectClass": "System",
+													"sid": 903415583360327
+												}
+											],
+											"actions": [
+												{
+													"id": "add-to-eventvar",
+													"objectClass": "System",
+													"sid": 967185839800748,
+													"parameters": {
+														"variable": "lvl3_processoAtual",
+														"value": "1"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 323798279013128,
+													"parameters": {
+														"variable": "lvl3_travaInput",
+														"value": "0"
+													}
+												},
+												{
+													"id": "set-eventvar-value",
+													"objectClass": "System",
+													"sid": 825868607003396,
+													"parameters": {
+														"variable": "lvl3_precisaGerar",
+														"value": "1"
+													}
+												}
+											],
+											"sid": 984389954075931
+										}
+									]
+								}
+							]
 						},
 						{
+							"eventType": "comment",
+							"text": "Errou na última etapa"
+						},
+						{
+							"bookmark": true,
 							"eventType": "block",
 							"conditions": [
 								{
@@ -921,60 +1033,164 @@
 					"functionParameters": [],
 					"eventType": "function-block",
 					"conditions": [],
-					"actions": [
-						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 803464612418925,
-							"parameters": {
-								"audio-file": {
-									"path": "Level 3/lvl3_avancoetapa"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
-							}
-						},
-						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 237722991644750,
-							"parameters": {
-								"variable": "lvl3_etapa",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 987973777501646,
-							"parameters": {
-								"variable": "lvl3_processoAtual",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 788132616891972,
-							"parameters": {
-								"variable": "lvl3_acertos",
-								"value": "0"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 970117314673753,
-							"parameters": {
-								"variable": "lvl3_erros",
-								"value": "0"
-							}
-						}
-					],
+					"actions": [],
 					"sid": 630808640422936,
 					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 849513989175750,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_avancoetapa"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 845973777828321,
+									"parameters": {
+										"variable": "lvl3_etapa",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 862565513861232,
+									"parameters": {
+										"variable": "lvl3_processoAtual",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 650604807034161,
+									"parameters": {
+										"variable": "lvl3_acertos",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 445140619635840,
+									"parameters": {
+										"variable": "lvl3_erros",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 544726175138530
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 342439372841303,
+									"parameters": {
+										"variable": "lvl3_etapa",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "TypingEffect",
+									"sid": 972819673134473,
+									"parameters": [
+										"\"SISTEMA TOTALMENTE COMPROMETIDO. LIMPANDO RASTROS... REDIRECIONANDO.\""
+									]
+								},
+								{
+									"id": "stop-all",
+									"objectClass": "Audio",
+									"sid": 218237284634465
+								},
+								{
+									"callFunction": "Transition",
+									"sid": 327492719366421,
+									"parameters": [
+										"\"Bedroom\""
+									]
+								}
+							],
+							"sid": 265144318349173
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 945775892500042,
+									"parameters": {
+										"variable": "lvl3_etapa",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 365219882225905,
+									"parameters": {
+										"variable": "lvl3_totalProcessos",
+										"value": "10"
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 518066544263161,
+									"parameters": [
+										"\"ETAPA 03: Tolerância zero ativada. Um erro causará o bloqueio.\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 706264488657567,
+									"parameters": {
+										"seconds": "3.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 343554492474229,
+									"parameters": {
+										"variable": "lvl3_travaInput",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 647600135260135,
+									"parameters": {
+										"variable": "lvl3_precisaGerar",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 557719090615477
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -1035,104 +1251,6 @@
 								}
 							],
 							"sid": 556138049174547
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 267186691790986,
-									"parameters": {
-										"variable": "lvl3_etapa",
-										"comparison": 0,
-										"value": "3"
-									}
-								}
-							],
-							"actions": [
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 648295795834075,
-									"parameters": {
-										"variable": "lvl3_totalProcessos",
-										"value": "10"
-									}
-								},
-								{
-									"callFunction": "TypingEffect",
-									"sid": 739845496402412,
-									"parameters": [
-										"\"ETAPA 03: Tolerância zero ativada. Um erro causará o bloqueio.\""
-									]
-								},
-								{
-									"id": "wait",
-									"objectClass": "System",
-									"sid": 301961210793085,
-									"parameters": {
-										"seconds": "3.0",
-										"use-timescale": true
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 997310487083915,
-									"parameters": {
-										"variable": "lvl3_travaInput",
-										"value": "0"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 986014949904667,
-									"parameters": {
-										"variable": "lvl3_precisaGerar",
-										"value": "1"
-									}
-								}
-							],
-							"sid": 128778250047845
-						},
-						{
-							"eventType": "block",
-							"conditions": [
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 205800926829795,
-									"parameters": {
-										"variable": "lvl3_etapa",
-										"comparison": 0,
-										"value": "4"
-									}
-								}
-							],
-							"actions": [
-								{
-									"callFunction": "TypingEffect",
-									"sid": 390515851664639,
-									"parameters": [
-										"\"SISTEMA TOTALMENTE COMPROMETIDO. LIMPANDO RASTROS... REDIRECIONANDO.\""
-									]
-								},
-								{
-									"id": "stop-all",
-									"objectClass": "Audio",
-									"sid": 295513626075071
-								},
-								{
-									"callFunction": "Transition",
-									"sid": 601655844550378,
-									"parameters": [
-										"\"Bedroom\""
-									]
-								}
-							],
-							"sid": 635656070852513
 						}
 					]
 				}
@@ -1140,81 +1258,106 @@
 			"sid": 378764544170495
 		},
 		{
-			"eventType": "comment",
-			"text": "LVL3_FUNCTIONS(gerarRodada)"
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL3_INTERFACE",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 508623271951677
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "lvl3_txt_Processo",
+							"sid": 689879282585932,
+							"parameters": {
+								"text": "lvl3_nome"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl3_txt_Origem",
+							"sid": 843613093538943,
+							"parameters": {
+								"text": "lvl3_ip"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl3_txt_Timestamp",
+							"sid": 778032958405027,
+							"parameters": {
+								"text": "lvl3_timestamp"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl3_txt_Permissoes",
+							"sid": 847109345431143,
+							"parameters": {
+								"text": "lvl3_permissao"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl3_txt_Assinatura",
+							"sid": 954676852443742,
+							"parameters": {
+								"text": "lvl3_assinatura"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl3_txt_Corretos",
+							"sid": 967044629957746,
+							"parameters": {
+								"text": "lvl3_acertos"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl3_txt_Erros",
+							"sid": 806336133246372,
+							"parameters": {
+								"text": "lvl3_erros"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl3_txt_Processos",
+							"sid": 389826560602668,
+							"parameters": {
+								"text": "lvl3_processoAtual & \" / \" & lvl3_totalProcessos"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "lvl3_txt_regra",
+							"sid": 865967265100930,
+							"parameters": {
+								"text": "\"REGRA ATIVA: \" & lvl3_ID_regra_ativa"
+							}
+						}
+					],
+					"sid": 438683702220327
+				}
+			],
+			"sid": 725078384603605
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 792659805698973,
-					"parameters": {
-						"variable": "lvl3_travaInput",
-						"comparison": 0,
-						"value": "0"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 142445102582713,
-					"parameters": {
-						"variable": "lvl3_precisaGerar",
-						"comparison": 0,
-						"value": "1"
-					}
-				}
-			],
-			"actions": [
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 776056710239739,
-					"parameters": {
-						"variable": "lvl3_regraAplicada",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 751404665649096,
-					"parameters": {
-						"variable": "lvl3_precisaGerar",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 583832532894243,
-					"parameters": {
-						"variable": "lvl3_respostaCorreta",
-						"value": "\"PERMITIR\""
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 586668170775648,
-					"parameters": {
-						"variable": "lvl3_ID_regra_ativa",
-						"value": "0"
-					}
-				},
-				{
-					"id": "set-eventvar-value",
-					"objectClass": "System",
-					"sid": 184365350675817,
-					"parameters": {
-						"variable": "lvl3_tipoCenario",
-						"value": "choose(0, 1)"
-					}
-				}
-			],
-			"sid": 485103879419162,
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL3_GENERATOR",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -1222,72 +1365,19 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 472952276080661,
+							"sid": 254907510837974,
 							"parameters": {
-								"variable": "lvl3_tipoCenario",
+								"variable": "lvl3_travaInput",
 								"comparison": 0,
 								"value": "0"
 							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 247498622899455,
-							"parameters": {
-								"variable": "lvl3_nome",
-								"value": "choose(\"xpl_inject.exe\", \"r00t_access.exe\", \"EXT_bypass.dll\", \"MAINT_updater.exe\")"
-							}
 						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 931494018648502,
-							"parameters": {
-								"variable": "lvl3_ip",
-								"value": "\"172.\" & int(random(16,31)) & \".\" & int(random(0,255)) & \".\" & int(random(1,254))"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 961646943853518,
-							"parameters": {
-								"variable": "lvl3_timestamp",
-								"value": "choose(\"00:42:11\", \"13:27:05\", \"22:58:33\")"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 247725800900584,
-							"parameters": {
-								"variable": "lvl3_permissao",
-								"value": "choose(\"ROOT\", \"ADMIN\", \"GUEST\")"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 915875262049584,
-							"parameters": {
-								"variable": "lvl3_assinatura",
-								"value": "choose(\"VÁLIDA\", \"INVÁLIDA\")"
-							}
-						}
-					],
-					"sid": 536900460676631
-				},
-				{
-					"eventType": "block",
-					"conditions": [
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 811566931369318,
+							"sid": 173677843789546,
 							"parameters": {
-								"variable": "lvl3_tipoCenario",
+								"variable": "lvl3_precisaGerar",
 								"comparison": 0,
 								"value": "1"
 							}
@@ -1297,241 +1387,251 @@
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 788833096201452,
+							"sid": 566204862331658,
 							"parameters": {
-								"variable": "lvl3_nome",
-								"value": "choose(\"SYS_kernel.exe\", \"SYS_backup.exe\", \"SYS_daemon.sys\")"
+								"variable": "lvl3_regraAplicada",
+								"value": "0"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 308116560267000,
+							"sid": 947661722174160,
 							"parameters": {
-								"variable": "lvl3_ip",
-								"value": "\"192.168.0.\" & int(random(2, 254))"
+								"variable": "lvl3_precisaGerar",
+								"value": "0"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 539296474832221,
+							"sid": 214631430384403,
 							"parameters": {
-								"variable": "lvl3_timestamp",
-								"value": "choose(\"02:15:40\", \"03:22:11\", \"03:55:00\")"
+								"variable": "lvl3_respostaCorreta",
+								"value": "\"PERMITIR\""
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 176032377604585,
+							"sid": 180262704719452,
 							"parameters": {
-								"variable": "lvl3_permissao",
-								"value": "choose(\"READ\", \"READ/WRITE\")"
+								"variable": "lvl3_ID_regra_ativa",
+								"value": "0"
 							}
 						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 700542960932293,
-							"parameters": {
-								"variable": "lvl3_assinatura",
-								"value": "\"VÁLIDA\""
-							}
-						}
-					],
-					"sid": 552062703223544
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 574632640318859,
+							"sid": 715635123266181,
 							"parameters": {
 								"variable": "lvl3_tipoCenario",
-								"comparison": 0,
-								"value": "2"
+								"value": "choose(0, 1, 2)"
 							}
 						}
 					],
-					"actions": [
+					"sid": 213921523898924,
+					"children": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 932928678026677,
-							"parameters": {
-								"variable": "lvl3_nome",
-								"value": "choose(\"MAINT_updater.exe\", \"MAINT_patch.bat\")"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 454025101532257,
+									"parameters": {
+										"variable": "lvl3_tipoCenario",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 620148281316827,
+									"parameters": {
+										"variable": "lvl3_nome",
+										"value": "choose(\"xpl_inject.exe\", \"r00t_access.exe\", \"EXT_bypass.dll\", \"MAINT_updater.exe\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 684156542614443,
+									"parameters": {
+										"variable": "lvl3_ip",
+										"value": "\"172.\" & int(random(16,31)) & \".\" & int(random(0,255)) & \".\" & int(random(1,254))"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 529522909076741,
+									"parameters": {
+										"variable": "lvl3_timestamp",
+										"value": "choose(\"00:42:11\", \"13:27:05\", \"22:58:33\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 526348208277487,
+									"parameters": {
+										"variable": "lvl3_permissao",
+										"value": "choose(\"ROOT\", \"ADMIN\", \"GUEST\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 926282716491538,
+									"parameters": {
+										"variable": "lvl3_assinatura",
+										"value": "choose(\"VÁLIDA\", \"INVÁLIDA\")"
+									}
+								}
+							],
+							"sid": 165017223795310
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 342624121588746,
-							"parameters": {
-								"variable": "lvl3_ip",
-								"value": "\"192.168.0.\" & int(random(2, 254))"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 890755081035504,
+									"parameters": {
+										"variable": "lvl3_tipoCenario",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 600979187572262,
+									"parameters": {
+										"variable": "lvl3_nome",
+										"value": "choose(\"SYS_kernel.exe\", \"SYS_backup.exe\", \"SYS_daemon.sys\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 421852615581897,
+									"parameters": {
+										"variable": "lvl3_ip",
+										"value": "\"192.168.0.\" & int(random(2, 254))"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 932490996775372,
+									"parameters": {
+										"variable": "lvl3_timestamp",
+										"value": "choose(\"02:15:40\", \"03:22:11\", \"03:55:00\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 562708258764339,
+									"parameters": {
+										"variable": "lvl3_permissao",
+										"value": "choose(\"READ\", \"READ/WRITE\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 530445194048314,
+									"parameters": {
+										"variable": "lvl3_assinatura",
+										"value": "\"VÁLIDA\""
+									}
+								}
+							],
+							"sid": 515932399301884
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 231821046723413,
-							"parameters": {
-								"variable": "lvl3_timestamp",
-								"value": "choose(\"02:15:40\", \"03:22:11\", \"03:55:00\")"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 586037316774929,
-							"parameters": {
-								"variable": "lvl3_permissao",
-								"value": "\"ADMIN\""
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 433042506696014,
-							"parameters": {
-								"variable": "lvl3_assinatura",
-								"value": "choose(\"VÁLIDA\", \"INVÁLIDA\")"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 899789942488236,
+									"parameters": {
+										"variable": "lvl3_tipoCenario",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 680275733108983,
+									"parameters": {
+										"variable": "lvl3_nome",
+										"value": "choose(\"MAINT_updater.exe\", \"MAINT_patch.bat\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 663770478198090,
+									"parameters": {
+										"variable": "lvl3_ip",
+										"value": "\"192.168.0.\" & int(random(2, 254))"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 692605077346898,
+									"parameters": {
+										"variable": "lvl3_timestamp",
+										"value": "choose(\"02:15:40\", \"03:22:11\", \"03:55:00\")"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 279064598862893,
+									"parameters": {
+										"variable": "lvl3_permissao",
+										"value": "\"ADMIN\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 527379843532236,
+									"parameters": {
+										"variable": "lvl3_assinatura",
+										"value": "choose(\"VÁLIDA\", \"INVÁLIDA\")"
+									}
+								}
+							],
+							"sid": 107761555105749
 						}
-					],
-					"sid": 846248193841301
-				}
-			]
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "every-tick",
-					"objectClass": "System",
-					"sid": 139597203421862
+					]
 				}
 			],
-			"actions": [
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_txt_Processo",
-					"sid": 809328968293462,
-					"parameters": {
-						"text": "lvl3_nome"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_txt_Origem",
-					"sid": 226801260950262,
-					"parameters": {
-						"text": "lvl3_ip"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_txt_Timestamp",
-					"sid": 265897933191036,
-					"parameters": {
-						"text": "lvl3_timestamp"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_txt_Permissoes",
-					"sid": 782702635391585,
-					"parameters": {
-						"text": "lvl3_permissao"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_txt_Assinatura",
-					"sid": 721558458572235,
-					"parameters": {
-						"text": "lvl3_assinatura"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_txt_Corretos",
-					"sid": 170811308911914,
-					"parameters": {
-						"text": "lvl3_acertos"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_txt_Erros",
-					"sid": 949406056822978,
-					"parameters": {
-						"text": "lvl3_erros"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_txt_Processos",
-					"sid": 231130459889556,
-					"parameters": {
-						"text": "lvl3_processoAtual & \" / \" & lvl3_totalProcessos"
-					}
-				},
-				{
-					"id": "set-text",
-					"objectClass": "lvl3_txt_regra",
-					"sid": 895769085756562,
-					"parameters": {
-						"text": "\"REGRA ATIVA: \" & lvl3_ID_regra_ativa"
-					}
-				}
-			],
-			"sid": 518249719148454
+			"sid": 228666025098713
 		},
 		{
-			"eventType": "comment",
-			"text": "LVL3_FUNCTIONS(avaliarRegras)"
-		},
-		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 712580785563438,
-					"parameters": {
-						"variable": "lvl3_nome",
-						"comparison": 1,
-						"value": "\"\""
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 585253571790447,
-					"parameters": {
-						"variable": "lvl3_regraAplicada",
-						"comparison": 0,
-						"value": "0"
-					}
-				},
-				{
-					"id": "compare-eventvar",
-					"objectClass": "System",
-					"sid": 615402340888780,
-					"parameters": {
-						"variable": "lvl3_precisaGerar",
-						"comparison": 0,
-						"value": "0"
-					}
-				}
-			],
-			"actions": [],
-			"sid": 249377726463436,
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL3_FIREWALL",
+			"description": "",
+			"isActiveOnStart": true,
 			"children": [
 				{
 					"eventType": "block",
@@ -1539,229 +1639,17 @@
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 227852996402928,
+							"sid": 871470435397246,
 							"parameters": {
-								"variable": "lvl3_regraAplicada",
-								"comparison": 0,
-								"value": "0"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 370629539652518,
-							"parameters": {
-								"variable": "lvl3_permissao",
-								"comparison": 0,
-								"value": "\"ROOT\""
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 124155578610002,
-							"parameters": {
-								"variable": "lvl3_assinatura",
-								"comparison": 0,
-								"value": "\"INVÁLIDA\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 420953525322463,
-							"parameters": {
-								"variable": "lvl3_respostaCorreta",
-								"value": "\"BLOQUEAR\""
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 697475940235911,
-							"parameters": {
-								"variable": "lvl3_ID_regra_ativa",
-								"value": "2"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 401097043641718,
-							"parameters": {
-								"variable": "lvl3_regraAplicada",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 453755690715775,
-							"parameters": {
-								"variable": "lvl3_feedbackRegra",
-								"value": "\"ROOT com assinatura inválida. Acesso proibido.\""
-							}
-						}
-					],
-					"sid": 177447208006003
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 858087418346055,
-							"parameters": {
-								"variable": "lvl3_regraAplicada",
-								"comparison": 0,
-								"value": "0"
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 577117555936637,
-							"parameters": {
-								"first-value": "left(lvl3_nome, 3)",
-								"comparison": 0,
-								"second-value": "\"EXT\""
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 819719334670092,
-							"parameters": {
-								"variable": "lvl3_assinatura",
-								"comparison": 0,
-								"value": "\"INVÁLIDA\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 374536077820208,
-							"parameters": {
-								"variable": "lvl3_respostaCorreta",
-								"value": "\"BLOQUEAR\""
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 751936982728918,
-							"parameters": {
-								"variable": "lvl3_ID_regra_ativa",
-								"value": "4"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 301254856440740,
-							"parameters": {
-								"variable": "lvl3_regraAplicada",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 519663570332249,
-							"parameters": {
-								"variable": "lvl3_feedbackRegra",
-								"value": "\"Arquivo externo sem certificação. Bloqueado.\""
-							}
-						}
-					],
-					"sid": 369232638139644
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 847773810135314,
-							"parameters": {
-								"variable": "lvl3_regraAplicada",
-								"comparison": 0,
-								"value": "0"
-							}
-						},
-						{
-							"id": "compare-eventvar",
-							"objectClass": "System",
-							"sid": 902645871766504,
-							"parameters": {
-								"variable": "lvl3_permissao",
-								"comparison": 0,
-								"value": "\"ADMIN\""
-							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 990208477277559,
-							"parameters": {
-								"first-value": "left(lvl3_nome, 6)",
+								"variable": "lvl3_nome",
 								"comparison": 1,
-								"second-value": "\"MAINT_\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 615441976801257,
-							"parameters": {
-								"variable": "lvl3_respostaCorreta",
-								"value": "\"BLOQUEAR\""
+								"value": "\"\""
 							}
 						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 496640828233662,
-							"parameters": {
-								"variable": "lvl3_ID_regra_ativa",
-								"value": "6"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 307311054404099,
-							"parameters": {
-								"variable": "lvl3_regraAplicada",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 436591950386162,
-							"parameters": {
-								"variable": "lvl3_feedbackRegra",
-								"value": "\"Manutenção não autorizada por ADMIN. Suspeito.\""
-							}
-						}
-					],
-					"sid": 570910671118101
-				},
-				{
-					"eventType": "block",
-					"conditions": [
 						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 307560920320631,
+							"sid": 146023063879496,
 							"parameters": {
 								"variable": "lvl3_regraAplicada",
 								"comparison": 0,
@@ -1769,121 +1657,496 @@
 							}
 						},
 						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 730844322047284,
-							"parameters": {
-								"first-value": "left(lvl3_ip, 7)",
-								"comparison": 0,
-								"second-value": "\"192.168\""
-							}
-						}
-					],
-					"actions": [
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 823864943154216,
-							"parameters": {
-								"variable": "lvl3_respostaCorreta",
-								"value": "\"PERMITIR\""
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 403953670722347,
-							"parameters": {
-								"variable": "lvl3_ID_regra_ativa",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 615054313709666,
-							"parameters": {
-								"variable": "lvl3_regraAplicada",
-								"value": "1"
-							}
-						},
-						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 834347174446567,
-							"parameters": {
-								"variable": "lvl3_feedbackRegra",
-								"value": "\"IP interno reconhecido. Acesso liberado.\""
-							}
-						}
-					],
-					"sid": 498793965410451
-				},
-				{
-					"eventType": "block",
-					"conditions": [
-						{
 							"id": "compare-eventvar",
 							"objectClass": "System",
-							"sid": 142923217565133,
+							"sid": 118768367470804,
 							"parameters": {
-								"variable": "lvl3_regraAplicada",
+								"variable": "lvl3_precisaGerar",
 								"comparison": 0,
 								"value": "0"
 							}
-						},
-						{
-							"id": "compare-two-values",
-							"objectClass": "System",
-							"sid": 929148832074807,
-							"parameters": {
-								"first-value": "left(lvl3_nome, 3)",
-								"comparison": 0,
-								"second-value": "\"SYS\""
-							}
 						}
 					],
-					"actions": [
+					"actions": [],
+					"sid": 722582633800396,
+					"children": [
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 701308642972595,
-							"parameters": {
-								"variable": "lvl3_respostaCorreta",
-								"value": "\"PERMITIR\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 771437556748406,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 460214928187123,
+									"parameters": {
+										"variable": "lvl3_permissao",
+										"comparison": 0,
+										"value": "\"ADMIN\""
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 476088694661380,
+									"parameters": {
+										"first-value": "left(lvl3_nome, 6)",
+										"comparison": 1,
+										"second-value": "\"MAINT_\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 811712074573948,
+									"parameters": {
+										"variable": "lvl3_respostaCorreta",
+										"value": "\"BLOQUEAR\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 188878232523040,
+									"parameters": {
+										"variable": "lvl3_ID_regra_ativa",
+										"value": "6"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 343182961655699,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 683134423811005,
+									"parameters": {
+										"variable": "lvl3_feedbackRegra",
+										"value": "\"Regra 06: Permissão ADMIN só para MAINT_*.\""
+									}
+								}
+							],
+							"sid": 339651804769692
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 184731266785905,
-							"parameters": {
-								"variable": "lvl3_ID_regra_ativa",
-								"value": "5"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 349900567185024,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 232671231209925,
+									"parameters": {
+										"first-value": "left(lvl3_nome, 3)",
+										"comparison": 0,
+										"second-value": "\"SYS\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 495370886409010,
+									"parameters": {
+										"variable": "lvl3_respostaCorreta",
+										"value": "\"PERMITIR\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 195462900303137,
+									"parameters": {
+										"variable": "lvl3_ID_regra_ativa",
+										"value": "5"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 395925581147526,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 941126237574327,
+									"parameters": {
+										"variable": "lvl3_feedbackRegra",
+										"value": "\"Regra 05: Processo SYS é do sistema.\""
+									}
+								}
+							],
+							"sid": 641874061873270
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 785964834944878,
-							"parameters": {
-								"variable": "lvl3_regraAplicada",
-								"value": "1"
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 973302307068880,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 870167994472945,
+									"parameters": {
+										"first-value": "left(lvl3_nome, 3)",
+										"comparison": 0,
+										"second-value": "\"EXT\""
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 837862304988177,
+									"parameters": {
+										"variable": "lvl3_assinatura",
+										"comparison": 0,
+										"value": "\"INVÁLIDA\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 864167878982362,
+									"parameters": {
+										"variable": "lvl3_respostaCorreta",
+										"value": "\"BLOQUEAR\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 286063186089995,
+									"parameters": {
+										"variable": "lvl3_ID_regra_ativa",
+										"value": "4"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 448059467965237,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 755756632692271,
+									"parameters": {
+										"variable": "lvl3_feedbackRegra",
+										"value": "\"Regra 04: Origem EXT sem certificado válido.\""
+									}
+								}
+							],
+							"sid": 458452115311015
 						},
 						{
-							"id": "set-eventvar-value",
-							"objectClass": "System",
-							"sid": 444406405544019,
-							"parameters": {
-								"variable": "lvl3_feedbackRegra",
-								"value": "\"Processo de sistema verificado. Liberado.\""
-							}
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 149681003541236,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 320210220754833,
+									"parameters": {
+										"variable": "lvl3_timestamp",
+										"comparison": 5,
+										"value": "\"02:00:00\""
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 136837988887065,
+									"parameters": {
+										"variable": "lvl3_timestamp",
+										"comparison": 3,
+										"value": "\"04:00:00\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 813477704213655,
+									"parameters": {
+										"variable": "lvl3_respostaCorreta",
+										"value": "\"PERMITIR\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 713671503988500,
+									"parameters": {
+										"variable": "lvl3_ID_regra_ativa",
+										"value": "3"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 346980695877170,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 787375602230580,
+									"parameters": {
+										"variable": "lvl3_feedbackRegra",
+										"value": "\"Regra 03: Janela de manutenção ativa.\""
+									}
+								}
+							],
+							"sid": 958836922423960
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 837651784760394,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 930449872004721,
+									"parameters": {
+										"variable": "lvl3_permissao",
+										"comparison": 0,
+										"value": "\"ROOT\""
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 706989740284715,
+									"parameters": {
+										"variable": "lvl3_assinatura",
+										"comparison": 0,
+										"value": "\"INVÁLIDA\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 601746540230817,
+									"parameters": {
+										"variable": "lvl3_respostaCorreta",
+										"value": "\"BLOQUEAR\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 900634859175630,
+									"parameters": {
+										"variable": "lvl3_ID_regra_ativa",
+										"value": "2"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 690657569406632,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 591110053609818,
+									"parameters": {
+										"variable": "lvl3_feedbackRegra",
+										"value": "\"Regra 02: ROOT com assinatura inválida.\""
+									}
+								}
+							],
+							"sid": 190347819215085
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 414948602013058,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"comparison": 0,
+										"value": "0"
+									}
+								},
+								{
+									"id": "compare-two-values",
+									"objectClass": "System",
+									"sid": 388029637029712,
+									"parameters": {
+										"first-value": "left(lvl3_ip, 7)",
+										"comparison": 0,
+										"second-value": "\"192.168\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 470429958445608,
+									"parameters": {
+										"variable": "lvl3_respostaCorreta",
+										"value": "\"PERMITIR\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 302055714535293,
+									"parameters": {
+										"variable": "lvl3_ID_regra_ativa",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 850544821008427,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 573378373238404,
+									"parameters": {
+										"variable": "lvl3_feedbackRegra",
+										"value": "\"Regra 01: IP local permitido.\""
+									}
+								}
+							],
+							"sid": 354316364098422
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 125855893571139
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 129436330416388,
+									"parameters": {
+										"variable": "lvl3_respostaCorreta",
+										"value": "\"BLOQUEAR\""
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 170461293018202,
+									"parameters": {
+										"variable": "lvl3_ID_regra_ativa",
+										"value": "7"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 148325522683312,
+									"parameters": {
+										"variable": "lvl3_regraAplicada",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 389978043051278,
+									"parameters": {
+										"variable": "lvl3_feedbackRegra",
+										"value": "\"Regra 07: Sem correspondência segura. Bloqueado por padrão.\""
+									}
+								}
+							],
+							"sid": 944142524506567
 						}
-					],
-					"sid": 497592893195181
+					]
 				}
-			]
+			],
+			"sid": 303675156194599
 		}
 	],
 	"sid": 192396727706831
