@@ -12810,6 +12810,34 @@
 					"sid": 481858893645596
 				}
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 328235858407880,
+					"parameters": {
+						"key": 78
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-all",
+					"objectClass": "Audio",
+					"sid": 181556723253089
+				},
+				{
+					"callFunction": "Transition",
+					"sid": 130874218524935,
+					"parameters": [
+						"\"Bedroom\""
+					]
+				}
+			],
+			"sid": 171205202601923
 		}
 	],
 	"sid": 653966239576836
