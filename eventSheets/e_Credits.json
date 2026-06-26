@@ -4,6 +4,187 @@
 		{
 			"eventType": "include",
 			"includeSheet": "e_Global"
+		},
+		{
+			"eventType": "variable",
+			"name": "creditosIniciados",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 460291167299330
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 298522667232954
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "Creditos",
+					"sid": 965863309761353,
+					"parameters": {
+						"y": "ViewportBottom(\"Layer 1\") + 100"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "fotoEquipe",
+					"sid": 150289211344846,
+					"parameters": {
+						"y": "Creditos.Y + 3200"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 164310049312768,
+					"parameters": {
+						"seconds": "2",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 283802388732151,
+					"parameters": {
+						"variable": "creditosIniciados",
+						"value": "true"
+					}
+				},
+				{
+					"id": "play",
+					"objectClass": "Audio",
+					"sid": 372293035655557,
+					"parameters": {
+						"audio-file": {
+							"path": "credits/credits"
+						},
+						"loop": "not-looping",
+						"volume": "-5",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "final",
+					"sid": 802707253608993,
+					"parameters": {
+						"y": "FotoEquipe.Y + FotoEquipe.Height + 1000"
+					}
+				}
+			],
+			"sid": 811245976504393
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 434612912522288
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 421318114694832,
+					"parameters": {
+						"variable": "creditosIniciados"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "Creditos",
+					"sid": 631493184480315,
+					"parameters": {
+						"y": "Creditos.Y - (50 * dt)"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "fotoEquipe",
+					"sid": 741521602858479,
+					"parameters": {
+						"y": "FotoEquipe.Y - (50 * dt)"
+					}
+				},
+				{
+					"id": "set-y",
+					"objectClass": "final",
+					"sid": 135615523753970,
+					"parameters": {
+						"y": "Final.Y - (50 * dt)"
+					}
+				}
+			],
+			"sid": 179481888722419
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "compare-two-values",
+					"objectClass": "System",
+					"sid": 847016635450952,
+					"parameters": {
+						"first-value": "Final.Y",
+						"comparison": 2,
+						"second-value": "ViewportHeight(\"Layer 1\") / 2"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-y",
+					"objectClass": "final",
+					"sid": 185166661219228,
+					"parameters": {
+						"y": "ViewportHeight(\"Layer 1\") / 2"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 242993810425047,
+					"parameters": {
+						"seconds": "5",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "fade",
+					"sid": 869628550549741,
+					"parameters": {
+						"opacity": "min(Fade.Opacity + (40 * dt), 100)"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 860561523759664,
+					"parameters": {
+						"seconds": "6",
+						"use-timescale": true
+					}
+				},
+				{
+					"id": "close",
+					"objectClass": "Browser",
+					"sid": 387341122105358
+				}
+			],
+			"sid": 180640517228491
 		}
 	],
 	"sid": 932739539792882

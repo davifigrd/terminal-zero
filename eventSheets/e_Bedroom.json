@@ -2495,6 +2495,29 @@
 				0.07058823529411765,
 				1
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 397373103643048,
+					"parameters": {
+						"key": 193
+					}
+				}
+			],
+			"actions": [
+				{
+					"callFunction": "Transition",
+					"sid": 878176032726535,
+					"parameters": [
+						"\"Credits\""
+					]
+				}
+			],
+			"sid": 828307614520583
 		}
 	],
 	"sid": 315725312432222
