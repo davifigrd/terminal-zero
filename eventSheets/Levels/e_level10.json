@@ -6417,6 +6417,35 @@
 				0.00392156862745098,
 				1
 			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 663520824265766
+				}
+			],
+			"actions": [
+				{
+					"id": "set-angle",
+					"objectClass": "lvl10_icone_Tutorial",
+					"sid": 774873774055875,
+					"parameters": {
+						"angle": "angle(lvl10_icone_Tutorial.X, lvl10_icone_Tutorial.Y, lvl10_player.X, lvl10_player.Y) + 180"
+					}
+				},
+				{
+					"id": "set-angle",
+					"objectClass": "lvl10_icone_Tutorial2",
+					"sid": 341555001865391,
+					"parameters": {
+						"angle": "angle(lvl10_icone_Tutorial2.X, lvl10_icone_Tutorial2.Y, lvl10_player.X, lvl10_player.Y) + 180"
+					}
+				}
+			],
+			"sid": 273406679475465
 		}
 	],
 	"sid": 758226248430815
