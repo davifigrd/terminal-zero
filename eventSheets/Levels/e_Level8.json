@@ -266,6 +266,110 @@
 			"sid": 274087390882915
 		},
 		{
+			"eventType": "comment",
+			"text": "fios"
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosResolvido",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 895375810346986
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosQuantidade",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 986308371515975
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCorreta",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 822640511126656
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor1",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 743276461996380
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor2",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 605616566577286
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor3",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 419227129668295
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor4",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 139852966675471
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor5",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 220443338399327
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor6",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 285814736972993
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCortado",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 934323692560847
+		},
+		{
 			"eventType": "group",
 			"disabled": false,
 			"title": "LVL9_LAYOUT",
@@ -282,6 +386,15 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 867207448242808,
+							"parameters": {
+								"layer": "\"gameplay2\"",
+								"interactive": false
+							}
+						},
 						{
 							"id": "set-eventvar-value",
 							"objectClass": "System",
@@ -314,6 +427,38 @@
 						{
 							"callFunction": "lvl8_gerarBotao",
 							"sid": 308532200833010
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 939973577376616,
+							"parameters": {
+								"layer": "\"gameplay2\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 774233527579724,
+							"parameters": {
+								"layer": "\"instrucao2\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 814326353503965,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_soundTrack"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 107104501354954
@@ -333,6 +478,22 @@
 						}
 					],
 					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios2",
+							"sid": 102479628477595,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 339406478503799,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
 						{
 							"id": "set-visible",
 							"objectClass": "lvl8_txt_sobreBotao",
@@ -393,6 +554,22 @@
 					"actions": [
 						{
 							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios2",
+							"sid": 559786326865742,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 969783438476505,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
 							"objectClass": "lvl8_txt_sobreHex",
 							"sid": 784491373647940,
 							"parameters": {
@@ -433,6 +610,236 @@
 						}
 					],
 					"sid": 493605603655195
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 541377099464228,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_instrucao3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios2",
+							"sid": 520955854721807,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreBotao",
+							"sid": 349003629578905,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoBotao",
+							"sid": 703876479275131,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreHex",
+							"sid": 290309177180414,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_tabelahex",
+							"sid": 616054169565899,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoHex",
+							"sid": 998387699755998,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 457648891101460,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 665730195300198
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 426614053984871,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setainstrucao"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreBotao",
+							"sid": 738475292913078,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoBotao",
+							"sid": 832610006937316,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreHex",
+							"sid": 762552909005941,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_tabelahex",
+							"sid": 670891905933446,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoHex",
+							"sid": 674373717288127,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 216252705188960,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios2",
+							"sid": 988024412430084,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 449562443876465
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 510775648887254,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setainstrucao2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreBotao",
+							"sid": 603198035869194,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoBotao",
+							"sid": 265292893775676,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreHex",
+							"sid": 411443003632016,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_tabelahex",
+							"sid": 969667190886822,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoHex",
+							"sid": 904035609861127,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 600166873720794,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios2",
+							"sid": 268047912239799,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 766319476350266,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 197465174524250
 				}
 			],
 			"sid": 993108338041617
@@ -1491,6 +1898,10 @@
 									"parameters": {
 										"color": "rgb(0, 255, 0)"
 									}
+								},
+								{
+									"callFunction": "lvl8_passarEtapa",
+									"sid": 993719957819846
 								}
 							],
 							"sid": 378014039803976
@@ -1613,6 +2024,395 @@
 					]
 				},
 				{
+					"functionName": "lvl8_erro",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 419018587002561,
+							"parameters": {
+								"variable": "lvl8_erros",
+								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 943548188551366,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_error"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 122542453868862,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 616723783481442,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro1",
+									"sid": 745892231190971,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 695948991306624,
+									"parameters": {
+										"variable": "lvl8_multiplicadorTimer",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 325355936838221
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 990779154181575,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro2",
+									"sid": 439384218923992,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 867517726417827,
+									"parameters": {
+										"variable": "lvl8_multiplicadorTimer",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 719195584988150
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 768933049926787,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro3",
+									"sid": 330779475429109,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 927468379439328,
+									"parameters": {
+										"variable": "lvl8_multiplicadorTimer",
+										"value": "4"
+									}
+								}
+							],
+							"sid": 516523749502274
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 385357802980972,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"comparison": 0,
+										"value": "4"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 485442900539738,
+									"parameters": {
+										"variable": "lvl8_tempoRestante",
+										"comparison": 0,
+										"value": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 557381482981911,
+									"parameters": {
+										"layer": "\"explosao\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lv8_bgexplosao",
+									"sid": 761760717832402,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 673777225458211,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 8/soundreality-sinus-bomb-137068"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 430300036584516,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 8/freesound_community-medium-explosion-40472"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_bomba",
+									"sid": 424963840147396,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "start-animation",
+									"objectClass": "lvl8_bomba",
+									"sid": 906719260502603,
+									"parameters": {
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 360218620092300,
+									"parameters": {
+										"seconds": "3.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_bomba",
+									"sid": 740900604941412,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lv8_bgexplosao",
+									"sid": 860330612924631,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 969060924720489,
+									"parameters": {
+										"layer": "\"explosao\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 732108534826100,
+									"parameters": {
+										"variable": "lvl8_travaInput",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 627117881029580,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 294059020177123,
+									"parameters": {
+										"variable": "lvl8_multiplicadorTimer",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro1",
+									"sid": 825599714331385,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro2",
+									"sid": 507514063804983,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro3",
+									"sid": 232751662229967,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 336382504752233,
+									"parameters": {
+										"variable": "lvl8_hexResolvido",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 647999939016467,
+									"parameters": {
+										"variable": "lvl8_btn1_Confirmado",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 265978655055141,
+									"parameters": {
+										"variable": "lvl8_btn2_Confirmado",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 682397785546815,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 884960644887058,
+									"parameters": {
+										"variable": "lvl8_inputJogador",
+										"value": "\"\""
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn1",
+									"sid": 337682858113220,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn2",
+									"sid": 179970851649212,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 453110587994270,
+									"parameters": {
+										"variable": "lvl8_travaInput",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 276791638725116,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
 					"functionName": "lvl8_passarEtapa",
 					"functionDescription": "",
 					"functionCategory": "",
@@ -1664,15 +2464,6 @@
 							}
 						},
 						{
-							"id": "add-to-eventvar",
-							"objectClass": "System",
-							"sid": 376326260368628,
-							"parameters": {
-								"variable": "lvl8_etapa",
-								"value": "1"
-							}
-						},
-						{
 							"id": "play",
 							"objectClass": "Audio",
 							"sid": 770364182996833,
@@ -1687,10 +2478,667 @@
 							}
 						}
 					],
-					"sid": 534583016002386
+					"sid": 534583016002386,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 498575116620505,
+									"parameters": {
+										"variable": "lvl8_etapa",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 160309312734192,
+									"parameters": {
+										"variable": "lvl8_etapa",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 636834374502048,
+									"parameters": {
+										"layer": "\"gameplay\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 383982048194283,
+									"parameters": {
+										"layer": "\"instrucao\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 177790049158783,
+									"parameters": {
+										"layer": "\"gameplay\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 326815243438565,
+									"parameters": {
+										"layer": "\"gameplay2\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 152710185915802,
+									"parameters": {
+										"layer": "\"instrucao2\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 722491472842307,
+									"parameters": {
+										"layer": "\"gameplay2\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 370891534819292,
+									"parameters": [
+										"\"INICIANDO SEGUNDA ETAPA...\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 973580123434920,
+									"parameters": {
+										"seconds": "2.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 782802041396957,
+									"parameters": {
+										"variable": "lvl8_tempoRestante",
+										"value": "240"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 307990137206995,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 188955783138326,
+									"parameters": {
+										"variable": "lvl8_multiplicadorTimer",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 782458334857691,
+									"parameters": {
+										"variable": "lvl8_hexResolvido",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 152593535397078,
+									"parameters": {
+										"variable": "lvl8_btn1_Confirmado",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 951309540392999,
+									"parameters": {
+										"variable": "lvl8_btn2_Confirmado",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 202625228631209,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 428279456454920,
+									"parameters": {
+										"variable": "lvl8_inputJogador",
+										"value": "\"\""
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn1",
+									"sid": 194491742333482,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn2",
+									"sid": 561300685145393,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"callFunction": "lvl8_gerarHex",
+									"sid": 148195939756338
+								},
+								{
+									"callFunction": "lvl8_gerarBotao",
+									"sid": 759505937227696
+								},
+								{
+									"callFunction": "lvl8_gerarFios",
+									"sid": 709962304948373
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro1",
+									"sid": 716453647506915,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro2",
+									"sid": 708768514163992,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro3",
+									"sid": 806797753567594,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 108744611812642,
+									"parameters": {
+										"variable": "lvl8_travaInput",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 188811238881811
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 630549597885184,
+									"parameters": {
+										"variable": "lvl8_etapa",
+										"comparison": 0,
+										"value": "2"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 840163806697961,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 188100424840916,
+									"parameters": {
+										"variable": "lvl8_hexResolvido",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 273745398611445,
+									"parameters": {
+										"variable": "lvl8_btn1_Confirmado",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 596429734921945,
+									"parameters": {
+										"variable": "lvl8_etapa",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 679289204286188,
+									"parameters": [
+										"\"INICIANDO TERCEIRA ETAPA...\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 757947930149622,
+									"parameters": {
+										"seconds": "2.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 548220749214738,
+									"parameters": {
+										"variable": "lvl8_tempoRestante",
+										"value": "180"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 283566276315142,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 162753630505702,
+									"parameters": {
+										"variable": "lvl8_multiplicadorTimer",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 928385521831768,
+									"parameters": {
+										"variable": "lvl8_hexResolvido",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 887316074606202,
+									"parameters": {
+										"variable": "lvl8_btn1_Confirmado",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 761088810971532,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 717671187018147,
+									"parameters": {
+										"variable": "lvl8_inputJogador",
+										"value": "\"\""
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn1",
+									"sid": 309292211398865,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn2",
+									"sid": 122443245315430,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"callFunction": "lvl8_gerarHex",
+									"sid": 457257114904778
+								},
+								{
+									"callFunction": "lvl8_gerarBotao",
+									"sid": 543344620650923
+								},
+								{
+									"callFunction": "lvl8_gerarFios",
+									"sid": 707954842222179
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro1",
+									"sid": 973602739709411,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro2",
+									"sid": 162144778190917,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro3",
+									"sid": 505966507983237,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 524381645865762,
+									"parameters": {
+										"variable": "lvl8_travaInput",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 544967126811127
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 942802808970376,
+									"parameters": {
+										"variable": "lvl8_etapa",
+										"comparison": 0,
+										"value": "3"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 371776081075217,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 138422585453996,
+									"parameters": {
+										"variable": "lvl8_hexResolvido",
+										"comparison": 0,
+										"value": "1"
+									}
+								},
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 940728642251357,
+									"parameters": {
+										"variable": "lvl8_btn1_Confirmado",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 797173395990858,
+									"parameters": {
+										"variable": "lvl8_etapa",
+										"value": "1"
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 870816377762682,
+									"parameters": [
+										"\"INICIANDO TERCEIRA ETAPA...\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 833541672729591,
+									"parameters": {
+										"seconds": "2.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 503197762408729,
+									"parameters": {
+										"variable": "lvl8_tempoRestante",
+										"value": "180"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 415133411216543,
+									"parameters": {
+										"variable": "lvl8_erros",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 810763686913757,
+									"parameters": {
+										"variable": "lvl8_multiplicadorTimer",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 258671127642360,
+									"parameters": {
+										"variable": "lvl8_hexResolvido",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 348457814569180,
+									"parameters": {
+										"variable": "lvl8_btn1_Confirmado",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 155157357435403,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"value": "0"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 866249764367239,
+									"parameters": {
+										"variable": "lvl8_inputJogador",
+										"value": "\"\""
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn1",
+									"sid": 344826495869734,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn2",
+									"sid": 252989976689616,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro1",
+									"sid": 425295303928518,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro2",
+									"sid": 867441164077210,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro3",
+									"sid": 475448736558492,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 763992258756935,
+									"parameters": {
+										"variable": "lvl8_travaInput",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 993535053814961
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 462432177605415,
+									"parameters": {
+										"variable": "lvl8_etapa",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"callFunction": "TypingEffect",
+									"sid": 998799249205138,
+									"parameters": [
+										"\"BOMBA DESATIVADA!\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 279855611795874,
+									"parameters": {
+										"seconds": "2.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 862842884009477,
+									"parameters": {
+										"variable": "lvl8_travaInput",
+										"value": "0"
+									}
+								}
+							],
+							"sid": 860858037065532
+						}
+					]
 				},
 				{
-					"functionName": "lvl8_erro",
+					"functionName": "lvl8_gerarFios",
 					"functionDescription": "",
 					"functionCategory": "",
 					"functionReturnType": "none",
@@ -1701,30 +3149,136 @@
 					"conditions": [],
 					"actions": [
 						{
-							"id": "add-to-eventvar",
+							"id": "set-eventvar-value",
 							"objectClass": "System",
-							"sid": 522163698775234,
+							"sid": 596462828029684,
 							"parameters": {
-								"variable": "lvl8_erros",
-								"value": "1"
+								"variable": "lvl8_fiosQuantidade",
+								"value": "floor(random(3, 7))"
 							}
 						},
 						{
-							"id": "play",
-							"objectClass": "Audio",
-							"sid": 839361001880378,
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 621001069404428,
 							"parameters": {
-								"audio-file": {
-									"path": "Level 3/lvl3_error"
-								},
-								"loop": "not-looping",
-								"volume": "0",
-								"stereo-pan": "0",
-								"tag-optional": "\"\""
+								"variable": "lvl8_fiosCor1",
+								"value": "choose(\"vermelho\",\"verde\",\"azul\",\"branco\",\"preto\",\"amarelo\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 787527345515546,
+							"parameters": {
+								"variable": "lvl8_fiosCor2",
+								"value": "choose(\"vermelho\",\"verde\",\"azul\",\"branco\",\"preto\",\"amarelo\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 458910179288684,
+							"parameters": {
+								"variable": "lvl8_fiosCor3",
+								"value": "choose(\"vermelho\",\"verde\",\"azul\",\"branco\",\"preto\",\"amarelo\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 702782700987554,
+							"parameters": {
+								"variable": "lvl8_fiosCor4",
+								"value": "choose(\"vermelho\",\"verde\",\"azul\",\"branco\",\"preto\",\"amarelo\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 223669586443185,
+							"parameters": {
+								"variable": "lvl8_fiosCor5",
+								"value": "choose(\"vermelho\",\"verde\",\"azul\",\"branco\",\"preto\",\"amarelo\")"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 952391907604741,
+							"parameters": {
+								"variable": "lvl8_fiosCor6",
+								"value": "choose(\"vermelho\",\"verde\",\"azul\",\"branco\",\"preto\",\"amarelo\")"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro",
+							"sid": 601699183345877,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro2",
+							"sid": 243420784559738,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro3",
+							"sid": 985421881371250,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro4",
+							"sid": 190880660380108,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro5",
+							"sid": 394025317299526,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro6",
+							"sid": 826764812303900,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 611154800450821,
+							"parameters": {
+								"variable": "lvl8_fiosCortado",
+								"value": "0"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 522837760882634,
+							"parameters": {
+								"variable": "lvl8_fiosResolvido",
+								"value": "0"
 							}
 						}
 					],
-					"sid": 956042275158942,
+					"sid": 235399242482310,
 					"children": [
 						{
 							"eventType": "block",
@@ -1732,10 +3286,10 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 330793740208720,
+									"sid": 538779325165589,
 									"parameters": {
-										"variable": "lvl8_erros",
-										"comparison": 0,
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 5,
 										"value": "1"
 									}
 								}
@@ -1743,23 +3297,14 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "lvl8_erro1",
-									"sid": 324644710883501,
+									"objectClass": "lvl8_fioneutro",
+									"sid": 930788128232150,
 									"parameters": {
 										"visibility": "visible"
 									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 147795217891566,
-									"parameters": {
-										"variable": "lvl8_multiplicadorTimer",
-										"value": "2"
-									}
 								}
 							],
-							"sid": 758082578009435
+							"sid": 739320447897714
 						},
 						{
 							"eventType": "block",
@@ -1767,10 +3312,10 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 732075416244995,
+									"sid": 598061896543370,
 									"parameters": {
-										"variable": "lvl8_erros",
-										"comparison": 0,
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 5,
 										"value": "2"
 									}
 								}
@@ -1778,23 +3323,14 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "lvl8_erro2",
-									"sid": 839753399625258,
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 611569835521193,
 									"parameters": {
 										"visibility": "visible"
 									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 240710336959475,
-									"parameters": {
-										"variable": "lvl8_multiplicadorTimer",
-										"value": "3"
-									}
 								}
 							],
-							"sid": 160943646843111
+							"sid": 677406507532816
 						},
 						{
 							"eventType": "block",
@@ -1802,10 +3338,10 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 552320077970668,
+									"sid": 742714580521415,
 									"parameters": {
-										"variable": "lvl8_erros",
-										"comparison": 0,
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 5,
 										"value": "3"
 									}
 								}
@@ -1813,23 +3349,14 @@
 							"actions": [
 								{
 									"id": "set-visible",
-									"objectClass": "lvl8_erro3",
-									"sid": 153890386198598,
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 454141241776451,
 									"parameters": {
 										"visibility": "visible"
 									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 627053033586997,
-									"parameters": {
-										"variable": "lvl8_multiplicadorTimer",
-										"value": "4"
-									}
 								}
 							],
-							"sid": 987298408078629
+							"sid": 284649354811106
 						},
 						{
 							"eventType": "block",
@@ -1837,33 +3364,1836 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 322403889700902,
+									"sid": 353692182021366,
 									"parameters": {
-										"variable": "lvl8_erros",
-										"comparison": 0,
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 5,
 										"value": "4"
-									}
-								},
-								{
-									"id": "compare-eventvar",
-									"objectClass": "System",
-									"sid": 908547782644765,
-									"parameters": {
-										"variable": "lvl8_tempoRestante",
-										"comparison": 0,
-										"value": "0"
 									}
 								}
 							],
 							"actions": [
 								{
-									"id": "restart-layout",
-									"objectClass": "System",
-									"sid": 470798194955570
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 207470077064867,
+									"parameters": {
+										"visibility": "visible"
+									}
 								}
 							],
-							"sid": 123083712736717,
-							"isOrBlock": true
+							"sid": 937896385328696
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 542405675240417,
+									"parameters": {
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 5,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 463380431556465,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 840910082684736
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 204394588736162,
+									"parameters": {
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 5,
+										"value": "6"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 846942868695022,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 814265274391805
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 832070103171682,
+									"parameters": {
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 2,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 444423810100361,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 609723086250802
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 812872228514715,
+									"parameters": {
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 2,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 759847842829461,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 619083826140089
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 239110979676025,
+									"parameters": {
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 2,
+										"value": "6"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 113902191393583,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 366351009792094
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 1"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 493779272639291,
+									"parameters": {
+										"variable": "lvl8_fiosCor1",
+										"comparison": 0,
+										"value": "\"vermelho\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 697194015898552,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 820963432149474
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 233779224755111,
+									"parameters": {
+										"variable": "lvl8_fiosCor1",
+										"comparison": 0,
+										"value": "\"verde\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 771233071846962,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 647641261473620
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 563960068666789,
+									"parameters": {
+										"variable": "lvl8_fiosCor1",
+										"comparison": 0,
+										"value": "\"azul\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 925999862140487,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 382660263333155
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 564474552546903,
+									"parameters": {
+										"variable": "lvl8_fiosCor1",
+										"comparison": 0,
+										"value": "\"branco\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 722356780543104,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 260498224439302
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 551300972017413,
+									"parameters": {
+										"variable": "lvl8_fiosCor1",
+										"comparison": 0,
+										"value": "\"preto\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 410687200978670,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 270837035780316
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 252429744348151,
+									"parameters": {
+										"variable": "lvl8_fiosCor1",
+										"comparison": 0,
+										"value": "\"amarelo\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 747987298262644,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 929534658732857
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 2"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 860353442874003,
+									"parameters": {
+										"variable": "lvl8_fiosCor2",
+										"comparison": 0,
+										"value": "\"vermelho\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 922446239770273,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 539518939183371
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 339135214445387,
+									"parameters": {
+										"variable": "lvl8_fiosCor2",
+										"comparison": 0,
+										"value": "\"verde\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 717891923795104,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 666067656269638
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 784645003713766,
+									"parameters": {
+										"variable": "lvl8_fiosCor2",
+										"comparison": 0,
+										"value": "\"azul\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 309754645199662,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 846906267728507
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 851253112366171,
+									"parameters": {
+										"variable": "lvl8_fiosCor2",
+										"comparison": 0,
+										"value": "\"branco\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 140002045312905,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 392167794144665
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 319645800332781,
+									"parameters": {
+										"variable": "lvl8_fiosCor2",
+										"comparison": 0,
+										"value": "\"preto\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 670769839518399,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 266596243279341
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 681913460518957,
+									"parameters": {
+										"variable": "lvl8_fiosCor2",
+										"comparison": 0,
+										"value": "\"amarelo\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 748138323005628,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 739034661065995
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 3"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 962591642610257,
+									"parameters": {
+										"variable": "lvl8_fiosCor3",
+										"comparison": 0,
+										"value": "\"vermelho\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 147742990787856,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 810003897141325
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 183532532991754,
+									"parameters": {
+										"variable": "lvl8_fiosCor3",
+										"comparison": 0,
+										"value": "\"verde\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 649657010796882,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 760130070118342
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 606004577025870,
+									"parameters": {
+										"variable": "lvl8_fiosCor3",
+										"comparison": 0,
+										"value": "\"azul\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 728480477398033,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 372556326237748
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 887488699970981,
+									"parameters": {
+										"variable": "lvl8_fiosCor3",
+										"comparison": 0,
+										"value": "\"branco\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 909102026001536,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 759842634615606
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 145269822679985,
+									"parameters": {
+										"variable": "lvl8_fiosCor3",
+										"comparison": 0,
+										"value": "\"preto\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 478818383843836,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 820517016650065
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 613435846509954,
+									"parameters": {
+										"variable": "lvl8_fiosCor3",
+										"comparison": 0,
+										"value": "\"amarelo\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 391757408049713,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 360848649998509
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 4"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 784953058697716,
+									"parameters": {
+										"variable": "lvl8_fiosCor4",
+										"comparison": 0,
+										"value": "\"vermelho\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 940332898306652,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 255356196338849
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 732436138544645,
+									"parameters": {
+										"variable": "lvl8_fiosCor4",
+										"comparison": 0,
+										"value": "\"verde\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 810681437885281,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 521151016666072
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 173655601890157,
+									"parameters": {
+										"variable": "lvl8_fiosCor4",
+										"comparison": 0,
+										"value": "\"azul\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 973465917978979,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 295622420358634
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 827773139008677,
+									"parameters": {
+										"variable": "lvl8_fiosCor4",
+										"comparison": 0,
+										"value": "\"branco\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 726992658214093,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 436093817948616
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 558920005466878,
+									"parameters": {
+										"variable": "lvl8_fiosCor4",
+										"comparison": 0,
+										"value": "\"preto\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 494336550870260,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 412909578633290
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 966147404724376,
+									"parameters": {
+										"variable": "lvl8_fiosCor4",
+										"comparison": 0,
+										"value": "\"amarelo\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 782731876845578,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 462643463565811
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 5"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 726844433243028,
+									"parameters": {
+										"variable": "lvl8_fiosCor5",
+										"comparison": 0,
+										"value": "\"vermelho\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 237683430959777,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 335762008333780
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 910666528384482,
+									"parameters": {
+										"variable": "lvl8_fiosCor5",
+										"comparison": 0,
+										"value": "\"verde\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 952406617441343,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 505466853721281
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 930805798958159,
+									"parameters": {
+										"variable": "lvl8_fiosCor5",
+										"comparison": 0,
+										"value": "\"azul\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 217290689003700,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 171011627877140
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 308030483816341,
+									"parameters": {
+										"variable": "lvl8_fiosCor5",
+										"comparison": 0,
+										"value": "\"branco\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 458072998825393,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 566321107547319
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 395750937049297,
+									"parameters": {
+										"variable": "lvl8_fiosCor5",
+										"comparison": 0,
+										"value": "\"preto\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 816947291708769,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 322633437036738
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 965756981677719,
+									"parameters": {
+										"variable": "lvl8_fiosCor5",
+										"comparison": 0,
+										"value": "\"amarelo\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 608082665764609,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 747354097941516
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 6"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 700454698963219,
+									"parameters": {
+										"variable": "lvl8_fiosCor6",
+										"comparison": 0,
+										"value": "\"vermelho\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 295894501974997,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 344322769142860
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 515607954149657,
+									"parameters": {
+										"variable": "lvl8_fiosCor6",
+										"comparison": 0,
+										"value": "\"verde\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 593457147450582,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 960676999646546
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 582228897347805,
+									"parameters": {
+										"variable": "lvl8_fiosCor6",
+										"comparison": 0,
+										"value": "\"azul\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 260192763438346,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 371975098936256
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 426393426604765,
+									"parameters": {
+										"variable": "lvl8_fiosCor6",
+										"comparison": 0,
+										"value": "\"branco\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 374637183549470,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 155161537783894
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 212483373344199,
+									"parameters": {
+										"variable": "lvl8_fiosCor6",
+										"comparison": 0,
+										"value": "\"preto\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 655225043554999,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 694117053803453
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 704870921216893,
+									"parameters": {
+										"variable": "lvl8_fiosCor6",
+										"comparison": 0,
+										"value": "\"amarelo\""
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 525507051728916,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 751648652290676
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "lvl8_calcularFioCorreto",
+									"sid": 783204980647174
+								}
+							],
+							"sid": 585174114224216
+						}
+					]
+				},
+				{
+					"functionName": "lvl8_calcularFioCorreto",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 333123075199540,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 153758816081789,
+									"parameters": {
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 199675309922864,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 541045992094918,
+											"parameters": {
+												"variable": "lvl8_fiosCor1",
+												"comparison": 1,
+												"value": "\"vermelho\""
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 438623181850278,
+											"parameters": {
+												"variable": "lvl8_fiosCor2",
+												"comparison": 1,
+												"value": "\"vermelho\""
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 313746647929054,
+											"parameters": {
+												"variable": "lvl8_fiosCor3",
+												"comparison": 1,
+												"value": "\"vermelho\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 770716274651173,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 252744957835018
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 271673199066926,
+											"parameters": {
+												"variable": "lvl8_fiosCor3",
+												"comparison": 0,
+												"value": "\"branco\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 190356069297752,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "3"
+											}
+										}
+									],
+									"sid": 303082236574465
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 843499253568600,
+											"parameters": {
+												"variable": "lvl8_fiosCor1",
+												"comparison": 0,
+												"value": "\"azul\""
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 468396276502295,
+											"parameters": {
+												"variable": "lvl8_fiosCor2",
+												"comparison": 0,
+												"value": "\"azul\""
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 237181307350498,
+											"parameters": {
+												"variable": "lvl8_fiosCor3",
+												"comparison": 0,
+												"value": "\"azul\""
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 733402390999272,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"azul\") + (lvl8_fiosCor2=\"azul\") + (lvl8_fiosCor3=\"azul\")",
+												"comparison": 4,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 307866579593953,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "3"
+											}
+										}
+									],
+									"sid": 266890778554701,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 782456217460734
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 519020295806897,
+									"parameters": {
+										"variable": "lvl8_fiosCorreta",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 244513912393555
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 570144134303867,
+									"parameters": {
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 530354395927742,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 821380423423173,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"vermelho\")+(lvl8_fiosCor2=\"vermelho\")+(lvl8_fiosCor3=\"vermelho\")+(lvl8_fiosCor4=\"vermelho\")",
+												"comparison": 4,
+												"second-value": "1"
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 477689112658818,
+											"parameters": {
+												"variable": "lvl8_fiosCor4",
+												"comparison": 0,
+												"value": "\"preto\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 849925544969138,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "4"
+											}
+										}
+									],
+									"sid": 594446537449026
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 666301524907170,
+											"parameters": {
+												"variable": "lvl8_fiosCor1",
+												"comparison": 0,
+												"value": "\"amarelo\""
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 394379992565478,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"vermelho\")+(lvl8_fiosCor2=\"vermelho\")+(lvl8_fiosCor3=\"vermelho\")+(lvl8_fiosCor4=\"vermelho\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 966403141016663,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 778408757209823
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 909500724720446,
+											"parameters": {
+												"variable": "lvl8_fiosCor1",
+												"comparison": 0,
+												"value": "\"verde\""
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 575511452048516,
+											"parameters": {
+												"variable": "lvl8_fiosCor2",
+												"comparison": 0,
+												"value": "\"verde\""
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 328070689196320,
+											"parameters": {
+												"variable": "lvl8_fiosCor3",
+												"comparison": 0,
+												"value": "\"verde\""
+											}
+										},
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 495179752255696,
+											"parameters": {
+												"variable": "lvl8_fiosCor4",
+												"comparison": 0,
+												"value": "\"verde\""
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 515245642213168,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"verde\")+(lvl8_fiosCor2=\"verde\")+(lvl8_fiosCor3=\"verde\")+(lvl8_fiosCor4=\"verde\")",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 640664450346653,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 513914632592642,
+									"isOrBlock": true
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 477004780010404,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"amarelo\")+(lvl8_fiosCor2=\"amarelo\")+(lvl8_fiosCor3=\"amarelo\")+(lvl8_fiosCor4=\"amarelo\")",
+												"comparison": 4,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 634068873593028,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "4"
+											}
+										}
+									],
+									"sid": 445286085679422
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 554579579266429
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 512199232635795,
+									"parameters": {
+										"variable": "lvl8_fiosCorreta",
+										"value": "2"
+									}
+								}
+							],
+							"sid": 809496165986029
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 300735360157728,
+									"parameters": {
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 457178817058231,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 446119817011574,
+											"parameters": {
+												"variable": "lvl8_fiosCor5",
+												"comparison": 0,
+												"value": "\"preto\""
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 901561024689015,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "4"
+											}
+										}
+									],
+									"sid": 643807336290524
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 474206271587942,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"vermelho\")+(lvl8_fiosCor2=\"vermelho\")+(lvl8_fiosCor3=\"vermelho\")+(lvl8_fiosCor4=\"vermelho\")+(lvl8_fiosCor5=\"vermelho\")",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 938671000357890,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"amarelo\")+(lvl8_fiosCor2=\"amarelo\")+(lvl8_fiosCor3=\"amarelo\")+(lvl8_fiosCor4=\"amarelo\")+(lvl8_fiosCor5=\"amarelo\")",
+												"comparison": 4,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 321253920935677,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 899648879504448
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 890694632064960,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"preto\")+(lvl8_fiosCor2=\"preto\")+(lvl8_fiosCor3=\"preto\")+(lvl8_fiosCor4=\"preto\")+(lvl8_fiosCor5=\"preto\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 362480947038924,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "2"
+											}
+										}
+									],
+									"sid": 508152257879300,
+									"isOrBlock": true
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 189475719442969
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 593488412826186,
+									"parameters": {
+										"variable": "lvl8_fiosCorreta",
+										"value": "1"
+									}
+								}
+							],
+							"sid": 622480182898836
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 686943826780262,
+									"parameters": {
+										"variable": "lvl8_fiosQuantidade",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 593995534496117,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 449058610643372,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"amarelo\")+(lvl8_fiosCor2=\"amarelo\")+(lvl8_fiosCor3=\"amarelo\")+(lvl8_fiosCor4=\"amarelo\")+(lvl8_fiosCor5=\"amarelo\")+(lvl8_fiosCor6=\"amarelo\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 287583942512752,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"branco\")+(lvl8_fiosCor2=\"branco\")+(lvl8_fiosCor3=\"branco\")+(lvl8_fiosCor4=\"branco\")+(lvl8_fiosCor5=\"branco\")+(lvl8_fiosCor6=\"branco\")",
+												"comparison": 4,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 157978898638951,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "3"
+											}
+										}
+									],
+									"sid": 362081506057945
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 494312129780413,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"amarelo\")+(lvl8_fiosCor2=\"amarelo\")+(lvl8_fiosCor3=\"amarelo\")+(lvl8_fiosCor4=\"amarelo\")+(lvl8_fiosCor5=\"amarelo\")+(lvl8_fiosCor6=\"amarelo\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 753245382836245,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"verde\")+(lvl8_fiosCor2=\"verde\")+(lvl8_fiosCor3=\"verde\")+(lvl8_fiosCor4=\"verde\")+(lvl8_fiosCor5=\"verde\")+(lvl8_fiosCor6=\"verde\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 885160936871768,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "6"
+											}
+										}
+									],
+									"sid": 297159773345292
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 581112521830934,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"verde\")+(lvl8_fiosCor2=\"verde\")+(lvl8_fiosCor3=\"verde\")+(lvl8_fiosCor4=\"verde\")+(lvl8_fiosCor5=\"verde\")+(lvl8_fiosCor6=\"verde\")",
+												"comparison": 0,
+												"second-value": "1"
+											}
+										},
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 196969432778966,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"amarelo\")+(lvl8_fiosCor2=\"amarelo\")+(lvl8_fiosCor3=\"amarelo\")+(lvl8_fiosCor4=\"amarelo\")+(lvl8_fiosCor5=\"amarelo\")+(lvl8_fiosCor6=\"amarelo\")",
+												"comparison": 4,
+												"second-value": "1"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 847283670992259,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "4"
+											}
+										}
+									],
+									"sid": 473700654942366
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 905023540891643,
+											"parameters": {
+												"first-value": "(lvl8_fiosCor1=\"vermelho\")+(lvl8_fiosCor2=\"vermelho\")+(lvl8_fiosCor3=\"vermelho\")+(lvl8_fiosCor4=\"vermelho\")+(lvl8_fiosCor5=\"vermelho\")+(lvl8_fiosCor6=\"vermelho\")",
+												"comparison": 0,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 598461436675674,
+											"parameters": {
+												"variable": "lvl8_fiosCorreta",
+												"value": "1"
+											}
+										}
+									],
+									"sid": 263775954065925
+								}
+							]
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 458912177751637
+								}
+							],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 449548362034726,
+									"parameters": {
+										"variable": "lvl8_fiosCorreta",
+										"value": "3"
+									}
+								}
+							],
+							"sid": 712689524096306
 						}
 					]
 				}
@@ -1922,6 +5252,16 @@
 								"variable": "lvl8_btn1_direcaoCorreta",
 								"comparison": 0,
 								"value": "\"cima\""
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 834910732643638,
+							"parameters": {
+								"variable": "lvl8_etapa",
+								"comparison": 0,
+								"value": "1"
 							}
 						}
 					],
@@ -2849,6 +6189,934 @@
 				}
 			],
 			"sid": 222232719548771
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL8_GAMEPLAY2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 996833264502103,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 459328604204439,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 781937660144768,
+							"parameters": {
+								"variable": "lvl8_fiosCortado",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 960276607131167,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 246877099822464,
+									"parameters": {
+										"variable": "lvl8_fiosCorreta",
+										"comparison": 0,
+										"value": "1"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 697893030284160,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 566039766464327,
+									"parameters": {
+										"variable": "lvl8_fiosCortado",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 186940640490596,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"value": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 481211321320356,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_passarEtapa",
+									"sid": 166405423804591
+								}
+							],
+							"sid": 995773154070128
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 901814766216061
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 579222565883590,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 690254296903039,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_erro",
+									"sid": 583021037236765
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 106620068713009,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "lvl8_gerarFios",
+									"sid": 128722986019788
+								}
+							],
+							"sid": 586408945704669
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 840404641378890,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro2"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 491048688426006,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 189196241000446,
+							"parameters": {
+								"variable": "lvl8_fiosCortado",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 250565445331365,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 609818521766127,
+									"parameters": {
+										"variable": "lvl8_fiosCorreta",
+										"comparison": 0,
+										"value": "2"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 672603932611052,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 550005956197982,
+									"parameters": {
+										"variable": "lvl8_fiosCortado",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 116966099689853,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"value": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 361888955446030,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_passarEtapa",
+									"sid": 309761980102582
+								}
+							],
+							"sid": 737244053273198
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 766903958300345
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 656665502550961,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 134278753028577,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_erro",
+									"sid": 391180468466276
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 670050194965256,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "lvl8_gerarFios",
+									"sid": 453893185677890
+								}
+							],
+							"sid": 285143410927029
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 182443065852200,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro3"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 520159468727925,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 257726940183335,
+							"parameters": {
+								"variable": "lvl8_fiosCortado",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 266069520596786,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 140923135558952,
+									"parameters": {
+										"variable": "lvl8_fiosCorreta",
+										"comparison": 0,
+										"value": "3"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 981057170317674,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 322524225675833,
+									"parameters": {
+										"variable": "lvl8_fiosCortado",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 930412460161267,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"value": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 335583151430627,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_passarEtapa",
+									"sid": 457001158762391
+								}
+							],
+							"sid": 878461584800709
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 817602721288129
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 400299287716557,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 809856092977899,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_erro",
+									"sid": 539162603520614
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 264395694614142,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "lvl8_gerarFios",
+									"sid": 641429163109050
+								}
+							],
+							"sid": 135292737116899
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 227688319961415,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro4"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 293310593886974,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 815040829147702,
+							"parameters": {
+								"variable": "lvl8_fiosCortado",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 172647854033265,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 137766671514034,
+									"parameters": {
+										"variable": "lvl8_fiosCorreta",
+										"comparison": 0,
+										"value": "4"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 527398740602464,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 864779933348844,
+									"parameters": {
+										"variable": "lvl8_fiosCortado",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 812392018041967,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"value": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 443172574746028,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_passarEtapa",
+									"sid": 809863507710774
+								}
+							],
+							"sid": 391727018769422
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 587580759473447
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 768281837739831,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 996807159592315,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_erro",
+									"sid": 232615800906383
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 883604875849773,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "lvl8_gerarFios",
+									"sid": 874337565057016
+								}
+							],
+							"sid": 568622504363491
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 817266431409395,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro5"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 269314627637605,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 682681949845929,
+							"parameters": {
+								"variable": "lvl8_fiosCortado",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 554468354988376,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 427606979178131,
+									"parameters": {
+										"variable": "lvl8_fiosCorreta",
+										"comparison": 0,
+										"value": "5"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 612183061217380,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 468473082820986,
+									"parameters": {
+										"variable": "lvl8_fiosCortado",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 277804021306453,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"value": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 161701785732794,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_passarEtapa",
+									"sid": 378147116803951
+								}
+							],
+							"sid": 410142774955860
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 512825692248942
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 485775511447429,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 914346703759770,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_erro",
+									"sid": 930096262301437
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 448184989195462,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "lvl8_gerarFios",
+									"sid": 269258558457204
+								}
+							],
+							"sid": 814583270507059
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 619258746068633,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro6"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 405683488151510,
+							"parameters": {
+								"variable": "lvl8_travaInput",
+								"comparison": 0,
+								"value": "0"
+							}
+						},
+						{
+							"id": "compare-eventvar",
+							"objectClass": "System",
+							"sid": 870825478708656,
+							"parameters": {
+								"variable": "lvl8_fiosCortado",
+								"comparison": 0,
+								"value": "0"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 632184533117699,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-eventvar",
+									"objectClass": "System",
+									"sid": 501544171169275,
+									"parameters": {
+										"variable": "lvl8_fiosCorreta",
+										"comparison": 0,
+										"value": "6"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 131699634783604,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 155053746907751,
+									"parameters": {
+										"variable": "lvl8_fiosCortado",
+										"value": "1"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 963387050474165,
+									"parameters": {
+										"variable": "lvl8_fiosResolvido",
+										"value": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 786668051351878,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_passarEtapa",
+									"sid": 155251239063396
+								}
+							],
+							"sid": 605810364959412
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 391849547906514
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 944320272605731,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 915850860219474,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"callFunction": "lvl8_erro",
+									"sid": 287248442663939
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 587914902442507,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"callFunction": "lvl8_gerarFios",
+									"sid": 256521456825044
+								}
+							],
+							"sid": 955171273164580
+						}
+					]
+				}
+			],
+			"sid": 640142535656430
 		},
 		{
 			"eventType": "block",
