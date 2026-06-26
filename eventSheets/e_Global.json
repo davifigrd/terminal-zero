@@ -26,7 +26,6 @@
 			"sid": 597105896778684
 		},
 		{
-			"bookmark": true,
 			"eventType": "variable",
 			"name": "IsChoosing",
 			"type": "boolean",
@@ -767,7 +766,7 @@
 					"children": [
 						{
 							"eventType": "comment",
-							"text": "Fases"
+							"text": "Fase 1-9"
 						},
 						{
 							"eventType": "block",
@@ -798,65 +797,45 @@
 									}
 								}
 							],
-							"actions": [],
-							"sid": 156194152432587,
-							"children": [
+							"actions": [
 								{
-									"eventType": "comment",
-									"text": "Fase 10"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "compare-two-values",
-											"objectClass": "System",
-											"sid": 996194644741860,
-											"parameters": {
-												"first-value": "Keyboard.TypedKey",
-												"comparison": 0,
-												"second-value": "0"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "go-to-layout",
-											"objectClass": "System",
-											"sid": 647881949017336,
-											"parameters": {
-												"layout": "Level10"
-											}
-										}
-									],
-									"sid": 923393024555383
-								},
-								{
-									"eventType": "comment",
-									"text": "Fase 1-9"
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 398811043199114
-										}
-									],
-									"actions": [
-										{
-											"id": "go-to-layout-by-name",
-											"objectClass": "System",
-											"sid": 464735659391509,
-											"parameters": {
-												"layout": "\"Level\" & Keyboard.TypedKey"
-											}
-										}
-									],
-									"sid": 400066388065674
+									"id": "go-to-layout-by-name",
+									"objectClass": "System",
+									"sid": 376365425188157,
+									"parameters": {
+										"layout": "\"Level\" & Keyboard.TypedKey"
+									}
 								}
-							]
+							],
+							"sid": 156194152432587
+						},
+						{
+							"eventType": "comment",
+							"text": "Fase 10"
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "on-key-pressed",
+									"objectClass": "Keyboard",
+									"sid": 672198729533841,
+									"parameters": {
+										"key": 48
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "go-to-layout",
+									"objectClass": "System",
+									"sid": 785298487397095,
+									"parameters": {
+										"layout": "Level10"
+									}
+								}
+							],
+							"sid": 205400683298611
 						},
 						{
 							"eventType": "comment",
@@ -868,9 +847,9 @@
 								{
 									"id": "on-key-pressed",
 									"objectClass": "Keyboard",
-									"sid": 430404671442377,
+									"sid": 805010033889562,
 									"parameters": {
-										"key": 81
+										"key": 66
 									}
 								}
 							],
