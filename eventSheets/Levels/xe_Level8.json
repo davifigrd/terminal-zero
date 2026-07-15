@@ -1,0 +1,5806 @@
+{
+	"name": "xe_Level8",
+	"events": [
+		{
+			"eventType": "include",
+			"includeSheet": "e_Global"
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_tempoRestante2",
+			"type": "number",
+			"initialValue": "300",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 877516931911305
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_multiplicadorTimer2",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 838783651234696
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_erros2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 538610699082046
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_travaInput2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 889477848738963
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_tentativas2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 325651707422153
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_etapa2",
+			"type": "number",
+			"initialValue": "1",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 423029093134920
+		},
+		{
+			"eventType": "comment",
+			"text": "hex",
+			"text-color": [
+				1,
+				0.4823529411764706,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_palavraAtual3",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 676685521650940
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_hexAtual3",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 455955172200160
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_respostaCorreta3",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 609336162375858
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_hexResolvido3",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 941368394955162
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_inputJogador3",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 923755558838719
+		},
+		{
+			"eventType": "comment",
+			"text": "hex 2",
+			"text-color": [
+				1,
+				0.4823529411764706,
+				0,
+				1
+			]
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_palavraAtual4",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 206095366239470
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_hexAtual4",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 678329635723168
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_respostaCorreta4",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 743272680308329
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_hexResolvido4",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 590266464003986
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_inputJogador4",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 272097191772985
+		},
+		{
+			"eventType": "comment",
+			"text": "botao1",
+			"text-color": [
+				1,
+				0,
+				0.9686274509803922,
+				1
+			]
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn1_nomeAtual2",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 645333643810103
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn1_corAtual2",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 167368740954919
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn1_direcaoCorreta2",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 789613764632334
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn1_cliquesNecessarios2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 724992159535047
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn1_cliquesFeitos2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 963619763185335
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn1_Confirmado2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 238908389651222
+		},
+		{
+			"eventType": "comment",
+			"text": "botao2",
+			"text-color": [
+				1,
+				0,
+				0.9686274509803922,
+				1
+			]
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_nomeAtual2",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 964413567403685
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_corAtual2",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 435900901091254
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_direcaoCorreta2",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 375380172908929
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_cliquesNecessarios2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 780982739781921
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_cliquesFeitos2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 128713834708363
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_btn2_Confirmado2",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 608903039074467
+		},
+		{
+			"eventType": "comment",
+			"text": "fios"
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosResolvido3",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 461425771915635
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosQuantidade3",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 353777776343180
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCorreta3",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 825944252916723
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor7",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 577296788152249
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor8",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 306616848207607
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor9",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 427682536653213
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor10",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 759822763267719
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor11",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 360408691152894
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCor12",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 317554402176772
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCortado3",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 908384782167449
+		},
+		{
+			"eventType": "comment",
+			"text": "fios2"
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosResolvido4",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 830413036684529
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosQuantidade4",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 315065757765099
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCorreta4",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 386259812170882
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fios2Cor7",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 836301669810039
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fios2Cor8",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 948901075729490
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fios2Cor9",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 143154037120230
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fios2Cor10",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 631259631789110
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fios2Cor11",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 443471767612849
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fios2Cor12",
+			"type": "string",
+			"initialValue": "\"\"",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 845681191372089
+		},
+		{
+			"eventType": "variable",
+			"name": "lvl8_fiosCortado4",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 359045532847893
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL9_LAYOUT2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-start-of-layout",
+							"objectClass": "System",
+							"sid": 949107884065767
+						}
+					],
+					"actions": [
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 728133628615177,
+							"parameters": {
+								"layer": "\"gameplay2\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 201900100380811,
+							"parameters": {
+								"layer": "\"gameplay2\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-layer-interactive",
+							"objectClass": "System",
+							"sid": 776902841754772,
+							"parameters": {
+								"layer": "\"gameplay3\"",
+								"interactive": false
+							}
+						},
+						{
+							"id": "set-layer-visible",
+							"objectClass": "System",
+							"sid": 350101643567981,
+							"parameters": {
+								"layer": "\"gameplay3\"",
+								"visibility": "invisible"
+							}
+						},
+						{
+							"callFunction": "TypingEffect",
+							"sid": 500065040006869,
+							"parameters": [
+								"\"INICIANDO A PRIMEIRA ETAPA...\""
+							]
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 249467659345350,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_soundTrack"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 612188061355079,
+							"parameters": {
+								"variable": "lvl3_etapa",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 379684529928188
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 311710904496275,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_instrucao1"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios2",
+							"sid": 547650300732886,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 391786281379947,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreBotao",
+							"sid": 377036289272004,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoBotao",
+							"sid": 558557117279141,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreHex",
+							"sid": 501464959854255,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_tabelahex",
+							"sid": 753158671822376,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoHex",
+							"sid": 438558379863281,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 425542445846437
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 102257845951057,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_instrucao2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios2",
+							"sid": 354442669193028,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 353096684044669,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreHex",
+							"sid": 637529333869984,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_tabelahex",
+							"sid": 649153958307490,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoHex",
+							"sid": 568358164530683,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreBotao",
+							"sid": 330992437188468,
+							"parameters": {
+								"visibility": "visible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoBotao",
+							"sid": 517318257380233,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 154081448737805
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 767444782925904,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_instrucao3"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios2",
+							"sid": 383524378782504,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreBotao",
+							"sid": 733471273383888,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoBotao",
+							"sid": 196546694615085,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreHex",
+							"sid": 315944640531825,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_tabelahex",
+							"sid": 249486744567183,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoHex",
+							"sid": 651835094500329,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 499666548628346,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 195171957245395
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 377313158671993,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setainstrucao"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreBotao",
+							"sid": 933177750247739,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoBotao",
+							"sid": 490540354485669,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreHex",
+							"sid": 707528321811967,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_tabelahex",
+							"sid": 603479404389060,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoHex",
+							"sid": 851420310188030,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 607248762306607,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios2",
+							"sid": 948248096618116,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 747418729295370
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 547052177002815,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setainstrucao2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreBotao",
+							"sid": 243330741280125,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoBotao",
+							"sid": 327364356429170,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreHex",
+							"sid": 552168931014139,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_tabelahex",
+							"sid": 547802549733899,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_instrucaoHex",
+							"sid": 167012248519058,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 748395689156131,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios2",
+							"sid": 347977481309077,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						},
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_txt_sobreFios",
+							"sid": 973855276612365,
+							"parameters": {
+								"visibility": "visible"
+							}
+						}
+					],
+					"sid": 491275645410409
+				}
+			],
+			"sid": 347574970241324
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL8_FUNÇÕES2",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"functionName": "lvl8_gerarHex2",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 623750804356089
+				},
+				{
+					"functionName": "lvl8_gerarBotao2",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"type": "comment",
+							"text": "--- SORTEAR COR ---"
+						},
+						{
+							"type": "comment",
+							"text": "--- SORTEAR NOME ---"
+						}
+					],
+					"sid": 593637239369177,
+					"children": [
+						{
+							"eventType": "comment",
+							"text": "--- APLICAR COR VISUAL 1 ---"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn",
+									"sid": 555405086124700,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								}
+							],
+							"sid": 963499183164988
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn",
+									"sid": 835077038412737,
+									"parameters": {
+										"color": "rgb(255, 210, 0)"
+									}
+								}
+							],
+							"sid": 238191552023506
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn",
+									"sid": 260793622014834,
+									"parameters": {
+										"color": "rgb(50, 120, 255)"
+									}
+								}
+							],
+							"sid": 679634932573251
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn",
+									"sid": 587073453175873,
+									"parameters": {
+										"color": "rgb(220, 40, 40)"
+									}
+								}
+							],
+							"sid": 734951441429435
+						},
+						{
+							"eventType": "comment",
+							"text": "--- APLICAR COR VISUAL 2 ---"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn2",
+									"sid": 297796558399087,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								}
+							],
+							"sid": 376653535505644
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn2",
+									"sid": 572049153046987,
+									"parameters": {
+										"color": "rgb(255, 210, 0)"
+									}
+								}
+							],
+							"sid": 286356787341916
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn2",
+									"sid": 389612896327955,
+									"parameters": {
+										"color": "rgb(50, 120, 255)"
+									}
+								}
+							],
+							"sid": 768015223856749
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_cordobtn2",
+									"sid": 660102323950091,
+									"parameters": {
+										"color": "rgb(220, 40, 40)"
+									}
+								}
+							],
+							"sid": 612945498777220
+						},
+						{
+							"eventType": "comment",
+							"text": "--- DEFINIR DIREÇÃO CORRETA 1 ---"
+						},
+						{
+							"eventType": "comment",
+							"text": "--- DEFINIR DIREÇÃO CORRETA 2 ---"
+						},
+						{
+							"eventType": "comment",
+							"text": "--- RESET DE CLIQUES 1 ---"
+						},
+						{
+							"eventType": "comment",
+							"text": "--- RESET DE CLIQUES 2 ---"
+						}
+					]
+				},
+				{
+					"functionName": "lvl8_gerarFios3",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro",
+							"sid": 835738655788334,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro2",
+							"sid": 350366480844074,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro3",
+							"sid": 596690290551576,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro4",
+							"sid": 208890824906191,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro5",
+							"sid": 537955451751617,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_fioneutro6",
+							"sid": 957023415302123,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 612305421260153,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 300162021023005,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 269588593311941
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 673498578222970,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 460522386879432
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 759317966829238,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 212818778872406
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 319571291050528,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 320374066424581
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 701883070602836,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 600833162143740
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 719723846275418,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 687069758034900
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 148012634697850,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 692781525363299
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 384703679071741,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 595430724684098
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 454668682322091,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 236344633623877
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 1"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 843910538672022,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 483715259727935
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 412481851667121,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 279974036165147
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 910554263321256,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 101572608535834
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 438372322630463,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 623874956557311
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 810934118395895,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 363600981047618
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 993427440977592,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 699942766548660
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 2"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 839896696625837,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 166770263908556
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 416808727269038,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 195880112176929
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 262436021536827,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 153599118093767
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 234259558651277,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 110679250996352
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 821483186616121,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 341241374567053
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 672420760126628,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 368163839083925
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 3"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 250179632847825,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 636283478267605
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 856079741097387,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 629755050980758
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 639498036495431,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 882760710804662
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 506387626657913,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 247272796334372
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 141670284442151,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 108719971969167
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 638876061943853,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 123087573824347
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 4"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 375215129195544,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 548795031172458
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 863157788213842,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 228884274519151
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 983735359671248,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 493692267166066
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 647509886935576,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 523832015741500
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 743902663686355,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 235714080801321
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 918968764861258,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 973703514091138
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 5"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 740010017217966,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 240110275408514
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 770982197326518,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 692486893850948
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 703839015128606,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 218169490529018
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 812592058537629,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 226994786918345
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 432063839815600,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 729775881471468
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 278324524653748,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 219925421647763
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 6"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 327983913245570,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 400544875103229
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 232984823943496,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 301320383175819
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 588287712707410,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 111454313365444
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 393020226274355,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 798745682234538
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 963166229155953,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 901693271477612
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 745176196222299,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 586207515369664
+						}
+					]
+				},
+				{
+					"functionName": "lvl8_gerarFios4",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_2_fioneutro",
+							"sid": 832564260986712,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_2_fioneutro2",
+							"sid": 212541905154782,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_2_fioneutro3",
+							"sid": 949761565709115,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_2_fioneutro4",
+							"sid": 534033514284463,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_2_fioneutro5",
+							"sid": 602351940866689,
+							"parameters": {
+								"frame-number": "0"
+							}
+						},
+						{
+							"id": "set-animation-frame",
+							"objectClass": "lvl8_2_fioneutro6",
+							"sid": 722214518299321,
+							"parameters": {
+								"frame-number": "0"
+							}
+						}
+					],
+					"sid": 828911990887486,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_2_fioneutro",
+									"sid": 463949456319651,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 941835206652988
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_2_fioneutro2",
+									"sid": 438461447994433,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 413418026728263
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_2_fioneutro3",
+									"sid": 948512618268997,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 543890204310162
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_2_fioneutro4",
+									"sid": 276717159053331,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 830761675134050
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_2_fioneutro5",
+									"sid": 413275162238698,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 368186404646287
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_2_fioneutro6",
+									"sid": 948394371045366,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 192218388824835
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_2_fioneutro4",
+									"sid": 741254659310377,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 446858870299225
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_2_fioneutro5",
+									"sid": 419868184349160,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 824051806003357
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_2_fioneutro6",
+									"sid": 786635620456146,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 712715917448545
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 1"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro",
+									"sid": 736743156825325,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 988406334270658
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro",
+									"sid": 518483087943661,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 180325332717268
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro",
+									"sid": 274556425791528,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 670761160392892
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro",
+									"sid": 356510505195536,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 771562042764844
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro",
+									"sid": 163090906030469,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 237009387970079
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro",
+									"sid": 584065267726141,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 767176433579597
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 2"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro2",
+									"sid": 634991829370245,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 890669814187957
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro2",
+									"sid": 877427475887839,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 180681177022578
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro2",
+									"sid": 233515494792724,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 595332967320711
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro2",
+									"sid": 410089630811636,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 378123962579905
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro2",
+									"sid": 561826202092040,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 255167020420170
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro2",
+									"sid": 233501130838472,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 947029522279315
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 3"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro3",
+									"sid": 222781220417510,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 385036855397796
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro3",
+									"sid": 497317010434916,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 393420341614083
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro3",
+									"sid": 281116615138204,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 939922033339809
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro3",
+									"sid": 185866267903986,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 361633918015206
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro3",
+									"sid": 769124854255868,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 371532513775176
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro3",
+									"sid": 753571056226606,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 120004512952730
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 4"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro4",
+									"sid": 453703448206459,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 267945751110227
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro4",
+									"sid": 953977006356061,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 180067016144940
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro4",
+									"sid": 289724108885785,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 548261295694168
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro4",
+									"sid": 629761330922315,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 684867497135658
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro4",
+									"sid": 255681065085953,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 586207224207137
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro4",
+									"sid": 875446148887466,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 448116183546527
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 5"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro5",
+									"sid": 400723334405756,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 227499195925749
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro5",
+									"sid": 489713797311458,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 454376220745789
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro5",
+									"sid": 975323119519250,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 156815200899255
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro5",
+									"sid": 176721234130686,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 707303112046552
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro5",
+									"sid": 674789797268417,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 532656397258979
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro5",
+									"sid": 359508111431725,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 268906097577318
+						},
+						{
+							"eventType": "comment",
+							"text": "cores fio 6"
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro6",
+									"sid": 890004665755044,
+									"parameters": {
+										"color": "rgb(220,40,40)"
+									}
+								}
+							],
+							"sid": 700390878046072
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro6",
+									"sid": 629818770763279,
+									"parameters": {
+										"color": "rgb(0,200,80)"
+									}
+								}
+							],
+							"sid": 489601760771007
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro6",
+									"sid": 555968760525278,
+									"parameters": {
+										"color": "rgb(50,120,255)"
+									}
+								}
+							],
+							"sid": 283285398438291
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro6",
+									"sid": 847661838051606,
+									"parameters": {
+										"color": "rgb(255,255,255)"
+									}
+								}
+							],
+							"sid": 101352377488096
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro6",
+									"sid": 163200402086159,
+									"parameters": {
+										"color": "rgb(30,30,30)"
+									}
+								}
+							],
+							"sid": 354002762202715
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-default-color",
+									"objectClass": "lvl8_2_fioneutro6",
+									"sid": 387502692590999,
+									"parameters": {
+										"color": "rgb(255,210,0)"
+									}
+								}
+							],
+							"sid": 516164169230397
+						}
+					]
+				},
+				{
+					"functionName": "lvl8_verificarHex2",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 946077360987613,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 124989844717397,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta1",
+									"sid": 906611672892218,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta2",
+									"sid": 528130491102244,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta3",
+									"sid": 879864001165818,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta4",
+									"sid": 123721220524071,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta5",
+									"sid": 912977379011859,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								}
+							],
+							"sid": 885264110305139
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 766519434140779
+								}
+							],
+							"actions": [
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta1",
+									"sid": 294346051157147,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta2",
+									"sid": 736786439764831,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta3",
+									"sid": 181933028944935,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta4",
+									"sid": 417595071450529,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta5",
+									"sid": 948484359696635,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 317530607575890,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta1",
+									"sid": 814395730849321,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta2",
+									"sid": 215683781509127,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta3",
+									"sid": 911786449558842,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta4",
+									"sid": 228332425742816,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta5",
+									"sid": 231640233336522,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								}
+							],
+							"sid": 419775737634773
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 249948126312276,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta1",
+									"sid": 626460534094537,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta2",
+									"sid": 176929853111223,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta3",
+									"sid": 842875922690643,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta4",
+									"sid": 159634570301445,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta5",
+									"sid": 121741905611336,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								}
+							],
+							"sid": 932696810353236
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 946804441253902
+								}
+							],
+							"actions": [
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta1",
+									"sid": 754720469490454,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta2",
+									"sid": 638646555452772,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta3",
+									"sid": 182918049215680,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta4",
+									"sid": 971179073490384,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta5",
+									"sid": 727728319432294,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 371030472327503,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta1",
+									"sid": 291387510554418,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta2",
+									"sid": 854123421852248,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta3",
+									"sid": 443347551160585,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta4",
+									"sid": 705001170938678,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_resposta5",
+									"sid": 457155829444793,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								}
+							],
+							"sid": 250669329952720
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 346246472892929,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta",
+									"sid": 524717179226367,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta2",
+									"sid": 560479140389146,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta3",
+									"sid": 461783301492855,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta4",
+									"sid": 603992775827467,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta5",
+									"sid": 713351916948204,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								}
+							],
+							"sid": 962272366505595
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 286561393388791
+								}
+							],
+							"actions": [
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta",
+									"sid": 305482517840289,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta2",
+									"sid": 613105547641963,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta3",
+									"sid": 591383094916825,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta4",
+									"sid": 687474195577748,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta5",
+									"sid": 812957581970597,
+									"parameters": {
+										"color": "rgb(255, 0, 0)"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 704707611591167,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta",
+									"sid": 546881252932695,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta2",
+									"sid": 974703742502743,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta3",
+									"sid": 203537228660960,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta4",
+									"sid": 327906081353443,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt2_resposta5",
+									"sid": 469700940417004,
+									"parameters": {
+										"color": "rgb(0, 255, 0)"
+									}
+								}
+							],
+							"sid": 552264342121412
+						}
+					]
+				},
+				{
+					"functionName": "lvl8_erro2",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 148064099725411,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_error"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 494527301707601,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro1",
+									"sid": 887024402228575,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 533770592486400
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro2",
+									"sid": 446205857971998,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 678430340925624
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro3",
+									"sid": 511315355108704,
+									"parameters": {
+										"visibility": "visible"
+									}
+								}
+							],
+							"sid": 179886567440623
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 897650580817994,
+									"parameters": {
+										"layer": "\"explosao\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lv8_bgexplosao",
+									"sid": 103904028541398,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 841300031173248,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 8/soundreality-sinus-bomb-137068"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 908753573582754,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 8/freesound_community-medium-explosion-40472"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_bomba",
+									"sid": 498956536361402,
+									"parameters": {
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "start-animation",
+									"objectClass": "lvl8_bomba",
+									"sid": 167962732295157,
+									"parameters": {
+										"from": "beginning"
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 176068416208778,
+									"parameters": {
+										"seconds": "3.0",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_bomba",
+									"sid": 937857094426578,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lv8_bgexplosao",
+									"sid": 133130451021840,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 863504959438951,
+									"parameters": {
+										"layer": "\"explosao\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro1",
+									"sid": 257330063491356,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro2",
+									"sid": 607045856932708,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro3",
+									"sid": 875088886181503,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn1",
+									"sid": 126543780708702,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn2",
+									"sid": 918117391225586,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								}
+							],
+							"sid": 291853482581240,
+							"isOrBlock": true
+						}
+					]
+				},
+				{
+					"functionName": "lvl8_passarEtapa2",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 126852661983626,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_avancoetapa"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 587955350959044,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 841444416823943,
+									"parameters": {
+										"layer": "\"gameplay\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 187091623252889,
+									"parameters": {
+										"layer": "\"gameplay\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 234977920903233,
+									"parameters": {
+										"layer": "\"gameplay2\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 848434836553412,
+									"parameters": {
+										"layer": "\"gameplay2\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 537397108759616,
+									"parameters": {
+										"layer": "\"gameplay3\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 643651845030036,
+									"parameters": {
+										"layer": "\"gameplay3\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 506721783445759,
+									"parameters": [
+										"\"INICIANDO SEGUNDA ETAPA...\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 194967930908209,
+									"parameters": {
+										"seconds": "2.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn1",
+									"sid": 292685465609164,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn2",
+									"sid": 697462727400053,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro1",
+									"sid": 964876574243546,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro2",
+									"sid": 409827650296156,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro3",
+									"sid": 865722361216588,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 935908668866116
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 669076921064950,
+									"parameters": {
+										"layer": "\"gameplay\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 312480558286567,
+									"parameters": {
+										"layer": "\"gameplay\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 333877453185699,
+									"parameters": {
+										"layer": "\"gameplay2\"",
+										"interactive": false
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 143292723476124,
+									"parameters": {
+										"layer": "\"gameplay2\"",
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-layer-interactive",
+									"objectClass": "System",
+									"sid": 608699333856598,
+									"parameters": {
+										"layer": "\"gameplay3\"",
+										"interactive": true
+									}
+								},
+								{
+									"id": "set-layer-visible",
+									"objectClass": "System",
+									"sid": 659474940762688,
+									"parameters": {
+										"layer": "\"gameplay3\"",
+										"visibility": "visible"
+									}
+								},
+								{
+									"callFunction": "TypingEffect",
+									"sid": 777486621233090,
+									"parameters": [
+										"\"INICIANDO TERCEIRA ETAPA...\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 549393313714877,
+									"parameters": {
+										"seconds": "2.5",
+										"use-timescale": true
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn1",
+									"sid": 561234478842561,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-font-color",
+									"objectClass": "lvl8_txt_btn2",
+									"sid": 757445224506502,
+									"parameters": {
+										"color": "rgb(255, 255, 255)"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro1",
+									"sid": 640117281231895,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro2",
+									"sid": 713838256649800,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								},
+								{
+									"id": "set-visible",
+									"objectClass": "lvl8_erro3",
+									"sid": 927710377612846,
+									"parameters": {
+										"visibility": "invisible"
+									}
+								}
+							],
+							"sid": 245373798905736
+						},
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"callFunction": "TypingEffect",
+									"sid": 564442493007717,
+									"parameters": [
+										"\"BOMBA DESATIVADA!\""
+									]
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 669117110947620,
+									"parameters": {
+										"seconds": "2.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 756225834166875
+						}
+					]
+				},
+				{
+					"functionName": "lvl8_calcularFioCorreto2",
+					"functionDescription": "",
+					"functionCategory": "",
+					"functionReturnType": "none",
+					"functionCopyPicked": false,
+					"functionIsAsync": false,
+					"functionParameters": [],
+					"eventType": "function-block",
+					"conditions": [],
+					"actions": [],
+					"sid": 806116285792069
+				}
+			],
+			"sid": 100892318791600
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL8_GAMEPLAY3",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "click de cima no btn 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 997992826633525,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 335828232339894
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 879441931762091,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 220886605343815
+				},
+				{
+					"eventType": "comment",
+					"text": "click de baixo no btn 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 496463188145309,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 759358894379750
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 272914026930171,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 145563558678900
+				},
+				{
+					"eventType": "comment",
+					"text": "click no btn 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 469927929981973,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn1",
+							"sid": 119624982223213,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 555159841944042,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_acerto"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 880482386337524
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 205552705157855,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn1",
+							"sid": 451001166536380,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						}
+					],
+					"sid": 333299586767925
+				},
+				{
+					"eventType": "comment",
+					"text": "click de cima no btn 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 213481955797400,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 711529372227749
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 301111650692849,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 858220920091868
+				},
+				{
+					"eventType": "comment",
+					"text": "click de baixo no btn 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 303012024348963,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 479958322503933
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 778765674626632,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 948075940160725
+				},
+				{
+					"eventType": "comment",
+					"text": "click no btn 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 185797874028887,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn2",
+							"sid": 684553759671895,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 387061145535482,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_acerto"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 692995202683478
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 637260853479410,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn2",
+							"sid": 551399902012985,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						}
+					],
+					"sid": 302909550783698
+				},
+				{
+					"eventType": "comment",
+					"text": "click de cima no btn 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 144191366134549,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 853051965138659
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 361210601554040,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 862553024793048
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 158267097027574,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 356337613390586
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 455700533904431,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 404212202147111
+				},
+				{
+					"eventType": "comment",
+					"text": "click de baixo no btn 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 112605062515852,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 956139599561974
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 603221486278622,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 613129269485143
+				},
+				{
+					"eventType": "comment",
+					"text": "click no btn 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 374382368493508,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn1",
+							"sid": 321611352412783,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 648941673363021,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_acerto"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 384697691747334
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 792842247815772,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn1",
+							"sid": 624768318576309,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						}
+					],
+					"sid": 753520628442554
+				},
+				{
+					"eventType": "comment",
+					"text": "click de baixo no btn 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 526137581960813,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 440187358162310
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 209802208130487,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 601073873874663
+				},
+				{
+					"eventType": "comment",
+					"text": "click no btn 1"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 247146678399330,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn1",
+							"sid": 837469028634311,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 615025304623573,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_acerto"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 121102843200059
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 805190230060858,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn1",
+							"sid": 644264345967322,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						}
+					],
+					"sid": 227936129521607
+				},
+				{
+					"eventType": "comment",
+					"text": "click de cima no btn 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 248444621711768,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 819565558251765
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 895332885801879,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 805901265752628
+				},
+				{
+					"eventType": "comment",
+					"text": "click de baixo no btn 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 728866725006160,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setabaixo2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 325119845762641
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 171069024831262,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_setacima2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 697693037174243
+				},
+				{
+					"eventType": "comment",
+					"text": "click no btn 2"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 287193722274466,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn2",
+							"sid": 823329972253260,
+							"parameters": {
+								"color": "rgb(0, 255, 0)"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Audio",
+							"sid": 413190971396802,
+							"parameters": {
+								"audio-file": {
+									"path": "Level 3/lvl3_acerto"
+								},
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
+						}
+					],
+					"sid": 249100891749011
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 257363352691223,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_cordobtn2"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-font-color",
+							"objectClass": "lvl8_txt_btn2",
+							"sid": 975978666376470,
+							"parameters": {
+								"color": "rgb(255, 0, 0)"
+							}
+						}
+					],
+					"sid": 431980160390851
+				},
+				{
+					"eventType": "comment",
+					"text": "teclado"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 230063908491991
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 517903953467084,
+							"parameters": {
+								"first-value": "Keyboard.LastKeyCode",
+								"comparison": 5,
+								"second-value": "65"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 357271369236026,
+							"parameters": {
+								"first-value": "Keyboard.LastKeyCode",
+								"comparison": 3,
+								"second-value": "90"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_digiteAqui",
+							"sid": 696876706119332,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 781918336223895
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 893138002392337,
+							"parameters": {
+								"key": 8
+							}
+						}
+					],
+					"actions": [],
+					"sid": 706801190173931
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 132038825454906,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [],
+					"sid": 972649519397634
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 653618068642442
+						}
+					],
+					"actions": [],
+					"sid": 395434024748474
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-any-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 666981657474063
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 541586904412558,
+							"parameters": {
+								"first-value": "Keyboard.LastKeyCode",
+								"comparison": 5,
+								"second-value": "65"
+							}
+						},
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 772743829177805,
+							"parameters": {
+								"first-value": "Keyboard.LastKeyCode",
+								"comparison": 3,
+								"second-value": "90"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-visible",
+							"objectClass": "lvl8_digiteAqui",
+							"sid": 530755274236001,
+							"parameters": {
+								"visibility": "invisible"
+							}
+						}
+					],
+					"sid": 982635773461668
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 395166642348895,
+							"parameters": {
+								"key": 8
+							}
+						}
+					],
+					"actions": [],
+					"sid": 893366345495895
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-key-pressed",
+							"objectClass": "Keyboard",
+							"sid": 113614334028931,
+							"parameters": {
+								"key": 13
+							}
+						}
+					],
+					"actions": [],
+					"sid": 734663573721726
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "every-tick",
+							"objectClass": "System",
+							"sid": 956879904089330
+						}
+					],
+					"actions": [],
+					"sid": 379171526150356
+				},
+				{
+					"eventType": "comment",
+					"text": "botao deletar"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 960147454657751,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_deletar2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 982524810214473
+				},
+				{
+					"eventType": "comment",
+					"text": "botao enviar"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 306555910941169,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_enviar2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 427329377856331
+				}
+			],
+			"sid": 940832522690772
+		},
+		{
+			"eventType": "group",
+			"disabled": false,
+			"title": "LVL8_GAMEPLAY4",
+			"description": "",
+			"isActiveOnStart": true,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 647296851869313,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 581161129924431,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 714086592264869,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 965711008164092,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 428489873832372
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 518528782781414
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro",
+									"sid": 352530766425429,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 491289822267822,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 616708020685161,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 563244163546197
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 282065781573403,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 430168850607252,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 887327912696918,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 258823428782667,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 491238319594334
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 920090347303941
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro2",
+									"sid": 356330448145100,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 211425808159524,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 195840431900713,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 134847224612254
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 793304537059038,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 498136018524398,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 919330996474438,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 653854649589948,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 189486681288227
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 243272663896034
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro3",
+									"sid": 863489826193323,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 868649486585033,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 977559831968059,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 186429098996413
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 791874333993756,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro4"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 665596268286674,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 457492742081982,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 498721488162459,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 334020802327397
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 903155423467821
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro4",
+									"sid": 926938675387758,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 434954761707300,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 244494544525572,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 784204170180336
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 852118169647719,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro5"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 409093518622096,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 485818913405927,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 455361874261831,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 395000356751324
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 299287568970205
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro5",
+									"sid": 165658391498128,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 170842076704470,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 329573501727764,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 611731044981014
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 398154611712893,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_fioneutro6"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 661767457606188,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 264680365790853,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 269946461668634,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 488512435149450
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 844421284899971
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_fioneutro6",
+									"sid": 859507976753926,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 227002848370718,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 402294708737318,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 365329389978586
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 636352241019292,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_2_fioneutro"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 809044019932129,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro",
+									"sid": 594387095911867,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 488365641096750,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 294736402258647
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 474860856594569
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro",
+									"sid": 707498961799955,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 936984799142862,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 847097241971866,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 327396673441932
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 106373398926139,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_2_fioneutro2"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 941386594667970,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro2",
+									"sid": 121276235266192,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 720569305878645,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 645335900304438
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 765801043631204
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro2",
+									"sid": 395285639295775,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 319535294432113,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 264461677614861,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 855191655164873
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 730626654461935,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_2_fioneutro3"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 559475199078815,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro3",
+									"sid": 404045856366283,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 550382318810265,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 689117208194680
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 305967181354806
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro3",
+									"sid": 408266525678756,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 222239079725076,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 551132641940064,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 119000311044192
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 147667557394257,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_2_fioneutro4"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 872970849776095,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro4",
+									"sid": 602425664349192,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 407952868773139,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 871602511362376
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 455527182856237
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro4",
+									"sid": 198694687320430,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 670533868897274,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 597439783478108,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 663866177091624
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 731559621037751,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_2_fioneutro5"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 639494954507029,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro5",
+									"sid": 970015390931429,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 821017876889368,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 486054790774454
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 610879559199790
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro5",
+									"sid": 238952906954205,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 233824174142269,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 124193085325976,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 782337924409014
+						}
+					]
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "on-object-clicked",
+							"objectClass": "Mouse",
+							"sid": 820227194178053,
+							"parameters": {
+								"mouse-button": "left",
+								"click-type": "clicked",
+								"object-clicked": "lvl8_2_fioneutro6"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 368572583431493,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro6",
+									"sid": 450546446297478,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 584038307523759,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_acerto"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								}
+							],
+							"sid": 110188992022887
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 317707125822478
+								}
+							],
+							"actions": [
+								{
+									"id": "set-animation-frame",
+									"objectClass": "lvl8_2_fioneutro6",
+									"sid": 251243836540479,
+									"parameters": {
+										"frame-number": "1"
+									}
+								},
+								{
+									"id": "play",
+									"objectClass": "Audio",
+									"sid": 346057636718822,
+									"parameters": {
+										"audio-file": {
+											"path": "Level 3/lvl3_error"
+										},
+										"loop": "not-looping",
+										"volume": "0",
+										"stereo-pan": "0",
+										"tag-optional": "\"\""
+									}
+								},
+								{
+									"id": "wait",
+									"objectClass": "System",
+									"sid": 400879582210531,
+									"parameters": {
+										"seconds": "0.5",
+										"use-timescale": true
+									}
+								}
+							],
+							"sid": 434218304966472
+						}
+					]
+				}
+			],
+			"sid": 540536631042217
+		}
+	],
+	"sid": 146067224366151
+}
